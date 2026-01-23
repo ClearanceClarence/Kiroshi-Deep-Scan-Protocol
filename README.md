@@ -4,98 +4,115 @@
 ![Version](https://img.shields.io/badge/version-1.3.1-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
-> *"In Night City, everyone has secrets. Now you can read them all."*
+A Cyberpunk 2077 mod that extends the scanner system to display procedurally generated NPC data.
 
-A Cyberpunk 2077 mod that extends your Kiroshi optics scanner to pull detailed background data on any NPC — criminal records, cyberware registries, financial status, medical history, psychological profiles, and personal relationships.
+## Overview
 
-## Features
+This mod hooks into the game's scanner UI to inject additional data panels for crowd NPCs, gang members, and NCPD officers. All data is procedurally generated using a seed derived from each NPC's entity ID, ensuring consistent results across game sessions.
 
-### Core Features
-- **Procedural Backstories** — Every NPC gets a unique, persistent life story
-- **Criminal Records** — Arrests, warrants, NCPD classification
-- **Cyberware Registry** — Implant count, psychosis risk, illegal modifications
-- **Financial Records** — Credit rating, income level, debt status
-- **Medical History** — Chronic conditions, past injuries, health rating
-- **Psychological Profile** — Temperament, disposition, behavioral flags
-- **Relationships** — Status, dependents, associates, enemies
+## Project Structure
 
-### NCPD Officers
-- **Real Names** — Uses actual in-game names when available
-- **Generated Names** — Creates proper names for generic cops (Beat Cop, Patrol Officer, etc.)
-- **Personnel Files** — Badge number, unit, district, years of service
-- **Police Backstories** — Academy history, career progression, recent assignments
+```
+r6/scripts/backgroundScanner/
+├── Core/
+│   ├── BackstoryManager.reds      # Main generation orchestrator
+│   ├── BackstoryUI.reds           # UI data struct
+│   ├── NameGenerator.reds         # Culturally diverse name generation
+│   ├── Criminal/
+│   │   └── CriminalRecordManager.reds
+│   ├── Cyberware/
+│   │   └── CyberwareRegistryManager.reds
+│   ├── Financial/
+│   │   └── FinancialProfileManager.reds
+│   ├── Gang/
+│   │   └── GangManager.reds
+│   ├── LifePath/
+│   │   ├── LifePath.reds
+│   │   ├── LifePathEvents.reds
+│   │   └── LifePathPossibilities.reds
+│   ├── Medical/
+│   │   └── MedicalHistoryManager.reds
+│   ├── NCPD/
+│   │   └── NCPDNameGenerator.reds
+│   ├── Psych/
+│   │   └── PsychProfileManager.reds
+│   ├── Rare/
+│   │   └── RareNPCManager.reds
+│   └── Relationships/
+│       └── RelationshipsManager.reds
+├── Overrides/
+│   ├── ScannerNPCBodyGameController.reds  # Scanner UI injection
+│   └── NPCPuppet.reds                      # TweakDB name retrieval
+├── Settings/
+│   └── KiroshiSettings.reds       # Mod Settings Menu integration
+├── UI/
+│   ├── NetWatchDBReport.reds      # Custom UI widget
+│   └── ScannerBackstorySystem.reds
+└── Util/
+    ├── Random.reds
+    ├── String.reds
+    └── ArrayUtils.reds
+```
 
-### Gang Members
-- **Gang Detection** — Automatic identification from appearance
-- **Affiliation Data** — Gang name, rank, loyalty rating, territory
-- **Filtered Display** — Shows only gang-relevant intel
+## How It Works
 
-### Special NPCs
-- **Rare Classifications** (1 in 1000) — NetWatch assets, undercover cops, cyberpsychos, whistleblowers
-- **Child Protection** — Age-appropriate restricted data for minors
+### Seed-Based Generation
+```swift
+let entityIDHash: Int32 = Cast(EntityID.GetHash(target.GetEntityID()));
+let seed = RandRange(entityIDHash, 0, 2147483647);
+```
+Each NPC's entity ID is hashed to create a deterministic seed. All generated data uses offsets from this seed, ensuring the same NPC always produces identical results.
 
-### Optional Content (Requires Mod Settings Menu)
-- **Diverse Relationships** — Same-sex partnerships, polyamory, chosen family
-- **Body Modification Records** — Gender-affirming cyberware
-- **Pronouns Display** — Including they/them and neopronouns
+### NPC Detection
+- **Gang members**: Detected via appearance name patterns (e.g., `tyger`, `maelstrom`, `valentinos`)
+- **NCPD officers**: Detected via `IsPrevention()`, `IsCharacterPolice()`, or appearance name
+- **Children**: Detected via appearance name patterns (`child`, `kid`)
 
-## Requirements
+### Data Filtering
+Different NPC types receive filtered data:
+- **Civilians**: Full data (criminal, financial, medical, cyberware, relationships)
+- **Gang members**: Criminal record, gang affiliation, psych profile only
+- **NCPD officers**: Personnel file, cyberware, cop-specific backstory
+- **Children**: Restricted/protected data only
 
-**Required:**
-- [redscript](https://www.nexusmods.com/cyberpunk2077/mods/2908)
-- [Codeware](https://www.nexusmods.com/cyberpunk2077/mods/7780)
+## Dependencies
 
-**Optional:**
-- [Mod Settings Menu](https://www.nexusmods.com/cyberpunk2077/mods/4885) — For optional content toggles
+- [redscript](https://github.com/jac3km4/redscript) — Script compiler
+- [Codeware](https://github.com/psiberx/cp2077-codeware) — UI framework (`inkCustomController`)
+- [Mod Settings Menu](https://github.com/jackhumbert/mod_settings) — Runtime settings
 
-## Installation
+## Building
 
-1. Install required mods (redscript, Codeware)
-2. Extract the archive to your Cyberpunk 2077 game directory
-3. The mod files should be in: `Cyberpunk 2077/r6/scripts/backgroundScanner/`
+No build step required. The game compiles `.reds` files on startup.
 
-## ⚠️ Important
+Install by copying `r6/` to your game directory:
+```
+Cyberpunk 2077/r6/scripts/backgroundScanner/
+```
 
-This is a **standalone replacement** for the original [Kiroshi Crowd Scanner](https://www.nexusmods.com/cyberpunk2077/mods/1654). 
+## Optional Features
 
-**Do NOT install both mods** — they use the same file paths and will conflict.
+Three features are disabled by default and require Mod Settings Menu:
 
-## Changelog
+| Setting | Description |
+|---------|-------------|
+| `enableDiverseRelationships` | Same-sex partnerships, polyamory, chosen family |
+| `enableBodyModRecords` | Gender-affirming cyberware (~20% of NPCs) |
+| `enablePronounDisplay` | Pronoun field (85% standard, 10% they/them, 5% neo) |
 
-### Version 1.3.1
-- NCPD Cyberware — Officers now display cyberware registry data
-- NCPD Pronouns — Officers display pronouns when setting is enabled
-- Cleaner NCPD Profiles — Officers no longer show irrelevant civilian data
-
-### Version 1.3
-- Real NCPD Names — Police officers use actual in-game names when available
-- Improved NCPD Detection — Detects generic names and generates proper names
-- NCPD-Specific Data — Officers show personnel files, not civilian records
-- NCPD Backstories — Police-appropriate backgrounds
-- Mod Settings Menu Support — Optional content toggles
-- Diverse Relationships (Optional)
-- Body Modification Records (Optional)
-- Display Pronouns (Optional)
-
-### Version 1.2
-- Smart Gang Filtering — Gang members show only relevant intel
-- Hidden Civilian Data — No financial/medical/cyberware for gangers
-
-### Version 1.1
-- Relationships Database
-- Gender-Accurate Names
-- Expanded Name Pool (150+ culturally diverse names)
-- Psych Profile system
-
-### Version 1.0
-- Initial release
+Settings are accessed via `KiroshiSettings` static helper:
+```swift
+if KiroshiSettings.DiverseRelationshipsEnabled() {
+    // Generate diverse content
+}
+```
 
 ## Credits
 
-- **[Reki72](https://www.nexusmods.com/cyberpunk2077/mods/1654)** — Original Kiroshi Crowd Scanner
-- **psiberx** — Codeware framework
+- **Reki72** — Original [Kiroshi Crowd Scanner](https://www.nexusmods.com/cyberpunk2077/mods/1654)
+- **psiberx** — Codeware
 - **jackhumbert** — Mod Settings Menu
 
 ## License
 
-MIT License — See [LICENSE](LICENSE) for details.
+MIT
