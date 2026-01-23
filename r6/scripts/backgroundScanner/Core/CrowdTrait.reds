@@ -1,0 +1,39 @@
+// TraitName, BaseWealth, (hashmap???)
+enum CrowdTrait  {
+    Medical = 0, // Ripperdocs, nurses, etc... 		service__medical_wa_nurse_wa_02, service__vendor_ma__wbr_jpn_medic_01 anything with traumateam
+    Driver = 1, // Drivers, pre-disposes car-based events 		service__driver_ma__driver_dino
+    Fixer = 2, // (fixer)
+    Techincal = 3, // service__arasaka_engineer_ma_lab_03, service__specialist_wa__sq023__bd_crew_03, service__worker_ma_arasaka_scientist_03, corpo__militech_ma_tech__lvl3_02 (usually studied at a university)
+    Cook = 4, // service__dining_ma__mq023__noodle_shop_cook, service__dining_ma_capitan_caliente_cheff_ma_01, service__vendor_wa__wat_nid_foodshop_02
+    Server = 5, // service__dining_ma__afterlife_bartender, service__dining_ma__riot_barman_working, service__dining_ma_waiter_avarage_01
+    Media = 6,  // service__media_wa__tvhost_n54__juanita_tseng, service__media_ma_media_operator_01, service__media_wa__tvhost_n54__gillean_jordan, service__media_wa_journalist_presenter_01 (not many of these - keep events small),
+    Municipal = 7, // service__municipal_ma_construction_worker_01
+    Worker = 8, // Anything with service_
+    Hospitality = 9, // service__receptionist_wa_receptionist_02
+    Religious = 10, // service__religious_ma_shinto_ma_01
+    Sex_Worker = 11, //	service__sexworker_wa_prostitute_wa_08
+    Dancer = 12, // service__tubedancer_wa_tube_dancer_08
+    Gun_Nut = 13, // service__vendor_ma_gun_trainer_01 (anything with gun in it)
+    Sword_Freak = 14, // anything with (melee)
+    Fashionable = 15, // service__vendor_wa__pac_cvi_clothingshop_01 (anything with clothing)
+    Soldier = 16, // any gang member or with text (soldier, shotgun, enforcer, blackwater, tank, max_tac)
+    Sniper = 17, // (anything with sniper, ranger, recon)
+    Brawler = 18, // (anything with brawler, sumo, strongarms)
+    Hacker = 19, // Anything with netrunner
+    Biker = 20, // Anything with biker
+    Security = 21, // corpo__android_ma__sq011__kerry_bodyguard_04 (anything with guard or security)
+    Agent = 22, // corpo__arasaka_ma_agent_2020__lvl2_03
+    Ninja = 23, // corpo__arasaka_ma_ninja__lvl3_03 (anything with ninja)
+    Detective = 24, // (inspector, investigator)
+    Redneck = 25, // (farmer, redneck)
+    Mechanic = 26, // (anything with mechanic)
+    Faction_Kiji = 27, // Part of Arasak's Kiji Faction (kiji)
+    Faction_Hato = 28, // Parta of arasaka's hato faction (hato)
+    Faction_Taka = 29, // Part of Araksak's Taka faction (taka)
+    Manager = 30, // manager
+    Partier = 31, // (nightlife)
+    Addict = 32, // (junkie)
+    Health_Nut = 33, // (workout)
+    Thug = 34, // (thug)
+    Drug_Dealer = 35 // (dealer)
+}
