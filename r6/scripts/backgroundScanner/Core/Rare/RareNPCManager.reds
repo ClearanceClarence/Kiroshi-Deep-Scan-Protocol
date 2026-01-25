@@ -1,10 +1,18 @@
 // Rare NPC Generation System
-// Handles special 1-in-1000 type NPCs with unique flags and backstories
+// Handles special flagged NPCs with unique classifications and backstories
 public class RareNPCManager {
 
-    // Check if this NPC should be rare (1 in 1000 chance by default)
+    // Check if this NPC should be rare based on settings
     public static func ShouldBeRareNPC(seed: Int32) -> Bool {
-        return RandRange(seed, 1, 1000) == 1;
+        let rarity = KiroshiSettings.GetSpecialNPCRarity();
+        
+        // 0 = disabled
+        if rarity <= 0 {
+            return false;
+        }
+        
+        // Roll 1 in [rarity] chance
+        return RandRange(seed, 1, rarity) == 1;
     }
 
     public static func Generate(seed: Int32, archetype: String) -> ref<RareNPCData> {

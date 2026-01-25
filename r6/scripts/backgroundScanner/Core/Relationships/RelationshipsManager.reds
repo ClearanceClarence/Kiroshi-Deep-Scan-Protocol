@@ -1,30 +1,36 @@
 // Relationships Generation System
 public class RelationshipsManager {
 
-    public static func Generate(seed: Int32, archetype: String, gangAffiliation: String) -> ref<RelationshipsData> {
+    public static func Generate(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: NPCEthnicity) -> ref<RelationshipsData> {
         let relations: ref<RelationshipsData> = new RelationshipsData();
         
-        // Generate family last name (shared by blood relatives)
-        let familyLastName = NameGenerator.GetLastName(seed + 50);
+        // Generate family last name (shared by blood relatives) - use ethnicity-aware
+        let familyLastName = NameGenerator.GetLastNameByEthnicity(seed + 50, ethnicity);
 
-        // Known associates
+        // Known associates - limited by density
         let associateCount = RelationshipsManager.GetAssociateCount(seed, archetype, gangAffiliation);
+        associateCount = KiroshiSettings.GetMaxListItems(associateCount);
+        
         let i = 0;
         while i < associateCount {
-            ArrayPush(relations.knownAssociates, RelationshipsManager.GenerateAssociate(seed + (i * 67), archetype, gangAffiliation));
+            ArrayPush(relations.knownAssociates, RelationshipsManager.GenerateAssociate(seed + (i * 67), archetype, gangAffiliation, ethnicity));
             i += 1;
         }
 
-        // Family members
+        // Family members - limited by density
         let familyCount = RelationshipsManager.GetFamilyCount(seed + 100, archetype);
+        familyCount = KiroshiSettings.GetMaxListItems(familyCount);
+        
         i = 0;
         while i < familyCount {
-            ArrayPush(relations.familyMembers, RelationshipsManager.GenerateFamilyMember(seed + 110 + (i * 73), archetype, familyLastName));
+            ArrayPush(relations.familyMembers, RelationshipsManager.GenerateFamilyMember(seed + 110 + (i * 73), archetype, familyLastName, ethnicity));
             i += 1;
         }
 
-        // Romantic history
-        relations.romanticHistory = RelationshipsManager.GenerateRomanticHistory(seed + 200, archetype);
+        // Romantic history - only on medium/high density
+        if !KiroshiSettings.IsLowDensity() {
+            relations.romanticHistory = RelationshipsManager.GenerateRomanticHistory(seed + 200, archetype);
+        }
         relations.currentRelationshipStatus = RelationshipsManager.GenerateRelationshipStatus(seed + 210, archetype);
 
         // Dependents
@@ -32,24 +38,28 @@ public class RelationshipsManager {
 
         // Emergency contact
         if RandRange(seed + 400, 1, 100) <= 60 {
-            relations.emergencyContact = RelationshipsManager.GenerateEmergencyContact(seed + 410, archetype);
+            relations.emergencyContact = RelationshipsManager.GenerateEmergencyContact(seed + 410, archetype, ethnicity);
         } else {
             relations.emergencyContact = "NONE ON FILE";
         }
 
-        // Enemies/Rivals
+        // Enemies/Rivals - limited by density
         if RandRange(seed + 500, 1, 100) <= RelationshipsManager.GetEnemyChance(archetype) {
             let enemyCount = RandRange(seed + 510, 1, 3);
+            enemyCount = KiroshiSettings.GetMaxListItems(enemyCount);
+            
             i = 0;
             while i < enemyCount {
-                ArrayPush(relations.knownEnemies, RelationshipsManager.GenerateEnemy(seed + 520 + (i * 79), archetype, gangAffiliation));
+                ArrayPush(relations.knownEnemies, RelationshipsManager.GenerateEnemy(seed + 520 + (i * 79), archetype, gangAffiliation, ethnicity));
                 i += 1;
             }
         }
 
-        // Professional contacts
-        if RelationshipsManager.HasProfessionalContacts(archetype) {
+        // Professional contacts - only on medium/high density
+        if !KiroshiSettings.IsLowDensity() && RelationshipsManager.HasProfessionalContacts(archetype) {
             let contactCount = RandRange(seed + 600, 1, 4);
+            contactCount = KiroshiSettings.GetMaxListItems(contactCount);
+            
             i = 0;
             while i < contactCount {
                 ArrayPush(relations.professionalContacts, RelationshipsManager.GenerateProfessionalContact(seed + 610 + (i * 83), archetype));
@@ -79,11 +89,11 @@ public class RelationshipsManager {
         return base;
     }
 
-    private static func GenerateAssociate(seed: Int32, archetype: String, gangAffiliation: String) -> ref<AssociateInfo> {
+    private static func GenerateAssociate(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: NPCEthnicity) -> ref<AssociateInfo> {
         let associate: ref<AssociateInfo> = new AssociateInfo();
 
-        // Generate name
-        associate.name = RelationshipsManager.GenerateName(seed);
+        // Generate name - ethnicity aware
+        associate.name = RelationshipsManager.GenerateNameByEthnicity(seed, ethnicity);
         
         // Or use alias
         if RandRange(seed + 5, 1, 100) <= 30 {
@@ -108,9 +118,15 @@ public class RelationshipsManager {
     }
 
     private static func GenerateName(seed: Int32) -> String {
-        // Use shared NameGenerator with random gender
+        // Use shared NameGenerator with random gender and ethnicity
         let gender = NameGenerator.GetRandomGender(seed + 999);
         return NameGenerator.GenerateFullName(seed, gender);
+    }
+
+    private static func GenerateNameByEthnicity(seed: Int32, ethnicity: NPCEthnicity) -> String {
+        // Use shared NameGenerator with random gender but specific ethnicity
+        let gender = NameGenerator.GetRandomGender(seed + 999);
+        return NameGenerator.GenerateFullNameByEthnicity(seed, gender, ethnicity);
     }
 
     private static func GenerateStreetAlias(seed: Int32) -> String {
@@ -180,7 +196,7 @@ public class RelationshipsManager {
         return RandRange(seed, 0, 4);
     }
 
-    private static func GenerateFamilyMember(seed: Int32, archetype: String, familyLastName: String) -> ref<FamilyMemberInfo> {
+    private static func GenerateFamilyMember(seed: Int32, archetype: String, familyLastName: String, ethnicity: NPCEthnicity) -> ref<FamilyMemberInfo> {
         let family: ref<FamilyMemberInfo> = new FamilyMemberInfo();
 
         // Relation type
@@ -228,7 +244,8 @@ public class RelationshipsManager {
             gender = NameGenerator.GetRandomGender(seed + 5);
         };
         
-        let firstName = NameGenerator.GetFirstName(seed + 10, gender);
+        // Use ethnicity-aware first name
+        let firstName = NameGenerator.GetFirstNameByEthnicity(seed + 10, gender, ethnicity);
         
         // Blood relatives share the family last name
         if Equals(family.relation, "Mother") || Equals(family.relation, "Father") || 
@@ -245,11 +262,11 @@ public class RelationshipsManager {
                 if RandRange(seed + 15, 1, 100) <= 50 {
                     family.name = firstName + " " + familyLastName;
                 } else {
-                    family.name = firstName + " " + NameGenerator.GetLastName(seed + 20);
+                    family.name = firstName + " " + NameGenerator.GetLastNameByEthnicity(seed + 20, ethnicity);
                 };
             } else {
                 // Aunt/Uncle/Cousin/Chosen Family - different branch of family
-                family.name = firstName + " " + NameGenerator.GetLastName(seed + 20);
+                family.name = firstName + " " + NameGenerator.GetLastNameByEthnicity(seed + 20, ethnicity);
             };
         };
 
@@ -344,8 +361,8 @@ public class RelationshipsManager {
         return 0;
     }
 
-    private static func GenerateEmergencyContact(seed: Int32, archetype: String) -> String {
-        let name = RelationshipsManager.GenerateName(seed);
+    private static func GenerateEmergencyContact(seed: Int32, archetype: String, ethnicity: NPCEthnicity) -> String {
+        let name = RelationshipsManager.GenerateNameByEthnicity(seed, ethnicity);
         let relations: array<String>;
         ArrayPush(relations, "Spouse");
         ArrayPush(relations, "Parent");
@@ -364,10 +381,16 @@ public class RelationshipsManager {
         return 20;
     }
 
-    private static func GenerateEnemy(seed: Int32, archetype: String, gangAffiliation: String) -> ref<EnemyInfo> {
+    private static func GenerateEnemy(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: NPCEthnicity) -> ref<EnemyInfo> {
         let enemy: ref<EnemyInfo> = new EnemyInfo();
 
-        enemy.name = RelationshipsManager.GenerateName(seed);
+        // Enemies may or may not share ethnicity - 50% chance of different ethnicity
+        let enemyEthnicity = ethnicity;
+        if RandRange(seed + 3, 1, 100) <= 50 {
+            enemyEthnicity = EthnicityDetector.GetRandomEthnicity(seed + 7);
+        }
+
+        enemy.name = RelationshipsManager.GenerateNameByEthnicity(seed, enemyEthnicity);
         if RandRange(seed + 5, 1, 100) <= 40 {
             enemy.name = RelationshipsManager.GenerateStreetAlias(seed + 10);
         }

@@ -12,5 +12,5 @@ public func ReplaceFirst(src: String, target: String, replacement: String) -> St
 } 
 
 public static func isLocKey(locKey: String) -> Bool {
-    return Equals(GetLocalizedText(locKey), null);
+    let localized = GetLocalizedText(locKey); return Equals(localized, "") || Equals(localized, locKey);
 }

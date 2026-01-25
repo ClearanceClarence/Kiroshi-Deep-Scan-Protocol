@@ -138,7 +138,7 @@ public class NetWatchDBReport extends inkCustomController {
         header.SetName(StringToName(NameToString(name) + "_header"));
         header.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         header.SetFontStyle(n"Semi-Bold");
-        header.SetFontSize(20);
+        header.SetFontSize(KiroshiSettings.GetHeaderFontSize());
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText(headerText);
         header.SetTintColor(color);
@@ -150,7 +150,7 @@ public class NetWatchDBReport extends inkCustomController {
         value.SetName(StringToName(NameToString(name) + "_value"));
         value.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         value.SetFontStyle(n"Medium");
-        value.SetFontSize(26);
+        value.SetFontSize(KiroshiSettings.GetTextFontSize());
         value.SetTintColor(color);
         value.SetMargin(new inkMargin(0.0, 0.0, 0.0, 0.0));
         value.SetFitToContent(true);
@@ -174,7 +174,7 @@ public class NetWatchDBReport extends inkCustomController {
         header.SetName(StringToName(NameToString(name) + "_header"));
         header.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         header.SetFontStyle(n"Semi-Bold");
-        header.SetFontSize(20);
+        header.SetFontSize(KiroshiSettings.GetHeaderFontSize());
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText(headerText);
         header.SetTintColor(new HDRColor(0.72, 0.65, 0.55, 1.0));
@@ -187,7 +187,7 @@ public class NetWatchDBReport extends inkCustomController {
         value.SetName(StringToName(NameToString(name) + "_value"));
         value.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         value.SetFontStyle(n"Medium");
-        value.SetFontSize(26);
+        value.SetFontSize(KiroshiSettings.GetTextFontSize());
         value.SetTintColor(valueColor);
         value.SetMargin(new inkMargin(0.0, 0.0, 0.0, 0.0));
         value.SetFitToContent(true);
@@ -199,6 +199,9 @@ public class NetWatchDBReport extends inkCustomController {
 
     public func SetBackstory(backstoryUI: BackstoryUI) {
         this.m_backstoryUI = backstoryUI;
+        
+        // Update font sizes from settings (allows mid-game changes)
+        this.UpdateFontSizes();
         
         // Background
         if StrLen(this.m_backstoryUI.background) > 0 {
@@ -309,6 +312,40 @@ public class NetWatchDBReport extends inkCustomController {
         } else {
             this.m_pronounsSection.SetVisible(false);
         };
+    }
+
+    private func UpdateFontSizes() -> Void {
+        let headerSize = KiroshiSettings.GetHeaderFontSize();
+        let textSize = KiroshiSettings.GetTextFontSize();
+        
+        // Update all header fonts
+        this.UpdateSectionFontSize(this.m_specialSection, n"special", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_ncpdSection, n"ncpd", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_backgroundSection, n"background", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_earlyLifeSection, n"earlylife", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_recentSection, n"recent", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_threatSection, n"threat", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_criminalSection, n"criminal", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_gangSection, n"gang", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_cyberSection, n"cyber", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_financeSection, n"finance", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_medicalSection, n"medical", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_relationshipsSection, n"relationships", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_pronounsSection, n"pronouns", headerSize, textSize);
+    }
+
+    private func UpdateSectionFontSize(section: wref<inkCompoundWidget>, name: CName, headerSize: Int32, textSize: Int32) -> Void {
+        if !IsDefined(section) { return; }
+        
+        let header = section.GetWidget(StringToName(NameToString(name) + "_header")) as inkText;
+        let value = section.GetWidget(StringToName(NameToString(name) + "_value")) as inkText;
+        
+        if IsDefined(header) {
+            header.SetFontSize(headerSize);
+        }
+        if IsDefined(value) {
+            value.SetFontSize(textSize);
+        }
     }
 
     public func SetVisible(visible: Bool) {

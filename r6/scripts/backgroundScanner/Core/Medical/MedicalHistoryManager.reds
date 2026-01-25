@@ -1,29 +1,46 @@
 // Medical History Generation System
 public class MedicalHistoryManager {
 
+    // Legacy function for backward compatibility
     public static func Generate(seed: Int32, archetype: String, age: Int32) -> ref<MedicalHistoryData> {
-        let medical: ref<MedicalHistoryData> = new MedicalHistoryData();
+        return MedicalHistoryManager.GenerateCoherent(seed, archetype, age, null);
+    }
 
-        // Basic info
+    // Coherent generation using life profile
+    public static func GenerateCoherent(seed: Int32, archetype: String, age: Int32, coherence: ref<CoherenceProfile>) -> ref<MedicalHistoryData> {
+        let medical: ref<MedicalHistoryData> = new MedicalHistoryData();
+        let density = KiroshiSettings.GetDataDensity();
+
+        // Basic info - always shown
         medical.bloodType = MedicalHistoryManager.GenerateBloodType(seed);
         medical.age = age;
-        medical.biologicalAge = MedicalHistoryManager.CalculateBiologicalAge(seed + 10, age, archetype);
+        medical.biologicalAge = MedicalHistoryManager.CalculateBiologicalAgeCoherent(seed + 10, age, archetype, coherence);
         
-        // Physical stats
-        medical.height = MedicalHistoryManager.GenerateHeight(seed + 20, archetype);
-        medical.weight = MedicalHistoryManager.GenerateWeight(seed + 30, archetype);
+        // Physical stats - only on medium/high
+        if density >= 2 {
+            medical.height = MedicalHistoryManager.GenerateHeight(seed + 20, archetype);
+            medical.weight = MedicalHistoryManager.GenerateWeight(seed + 30, archetype);
+        }
 
-        // Conditions
-        let conditionCount = MedicalHistoryManager.GetConditionCount(seed + 100, archetype, age);
+        // Conditions - limited by density
+        let conditionCount = MedicalHistoryManager.GetConditionCountCoherent(seed + 100, archetype, age, coherence);
+        conditionCount = KiroshiSettings.GetMaxListItems(conditionCount);
+        
         let i = 0;
         while i < conditionCount {
-            ArrayPush(medical.chronicConditions, MedicalHistoryManager.GenerateCondition(seed + 110 + (i * 17), archetype));
+            ArrayPush(medical.chronicConditions, MedicalHistoryManager.GenerateConditionCoherent(seed + 110 + (i * 17), archetype, coherence));
             i += 1;
         }
 
-        // Allergies
-        if RandRange(seed + 200, 1, 100) <= 35 {
+        // Add substance-related conditions if coherence indicates
+        if IsDefined(coherence) && coherence.hasSubstanceIssues && RandRange(seed + 150, 1, 100) <= 70 {
+            ArrayPush(medical.chronicConditions, MedicalHistoryManager.GenerateSubstanceCondition(seed + 151, coherence.substanceType));
+        }
+
+        // Allergies - only on medium/high density
+        if density >= 2 && RandRange(seed + 200, 1, 100) <= 35 {
             let allergyCount = RandRange(seed + 210, 1, 4);
+            allergyCount = KiroshiSettings.GetMaxListItems(allergyCount);
             i = 0;
             while i < allergyCount {
                 ArrayPush(medical.allergies, MedicalHistoryManager.GenerateAllergy(seed + 220 + (i * 13)));
@@ -31,10 +48,11 @@ public class MedicalHistoryManager {
             }
         }
 
-        // Organ replacements
+        // Organ replacements - limited by density
         let organChance = MedicalHistoryManager.GetOrganReplacementChance(archetype, age);
         if RandRange(seed + 300, 1, 100) <= organChance {
             let organCount = RandRange(seed + 310, 1, 3);
+            organCount = KiroshiSettings.GetMaxListItems(organCount);
             i = 0;
             while i < organCount {
                 ArrayPush(medical.organReplacements, MedicalHistoryManager.GenerateOrganReplacement(seed + 320 + (i * 19)));
@@ -42,39 +60,47 @@ public class MedicalHistoryManager {
             }
         }
 
-        // Medical visits
-        medical.lastCheckup = MedicalHistoryManager.GenerateLastCheckup(seed + 400, archetype);
-        medical.ripperdocVisits = MedicalHistoryManager.GenerateRipperdocVisits(seed + 410, archetype);
-        medical.emergencyVisits = MedicalHistoryManager.GenerateEmergencyVisits(seed + 420, archetype);
+        // Medical visits - only on medium/high
+        if density >= 2 {
+            medical.lastCheckup = MedicalHistoryManager.GenerateLastCheckup(seed + 400, archetype);
+            medical.ripperdocVisits = MedicalHistoryManager.GenerateRipperdocVisits(seed + 410, archetype);
+            medical.emergencyVisits = MedicalHistoryManager.GenerateEmergencyVisitsCoherent(seed + 420, archetype, coherence);
+        }
 
-        // Donor status
-        medical.donorStatus = MedicalHistoryManager.GenerateDonorStatus(seed + 500, archetype);
-        medical.organDonorCard = RandRange(seed + 510, 1, 100) <= 30;
+        // Donor status - only on high density
+        if density >= 3 {
+            medical.donorStatus = MedicalHistoryManager.GenerateDonorStatus(seed + 500, archetype);
+            medical.organDonorCard = RandRange(seed + 510, 1, 100) <= 30;
+        }
 
-        // Medications
+        // Medications - limited by density
         let medCount = MedicalHistoryManager.GetMedicationCount(seed + 600, archetype, ArraySize(medical.chronicConditions));
+        medCount = KiroshiSettings.GetMaxListItems(medCount);
         i = 0;
         while i < medCount {
             ArrayPush(medical.currentMedications, MedicalHistoryManager.GenerateMedication(seed + 610 + (i * 23), archetype));
             i += 1;
         }
 
-        // Injuries and procedures
-        let injuryCount = MedicalHistoryManager.GetInjuryCount(seed + 700, archetype);
+        // Injuries - limited by density
+        let injuryCount = MedicalHistoryManager.GetInjuryCountCoherent(seed + 700, archetype, coherence);
+        injuryCount = KiroshiSettings.GetMaxListItems(injuryCount);
         i = 0;
         while i < injuryCount {
-            ArrayPush(medical.pastInjuries, MedicalHistoryManager.GenerateInjury(seed + 710 + (i * 29)));
+            ArrayPush(medical.pastInjuries, MedicalHistoryManager.GenerateInjuryCoherent(seed + 710 + (i * 29), coherence));
             i += 1;
         }
 
-        // Vaccinations
-        medical.vaccinationStatus = MedicalHistoryManager.GenerateVaccinationStatus(seed + 800, archetype);
+        // Vaccinations - only on high density
+        if density >= 3 {
+            medical.vaccinationStatus = MedicalHistoryManager.GenerateVaccinationStatus(seed + 800, archetype);
+        }
 
-        // Mental health (basic - detailed in PsychProfile)
-        medical.mentalHealthFlag = MedicalHistoryManager.HasMentalHealthFlag(seed + 900, archetype);
+        // Mental health - always shown (important)
+        medical.mentalHealthFlag = MedicalHistoryManager.HasMentalHealthFlagCoherent(seed + 900, archetype, coherence);
 
-        // Genetic markers
-        if RandRange(seed + 1000, 1, 100) <= 25 {
+        // Genetic markers - only on high density
+        if density >= 3 && RandRange(seed + 1000, 1, 100) <= 25 {
             ArrayPush(medical.geneticMarkers, MedicalHistoryManager.GenerateGeneticMarker(seed + 1010));
             if RandRange(seed + 1020, 1, 100) <= 30 {
                 ArrayPush(medical.geneticMarkers, MedicalHistoryManager.GenerateGeneticMarker(seed + 1030));
@@ -85,6 +111,175 @@ public class MedicalHistoryManager {
         medical.healthRating = MedicalHistoryManager.CalculateHealthRating(medical, archetype);
 
         return medical;
+    }
+
+    // Biological age affected by substance abuse and trauma
+    private static func CalculateBiologicalAgeCoherent(seed: Int32, chronoAge: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let bioAge = MedicalHistoryManager.CalculateBiologicalAge(seed, chronoAge, archetype);
+        
+        if IsDefined(coherence) {
+            if coherence.hasSubstanceIssues { bioAge += RandRange(seed + 5, 3, 8); }
+            if Equals(coherence.lifeTheme, "FALLING") { bioAge += RandRange(seed + 6, 2, 5); }
+            if coherence.hasChronicHealth { bioAge += RandRange(seed + 7, 1, 4); }
+        }
+        
+        if bioAge > 120 { bioAge = 120; }
+        return bioAge;
+    }
+
+    // Condition count influenced by coherence
+    private static func GetConditionCountCoherent(seed: Int32, archetype: String, age: Int32, coherence: ref<CoherenceProfile>) -> Int32 {
+        let base = MedicalHistoryManager.GetConditionCount(seed, archetype, age);
+        
+        if IsDefined(coherence) {
+            if coherence.hasChronicHealth { base += 1; }
+            if coherence.hasSubstanceIssues { base += 1; }
+            if Equals(coherence.lifeTheme, "FALLING") { base += 1; }
+        }
+        
+        if base > 6 { base = 6; }
+        return base;
+    }
+
+    // Generate condition that matches coherence
+    private static func GenerateConditionCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+        // 40% chance to generate coherence-matching condition
+        if IsDefined(coherence) && RandRange(seed + 50, 1, 100) <= 40 {
+            if coherence.hasSubstanceIssues {
+                return MedicalHistoryManager.GenerateSubstanceCondition(seed, coherence.substanceType);
+            }
+        }
+        
+        return MedicalHistoryManager.GenerateCondition(seed, archetype);
+    }
+
+    // Substance-specific medical conditions
+    private static func GenerateSubstanceCondition(seed: Int32, substanceType: String) -> String {
+        if Equals(substanceType, "alcohol") || Equals(substanceType, "synthetic alcohol") {
+            let conditions: array<String>;
+            ArrayPush(conditions, "Liver damage (alcohol-related)");
+            ArrayPush(conditions, "Cirrhosis - early stage");
+            ArrayPush(conditions, "Alcohol-induced neuropathy");
+            ArrayPush(conditions, "Chronic gastritis");
+            return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+        }
+        
+        if StrContains(StrLower(substanceType), "synth-coke") || StrContains(StrLower(substanceType), "stim") {
+            let conditions: array<String>;
+            ArrayPush(conditions, "Cardiac arrhythmia (stimulant abuse)");
+            ArrayPush(conditions, "Nasal septum damage");
+            ArrayPush(conditions, "Chronic hypertension");
+            ArrayPush(conditions, "Stimulant-induced anxiety disorder");
+            return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+        }
+        
+        if StrContains(StrLower(substanceType), "black lace") {
+            let conditions: array<String>;
+            ArrayPush(conditions, "Neurotransmitter imbalance");
+            ArrayPush(conditions, "Chronic pain syndrome");
+            ArrayPush(conditions, "Rage disorder (substance-induced)");
+            ArrayPush(conditions, "Adrenal fatigue");
+            return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+        }
+        
+        // Generic substance condition
+        let conditions: array<String>;
+        ArrayPush(conditions, "Substance use disorder");
+        ArrayPush(conditions, "Liver enzyme abnormalities");
+        ArrayPush(conditions, "Chronic fatigue (substance-related)");
+        ArrayPush(conditions, "Immune system compromise");
+        return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+    }
+
+    // Emergency visits affected by violence/trauma
+    private static func GenerateEmergencyVisitsCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let base = MedicalHistoryManager.GenerateEmergencyVisits(seed, archetype);
+        
+        if IsDefined(coherence) {
+            if coherence.hasViolentPast { base += RandRange(seed + 5, 1, 3); }
+            if coherence.hasTrauma && Equals(coherence.traumaType, "accident") { base += RandRange(seed + 6, 1, 2); }
+        }
+        
+        return base;
+    }
+
+    // Injury count influenced by violence
+    private static func GetInjuryCountCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let base = MedicalHistoryManager.GetInjuryCount(seed, archetype);
+        
+        if IsDefined(coherence) {
+            if coherence.hasViolentPast { base += RandRange(seed + 5, 1, 3); }
+            if coherence.hasTrauma && Equals(coherence.traumaType, "violence") { base += 1; }
+            if coherence.hasTrauma && Equals(coherence.traumaType, "accident") { base += 2; }
+        }
+        
+        if base > 8 { base = 8; }
+        return base;
+    }
+
+    // Injury type matches violence type
+    private static func GenerateInjuryCoherent(seed: Int32, coherence: ref<CoherenceProfile>) -> String {
+        let year = RandRange(seed + 1000, 2065, 2077);
+        
+        if IsDefined(coherence) && coherence.hasViolentPast && RandRange(seed + 50, 1, 100) <= 60 {
+            if Equals(coherence.violenceType, "gang") {
+                let injuries: array<String>;
+                ArrayPush(injuries, "Gunshot wound (healed)");
+                ArrayPush(injuries, "Stab wound - gang altercation");
+                ArrayPush(injuries, "Blunt force trauma - gang violence");
+                ArrayPush(injuries, "Multiple lacerations - knife fight");
+                return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+            }
+            if Equals(coherence.violenceType, "domestic") {
+                let injuries: array<String>;
+                ArrayPush(injuries, "Contusions - domestic incident");
+                ArrayPush(injuries, "Fracture (set) - fall/assault");
+                ArrayPush(injuries, "Soft tissue injuries");
+                return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+            }
+            if Equals(coherence.violenceType, "bar fight") {
+                let injuries: array<String>;
+                ArrayPush(injuries, "Broken nose (set)");
+                ArrayPush(injuries, "Facial lacerations - brawl");
+                ArrayPush(injuries, "Concussion - fight");
+                ArrayPush(injuries, "Hand fractures - fight");
+                return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+            }
+        }
+        
+        if IsDefined(coherence) && coherence.hasTrauma && Equals(coherence.traumaType, "accident") {
+            let injuries: array<String>;
+            ArrayPush(injuries, "Vehicular accident injuries");
+            ArrayPush(injuries, "Industrial accident");
+            ArrayPush(injuries, "Fall injuries - serious");
+            ArrayPush(injuries, "Multiple fractures - accident");
+            return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+        }
+        
+        return MedicalHistoryManager.GenerateInjury(seed);
+    }
+
+    // Mental health flag influenced by trauma
+    private static func HasMentalHealthFlagCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Bool {
+        let chance: Int32;
+        
+        if Equals(archetype, "JUNKIE") { chance = 80; }
+        else if Equals(archetype, "HOMELESS") { chance = 60; }
+        else if Equals(archetype, "GANGER") { chance = 50; }
+        else if Equals(archetype, "LOWLIFE") { chance = 40; }
+        else if Equals(archetype, "CORPO_DRONE") { chance = 45; }
+        else if Equals(archetype, "CORPO_MANAGER") { chance = 35; }
+        else { chance = 30; }
+
+        // Coherence modifiers
+        if IsDefined(coherence) {
+            if coherence.hasTrauma { chance += 25; }
+            if coherence.hasSubstanceIssues { chance += 15; }
+            if Equals(coherence.lifeTheme, "FALLING") { chance += 20; }
+        }
+
+        if chance > 95 { chance = 95; }
+        return RandRange(seed, 1, 100) <= chance;
     }
 
     private static func GenerateBloodType(seed: Int32) -> String {

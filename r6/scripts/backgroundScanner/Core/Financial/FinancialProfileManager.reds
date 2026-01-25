@@ -1,57 +1,241 @@
 // Financial Profile Generation System
 public class FinancialProfileManager {
 
+    // Legacy function for backward compatibility
     public static func Generate(seed: Int32, archetype: String) -> ref<FinancialProfileData> {
-        let profile: ref<FinancialProfileData> = new FinancialProfileData();
+        return FinancialProfileManager.GenerateCoherent(seed, archetype, null);
+    }
 
-        // Generate credit score based on archetype
-        profile.creditScore = FinancialProfileManager.GenerateCreditScore(seed, archetype);
+    // Coherent generation using life profile
+    public static func GenerateCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> ref<FinancialProfileData> {
+        let profile: ref<FinancialProfileData> = new FinancialProfileData();
+        let density = KiroshiSettings.GetDataDensity();
+
+        // Generate credit score - always shown
+        profile.creditScore = FinancialProfileManager.GenerateCreditScoreCoherent(seed, archetype, coherence);
         profile.creditTier = FinancialProfileManager.GetCreditTier(profile.creditScore);
 
-        // Generate wealth indicator
-        profile.estimatedWealth = FinancialProfileManager.GenerateWealth(seed + 100, archetype);
+        // Generate wealth indicator - always shown
+        profile.estimatedWealth = FinancialProfileManager.GenerateWealthCoherent(seed + 100, archetype, coherence);
         profile.wealthTier = FinancialProfileManager.GetWealthTier(profile.estimatedWealth);
 
-        // Debt information
-        profile.hasDebt = FinancialProfileManager.HasDebt(seed + 200, archetype, profile.creditScore);
+        // Debt information - always shown
+        if IsDefined(coherence) {
+            profile.hasDebt = coherence.isInDebt;
+        } else {
+            profile.hasDebt = FinancialProfileManager.HasDebt(seed + 200, archetype, profile.creditScore);
+        }
+        
         if profile.hasDebt {
-            profile.debtAmount = FinancialProfileManager.GenerateDebtAmount(seed + 210, archetype);
-            profile.debtHolder = FinancialProfileManager.GenerateDebtHolder(seed + 220, archetype);
+            profile.debtAmount = FinancialProfileManager.GenerateDebtAmountCoherent(seed + 210, archetype, coherence);
+            profile.debtHolder = FinancialProfileManager.GenerateDebtHolderCoherent(seed + 220, archetype, coherence);
             profile.debtStatus = FinancialProfileManager.GenerateDebtStatus(seed + 230, profile.creditScore);
         }
 
-        // Property status
-        profile.propertyStatus = FinancialProfileManager.GeneratePropertyStatus(seed + 300, archetype, profile.estimatedWealth);
-        profile.residenceType = FinancialProfileManager.GenerateResidenceType(seed + 310, archetype);
-        profile.residenceDistrict = FinancialProfileManager.GenerateResidenceDistrict(seed + 320, archetype);
-
-        // Employment status
-        profile.employmentStatus = FinancialProfileManager.GenerateEmploymentStatus(seed + 400, archetype);
-        profile.employer = FinancialProfileManager.GenerateEmployer(seed + 410, archetype);
-        profile.incomeLevel = FinancialProfileManager.GenerateIncomeLevel(seed + 420, archetype);
-
-        // Recent purchases
-        let purchaseCount = RandRange(seed + 500, 0, 4);
-        let i = 0;
-        while i < purchaseCount {
-            ArrayPush(profile.recentPurchases, FinancialProfileManager.GeneratePurchase(seed + 510 + (i * 33), archetype, profile.estimatedWealth));
-            i += 1;
+        // Property status - only on medium/high
+        if density >= 2 {
+            profile.propertyStatus = FinancialProfileManager.GeneratePropertyStatus(seed + 300, archetype, profile.estimatedWealth);
+            profile.residenceType = FinancialProfileManager.GenerateResidenceType(seed + 310, archetype);
+            profile.residenceDistrict = FinancialProfileManager.GenerateResidenceDistrict(seed + 320, archetype);
         }
 
-        // Financial flags
-        profile.taxStatus = FinancialProfileManager.GenerateTaxStatus(seed + 600, archetype);
-        profile.bankruptcyHistory = FinancialProfileManager.HasBankruptcy(seed + 610, archetype);
-        profile.corporateAsset = FinancialProfileManager.IsCorporateAsset(seed + 620, archetype, profile.debtStatus);
+        // Employment status - always shown
+        profile.employmentStatus = FinancialProfileManager.GenerateEmploymentStatusCoherent(seed + 400, archetype, coherence);
+        profile.employer = FinancialProfileManager.GenerateEmployer(seed + 410, archetype);
+        profile.incomeLevel = FinancialProfileManager.GenerateIncomeLevelCoherent(seed + 420, archetype, coherence);
 
-        // Insurance
-        profile.traumaTeamCoverage = FinancialProfileManager.GenerateTraumaTeamCoverage(seed + 700, archetype, profile.estimatedWealth);
-        profile.healthInsurance = FinancialProfileManager.GenerateHealthInsurance(seed + 710, archetype);
+        // Recent purchases - only on high density
+        if density >= 3 {
+            let purchaseCount = RandRange(seed + 500, 0, 4);
+            purchaseCount = KiroshiSettings.GetMaxListItems(purchaseCount);
+            let i = 0;
+            while i < purchaseCount {
+                ArrayPush(profile.recentPurchases, FinancialProfileManager.GeneratePurchase(seed + 510 + (i * 33), archetype, profile.estimatedWealth));
+                i += 1;
+            }
+        }
 
-        // Bank accounts
-        profile.bankAffiliation = FinancialProfileManager.GenerateBankAffiliation(seed + 800, archetype);
-        profile.accountStatus = FinancialProfileManager.GenerateAccountStatus(seed + 810, profile.creditScore);
+        // Financial flags - only on medium/high
+        if density >= 2 {
+            profile.taxStatus = FinancialProfileManager.GenerateTaxStatus(seed + 600, archetype);
+            profile.bankruptcyHistory = FinancialProfileManager.HasBankruptcyCoherent(seed + 610, archetype, coherence);
+            profile.corporateAsset = FinancialProfileManager.IsCorporateAsset(seed + 620, archetype, profile.debtStatus);
+        }
+
+        // Insurance - only on medium/high
+        if density >= 2 {
+            profile.traumaTeamCoverage = FinancialProfileManager.GenerateTraumaTeamCoverage(seed + 700, archetype, profile.estimatedWealth);
+            profile.healthInsurance = FinancialProfileManager.GenerateHealthInsurance(seed + 710, archetype);
+        }
+
+        // Bank accounts - only on high density
+        if density >= 3 {
+            profile.bankAffiliation = FinancialProfileManager.GenerateBankAffiliation(seed + 800, archetype);
+            profile.accountStatus = FinancialProfileManager.GenerateAccountStatus(seed + 810, profile.creditScore);
+        }
 
         return profile;
+    }
+
+    // Credit score influenced by life theme
+    private static func GenerateCreditScoreCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let score = FinancialProfileManager.GenerateCreditScore(seed, archetype);
+        
+        if IsDefined(coherence) {
+            if Equals(coherence.lifeTheme, "FALLING") { score -= RandRange(seed + 5, 50, 150); }
+            if Equals(coherence.lifeTheme, "STRUGGLING") { score -= RandRange(seed + 6, 30, 80); }
+            if Equals(coherence.lifeTheme, "CLIMBING") { score += RandRange(seed + 7, 20, 60); }
+            if Equals(coherence.lifeTheme, "STABLE") { score += RandRange(seed + 8, 30, 80); }
+            if coherence.isInDebt { score -= RandRange(seed + 9, 20, 60); }
+            if coherence.hasSubstanceIssues { score -= RandRange(seed + 10, 30, 80); }
+        }
+        
+        if score < 100 { score = 100; }
+        if score > 850 { score = 850; }
+        return score;
+    }
+
+    // Wealth influenced by life theme
+    private static func GenerateWealthCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let wealth = FinancialProfileManager.GenerateWealth(seed, archetype);
+        
+        if IsDefined(coherence) {
+            if Equals(coherence.lifeTheme, "FALLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.5); }
+            if Equals(coherence.lifeTheme, "STRUGGLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.7); }
+            if Equals(coherence.lifeTheme, "CLIMBING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 1.2); }
+            if Equals(coherence.lifeTheme, "CORPORATE") { wealth = Cast<Int32>(Cast<Float>(wealth) * 1.4); }
+        }
+        
+        return wealth;
+    }
+
+    // Debt amount coherent with reason
+    private static func GenerateDebtAmountCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let base = FinancialProfileManager.GenerateDebtAmount(seed, archetype);
+        
+        if IsDefined(coherence) && NotEquals(coherence.debtReason, "") {
+            if Equals(coherence.debtReason, "medical bills") { base = RandRange(seed, 10000, 150000); }
+            if Equals(coherence.debtReason, "cyberware loans") { base = RandRange(seed, 5000, 80000); }
+            if Equals(coherence.debtReason, "gambling") { base = RandRange(seed, 2000, 100000); }
+            if Equals(coherence.debtReason, "failed business") { base = RandRange(seed, 20000, 200000); }
+            if Equals(coherence.debtReason, "substance habit") { base = RandRange(seed, 3000, 50000); }
+            if Equals(coherence.debtReason, "education loans") { base = RandRange(seed, 15000, 100000); }
+        }
+        
+        return base;
+    }
+
+    // Debt holder coherent with reason
+    private static func GenerateDebtHolderCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+        if IsDefined(coherence) && NotEquals(coherence.debtReason, "") {
+            if Equals(coherence.debtReason, "medical bills") {
+                let holders: array<String>;
+                ArrayPush(holders, "Trauma Team Collections");
+                ArrayPush(holders, "Night City Medical Center");
+                ArrayPush(holders, "Biotechnica Medical Services");
+                ArrayPush(holders, "Private Healthcare Debt");
+                return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
+            }
+            if Equals(coherence.debtReason, "cyberware loans") {
+                let holders: array<String>;
+                ArrayPush(holders, "Ripperdoc Financing");
+                ArrayPush(holders, "Zetatech Consumer Credit");
+                ArrayPush(holders, "Kang Tao Finance");
+                ArrayPush(holders, "Midnight Black Clinic");
+                return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
+            }
+            if Equals(coherence.debtReason, "gambling") {
+                let holders: array<String>;
+                ArrayPush(holders, "Pacifica Casino Group");
+                ArrayPush(holders, "Private Loan Shark");
+                ArrayPush(holders, "Underground Betting Ring");
+                ArrayPush(holders, "Tyger Claws Collections");
+                return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
+            }
+            if Equals(coherence.debtReason, "substance habit") {
+                let holders: array<String>;
+                ArrayPush(holders, "Private Debt (Street)");
+                ArrayPush(holders, "Gang Collections");
+                ArrayPush(holders, "Rehabilitation Center");
+                ArrayPush(holders, "Unnamed Creditor");
+                return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
+            }
+        }
+        
+        return FinancialProfileManager.GenerateDebtHolder(seed, archetype);
+    }
+
+    // Employment status influenced by job history
+    private static func GenerateEmploymentStatusCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+        if IsDefined(coherence) {
+            if Equals(coherence.jobHistory, "none") { return "UNEMPLOYED"; }
+            if Equals(coherence.jobHistory, "criminal") {
+                let statuses: array<String>;
+                ArrayPush(statuses, "Self-employed");
+                ArrayPush(statuses, "Freelance");
+                ArrayPush(statuses, "UNEMPLOYED");
+                ArrayPush(statuses, "Informal employment");
+                return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
+            }
+            if Equals(coherence.jobHistory, "unstable") {
+                let statuses: array<String>;
+                ArrayPush(statuses, "Part-time");
+                ArrayPush(statuses, "Contract worker");
+                ArrayPush(statuses, "Gig economy");
+                ArrayPush(statuses, "Recently terminated");
+                return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
+            }
+            if Equals(coherence.jobHistory, "corpo") { return "Corporate employee"; }
+            if Equals(coherence.jobHistory, "steady") { return "Full-time employed"; }
+        }
+        
+        return FinancialProfileManager.GenerateEmploymentStatus(seed, archetype);
+    }
+
+    // Income level coherent with life theme
+    private static func GenerateIncomeLevelCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+        if IsDefined(coherence) {
+            if Equals(coherence.lifeTheme, "FALLING") {
+                let levels: array<String>;
+                ArrayPush(levels, "€$0-500/month");
+                ArrayPush(levels, "€$500-1,500/month");
+                ArrayPush(levels, "€$1,500-3,000/month");
+                return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
+            }
+            if Equals(coherence.lifeTheme, "STRUGGLING") {
+                let levels: array<String>;
+                ArrayPush(levels, "€$1,000-2,000/month");
+                ArrayPush(levels, "€$2,000-4,000/month");
+                ArrayPush(levels, "€$500-1,500/month");
+                return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
+            }
+            if Equals(coherence.lifeTheme, "CORPORATE") {
+                let levels: array<String>;
+                ArrayPush(levels, "€$8,000-15,000/month");
+                ArrayPush(levels, "€$15,000-30,000/month");
+                ArrayPush(levels, "€$5,000-10,000/month");
+                return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
+            }
+        }
+        
+        return FinancialProfileManager.GenerateIncomeLevel(seed, archetype);
+    }
+
+    // Bankruptcy more likely with falling life theme
+    private static func HasBankruptcyCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Bool {
+        let chance = 10;
+        
+        if IsDefined(coherence) {
+            if Equals(coherence.lifeTheme, "FALLING") { chance += 30; }
+            if Equals(coherence.lifeTheme, "STRUGGLING") { chance += 15; }
+            if coherence.isInDebt { chance += 10; }
+            if coherence.hasSubstanceIssues { chance += 10; }
+        }
+        
+        if Equals(archetype, "HOMELESS") { chance += 25; }
+        if Equals(archetype, "JUNKIE") { chance += 20; }
+        
+        return RandRange(seed, 1, 100) <= chance;
     }
 
     private static func GenerateCreditScore(seed: Int32, archetype: String) -> Int32 {

@@ -57,8 +57,14 @@ public class ExpandedBackstoryManager {
             data.gangProfile.gangAffiliation = "NONE";
         }
 
+        // Detect ethnicity for name generation
+        let ethnicity = EthnicityDetector.GetEthnicityFromAppearance(appearanceName, gangAffiliation);
+        if Equals(ethnicity, NPCEthnicity.Mixed) {
+            ethnicity = EthnicityDetector.GetRandomEthnicity(seed + 888);
+        }
+
         // Relationships
-        data.relationships = RelationshipsManager.Generate(seed + 7000, data.archetype, gangAffiliation);
+        data.relationships = RelationshipsManager.Generate(seed + 7000, data.archetype, gangAffiliation, ethnicity);
 
         // District Profile
         let district = CrowdDistrictManager.DetectDistrictFromAppearance(appearanceName);

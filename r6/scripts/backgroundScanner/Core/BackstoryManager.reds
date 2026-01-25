@@ -4,6 +4,9 @@ public class BackstoryManager {
         let entityIDHash: Int32 = Cast(EntityID.GetHash(target.GetEntityID()));
         let seed = RandRange(entityIDHash, 0, 2147483647);
         let lifePath: ref<LifePath> = LifePath.Create(target);
+        
+        // Get data density setting
+        let density = KiroshiSettings.GetDataDensity();
 
         // Get appearance for detection
         let appearanceName = NameToString(target.GetCurrentAppearanceName());
@@ -24,15 +27,32 @@ public class BackstoryManager {
         let wealth = BackstoryManager.GetWealthScore(archetype);
         let age = BackstoryManager.GetAge(seed, archetype);
 
+        // Detect ethnicity from appearance and gang affiliation
+        let ethnicity = EthnicityDetector.GetEthnicityFromAppearance(appearanceName, gangAffiliation);
+        if Equals(ethnicity, NPCEthnicity.Mixed) {
+            // No clear ethnicity detected, use random weighted by Night City demographics
+            ethnicity = EthnicityDetector.GetRandomEthnicity(seed + 888);
+        }
+
         // Detect NCPD early - they get different treatment
         let isNCPD: Bool = NCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice();
 
-        // Generate expanded data
-        let criminal = CriminalRecordManager.Generate(seed + 1000, archetype, gangAffiliation);
-        let cyberware = CyberwareRegistryManager.Generate(seed + 2000, archetype, wealth);
-        let financial = FinancialProfileManager.Generate(seed + 3000, archetype);
-        let medical = MedicalHistoryManager.Generate(seed + 4000, archetype, age);
-        let psych = PsychProfileManager.Generate(seed + 5000, archetype, criminal, cyberware);
+        // Check if coherence mode is enabled in settings
+        let coherence: ref<CoherenceProfile>;
+        if KiroshiSettings.CoherenceEnabled() {
+            // Generate coherence profile - this ensures all data is interconnected
+            coherence = CoherenceManager.Generate(seed + 500, archetype, age, gangAffiliation);
+        } else {
+            // No coherence - each system generates independently (maximum variety)
+            coherence = null;
+        }
+
+        // Generate expanded data (coherence may be null for independent generation)
+        let criminal = CriminalRecordManager.GenerateCoherent(seed + 1000, archetype, gangAffiliation, coherence);
+        let cyberware = CyberwareRegistryManager.GenerateCoherent(seed + 2000, archetype, wealth, coherence);
+        let financial = FinancialProfileManager.GenerateCoherent(seed + 3000, archetype, coherence);
+        let medical = MedicalHistoryManager.GenerateCoherent(seed + 4000, archetype, age, coherence);
+        let psych = PsychProfileManager.GenerateCoherent(seed + 5000, archetype, coherence);
 
         // Build BackstoryUI
         let backstoryUI: BackstoryUI;
@@ -40,16 +60,26 @@ public class BackstoryManager {
         // NCPD officers get cop-specific backstory, not civilian backstory
         if isNCPD {
             backstoryUI.background = BackstoryManager.GenerateNCPDBackground(seed, lifePath);
-            backstoryUI.earlyLife = BackstoryManager.GenerateNCPDEarlyLife(seed, lifePath);
+            // Early life only on medium/high density
+            if density >= 2 {
+                backstoryUI.earlyLife = BackstoryManager.GenerateNCPDEarlyLife(seed, lifePath);
+            } else {
+                backstoryUI.earlyLife = "";
+            };
             backstoryUI.significantEvents = BackstoryManager.GenerateNCPDRecentActivity(seed, lifePath);
         } else {
             backstoryUI.background = background;
-            backstoryUI.earlyLife = earlyLife;
+            // Early life only on medium/high density
+            if density >= 2 {
+                backstoryUI.earlyLife = earlyLife;
+            } else {
+                backstoryUI.earlyLife = "";
+            };
             backstoryUI.significantEvents = significantEvents;
         };
 
-        // Generate pronouns if enabled
-        if KiroshiSettings.PronounDisplayEnabled() {
+        // Generate pronouns if enabled - only on high density
+        if density >= 3 && KiroshiSettings.PronounDisplayEnabled() {
             backstoryUI.pronouns = BackstoryManager.GeneratePronouns(seed + 7777, lifePath.gender);
         } else {
             backstoryUI.pronouns = "";
@@ -58,66 +88,75 @@ public class BackstoryManager {
         // Criminal Record Section - skip for NCPD (they have personnel files instead)
         if criminal.hasRecord && !isNCPD {
             backstoryUI.criminalRecord = "Status: " + criminal.status;
-            if ArraySize(criminal.arrests) > 0 {
+            // Show arrests on medium/high density
+            if density >= 2 && ArraySize(criminal.arrests) > 0 {
                 backstoryUI.criminalRecord = backstoryUI.criminalRecord + " | Arrests: " + criminal.arrests[0];
-                if ArraySize(criminal.arrests) > 1 {
+                if density >= 3 && ArraySize(criminal.arrests) > 1 {
                     backstoryUI.criminalRecord = backstoryUI.criminalRecord + ", " + criminal.arrests[1];
                 };
             };
             if !Equals(criminal.warrantStatus, "NONE") && !Equals(criminal.warrantStatus, "CLEARED") {
                 backstoryUI.criminalRecord = backstoryUI.criminalRecord + " | WARRANT: " + criminal.warrantStatus;
             };
-            backstoryUI.criminalRecord = backstoryUI.criminalRecord + " | NCPD: " + criminal.ncpdClassification;
+            // NCPD classification on medium/high
+            if density >= 2 {
+                backstoryUI.criminalRecord = backstoryUI.criminalRecord + " | NCPD: " + criminal.ncpdClassification;
+            };
         } else {
             backstoryUI.criminalRecord = "";
         };
 
-        // Cyberware Registry Section - skip for gang members
-        if Equals(gangAffiliation, "NONE") && cyberware.totalImplants > 0 {
+        // Cyberware Registry Section - skip for gang members, only on medium/high density
+        if density >= 2 && Equals(gangAffiliation, "NONE") && cyberware.totalImplants > 0 {
             backstoryUI.cyberwareStatus = "Implants: " + IntToString(cyberware.totalImplants) + " | Status: " + cyberware.cyberpsychosisStatus;
             if cyberware.cyberpsychosisRisk >= 60 {
                 backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | PSYCHOSIS RISK: " + IntToString(cyberware.cyberpsychosisRisk) + "%";
             };
-            if cyberware.hasIllegalCyberware {
-                backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | ILLEGAL MODS: " + IntToString(cyberware.illegalCount);
-            };
-            if cyberware.hasRejectedImplants {
-                backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | REJECTED IMPLANTS DETECTED";
-            };
-            
-            // Check for body modification implants and display them
-            let bodyModFound: String = BackstoryManager.FindBodyModImplant(cyberware);
-            if NotEquals(bodyModFound, "") {
-                backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | BODY MOD: " + bodyModFound;
+            // Extra details on high density only
+            if density >= 3 {
+                if cyberware.hasIllegalCyberware {
+                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | ILLEGAL MODS: " + IntToString(cyberware.illegalCount);
+                };
+                if cyberware.hasRejectedImplants {
+                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | REJECTED IMPLANTS DETECTED";
+                };
+                // Check for body modification implants and display them
+                let bodyModFound: String = BackstoryManager.FindBodyModImplant(cyberware);
+                if NotEquals(bodyModFound, "") {
+                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | BODY MOD: " + bodyModFound;
+                };
             };
         } else {
             backstoryUI.cyberwareStatus = "";
         };
 
-        // Financial Status Section - skip for gang members and NCPD
-        if Equals(gangAffiliation, "NONE") && !isNCPD {
+        // Financial Status Section - skip for gang members and NCPD, only on medium/high density
+        if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
             backstoryUI.financialStatus = "Credit Rating: " + financial.creditTier + " | Income: " + financial.incomeLevel;
             if financial.hasDebt {
                 backstoryUI.financialStatus = backstoryUI.financialStatus + " | DEBT: " + financial.debtStatus;
             };
-            if financial.corporateAsset {
+            // Corp info on high density only
+            if density >= 3 && financial.corporateAsset {
                 backstoryUI.financialStatus = backstoryUI.financialStatus + " | Corp: " + financial.employer;
             };
         } else {
             backstoryUI.financialStatus = "";
         };
 
-        // Medical History Section - skip for gang members and NCPD
-        if Equals(gangAffiliation, "NONE") && !isNCPD {
+        // Medical History Section - skip for gang members and NCPD, only on medium/high density
+        if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
             if ArraySize(medical.chronicConditions) > 0 || ArraySize(medical.pastInjuries) > 0 {
                 backstoryUI.medicalStatus = "";
                 if ArraySize(medical.chronicConditions) > 0 {
                     backstoryUI.medicalStatus = "Conditions: " + medical.chronicConditions[0];
-                    if ArraySize(medical.chronicConditions) > 1 {
+                    // Extra conditions on high density
+                    if density >= 3 && ArraySize(medical.chronicConditions) > 1 {
                         backstoryUI.medicalStatus = backstoryUI.medicalStatus + ", " + medical.chronicConditions[1];
                     };
                 };
-                if ArraySize(medical.pastInjuries) > 0 {
+                // Injuries on high density only
+                if density >= 3 && ArraySize(medical.pastInjuries) > 0 {
                     if StrLen(backstoryUI.medicalStatus) > 0 {
                         backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | ";
                     };
@@ -136,15 +175,22 @@ public class BackstoryManager {
             let temperament = PsychProfileManager.GetTemperament(psych.stabilityScore, psych.threatLevel);
             let disposition = PsychProfileManager.GetDisposition(seed + 5500, archetype);
             
-            backstoryUI.threatAssessment = temperament + " | " + disposition;
-            if psych.stabilityScore <= 40 {
-                backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Unstable";
+            backstoryUI.threatAssessment = temperament;
+            // Add disposition on medium/high density
+            if density >= 2 {
+                backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | " + disposition;
             };
-            if psych.hasAddictions {
-                backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Substance issues";
-            };
-            if psych.hasVendetta {
-                backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Grudge-holder";
+            // Extra flags on high density only
+            if density >= 3 {
+                if psych.stabilityScore <= 40 {
+                    backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Unstable";
+                };
+                if psych.hasAddictions {
+                    backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Substance issues";
+                };
+                if psych.hasVendetta {
+                    backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Grudge-holder";
+                };
             };
         } else {
             backstoryUI.threatAssessment = "";
@@ -154,15 +200,18 @@ public class BackstoryManager {
         if !Equals(gangAffiliation, "NONE") {
             let gangProfile = GangManager.GenerateGangProfile(seed + 6000, gangAffiliation);
             backstoryUI.gangAffiliation = gangProfile.gangName + " | Rank: " + gangProfile.memberRank;
-            backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Loyalty: " + gangProfile.loyaltyRating;
-            if StrLen(gangProfile.territory) > 0 {
-                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Territory: " + gangProfile.territory;
+            // Extra details on medium/high density
+            if density >= 2 {
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Loyalty: " + gangProfile.loyaltyRating;
+                if density >= 3 && StrLen(gangProfile.territory) > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Territory: " + gangProfile.territory;
+                };
             };
         } else {
             backstoryUI.gangAffiliation = "";
         };
 
-        // Rare NPC Flag (1 in 1000) - skip for NCPD
+        // Rare NPC Flag - skip for NCPD, show on all density levels (it's rare enough)
         if !isNCPD && RareNPCManager.ShouldBeRareNPC(seed + 9999) {
             let rareData = RareNPCManager.Generate(seed + 10000, archetype);
             backstoryUI.rareFlag = rareData.displayFlag + " - " + rareData.rareType;
@@ -172,7 +221,7 @@ public class BackstoryManager {
 
         // NCPD Officer Detection and Name Generation
         if isNCPD {
-            let ncpdData = NCPDNameGenerator.Generate(seed + 7000, appearanceName, lifePath.gender);
+            let ncpdData = NCPDNameGenerator.Generate(seed + 7000, appearanceName, lifePath.gender, ethnicity);
             
             // Try to get real name from TweakDB
             let realName: String = target.GetTweakDBFullDisplayName(true);
@@ -212,23 +261,26 @@ public class BackstoryManager {
             };
             
             backstoryUI.ncpdOfficer = displayName + " | Badge: " + ncpdData.badge;
-            backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | " + ncpdData.unit;
-            if StrLen(ncpdData.specialization) > 0 {
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Spec: " + ncpdData.specialization;
+            // Extra NCPD details on medium/high density
+            if density >= 2 {
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | " + ncpdData.unit;
+                if density >= 3 && StrLen(ncpdData.specialization) > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Spec: " + ncpdData.specialization;
+                };
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | District: " + ncpdData.assignedDistrict;
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | " + IntToString(ncpdData.yearsOfService) + " yrs service";
+                if density >= 3 && ncpdData.confirmedNeutralizations > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Neutralizations: " + IntToString(ncpdData.confirmedNeutralizations);
+                };
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + ncpdData.dutyStatus;
             };
-            backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | District: " + ncpdData.assignedDistrict;
-            backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | " + IntToString(ncpdData.yearsOfService) + " yrs service";
-            if ncpdData.confirmedNeutralizations > 0 {
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Neutralizations: " + IntToString(ncpdData.confirmedNeutralizations);
-            };
-            backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + ncpdData.dutyStatus;
         } else {
             backstoryUI.ncpdOfficer = "";
         };
 
-        // Relationships - skip for gang members and NCPD
-        if Equals(gangAffiliation, "NONE") && !isNCPD {
-            let relations = RelationshipsManager.Generate(seed + 8000, archetype, gangAffiliation);
+        // Relationships - skip for gang members and NCPD, only on medium/high density
+        if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
+            let relations = RelationshipsManager.Generate(seed + 8000, archetype, gangAffiliation, ethnicity);
             backstoryUI.relationships = "";
             
             // Status and dependents
@@ -237,16 +289,19 @@ public class BackstoryManager {
                 backstoryUI.relationships = backstoryUI.relationships + " | Dependents: " + IntToString(relations.dependents);
             };
             
-            // Emergency contact
-            if !Equals(relations.emergencyContact, "NONE ON FILE") {
+            // Emergency contact - high density only
+            if density >= 3 && !Equals(relations.emergencyContact, "NONE ON FILE") {
                 backstoryUI.relationships = backstoryUI.relationships + " | Emergency: " + relations.emergencyContact;
             };
             
-            // Known associates (show first 2)
+            // Known associates (show first 2) - high density shows more
             if ArraySize(relations.knownAssociates) > 0 {
                 backstoryUI.relationships = backstoryUI.relationships + " | Associates: ";
                 let i = 0;
-                let maxShow = 2;
+                let maxShow = 1;
+                if density >= 3 {
+                    maxShow = 2;
+                };
                 if ArraySize(relations.knownAssociates) < maxShow {
                     maxShow = ArraySize(relations.knownAssociates);
                 };
@@ -258,13 +313,13 @@ public class BackstoryManager {
                     backstoryUI.relationships = backstoryUI.relationships + assoc.name + " (" + assoc.relationship + ")";
                     i += 1;
                 };
-                if ArraySize(relations.knownAssociates) > 2 {
+                if density >= 3 && ArraySize(relations.knownAssociates) > 2 {
                     backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.knownAssociates) - 2) + " more";
                 };
             };
             
-            // Known enemies
-            if ArraySize(relations.knownEnemies) > 0 {
+            // Known enemies - high density only
+            if density >= 3 && ArraySize(relations.knownEnemies) > 0 {
                 backstoryUI.relationships = backstoryUI.relationships + " | ENEMIES: ";
                 let i = 0;
                 while i < ArraySize(relations.knownEnemies) {
@@ -277,8 +332,10 @@ public class BackstoryManager {
                 };
             };
             
-            // Social network size
-            backstoryUI.relationships = backstoryUI.relationships + " | Network: " + relations.socialNetworkSize;
+            // Social network size - high density only
+            if density >= 3 {
+                backstoryUI.relationships = backstoryUI.relationships + " | Network: " + relations.socialNetworkSize;
+            };
         } else {
             backstoryUI.relationships = "";
         };

@@ -1,11 +1,17 @@
 // Criminal Record Generation System
 public class CriminalRecordManager {
 
+    // Legacy function for backward compatibility
     public static func Generate(seed: Int32, archetype: String, gangAffil: String) -> ref<CriminalRecordData> {
+        return CriminalRecordManager.GenerateCoherent(seed, archetype, gangAffil, null);
+    }
+
+    // Coherent generation using life profile
+    public static func GenerateCoherent(seed: Int32, archetype: String, gangAffil: String, coherence: ref<CoherenceProfile>) -> ref<CriminalRecordData> {
         let record: ref<CriminalRecordData> = new CriminalRecordData();
         
-        // Determine if they have a criminal record based on archetype
-        let hasCriminalRecord = CriminalRecordManager.HasCriminalRecord(seed, archetype);
+        // Determine if they have a criminal record - influenced by coherence
+        let hasCriminalRecord = CriminalRecordManager.HasCriminalRecordCoherent(seed, archetype, coherence);
         record.hasRecord = hasCriminalRecord;
 
         if !hasCriminalRecord {
@@ -14,20 +20,24 @@ public class CriminalRecordManager {
             return record;
         }
 
-        // Generate criminal status
-        record.status = CriminalRecordManager.GenerateStatus(seed, archetype);
+        // Generate criminal status - influenced by violence/substance flags
+        record.status = CriminalRecordManager.GenerateStatusCoherent(seed, archetype, coherence);
         record.warrantStatus = CriminalRecordManager.GenerateWarrantStatus(seed + 100, archetype);
         
-        // Generate arrests
-        let arrestCount = CriminalRecordManager.GetArrestCount(seed + 200, archetype);
+        // Generate arrests - coherent with life theme, limited by density
+        let arrestCount = CriminalRecordManager.GetArrestCountCoherent(seed + 200, archetype, coherence);
+        arrestCount = KiroshiSettings.GetMaxListItems(arrestCount);
+        
         let i = 0;
         while i < arrestCount {
-            ArrayPush(record.arrests, CriminalRecordManager.GenerateArrest(seed + (i * 77), archetype, gangAffil));
+            ArrayPush(record.arrests, CriminalRecordManager.GenerateArrestCoherent(seed + (i * 77), archetype, gangAffil, coherence));
             i += 1;
         }
 
-        // Generate convictions
+        // Generate convictions - limited by density
         let convictionCount = RandRange(seed + 300, 0, arrestCount);
+        convictionCount = KiroshiSettings.GetMaxListItems(convictionCount);
+        
         i = 0;
         while i < convictionCount {
             ArrayPush(record.convictions, CriminalRecordManager.GenerateConviction(seed + (i * 88), archetype));
@@ -47,7 +57,7 @@ public class CriminalRecordManager {
         return record;
     }
 
-    private static func HasCriminalRecord(seed: Int32, archetype: String) -> Bool {
+    private static func HasCriminalRecordCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Bool {
         let chance: Int32;
         
         if Equals(archetype, "CORPO_MANAGER") { chance = 5; }
@@ -61,7 +71,48 @@ public class CriminalRecordManager {
         else if Equals(archetype, "HOMELESS") { chance = 50; }
         else { chance = 35; }
 
+        // Coherence modifiers
+        if IsDefined(coherence) {
+            if Equals(coherence.lifeTheme, "CRIMINAL") { chance += 40; }
+            if Equals(coherence.lifeTheme, "FALLING") { chance += 15; }
+            if coherence.hasViolentPast { chance += 20; }
+            if coherence.hasSubstanceIssues { chance += 15; }
+            if Equals(coherence.lifeTheme, "STABLE") { chance -= 15; }
+            if Equals(coherence.lifeTheme, "CORPORATE") { chance -= 10; }
+        }
+
+        if chance > 95 { chance = 95; }
+        if chance < 5 { chance = 5; }
+
         return RandRange(seed, 1, 100) <= chance;
+    }
+
+    private static func HasCriminalRecord(seed: Int32, archetype: String) -> Bool {
+        return CriminalRecordManager.HasCriminalRecordCoherent(seed, archetype, null);
+    }
+
+    private static func GenerateStatusCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+        // If coherence indicates violent past, weight towards violent offenses
+        if IsDefined(coherence) && coherence.hasViolentPast {
+            let roll = RandRange(seed, 1, 100);
+            if roll <= 40 { return "VIOLENT OFFENDER"; }
+            if roll <= 60 { return "FELONY RECORD"; }
+            if roll <= 75 { return "REPEAT OFFENDER"; }
+            if roll <= 90 { return "CURRENTLY ON PAROLE"; }
+            return "AGGRAVATED ASSAULT HISTORY";
+        }
+
+        // If substance issues, weight towards drug-related
+        if IsDefined(coherence) && coherence.hasSubstanceIssues {
+            let roll = RandRange(seed, 1, 100);
+            if roll <= 35 { return "SUBSTANCE VIOLATION HISTORY"; }
+            if roll <= 55 { return "MINOR INFRACTIONS"; }
+            if roll <= 70 { return "MISDEMEANOR RECORD"; }
+            if roll <= 85 { return "CURRENTLY ON PAROLE"; }
+            return "MANDATORY REHAB ORDERED";
+        }
+
+        return CriminalRecordManager.GenerateStatus(seed, archetype);
     }
 
     private static func GenerateStatus(seed: Int32, archetype: String) -> String {
@@ -99,6 +150,21 @@ public class CriminalRecordManager {
         return "NONE";
     }
 
+    private static func GetArrestCountCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let base = CriminalRecordManager.GetArrestCount(seed, archetype);
+        
+        if IsDefined(coherence) {
+            // Life theme modifiers
+            if Equals(coherence.lifeTheme, "CRIMINAL") { base += RandRange(seed + 50, 1, 3); }
+            if Equals(coherence.lifeTheme, "FALLING") { base += RandRange(seed + 51, 0, 2); }
+            if coherence.hasViolentPast { base += 1; }
+            if coherence.hasSubstanceIssues { base += 1; }
+        }
+        
+        if base > 10 { return 10; }
+        return base;
+    }
+
     private static func GetArrestCount(seed: Int32, archetype: String) -> Int32 {
         if Equals(archetype, "GANGER") { return RandRange(seed, 2, 8); }
         if Equals(archetype, "LOWLIFE") { return RandRange(seed, 1, 5); }
@@ -106,6 +172,58 @@ public class CriminalRecordManager {
         if Equals(archetype, "HOMELESS") { return RandRange(seed, 0, 3); }
         if Equals(archetype, "NOMAD") { return RandRange(seed, 0, 3); }
         return RandRange(seed, 1, 3);
+    }
+
+    private static func GenerateArrestCoherent(seed: Int32, archetype: String, gangAffil: String, coherence: ref<CoherenceProfile>) -> String {
+        let year = RandRange(seed + 1000, 2060, 2077);
+        
+        // If coherence gives us specific crime types, use them
+        if IsDefined(coherence) {
+            // Substance-related arrests
+            if coherence.hasSubstanceIssues && RandRange(seed + 500, 1, 100) <= 50 {
+                let substanceCrimes: array<String>;
+                ArrayPush(substanceCrimes, "Illegal possession of controlled substance");
+                ArrayPush(substanceCrimes, "Public intoxication");
+                ArrayPush(substanceCrimes, "Possession with intent to distribute");
+                ArrayPush(substanceCrimes, "DUI - cyberware impairment");
+                ArrayPush(substanceCrimes, "Possession of illegal stimulants");
+                
+                if NotEquals(coherence.substanceType, "") {
+                    ArrayPush(substanceCrimes, "Possession of " + coherence.substanceType);
+                }
+                
+                return substanceCrimes[RandRange(seed, 0, ArraySize(substanceCrimes) - 1)] + " (" + IntToString(year) + ")";
+            }
+            
+            // Violence-related arrests
+            if coherence.hasViolentPast && RandRange(seed + 501, 1, 100) <= 60 {
+                let violentCrimes: array<String>;
+                ArrayPush(violentCrimes, "Assault");
+                ArrayPush(violentCrimes, "Aggravated assault");
+                ArrayPush(violentCrimes, "Battery");
+                ArrayPush(violentCrimes, "Assault with cyberware");
+                ArrayPush(violentCrimes, "Assault with deadly weapon");
+                ArrayPush(violentCrimes, "Aggravated battery");
+                
+                if Equals(coherence.violenceType, "gang") {
+                    ArrayPush(violentCrimes, "Gang-related assault");
+                    ArrayPush(violentCrimes, "Drive-by shooting");
+                }
+                if Equals(coherence.violenceType, "domestic") {
+                    ArrayPush(violentCrimes, "Domestic violence");
+                    ArrayPush(violentCrimes, "Domestic assault");
+                }
+                if Equals(coherence.violenceType, "bar fight") {
+                    ArrayPush(violentCrimes, "Brawling");
+                    ArrayPush(violentCrimes, "Disorderly conduct - fighting");
+                }
+                
+                return violentCrimes[RandRange(seed, 0, ArraySize(violentCrimes) - 1)] + " (" + IntToString(year) + ")";
+            }
+        }
+        
+        // Fall back to standard generation
+        return CriminalRecordManager.GenerateArrest(seed, archetype, gangAffil);
     }
 
     private static func GenerateArrest(seed: Int32, archetype: String, gangAffil: String) -> String {

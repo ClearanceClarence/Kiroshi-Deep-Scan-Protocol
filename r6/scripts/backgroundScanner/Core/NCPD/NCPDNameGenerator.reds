@@ -21,14 +21,14 @@ public class NCPDNameGenerator {
         return false;
     }
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<NCPDOfficerData> {
+    public static func Generate(seed: Int32, appearanceName: String, gender: String, ethnicity: NPCEthnicity) -> ref<NCPDOfficerData> {
         let data: ref<NCPDOfficerData> = new NCPDOfficerData();
         
-        // Generate name using shared NameGenerator with correct gender
-        data.fullName = NameGenerator.GenerateFullName(seed, gender);
+        // Generate name using shared NameGenerator with correct gender and ethnicity
+        data.fullName = NameGenerator.GenerateFullNameByEthnicity(seed, gender, ethnicity);
         
-        // Extract last name for radio calls
-        let lastName = NameGenerator.GetLastName(seed + 100);
+        // Extract last name for radio calls - use ethnicity-aware
+        let lastName = NameGenerator.GetLastNameByEthnicity(seed + 100, ethnicity);
         data.lastName = lastName;
         
         // Determine unit type

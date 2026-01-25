@@ -1,17 +1,34 @@
 // Cyberware Registry Generation System
 public class CyberwareRegistryManager {
 
+    // Legacy function for backward compatibility
     public static func Generate(seed: Int32, archetype: String, wealth: Int32) -> ref<CyberwareRegistryData> {
-        let registry: ref<CyberwareRegistryData> = new CyberwareRegistryData();
+        return CyberwareRegistryManager.GenerateCoherent(seed, archetype, wealth, null);
+    }
 
-        // Determine cyberware count based on archetype and wealth
-        let cyberwareCount = CyberwareRegistryManager.GetCyberwareCount(seed, archetype, wealth);
+    // Coherent generation using life profile
+    public static func GenerateCoherent(seed: Int32, archetype: String, wealth: Int32, coherence: ref<CoherenceProfile>) -> ref<CyberwareRegistryData> {
+        let registry: ref<CyberwareRegistryData> = new CyberwareRegistryData();
+        let density = KiroshiSettings.GetDataDensity();
+
+        // Adjust wealth based on coherence
+        let effectiveWealth = wealth;
+        if IsDefined(coherence) {
+            if Equals(coherence.lifeTheme, "FALLING") { effectiveWealth = effectiveWealth - 20; }
+            if Equals(coherence.lifeTheme, "STRUGGLING") { effectiveWealth = effectiveWealth - 10; }
+            if Equals(coherence.lifeTheme, "CLIMBING") { effectiveWealth = effectiveWealth + 10; }
+            if effectiveWealth < 0 { effectiveWealth = 0; }
+        }
+
+        // Determine cyberware count based on archetype and wealth - limited by density
+        let cyberwareCount = CyberwareRegistryManager.GetCyberwareCount(seed, archetype, effectiveWealth);
+        cyberwareCount = KiroshiSettings.GetMaxListItems(cyberwareCount);
         registry.totalImplants = cyberwareCount;
 
         // Generate individual cyberware entries
         let i = 0;
         while i < cyberwareCount {
-            let cyberware = CyberwareRegistryManager.GenerateCyberware(seed + (i * 123), archetype, wealth);
+            let cyberware = CyberwareRegistryManager.GenerateCyberwareCoherent(seed + (i * 123), archetype, effectiveWealth, coherence);
             ArrayPush(registry.implants, cyberware);
             
             if !cyberware.isLegal {
@@ -21,36 +38,109 @@ public class CyberwareRegistryManager {
             i += 1;
         }
 
-        // Body Modification cyberware - 20% chance when enabled (lore-friendly for Night City)
-        if KiroshiSettings.BodyModRecordsEnabled() && RandRange(seed + 450, 1, 100) <= 20 {
-            let bodyMod = CyberwareRegistryManager.GenerateBodyModCyberware(seed + 460, wealth);
+        // Body Modification cyberware - only on high density
+        if density >= 3 && KiroshiSettings.BodyModRecordsEnabled() && RandRange(seed + 450, 1, 100) <= 20 {
+            let bodyMod = CyberwareRegistryManager.GenerateBodyModCyberware(seed + 460, effectiveWealth);
             ArrayPush(registry.implants, bodyMod);
             registry.totalImplants += 1;
         }
 
-        // Calculate cyberpsychosis risk
-        registry.cyberpsychosisRisk = CyberwareRegistryManager.CalculateCyberpsychosisRisk(seed + 500, registry.implants, archetype);
+        // Calculate cyberpsychosis risk - always shown
+        registry.cyberpsychosisRisk = CyberwareRegistryManager.CalculateCyberpsychosisRiskCoherent(seed + 500, registry.implants, archetype, coherence);
         registry.cyberpsychosisStatus = CyberwareRegistryManager.GetCyberpsychosisStatus(registry.cyberpsychosisRisk);
 
-        // Generate rejected/failed implants
-        if RandRange(seed + 600, 1, 100) <= 20 {
-            registry.hasRejectedImplants = true;
-            let rejectCount = RandRange(seed + 610, 1, 3);
-            i = 0;
-            while i < rejectCount {
-                ArrayPush(registry.rejectedImplants, CyberwareRegistryManager.GenerateRejectedImplant(seed + 700 + (i * 50)));
-                i += 1;
+        // Generate rejected/failed implants - only on medium/high
+        if density >= 2 {
+            let rejectChance = 20;
+            if IsDefined(coherence) {
+                if Equals(coherence.lifeTheme, "FALLING") { rejectChance += 25; }
+                if Equals(coherence.lifeTheme, "STRUGGLING") { rejectChance += 10; }
+                if coherence.hasSubstanceIssues { rejectChance += 15; }
+            }
+            
+            if RandRange(seed + 600, 1, 100) <= rejectChance {
+                registry.hasRejectedImplants = true;
+                let rejectCount = RandRange(seed + 610, 1, 3);
+                rejectCount = KiroshiSettings.GetMaxListItems(rejectCount);
+                i = 0;
+                while i < rejectCount {
+                    ArrayPush(registry.rejectedImplants, CyberwareRegistryManager.GenerateRejectedImplant(seed + 700 + (i * 50)));
+                    i += 1;
+                }
             }
         }
 
-        // Last ripperdoc visit
-        registry.lastRipperdocVisit = CyberwareRegistryManager.GenerateLastVisit(seed + 800);
-        registry.preferredRipperdoc = CyberwareRegistryManager.GenerateRipperdoc(seed + 900, archetype);
+        // Last ripperdoc visit - only on high density
+        if density >= 3 {
+            registry.lastRipperdocVisit = CyberwareRegistryManager.GenerateLastVisit(seed + 800);
+            registry.preferredRipperdoc = CyberwareRegistryManager.GenerateRipperdocCoherent(seed + 900, archetype, coherence);
+        }
 
-        // Warranty status
-        registry.warrantyStatus = CyberwareRegistryManager.GenerateWarrantyStatus(seed + 1000, wealth);
+        // Warranty status - only on high density
+        if density >= 3 {
+            registry.warrantyStatus = CyberwareRegistryManager.GenerateWarrantyStatusCoherent(seed + 1000, effectiveWealth, coherence);
+        }
 
         return registry;
+    }
+
+    // Cyberware quality and legality affected by life theme
+    private static func GenerateCyberwareCoherent(seed: Int32, archetype: String, wealth: Int32, coherence: ref<CoherenceProfile>) -> ref<CyberwareImplant> {
+        let cyberware = CyberwareRegistryManager.GenerateCyberware(seed, archetype, wealth);
+        
+        // Criminal theme = more likely illegal
+        if IsDefined(coherence) && Equals(coherence.lifeTheme, "CRIMINAL") {
+            if RandRange(seed + 50, 1, 100) <= 50 {
+                cyberware.isLegal = false;
+            }
+        }
+        
+        return cyberware;
+    }
+
+    // Cyberpsychosis risk influenced by substance abuse
+    private static func CalculateCyberpsychosisRiskCoherent(seed: Int32, implants: array<ref<CyberwareImplant>>, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
+        let risk = CyberwareRegistryManager.CalculateCyberpsychosisRisk(seed, implants, archetype);
+        
+        if IsDefined(coherence) {
+            // Substance abuse increases cyberpsychosis risk (neurotransmitter imbalance)
+            if coherence.hasSubstanceIssues { risk += RandRange(seed + 5, 10, 25); }
+            // Trauma and instability increase risk
+            if coherence.hasTrauma { risk += RandRange(seed + 6, 5, 15); }
+            if Equals(coherence.lifeTheme, "FALLING") { risk += RandRange(seed + 7, 5, 10); }
+        }
+        
+        if risk > 100 { risk = 100; }
+        return risk;
+    }
+
+    // Ripperdoc choice influenced by criminal lifestyle
+    private static func GenerateRipperdocCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+        if IsDefined(coherence) && Equals(coherence.lifeTheme, "CRIMINAL") {
+            let docs: array<String>;
+            ArrayPush(docs, "Unlicensed clinic (Kabuki)");
+            ArrayPush(docs, "Back-alley doc (Watson)");
+            ArrayPush(docs, "Black market surgeon");
+            ArrayPush(docs, "Gang-affiliated ripperdoc");
+            ArrayPush(docs, "Scav chop shop survivor");
+            return docs[RandRange(seed, 0, ArraySize(docs) - 1)];
+        }
+        return CyberwareRegistryManager.GenerateRipperdoc(seed, archetype);
+    }
+
+    // Warranty affected by life circumstances
+    private static func GenerateWarrantyStatusCoherent(seed: Int32, wealth: Int32, coherence: ref<CoherenceProfile>) -> String {
+        if IsDefined(coherence) {
+            if Equals(coherence.lifeTheme, "FALLING") || Equals(coherence.lifeTheme, "STRUGGLING") {
+                let statuses: array<String>;
+                ArrayPush(statuses, "EXPIRED");
+                ArrayPush(statuses, "VOID - Non-payment");
+                ArrayPush(statuses, "VOID - Unauthorized mods");
+                ArrayPush(statuses, "NONE");
+                return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
+            }
+        }
+        return CyberwareRegistryManager.GenerateWarrantyStatus(seed, wealth);
     }
 
     private static func GetCyberwareCount(seed: Int32, archetype: String, wealth: Int32) -> Int32 {
