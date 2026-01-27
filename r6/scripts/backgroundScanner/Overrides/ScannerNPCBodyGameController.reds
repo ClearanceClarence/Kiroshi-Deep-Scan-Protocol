@@ -57,10 +57,11 @@ protected cb func OnInitialize() -> Bool {
 @addMethod(ScannerNPCBodyGameController)
 protected cb func OnStateChanged(val: Variant) -> Bool {
   let state: gameScanningState = FromVariant<gameScanningState>(val);
- // Log(n"DEBUG", "Variant: " + ToString(val));
+  
   if(!this.m_attachedRenderer) {
     this.RenderNPCBackstory();
   }
+  
   if (Equals(state, gameScanningState.Complete)) {
     this.m_scannerBackstorySystem.SetScanCompleted(true);
   }
@@ -71,15 +72,10 @@ protected cb func OnBackstoryChanged(val: Variant) -> Bool {
   let backstoryChunk: ref<ScannerBackstory> = FromVariant<ref<ScannerBackstory>>(val);
   let backstoryUI = backstoryChunk.GetBackstory();
   this.m_scannerBackstorySystem.SetBackstory(backstoryUI);
-  // Log("Got backstory from variant");
-  // Log("Backstory from variant: " + backstoryUI.background);
-  // this.m_backstoryUI = backstoryUI;
 }
 
 @addMethod(ScannerNPCBodyGameController)
 protected cb func OnScannedObject(val: EntityID) -> Bool {
-  // Log(EntityID.ToDebugString(val));
-  
   this.m_currentTargetBuffered = this.m_currentTarget;
   this.m_currentTarget = val;
   this.ComputeVisibility();
@@ -96,13 +92,10 @@ private final func ComputeVisibility() -> Void {
 
   owner = this.GetOwnerEntity() as GameObject;
   currentTargetObject = GameInstance.FindEntityByID(owner.GetGame(), this.m_currentTarget) as GameObject;
-  // Log(NameToString(currentTargetObject.GetName()));
   if this.ShouldShowScanner(currentTargetObject) {
-    // Log("Show scanner!");
-    // this.m_scannerBackstorySystem.SetVisible(true);
+    // Scanner visible
   } else {
-    // Log("Dont show scanner!");
-    // this.m_scannerBackstorySystem.SetVisible(false);
+    // Scanner not visible
   };
 }
 
@@ -145,8 +138,4 @@ private func RenderNPCBackstory() -> Void {
   this.m_scannerBackstorySystem.Reparent(leftPanel);
 
   this.m_attachedRenderer = true;
-
-  // let bountySystemWidget = this.GetWidget(n"LeftPanel/ScannerBountySystem");
-  // bountySystemWidget.Reparent(leftPanel);
 }
-

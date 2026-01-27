@@ -38,19 +38,34 @@ public class ScannerBackstorySystem extends inkCustomController {
         this.SetRootWidget(root);
 
         // ═══════════════════════════════════════════════════════════
-        // MAIN HEADER
+        // MAIN HEADER - "DEEP SCAN PROTOCOL" (subtle, matches section headers)
         // ═══════════════════════════════════════════════════════════
+        let headerContainer: ref<inkVerticalPanel> = new inkVerticalPanel();
+        headerContainer.SetName(n"header_container");
+        headerContainer.SetFitToContent(true);
+        headerContainer.SetMargin(new inkMargin(0.0, 0.0, 0.0, 12.0));
+        headerContainer.Reparent(root);
+        
+        // Main header text - styled like section headers but slightly larger
         let header: ref<inkText> = new inkText();
         header.SetName(n"main_header");
         header.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         header.SetFontStyle(n"Semi-Bold");
-        header.SetFontSize(KiroshiSettings.GetHeaderFontSize());
+        header.SetFontSize(22);
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText("Deep Scan Protocol");
-        header.SetTintColor(new HDRColor(0.62, 0.60, 0.58, 1.0));
-        header.SetMargin(new inkMargin(0.0, 5.0, 0.0, 10.0));
+        header.SetTintColor(new HDRColor(0.369, 0.965, 0.878, 0.9)); // Cyan, slightly transparent
         header.SetFitToContent(true);
-        header.Reparent(root);
+        header.SetHAlign(inkEHorizontalAlign.Left);
+        header.Reparent(headerContainer);
+        
+        // Subtle underline
+        let underline: ref<inkRectangle> = new inkRectangle();
+        underline.SetName(n"underline");
+        underline.SetSize(new Vector2(200.0, 1.0));
+        underline.SetTintColor(new HDRColor(0.369, 0.965, 0.878, 0.4));
+        underline.SetMargin(new inkMargin(0.0, 4.0, 0.0, 0.0));
+        underline.Reparent(headerContainer);
 
         // ═══════════════════════════════════════════════════════════
         // LOADING PANEL (3-8 randomized lines)
@@ -129,7 +144,7 @@ public class ScannerBackstorySystem extends inkCustomController {
         footerText.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         footerText.SetFontStyle(n"Medium");
         footerText.SetFontSize(KiroshiSettings.GetHeaderFontSize() - 6);
-        footerText.SetText("Kiroshi Optics // Deep Scan Protocol v1.4");
+        footerText.SetText("Kiroshi Optics // Deep Scan Protocol v1.5");
         footerText.SetTintColor(new HDRColor(0.4, 0.4, 0.38, 1.0));
         footerText.SetFitToContent(true);
         footerText.Reparent(footer);
@@ -199,10 +214,16 @@ public class ScannerBackstorySystem extends inkCustomController {
         let footerSize = headerSize - 6;
         if footerSize < 10 { footerSize = 10; }
         
-        // Update main header
-        let mainHeader = this.m_root.GetWidget(n"main_header") as inkText;
-        if IsDefined(mainHeader) {
-            mainHeader.SetFontSize(headerSize);
+        // Update main header (now inside header_container)
+        let headerContainer = this.m_root.GetWidget(n"header_container") as inkCompoundWidget;
+        if IsDefined(headerContainer) {
+            let mainHeader = headerContainer.GetWidget(n"main_header") as inkText;
+            if IsDefined(mainHeader) {
+                // Keep it at 24 or scale with header setting
+                let scaledSize = 24 + (headerSize - 20);
+                if scaledSize < 20 { scaledSize = 20; }
+                mainHeader.SetFontSize(scaledSize);
+            }
         }
         
         // Update loading lines

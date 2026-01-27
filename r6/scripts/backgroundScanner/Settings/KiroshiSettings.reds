@@ -191,4 +191,3 @@ public abstract class KiroshiSettings {
         return false;
     }
 }
-
