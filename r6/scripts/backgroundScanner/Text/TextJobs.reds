@@ -236,4 +236,122 @@ public abstract class TextJobs {
     public static func JOB_MIDDLEMAN_F() -> String { return "Started working as a middleman for various parties. "; }
     public static func JOB_MIDDLEMAN_M() -> String { return ""; }
 
+    // === EXPANDED: CRIMINAL JOBS ===
+    public static func JOB_ASSASSIN_F() -> String { return "Worked as a contract assassin. "; }
+    public static func JOB_ASSASSIN_M() -> String { return ""; }
+    public static func JOB_EXTORTION_F() -> String { return "Ran extortion rackets for a living. "; }
+    public static func JOB_EXTORTION_M() -> String { return ""; }
+    public static func JOB_KIDNAPPER_F() -> String { return "Worked kidnapping jobs for ransom. "; }
+    public static func JOB_KIDNAPPER_M() -> String { return ""; }
+    public static func JOB_CAR_THIEF_F() -> String { return "Boosted cars for chop shops. "; }
+    public static func JOB_CAR_THIEF_M() -> String { return ""; }
+    public static func JOB_BURGLAR_F() -> String { return "Made a living breaking into apartments. "; }
+    public static func JOB_BURGLAR_M() -> String { return ""; }
+    public static func JOB_PICKPOCKET_F() -> String { return "Worked the streets as a pickpocket. "; }
+    public static func JOB_PICKPOCKET_M() -> String { return ""; }
+    public static func JOB_SCAM_ARTIST_F() -> String { return "Ran scams on unsuspecting marks. "; }
+    public static func JOB_SCAM_ARTIST_M() -> String { return ""; }
+    public static func JOB_IDENTITY_THIEF_F() -> String { return "Specialized in identity theft operations. "; }
+    public static func JOB_IDENTITY_THIEF_M() -> String { return ""; }
+    public static func JOB_COUNTERFEITER_F() -> String { return "Produced counterfeit eddies and documents. "; }
+    public static func JOB_COUNTERFEITER_M() -> String { return ""; }
+    public static func JOB_LOAN_SHARK_F() -> String { return "Worked as a loan shark in Watson. "; }
+    public static func JOB_LOAN_SHARK_M() -> String { return ""; }
+    public static func JOB_BOOKIE_F() -> String { return "Ran an illegal betting operation. "; }
+    public static func JOB_BOOKIE_M() -> String { return ""; }
+    public static func JOB_CHOP_SHOP_F() -> String { return "Worked at a chop shop stripping stolen vehicles. "; }
+    public static func JOB_CHOP_SHOP_M() -> String { return ""; }
+
+    // === EXPANDED: MERC/COMBAT JOBS ===
+    public static func JOB_EXTRACTION_F() -> String { return "Specialized in corporate extraction jobs. "; }
+    public static func JOB_EXTRACTION_M() -> String { return ""; }
+    public static func JOB_WHEELMAN_F() -> String { return "Worked as a wheelman for heist crews. "; }
+    public static func JOB_WHEELMAN_M() -> String { return ""; }
+    public static func JOB_COMBAT_MEDIC_F() -> String { return "Served as a combat medic. "; }
+    public static func JOB_COMBAT_MEDIC_M() -> String { return ""; }
+    public static func JOB_SNIPER_F() -> String { return "Worked as a sniper for hire. "; }
+    public static func JOB_SNIPER_M() -> String { return ""; }
+    public static func JOB_DEMOLITIONS_F() -> String { return "Specialized in demolitions work. "; }
+    public static func JOB_DEMOLITIONS_M() -> String { return ""; }
+    public static func JOB_INFILTRATOR_F() -> String { return "Worked as a corporate infiltrator. "; }
+    public static func JOB_INFILTRATOR_M() -> String { return ""; }
+    public static func JOB_WEAPONS_DEALER_F() -> String { return "Dealt weapons on the black market. "; }
+    public static func JOB_WEAPONS_DEALER_M() -> String { return ""; }
+
+    // === EXPANDED: TECH JOBS ===
+    public static func JOB_HACKER_F() -> String { return "Worked as a freelance hacker. "; }
+    public static func JOB_HACKER_M() -> String { return ""; }
+    public static func JOB_DAEMON_CODER_F() -> String { return "Coded custom daemons for netrunners. "; }
+    public static func JOB_DAEMON_CODER_M() -> String { return ""; }
+    public static func JOB_ICE_BREAKER_F() -> String { return "Specialized in breaking corporate ICE. "; }
+    public static func JOB_ICE_BREAKER_M() -> String { return ""; }
+    public static func JOB_DATA_MINER_F() -> String { return "Mined valuable data from corporate systems. "; }
+    public static func JOB_DATA_MINER_M() -> String { return ""; }
+    public static func JOB_SYSTEM_ADMIN_F() -> String { return "Worked as a system administrator. "; }
+    public static func JOB_SYSTEM_ADMIN_M() -> String { return ""; }
+    public static func JOB_ROBOTICS_F() -> String { return "Worked in robotics maintenance. "; }
+    public static func JOB_ROBOTICS_M() -> String { return ""; }
+    public static func JOB_AI_TECH_F() -> String { return "Specialized in AI systems maintenance. "; }
+    public static func JOB_AI_TECH_M() -> String { return ""; }
+    public static func JOB_CYBERWARE_DEV_F() -> String { return "Developed experimental cyberware. "; }
+    public static func JOB_CYBERWARE_DEV_M() -> String { return ""; }
+
+    // === EXPANDED: SERVICE JOBS ===
+    public static func JOB_COOK_F() -> String { return "Worked as a cook in a food stall. "; }
+    public static func JOB_COOK_M() -> String { return ""; }
+    public static func JOB_WAITER_F() -> String { return "Waited tables at a local restaurant. "; }
+    public static func JOB_WAITER_M() -> String { return ""; }
+    public static func JOB_TAXI_F() -> String { return "Drove a taxi through Night City. "; }
+    public static func JOB_TAXI_M() -> String { return ""; }
+    public static func JOB_COURIER_F() -> String { return "Worked as a courier running packages. "; }
+    public static func JOB_COURIER_M() -> String { return ""; }
+    public static func JOB_MESSENGER_F() -> String { return "Delivered messages across the city. "; }
+    public static func JOB_MESSENGER_M() -> String { return ""; }
+    public static func JOB_VALET_F() -> String { return "Worked as a valet at upscale venues. "; }
+    public static func JOB_VALET_M() -> String { return ""; }
+    public static func JOB_BOUNCER_CLUB_F() -> String { return "Worked as a bouncer at nightclubs. "; }
+    public static func JOB_BOUNCER_CLUB_M() -> String { return ""; }
+    public static func JOB_DOORMAN_F() -> String { return "Worked as a doorman at a megabuilding. "; }
+    public static func JOB_DOORMAN_M() -> String { return ""; }
+
+    // === EXPANDED: CORPO JOBS ===
+    public static func JOB_LAWYER_F() -> String { return "Worked as a corporate lawyer. "; }
+    public static func JOB_LAWYER_M() -> String { return ""; }
+    public static func JOB_MARKETING_F() -> String { return "Worked in corporate marketing. "; }
+    public static func JOB_MARKETING_M() -> String { return ""; }
+    public static func JOB_CONSULTANT_F() -> String { return "Worked as a corporate consultant. "; }
+    public static func JOB_CONSULTANT_M() -> String { return ""; }
+    public static func JOB_RECRUITER_F() -> String { return "Recruited talent for corporations. "; }
+    public static func JOB_RECRUITER_M() -> String { return ""; }
+    public static func JOB_TRAINER_F() -> String { return "Trained new corporate employees. "; }
+    public static func JOB_TRAINER_M() -> String { return ""; }
+
+    // === EXPANDED: MISC JOBS ===
+    public static func JOB_STREET_VENDOR_F() -> String { return "Sold goods as a street vendor. "; }
+    public static func JOB_STREET_VENDOR_M() -> String { return ""; }
+    public static func JOB_LANDLORD_F() -> String { return "Managed rental properties. "; }
+    public static func JOB_LANDLORD_M() -> String { return ""; }
+    public static func JOB_PAWNSHOP_F() -> String { return "Ran a pawnshop in Watson. "; }
+    public static func JOB_PAWNSHOP_M() -> String { return ""; }
+    public static func JOB_LAUNDRY_F() -> String { return "Worked at a laundromat. "; }
+    public static func JOB_LAUNDRY_M() -> String { return ""; }
+    public static func JOB_GYM_F() -> String { return "Worked at a local gym. "; }
+    public static func JOB_GYM_M() -> String { return ""; }
+    public static func JOB_TRAINER_PERSONAL_F() -> String { return "Worked as a personal trainer. "; }
+    public static func JOB_TRAINER_PERSONAL_M() -> String { return ""; }
+    public static func JOB_FIGHTER_F() -> String { return "Fought in underground fighting rings. "; }
+    public static func JOB_FIGHTER_M() -> String { return ""; }
+    public static func JOB_TATTOO_F() -> String { return "Worked as a tattoo artist. "; }
+    public static func JOB_TATTOO_M() -> String { return ""; }
+    public static func JOB_HAIRDRESSER_F() -> String { return "Worked as a hairdresser. "; }
+    public static func JOB_HAIRDRESSER_M() -> String { return ""; }
+    public static func JOB_MORTICIAN_F() -> String { return "Worked as a mortician handling the dead. "; }
+    public static func JOB_MORTICIAN_M() -> String { return ""; }
+    public static func JOB_WASTE_F() -> String { return "Worked in waste management. "; }
+    public static func JOB_WASTE_M() -> String { return ""; }
+    public static func JOB_RECYCLER_F() -> String { return "Sorted recyclables at a processing plant. "; }
+    public static func JOB_RECYCLER_M() -> String { return ""; }
+    public static func JOB_SCRAP_DEALER_F() -> String { return "Dealt in scrap and salvage. "; }
+    public static func JOB_SCRAP_DEALER_M() -> String { return ""; }
+
 }

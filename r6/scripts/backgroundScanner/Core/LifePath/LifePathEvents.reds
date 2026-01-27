@@ -71,6 +71,58 @@ public class CrowdScannerEvents {
     public static func PARENT_NETRUNNER() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_NETRUNNER_F(), TextUpbringing.PARENT_NETRUNNER_M()); }
     public static func PARENT_CYBER() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_CYBER_F(), TextUpbringing.PARENT_CYBER_M()); }
     public static func PARENT_SOULKILL() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_SOULKILL_F(), TextUpbringing.PARENT_SOULKILL_M()); }
+    // Expanded Upbringing - Family Structure
+    public static func ONLY_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.ONLY_CHILD_F(), TextUpbringing.ONLY_CHILD_M()); }
+    public static func MANY_SIBLINGS() -> ref<LifePathEvent> { return LPE(TextUpbringing.MANY_SIBLINGS_F(), TextUpbringing.MANY_SIBLINGS_M()); }
+    public static func TWIN() -> ref<LifePathEvent> { return LPE(TextUpbringing.TWIN_F(), TextUpbringing.TWIN_M()); }
+    public static func TRIPLET() -> ref<LifePathEvent> { return LPE(TextUpbringing.TRIPLET_F(), TextUpbringing.TRIPLET_M()); }
+    public static func OLDEST_SIBLING() -> ref<LifePathEvent> { return LPE(TextUpbringing.OLDEST_SIBLING_F(), TextUpbringing.OLDEST_SIBLING_M()); }
+    public static func MIDDLE_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.MIDDLE_CHILD_F(), TextUpbringing.MIDDLE_CHILD_M()); }
+    public static func YOUNGEST_SIBLING() -> ref<LifePathEvent> { return LPE(TextUpbringing.YOUNGEST_SIBLING_F(), TextUpbringing.YOUNGEST_SIBLING_M()); }
+    public static func STEP_FAMILY() -> ref<LifePathEvent> { return LPE(TextUpbringing.STEP_FAMILY_F(), TextUpbringing.STEP_FAMILY_M()); }
+    public static func BLENDED_FAM() -> ref<LifePathEvent> { return LPE(TextUpbringing.BLENDED_FAM_F(), TextUpbringing.BLENDED_FAM_M()); }
+    public static func ADOPTED_LATE() -> ref<LifePathEvent> { return LPE(TextUpbringing.ADOPTED_LATE_F(), TextUpbringing.ADOPTED_LATE_M()); }
+    // Expanded Upbringing - Parental Occupations
+    public static func PARENT_NCPD() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_NCPD_F(), TextUpbringing.PARENT_NCPD_M()); }
+    public static func PARENT_TEACHER() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_TEACHER_F(), TextUpbringing.PARENT_TEACHER_M()); }
+    public static func PARENT_DOCTOR() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_DOCTOR_F(), TextUpbringing.PARENT_DOCTOR_M()); }
+    public static func PARENT_JOYTOY() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_JOYTOY_F(), TextUpbringing.PARENT_JOYTOY_M()); }
+    public static func PARENT_DEALER() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_DEALER_F(), TextUpbringing.PARENT_DEALER_M()); }
+    public static func PARENT_MILITARY() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_MILITARY_F(), TextUpbringing.PARENT_MILITARY_M()); }
+    public static func PARENT_GANG_LEADER() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_GANG_LEADER_F(), TextUpbringing.PARENT_GANG_LEADER_M()); }
+    // Expanded Upbringing - Parental Trauma
+    public static func PARENT_SUICIDE() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_SUICIDE_F(), TextUpbringing.PARENT_SUICIDE_M()); }
+    public static func PARENT_OVERDOSE() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_OVERDOSE_F(), TextUpbringing.PARENT_OVERDOSE_M()); }
+    public static func PARENT_ABUSER() -> ref<LifePathEvent> { return LPE(TextUpbringing.PARENT_ABUSER_F(), TextUpbringing.PARENT_ABUSER_M()); }
+    public static func WITNESSED_PARENT_DEATH() -> ref<LifePathEvent> { return LPE(TextUpbringing.WITNESSED_PARENT_DEATH_F(), TextUpbringing.WITNESSED_PARENT_DEATH_M()); }
+    public static func SIBLING_DEATH_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.SIBLING_DEATH_CHILD_F(), TextUpbringing.SIBLING_DEATH_CHILD_M()); }
+    public static func HOME_INVASION() -> ref<LifePathEvent> { return LPE(TextUpbringing.HOME_INVASION_F(), TextUpbringing.HOME_INVASION_M()); }
+    public static func KIDNAPPED_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.KIDNAPPED_CHILD_F(), TextUpbringing.KIDNAPPED_CHILD_M()); }
+    public static func FIRE_SURVIVOR_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.FIRE_SURVIVOR_CHILD_F(), TextUpbringing.FIRE_SURVIVOR_CHILD_M()); }
+    // Expanded Upbringing - Wealth/Status
+    public static func BORN_RICH() -> ref<LifePathEvent> { return LPE(TextUpbringing.BORN_RICH_F(), TextUpbringing.BORN_RICH_M()).SetWealthMod(30); }
+    public static func BORN_POOR() -> ref<LifePathEvent> { return LPE(TextUpbringing.BORN_POOR_F(), TextUpbringing.BORN_POOR_M()).SetWealthMod(-20); }
+    public static func LOST_WEALTH() -> ref<LifePathEvent> { return LPE(TextUpbringing.LOST_WEALTH_F(), TextUpbringing.LOST_WEALTH_M()); }
+    public static func TRUST_FUND() -> ref<LifePathEvent> { return LPE(TextUpbringing.TRUST_FUND_F(), TextUpbringing.TRUST_FUND_M()).SetWealthMod(25); }
+    public static func BORN_DEBT() -> ref<LifePathEvent> { return LPE(TextUpbringing.BORN_DEBT_F(), TextUpbringing.BORN_DEBT_M()).SetWealthMod(-15); }
+    public static func FAMILY_BUSINESS() -> ref<LifePathEvent> { return LPE(TextUpbringing.FAMILY_BUSINESS_F(), TextUpbringing.FAMILY_BUSINESS_M()).SetWealthMod(10); }
+    public static func FAMILY_CRIME() -> ref<LifePathEvent> { return LPE(TextUpbringing.FAMILY_CRIME_F(), TextUpbringing.FAMILY_CRIME_M()).SetCoolMod(10); }
+    // Expanded Upbringing - Special Origins
+    public static func LAB_BORN() -> ref<LifePathEvent> { return LPE(TextUpbringing.LAB_BORN_F(), TextUpbringing.LAB_BORN_M()); }
+    public static func TEST_TUBE() -> ref<LifePathEvent> { return LPE(TextUpbringing.TEST_TUBE_F(), TextUpbringing.TEST_TUBE_M()); }
+    public static func CLONE() -> ref<LifePathEvent> { return LPE(TextUpbringing.CLONE_F(), TextUpbringing.CLONE_M()); }
+    public static func BORN_CULT() -> ref<LifePathEvent> { return LPE(TextUpbringing.BORN_CULT_F(), TextUpbringing.BORN_CULT_M()); }
+    public static func RAISED_CULT() -> ref<LifePathEvent> { return LPE(TextUpbringing.RAISED_CULT_F(), TextUpbringing.RAISED_CULT_M()); }
+    public static func ESCAPED_CULT() -> ref<LifePathEvent> { return LPE(TextUpbringing.ESCAPED_CULT_F(), TextUpbringing.ESCAPED_CULT_M()); }
+    public static func COMMUNE_RAISED() -> ref<LifePathEvent> { return LPE(TextUpbringing.COMMUNE_RAISED_F(), TextUpbringing.COMMUNE_RAISED_M()); }
+    public static func REFUGEE_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.REFUGEE_CHILD_F(), TextUpbringing.REFUGEE_CHILD_M()); }
+    public static func IMMIGRANT_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.IMMIGRANT_CHILD_F(), TextUpbringing.IMMIGRANT_CHILD_M()); }
+    // Expanded Upbringing - Family Dynamics
+    public static func CHILD_PRODIGY_FAM() -> ref<LifePathEvent> { return LPE(TextUpbringing.CHILD_PRODIGY_FAM_F(), TextUpbringing.CHILD_PRODIGY_FAM_M()).SetIntMod(20); }
+    public static func BLACK_SHEEP() -> ref<LifePathEvent> { return LPE(TextUpbringing.BLACK_SHEEP_F(), TextUpbringing.BLACK_SHEEP_M()); }
+    public static func GOLDEN_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.GOLDEN_CHILD_F(), TextUpbringing.GOLDEN_CHILD_M()).SetCoolMod(10); }
+    public static func UNWANTED_CHILD() -> ref<LifePathEvent> { return LPE(TextUpbringing.UNWANTED_CHILD_F(), TextUpbringing.UNWANTED_CHILD_M()); }
+    public static func FAMILY_SECRET() -> ref<LifePathEvent> { return LPE(TextUpbringing.FAMILY_SECRET_F(), TextUpbringing.FAMILY_SECRET_M()); }
 
     // Home
     public static func LIVED_ALLEY() -> ref<LifePathEvent> { return LPE(TextHousing.LIVED_ALLEY_F(), TextHousing.LIVED_ALLEY_M()); }
@@ -376,7 +428,65 @@ public class CrowdScannerEvents {
     public static func JOB_HR() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_HR_F(), TextJobs.JOB_HR_M()).SetCoolMod(10); }
     public static func JOB_PR() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_PR_F(), TextJobs.JOB_PR_M()).SetCoolMod(15); }
     public static func JOB_ANALYST() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_ANALYST_F(), TextJobs.JOB_ANALYST_M()).SetIntMod(15); }
-    // Jobs - Expanded: Misc Jobs
+    // Expanded Jobs - Criminal
+    public static func JOB_ASSASSIN() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_ASSASSIN_F(), TextJobs.JOB_ASSASSIN_M()).SetReflexMod(15).SetCoolMod(15); }
+    public static func JOB_EXTORTION() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_EXTORTION_F(), TextJobs.JOB_EXTORTION_M()).SetCoolMod(10); }
+    public static func JOB_KIDNAPPER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_KIDNAPPER_F(), TextJobs.JOB_KIDNAPPER_M()); }
+    public static func JOB_CAR_THIEF() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_CAR_THIEF_F(), TextJobs.JOB_CAR_THIEF_M()).SetTechMod(10); }
+    public static func JOB_BURGLAR() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_BURGLAR_F(), TextJobs.JOB_BURGLAR_M()).SetReflexMod(10); }
+    public static func JOB_PICKPOCKET() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_PICKPOCKET_F(), TextJobs.JOB_PICKPOCKET_M()).SetReflexMod(10); }
+    public static func JOB_SCAM_ARTIST() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_SCAM_ARTIST_F(), TextJobs.JOB_SCAM_ARTIST_M()).SetCoolMod(15); }
+    public static func JOB_IDENTITY_THIEF() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_IDENTITY_THIEF_F(), TextJobs.JOB_IDENTITY_THIEF_M()).SetIntMod(10); }
+    public static func JOB_COUNTERFEITER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_COUNTERFEITER_F(), TextJobs.JOB_COUNTERFEITER_M()).SetTechMod(15); }
+    public static func JOB_LOAN_SHARK() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_LOAN_SHARK_F(), TextJobs.JOB_LOAN_SHARK_M()).SetCoolMod(10); }
+    public static func JOB_BOOKIE() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_BOOKIE_F(), TextJobs.JOB_BOOKIE_M()).SetIntMod(10); }
+    public static func JOB_CHOP_SHOP() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_CHOP_SHOP_F(), TextJobs.JOB_CHOP_SHOP_M()).SetTechMod(15); }
+    // Expanded Jobs - Merc/Combat
+    public static func JOB_EXTRACTION() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_EXTRACTION_F(), TextJobs.JOB_EXTRACTION_M()).SetReflexMod(10).SetCoolMod(10); }
+    public static func JOB_WHEELMAN() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_WHEELMAN_F(), TextJobs.JOB_WHEELMAN_M()).SetReflexMod(15); }
+    public static func JOB_COMBAT_MEDIC() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_COMBAT_MEDIC_F(), TextJobs.JOB_COMBAT_MEDIC_M()).SetTechMod(15); }
+    public static func JOB_SNIPER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_SNIPER_F(), TextJobs.JOB_SNIPER_M()).SetReflexMod(20); }
+    public static func JOB_DEMOLITIONS() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_DEMOLITIONS_F(), TextJobs.JOB_DEMOLITIONS_M()).SetTechMod(15); }
+    public static func JOB_INFILTRATOR() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_INFILTRATOR_F(), TextJobs.JOB_INFILTRATOR_M()).SetReflexMod(10).SetCoolMod(15); }
+    public static func JOB_WEAPONS_DEALER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_WEAPONS_DEALER_F(), TextJobs.JOB_WEAPONS_DEALER_M()).SetCoolMod(10); }
+    // Expanded Jobs - Tech
+    public static func JOB_HACKER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_HACKER_F(), TextJobs.JOB_HACKER_M()).SetIntMod(15); }
+    public static func JOB_DAEMON_CODER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_DAEMON_CODER_F(), TextJobs.JOB_DAEMON_CODER_M()).SetIntMod(15); }
+    public static func JOB_ICE_BREAKER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_ICE_BREAKER_F(), TextJobs.JOB_ICE_BREAKER_M()).SetIntMod(15); }
+    public static func JOB_DATA_MINER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_DATA_MINER_F(), TextJobs.JOB_DATA_MINER_M()).SetIntMod(10); }
+    public static func JOB_SYSTEM_ADMIN() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_SYSTEM_ADMIN_F(), TextJobs.JOB_SYSTEM_ADMIN_M()).SetIntMod(10); }
+    public static func JOB_ROBOTICS() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_ROBOTICS_F(), TextJobs.JOB_ROBOTICS_M()).SetTechMod(15); }
+    public static func JOB_AI_TECH() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_AI_TECH_F(), TextJobs.JOB_AI_TECH_M()).SetIntMod(15); }
+    public static func JOB_CYBERWARE_DEV() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_CYBERWARE_DEV_F(), TextJobs.JOB_CYBERWARE_DEV_M()).SetTechMod(20); }
+    // Expanded Jobs - Service
+    public static func JOB_COOK() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_COOK_F(), TextJobs.JOB_COOK_M()); }
+    public static func JOB_WAITER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_WAITER_F(), TextJobs.JOB_WAITER_M()); }
+    public static func JOB_TAXI() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_TAXI_F(), TextJobs.JOB_TAXI_M()); }
+    public static func JOB_COURIER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_COURIER_F(), TextJobs.JOB_COURIER_M()); }
+    public static func JOB_MESSENGER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_MESSENGER_F(), TextJobs.JOB_MESSENGER_M()); }
+    public static func JOB_VALET() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_VALET_F(), TextJobs.JOB_VALET_M()); }
+    public static func JOB_BOUNCER_CLUB() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_BOUNCER_CLUB_F(), TextJobs.JOB_BOUNCER_CLUB_M()).SetBodyMod(10); }
+    public static func JOB_DOORMAN() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_DOORMAN_F(), TextJobs.JOB_DOORMAN_M()); }
+    // Expanded Jobs - Corpo
+    public static func JOB_LAWYER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_LAWYER_F(), TextJobs.JOB_LAWYER_M()).SetIntMod(15).SetWealthMod(15); }
+    public static func JOB_MARKETING() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_MARKETING_F(), TextJobs.JOB_MARKETING_M()).SetCoolMod(10); }
+    public static func JOB_CONSULTANT() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_CONSULTANT_F(), TextJobs.JOB_CONSULTANT_M()).SetIntMod(10).SetCoolMod(10); }
+    public static func JOB_RECRUITER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_RECRUITER_F(), TextJobs.JOB_RECRUITER_M()).SetCoolMod(10); }
+    public static func JOB_TRAINER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_TRAINER_F(), TextJobs.JOB_TRAINER_M()); }
+    // Expanded Jobs - Misc
+    public static func JOB_STREET_VENDOR() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_STREET_VENDOR_F(), TextJobs.JOB_STREET_VENDOR_M()); }
+    public static func JOB_LANDLORD() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_LANDLORD_F(), TextJobs.JOB_LANDLORD_M()).SetWealthMod(10); }
+    public static func JOB_PAWNSHOP() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_PAWNSHOP_F(), TextJobs.JOB_PAWNSHOP_M()); }
+    public static func JOB_LAUNDRY() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_LAUNDRY_F(), TextJobs.JOB_LAUNDRY_M()); }
+    public static func JOB_GYM() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_GYM_F(), TextJobs.JOB_GYM_M()).SetBodyMod(10); }
+    public static func JOB_TRAINER_PERSONAL() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_TRAINER_PERSONAL_F(), TextJobs.JOB_TRAINER_PERSONAL_M()).SetBodyMod(10); }
+    public static func JOB_FIGHTER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_FIGHTER_F(), TextJobs.JOB_FIGHTER_M()).SetBodyMod(20); }
+    public static func JOB_TATTOO() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_TATTOO_F(), TextJobs.JOB_TATTOO_M()).SetTechMod(10); }
+    public static func JOB_HAIRDRESSER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_HAIRDRESSER_F(), TextJobs.JOB_HAIRDRESSER_M()); }
+    public static func JOB_MORTICIAN() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_MORTICIAN_F(), TextJobs.JOB_MORTICIAN_M()); }
+    public static func JOB_WASTE() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_WASTE_F(), TextJobs.JOB_WASTE_M()); }
+    public static func JOB_RECYCLER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_RECYCLER_F(), TextJobs.JOB_RECYCLER_M()); }
+    public static func JOB_SCRAP_DEALER() -> ref<LifePathEvent> { return LPE(TextJobs.JOB_SCRAP_DEALER_F(), TextJobs.JOB_SCRAP_DEALER_M()).SetTechMod(10); }
 
     // Adulthood
     public static func LOST_GAMBLE() -> ref<LifePathEvent> { return LPE(TextAdulthood.LOST_GAMBLE_F(), TextAdulthood.LOST_GAMBLE_M()); }
@@ -549,6 +659,19 @@ public class CrowdScannerEvents {
     public static func EMBERS() -> ref<LifePathEvent> { return LPE(TextAdulthood.EMBERS_F(), TextAdulthood.EMBERS_M()).SetWealthMod(15).SetCoolMod(15); }
     public static func CYBERPSYCHO_WIT() -> ref<LifePathEvent> { return LPE(TextAdulthood.CYBERPSYCHO_WIT_F(), TextAdulthood.CYBERPSYCHO_WIT_M()); }
     public static func SURVIVED_MAXTAC() -> ref<LifePathEvent> { return LPE(TextAdulthood.SURVIVED_MAXTAC_F(), TextAdulthood.SURVIVED_MAXTAC_M()); }
+    // Expanded Adulthood - Relationships
+    public static func HEARTBROKEN_ADULT() -> ref<LifePathEvent> { return LPE(TextAdulthood.HEARTBROKEN_ADULT_F(), TextAdulthood.HEARTBROKEN_ADULT_M()); }
+    public static func ROMANTIC() -> ref<LifePathEvent> { return LPE(TextAdulthood.ROMANTIC_F(), TextAdulthood.ROMANTIC_M()); }
+    // Expanded Adulthood - Gang
+    public static func JOINED_GANG_ADULT() -> ref<LifePathEvent> { return LPE(TextAdulthood.JOINED_GANG_ADULT_F(), TextAdulthood.JOINED_GANG_ADULT_M()); }
+    public static func LEFT_GANG() -> ref<LifePathEvent> { return LPE(TextAdulthood.LEFT_GANG_F(), TextAdulthood.LEFT_GANG_M()); }
+    // Expanded Adulthood - Mentorship
+    public static func MENTORED_ADULT() -> ref<LifePathEvent> { return LPE(TextAdulthood.MENTORED_ADULT_F(), TextAdulthood.MENTORED_ADULT_M()); }
+    public static func MENTOR() -> ref<LifePathEvent> { return LPE(TextAdulthood.MENTOR_F(), TextAdulthood.MENTOR_M()); }
+    // Expanded Adulthood - Near-Death
+    public static func NEAR_DEATH_ADULT() -> ref<LifePathEvent> { return LPE(TextAdulthood.NEAR_DEATH_ADULT_F(), TextAdulthood.NEAR_DEATH_ADULT_M()); }
+    public static func FLATLINED() -> ref<LifePathEvent> { return LPE(TextAdulthood.FLATLINED_F(), TextAdulthood.FLATLINED_M()); }
+    public static func COMA() -> ref<LifePathEvent> { return LPE(TextAdulthood.COMA_F(), TextAdulthood.COMA_M()); }
 }
 
 public static func UpbringingEvents(
@@ -630,6 +753,58 @@ public static func UpbringingEvents(
     PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_NETRUNNER(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_CYBER(), NEG_OUTCOME_WGT / 2);
     PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_SOULKILL(), NEG_OUTCOME_WGT / 3);
+    // Expanded Upbringing Events - Family Structure
+    PushWeightedLifeEvent(events, CrowdScannerEvents.ONLY_CHILD(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.MANY_SIBLINGS(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.TWIN(), NEU_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.TRIPLET(), NEU_OUTCOME_WGT / 5);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.OLDEST_SIBLING(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.MIDDLE_CHILD(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.YOUNGEST_SIBLING(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.STEP_FAMILY(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.BLENDED_FAM(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.ADOPTED_LATE(), NEU_OUTCOME_WGT);
+    // Expanded Upbringing Events - Parental Occupations
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_NCPD(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_TEACHER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_DOCTOR(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_JOYTOY(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_DEALER(), NEG_OUTCOME_WGT + JUNKIE_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_MILITARY(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_GANG_LEADER(), NEU_OUTCOME_WGT + GANGER_MOD);
+    // Expanded Upbringing Events - Parental Trauma
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_SUICIDE(), NEG_OUTCOME_WGT / 2);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_OVERDOSE(), NEG_OUTCOME_WGT + JUNKIE_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.PARENT_ABUSER(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.WITNESSED_PARENT_DEATH(), NEG_OUTCOME_WGT / 2);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.SIBLING_DEATH_CHILD(), NEG_OUTCOME_WGT / 2);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.HOME_INVASION(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.KIDNAPPED_CHILD(), NEG_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.FIRE_SURVIVOR_CHILD(), NEG_OUTCOME_WGT / 2);
+    // Expanded Upbringing Events - Wealth/Status
+    PushWeightedLifeEvent(events, CrowdScannerEvents.BORN_RICH(), POS_OUTCOME_WGT / 3 + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.BORN_POOR(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.LOST_WEALTH(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.TRUST_FUND(), POS_OUTCOME_WGT / 4 + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.BORN_DEBT(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.FAMILY_BUSINESS(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.FAMILY_CRIME(), NEU_OUTCOME_WGT + GANGER_MOD);
+    // Expanded Upbringing Events - Special Origins
+    PushWeightedLifeEvent(events, CrowdScannerEvents.LAB_BORN(), NEU_OUTCOME_WGT / 5 + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.TEST_TUBE(), NEU_OUTCOME_WGT / 5);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.CLONE(), NEU_OUTCOME_WGT / 10);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.BORN_CULT(), NEG_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.RAISED_CULT(), NEG_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.ESCAPED_CULT(), NEU_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.COMMUNE_RAISED(), NEU_OUTCOME_WGT / 2 + NOMAD_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.REFUGEE_CHILD(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.IMMIGRANT_CHILD(), NEU_OUTCOME_WGT);
+    // Expanded Upbringing Events - Family Dynamics
+    PushWeightedLifeEvent(events, CrowdScannerEvents.CHILD_PRODIGY_FAM(), POS_OUTCOME_WGT / 4);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.BLACK_SHEEP(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.GOLDEN_CHILD(), POS_OUTCOME_WGT / 2);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.UNWANTED_CHILD(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.FAMILY_SECRET(), NEU_OUTCOME_WGT);
     return events;
 }
 
@@ -953,7 +1128,65 @@ public static func JobEvents(
     PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_HR(), NEU_OUTCOME_WGT + CORPO_MOD);
     PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_PR(), NEU_OUTCOME_WGT + CORPO_MOD);
     PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_ANALYST(), NEU_OUTCOME_WGT + CORPO_MOD);
+    // Expanded Jobs Events - Criminal
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_ASSASSIN(), NEG_OUTCOME_WGT / 2 + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_EXTORTION(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_KIDNAPPER(), NEG_OUTCOME_WGT / 2 + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_CAR_THIEF(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_BURGLAR(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_PICKPOCKET(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_SCAM_ARTIST(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_IDENTITY_THIEF(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_COUNTERFEITER(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_LOAN_SHARK(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_BOOKIE(), NEU_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_CHOP_SHOP(), NEG_OUTCOME_WGT + GANGER_MOD);
+    // Expanded Jobs Events - Merc/Combat
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_EXTRACTION(), NEU_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_WHEELMAN(), NEU_OUTCOME_WGT + GANGER_MOD + NOMAD_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_COMBAT_MEDIC(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_SNIPER(), NEU_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_DEMOLITIONS(), NEU_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_INFILTRATOR(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_WEAPONS_DEALER(), NEU_OUTCOME_WGT + GANGER_MOD + NOMAD_MOD);
+    // Expanded Jobs Events - Tech
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_HACKER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_DAEMON_CODER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_ICE_BREAKER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_DATA_MINER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_SYSTEM_ADMIN(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_ROBOTICS(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_AI_TECH(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_CYBERWARE_DEV(), NEU_OUTCOME_WGT + CORPO_MOD);
+    // Expanded Jobs Events - Service
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_COOK(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_WAITER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_TAXI(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_COURIER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_MESSENGER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_VALET(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_BOUNCER_CLUB(), NEU_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_DOORMAN(), NEU_OUTCOME_WGT);
+    // Expanded Jobs Events - Corpo
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_LAWYER(), POS_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_MARKETING(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_CONSULTANT(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_RECRUITER(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_TRAINER(), NEU_OUTCOME_WGT);
     // Expanded Jobs Events - Misc
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_STREET_VENDOR(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_LANDLORD(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_PAWNSHOP(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_LAUNDRY(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_GYM(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_TRAINER_PERSONAL(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_FIGHTER(), NEU_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_TATTOO(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_HAIRDRESSER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_MORTICIAN(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_WASTE(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_RECYCLER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_SCRAP_DEALER(), NEU_OUTCOME_WGT + NOMAD_MOD);
     return events;
 }
 
@@ -1133,6 +1366,19 @@ public static func AdultEvents(
     PushWeightedLifeEvent(events, CrowdScannerEvents.EMBERS(), POS_OUTCOME_WGT + CORPO_MOD);
     PushWeightedLifeEvent(events, CrowdScannerEvents.CYBERPSYCHO_WIT(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, CrowdScannerEvents.SURVIVED_MAXTAC(), NEG_OUTCOME_WGT / 3);
+    // Expanded Adulthood Events - Relationships
+    PushWeightedLifeEvent(events, CrowdScannerEvents.HEARTBROKEN_ADULT(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.ROMANTIC(), NEU_OUTCOME_WGT);
+    // Expanded Adulthood Events - Gang
+    PushWeightedLifeEvent(events, CrowdScannerEvents.JOINED_GANG_ADULT(), NEU_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.LEFT_GANG(), NEU_OUTCOME_WGT + GANGER_MOD);
+    // Expanded Adulthood Events - Mentorship
+    PushWeightedLifeEvent(events, CrowdScannerEvents.MENTORED_ADULT(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.MENTOR(), POS_OUTCOME_WGT);
+    // Expanded Adulthood Events - Near-Death
+    PushWeightedLifeEvent(events, CrowdScannerEvents.NEAR_DEATH_ADULT(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.FLATLINED(), NEG_OUTCOME_WGT / 2);
+    PushWeightedLifeEvent(events, CrowdScannerEvents.COMA(), NEG_OUTCOME_WGT / 2);
 
     return events;
 }

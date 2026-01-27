@@ -457,7 +457,7 @@ public class BackstoryManager {
         ArrayPush(corpos, TextCorpos.SOVOIL());
         ArrayPush(corpos, TextCorpos.ARASAKA());
         ArrayPush(corpos, TextCorpos.KANG_TAO());
-        ArrayPush(corpos, TextCorpos.Militech());
+        ArrayPush(corpos, TextCorpos.MILITECH());
         ArrayPush(corpos, TextCorpos.MITSU_SUGO());
         ArrayPush(corpos, TextCorpos.SEG_ATARI());
         ArrayPush(corpos, TextCorpos.TDS());

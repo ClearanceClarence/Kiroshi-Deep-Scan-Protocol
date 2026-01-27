@@ -488,4 +488,38 @@ public abstract class TextAdulthood {
     public static func CYBERPSYCHO_WIT_F() -> String { return "Witnessed a cyberpsycho attack. "; }
     public static func CYBERPSYCHO_WIT_M() -> String { return ""; }
 
+    // === EXPANDED: RELATIONSHIPS ===
+    public static func HEARTBROKEN_F() -> String { return "Had her heart broken. "; }
+    public static func HEARTBROKEN_M() -> String { return "Had his heart broken. "; }
+    public static func HEARTBROKEN_ADULT_F() -> String { return "Had her heart broken in adulthood. "; }
+    public static func HEARTBROKEN_ADULT_M() -> String { return "Had his heart broken in adulthood. "; }
+    public static func ROMANTIC_F() -> String { return "Found a romantic partner. "; }
+    public static func ROMANTIC_M() -> String { return ""; }
+
+    // === EXPANDED: GANG INVOLVEMENT ===
+    public static func JOINED_GANG_F() -> String { return "Joined a gang as an adult. "; }
+    public static func JOINED_GANG_M() -> String { return ""; }
+    public static func JOINED_GANG_ADULT_F() -> String { return "Joined a gang later in life. "; }
+    public static func JOINED_GANG_ADULT_M() -> String { return ""; }
+    public static func LEFT_GANG_F() -> String { return "Left the gang life behind. "; }
+    public static func LEFT_GANG_M() -> String { return ""; }
+
+    // === EXPANDED: MENTORSHIP ===
+    public static func MENTORED_F() -> String { return "Was mentored by an experienced professional. "; }
+    public static func MENTORED_M() -> String { return ""; }
+    public static func MENTORED_ADULT_F() -> String { return "Found a mentor who changed her life. "; }
+    public static func MENTORED_ADULT_M() -> String { return "Found a mentor who changed his life. "; }
+    public static func MENTOR_F() -> String { return "Became a mentor to younger people. "; }
+    public static func MENTOR_M() -> String { return ""; }
+
+    // === EXPANDED: NEAR-DEATH ===
+    public static func NEAR_DEATH_F() -> String { return "Had a near-death experience. "; }
+    public static func NEAR_DEATH_M() -> String { return ""; }
+    public static func NEAR_DEATH_ADULT_F() -> String { return "Nearly died as an adult. "; }
+    public static func NEAR_DEATH_ADULT_M() -> String { return ""; }
+    public static func FLATLINED_F() -> String { return "Flatlined and was resuscitated. "; }
+    public static func FLATLINED_M() -> String { return ""; }
+    public static func COMA_F() -> String { return "Spent time in a coma. "; }
+    public static func COMA_M() -> String { return ""; }
+
 }
