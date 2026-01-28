@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.4.1-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.4.2-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 A Cyberpunk 2077 mod that extends the scanner system to display procedurally generated NPC data.
