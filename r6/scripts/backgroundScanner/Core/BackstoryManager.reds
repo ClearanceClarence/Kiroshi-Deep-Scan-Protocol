@@ -1,8 +1,15 @@
 public class BackstoryManager {
 
+    // SEED VERSION - Increment this to regenerate all NPC backstories on next load
+    // Change this value when making major content updates
+    public static func GetSeedVersion() -> Int32 {
+        return 3;
+    }
+
     public static func GenerateBackstoryUI(target: wref<NPCPuppet>) -> BackstoryUI {
         let entityIDHash: Int32 = Cast(EntityID.GetHash(target.GetEntityID()));
-        let seed = RandRange(entityIDHash, 0, 2147483647);
+        // Seed version allows forcing regeneration of all NPCs when mod is updated
+        let seed = RandRange(entityIDHash + (BackstoryManager.GetSeedVersion() * 100000), 0, 2147483647);
         let lifePath: ref<LifePath> = LifePath.Create(target);
         
         // Get data density setting

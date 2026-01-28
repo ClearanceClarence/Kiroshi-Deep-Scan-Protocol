@@ -70,8 +70,17 @@ protected cb func OnStateChanged(val: Variant) -> Bool {
 @addMethod(ScannerNPCBodyGameController)
 protected cb func OnBackstoryChanged(val: Variant) -> Bool {
   let backstoryChunk: ref<ScannerBackstory> = FromVariant<ref<ScannerBackstory>>(val);
-  let backstoryUI = backstoryChunk.GetBackstory();
-  this.m_scannerBackstorySystem.SetBackstory(backstoryUI);
+  
+  // Skip if backstory is marked as empty (unique NPCs)
+  if IsDefined(backstoryChunk) && backstoryChunk.IsEmpty() {
+    this.m_scannerBackstorySystem.ClearBackstory();
+    return true;
+  }
+  
+  if IsDefined(backstoryChunk) {
+    let backstoryUI = backstoryChunk.GetBackstory();
+    this.m_scannerBackstorySystem.SetBackstory(backstoryUI);
+  }
 }
 
 @addMethod(ScannerNPCBodyGameController)

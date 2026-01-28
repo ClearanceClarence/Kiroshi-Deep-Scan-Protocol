@@ -5,18 +5,21 @@ public const func CompileScannerChunks() -> Bool {
 
     scannerBlackboard = GameInstance.GetBlackboardSystem(this.GetGame()).Get(GetAllBlackboardDefs().UI_ScannerModules);
 
-    // Check if NPC is human - we want backstories for all human NPCs (crowd, gang, combat)
-    // Use IsHuman check instead of reaction preset to include all human NPCs
-    let isHumanNPC = this.IsHuman();
-    
-    // Also check if it's not a turret, device, or vehicle
-    let isValidTarget = isHumanNPC;
+    // Generate backstories for generic NPCs only:
+    // - Crowd NPCs (random pedestrians)
+    // - Generic gang members
+    // - Generic police/NCPD
+    // Named story characters (Johnny, Panam, Takemura, etc.) are none of these
+    let shouldGenerate = this.IsHuman() && (this.IsCrowd() || this.IsCharacterGanger() || this.IsCharacterPolice() || this.IsPrevention());
 
-    // Generate backstory for all human NPCs
-    if isValidTarget {
+    if shouldGenerate {
         let backstoryUI = BackstoryManager.GenerateBackstoryUI(this);
         backstoryChunk = new ScannerBackstory();
         backstoryChunk.Set(backstoryUI);
+        scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.ScannerBackstory, ToVariant(backstoryChunk));
+    } else {
+        backstoryChunk = new ScannerBackstory();
+        backstoryChunk.SetEmpty();
         scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.ScannerBackstory, ToVariant(backstoryChunk));
     }
     return wrappedMethod();

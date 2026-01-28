@@ -194,6 +194,14 @@ public class ScannerBackstorySystem extends inkCustomController {
         }
     }
 
+    public func ClearBackstory() -> Void {
+        // Hide the entire UI for unique NPCs
+        this.m_root.SetVisible(false);
+        this.m_loadingPanel.SetVisible(false);
+        this.m_netWatchDbReport.SetVisible(false);
+        this.m_fluffFooter.SetVisible(false);
+    }
+
     public func SetBackstory(backstoryUI: BackstoryUI) {
         this.m_backstory = backstoryUI;
         
