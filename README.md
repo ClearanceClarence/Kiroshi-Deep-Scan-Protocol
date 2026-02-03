@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.4.2-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.5-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 A Cyberpunk 2077 mod that extends the scanner system to display procedurally generated NPC data.
@@ -10,7 +10,19 @@ A Cyberpunk 2077 mod that extends the scanner system to display procedurally gen
 
 This mod hooks into the game's scanner UI to inject additional data panels for crowd NPCs, gang members, and NCPD officers. All data is procedurally generated using a seed derived from each NPC's entity ID, ensuring consistent results across game sessions.
 
-## What's New in v1.4.1
+## What's New in v1.5
+
+### Unique NPC System
+
+Hand-crafted lore-accurate backstories for named story characters. When scanning unique NPCs like Takemura, Panam, or Judy, you'll see custom-written intel instead of procedurally generated data.
+
+**Features:**
+- TweakDB-based character detection
+- Custom classification banners (e.g., "ARASAKA COUNTERINTEL")
+- Lore-accurate backgrounds, affiliations, and threat assessments
+- Extensible entry system for easy additions
+
+**Supported Characters:** Takemura (example included). More entries coming soon.
 
 ### Expanded Lifepath System
 
@@ -46,6 +58,31 @@ Massively expanded lifepath generation with **617 unique life events** across mu
 
 All events include appropriate stat modifiers (Body, Reflex, Tech, Int, Cool, Wealth) and lifepath-specific weighting (CORPO_MOD, NOMAD_MOD, GANGER_MOD, HOMELESS_MOD, JUNKIE_MOD).
 
+### v1.4 Features
+
+**Narrative Coherence System** — Optional system that links all NPC data into believable, interconnected stories. NPCs are assigned a Life Theme that influences all generated data:
+
+| Theme | Description |
+|-------|-------------|
+| STABLE | Comfortable life, steady job, minimal issues |
+| STRUGGLING | Making ends meet, mounting pressures |
+| CLIMBING | On the rise, ambitious, improving circumstances |
+| FALLING | Things getting worse, spiraling problems |
+| CRIMINAL | Life outside the law, gang ties, illegal income |
+| CORPORATE | Corp lifestyle, clean records, financial security |
+
+**Flag Propagation**: Shared flags propagate across all databases:
+- Substance abuse → liver damage in medical, addiction in psych, drug charges in criminal
+- Violent past → assault charges, combat injuries, aggression markers
+- Financial struggles → matching debt reasons, poor credit, stress-related conditions
+- Criminal lifestyle → illegal cyberware, gang connections, warrant flags
+
+**Additional Features:**
+- Data Density Setting — High (full), Medium (condensed), or Low (minimal)
+- Font Size Settings — Configurable header (14-28) and text (18-34) sizes
+- Special NPC Rarity — Common (1:250), Rare (1:750), Mythic (1:2000)
+- Loading Sequence Animation — 100+ unique database connection messages
+
 ## Project Structure
 
 ```
@@ -79,8 +116,12 @@ r6/scripts/backgroundScanner/
 │   │   └── PsychProfileManager.reds
 │   ├── Rare/
 │   │   └── RareNPCManager.reds
-│   └── Relationships/
-│       └── RelationshipsManager.reds
+│   ├── Relationships/
+│   │   └── RelationshipsManager.reds
+│   └── Unique/
+│       ├── UniqueNPCData.reds         # Data structure for unique NPCs
+│       ├── UniqueNPCManager.reds      # Detection & lookup system
+│       └── UniqueNPCEntries.reds      # Hand-crafted character entries
 ├── Overrides/
 │   ├── ScannerNPCBodyGameController.reds  # Scanner UI injection
 │   └── NPCPuppet.reds                      # TweakDB name retrieval
@@ -214,3 +255,13 @@ Cyberpunk 2077/r6/scripts/backgroundScanner/
 ## License
 
 MIT
+
+## FAQ
+
+**Q: Why does someone show as "NCPD HIGH PRIORITY TARGET" but the base game shows no criminal record?**
+
+A: The Kiroshi Deep Scan Protocol pulls from multiple database sources beyond standard NCPD public records - including NetWatch surveillance data, corporate security flags, black market bounty boards, and cross-referenced immigration databases. V's scanner has access to information that NCPD either doesn't have, hasn't made public, or has been paid to suppress. Night City runs on secrets and bribes - the "official" record is rarely the complete picture.
+
+**Q: My cat has a criminal record for starting a drug war.**
+
+A: Nibbles and other registered animals now have proper database entries in v1.5. The procedural generator no longer applies to entities with unique NPC records.

@@ -24,4 +24,8 @@ public struct BackstoryUI {
   // Pronouns (optional display)
   public let pronouns: String;
 
+  // Unique NPC fields
+  public let isUnique: Bool;
+  public let uniqueClassification: String;
+
 }

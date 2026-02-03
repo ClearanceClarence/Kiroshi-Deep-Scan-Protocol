@@ -8,6 +8,9 @@ public class NetWatchDBReport extends inkCustomController {
     private let m_root: wref<inkCompoundWidget>;
     
     // Alert sections
+    private let m_classificationSection: wref<inkCompoundWidget>;
+    private let m_classificationValue: wref<inkText>;
+    
     private let m_specialSection: wref<inkCompoundWidget>;
     private let m_specialValue: wref<inkText>;
     
@@ -64,8 +67,12 @@ public class NetWatchDBReport extends inkCustomController {
         this.m_root = root;
 
         // ═══════════════════════════════════════════════════════════
-        // ALERT SECTIONS (Rare NPC, NCPD)
+        // ALERT SECTIONS (Classification, Rare NPC, NCPD)
         // ═══════════════════════════════════════════════════════════
+        this.m_classificationSection = this.CreateAlertSection(root, "CLASSIFIED INDIVIDUAL", n"classification", 
+            new HDRColor(1.0, 0.35, 0.35, 1.0));
+        this.m_classificationValue = this.m_classificationSection.GetWidget(n"classification_value") as inkText;
+
         this.m_specialSection = this.CreateAlertSection(root, "FLAGGED INDIVIDUAL", n"special", 
             new HDRColor(1.0, 0.85, 0.2, 1.0));
         this.m_specialValue = this.m_specialSection.GetWidget(n"special_value") as inkText;
@@ -202,6 +209,19 @@ public class NetWatchDBReport extends inkCustomController {
         
         // Update font sizes from settings (allows mid-game changes)
         this.UpdateFontSizes();
+
+        // Unique NPC Classification Banner
+        if this.m_backstoryUI.isUnique && StrLen(this.m_backstoryUI.uniqueClassification) > 0 {
+            this.m_classificationValue.SetText(this.m_backstoryUI.uniqueClassification);
+            this.m_classificationSection.SetVisible(true);
+            // Update header to show it's a known individual
+            let header = this.m_classificationSection.GetWidget(n"classification_header") as inkText;
+            if IsDefined(header) {
+                header.SetText("KNOWN INDIVIDUAL");
+            }
+        } else {
+            this.m_classificationSection.SetVisible(false);
+        };
         
         // Background
         if StrLen(this.m_backstoryUI.background) > 0 {
@@ -319,6 +339,7 @@ public class NetWatchDBReport extends inkCustomController {
         let textSize = KiroshiSettings.GetTextFontSize();
         
         // Update all header fonts
+        this.UpdateSectionFontSize(this.m_classificationSection, n"classification", headerSize, textSize);
         this.UpdateSectionFontSize(this.m_specialSection, n"special", headerSize, textSize);
         this.UpdateSectionFontSize(this.m_ncpdSection, n"ncpd", headerSize, textSize);
         this.UpdateSectionFontSize(this.m_backgroundSection, n"background", headerSize, textSize);
