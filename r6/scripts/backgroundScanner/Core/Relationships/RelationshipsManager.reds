@@ -4,73 +4,155 @@ public class RelationshipsManager {
     public static func Generate(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: NPCEthnicity) -> ref<RelationshipsData> {
         let relations: ref<RelationshipsData> = new RelationshipsData();
         
-        // Generate family last name (shared by blood relatives) - use ethnicity-aware
-        let familyLastName = NameGenerator.GetLastNameByEthnicity(seed + 50, ethnicity);
-
-        // Known associates - limited by density
-        let associateCount = RelationshipsManager.GetAssociateCount(seed, archetype, gangAffiliation);
-        associateCount = KiroshiSettings.GetMaxListItems(associateCount);
-        
-        let i = 0;
-        while i < associateCount {
-            ArrayPush(relations.knownAssociates, RelationshipsManager.GenerateAssociate(seed + (i * 67), archetype, gangAffiliation, ethnicity));
-            i += 1;
-        }
-
-        // Family members - limited by density
-        let familyCount = RelationshipsManager.GetFamilyCount(seed + 100, archetype);
-        familyCount = KiroshiSettings.GetMaxListItems(familyCount);
-        
-        i = 0;
-        while i < familyCount {
-            ArrayPush(relations.familyMembers, RelationshipsManager.GenerateFamilyMember(seed + 110 + (i * 73), archetype, familyLastName, ethnicity));
-            i += 1;
-        }
-
-        // Romantic history - only on medium/high density
-        if !KiroshiSettings.IsLowDensity() {
-            relations.romanticHistory = RelationshipsManager.GenerateRomanticHistory(seed + 200, archetype);
-        }
+        // Relationship status and dependents (safe - no name generation)
         relations.currentRelationshipStatus = RelationshipsManager.GenerateRelationshipStatus(seed + 210, archetype);
-
-        // Dependents
         relations.dependents = RelationshipsManager.GenerateDependents(seed + 300, archetype);
-
-        // Emergency contact
+        
+        // Emergency contact with simple name
         if RandRange(seed + 400, 1, 100) <= 60 {
-            relations.emergencyContact = RelationshipsManager.GenerateEmergencyContact(seed + 410, archetype, ethnicity);
+            relations.emergencyContact = RelationshipsManager.GetSimpleName(seed + 410) + " (" + RelationshipsManager.GetRelationType(seed + 420) + ")";
         } else {
             relations.emergencyContact = "NONE ON FILE";
         }
-
-        // Enemies/Rivals - limited by density
+        
+        // Known associates - limit to 2 max, use simple names
+        let associateCount = RandRange(seed, 1, 2);
+        if Equals(archetype, "HOMELESS") { associateCount = RandRange(seed, 0, 1); }
+        
+        let i = 0;
+        while i < associateCount {
+            let associate: ref<AssociateInfo> = new AssociateInfo();
+            let useSeed = seed + (i * 100);
+            
+            // 30% chance for alias instead of name
+            if RandRange(useSeed + 5, 1, 100) <= 30 {
+                associate.name = RelationshipsManager.GetSimpleAlias(useSeed);
+                associate.isAlias = true;
+            } else {
+                associate.name = RelationshipsManager.GetSimpleName(useSeed);
+            }
+            
+            associate.relationship = RelationshipsManager.GetAssociateRelationshipSimple(useSeed + 20, gangAffiliation);
+            associate.status = RelationshipsManager.GetAssociateStatusSimple(useSeed + 30);
+            associate.affiliation = "";
+            
+            ArrayPush(relations.knownAssociates, associate);
+            i += 1;
+        }
+        
+        // Family - limit to 1, use simple name with same "last name"
+        if RandRange(seed + 100, 1, 100) <= 50 {
+            let family: ref<FamilyMemberInfo> = new FamilyMemberInfo();
+            family.name = RelationshipsManager.GetSimpleName(seed + 110);
+            family.relation = RelationshipsManager.GetFamilyRelation(seed + 120);
+            family.status = RelationshipsManager.GetFamilyStatus(seed + 130);
+            family.location = "";
+            ArrayPush(relations.familyMembers, family);
+        }
+        
+        // Enemies - only for certain archetypes, limit to 1
         if RandRange(seed + 500, 1, 100) <= RelationshipsManager.GetEnemyChance(archetype) {
-            let enemyCount = RandRange(seed + 510, 1, 3);
-            enemyCount = KiroshiSettings.GetMaxListItems(enemyCount);
-            
-            i = 0;
-            while i < enemyCount {
-                ArrayPush(relations.knownEnemies, RelationshipsManager.GenerateEnemy(seed + 520 + (i * 79), archetype, gangAffiliation, ethnicity));
-                i += 1;
-            }
+            let enemy: ref<EnemyInfo> = new EnemyInfo();
+            enemy.name = RelationshipsManager.GetSimpleAlias(seed + 520);
+            enemy.reason = RelationshipsManager.GetEnemyReason(seed + 530);
+            enemy.threatLevel = RelationshipsManager.GetThreatLevel(seed + 540);
+            ArrayPush(relations.knownEnemies, enemy);
         }
-
-        // Professional contacts - only on medium/high density
-        if !KiroshiSettings.IsLowDensity() && RelationshipsManager.HasProfessionalContacts(archetype) {
-            let contactCount = RandRange(seed + 600, 1, 4);
-            contactCount = KiroshiSettings.GetMaxListItems(contactCount);
-            
-            i = 0;
-            while i < contactCount {
-                ArrayPush(relations.professionalContacts, RelationshipsManager.GenerateProfessionalContact(seed + 610 + (i * 83), archetype));
-                i += 1;
-            }
-        }
-
-        // Social network size
-        relations.socialNetworkSize = RelationshipsManager.CalculateSocialNetworkSize(relations, archetype);
-
+        
+        // Social network size based on counts
+        let total = ArraySize(relations.knownAssociates) + ArraySize(relations.familyMembers) + relations.dependents;
+        if total >= 4 { relations.socialNetworkSize = "Moderate (" + IntToString(total) + " connections)"; }
+        else if total >= 2 { relations.socialNetworkSize = "Small (" + IntToString(total) + " connections)"; }
+        else { relations.socialNetworkSize = "Isolated (minimal connections)"; }
+        
         return relations;
+    }
+    
+    // Simple name generation - no deep calls, small inline arrays
+    private static func GetSimpleName(seed: Int32) -> String {
+        let first: array<String>;
+        ArrayPush(first, "Alex"); ArrayPush(first, "Jordan"); ArrayPush(first, "Casey");
+        ArrayPush(first, "Morgan"); ArrayPush(first, "Riley"); ArrayPush(first, "Sam");
+        ArrayPush(first, "Chris"); ArrayPush(first, "Jamie"); ArrayPush(first, "Taylor");
+        ArrayPush(first, "Quinn"); ArrayPush(first, "Avery"); ArrayPush(first, "Dakota");
+        
+        let last: array<String>;
+        ArrayPush(last, "Chen"); ArrayPush(last, "Smith"); ArrayPush(last, "Garcia");
+        ArrayPush(last, "Kim"); ArrayPush(last, "Patel"); ArrayPush(last, "Jones");
+        ArrayPush(last, "Kowalski"); ArrayPush(last, "Tanaka"); ArrayPush(last, "Silva");
+        ArrayPush(last, "Reyes"); ArrayPush(last, "Murphy"); ArrayPush(last, "Volkov");
+        
+        return first[RandRange(seed, 0, ArraySize(first) - 1)] + " " + last[RandRange(seed + 50, 0, ArraySize(last) - 1)];
+    }
+    
+    private static func GetSimpleAlias(seed: Int32) -> String {
+        let aliases: array<String>;
+        ArrayPush(aliases, "Razor"); ArrayPush(aliases, "Ghost"); ArrayPush(aliases, "Spike");
+        ArrayPush(aliases, "Chrome"); ArrayPush(aliases, "Zero"); ArrayPush(aliases, "Glitch");
+        ArrayPush(aliases, "Snake"); ArrayPush(aliases, "Wire"); ArrayPush(aliases, "Torch");
+        ArrayPush(aliases, "Venom"); ArrayPush(aliases, "Cipher"); ArrayPush(aliases, "Nova");
+        
+        return "\"" + aliases[RandRange(seed, 0, ArraySize(aliases) - 1)] + "\"";
+    }
+    
+    private static func GetRelationType(seed: Int32) -> String {
+        let types: array<String>;
+        ArrayPush(types, "Spouse"); ArrayPush(types, "Partner"); ArrayPush(types, "Parent");
+        ArrayPush(types, "Sibling"); ArrayPush(types, "Friend"); ArrayPush(types, "Ex-Partner");
+        return types[RandRange(seed, 0, ArraySize(types) - 1)];
+    }
+    
+    private static func GetAssociateRelationshipSimple(seed: Int32, gangAffiliation: String) -> String {
+        let rels: array<String>;
+        if !Equals(gangAffiliation, "NONE") && !Equals(gangAffiliation, "") {
+            ArrayPush(rels, "Fellow gang member"); ArrayPush(rels, "Supplier");
+            ArrayPush(rels, "Trusted associate"); ArrayPush(rels, "Street contact");
+        } else {
+            ArrayPush(rels, "Coworker"); ArrayPush(rels, "Drinking buddy");
+            ArrayPush(rels, "Neighbor"); ArrayPush(rels, "Old friend");
+            ArrayPush(rels, "Business contact"); ArrayPush(rels, "Fixer contact");
+        }
+        return rels[RandRange(seed, 0, ArraySize(rels) - 1)];
+    }
+    
+    private static func GetAssociateStatusSimple(seed: Int32) -> String {
+        let roll = RandRange(seed, 1, 100);
+        if roll <= 60 { return "Active"; }
+        if roll <= 70 { return "Deceased (" + IntToString(RandRange(seed + 5, 2070, 2077)) + ")"; }
+        if roll <= 80 { return "Incarcerated"; }
+        if roll <= 90 { return "Missing"; }
+        return "Unknown";
+    }
+    
+    private static func GetFamilyRelation(seed: Int32) -> String {
+        let rels: array<String>;
+        ArrayPush(rels, "Mother"); ArrayPush(rels, "Father"); ArrayPush(rels, "Sister");
+        ArrayPush(rels, "Brother"); ArrayPush(rels, "Spouse"); ArrayPush(rels, "Child");
+        return rels[RandRange(seed, 0, ArraySize(rels) - 1)];
+    }
+    
+    private static func GetFamilyStatus(seed: Int32) -> String {
+        let roll = RandRange(seed, 1, 100);
+        if roll <= 50 { return "Alive"; }
+        if roll <= 70 { return "Deceased"; }
+        if roll <= 85 { return "Estranged"; }
+        return "Unknown";
+    }
+    
+    private static func GetEnemyReason(seed: Int32) -> String {
+        let reasons: array<String>;
+        ArrayPush(reasons, "Business dispute"); ArrayPush(reasons, "Personal betrayal");
+        ArrayPush(reasons, "Gang conflict"); ArrayPush(reasons, "Debt dispute");
+        ArrayPush(reasons, "Territorial"); ArrayPush(reasons, "Past violence");
+        return reasons[RandRange(seed, 0, ArraySize(reasons) - 1)];
+    }
+    
+    private static func GetThreatLevel(seed: Int32) -> String {
+        let roll = RandRange(seed, 1, 100);
+        if roll <= 40 { return "Low"; }
+        if roll <= 75 { return "Moderate"; }
+        if roll <= 95 { return "High"; }
+        return "Extreme";
     }
 
     private static func GetAssociateCount(seed: Int32, archetype: String, gangAffiliation: String) -> Int32 {

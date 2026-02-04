@@ -22,6 +22,14 @@ public const func CompileScannerChunks() -> Bool {
     // - Generic police/NCPD
     let shouldGenerate = this.IsHuman() && (this.IsCrowd() || this.IsCharacterGanger() || this.IsCharacterPolice() || this.IsPrevention());
 
+    // Skip corporate/military combat NPCs as extra safety measure
+    if shouldGenerate {
+        let appearanceName = NameToString(this.GetCurrentAppearanceName());
+        if StrContains(appearanceName, "militech") || StrContains(appearanceName, "arasaka") || StrContains(appearanceName, "kang_tao") || StrContains(appearanceName, "trauma_team") || StrContains(appearanceName, "ranger") || StrContains(appearanceName, "netwatch") || StrContains(appearanceName, "max_tac") || StrContains(appearanceName, "maxtac") {
+            shouldGenerate = false;
+        }
+    }
+
     if shouldGenerate {
         let backstoryUI = BackstoryManager.GenerateBackstoryUI(this);
         backstoryChunk = new ScannerBackstory();
