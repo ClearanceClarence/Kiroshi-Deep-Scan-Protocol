@@ -285,9 +285,11 @@ public class BackstoryManager {
             backstoryUI.ncpdOfficer = "";
         };
 
-        // Relationships - skip for gang members and NCPD, only on medium/high density
-        if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
-            let relations = RelationshipsManager.Generate(seed + 8000, archetype, gangAffiliation, ethnicity);
+        // Relationships - skip for NCPD, only on medium/high density
+        if density >= 2 && !isNCPD {
+            // Get NPC's last name so family members share it
+            let npcLastName = BackstoryManager.ExtractLastName(target);
+            let relations = RelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
             backstoryUI.relationships = "";
             
             // Status and dependents
@@ -301,13 +303,41 @@ public class BackstoryManager {
                 backstoryUI.relationships = backstoryUI.relationships + " | Emergency: " + relations.emergencyContact;
             };
             
-            // Known associates (show first 2) - high density shows more
+            // Family members
+            if ArraySize(relations.familyMembers) > 0 {
+                backstoryUI.relationships = backstoryUI.relationships + " | Family: ";
+                let i = 0;
+                let maxFamily = 2;
+                if density >= 3 {
+                    maxFamily = 4;
+                };
+                if ArraySize(relations.familyMembers) < maxFamily {
+                    maxFamily = ArraySize(relations.familyMembers);
+                };
+                while i < maxFamily {
+                    let fam = relations.familyMembers[i];
+                    if i > 0 {
+                        backstoryUI.relationships = backstoryUI.relationships + ", ";
+                    };
+                    backstoryUI.relationships = backstoryUI.relationships + fam.name + " (" + fam.relation;
+                    if !Equals(fam.status, "Alive") && !Equals(fam.status, "") {
+                        backstoryUI.relationships = backstoryUI.relationships + " - " + fam.status;
+                    };
+                    backstoryUI.relationships = backstoryUI.relationships + ")";
+                    i += 1;
+                };
+                if ArraySize(relations.familyMembers) > maxFamily {
+                    backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.familyMembers) - maxFamily) + " more";
+                };
+            };
+            
+            // Known associates
             if ArraySize(relations.knownAssociates) > 0 {
                 backstoryUI.relationships = backstoryUI.relationships + " | Associates: ";
                 let i = 0;
-                let maxShow = 1;
+                let maxShow = 2;
                 if density >= 3 {
-                    maxShow = 2;
+                    maxShow = 3;
                 };
                 if ArraySize(relations.knownAssociates) < maxShow {
                     maxShow = ArraySize(relations.knownAssociates);
@@ -320,8 +350,22 @@ public class BackstoryManager {
                     backstoryUI.relationships = backstoryUI.relationships + assoc.name + " (" + assoc.relationship + ")";
                     i += 1;
                 };
-                if density >= 3 && ArraySize(relations.knownAssociates) > 2 {
-                    backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.knownAssociates) - 2) + " more";
+                if ArraySize(relations.knownAssociates) > maxShow {
+                    backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.knownAssociates) - maxShow) + " more";
+                };
+            };
+            
+            // Professional contacts - high density only
+            if density >= 3 && ArraySize(relations.professionalContacts) > 0 {
+                backstoryUI.relationships = backstoryUI.relationships + " | Contacts: ";
+                let i = 0;
+                while i < ArraySize(relations.professionalContacts) {
+                    let pro = relations.professionalContacts[i];
+                    if i > 0 {
+                        backstoryUI.relationships = backstoryUI.relationships + ", ";
+                    };
+                    backstoryUI.relationships = backstoryUI.relationships + pro.name + " (" + pro.type + ")";
+                    i += 1;
                 };
             };
             
@@ -334,9 +378,14 @@ public class BackstoryManager {
                     if i > 0 {
                         backstoryUI.relationships = backstoryUI.relationships + ", ";
                     };
-                    backstoryUI.relationships = backstoryUI.relationships + enemy.name + " (" + enemy.reason + ")";
+                    backstoryUI.relationships = backstoryUI.relationships + enemy.name + " (" + enemy.reason + " - " + enemy.threatLevel + ")";
                     i += 1;
                 };
+            };
+            
+            // Romantic history - high density only
+            if density >= 3 && !Equals(relations.romanticHistory, "") {
+                backstoryUI.relationships = backstoryUI.relationships + " | History: " + relations.romanticHistory;
             };
             
             // Social network size - high density only
@@ -705,5 +754,36 @@ public class BackstoryManager {
         ArrayPush(activities, "Recently passed sergeant examination. Awaiting promotion slot.");
         
         return activities[RandRange(seed + 300, 0, ArraySize(activities) - 1)];
+    }
+
+    // Extract last name from NPC's display name for family relationship consistency
+    private static func ExtractLastName(target: wref<NPCPuppet>) -> String {
+        let record = target.GetRecord();
+        if !IsDefined(record) {
+            return "";
+        }
+        
+        let fullName = GetLocalizedTextByKey(record.FullDisplayName());
+        if Equals(fullName, "") {
+            return "";
+        }
+        
+        // Find last space - everything after is the last name
+        let lastSpace = -1;
+        let i = 0;
+        let len = StrLen(fullName);
+        while i < len {
+            if Equals(StrMid(fullName, i, 1), " ") {
+                lastSpace = i;
+            }
+            i += 1;
+        }
+        
+        if lastSpace > 0 && lastSpace < len - 1 {
+            return StrMid(fullName, lastSpace + 1, len - lastSpace - 1);
+        }
+        
+        // No space found or edge case - return empty (will use random)
+        return "";
     }
 }

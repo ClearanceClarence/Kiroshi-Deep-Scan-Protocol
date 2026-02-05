@@ -87,431 +87,415 @@ public class NameGenerator {
     }
 
     private static func GetMaleAmericanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Marcus");
-        ArrayPush(names, "James");
-        ArrayPush(names, "Robert");
-        ArrayPush(names, "Michael");
-        ArrayPush(names, "David");
-        ArrayPush(names, "William");
-        ArrayPush(names, "Thomas");
-        ArrayPush(names, "Daniel");
-        ArrayPush(names, "Kevin");
-        ArrayPush(names, "Brandon");
-        ArrayPush(names, "Tyler");
-        ArrayPush(names, "Derek");
-        ArrayPush(names, "Ryan");
-        ArrayPush(names, "Jason");
-        ArrayPush(names, "Kyle");
-        ArrayPush(names, "Trevor");
-        ArrayPush(names, "Nathan");
-        ArrayPush(names, "Sean");
-        ArrayPush(names, "Brian");
-        ArrayPush(names, "Eric");
-        ArrayPush(names, "Adam");
-        ArrayPush(names, "Justin");
-        ArrayPush(names, "Cody");
-        ArrayPush(names, "Aaron");
-        ArrayPush(names, "Jake");
-        ArrayPush(names, "Zach");
-        ArrayPush(names, "Travis");
-        ArrayPush(names, "Blake");
-        ArrayPush(names, "Shane");
-        ArrayPush(names, "Ethan");
-        ArrayPush(names, "Matt");
-        ArrayPush(names, "Chris");
-        ArrayPush(names, "Steve");
-        ArrayPush(names, "Jeff");
-        ArrayPush(names, "Scott");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 34);
+        if i == 0 { return "Marcus"; }
+        if i == 1 { return "James"; }
+        if i == 2 { return "Robert"; }
+        if i == 3 { return "Michael"; }
+        if i == 4 { return "David"; }
+        if i == 5 { return "William"; }
+        if i == 6 { return "Thomas"; }
+        if i == 7 { return "Daniel"; }
+        if i == 8 { return "Kevin"; }
+        if i == 9 { return "Brandon"; }
+        if i == 10 { return "Tyler"; }
+        if i == 11 { return "Derek"; }
+        if i == 12 { return "Ryan"; }
+        if i == 13 { return "Jason"; }
+        if i == 14 { return "Kyle"; }
+        if i == 15 { return "Trevor"; }
+        if i == 16 { return "Nathan"; }
+        if i == 17 { return "Sean"; }
+        if i == 18 { return "Brian"; }
+        if i == 19 { return "Eric"; }
+        if i == 20 { return "Adam"; }
+        if i == 21 { return "Justin"; }
+        if i == 22 { return "Cody"; }
+        if i == 23 { return "Aaron"; }
+        if i == 24 { return "Jake"; }
+        if i == 25 { return "Zach"; }
+        if i == 26 { return "Travis"; }
+        if i == 27 { return "Blake"; }
+        if i == 28 { return "Shane"; }
+        if i == 29 { return "Ethan"; }
+        if i == 30 { return "Matt"; }
+        if i == 31 { return "Chris"; }
+        if i == 32 { return "Steve"; }
+        if i == 33 { return "Jeff"; }
+        return "Scott";
     }
 
     private static func GetMaleAfricanAmericanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Jerome");
-        ArrayPush(names, "Deshawn");
-        ArrayPush(names, "Jamal");
-        ArrayPush(names, "Tyrone");
-        ArrayPush(names, "Darius");
-        ArrayPush(names, "DeAndre");
-        ArrayPush(names, "Terrell");
-        ArrayPush(names, "Lamar");
-        ArrayPush(names, "Marquis");
-        ArrayPush(names, "Dante");
-        ArrayPush(names, "Malik");
-        ArrayPush(names, "Andre");
-        ArrayPush(names, "Kareem");
-        ArrayPush(names, "Rashid");
-        ArrayPush(names, "Kwame");
-        ArrayPush(names, "Dwayne");
-        ArrayPush(names, "Tyrell");
-        ArrayPush(names, "Jermaine");
-        ArrayPush(names, "Leroy");
-        ArrayPush(names, "Marcus");
-        ArrayPush(names, "Antoine");
-        ArrayPush(names, "Cedric");
-        ArrayPush(names, "Denzel");
-        ArrayPush(names, "Trevon");
-        ArrayPush(names, "Jaylon");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Jerome"; }
+        if i == 1 { return "Deshawn"; }
+        if i == 2 { return "Jamal"; }
+        if i == 3 { return "Tyrone"; }
+        if i == 4 { return "Darius"; }
+        if i == 5 { return "DeAndre"; }
+        if i == 6 { return "Terrell"; }
+        if i == 7 { return "Lamar"; }
+        if i == 8 { return "Marquis"; }
+        if i == 9 { return "Dante"; }
+        if i == 10 { return "Malik"; }
+        if i == 11 { return "Andre"; }
+        if i == 12 { return "Kareem"; }
+        if i == 13 { return "Rashid"; }
+        if i == 14 { return "Kwame"; }
+        if i == 15 { return "Dwayne"; }
+        if i == 16 { return "Tyrell"; }
+        if i == 17 { return "Jermaine"; }
+        if i == 18 { return "Leroy"; }
+        if i == 19 { return "Marcus"; }
+        if i == 20 { return "Antoine"; }
+        if i == 21 { return "Cedric"; }
+        if i == 22 { return "Denzel"; }
+        if i == 23 { return "Trevon"; }
+        return "Jaylon";
     }
 
     private static func GetMaleHispanicNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Carlos");
-        ArrayPush(names, "Antonio");
-        ArrayPush(names, "Miguel");
-        ArrayPush(names, "Alejandro");
-        ArrayPush(names, "Jorge");
-        ArrayPush(names, "Diego");
-        ArrayPush(names, "Raul");
-        ArrayPush(names, "Javier");
-        ArrayPush(names, "Roberto");
-        ArrayPush(names, "Fernando");
-        ArrayPush(names, "Ricardo");
-        ArrayPush(names, "Eduardo");
-        ArrayPush(names, "Luis");
-        ArrayPush(names, "Hector");
-        ArrayPush(names, "Oscar");
-        ArrayPush(names, "Rafael");
-        ArrayPush(names, "Pablo");
-        ArrayPush(names, "Sergio");
-        ArrayPush(names, "Enrique");
-        ArrayPush(names, "Manuel");
-        ArrayPush(names, "Arturo");
-        ArrayPush(names, "Julio");
-        ArrayPush(names, "Gabriel");
-        ArrayPush(names, "Francisco");
-        ArrayPush(names, "Armando");
-        ArrayPush(names, "Cesar");
-        ArrayPush(names, "Ramiro");
-        ArrayPush(names, "Ignacio");
-        ArrayPush(names, "Esteban");
-        ArrayPush(names, "Mateo");
-        ArrayPush(names, "Angel");
-        ArrayPush(names, "Jesus");
-        ArrayPush(names, "Pedro");
-        ArrayPush(names, "Juan");
-        ArrayPush(names, "Jose");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 34);
+        if i == 0 { return "Carlos"; }
+        if i == 1 { return "Antonio"; }
+        if i == 2 { return "Miguel"; }
+        if i == 3 { return "Alejandro"; }
+        if i == 4 { return "Jorge"; }
+        if i == 5 { return "Diego"; }
+        if i == 6 { return "Raul"; }
+        if i == 7 { return "Javier"; }
+        if i == 8 { return "Roberto"; }
+        if i == 9 { return "Fernando"; }
+        if i == 10 { return "Ricardo"; }
+        if i == 11 { return "Eduardo"; }
+        if i == 12 { return "Luis"; }
+        if i == 13 { return "Hector"; }
+        if i == 14 { return "Oscar"; }
+        if i == 15 { return "Rafael"; }
+        if i == 16 { return "Pablo"; }
+        if i == 17 { return "Sergio"; }
+        if i == 18 { return "Enrique"; }
+        if i == 19 { return "Manuel"; }
+        if i == 20 { return "Arturo"; }
+        if i == 21 { return "Julio"; }
+        if i == 22 { return "Gabriel"; }
+        if i == 23 { return "Francisco"; }
+        if i == 24 { return "Armando"; }
+        if i == 25 { return "Cesar"; }
+        if i == 26 { return "Ramiro"; }
+        if i == 27 { return "Ignacio"; }
+        if i == 28 { return "Esteban"; }
+        if i == 29 { return "Mateo"; }
+        if i == 30 { return "Angel"; }
+        if i == 31 { return "Jesus"; }
+        if i == 32 { return "Pedro"; }
+        if i == 33 { return "Juan"; }
+        return "Jose";
     }
 
     private static func GetMaleJapaneseNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Takeshi");
-        ArrayPush(names, "Hiroshi");
-        ArrayPush(names, "Kenji");
-        ArrayPush(names, "Ryu");
-        ArrayPush(names, "Shinji");
-        ArrayPush(names, "Kazuo");
-        ArrayPush(names, "Akira");
-        ArrayPush(names, "Daichi");
-        ArrayPush(names, "Yuto");
-        ArrayPush(names, "Haruki");
-        ArrayPush(names, "Ren");
-        ArrayPush(names, "Kaito");
-        ArrayPush(names, "Sora");
-        ArrayPush(names, "Hayato");
-        ArrayPush(names, "Kenta");
-        ArrayPush(names, "Masaru");
-        ArrayPush(names, "Shin");
-        ArrayPush(names, "Tetsuya");
-        ArrayPush(names, "Hideki");
-        ArrayPush(names, "Noboru");
-        ArrayPush(names, "Taro");
-        ArrayPush(names, "Koji");
-        ArrayPush(names, "Ichiro");
-        ArrayPush(names, "Goro");
-        ArrayPush(names, "Kenichi");
-        ArrayPush(names, "Saburo");
-        ArrayPush(names, "Yoshi");
-        ArrayPush(names, "Hideo");
-        ArrayPush(names, "Makoto");
-        ArrayPush(names, "Satoshi");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Takeshi"; }
+        if i == 1 { return "Hiroshi"; }
+        if i == 2 { return "Kenji"; }
+        if i == 3 { return "Ryu"; }
+        if i == 4 { return "Shinji"; }
+        if i == 5 { return "Kazuo"; }
+        if i == 6 { return "Akira"; }
+        if i == 7 { return "Daichi"; }
+        if i == 8 { return "Yuto"; }
+        if i == 9 { return "Haruki"; }
+        if i == 10 { return "Ren"; }
+        if i == 11 { return "Kaito"; }
+        if i == 12 { return "Sora"; }
+        if i == 13 { return "Hayato"; }
+        if i == 14 { return "Kenta"; }
+        if i == 15 { return "Masaru"; }
+        if i == 16 { return "Shin"; }
+        if i == 17 { return "Tetsuya"; }
+        if i == 18 { return "Hideki"; }
+        if i == 19 { return "Noboru"; }
+        if i == 20 { return "Taro"; }
+        if i == 21 { return "Koji"; }
+        if i == 22 { return "Ichiro"; }
+        if i == 23 { return "Goro"; }
+        if i == 24 { return "Kenichi"; }
+        if i == 25 { return "Saburo"; }
+        if i == 26 { return "Yoshi"; }
+        if i == 27 { return "Hideo"; }
+        if i == 28 { return "Makoto"; }
+        return "Satoshi";
     }
 
     private static func GetMaleChineseNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Wei");
-        ArrayPush(names, "Jun");
-        ArrayPush(names, "Feng");
-        ArrayPush(names, "Lei");
-        ArrayPush(names, "Hao");
-        ArrayPush(names, "Jian");
-        ArrayPush(names, "Ming");
-        ArrayPush(names, "Tao");
-        ArrayPush(names, "Bo");
-        ArrayPush(names, "Cheng");
-        ArrayPush(names, "Long");
-        ArrayPush(names, "Xiang");
-        ArrayPush(names, "Yong");
-        ArrayPush(names, "Zhen");
-        ArrayPush(names, "Hui");
-        ArrayPush(names, "Qiang");
-        ArrayPush(names, "Liang");
-        ArrayPush(names, "Kun");
-        ArrayPush(names, "Dong");
-        ArrayPush(names, "Gang");
-        ArrayPush(names, "Peng");
-        ArrayPush(names, "Jie");
-        ArrayPush(names, "Bing");
-        ArrayPush(names, "Hai");
-        ArrayPush(names, "Lin");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Wei"; }
+        if i == 1 { return "Jun"; }
+        if i == 2 { return "Feng"; }
+        if i == 3 { return "Lei"; }
+        if i == 4 { return "Hao"; }
+        if i == 5 { return "Jian"; }
+        if i == 6 { return "Ming"; }
+        if i == 7 { return "Tao"; }
+        if i == 8 { return "Bo"; }
+        if i == 9 { return "Cheng"; }
+        if i == 10 { return "Long"; }
+        if i == 11 { return "Xiang"; }
+        if i == 12 { return "Yong"; }
+        if i == 13 { return "Zhen"; }
+        if i == 14 { return "Hui"; }
+        if i == 15 { return "Qiang"; }
+        if i == 16 { return "Liang"; }
+        if i == 17 { return "Kun"; }
+        if i == 18 { return "Dong"; }
+        if i == 19 { return "Gang"; }
+        if i == 20 { return "Peng"; }
+        if i == 21 { return "Jie"; }
+        if i == 22 { return "Bing"; }
+        if i == 23 { return "Hai"; }
+        return "Lin";
     }
 
     private static func GetMaleKoreanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Jin-ho");
-        ArrayPush(names, "Sung");
-        ArrayPush(names, "Min-jun");
-        ArrayPush(names, "Jae-won");
-        ArrayPush(names, "Hyun");
-        ArrayPush(names, "Seung");
-        ArrayPush(names, "Tae-hyun");
-        ArrayPush(names, "Dong-woo");
-        ArrayPush(names, "Soo-hyun");
-        ArrayPush(names, "Ji-hoon");
-        ArrayPush(names, "Woo-jin");
-        ArrayPush(names, "Kyung");
-        ArrayPush(names, "Sang-hoon");
-        ArrayPush(names, "Yong-jun");
-        ArrayPush(names, "Dae-jung");
-        // Squid Game Easter Eggs
-        ArrayPush(names, "Gi-hun");
-        ArrayPush(names, "Sang-woo");
-        ArrayPush(names, "Il-nam");
-        ArrayPush(names, "Deok-su");
-        ArrayPush(names, "Jun-ho");
-        ArrayPush(names, "In-ho");
-        ArrayPush(names, "Chan-wook");
-        ArrayPush(names, "Young-soo");
-        ArrayPush(names, "Byung-hun");
-        ArrayPush(names, "Kyu-hyun");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Jin-ho"; }
+        if i == 1 { return "Sung"; }
+        if i == 2 { return "Min-jun"; }
+        if i == 3 { return "Jae-won"; }
+        if i == 4 { return "Hyun"; }
+        if i == 5 { return "Seung"; }
+        if i == 6 { return "Tae-hyun"; }
+        if i == 7 { return "Dong-woo"; }
+        if i == 8 { return "Soo-hyun"; }
+        if i == 9 { return "Ji-hoon"; }
+        if i == 10 { return "Woo-jin"; }
+        if i == 11 { return "Kyung"; }
+        if i == 12 { return "Sang-hoon"; }
+        if i == 13 { return "Yong-jun"; }
+        if i == 14 { return "Dae-jung"; }
+        if i == 15 { return "Gi-hun"; }
+        if i == 16 { return "Sang-woo"; }
+        if i == 17 { return "Il-nam"; }
+        if i == 18 { return "Deok-su"; }
+        if i == 19 { return "Jun-ho"; }
+        if i == 20 { return "In-ho"; }
+        if i == 21 { return "Chan-wook"; }
+        if i == 22 { return "Young-soo"; }
+        if i == 23 { return "Byung-hun"; }
+        return "Kyu-hyun";
     }
 
     private static func GetMaleSlavicNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Viktor");
-        ArrayPush(names, "Dmitri");
-        ArrayPush(names, "Alexei");
-        ArrayPush(names, "Yuri");
-        ArrayPush(names, "Sergei");
-        ArrayPush(names, "Nikolai");
-        ArrayPush(names, "Andrei");
-        ArrayPush(names, "Marek");
-        ArrayPush(names, "Pawel");
-        ArrayPush(names, "Ivan");
-        ArrayPush(names, "Boris");
-        ArrayPush(names, "Oleg");
-        ArrayPush(names, "Mikhail");
-        ArrayPush(names, "Konstantin");
-        ArrayPush(names, "Vadim");
-        ArrayPush(names, "Roman");
-        ArrayPush(names, "Stanislav");
-        ArrayPush(names, "Grigori");
-        ArrayPush(names, "Anatoly");
-        ArrayPush(names, "Vladislav");
-        ArrayPush(names, "Piotr");
-        ArrayPush(names, "Wojciech");
-        ArrayPush(names, "Jarek");
-        ArrayPush(names, "Tomasz");
-        ArrayPush(names, "Krzysztof");
-        ArrayPush(names, "Igor");
-        ArrayPush(names, "Vasily");
-        ArrayPush(names, "Maxim");
-        ArrayPush(names, "Arkady");
-        ArrayPush(names, "Lev");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Viktor"; }
+        if i == 1 { return "Dmitri"; }
+        if i == 2 { return "Alexei"; }
+        if i == 3 { return "Yuri"; }
+        if i == 4 { return "Sergei"; }
+        if i == 5 { return "Nikolai"; }
+        if i == 6 { return "Andrei"; }
+        if i == 7 { return "Marek"; }
+        if i == 8 { return "Pawel"; }
+        if i == 9 { return "Ivan"; }
+        if i == 10 { return "Boris"; }
+        if i == 11 { return "Oleg"; }
+        if i == 12 { return "Mikhail"; }
+        if i == 13 { return "Konstantin"; }
+        if i == 14 { return "Vadim"; }
+        if i == 15 { return "Roman"; }
+        if i == 16 { return "Stanislav"; }
+        if i == 17 { return "Grigori"; }
+        if i == 18 { return "Anatoly"; }
+        if i == 19 { return "Vladislav"; }
+        if i == 20 { return "Piotr"; }
+        if i == 21 { return "Wojciech"; }
+        if i == 22 { return "Jarek"; }
+        if i == 23 { return "Tomasz"; }
+        if i == 24 { return "Krzysztof"; }
+        if i == 25 { return "Igor"; }
+        if i == 26 { return "Vasily"; }
+        if i == 27 { return "Maxim"; }
+        if i == 28 { return "Arkady"; }
+        return "Lev";
     }
 
     private static func GetMaleIndianNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Raj");
-        ArrayPush(names, "Vikram");
-        ArrayPush(names, "Arjun");
-        ArrayPush(names, "Sanjay");
-        ArrayPush(names, "Ravi");
-        ArrayPush(names, "Deepak");
-        ArrayPush(names, "Anil");
-        ArrayPush(names, "Sunil");
-        ArrayPush(names, "Pradeep");
-        ArrayPush(names, "Amit");
-        ArrayPush(names, "Rahul");
-        ArrayPush(names, "Nikhil");
-        ArrayPush(names, "Ashok");
-        ArrayPush(names, "Kiran");
-        ArrayPush(names, "Rohan");
-        ArrayPush(names, "Varun");
-        ArrayPush(names, "Aditya");
-        ArrayPush(names, "Naveen");
-        ArrayPush(names, "Sachin");
-        ArrayPush(names, "Gaurav");
-        // Squid Game Easter Egg
-        ArrayPush(names, "Abdul");
-        ArrayPush(names, "Vijay");
-        ArrayPush(names, "Prakash");
-        ArrayPush(names, "Suresh");
-        ArrayPush(names, "Ramesh");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Raj"; }
+        if i == 1 { return "Vikram"; }
+        if i == 2 { return "Arjun"; }
+        if i == 3 { return "Sanjay"; }
+        if i == 4 { return "Ravi"; }
+        if i == 5 { return "Deepak"; }
+        if i == 6 { return "Anil"; }
+        if i == 7 { return "Sunil"; }
+        if i == 8 { return "Pradeep"; }
+        if i == 9 { return "Amit"; }
+        if i == 10 { return "Rahul"; }
+        if i == 11 { return "Nikhil"; }
+        if i == 12 { return "Ashok"; }
+        if i == 13 { return "Kiran"; }
+        if i == 14 { return "Rohan"; }
+        if i == 15 { return "Varun"; }
+        if i == 16 { return "Aditya"; }
+        if i == 17 { return "Naveen"; }
+        if i == 18 { return "Sachin"; }
+        if i == 19 { return "Gaurav"; }
+        if i == 20 { return "Abdul"; }
+        if i == 21 { return "Vijay"; }
+        if i == 22 { return "Prakash"; }
+        if i == 23 { return "Suresh"; }
+        return "Ramesh";
     }
 
     private static func GetMaleMiddleEasternNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Omar");
-        ArrayPush(names, "Hassan");
-        ArrayPush(names, "Ahmed");
-        ArrayPush(names, "Khalid");
-        ArrayPush(names, "Tariq");
-        ArrayPush(names, "Yusuf");
-        ArrayPush(names, "Samir");
-        ArrayPush(names, "Faisal");
-        ArrayPush(names, "Nabil");
-        ArrayPush(names, "Karim");
-        ArrayPush(names, "Rashid");
-        ArrayPush(names, "Hamid");
-        ArrayPush(names, "Amir");
-        ArrayPush(names, "Ibrahim");
-        ArrayPush(names, "Reza");
-        ArrayPush(names, "Darius");
-        ArrayPush(names, "Cyrus");
-        ArrayPush(names, "Arash");
-        ArrayPush(names, "Farid");
-        ArrayPush(names, "Jamal");
-        ArrayPush(names, "Mustafa");
-        ArrayPush(names, "Ali");
-        ArrayPush(names, "Mohammed");
-        ArrayPush(names, "Sayed");
-        ArrayPush(names, "Walid");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Omar"; }
+        if i == 1 { return "Hassan"; }
+        if i == 2 { return "Ahmed"; }
+        if i == 3 { return "Khalid"; }
+        if i == 4 { return "Tariq"; }
+        if i == 5 { return "Yusuf"; }
+        if i == 6 { return "Samir"; }
+        if i == 7 { return "Faisal"; }
+        if i == 8 { return "Nabil"; }
+        if i == 9 { return "Karim"; }
+        if i == 10 { return "Rashid"; }
+        if i == 11 { return "Hamid"; }
+        if i == 12 { return "Amir"; }
+        if i == 13 { return "Ibrahim"; }
+        if i == 14 { return "Reza"; }
+        if i == 15 { return "Darius"; }
+        if i == 16 { return "Cyrus"; }
+        if i == 17 { return "Arash"; }
+        if i == 18 { return "Farid"; }
+        if i == 19 { return "Jamal"; }
+        if i == 20 { return "Mustafa"; }
+        if i == 21 { return "Ali"; }
+        if i == 22 { return "Mohammed"; }
+        if i == 23 { return "Sayed"; }
+        return "Walid";
     }
 
     private static func GetMaleAfricanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Kofi");
-        ArrayPush(names, "Kwame");
-        ArrayPush(names, "Chidi");
-        ArrayPush(names, "Emeka");
-        ArrayPush(names, "Oluwaseun");
-        ArrayPush(names, "Tunde");
-        ArrayPush(names, "Babatunde");
-        ArrayPush(names, "Adewale");
-        ArrayPush(names, "Chijioke");
-        ArrayPush(names, "Nnamdi");
-        ArrayPush(names, "Sekou");
-        ArrayPush(names, "Mamadou");
-        ArrayPush(names, "Ousmane");
-        ArrayPush(names, "Amadou");
-        ArrayPush(names, "Yohannes");
-        ArrayPush(names, "Jean-Baptiste");
-        ArrayPush(names, "Pierre-Louis");
-        ArrayPush(names, "Francois");
-        ArrayPush(names, "Remy");
-        ArrayPush(names, "Jacques");
-        ArrayPush(names, "Emmanuel");
-        ArrayPush(names, "Samuel");
-        ArrayPush(names, "Daniel");
-        ArrayPush(names, "Solomon");
-        ArrayPush(names, "Moses");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Kofi"; }
+        if i == 1 { return "Kwame"; }
+        if i == 2 { return "Chidi"; }
+        if i == 3 { return "Emeka"; }
+        if i == 4 { return "Oluwaseun"; }
+        if i == 5 { return "Tunde"; }
+        if i == 6 { return "Babatunde"; }
+        if i == 7 { return "Adewale"; }
+        if i == 8 { return "Chijioke"; }
+        if i == 9 { return "Nnamdi"; }
+        if i == 10 { return "Sekou"; }
+        if i == 11 { return "Mamadou"; }
+        if i == 12 { return "Ousmane"; }
+        if i == 13 { return "Amadou"; }
+        if i == 14 { return "Yohannes"; }
+        if i == 15 { return "Jean-Baptiste"; }
+        if i == 16 { return "Pierre-Louis"; }
+        if i == 17 { return "Francois"; }
+        if i == 18 { return "Remy"; }
+        if i == 19 { return "Jacques"; }
+        if i == 20 { return "Emmanuel"; }
+        if i == 21 { return "Samuel"; }
+        if i == 22 { return "Daniel"; }
+        if i == 23 { return "Solomon"; }
+        return "Moses";
     }
 
     private static func GetMaleHaitianNames(seed: Int32) -> String {
-        let names: array<String>;
-        // Haitian Creole / French-influenced names
-        ArrayPush(names, "Jean-Pierre");
-        ArrayPush(names, "Jean-Baptiste");
-        ArrayPush(names, "Pierre-Louis");
-        ArrayPush(names, "Jean-Claude");
-        ArrayPush(names, "Jean-Michel");
-        ArrayPush(names, "Frantz");
-        ArrayPush(names, "Remy");
-        ArrayPush(names, "Jacques");
-        ArrayPush(names, "Wilner");
-        ArrayPush(names, "Mackenson");
-        ArrayPush(names, "Dieudonne");
-        ArrayPush(names, "Emmanuel");
-        ArrayPush(names, "Samuel");
-        ArrayPush(names, "Daniel");
-        ArrayPush(names, "Evens");
-        ArrayPush(names, "Wisly");
-        ArrayPush(names, "Woodly");
-        ArrayPush(names, "Stanley");
-        ArrayPush(names, "Eddy");
-        ArrayPush(names, "Reginald");
-        ArrayPush(names, "Placide");
-        ArrayPush(names, "Toussaint");
-        ArrayPush(names, "Dessalines");
-        ArrayPush(names, "Christophe");
-        ArrayPush(names, "Jude");
-        ArrayPush(names, "Maxo");
-        ArrayPush(names, "Wyclef");
-        ArrayPush(names, "Ti");
-        ArrayPush(names, "Manu");
-        ArrayPush(names, "Ricardo");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Jean-Pierre"; }
+        if i == 1 { return "Jean-Baptiste"; }
+        if i == 2 { return "Pierre-Louis"; }
+        if i == 3 { return "Jean-Claude"; }
+        if i == 4 { return "Jean-Michel"; }
+        if i == 5 { return "Frantz"; }
+        if i == 6 { return "Remy"; }
+        if i == 7 { return "Jacques"; }
+        if i == 8 { return "Wilner"; }
+        if i == 9 { return "Mackenson"; }
+        if i == 10 { return "Dieudonne"; }
+        if i == 11 { return "Emmanuel"; }
+        if i == 12 { return "Samuel"; }
+        if i == 13 { return "Daniel"; }
+        if i == 14 { return "Evens"; }
+        if i == 15 { return "Wisly"; }
+        if i == 16 { return "Woodly"; }
+        if i == 17 { return "Stanley"; }
+        if i == 18 { return "Eddy"; }
+        if i == 19 { return "Reginald"; }
+        if i == 20 { return "Placide"; }
+        if i == 21 { return "Toussaint"; }
+        if i == 22 { return "Dessalines"; }
+        if i == 23 { return "Christophe"; }
+        if i == 24 { return "Jude"; }
+        if i == 25 { return "Maxo"; }
+        if i == 26 { return "Wyclef"; }
+        if i == 27 { return "Ti"; }
+        if i == 28 { return "Manu"; }
+        return "Ricardo";
     }
 
     private static func GetMaleSoutheastAsianNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Minh");
-        ArrayPush(names, "Duc");
-        ArrayPush(names, "Huy");
-        ArrayPush(names, "Bao");
-        ArrayPush(names, "Tam");
-        ArrayPush(names, "Thien");
-        ArrayPush(names, "Somchai");
-        ArrayPush(names, "Prasert");
-        ArrayPush(names, "Sompong");
-        ArrayPush(names, "Rizal");
-        ArrayPush(names, "Arief");
-        ArrayPush(names, "Budi");
-        ArrayPush(names, "Agus");
-        ArrayPush(names, "Tuan");
-        ArrayPush(names, "Quang");
-        ArrayPush(names, "Thanh");
-        ArrayPush(names, "Phong");
-        ArrayPush(names, "Kiet");
-        ArrayPush(names, "Vinh");
-        ArrayPush(names, "Long");
-        ArrayPush(names, "Duy");
-        ArrayPush(names, "Dat");
-        ArrayPush(names, "Thai");
-        ArrayPush(names, "Nam");
-        ArrayPush(names, "Hung");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Minh"; }
+        if i == 1 { return "Duc"; }
+        if i == 2 { return "Huy"; }
+        if i == 3 { return "Bao"; }
+        if i == 4 { return "Tam"; }
+        if i == 5 { return "Thien"; }
+        if i == 6 { return "Somchai"; }
+        if i == 7 { return "Prasert"; }
+        if i == 8 { return "Sompong"; }
+        if i == 9 { return "Rizal"; }
+        if i == 10 { return "Arief"; }
+        if i == 11 { return "Budi"; }
+        if i == 12 { return "Agus"; }
+        if i == 13 { return "Tuan"; }
+        if i == 14 { return "Quang"; }
+        if i == 15 { return "Thanh"; }
+        if i == 16 { return "Phong"; }
+        if i == 17 { return "Kiet"; }
+        if i == 18 { return "Vinh"; }
+        if i == 19 { return "Long"; }
+        if i == 20 { return "Duy"; }
+        if i == 21 { return "Dat"; }
+        if i == 22 { return "Thai"; }
+        if i == 23 { return "Nam"; }
+        return "Hung";
     }
 
     private static func GetMaleEuropeanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Jean");
-        ArrayPush(names, "Pierre");
-        ArrayPush(names, "Laurent");
-        ArrayPush(names, "Francois");
-        ArrayPush(names, "Thierry");
-        ArrayPush(names, "Klaus");
-        ArrayPush(names, "Hans");
-        ArrayPush(names, "Wolfgang");
-        ArrayPush(names, "Heinrich");
-        ArrayPush(names, "Fritz");
-        ArrayPush(names, "Marco");
-        ArrayPush(names, "Luca");
-        ArrayPush(names, "Giovanni");
-        ArrayPush(names, "Alessandro");
-        ArrayPush(names, "Matteo");
-        ArrayPush(names, "Lars");
-        ArrayPush(names, "Erik");
-        ArrayPush(names, "Sven");
-        ArrayPush(names, "Magnus");
-        ArrayPush(names, "Bjorn");
-        ArrayPush(names, "Patrick");
-        ArrayPush(names, "Sean");
-        ArrayPush(names, "Connor");
-        ArrayPush(names, "Liam");
-        ArrayPush(names, "Declan");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Jean"; }
+        if i == 1 { return "Pierre"; }
+        if i == 2 { return "Laurent"; }
+        if i == 3 { return "Francois"; }
+        if i == 4 { return "Thierry"; }
+        if i == 5 { return "Klaus"; }
+        if i == 6 { return "Hans"; }
+        if i == 7 { return "Wolfgang"; }
+        if i == 8 { return "Heinrich"; }
+        if i == 9 { return "Fritz"; }
+        if i == 10 { return "Marco"; }
+        if i == 11 { return "Luca"; }
+        if i == 12 { return "Giovanni"; }
+        if i == 13 { return "Alessandro"; }
+        if i == 14 { return "Matteo"; }
+        if i == 15 { return "Lars"; }
+        if i == 16 { return "Erik"; }
+        if i == 17 { return "Sven"; }
+        if i == 18 { return "Magnus"; }
+        if i == 19 { return "Bjorn"; }
+        if i == 20 { return "Patrick"; }
+        if i == 21 { return "Sean"; }
+        if i == 22 { return "Connor"; }
+        if i == 23 { return "Liam"; }
+        return "Declan";
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -552,430 +536,415 @@ public class NameGenerator {
     }
 
     private static func GetFemaleAmericanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Sarah");
-        ArrayPush(names, "Jennifer");
-        ArrayPush(names, "Michelle");
-        ArrayPush(names, "Amanda");
-        ArrayPush(names, "Jessica");
-        ArrayPush(names, "Rachel");
-        ArrayPush(names, "Lisa");
-        ArrayPush(names, "Angela");
-        ArrayPush(names, "Stephanie");
-        ArrayPush(names, "Nicole");
-        ArrayPush(names, "Lauren");
-        ArrayPush(names, "Ashley");
-        ArrayPush(names, "Emily");
-        ArrayPush(names, "Megan");
-        ArrayPush(names, "Samantha");
-        ArrayPush(names, "Heather");
-        ArrayPush(names, "Amber");
-        ArrayPush(names, "Crystal");
-        ArrayPush(names, "Brittany");
-        ArrayPush(names, "Courtney");
-        ArrayPush(names, "Kaitlyn");
-        ArrayPush(names, "Hannah");
-        ArrayPush(names, "Madison");
-        ArrayPush(names, "Alexis");
-        ArrayPush(names, "Taylor");
-        ArrayPush(names, "Jordan");
-        ArrayPush(names, "Morgan");
-        ArrayPush(names, "Sydney");
-        ArrayPush(names, "Brooke");
-        ArrayPush(names, "Paige");
-        ArrayPush(names, "Kelly");
-        ArrayPush(names, "Katie");
-        ArrayPush(names, "Lindsey");
-        ArrayPush(names, "Danielle");
-        ArrayPush(names, "Christina");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 34);
+        if i == 0 { return "Sarah"; }
+        if i == 1 { return "Jennifer"; }
+        if i == 2 { return "Michelle"; }
+        if i == 3 { return "Amanda"; }
+        if i == 4 { return "Jessica"; }
+        if i == 5 { return "Rachel"; }
+        if i == 6 { return "Lisa"; }
+        if i == 7 { return "Angela"; }
+        if i == 8 { return "Stephanie"; }
+        if i == 9 { return "Nicole"; }
+        if i == 10 { return "Lauren"; }
+        if i == 11 { return "Ashley"; }
+        if i == 12 { return "Emily"; }
+        if i == 13 { return "Megan"; }
+        if i == 14 { return "Samantha"; }
+        if i == 15 { return "Heather"; }
+        if i == 16 { return "Amber"; }
+        if i == 17 { return "Crystal"; }
+        if i == 18 { return "Brittany"; }
+        if i == 19 { return "Courtney"; }
+        if i == 20 { return "Kaitlyn"; }
+        if i == 21 { return "Hannah"; }
+        if i == 22 { return "Madison"; }
+        if i == 23 { return "Alexis"; }
+        if i == 24 { return "Taylor"; }
+        if i == 25 { return "Jordan"; }
+        if i == 26 { return "Morgan"; }
+        if i == 27 { return "Sydney"; }
+        if i == 28 { return "Brooke"; }
+        if i == 29 { return "Paige"; }
+        if i == 30 { return "Kelly"; }
+        if i == 31 { return "Katie"; }
+        if i == 32 { return "Lindsey"; }
+        if i == 33 { return "Danielle"; }
+        return "Christina";
     }
 
     private static func GetFemaleAfricanAmericanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Tanya");
-        ArrayPush(names, "Keisha");
-        ArrayPush(names, "Brianna");
-        ArrayPush(names, "Destiny");
-        ArrayPush(names, "Jasmine");
-        ArrayPush(names, "Aaliyah");
-        ArrayPush(names, "Shanice");
-        ArrayPush(names, "Tamika");
-        ArrayPush(names, "Latoya");
-        ArrayPush(names, "Diamond");
-        ArrayPush(names, "Precious");
-        ArrayPush(names, "Ebony");
-        ArrayPush(names, "Imani");
-        ArrayPush(names, "Shaniqua");
-        ArrayPush(names, "Monique");
-        ArrayPush(names, "Tanisha");
-        ArrayPush(names, "Shonda");
-        ArrayPush(names, "Lakisha");
-        ArrayPush(names, "Niesha");
-        ArrayPush(names, "Deja");
-        ArrayPush(names, "Tamara");
-        ArrayPush(names, "Yolanda");
-        ArrayPush(names, "Tiffany");
-        ArrayPush(names, "Renee");
-        ArrayPush(names, "Jazmin");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Tanya"; }
+        if i == 1 { return "Keisha"; }
+        if i == 2 { return "Brianna"; }
+        if i == 3 { return "Destiny"; }
+        if i == 4 { return "Jasmine"; }
+        if i == 5 { return "Aaliyah"; }
+        if i == 6 { return "Shanice"; }
+        if i == 7 { return "Tamika"; }
+        if i == 8 { return "Latoya"; }
+        if i == 9 { return "Diamond"; }
+        if i == 10 { return "Precious"; }
+        if i == 11 { return "Ebony"; }
+        if i == 12 { return "Imani"; }
+        if i == 13 { return "Shaniqua"; }
+        if i == 14 { return "Monique"; }
+        if i == 15 { return "Tanisha"; }
+        if i == 16 { return "Shonda"; }
+        if i == 17 { return "Lakisha"; }
+        if i == 18 { return "Niesha"; }
+        if i == 19 { return "Deja"; }
+        if i == 20 { return "Tamara"; }
+        if i == 21 { return "Yolanda"; }
+        if i == 22 { return "Tiffany"; }
+        if i == 23 { return "Renee"; }
+        return "Jazmin";
     }
 
     private static func GetFemaleHispanicNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Maria");
-        ArrayPush(names, "Rosa");
-        ArrayPush(names, "Carmen");
-        ArrayPush(names, "Sofia");
-        ArrayPush(names, "Valentina");
-        ArrayPush(names, "Isabella");
-        ArrayPush(names, "Gabriela");
-        ArrayPush(names, "Lucia");
-        ArrayPush(names, "Elena");
-        ArrayPush(names, "Ana");
-        ArrayPush(names, "Camila");
-        ArrayPush(names, "Mariana");
-        ArrayPush(names, "Adriana");
-        ArrayPush(names, "Alejandra");
-        ArrayPush(names, "Daniela");
-        ArrayPush(names, "Fernanda");
-        ArrayPush(names, "Natalia");
-        ArrayPush(names, "Veronica");
-        ArrayPush(names, "Catalina");
-        ArrayPush(names, "Marisol");
-        ArrayPush(names, "Esperanza");
-        ArrayPush(names, "Guadalupe");
-        ArrayPush(names, "Xiomara");
-        ArrayPush(names, "Yolanda");
-        ArrayPush(names, "Dolores");
-        ArrayPush(names, "Consuelo");
-        ArrayPush(names, "Raquel");
-        ArrayPush(names, "Pilar");
-        ArrayPush(names, "Ines");
-        ArrayPush(names, "Paloma");
-        ArrayPush(names, "Luz");
-        ArrayPush(names, "Teresa");
-        ArrayPush(names, "Patricia");
-        ArrayPush(names, "Claudia");
-        ArrayPush(names, "Diana");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 34);
+        if i == 0 { return "Maria"; }
+        if i == 1 { return "Rosa"; }
+        if i == 2 { return "Carmen"; }
+        if i == 3 { return "Sofia"; }
+        if i == 4 { return "Valentina"; }
+        if i == 5 { return "Isabella"; }
+        if i == 6 { return "Gabriela"; }
+        if i == 7 { return "Lucia"; }
+        if i == 8 { return "Elena"; }
+        if i == 9 { return "Ana"; }
+        if i == 10 { return "Camila"; }
+        if i == 11 { return "Mariana"; }
+        if i == 12 { return "Adriana"; }
+        if i == 13 { return "Alejandra"; }
+        if i == 14 { return "Daniela"; }
+        if i == 15 { return "Fernanda"; }
+        if i == 16 { return "Natalia"; }
+        if i == 17 { return "Veronica"; }
+        if i == 18 { return "Catalina"; }
+        if i == 19 { return "Marisol"; }
+        if i == 20 { return "Esperanza"; }
+        if i == 21 { return "Guadalupe"; }
+        if i == 22 { return "Xiomara"; }
+        if i == 23 { return "Yolanda"; }
+        if i == 24 { return "Dolores"; }
+        if i == 25 { return "Consuelo"; }
+        if i == 26 { return "Raquel"; }
+        if i == 27 { return "Pilar"; }
+        if i == 28 { return "Ines"; }
+        if i == 29 { return "Paloma"; }
+        if i == 30 { return "Luz"; }
+        if i == 31 { return "Teresa"; }
+        if i == 32 { return "Patricia"; }
+        if i == 33 { return "Claudia"; }
+        return "Diana";
     }
 
     private static func GetFemaleJapaneseNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Yuki");
-        ArrayPush(names, "Mei");
-        ArrayPush(names, "Akiko");
-        ArrayPush(names, "Sakura");
-        ArrayPush(names, "Haruka");
-        ArrayPush(names, "Mika");
-        ArrayPush(names, "Rina");
-        ArrayPush(names, "Kaori");
-        ArrayPush(names, "Yui");
-        ArrayPush(names, "Aoi");
-        ArrayPush(names, "Hana");
-        ArrayPush(names, "Nanami");
-        ArrayPush(names, "Kana");
-        ArrayPush(names, "Ayumi");
-        ArrayPush(names, "Misaki");
-        ArrayPush(names, "Natsuki");
-        ArrayPush(names, "Saki");
-        ArrayPush(names, "Tomoko");
-        ArrayPush(names, "Keiko");
-        ArrayPush(names, "Noriko");
-        ArrayPush(names, "Mariko");
-        ArrayPush(names, "Kumiko");
-        ArrayPush(names, "Yumiko");
-        ArrayPush(names, "Reiko");
-        ArrayPush(names, "Michiko");
-        ArrayPush(names, "Naomi");
-        ArrayPush(names, "Emi");
-        ArrayPush(names, "Asuka");
-        ArrayPush(names, "Rei");
-        ArrayPush(names, "Hikari");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Yuki"; }
+        if i == 1 { return "Mei"; }
+        if i == 2 { return "Akiko"; }
+        if i == 3 { return "Sakura"; }
+        if i == 4 { return "Haruka"; }
+        if i == 5 { return "Mika"; }
+        if i == 6 { return "Rina"; }
+        if i == 7 { return "Kaori"; }
+        if i == 8 { return "Yui"; }
+        if i == 9 { return "Aoi"; }
+        if i == 10 { return "Hana"; }
+        if i == 11 { return "Nanami"; }
+        if i == 12 { return "Kana"; }
+        if i == 13 { return "Ayumi"; }
+        if i == 14 { return "Misaki"; }
+        if i == 15 { return "Natsuki"; }
+        if i == 16 { return "Saki"; }
+        if i == 17 { return "Tomoko"; }
+        if i == 18 { return "Keiko"; }
+        if i == 19 { return "Noriko"; }
+        if i == 20 { return "Mariko"; }
+        if i == 21 { return "Kumiko"; }
+        if i == 22 { return "Yumiko"; }
+        if i == 23 { return "Reiko"; }
+        if i == 24 { return "Michiko"; }
+        if i == 25 { return "Naomi"; }
+        if i == 26 { return "Emi"; }
+        if i == 27 { return "Asuka"; }
+        if i == 28 { return "Rei"; }
+        return "Hikari";
     }
 
     private static func GetFemaleChineseNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Lin");
-        ArrayPush(names, "Xiao");
-        ArrayPush(names, "Mei-Lin");
-        ArrayPush(names, "Yan");
-        ArrayPush(names, "Jing");
-        ArrayPush(names, "Hua");
-        ArrayPush(names, "Xiu");
-        ArrayPush(names, "Fang");
-        ArrayPush(names, "Li");
-        ArrayPush(names, "Na");
-        ArrayPush(names, "Ying");
-        ArrayPush(names, "Hong");
-        ArrayPush(names, "Lan");
-        ArrayPush(names, "Qing");
-        ArrayPush(names, "Shu");
-        ArrayPush(names, "Wen");
-        ArrayPush(names, "Zhi");
-        ArrayPush(names, "Yun");
-        ArrayPush(names, "Xia");
-        ArrayPush(names, "Mei");
-        ArrayPush(names, "Ling");
-        ArrayPush(names, "Hui");
-        ArrayPush(names, "Min");
-        ArrayPush(names, "Ping");
-        ArrayPush(names, "Wei");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Lin"; }
+        if i == 1 { return "Xiao"; }
+        if i == 2 { return "Mei-Lin"; }
+        if i == 3 { return "Yan"; }
+        if i == 4 { return "Jing"; }
+        if i == 5 { return "Hua"; }
+        if i == 6 { return "Xiu"; }
+        if i == 7 { return "Fang"; }
+        if i == 8 { return "Li"; }
+        if i == 9 { return "Na"; }
+        if i == 10 { return "Ying"; }
+        if i == 11 { return "Hong"; }
+        if i == 12 { return "Lan"; }
+        if i == 13 { return "Qing"; }
+        if i == 14 { return "Shu"; }
+        if i == 15 { return "Wen"; }
+        if i == 16 { return "Zhi"; }
+        if i == 17 { return "Yun"; }
+        if i == 18 { return "Xia"; }
+        if i == 19 { return "Mei"; }
+        if i == 20 { return "Ling"; }
+        if i == 21 { return "Hui"; }
+        if i == 22 { return "Min"; }
+        if i == 23 { return "Ping"; }
+        return "Wei";
     }
 
     private static func GetFemaleKoreanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Ji-yeon");
-        ArrayPush(names, "Min-ji");
-        ArrayPush(names, "Su-bin");
-        ArrayPush(names, "Hye-jin");
-        ArrayPush(names, "Soo-yeon");
-        ArrayPush(names, "Eun-ji");
-        ArrayPush(names, "Yoon-ah");
-        ArrayPush(names, "Ha-na");
-        ArrayPush(names, "Ae-ri");
-        ArrayPush(names, "Bo-ra");
-        ArrayPush(names, "Da-hye");
-        ArrayPush(names, "Ga-young");
-        ArrayPush(names, "In-young");
-        ArrayPush(names, "Mi-sun");
-        ArrayPush(names, "Sun-hee");
-        // Squid Game Easter Eggs
-        ArrayPush(names, "Sae-byeok");
-        ArrayPush(names, "Mi-nyeo");
-        ArrayPush(names, "Ji-yeong");
-        ArrayPush(names, "Young-hee");
-        ArrayPush(names, "Yeon-hee");
-        ArrayPush(names, "Jung-ah");
-        ArrayPush(names, "Hee-jung");
-        ArrayPush(names, "Soo-jin");
-        ArrayPush(names, "Ye-jin");
-        ArrayPush(names, "Min-young");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Ji-yeon"; }
+        if i == 1 { return "Min-ji"; }
+        if i == 2 { return "Su-bin"; }
+        if i == 3 { return "Hye-jin"; }
+        if i == 4 { return "Soo-yeon"; }
+        if i == 5 { return "Eun-ji"; }
+        if i == 6 { return "Yoon-ah"; }
+        if i == 7 { return "Ha-na"; }
+        if i == 8 { return "Ae-ri"; }
+        if i == 9 { return "Bo-ra"; }
+        if i == 10 { return "Da-hye"; }
+        if i == 11 { return "Ga-young"; }
+        if i == 12 { return "In-young"; }
+        if i == 13 { return "Mi-sun"; }
+        if i == 14 { return "Sun-hee"; }
+        if i == 15 { return "Sae-byeok"; }
+        if i == 16 { return "Mi-nyeo"; }
+        if i == 17 { return "Ji-yeong"; }
+        if i == 18 { return "Young-hee"; }
+        if i == 19 { return "Yeon-hee"; }
+        if i == 20 { return "Jung-ah"; }
+        if i == 21 { return "Hee-jung"; }
+        if i == 22 { return "Soo-jin"; }
+        if i == 23 { return "Ye-jin"; }
+        return "Min-young";
     }
 
     private static func GetFemaleSlavicNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Natasha");
-        ArrayPush(names, "Svetlana");
-        ArrayPush(names, "Katya");
-        ArrayPush(names, "Olga");
-        ArrayPush(names, "Anna");
-        ArrayPush(names, "Irina");
-        ArrayPush(names, "Anya");
-        ArrayPush(names, "Marta");
-        ArrayPush(names, "Zofia");
-        ArrayPush(names, "Tatiana");
-        ArrayPush(names, "Yelena");
-        ArrayPush(names, "Nadia");
-        ArrayPush(names, "Vera");
-        ArrayPush(names, "Marina");
-        ArrayPush(names, "Galina");
-        ArrayPush(names, "Ludmila");
-        ArrayPush(names, "Valentina");
-        ArrayPush(names, "Oksana");
-        ArrayPush(names, "Yulia");
-        ArrayPush(names, "Daria");
-        ArrayPush(names, "Agnieszka");
-        ArrayPush(names, "Kasia");
-        ArrayPush(names, "Monika");
-        ArrayPush(names, "Ewa");
-        ArrayPush(names, "Beata");
-        ArrayPush(names, "Nina");
-        ArrayPush(names, "Sasha");
-        ArrayPush(names, "Larisa");
-        ArrayPush(names, "Tamara");
-        ArrayPush(names, "Zoya");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Natasha"; }
+        if i == 1 { return "Svetlana"; }
+        if i == 2 { return "Katya"; }
+        if i == 3 { return "Olga"; }
+        if i == 4 { return "Anna"; }
+        if i == 5 { return "Irina"; }
+        if i == 6 { return "Anya"; }
+        if i == 7 { return "Marta"; }
+        if i == 8 { return "Zofia"; }
+        if i == 9 { return "Tatiana"; }
+        if i == 10 { return "Yelena"; }
+        if i == 11 { return "Nadia"; }
+        if i == 12 { return "Vera"; }
+        if i == 13 { return "Marina"; }
+        if i == 14 { return "Galina"; }
+        if i == 15 { return "Ludmila"; }
+        if i == 16 { return "Valentina"; }
+        if i == 17 { return "Oksana"; }
+        if i == 18 { return "Yulia"; }
+        if i == 19 { return "Daria"; }
+        if i == 20 { return "Agnieszka"; }
+        if i == 21 { return "Kasia"; }
+        if i == 22 { return "Monika"; }
+        if i == 23 { return "Ewa"; }
+        if i == 24 { return "Beata"; }
+        if i == 25 { return "Nina"; }
+        if i == 26 { return "Sasha"; }
+        if i == 27 { return "Larisa"; }
+        if i == 28 { return "Tamara"; }
+        return "Zoya";
     }
 
     private static func GetFemaleIndianNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Priya");
-        ArrayPush(names, "Anita");
-        ArrayPush(names, "Sunita");
-        ArrayPush(names, "Kavita");
-        ArrayPush(names, "Meena");
-        ArrayPush(names, "Deepa");
-        ArrayPush(names, "Anjali");
-        ArrayPush(names, "Pooja");
-        ArrayPush(names, "Neha");
-        ArrayPush(names, "Rani");
-        ArrayPush(names, "Lakshmi");
-        ArrayPush(names, "Geeta");
-        ArrayPush(names, "Radha");
-        ArrayPush(names, "Sita");
-        ArrayPush(names, "Divya");
-        ArrayPush(names, "Rekha");
-        ArrayPush(names, "Asha");
-        ArrayPush(names, "Padma");
-        ArrayPush(names, "Usha");
-        ArrayPush(names, "Nisha");
-        ArrayPush(names, "Meera");
-        ArrayPush(names, "Shanti");
-        ArrayPush(names, "Kamala");
-        ArrayPush(names, "Savitri");
-        ArrayPush(names, "Indira");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Priya"; }
+        if i == 1 { return "Anita"; }
+        if i == 2 { return "Sunita"; }
+        if i == 3 { return "Kavita"; }
+        if i == 4 { return "Meena"; }
+        if i == 5 { return "Deepa"; }
+        if i == 6 { return "Anjali"; }
+        if i == 7 { return "Pooja"; }
+        if i == 8 { return "Neha"; }
+        if i == 9 { return "Rani"; }
+        if i == 10 { return "Lakshmi"; }
+        if i == 11 { return "Geeta"; }
+        if i == 12 { return "Radha"; }
+        if i == 13 { return "Sita"; }
+        if i == 14 { return "Divya"; }
+        if i == 15 { return "Rekha"; }
+        if i == 16 { return "Asha"; }
+        if i == 17 { return "Padma"; }
+        if i == 18 { return "Usha"; }
+        if i == 19 { return "Nisha"; }
+        if i == 20 { return "Meera"; }
+        if i == 21 { return "Shanti"; }
+        if i == 22 { return "Kamala"; }
+        if i == 23 { return "Savitri"; }
+        return "Indira";
     }
 
     private static func GetFemaleMiddleEasternNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Fatima");
-        ArrayPush(names, "Aisha");
-        ArrayPush(names, "Layla");
-        ArrayPush(names, "Yasmin");
-        ArrayPush(names, "Noor");
-        ArrayPush(names, "Salma");
-        ArrayPush(names, "Amira");
-        ArrayPush(names, "Leila");
-        ArrayPush(names, "Samira");
-        ArrayPush(names, "Zara");
-        ArrayPush(names, "Rania");
-        ArrayPush(names, "Maryam");
-        ArrayPush(names, "Farah");
-        ArrayPush(names, "Nadira");
-        ArrayPush(names, "Shirin");
-        ArrayPush(names, "Parisa");
-        ArrayPush(names, "Soraya");
-        ArrayPush(names, "Roxana");
-        ArrayPush(names, "Azadeh");
-        ArrayPush(names, "Nasrin");
-        ArrayPush(names, "Zahra");
-        ArrayPush(names, "Hana");
-        ArrayPush(names, "Sara");
-        ArrayPush(names, "Dina");
-        ArrayPush(names, "Mariam");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Fatima"; }
+        if i == 1 { return "Aisha"; }
+        if i == 2 { return "Layla"; }
+        if i == 3 { return "Yasmin"; }
+        if i == 4 { return "Noor"; }
+        if i == 5 { return "Salma"; }
+        if i == 6 { return "Amira"; }
+        if i == 7 { return "Leila"; }
+        if i == 8 { return "Samira"; }
+        if i == 9 { return "Zara"; }
+        if i == 10 { return "Rania"; }
+        if i == 11 { return "Maryam"; }
+        if i == 12 { return "Farah"; }
+        if i == 13 { return "Nadira"; }
+        if i == 14 { return "Shirin"; }
+        if i == 15 { return "Parisa"; }
+        if i == 16 { return "Soraya"; }
+        if i == 17 { return "Roxana"; }
+        if i == 18 { return "Azadeh"; }
+        if i == 19 { return "Nasrin"; }
+        if i == 20 { return "Zahra"; }
+        if i == 21 { return "Hana"; }
+        if i == 22 { return "Sara"; }
+        if i == 23 { return "Dina"; }
+        return "Mariam";
     }
 
     private static func GetFemaleAfricanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Amara");
-        ArrayPush(names, "Adaeze");
-        ArrayPush(names, "Chiamaka");
-        ArrayPush(names, "Ngozi");
-        ArrayPush(names, "Nneka");
-        ArrayPush(names, "Adanna");
-        ArrayPush(names, "Folake");
-        ArrayPush(names, "Yetunde");
-        ArrayPush(names, "Aminata");
-        ArrayPush(names, "Mariama");
-        ArrayPush(names, "Awa");
-        ArrayPush(names, "Fatou");
-        ArrayPush(names, "Aissatou");
-        ArrayPush(names, "Tigist");
-        ArrayPush(names, "Makeda");
-        ArrayPush(names, "Marie-Claire");
-        ArrayPush(names, "Josephine");
-        ArrayPush(names, "Claudine");
-        ArrayPush(names, "Nadege");
-        ArrayPush(names, "Esther");
-        ArrayPush(names, "Ruth");
-        ArrayPush(names, "Miriam");
-        ArrayPush(names, "Grace");
-        ArrayPush(names, "Hope");
-        ArrayPush(names, "Blessing");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Amara"; }
+        if i == 1 { return "Adaeze"; }
+        if i == 2 { return "Chiamaka"; }
+        if i == 3 { return "Ngozi"; }
+        if i == 4 { return "Nneka"; }
+        if i == 5 { return "Adanna"; }
+        if i == 6 { return "Folake"; }
+        if i == 7 { return "Yetunde"; }
+        if i == 8 { return "Aminata"; }
+        if i == 9 { return "Mariama"; }
+        if i == 10 { return "Awa"; }
+        if i == 11 { return "Fatou"; }
+        if i == 12 { return "Aissatou"; }
+        if i == 13 { return "Tigist"; }
+        if i == 14 { return "Makeda"; }
+        if i == 15 { return "Marie-Claire"; }
+        if i == 16 { return "Josephine"; }
+        if i == 17 { return "Claudine"; }
+        if i == 18 { return "Nadege"; }
+        if i == 19 { return "Esther"; }
+        if i == 20 { return "Ruth"; }
+        if i == 21 { return "Miriam"; }
+        if i == 22 { return "Grace"; }
+        if i == 23 { return "Hope"; }
+        return "Blessing";
     }
 
     private static func GetFemaleHaitianNames(seed: Int32) -> String {
-        let names: array<String>;
-        // Haitian Creole / French-influenced names
-        ArrayPush(names, "Marie-Claire");
-        ArrayPush(names, "Marie-Louise");
-        ArrayPush(names, "Marie-Josee");
-        ArrayPush(names, "Nadege");
-        ArrayPush(names, "Mireille");
-        ArrayPush(names, "Fabienne");
-        ArrayPush(names, "Guerline");
-        ArrayPush(names, "Yolande");
-        ArrayPush(names, "Ginette");
-        ArrayPush(names, "Judith");
-        ArrayPush(names, "Roseline");
-        ArrayPush(names, "Claudette");
-        ArrayPush(names, "Carline");
-        ArrayPush(names, "Magalie");
-        ArrayPush(names, "Mimose");
-        ArrayPush(names, "Tifane");
-        ArrayPush(names, "Kettely");
-        ArrayPush(names, "Islande");
-        ArrayPush(names, "Fleurette");
-        ArrayPush(names, "Esther");
-        ArrayPush(names, "Ruth");
-        ArrayPush(names, "Naomi");
-        ArrayPush(names, "Deborah");
-        ArrayPush(names, "Sherly");
-        ArrayPush(names, "Widline");
-        ArrayPush(names, "Lovely");
-        ArrayPush(names, "Dieula");
-        ArrayPush(names, "Venise");
-        ArrayPush(names, "Pascale");
-        ArrayPush(names, "Beatrice");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Marie-Claire"; }
+        if i == 1 { return "Marie-Louise"; }
+        if i == 2 { return "Marie-Josee"; }
+        if i == 3 { return "Nadege"; }
+        if i == 4 { return "Mireille"; }
+        if i == 5 { return "Fabienne"; }
+        if i == 6 { return "Guerline"; }
+        if i == 7 { return "Yolande"; }
+        if i == 8 { return "Ginette"; }
+        if i == 9 { return "Judith"; }
+        if i == 10 { return "Roseline"; }
+        if i == 11 { return "Claudette"; }
+        if i == 12 { return "Carline"; }
+        if i == 13 { return "Magalie"; }
+        if i == 14 { return "Mimose"; }
+        if i == 15 { return "Tifane"; }
+        if i == 16 { return "Kettely"; }
+        if i == 17 { return "Islande"; }
+        if i == 18 { return "Fleurette"; }
+        if i == 19 { return "Esther"; }
+        if i == 20 { return "Ruth"; }
+        if i == 21 { return "Naomi"; }
+        if i == 22 { return "Deborah"; }
+        if i == 23 { return "Sherly"; }
+        if i == 24 { return "Widline"; }
+        if i == 25 { return "Lovely"; }
+        if i == 26 { return "Dieula"; }
+        if i == 27 { return "Venise"; }
+        if i == 28 { return "Pascale"; }
+        return "Beatrice";
     }
 
     private static func GetFemaleSoutheastAsianNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Mai");
-        ArrayPush(names, "Linh");
-        ArrayPush(names, "Thi");
-        ArrayPush(names, "Huong");
-        ArrayPush(names, "Thanh");
-        ArrayPush(names, "Lan");
-        ArrayPush(names, "Nguyet");
-        ArrayPush(names, "Nattaya");
-        ArrayPush(names, "Siriwan");
-        ArrayPush(names, "Malee");
-        ArrayPush(names, "Dewi");
-        ArrayPush(names, "Putri");
-        ArrayPush(names, "Siti");
-        ArrayPush(names, "Ratna");
-        ArrayPush(names, "Thao");
-        ArrayPush(names, "Ngoc");
-        ArrayPush(names, "Vy");
-        ArrayPush(names, "Tuyet");
-        ArrayPush(names, "Kim");
-        ArrayPush(names, "Hoa");
-        ArrayPush(names, "Hong");
-        ArrayPush(names, "Phuong");
-        ArrayPush(names, "Trang");
-        ArrayPush(names, "Thu");
-        ArrayPush(names, "Anh");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Mai"; }
+        if i == 1 { return "Linh"; }
+        if i == 2 { return "Thi"; }
+        if i == 3 { return "Huong"; }
+        if i == 4 { return "Thanh"; }
+        if i == 5 { return "Lan"; }
+        if i == 6 { return "Nguyet"; }
+        if i == 7 { return "Nattaya"; }
+        if i == 8 { return "Siriwan"; }
+        if i == 9 { return "Malee"; }
+        if i == 10 { return "Dewi"; }
+        if i == 11 { return "Putri"; }
+        if i == 12 { return "Siti"; }
+        if i == 13 { return "Ratna"; }
+        if i == 14 { return "Thao"; }
+        if i == 15 { return "Ngoc"; }
+        if i == 16 { return "Vy"; }
+        if i == 17 { return "Tuyet"; }
+        if i == 18 { return "Kim"; }
+        if i == 19 { return "Hoa"; }
+        if i == 20 { return "Hong"; }
+        if i == 21 { return "Phuong"; }
+        if i == 22 { return "Trang"; }
+        if i == 23 { return "Thu"; }
+        return "Anh";
     }
 
     private static func GetFemaleEuropeanNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Marie");
-        ArrayPush(names, "Sophie");
-        ArrayPush(names, "Chloe");
-        ArrayPush(names, "Camille");
-        ArrayPush(names, "Isabelle");
-        ArrayPush(names, "Greta");
-        ArrayPush(names, "Heidi");
-        ArrayPush(names, "Ingrid");
-        ArrayPush(names, "Frieda");
-        ArrayPush(names, "Hilde");
-        ArrayPush(names, "Giulia");
-        ArrayPush(names, "Francesca");
-        ArrayPush(names, "Chiara");
-        ArrayPush(names, "Alessia");
-        ArrayPush(names, "Bianca");
-        ArrayPush(names, "Astrid");
-        ArrayPush(names, "Freya");
-        ArrayPush(names, "Sigrid");
-        ArrayPush(names, "Helga");
-        ArrayPush(names, "Siobhan");
-        ArrayPush(names, "Aisling");
-        ArrayPush(names, "Niamh");
-        ArrayPush(names, "Fiona");
-        ArrayPush(names, "Brigitte");
-        ArrayPush(names, "Monique");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Marie"; }
+        if i == 1 { return "Sophie"; }
+        if i == 2 { return "Chloe"; }
+        if i == 3 { return "Camille"; }
+        if i == 4 { return "Isabelle"; }
+        if i == 5 { return "Greta"; }
+        if i == 6 { return "Heidi"; }
+        if i == 7 { return "Ingrid"; }
+        if i == 8 { return "Frieda"; }
+        if i == 9 { return "Hilde"; }
+        if i == 10 { return "Giulia"; }
+        if i == 11 { return "Francesca"; }
+        if i == 12 { return "Chiara"; }
+        if i == 13 { return "Alessia"; }
+        if i == 14 { return "Bianca"; }
+        if i == 15 { return "Astrid"; }
+        if i == 16 { return "Freya"; }
+        if i == 17 { return "Sigrid"; }
+        if i == 18 { return "Helga"; }
+        if i == 19 { return "Siobhan"; }
+        if i == 20 { return "Aisling"; }
+        if i == 21 { return "Niamh"; }
+        if i == 22 { return "Fiona"; }
+        if i == 23 { return "Brigitte"; }
+        return "Monique";
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -1016,401 +985,385 @@ public class NameGenerator {
     }
 
     private static func GetAmericanLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Johnson");
-        ArrayPush(names, "Williams");
-        ArrayPush(names, "Brown");
-        ArrayPush(names, "Davis");
-        ArrayPush(names, "Miller");
-        ArrayPush(names, "Wilson");
-        ArrayPush(names, "Moore");
-        ArrayPush(names, "Taylor");
-        ArrayPush(names, "White");
-        ArrayPush(names, "Clark");
-        ArrayPush(names, "Wright");
-        ArrayPush(names, "Walker");
-        ArrayPush(names, "Scott");
-        ArrayPush(names, "Adams");
-        ArrayPush(names, "Baker");
-        ArrayPush(names, "Nelson");
-        ArrayPush(names, "Carter");
-        ArrayPush(names, "Mitchell");
-        ArrayPush(names, "Roberts");
-        ArrayPush(names, "Turner");
-        ArrayPush(names, "Phillips");
-        ArrayPush(names, "Campbell");
-        ArrayPush(names, "Parker");
-        ArrayPush(names, "Evans");
-        ArrayPush(names, "Edwards");
-        ArrayPush(names, "Collins");
-        ArrayPush(names, "Stewart");
-        ArrayPush(names, "Morris");
-        ArrayPush(names, "Reed");
-        ArrayPush(names, "Morgan");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Johnson"; }
+        if i == 1 { return "Williams"; }
+        if i == 2 { return "Brown"; }
+        if i == 3 { return "Davis"; }
+        if i == 4 { return "Miller"; }
+        if i == 5 { return "Wilson"; }
+        if i == 6 { return "Moore"; }
+        if i == 7 { return "Taylor"; }
+        if i == 8 { return "White"; }
+        if i == 9 { return "Clark"; }
+        if i == 10 { return "Wright"; }
+        if i == 11 { return "Walker"; }
+        if i == 12 { return "Scott"; }
+        if i == 13 { return "Adams"; }
+        if i == 14 { return "Baker"; }
+        if i == 15 { return "Nelson"; }
+        if i == 16 { return "Carter"; }
+        if i == 17 { return "Mitchell"; }
+        if i == 18 { return "Roberts"; }
+        if i == 19 { return "Turner"; }
+        if i == 20 { return "Phillips"; }
+        if i == 21 { return "Campbell"; }
+        if i == 22 { return "Parker"; }
+        if i == 23 { return "Evans"; }
+        if i == 24 { return "Edwards"; }
+        if i == 25 { return "Collins"; }
+        if i == 26 { return "Stewart"; }
+        if i == 27 { return "Morris"; }
+        if i == 28 { return "Reed"; }
+        return "Morgan";
     }
 
     private static func GetAfricanAmericanLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Jackson");
-        ArrayPush(names, "Harris");
-        ArrayPush(names, "Robinson");
-        ArrayPush(names, "Lewis");
-        ArrayPush(names, "Walker");
-        ArrayPush(names, "Green");
-        ArrayPush(names, "Hall");
-        ArrayPush(names, "Young");
-        ArrayPush(names, "King");
-        ArrayPush(names, "Wright");
-        ArrayPush(names, "Hill");
-        ArrayPush(names, "Scott");
-        ArrayPush(names, "Adams");
-        ArrayPush(names, "Baker");
-        ArrayPush(names, "Carter");
-        ArrayPush(names, "Mitchell");
-        ArrayPush(names, "Turner");
-        ArrayPush(names, "Collins");
-        ArrayPush(names, "Morgan");
-        ArrayPush(names, "Bell");
-        ArrayPush(names, "Washington");
-        ArrayPush(names, "Jefferson");
-        ArrayPush(names, "Freeman");
-        ArrayPush(names, "Brooks");
-        ArrayPush(names, "Coleman");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Jackson"; }
+        if i == 1 { return "Harris"; }
+        if i == 2 { return "Robinson"; }
+        if i == 3 { return "Lewis"; }
+        if i == 4 { return "Walker"; }
+        if i == 5 { return "Green"; }
+        if i == 6 { return "Hall"; }
+        if i == 7 { return "Young"; }
+        if i == 8 { return "King"; }
+        if i == 9 { return "Wright"; }
+        if i == 10 { return "Hill"; }
+        if i == 11 { return "Scott"; }
+        if i == 12 { return "Adams"; }
+        if i == 13 { return "Baker"; }
+        if i == 14 { return "Carter"; }
+        if i == 15 { return "Mitchell"; }
+        if i == 16 { return "Turner"; }
+        if i == 17 { return "Collins"; }
+        if i == 18 { return "Morgan"; }
+        if i == 19 { return "Bell"; }
+        if i == 20 { return "Washington"; }
+        if i == 21 { return "Jefferson"; }
+        if i == 22 { return "Freeman"; }
+        if i == 23 { return "Brooks"; }
+        return "Coleman";
     }
 
     private static func GetHispanicLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Rodriguez");
-        ArrayPush(names, "Martinez");
-        ArrayPush(names, "Garcia");
-        ArrayPush(names, "Hernandez");
-        ArrayPush(names, "Lopez");
-        ArrayPush(names, "Gonzalez");
-        ArrayPush(names, "Cruz");
-        ArrayPush(names, "Torres");
-        ArrayPush(names, "Reyes");
-        ArrayPush(names, "Santos");
-        ArrayPush(names, "Moreno");
-        ArrayPush(names, "Ramirez");
-        ArrayPush(names, "Diaz");
-        ArrayPush(names, "Flores");
-        ArrayPush(names, "Vasquez");
-        ArrayPush(names, "Castillo");
-        ArrayPush(names, "Jimenez");
-        ArrayPush(names, "Morales");
-        ArrayPush(names, "Ruiz");
-        ArrayPush(names, "Ortiz");
-        ArrayPush(names, "Gutierrez");
-        ArrayPush(names, "Mendoza");
-        ArrayPush(names, "Vargas");
-        ArrayPush(names, "Romero");
-        ArrayPush(names, "Alvarez");
-        ArrayPush(names, "Chavez");
-        ArrayPush(names, "Delgado");
-        ArrayPush(names, "Sandoval");
-        ArrayPush(names, "Aguilar");
-        ArrayPush(names, "Medina");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Rodriguez"; }
+        if i == 1 { return "Martinez"; }
+        if i == 2 { return "Garcia"; }
+        if i == 3 { return "Hernandez"; }
+        if i == 4 { return "Lopez"; }
+        if i == 5 { return "Gonzalez"; }
+        if i == 6 { return "Cruz"; }
+        if i == 7 { return "Torres"; }
+        if i == 8 { return "Reyes"; }
+        if i == 9 { return "Santos"; }
+        if i == 10 { return "Moreno"; }
+        if i == 11 { return "Ramirez"; }
+        if i == 12 { return "Diaz"; }
+        if i == 13 { return "Flores"; }
+        if i == 14 { return "Vasquez"; }
+        if i == 15 { return "Castillo"; }
+        if i == 16 { return "Jimenez"; }
+        if i == 17 { return "Morales"; }
+        if i == 18 { return "Ruiz"; }
+        if i == 19 { return "Ortiz"; }
+        if i == 20 { return "Gutierrez"; }
+        if i == 21 { return "Mendoza"; }
+        if i == 22 { return "Vargas"; }
+        if i == 23 { return "Romero"; }
+        if i == 24 { return "Alvarez"; }
+        if i == 25 { return "Chavez"; }
+        if i == 26 { return "Delgado"; }
+        if i == 27 { return "Sandoval"; }
+        if i == 28 { return "Aguilar"; }
+        return "Medina";
     }
 
     private static func GetJapaneseLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Tanaka");
-        ArrayPush(names, "Yamamoto");
-        ArrayPush(names, "Nakamura");
-        ArrayPush(names, "Suzuki");
-        ArrayPush(names, "Sato");
-        ArrayPush(names, "Watanabe");
-        ArrayPush(names, "Takahashi");
-        ArrayPush(names, "Kobayashi");
-        ArrayPush(names, "Ito");
-        ArrayPush(names, "Kato");
-        ArrayPush(names, "Yoshida");
-        ArrayPush(names, "Yamada");
-        ArrayPush(names, "Sasaki");
-        ArrayPush(names, "Yamaguchi");
-        ArrayPush(names, "Matsumoto");
-        ArrayPush(names, "Inoue");
-        ArrayPush(names, "Kimura");
-        ArrayPush(names, "Hayashi");
-        ArrayPush(names, "Shimizu");
-        ArrayPush(names, "Yamazaki");
-        ArrayPush(names, "Mori");
-        ArrayPush(names, "Abe");
-        ArrayPush(names, "Ikeda");
-        ArrayPush(names, "Hashimoto");
-        ArrayPush(names, "Ogawa");
-        ArrayPush(names, "Okada");
-        ArrayPush(names, "Arasaka");
-        ArrayPush(names, "Fujimoto");
-        ArrayPush(names, "Nishikawa");
-        ArrayPush(names, "Takeda");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Tanaka"; }
+        if i == 1 { return "Yamamoto"; }
+        if i == 2 { return "Nakamura"; }
+        if i == 3 { return "Suzuki"; }
+        if i == 4 { return "Sato"; }
+        if i == 5 { return "Watanabe"; }
+        if i == 6 { return "Takahashi"; }
+        if i == 7 { return "Kobayashi"; }
+        if i == 8 { return "Ito"; }
+        if i == 9 { return "Kato"; }
+        if i == 10 { return "Yoshida"; }
+        if i == 11 { return "Yamada"; }
+        if i == 12 { return "Sasaki"; }
+        if i == 13 { return "Yamaguchi"; }
+        if i == 14 { return "Matsumoto"; }
+        if i == 15 { return "Inoue"; }
+        if i == 16 { return "Kimura"; }
+        if i == 17 { return "Hayashi"; }
+        if i == 18 { return "Shimizu"; }
+        if i == 19 { return "Yamazaki"; }
+        if i == 20 { return "Mori"; }
+        if i == 21 { return "Abe"; }
+        if i == 22 { return "Ikeda"; }
+        if i == 23 { return "Hashimoto"; }
+        if i == 24 { return "Ogawa"; }
+        if i == 25 { return "Okada"; }
+        if i == 26 { return "Arasaka"; }
+        if i == 27 { return "Fujimoto"; }
+        if i == 28 { return "Nishikawa"; }
+        return "Takeda";
     }
 
     private static func GetChineseLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Chen");
-        ArrayPush(names, "Wang");
-        ArrayPush(names, "Liu");
-        ArrayPush(names, "Zhang");
-        ArrayPush(names, "Li");
-        ArrayPush(names, "Huang");
-        ArrayPush(names, "Yang");
-        ArrayPush(names, "Wu");
-        ArrayPush(names, "Zhou");
-        ArrayPush(names, "Xu");
-        ArrayPush(names, "Sun");
-        ArrayPush(names, "Ma");
-        ArrayPush(names, "Zhu");
-        ArrayPush(names, "Hu");
-        ArrayPush(names, "Guo");
-        ArrayPush(names, "He");
-        ArrayPush(names, "Lin");
-        ArrayPush(names, "Gao");
-        ArrayPush(names, "Luo");
-        ArrayPush(names, "Zheng");
-        ArrayPush(names, "Kang");
-        ArrayPush(names, "Tao");
-        ArrayPush(names, "Feng");
-        ArrayPush(names, "Xie");
-        ArrayPush(names, "Cao");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Chen"; }
+        if i == 1 { return "Wang"; }
+        if i == 2 { return "Liu"; }
+        if i == 3 { return "Zhang"; }
+        if i == 4 { return "Li"; }
+        if i == 5 { return "Huang"; }
+        if i == 6 { return "Yang"; }
+        if i == 7 { return "Wu"; }
+        if i == 8 { return "Zhou"; }
+        if i == 9 { return "Xu"; }
+        if i == 10 { return "Sun"; }
+        if i == 11 { return "Ma"; }
+        if i == 12 { return "Zhu"; }
+        if i == 13 { return "Hu"; }
+        if i == 14 { return "Guo"; }
+        if i == 15 { return "He"; }
+        if i == 16 { return "Lin"; }
+        if i == 17 { return "Gao"; }
+        if i == 18 { return "Luo"; }
+        if i == 19 { return "Zheng"; }
+        if i == 20 { return "Kang"; }
+        if i == 21 { return "Tao"; }
+        if i == 22 { return "Feng"; }
+        if i == 23 { return "Xie"; }
+        return "Cao";
     }
 
     private static func GetKoreanLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Kim");
-        ArrayPush(names, "Park");
-        ArrayPush(names, "Lee");
-        ArrayPush(names, "Choi");
-        ArrayPush(names, "Jung");
-        ArrayPush(names, "Kang");
-        ArrayPush(names, "Cho");
-        ArrayPush(names, "Yoon");
-        ArrayPush(names, "Jang");
-        ArrayPush(names, "Lim");
-        ArrayPush(names, "Han");
-        ArrayPush(names, "Oh");
-        ArrayPush(names, "Seo");
-        ArrayPush(names, "Shin");
-        ArrayPush(names, "Kwon");
-        // Squid Game Easter Eggs
-        ArrayPush(names, "Seong");
-        ArrayPush(names, "Hwang");
-        ArrayPush(names, "Byun");
-        ArrayPush(names, "Ahn");
-        ArrayPush(names, "Song");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "Kim"; }
+        if i == 1 { return "Park"; }
+        if i == 2 { return "Lee"; }
+        if i == 3 { return "Choi"; }
+        if i == 4 { return "Jung"; }
+        if i == 5 { return "Kang"; }
+        if i == 6 { return "Cho"; }
+        if i == 7 { return "Yoon"; }
+        if i == 8 { return "Jang"; }
+        if i == 9 { return "Lim"; }
+        if i == 10 { return "Han"; }
+        if i == 11 { return "Oh"; }
+        if i == 12 { return "Seo"; }
+        if i == 13 { return "Shin"; }
+        if i == 14 { return "Kwon"; }
+        if i == 15 { return "Seong"; }
+        if i == 16 { return "Hwang"; }
+        if i == 17 { return "Byun"; }
+        if i == 18 { return "Ahn"; }
+        return "Song";
     }
 
     private static func GetSlavicLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Volkov");
-        ArrayPush(names, "Petrov");
-        ArrayPush(names, "Ivanov");
-        ArrayPush(names, "Kowalski");
-        ArrayPush(names, "Nowak");
-        ArrayPush(names, "Kovacs");
-        ArrayPush(names, "Novak");
-        ArrayPush(names, "Popov");
-        ArrayPush(names, "Sokolov");
-        ArrayPush(names, "Morozov");
-        ArrayPush(names, "Smirnov");
-        ArrayPush(names, "Kuznetsov");
-        ArrayPush(names, "Fedorov");
-        ArrayPush(names, "Mikhailov");
-        ArrayPush(names, "Nikolaev");
-        ArrayPush(names, "Kozlov");
-        ArrayPush(names, "Stepanov");
-        ArrayPush(names, "Orlov");
-        ArrayPush(names, "Lebedev");
-        ArrayPush(names, "Romanov");
-        ArrayPush(names, "Wisniewski");
-        ArrayPush(names, "Wojciechowski");
-        ArrayPush(names, "Kaminski");
-        ArrayPush(names, "Lewandowski");
-        ArrayPush(names, "Zielinski");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Volkov"; }
+        if i == 1 { return "Petrov"; }
+        if i == 2 { return "Ivanov"; }
+        if i == 3 { return "Kowalski"; }
+        if i == 4 { return "Nowak"; }
+        if i == 5 { return "Kovacs"; }
+        if i == 6 { return "Novak"; }
+        if i == 7 { return "Popov"; }
+        if i == 8 { return "Sokolov"; }
+        if i == 9 { return "Morozov"; }
+        if i == 10 { return "Smirnov"; }
+        if i == 11 { return "Kuznetsov"; }
+        if i == 12 { return "Fedorov"; }
+        if i == 13 { return "Mikhailov"; }
+        if i == 14 { return "Nikolaev"; }
+        if i == 15 { return "Kozlov"; }
+        if i == 16 { return "Stepanov"; }
+        if i == 17 { return "Orlov"; }
+        if i == 18 { return "Lebedev"; }
+        if i == 19 { return "Romanov"; }
+        if i == 20 { return "Wisniewski"; }
+        if i == 21 { return "Wojciechowski"; }
+        if i == 22 { return "Kaminski"; }
+        if i == 23 { return "Lewandowski"; }
+        return "Zielinski";
     }
 
     private static func GetIndianLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Patel");
-        ArrayPush(names, "Sharma");
-        ArrayPush(names, "Singh");
-        ArrayPush(names, "Kumar");
-        ArrayPush(names, "Gupta");
-        ArrayPush(names, "Mehta");
-        ArrayPush(names, "Shah");
-        ArrayPush(names, "Rao");
-        ArrayPush(names, "Reddy");
-        ArrayPush(names, "Nair");
-        ArrayPush(names, "Menon");
-        ArrayPush(names, "Joshi");
-        ArrayPush(names, "Desai");
-        ArrayPush(names, "Kapoor");
-        ArrayPush(names, "Malhotra");
-        ArrayPush(names, "Khanna");
-        ArrayPush(names, "Chopra");
-        ArrayPush(names, "Agarwal");
-        ArrayPush(names, "Verma");
-        ArrayPush(names, "Iyer");
-        // Squid Game Easter Egg
-        ArrayPush(names, "Ali");
-        ArrayPush(names, "Khan");
-        ArrayPush(names, "Prasad");
-        ArrayPush(names, "Das");
-        ArrayPush(names, "Saxena");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Patel"; }
+        if i == 1 { return "Sharma"; }
+        if i == 2 { return "Singh"; }
+        if i == 3 { return "Kumar"; }
+        if i == 4 { return "Gupta"; }
+        if i == 5 { return "Mehta"; }
+        if i == 6 { return "Shah"; }
+        if i == 7 { return "Rao"; }
+        if i == 8 { return "Reddy"; }
+        if i == 9 { return "Nair"; }
+        if i == 10 { return "Menon"; }
+        if i == 11 { return "Joshi"; }
+        if i == 12 { return "Desai"; }
+        if i == 13 { return "Kapoor"; }
+        if i == 14 { return "Malhotra"; }
+        if i == 15 { return "Khanna"; }
+        if i == 16 { return "Chopra"; }
+        if i == 17 { return "Agarwal"; }
+        if i == 18 { return "Verma"; }
+        if i == 19 { return "Iyer"; }
+        if i == 20 { return "Ali"; }
+        if i == 21 { return "Khan"; }
+        if i == 22 { return "Prasad"; }
+        if i == 23 { return "Das"; }
+        return "Saxena";
     }
 
     private static func GetMiddleEasternLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Al-Farsi");
-        ArrayPush(names, "Al-Rashid");
-        ArrayPush(names, "Al-Hassan");
-        ArrayPush(names, "Al-Zahrani");
-        ArrayPush(names, "Al-Qahtani");
-        ArrayPush(names, "Al-Dosari");
-        ArrayPush(names, "Mohammed");
-        ArrayPush(names, "Ibrahim");
-        ArrayPush(names, "Abdullah");
-        ArrayPush(names, "Habibi");
-        ArrayPush(names, "Nazari");
-        ArrayPush(names, "Tehrani");
-        ArrayPush(names, "Shirazi");
-        ArrayPush(names, "Hosseini");
-        ArrayPush(names, "Bakhtiari");
-        ArrayPush(names, "Ahmadi");
-        ArrayPush(names, "Karimi");
-        ArrayPush(names, "Hashemi");
-        ArrayPush(names, "Mousavi");
-        ArrayPush(names, "Rahmani");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "Al-Farsi"; }
+        if i == 1 { return "Al-Rashid"; }
+        if i == 2 { return "Al-Hassan"; }
+        if i == 3 { return "Al-Zahrani"; }
+        if i == 4 { return "Al-Qahtani"; }
+        if i == 5 { return "Al-Dosari"; }
+        if i == 6 { return "Mohammed"; }
+        if i == 7 { return "Ibrahim"; }
+        if i == 8 { return "Abdullah"; }
+        if i == 9 { return "Habibi"; }
+        if i == 10 { return "Nazari"; }
+        if i == 11 { return "Tehrani"; }
+        if i == 12 { return "Shirazi"; }
+        if i == 13 { return "Hosseini"; }
+        if i == 14 { return "Bakhtiari"; }
+        if i == 15 { return "Ahmadi"; }
+        if i == 16 { return "Karimi"; }
+        if i == 17 { return "Hashemi"; }
+        if i == 18 { return "Mousavi"; }
+        return "Rahmani";
     }
 
     private static func GetAfricanLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Okonkwo");
-        ArrayPush(names, "Okafor");
-        ArrayPush(names, "Nwachukwu");
-        ArrayPush(names, "Adeyemi");
-        ArrayPush(names, "Ogundimu");
-        ArrayPush(names, "Bakare");
-        ArrayPush(names, "Mensah");
-        ArrayPush(names, "Asante");
-        ArrayPush(names, "Diallo");
-        ArrayPush(names, "Traore");
-        ArrayPush(names, "Keita");
-        ArrayPush(names, "Cisse");
-        ArrayPush(names, "Mbeki");
-        ArrayPush(names, "Zuma");
-        ArrayPush(names, "Abebe");
-        ArrayPush(names, "Jean-Pierre");
-        ArrayPush(names, "Baptiste");
-        ArrayPush(names, "Celestin");
-        ArrayPush(names, "Beaumont");
-        ArrayPush(names, "Toussaint");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "Okonkwo"; }
+        if i == 1 { return "Okafor"; }
+        if i == 2 { return "Nwachukwu"; }
+        if i == 3 { return "Adeyemi"; }
+        if i == 4 { return "Ogundimu"; }
+        if i == 5 { return "Bakare"; }
+        if i == 6 { return "Mensah"; }
+        if i == 7 { return "Asante"; }
+        if i == 8 { return "Diallo"; }
+        if i == 9 { return "Traore"; }
+        if i == 10 { return "Keita"; }
+        if i == 11 { return "Cisse"; }
+        if i == 12 { return "Mbeki"; }
+        if i == 13 { return "Zuma"; }
+        if i == 14 { return "Abebe"; }
+        if i == 15 { return "Jean-Pierre"; }
+        if i == 16 { return "Baptiste"; }
+        if i == 17 { return "Celestin"; }
+        if i == 18 { return "Beaumont"; }
+        return "Toussaint";
     }
 
     private static func GetHaitianLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        // Haitian surnames - French colonial influence
-        ArrayPush(names, "Jean-Pierre");
-        ArrayPush(names, "Baptiste");
-        ArrayPush(names, "Celestin");
-        ArrayPush(names, "Beaumont");
-        ArrayPush(names, "Toussaint");
-        ArrayPush(names, "Dessalines");
-        ArrayPush(names, "Christophe");
-        ArrayPush(names, "Louverture");
-        ArrayPush(names, "Pierre-Louis");
-        ArrayPush(names, "Lafontant");
-        ArrayPush(names, "Aristide");
-        ArrayPush(names, "Duvalier");
-        ArrayPush(names, "Preval");
-        ArrayPush(names, "Martelly");
-        ArrayPush(names, "Hyppolite");
-        ArrayPush(names, "Auguste");
-        ArrayPush(names, "Belizaire");
-        ArrayPush(names, "Beauvoir");
-        ArrayPush(names, "Delphin");
-        ArrayPush(names, "Estimable");
-        ArrayPush(names, "Gaston");
-        ArrayPush(names, "Janvier");
-        ArrayPush(names, "Legros");
-        ArrayPush(names, "Narcisse");
-        ArrayPush(names, "Placide");
-        ArrayPush(names, "Raphael");
-        ArrayPush(names, "Simeon");
-        ArrayPush(names, "Theophile");
-        ArrayPush(names, "Vilfort");
-        ArrayPush(names, "Zamor");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "Jean-Pierre"; }
+        if i == 1 { return "Baptiste"; }
+        if i == 2 { return "Celestin"; }
+        if i == 3 { return "Beaumont"; }
+        if i == 4 { return "Toussaint"; }
+        if i == 5 { return "Dessalines"; }
+        if i == 6 { return "Christophe"; }
+        if i == 7 { return "Louverture"; }
+        if i == 8 { return "Pierre-Louis"; }
+        if i == 9 { return "Lafontant"; }
+        if i == 10 { return "Aristide"; }
+        if i == 11 { return "Duvalier"; }
+        if i == 12 { return "Preval"; }
+        if i == 13 { return "Martelly"; }
+        if i == 14 { return "Hyppolite"; }
+        if i == 15 { return "Auguste"; }
+        if i == 16 { return "Belizaire"; }
+        if i == 17 { return "Beauvoir"; }
+        if i == 18 { return "Delphin"; }
+        if i == 19 { return "Estimable"; }
+        if i == 20 { return "Gaston"; }
+        if i == 21 { return "Janvier"; }
+        if i == 22 { return "Legros"; }
+        if i == 23 { return "Narcisse"; }
+        if i == 24 { return "Placide"; }
+        if i == 25 { return "Raphael"; }
+        if i == 26 { return "Simeon"; }
+        if i == 27 { return "Theophile"; }
+        if i == 28 { return "Vilfort"; }
+        return "Zamor";
     }
 
     private static func GetSoutheastAsianLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "Nguyen");
-        ArrayPush(names, "Tran");
-        ArrayPush(names, "Pham");
-        ArrayPush(names, "Le");
-        ArrayPush(names, "Hoang");
-        ArrayPush(names, "Vu");
-        ArrayPush(names, "Bui");
-        ArrayPush(names, "Dang");
-        ArrayPush(names, "Sukhumvit");
-        ArrayPush(names, "Thongchai");
-        ArrayPush(names, "Wijaya");
-        ArrayPush(names, "Gunawan");
-        ArrayPush(names, "Santoso");
-        ArrayPush(names, "Hartono");
-        ArrayPush(names, "Tan");
-        ArrayPush(names, "Do");
-        ArrayPush(names, "Ngo");
-        ArrayPush(names, "Vo");
-        ArrayPush(names, "Trinh");
-        ArrayPush(names, "Duong");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "Nguyen"; }
+        if i == 1 { return "Tran"; }
+        if i == 2 { return "Pham"; }
+        if i == 3 { return "Le"; }
+        if i == 4 { return "Hoang"; }
+        if i == 5 { return "Vu"; }
+        if i == 6 { return "Bui"; }
+        if i == 7 { return "Dang"; }
+        if i == 8 { return "Sukhumvit"; }
+        if i == 9 { return "Thongchai"; }
+        if i == 10 { return "Wijaya"; }
+        if i == 11 { return "Gunawan"; }
+        if i == 12 { return "Santoso"; }
+        if i == 13 { return "Hartono"; }
+        if i == 14 { return "Tan"; }
+        if i == 15 { return "Do"; }
+        if i == 16 { return "Ngo"; }
+        if i == 17 { return "Vo"; }
+        if i == 18 { return "Trinh"; }
+        return "Duong";
     }
 
     private static func GetEuropeanLastNames(seed: Int32) -> String {
-        let names: array<String>;
-        ArrayPush(names, "O'Brien");
-        ArrayPush(names, "Kelly");
-        ArrayPush(names, "O'Connor");
-        ArrayPush(names, "Walsh");
-        ArrayPush(names, "Schmidt");
-        ArrayPush(names, "Mueller");
-        ArrayPush(names, "Schneider");
-        ArrayPush(names, "Fischer");
-        ArrayPush(names, "Weber");
-        ArrayPush(names, "Meyer");
-        ArrayPush(names, "Wagner");
-        ArrayPush(names, "Becker");
-        ArrayPush(names, "Hoffman");
-        ArrayPush(names, "Richter");
-        ArrayPush(names, "Rossi");
-        ArrayPush(names, "Russo");
-        ArrayPush(names, "Ferrari");
-        ArrayPush(names, "Bianchi");
-        ArrayPush(names, "Romano");
-        ArrayPush(names, "Dubois");
-        ArrayPush(names, "Bernard");
-        ArrayPush(names, "Moreau");
-        ArrayPush(names, "Laurent");
-        ArrayPush(names, "Leroy");
-        ArrayPush(names, "Johansson");
-        ArrayPush(names, "Lindberg");
-        ArrayPush(names, "Eriksson");
-        ArrayPush(names, "Larsson");
-        ArrayPush(names, "Olsen");
-        ArrayPush(names, "Murphy");
-        return names[RandRange(seed, 0, ArraySize(names) - 1)];
+        let i = RandRange(seed, 0, 29);
+        if i == 0 { return "O'Brien"; }
+        if i == 1 { return "Kelly"; }
+        if i == 2 { return "O'Connor"; }
+        if i == 3 { return "Walsh"; }
+        if i == 4 { return "Schmidt"; }
+        if i == 5 { return "Mueller"; }
+        if i == 6 { return "Schneider"; }
+        if i == 7 { return "Fischer"; }
+        if i == 8 { return "Weber"; }
+        if i == 9 { return "Meyer"; }
+        if i == 10 { return "Wagner"; }
+        if i == 11 { return "Becker"; }
+        if i == 12 { return "Hoffman"; }
+        if i == 13 { return "Richter"; }
+        if i == 14 { return "Rossi"; }
+        if i == 15 { return "Russo"; }
+        if i == 16 { return "Ferrari"; }
+        if i == 17 { return "Bianchi"; }
+        if i == 18 { return "Romano"; }
+        if i == 19 { return "Dubois"; }
+        if i == 20 { return "Bernard"; }
+        if i == 21 { return "Moreau"; }
+        if i == 22 { return "Laurent"; }
+        if i == 23 { return "Leroy"; }
+        if i == 24 { return "Johansson"; }
+        if i == 25 { return "Lindberg"; }
+        if i == 26 { return "Eriksson"; }
+        if i == 27 { return "Larsson"; }
+        if i == 28 { return "Olsen"; }
+        return "Murphy";
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -1440,152 +1393,128 @@ public class NameGenerator {
     // ══════════════════════════════════════════════════════════════════════
 
     public static func GetStreetAlias(seed: Int32) -> String {
-        let aliases: array<String>;
-
-        // Classic street names
-        ArrayPush(aliases, "Razor");
-        ArrayPush(aliases, "Ghost");
-        ArrayPush(aliases, "Neon");
-        ArrayPush(aliases, "Spike");
-        ArrayPush(aliases, "Chrome");
-        ArrayPush(aliases, "Bullet");
-        ArrayPush(aliases, "Zero");
-        ArrayPush(aliases, "Glitch");
-        ArrayPush(aliases, "Snake");
-        ArrayPush(aliases, "Ice");
-        ArrayPush(aliases, "Wire");
-        ArrayPush(aliases, "Shadow");
-        ArrayPush(aliases, "Byte");
-        ArrayPush(aliases, "Torch");
-        ArrayPush(aliases, "Venom");
-        ArrayPush(aliases, "Blade");
-        ArrayPush(aliases, "Cipher");
-        ArrayPush(aliases, "Hex");
-        ArrayPush(aliases, "Rogue");
-        ArrayPush(aliases, "Nova");
-        ArrayPush(aliases, "Blaze");
-        ArrayPush(aliases, "Pixel");
-        ArrayPush(aliases, "Crash");
-        ArrayPush(aliases, "Static");
-        ArrayPush(aliases, "Null");
-
-        // Violence/Weapons
-        ArrayPush(aliases, "Switchblade");
-        ArrayPush(aliases, "Trigger");
-        ArrayPush(aliases, "Hammer");
-        ArrayPush(aliases, "Shiv");
-        ArrayPush(aliases, "Crowbar");
-        ArrayPush(aliases, "Cleaver");
-        ArrayPush(aliases, "Mantis");
-        ArrayPush(aliases, "Gorilla");
-        ArrayPush(aliases, "Fist");
-        ArrayPush(aliases, "Knuckles");
-        ArrayPush(aliases, "Breaker");
-        ArrayPush(aliases, "Crusher");
-
-        // Tech/Netrunner
-        ArrayPush(aliases, "Virus");
-        ArrayPush(aliases, "Daemon");
-        ArrayPush(aliases, "Root");
-        ArrayPush(aliases, "Trojan");
-        ArrayPush(aliases, "Firewall");
-        ArrayPush(aliases, "Proxy");
-        ArrayPush(aliases, "Protocol");
-        ArrayPush(aliases, "Binary");
-        ArrayPush(aliases, "Ping");
-        ArrayPush(aliases, "Buffer");
-        ArrayPush(aliases, "Node");
-        ArrayPush(aliases, "Patch");
-
-        // Animals
-        ArrayPush(aliases, "Scorpion");
-        ArrayPush(aliases, "Panther");
-        ArrayPush(aliases, "Viper");
-        ArrayPush(aliases, "Jackal");
-        ArrayPush(aliases, "Cobra");
-        ArrayPush(aliases, "Hawk");
-        ArrayPush(aliases, "Wolf");
-        ArrayPush(aliases, "Tiger");
-        ArrayPush(aliases, "Spider");
-        ArrayPush(aliases, "Shark");
-        ArrayPush(aliases, "Raven");
-        ArrayPush(aliases, "Crow");
-
-        // Appearance/Traits
-        ArrayPush(aliases, "Scar");
-        ArrayPush(aliases, "One-Eye");
-        ArrayPush(aliases, "Ink");
-        ArrayPush(aliases, "Slim");
-        ArrayPush(aliases, "Tank");
-        ArrayPush(aliases, "Giant");
-        ArrayPush(aliases, "Tiny");
-        ArrayPush(aliases, "Red");
-        ArrayPush(aliases, "Silver");
-        ArrayPush(aliases, "Smokey");
-
-        // Personality
-        ArrayPush(aliases, "Mad Dog");
-        ArrayPush(aliases, "Psycho");
-        ArrayPush(aliases, "Joker");
-        ArrayPush(aliases, "Lucky");
-        ArrayPush(aliases, "Silent");
-        ArrayPush(aliases, "Whisper");
-        ArrayPush(aliases, "Twitch");
-        ArrayPush(aliases, "Quick");
-        ArrayPush(aliases, "Smooth");
-
-        // Elements
-        ArrayPush(aliases, "Thunder");
-        ArrayPush(aliases, "Lightning");
-        ArrayPush(aliases, "Frost");
-        ArrayPush(aliases, "Ember");
-        ArrayPush(aliases, "Ash");
-        ArrayPush(aliases, "Stone");
-        ArrayPush(aliases, "Iron");
-        ArrayPush(aliases, "Steel");
-        ArrayPush(aliases, "Acid");
-        ArrayPush(aliases, "Toxic");
-
-        // Roles
-        ArrayPush(aliases, "Doc");
-        ArrayPush(aliases, "Chef");
-        ArrayPush(aliases, "Preacher");
-        ArrayPush(aliases, "King");
-        ArrayPush(aliases, "Duke");
-        ArrayPush(aliases, "Boss");
-        ArrayPush(aliases, "Merc");
-        ArrayPush(aliases, "Fixer");
-        ArrayPush(aliases, "Runner");
-        ArrayPush(aliases, "Driver");
-
-        // Night City Slang
-        ArrayPush(aliases, "Choom");
-        ArrayPush(aliases, "Gonk");
-        ArrayPush(aliases, "Preem");
-        ArrayPush(aliases, "Delta");
-        ArrayPush(aliases, "Flatline");
-        ArrayPush(aliases, "Corpo");
-        ArrayPush(aliases, "Badge");
-
-        // Squid Game Easter Eggs
-        ArrayPush(aliases, "456");
-        ArrayPush(aliases, "067");
-        ArrayPush(aliases, "218");
-        ArrayPush(aliases, "001");
-        ArrayPush(aliases, "Front Man");
-        ArrayPush(aliases, "Red Light");
-        ArrayPush(aliases, "Green Light");
-
-        // Numbers
-        ArrayPush(aliases, "Six");
-        ArrayPush(aliases, "Seven");
-        ArrayPush(aliases, "Ace");
-        ArrayPush(aliases, "Solo");
-        ArrayPush(aliases, "Prime");
-        ArrayPush(aliases, "Omega");
-        ArrayPush(aliases, "Alpha");
-        ArrayPush(aliases, "X");
-
-        return "\"" + aliases[RandRange(seed, 0, ArraySize(aliases) - 1)] + "\"";
+        let i = RandRange(seed, 0, 121);
+        if i == 0 { return "\"Razor\""; }
+        if i == 1 { return "\"Ghost\""; }
+        if i == 2 { return "\"Neon\""; }
+        if i == 3 { return "\"Spike\""; }
+        if i == 4 { return "\"Chrome\""; }
+        if i == 5 { return "\"Bullet\""; }
+        if i == 6 { return "\"Zero\""; }
+        if i == 7 { return "\"Glitch\""; }
+        if i == 8 { return "\"Snake\""; }
+        if i == 9 { return "\"Ice\""; }
+        if i == 10 { return "\"Wire\""; }
+        if i == 11 { return "\"Shadow\""; }
+        if i == 12 { return "\"Byte\""; }
+        if i == 13 { return "\"Torch\""; }
+        if i == 14 { return "\"Venom\""; }
+        if i == 15 { return "\"Blade\""; }
+        if i == 16 { return "\"Cipher\""; }
+        if i == 17 { return "\"Hex\""; }
+        if i == 18 { return "\"Rogue\""; }
+        if i == 19 { return "\"Nova\""; }
+        if i == 20 { return "\"Blaze\""; }
+        if i == 21 { return "\"Pixel\""; }
+        if i == 22 { return "\"Crash\""; }
+        if i == 23 { return "\"Static\""; }
+        if i == 24 { return "\"Null\""; }
+        if i == 25 { return "\"Switchblade\""; }
+        if i == 26 { return "\"Trigger\""; }
+        if i == 27 { return "\"Hammer\""; }
+        if i == 28 { return "\"Shiv\""; }
+        if i == 29 { return "\"Crowbar\""; }
+        if i == 30 { return "\"Cleaver\""; }
+        if i == 31 { return "\"Mantis\""; }
+        if i == 32 { return "\"Gorilla\""; }
+        if i == 33 { return "\"Fist\""; }
+        if i == 34 { return "\"Knuckles\""; }
+        if i == 35 { return "\"Breaker\""; }
+        if i == 36 { return "\"Crusher\""; }
+        if i == 37 { return "\"Virus\""; }
+        if i == 38 { return "\"Daemon\""; }
+        if i == 39 { return "\"Root\""; }
+        if i == 40 { return "\"Trojan\""; }
+        if i == 41 { return "\"Firewall\""; }
+        if i == 42 { return "\"Proxy\""; }
+        if i == 43 { return "\"Protocol\""; }
+        if i == 44 { return "\"Binary\""; }
+        if i == 45 { return "\"Ping\""; }
+        if i == 46 { return "\"Buffer\""; }
+        if i == 47 { return "\"Node\""; }
+        if i == 48 { return "\"Patch\""; }
+        if i == 49 { return "\"Scorpion\""; }
+        if i == 50 { return "\"Panther\""; }
+        if i == 51 { return "\"Viper\""; }
+        if i == 52 { return "\"Jackal\""; }
+        if i == 53 { return "\"Cobra\""; }
+        if i == 54 { return "\"Hawk\""; }
+        if i == 55 { return "\"Wolf\""; }
+        if i == 56 { return "\"Tiger\""; }
+        if i == 57 { return "\"Spider\""; }
+        if i == 58 { return "\"Shark\""; }
+        if i == 59 { return "\"Raven\""; }
+        if i == 60 { return "\"Crow\""; }
+        if i == 61 { return "\"Scar\""; }
+        if i == 62 { return "\"One-Eye\""; }
+        if i == 63 { return "\"Ink\""; }
+        if i == 64 { return "\"Slim\""; }
+        if i == 65 { return "\"Tank\""; }
+        if i == 66 { return "\"Giant\""; }
+        if i == 67 { return "\"Tiny\""; }
+        if i == 68 { return "\"Red\""; }
+        if i == 69 { return "\"Silver\""; }
+        if i == 70 { return "\"Smokey\""; }
+        if i == 71 { return "\"Mad Dog\""; }
+        if i == 72 { return "\"Psycho\""; }
+        if i == 73 { return "\"Joker\""; }
+        if i == 74 { return "\"Lucky\""; }
+        if i == 75 { return "\"Silent\""; }
+        if i == 76 { return "\"Whisper\""; }
+        if i == 77 { return "\"Twitch\""; }
+        if i == 78 { return "\"Quick\""; }
+        if i == 79 { return "\"Smooth\""; }
+        if i == 80 { return "\"Thunder\""; }
+        if i == 81 { return "\"Lightning\""; }
+        if i == 82 { return "\"Frost\""; }
+        if i == 83 { return "\"Ember\""; }
+        if i == 84 { return "\"Ash\""; }
+        if i == 85 { return "\"Stone\""; }
+        if i == 86 { return "\"Iron\""; }
+        if i == 87 { return "\"Steel\""; }
+        if i == 88 { return "\"Acid\""; }
+        if i == 89 { return "\"Toxic\""; }
+        if i == 90 { return "\"Doc\""; }
+        if i == 91 { return "\"Chef\""; }
+        if i == 92 { return "\"Preacher\""; }
+        if i == 93 { return "\"King\""; }
+        if i == 94 { return "\"Duke\""; }
+        if i == 95 { return "\"Boss\""; }
+        if i == 96 { return "\"Merc\""; }
+        if i == 97 { return "\"Fixer\""; }
+        if i == 98 { return "\"Runner\""; }
+        if i == 99 { return "\"Driver\""; }
+        if i == 100 { return "\"Choom\""; }
+        if i == 101 { return "\"Gonk\""; }
+        if i == 102 { return "\"Preem\""; }
+        if i == 103 { return "\"Delta\""; }
+        if i == 104 { return "\"Flatline\""; }
+        if i == 105 { return "\"Corpo\""; }
+        if i == 106 { return "\"Badge\""; }
+        if i == 107 { return "\"456\""; }
+        if i == 108 { return "\"067\""; }
+        if i == 109 { return "\"218\""; }
+        if i == 110 { return "\"001\""; }
+        if i == 111 { return "\"Front Man\""; }
+        if i == 112 { return "\"Red Light\""; }
+        if i == 113 { return "\"Green Light\""; }
+        if i == 114 { return "\"Six\""; }
+        if i == 115 { return "\"Seven\""; }
+        if i == 116 { return "\"Ace\""; }
+        if i == 117 { return "\"Solo\""; }
+        if i == 118 { return "\"Prime\""; }
+        if i == 119 { return "\"Omega\""; }
+        if i == 120 { return "\"Alpha\""; }
+        return "\"X\"";
     }
 }

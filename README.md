@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.5-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.5.3-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 A Cyberpunk 2077 mod that extends the scanner system to display procedurally generated NPC data.
@@ -10,57 +10,70 @@ A Cyberpunk 2077 mod that extends the scanner system to display procedurally gen
 
 This mod hooks into the game's scanner UI to inject additional data panels for crowd NPCs, gang members, and NCPD officers. All data is procedurally generated using a seed derived from each NPC's entity ID, ensuring consistent results across game sessions.
 
-## What's New in v1.5
+## Features
 
 ### Unique NPC System
 
-Hand-crafted lore-accurate backstories for named story characters. When scanning unique NPCs like Takemura, Panam, or Judy, you'll see custom-written intel instead of procedurally generated data.
+Hand-crafted lore-accurate backstories for 48 named story characters. When scanning unique NPCs like Takemura, Panam, or Judy, you'll see custom-written intel instead of procedurally generated data.
 
 **Features:**
 - TweakDB-based character detection
 - Custom classification banners (e.g., "ARASAKA COUNTERINTEL")
 - Lore-accurate backgrounds, affiliations, and threat assessments
+- Dynamic quest states — entries update based on game progression
 - Extensible entry system for easy additions
 
-**Supported Characters:** Takemura (example included). More entries coming soon.
+**Supported Characters:** Takemura, Panam, Judy, Jackie, Johnny, Rogue, Viktor, all fixers, and 40+ more.
+
+### Full Relationship Networks
+
+Rich relationship generation for every NPC with realistic family structures:
+
+| Relationship Type | Count | Details |
+|-------------------|-------|---------|
+| Associates | 1-8 | Friends, coworkers, fixers, dealers, gang contacts |
+| Family Members | 0-5 | Parents, siblings, grandparents, spouse, children |
+| Enemies | 0-3 | With reasons and threat levels |
+| Professional Contacts | 0-3 | For corpo and ganger archetypes |
+
+**Realistic Families:**
+- Blood relatives share the scanned NPC's actual surname
+- Spouses share family name 80% of the time
+- Gender-appropriate names based on relation type
+- Status tracking (Alive, Deceased, Estranged, Missing)
+- Location data for living family members
+
+### Name Generation System
+
+Stack-safe index-based name generation with massive variety:
+
+| Category | Count | Description |
+|----------|-------|-------------|
+| Male First Names | 360 | Across 13 ethnicities |
+| Female First Names | 360 | Across 13 ethnicities |
+| Last Names | 330 | Ethnicity-matched surnames |
+| Street Aliases | 122 | "Razor", "Ghost", "Chrome", etc. |
+| **Total Combinations** | **18,550+** | Unique full names possible |
+
+**Supported Ethnicities:** American, African American, Hispanic, Japanese, Chinese, Korean, Slavic, Indian, Middle Eastern, African, Haitian, Southeast Asian, European
 
 ### Expanded Lifepath System
 
-Massively expanded lifepath generation with **617 unique life events** across multiple categories:
+**617 unique life events** across multiple categories:
 
 | Category | Events | Examples |
 |----------|--------|----------|
-| Upbringing | ~150 | Family structure, parental occupations, childhood trauma, wealth backgrounds, special origins |
+| Upbringing | ~150 | Family structure, parental occupations, childhood trauma, wealth backgrounds |
 | Housing | ~80 | Megabuilding apartments, combat zone squats, nomad camps, corpo housing |
 | Childhood | ~160 | Education paths, street life, gang involvement, skills development |
 | Jobs | ~160 | Criminal careers, merc roles, tech positions, service work, corpo jobs |
 | Adulthood | ~70 | Relationships, gang involvement, mentorship, near-death experiences |
 
-**New Upbringing Events:**
-- Family structures: only child, twins, triplets, step-families, blended families
-- Parental occupations: NCPD, doctors, teachers, gang leaders, joytoys, dealers
-- Childhood trauma: witnessed deaths, home invasions, kidnapping, fires
-- Wealth backgrounds: born rich, trust funds, corporate debt, lost wealth
-- Special origins: lab-born, clones, cult escapees, refugees, immigrants
+All events include appropriate stat modifiers (Body, Reflex, Tech, Int, Cool, Wealth) and lifepath-specific weighting.
 
-**New Job Events:**
-- Criminal: assassins, car thieves, burglars, identity thieves, loan sharks, bookies
-- Merc/Combat: extraction specialists, wheelman, snipers, demolitions, infiltrators
-- Tech: hackers, daemon coders, ICE breakers, data miners, cyberware developers
-- Service: cooks, taxi drivers, couriers, bouncers, doormen, morticians
-- Corpo: lawyers, marketing, consultants, recruiters, trainers
+### Narrative Coherence System
 
-**New Adulthood Events:**
-- Relationships: heartbreak, romantic partners
-- Gang: joined gang as adult, left gang life
-- Mentorship: found a mentor, became a mentor
-- Near-death: flatlined and resuscitated, coma, near-death experiences
-
-All events include appropriate stat modifiers (Body, Reflex, Tech, Int, Cool, Wealth) and lifepath-specific weighting (CORPO_MOD, NOMAD_MOD, GANGER_MOD, HOMELESS_MOD, JUNKIE_MOD).
-
-### v1.4 Features
-
-**Narrative Coherence System** — Optional system that links all NPC data into believable, interconnected stories. NPCs are assigned a Life Theme that influences all generated data:
+Optional system that links all NPC data into believable, interconnected stories:
 
 | Theme | Description |
 |-------|-------------|
@@ -75,13 +88,6 @@ All events include appropriate stat modifiers (Body, Reflex, Tech, Int, Cool, We
 - Substance abuse → liver damage in medical, addiction in psych, drug charges in criminal
 - Violent past → assault charges, combat injuries, aggression markers
 - Financial struggles → matching debt reasons, poor credit, stress-related conditions
-- Criminal lifestyle → illegal cyberware, gang connections, warrant flags
-
-**Additional Features:**
-- Data Density Setting — High (full), Medium (condensed), or Low (minimal)
-- Font Size Settings — Configurable header (14-28) and text (18-34) sizes
-- Special NPC Rarity — Common (1:250), Rare (1:750), Mythic (1:2000)
-- Loading Sequence Animation — 100+ unique database connection messages
 
 ## Project Structure
 
@@ -90,7 +96,8 @@ r6/scripts/backgroundScanner/
 ├── Core/
 │   ├── BackstoryManager.reds          # Main generation orchestrator
 │   ├── BackstoryUI.reds               # UI data struct
-│   ├── NameGenerator.reds             # Culturally diverse name generation
+│   ├── NameGenerator.reds             # Index-based name generation (stack-safe)
+│   ├── EthnicityDetector.reds         # NPC ethnicity detection
 │   ├── Coherence/
 │   │   └── CoherenceManager.reds      # Narrative coherence system
 │   ├── Criminal/
@@ -117,11 +124,11 @@ r6/scripts/backgroundScanner/
 │   ├── Rare/
 │   │   └── RareNPCManager.reds
 │   ├── Relationships/
-│   │   └── RelationshipsManager.reds
+│   │   └── RelationshipsManager.reds  # NamePool + full relationship generation
 │   └── Unique/
 │       ├── UniqueNPCData.reds         # Data structure for unique NPCs
 │       ├── UniqueNPCManager.reds      # Detection & lookup system
-│       └── UniqueNPCEntries.reds      # Hand-crafted character entries
+│       └── UniqueNPCEntries.reds      # 48 hand-crafted character entries
 ├── Overrides/
 │   ├── ScannerNPCBodyGameController.reds  # Scanner UI injection
 │   └── NPCPuppet.reds                      # TweakDB name retrieval
@@ -155,6 +162,51 @@ let seed = RandRange(entityIDHash, 0, 2147483647);
 ```
 Each NPC's entity ID is hashed to create a deterministic seed. All generated data uses offsets from this seed, ensuring the same NPC always produces identical results.
 
+### Stack-Safe Name Generation
+
+The NameGenerator uses index-based selection instead of array allocation:
+
+```swift
+// Zero stack allocation - just an int and string returns
+private static func GetMaleAmericanNames(seed: Int32) -> String {
+    let i = RandRange(seed, 0, 34);
+    if i == 0 { return "Marcus"; }
+    if i == 1 { return "James"; }
+    // ... 35 names total
+    return "Scott";
+}
+```
+
+### NamePool System
+
+RelationshipsManager builds a shared name pool once per scan on the heap:
+
+```swift
+public class NamePool {
+    public let maleFirstNames: array<String>;
+    public let femaleFirstNames: array<String>;
+    public let lastNames: array<String>;
+    public let aliases: array<String>;
+
+    public static func Build(seed: Int32, ethnicity: NPCEthnicity) -> ref<NamePool> {
+        // Collects 20 male, 20 female, 20 last, 15 aliases
+        // All sub-functions index into this - zero allocation during generation
+    }
+}
+```
+
+### Family Name Extraction
+
+Blood relatives share the scanned NPC's actual surname:
+
+```swift
+private static func ExtractLastName(target: wref<NPCPuppet>) -> String {
+    let fullName = GetLocalizedTextByKey(record.FullDisplayName());
+    // Parse "Arina Lukina" → "Lukina"
+    // Grandfather becomes "Hector Lukina" not random
+}
+```
+
 ### Lifepath Event System
 ```swift
 public class CrowdScannerEvents {
@@ -162,42 +214,20 @@ public class CrowdScannerEvents {
         return LPE(TextUpbringing.BORN_RICH_F(), TextUpbringing.BORN_RICH_M())
             .SetWealthMod(30); 
     }
-    
-    public static func JOB_ASSASSIN() -> ref<LifePathEvent> { 
-        return LPE(TextJobs.JOB_ASSASSIN_F(), TextJobs.JOB_ASSASSIN_M())
-            .SetReflexMod(15)
-            .SetCoolMod(15); 
-    }
 }
 ```
 Events are defined as static methods returning `LifePathEvent` objects with gender-specific text and stat modifiers.
-
-### Weighted Event Pools
-```swift
-PushWeightedLifeEvent(events, CrowdScannerEvents.BORN_RICH(), POS_OUTCOME_WGT / 3 + CORPO_MOD);
-PushWeightedLifeEvent(events, CrowdScannerEvents.JOB_ASSASSIN(), NEG_OUTCOME_WGT / 2 + GANGER_MOD);
-```
-Events are weighted by outcome type (positive/neutral/negative) and archetype modifiers (corpo, nomad, ganger, homeless, junkie).
-
-### Coherence Generation
-```swift
-if KiroshiSettings.CoherenceEnabled() {
-    let lifeTheme = CoherenceManager.AssignLifeTheme(seed);
-    let flags = CoherenceManager.GenerateSharedFlags(seed, lifeTheme);
-    // Flags propagate to all generators
-}
-```
-When coherence is enabled, a life theme and shared flags are generated first, then passed to each manager to ensure consistent, interconnected data.
 
 ### NPC Detection
 - **Gang members**: Detected via appearance name patterns (e.g., `tyger`, `maelstrom`, `valentinos`)
 - **NCPD officers**: Detected via `IsPrevention()`, `IsCharacterPolice()`, or appearance name
 - **Children**: Detected via appearance name patterns (`child`, `kid`)
+- **Unique NPCs**: Detected via TweakDB record ID or display name matching
 
 ### Data Filtering
 Different NPC types receive filtered data:
 - **Civilians**: Full data (criminal, financial, medical, cyberware, relationships)
-- **Gang members**: Criminal record, gang affiliation, psych profile only
+- **Gang members**: Criminal record, gang affiliation, psych profile, relationships
 - **NCPD officers**: Personnel file, cyberware, cop-specific backstory
 - **Children**: Restricted/protected data only
 
@@ -264,4 +294,8 @@ A: The Kiroshi Deep Scan Protocol pulls from multiple database sources beyond st
 
 **Q: My cat has a criminal record for starting a drug war.**
 
-A: Nibbles and other registered animals now have proper database entries in v1.5. The procedural generator no longer applies to entities with unique NPC records.
+A: Nibbles and other registered animals now have proper database entries. The procedural generator no longer applies to entities with unique NPC records.
+
+**Q: Why do family members share my scanned NPC's last name?**
+
+A: Blood relatives (parents, siblings, grandparents, children) now extract and share the actual surname of the NPC you're scanning. If you scan "Arina Lukina", her grandfather will be "Hector Lukina" — not a random name. Spouses share the family name 80% of the time (some keep their maiden name).
