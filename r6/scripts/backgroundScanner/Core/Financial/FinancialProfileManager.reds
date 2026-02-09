@@ -261,11 +261,17 @@ public class FinancialProfileManager {
     }
 
     private static func GetCreditTier(score: Int32) -> String {
+        if score >= 800 { return "EXCEPTIONAL"; }
         if score >= 750 { return "EXCELLENT"; }
+        if score >= 700 { return "VERY GOOD"; }
         if score >= 650 { return "GOOD"; }
-        if score >= 550 { return "FAIR"; }
-        if score >= 400 { return "POOR"; }
-        if score >= 250 { return "VERY POOR"; }
+        if score >= 600 { return "FAIR"; }
+        if score >= 550 { return "BELOW AVERAGE"; }
+        if score >= 500 { return "POOR"; }
+        if score >= 400 { return "VERY POOR"; }
+        if score >= 300 { return "BAD"; }
+        if score >= 250 { return "SEVERELY DAMAGED"; }
+        if score >= 150 { return "CRITICAL"; }
         return "NO CREDIT HISTORY";
     }
 
@@ -288,11 +294,17 @@ public class FinancialProfileManager {
     }
 
     private static func GetWealthTier(wealth: Int32) -> String {
+        if wealth >= 5000000 { return "ULTRA WEALTHY"; }
         if wealth >= 1000000 { return "WEALTHY"; }
+        if wealth >= 500000 { return "AFFLUENT"; }
         if wealth >= 250000 { return "UPPER MIDDLE CLASS"; }
+        if wealth >= 100000 { return "COMFORTABLE"; }
         if wealth >= 50000 { return "MIDDLE CLASS"; }
+        if wealth >= 25000 { return "LOWER MIDDLE CLASS"; }
         if wealth >= 10000 { return "WORKING CLASS"; }
-        if wealth >= 1000 { return "LOW INCOME"; }
+        if wealth >= 5000 { return "LOW INCOME"; }
+        if wealth >= 1000 { return "NEAR POVERTY"; }
+        if wealth >= 100 { return "POVERTY"; }
         return "DESTITUTE";
     }
 
@@ -325,59 +337,164 @@ public class FinancialProfileManager {
     }
 
     private static func GenerateDebtHolder(seed: Int32, archetype: String) -> String {
-        let holders: array<String>;
-
-        // Corporations
-        ArrayPush(holders, "Arasaka Financial Services");
-        ArrayPush(holders, "Militech Credit Division");
-        ArrayPush(holders, "Night City Municipal Debt Collection");
-        ArrayPush(holders, "EuroBank");
-        ArrayPush(holders, "Orbital Lending Corp");
-        ArrayPush(holders, "Zetatech Consumer Finance");
-        ArrayPush(holders, "NCMH (Medical Debt)");
-        ArrayPush(holders, "Night City Housing Authority");
-        
-        // Shadier options
-        ArrayPush(holders, "Unknown Private Lender");
-        ArrayPush(holders, "Tyger Claws (informal)");
-        ArrayPush(holders, "Valentinos (informal)");
-        ArrayPush(holders, "6th Street Collections");
-        ArrayPush(holders, "Street Fixer (unnamed)");
-        ArrayPush(holders, "Maelstrom Debt Enforcement");
-
+        // Corporate/Legitimate debt holders for higher archetypes
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") || Equals(archetype, "YUPPIE") {
-            return holders[RandRange(seed, 0, 7)];
-        }
-        if Equals(archetype, "GANGER") {
-            return holders[RandRange(seed, 8, ArraySize(holders) - 1)];
+            let i = RandRange(seed, 0, 24);
+            if i == 0 { return "Arasaka Financial Services"; }
+            if i == 1 { return "Militech Credit Division"; }
+            if i == 2 { return "EuroBank"; }
+            if i == 3 { return "Orbital Lending Corp"; }
+            if i == 4 { return "Zetatech Consumer Finance"; }
+            if i == 5 { return "Night City Municipal Debt"; }
+            if i == 6 { return "Kang Tao Financial"; }
+            if i == 7 { return "Biotechnica Credit Services"; }
+            if i == 8 { return "Petrochem Finance Division"; }
+            if i == 9 { return "NCMH (Medical Debt)"; }
+            if i == 10 { return "NC Housing Authority"; }
+            if i == 11 { return "Corporate Credit Union"; }
+            if i == 12 { return "Trauma Team Billing"; }
+            if i == 13 { return "SovOil Credit"; }
+            if i == 14 { return "IEC Financial"; }
+            if i == 15 { return "Continental Brands Credit"; }
+            if i == 16 { return "Federal Student Loans"; }
+            if i == 17 { return "NC Auto Finance"; }
+            if i == 18 { return "Premium Healthcare Collections"; }
+            if i == 19 { return "Luxury Credit Partners"; }
+            if i == 20 { return "Executive Lending Group"; }
+            if i == 21 { return "Corporate Tax Authority"; }
+            if i == 22 { return "Property Management Corp"; }
+            if i == 23 { return "Cyberware Financing LLC"; }
+            return "Investment Recovery Services";
         }
         
-        return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
+        // Gang/Criminal debt holders
+        if Equals(archetype, "GANGER") {
+            let i = RandRange(seed, 0, 14);
+            if i == 0 { return "Tyger Claws (informal)"; }
+            if i == 1 { return "Valentinos (informal)"; }
+            if i == 2 { return "6th Street Collections"; }
+            if i == 3 { return "Maelstrom Debt Enforcement"; }
+            if i == 4 { return "Animals Collections"; }
+            if i == 5 { return "Voodoo Boys (spiritual debt)"; }
+            if i == 6 { return "Mox Protection Fund"; }
+            if i == 7 { return "Gang Elder Council"; }
+            if i == 8 { return "Street Fixer (unnamed)"; }
+            if i == 9 { return "Local Loan Shark"; }
+            if i == 10 { return "Drug Supplier"; }
+            if i == 11 { return "Weapons Dealer"; }
+            if i == 12 { return "Chop Shop Owner"; }
+            if i == 13 { return "Underground Casino"; }
+            return "Territory Boss";
+        }
+        
+        // General population debt holders (40 options)
+        let i = RandRange(seed, 0, 39);
+        
+        // Corporate/Legitimate (0-19)
+        if i == 0 { return "Arasaka Financial Services"; }
+        if i == 1 { return "Militech Credit Division"; }
+        if i == 2 { return "EuroBank"; }
+        if i == 3 { return "Night City Municipal Debt Collection"; }
+        if i == 4 { return "Orbital Lending Corp"; }
+        if i == 5 { return "Zetatech Consumer Finance"; }
+        if i == 6 { return "NCMH (Medical Debt)"; }
+        if i == 7 { return "Night City Housing Authority"; }
+        if i == 8 { return "NC Auto Loans"; }
+        if i == 9 { return "Ripperdoc Financing"; }
+        if i == 10 { return "Night City Savings & Loan"; }
+        if i == 11 { return "Pacific Credit Union"; }
+        if i == 12 { return "Watson Community Bank"; }
+        if i == 13 { return "Heywood Finance Corp"; }
+        if i == 14 { return "Santo Domingo Credit"; }
+        if i == 15 { return "Westbrook Lending"; }
+        if i == 16 { return "All Foods Payroll Advance"; }
+        if i == 17 { return "NC Transit Authority"; }
+        if i == 18 { return "Utility Collections (NCCE)"; }
+        if i == 19 { return "Education Loan Services"; }
+        
+        // Semi-legitimate (20-29)
+        if i == 20 { return "Payday Lending Network"; }
+        if i == 21 { return "Quick Cash NC"; }
+        if i == 22 { return "Emergency Loans Inc."; }
+        if i == 23 { return "Title Loan Services"; }
+        if i == 24 { return "Pawn Shop Debt"; }
+        if i == 25 { return "Buy Now Pay Later Corp"; }
+        if i == 26 { return "Rent-to-Own Collections"; }
+        if i == 27 { return "Subprime Auto Lending"; }
+        if i == 28 { return "Third Party Collector"; }
+        if i == 29 { return "Debt Consolidation Services"; }
+        
+        // Shady/Criminal (30-39)
+        if i == 30 { return "Unknown Private Lender"; }
+        if i == 31 { return "Tyger Claws (informal)"; }
+        if i == 32 { return "Valentinos (informal)"; }
+        if i == 33 { return "6th Street Collections"; }
+        if i == 34 { return "Street Fixer (unnamed)"; }
+        if i == 35 { return "Maelstrom Debt Enforcement"; }
+        if i == 36 { return "Local Loan Shark"; }
+        if i == 37 { return "Underground Gambling Debt"; }
+        if i == 38 { return "Drug Debt (Unspecified)"; }
+        return "Private Individual (Enforced)";
     }
 
     private static func GenerateDebtStatus(seed: Int32, creditScore: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         
         if creditScore >= 650 {
-            if roll <= 60 { return "Current - Good Standing"; }
-            if roll <= 85 { return "Current - Minimum Payments"; }
-            if roll <= 95 { return "30 Days Past Due"; }
-            return "Under Review";
-        }
-        if creditScore >= 450 {
-            if roll <= 20 { return "Current - Good Standing"; }
-            if roll <= 50 { return "Current - Minimum Payments"; }
-            if roll <= 70 { return "30-60 Days Past Due"; }
-            if roll <= 85 { return "In Collections"; }
-            return "Wage Garnishment Active";
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Current - Good Standing"; }
+            if i == 1 { return "Current - Excellent Payment History"; }
+            if i == 2 { return "Current - Auto-Pay Active"; }
+            if i == 3 { return "Current - Minimum Payments"; }
+            if i == 4 { return "Current - Ahead of Schedule"; }
+            if i == 5 { return "Current - Recently Paid Down"; }
+            if i == 6 { return "30 Days Past Due"; }
+            if i == 7 { return "Under Review"; }
+            if i == 8 { return "Payment Plan Active"; }
+            return "Refinancing in Progress";
         }
         
-        if roll <= 10 { return "Current - Minimum Payments"; }
-        if roll <= 30 { return "60-90 Days Past Due"; }
-        if roll <= 55 { return "In Collections"; }
-        if roll <= 75 { return "Wage Garnishment Active"; }
-        if roll <= 90 { return "Asset Seizure Pending"; }
-        return "Debt Sold to Enforcement Agency";
+        if creditScore >= 450 {
+            let i = RandRange(seed, 0, 14);
+            if i == 0 { return "Current - Good Standing"; }
+            if i == 1 { return "Current - Minimum Payments"; }
+            if i == 2 { return "Current - Struggling"; }
+            if i == 3 { return "30 Days Past Due"; }
+            if i == 4 { return "30-60 Days Past Due"; }
+            if i == 5 { return "60 Days Past Due"; }
+            if i == 6 { return "Payment Plan Negotiated"; }
+            if i == 7 { return "Hardship Deferment"; }
+            if i == 8 { return "In Collections"; }
+            if i == 9 { return "Collection Calls Active"; }
+            if i == 10 { return "Wage Garnishment Active"; }
+            if i == 11 { return "Settlement Offered"; }
+            if i == 12 { return "Dispute Filed"; }
+            if i == 13 { return "Legal Action Pending"; }
+            return "Credit Counseling Required";
+        }
+        
+        // Poor credit - bad status options (20)
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "Current - Minimum Payments"; }
+        if i == 1 { return "60-90 Days Past Due"; }
+        if i == 2 { return "90+ Days Past Due"; }
+        if i == 3 { return "120+ Days Delinquent"; }
+        if i == 4 { return "In Collections"; }
+        if i == 5 { return "Multiple Collection Agencies"; }
+        if i == 6 { return "Wage Garnishment Active"; }
+        if i == 7 { return "Bank Account Levied"; }
+        if i == 8 { return "Asset Seizure Pending"; }
+        if i == 9 { return "Asset Seizure Complete"; }
+        if i == 10 { return "Debt Sold to Enforcement Agency"; }
+        if i == 11 { return "Legal Judgment Against"; }
+        if i == 12 { return "Court Order for Payment"; }
+        if i == 13 { return "Liens Filed"; }
+        if i == 14 { return "Default - Charged Off"; }
+        if i == 15 { return "Bankruptcy Recommended"; }
+        if i == 16 { return "Skip Trace Active"; }
+        if i == 17 { return "Enforcement Officers Notified"; }
+        if i == 18 { return "Corporate Indentured Status Risk"; }
+        return "Serious Delinquency - Final Notice";
     }
 
     private static func GeneratePropertyStatus(seed: Int32, archetype: String, wealth: Int32) -> String {
@@ -409,213 +526,657 @@ public class FinancialProfileManager {
     }
 
     private static func GenerateResidenceType(seed: Int32, archetype: String) -> String {
-        let types: array<String>;
-
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "YUPPIE") {
-            ArrayPush(types, "Penthouse Suite");
-            ArrayPush(types, "Luxury Apartment");
-            ArrayPush(types, "Executive Housing Complex");
-            ArrayPush(types, "Gated Community Residence");
-            ArrayPush(types, "High-Rise Apartment (Premium)");
-        } else if Equals(archetype, "CORPO_DRONE") {
-            ArrayPush(types, "Corporate Housing Unit");
-            ArrayPush(types, "Mid-Rise Apartment");
-            ArrayPush(types, "Megabuilding Unit (Standard)");
-            ArrayPush(types, "Company Dormitory");
-        } else if Equals(archetype, "NOMAD") {
-            ArrayPush(types, "Mobile Home/Vehicle");
-            ArrayPush(types, "Camp Dwelling");
-            ArrayPush(types, "Nomad Settlement");
-            ArrayPush(types, "Badlands Compound");
-        } else if Equals(archetype, "HOMELESS") {
-            ArrayPush(types, "Street/Alley");
-            ArrayPush(types, "Abandoned Building");
-            ArrayPush(types, "Underpass/Bridge");
-            ArrayPush(types, "Shelter (Temporary)");
-            ArrayPush(types, "Tent City");
-        } else if Equals(archetype, "GANGER") {
-            ArrayPush(types, "Gang Safehouse");
-            ArrayPush(types, "Shared Apartment");
-            ArrayPush(types, "Megabuilding Unit (Low)");
-            ArrayPush(types, "Warehouse Conversion");
-        } else {
-            ArrayPush(types, "Megabuilding Unit");
-            ArrayPush(types, "Low-Rise Apartment");
-            ArrayPush(types, "Shared Housing");
-            ArrayPush(types, "Studio Apartment");
-            ArrayPush(types, "Basement Unit");
+            let i = RandRange(seed, 0, 14);
+            if i == 0 { return "Penthouse Suite"; }
+            if i == 1 { return "Luxury Apartment"; }
+            if i == 2 { return "Executive Housing Complex"; }
+            if i == 3 { return "Gated Community Residence"; }
+            if i == 4 { return "High-Rise Apartment (Premium)"; }
+            if i == 5 { return "Skyrise Condo"; }
+            if i == 6 { return "Private Villa"; }
+            if i == 7 { return "Secured Compound"; }
+            if i == 8 { return "Corporate Tower Residence"; }
+            if i == 9 { return "Waterfront Property"; }
+            if i == 10 { return "Historic Renovated Loft"; }
+            if i == 11 { return "Smart Home Estate"; }
+            if i == 12 { return "Designer Apartment"; }
+            if i == 13 { return "Executive Suite Hotel"; }
+            return "Private Floor Residence";
         }
-
-        return types[RandRange(seed, 0, ArraySize(types) - 1)];
+        
+        if Equals(archetype, "CORPO_DRONE") {
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Corporate Housing Unit"; }
+            if i == 1 { return "Mid-Rise Apartment"; }
+            if i == 2 { return "Megabuilding Unit (Standard)"; }
+            if i == 3 { return "Company Dormitory"; }
+            if i == 4 { return "Subsidized Corporate Housing"; }
+            if i == 5 { return "Efficiency Apartment"; }
+            if i == 6 { return "Corporate Barracks"; }
+            if i == 7 { return "Employee Housing Block"; }
+            if i == 8 { return "Commuter Pod"; }
+            return "Shared Corporate Suite";
+        }
+        
+        if Equals(archetype, "NOMAD") {
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Mobile Home/Vehicle"; }
+            if i == 1 { return "Camp Dwelling"; }
+            if i == 2 { return "Nomad Settlement"; }
+            if i == 3 { return "Badlands Compound"; }
+            if i == 4 { return "Converted RV"; }
+            if i == 5 { return "Tent/Temporary Shelter"; }
+            if i == 6 { return "Clan Communal Housing"; }
+            if i == 7 { return "Caravan Trailer"; }
+            if i == 8 { return "Desert Shack"; }
+            return "Salvaged Vehicle Home";
+        }
+        
+        if Equals(archetype, "HOMELESS") {
+            let i = RandRange(seed, 0, 14);
+            if i == 0 { return "Street/Alley"; }
+            if i == 1 { return "Abandoned Building"; }
+            if i == 2 { return "Underpass/Bridge"; }
+            if i == 3 { return "Shelter (Temporary)"; }
+            if i == 4 { return "Tent City"; }
+            if i == 5 { return "Cardboard Dwelling"; }
+            if i == 6 { return "Storm Drain"; }
+            if i == 7 { return "Rooftop Encampment"; }
+            if i == 8 { return "Abandoned Vehicle"; }
+            if i == 9 { return "Construction Site"; }
+            if i == 10 { return "Dumpster Area"; }
+            if i == 11 { return "Subway Station"; }
+            if i == 12 { return "Park Bench"; }
+            if i == 13 { return "Loading Dock"; }
+            return "Wherever Available";
+        }
+        
+        if Equals(archetype, "GANGER") {
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Gang Safehouse"; }
+            if i == 1 { return "Shared Apartment"; }
+            if i == 2 { return "Megabuilding Unit (Low)"; }
+            if i == 3 { return "Warehouse Conversion"; }
+            if i == 4 { return "Clubhouse Quarters"; }
+            if i == 5 { return "Fortified Apartment"; }
+            if i == 6 { return "Territory Stronghold"; }
+            if i == 7 { return "Above Business (Gang-owned)"; }
+            if i == 8 { return "Shipping Container"; }
+            return "Underground Bunker";
+        }
+        
+        // General population (15 options)
+        let i = RandRange(seed, 0, 14);
+        if i == 0 { return "Megabuilding Unit"; }
+        if i == 1 { return "Low-Rise Apartment"; }
+        if i == 2 { return "Shared Housing"; }
+        if i == 3 { return "Studio Apartment"; }
+        if i == 4 { return "Basement Unit"; }
+        if i == 5 { return "Coffin Hotel (Long-term)"; }
+        if i == 6 { return "SRO (Single Room Occupancy)"; }
+        if i == 7 { return "Converted Storage Unit"; }
+        if i == 8 { return "Above Shop Apartment"; }
+        if i == 9 { return "Prefab Housing Unit"; }
+        if i == 10 { return "Modular Apartment"; }
+        if i == 11 { return "Row House"; }
+        if i == 12 { return "Tenement Building"; }
+        if i == 13 { return "Mixed-Use Building"; }
+        return "Public Housing Project";
     }
 
     private static func GenerateResidenceDistrict(seed: Int32, archetype: String) -> String {
-        let districts: array<String>;
-
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "YUPPIE") {
-            ArrayPush(districts, "City Center - Corporate Plaza");
-            ArrayPush(districts, "Westbrook - North Oak");
-            ArrayPush(districts, "Westbrook - Charter Hill");
-            ArrayPush(districts, "Heywood - The Glen");
-        } else if Equals(archetype, "CORPO_DRONE") {
-            ArrayPush(districts, "City Center - Downtown");
-            ArrayPush(districts, "Watson - Little China");
-            ArrayPush(districts, "Westbrook - Japantown");
-            ArrayPush(districts, "Santo Domingo - Rancho Coronado");
-        } else if Equals(archetype, "NOMAD") {
-            ArrayPush(districts, "Badlands - Rocky Ridge");
-            ArrayPush(districts, "Badlands - Biotechnica Flats");
-            ArrayPush(districts, "Badlands - Sierra Sonora");
-            ArrayPush(districts, "Santo Domingo - Arroyo (Edge)");
-        } else if Equals(archetype, "GANGER") {
-            ArrayPush(districts, "Watson - Kabuki");
-            ArrayPush(districts, "Watson - Northside");
-            ArrayPush(districts, "Heywood - Vista del Rey");
-            ArrayPush(districts, "Pacifica - West Wind Estate");
-            ArrayPush(districts, "Santo Domingo - Arroyo");
-        } else if Equals(archetype, "HOMELESS") {
-            ArrayPush(districts, "Watson - Kabuki (Streets)");
-            ArrayPush(districts, "Pacifica - Coastview");
-            ArrayPush(districts, "Heywood - Wellsprings");
-            ArrayPush(districts, "Santo Domingo - Arroyo");
-        } else {
-            ArrayPush(districts, "Watson - Little China");
-            ArrayPush(districts, "Watson - Kabuki");
-            ArrayPush(districts, "Heywood - Wellsprings");
-            ArrayPush(districts, "Santo Domingo - Rancho Coronado");
-            ArrayPush(districts, "Westbrook - Japantown");
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "City Center - Corporate Plaza"; }
+            if i == 1 { return "Westbrook - North Oak"; }
+            if i == 2 { return "Westbrook - Charter Hill"; }
+            if i == 3 { return "Heywood - The Glen"; }
+            if i == 4 { return "City Center - Downtown"; }
+            if i == 5 { return "Westbrook - Japantown (Premium)"; }
+            if i == 6 { return "Heywood - Vista del Rey (Gated)"; }
+            if i == 7 { return "City Center - Corpo Plaza"; }
+            if i == 8 { return "North Oak Estates"; }
+            return "Charter Hill Heights";
         }
-
-        return districts[RandRange(seed, 0, ArraySize(districts) - 1)];
+        
+        if Equals(archetype, "CORPO_DRONE") {
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "City Center - Downtown"; }
+            if i == 1 { return "Watson - Little China"; }
+            if i == 2 { return "Westbrook - Japantown"; }
+            if i == 3 { return "Santo Domingo - Rancho Coronado"; }
+            if i == 4 { return "Heywood - Wellsprings"; }
+            if i == 5 { return "Watson - Arasaka Waterfront"; }
+            if i == 6 { return "City Center - Corporation St."; }
+            if i == 7 { return "Santo Domingo - Arroyo"; }
+            if i == 8 { return "Heywood - The Glen"; }
+            return "Westbrook - Charter Hill (Budget)";
+        }
+        
+        if Equals(archetype, "NOMAD") {
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Badlands - Rocky Ridge"; }
+            if i == 1 { return "Badlands - Biotechnica Flats"; }
+            if i == 2 { return "Badlands - Sierra Sonora"; }
+            if i == 3 { return "Santo Domingo - Arroyo (Edge)"; }
+            if i == 4 { return "Badlands - Red Peaks"; }
+            if i == 5 { return "Badlands - Oil Fields"; }
+            if i == 6 { return "Badlands - Solar Farm"; }
+            if i == 7 { return "Jackson Plains"; }
+            if i == 8 { return "Aldecaldo Camp"; }
+            return "Badlands - Highway 99";
+        }
+        
+        if Equals(archetype, "GANGER") {
+            let i = RandRange(seed, 0, 14);
+            if i == 0 { return "Watson - Kabuki"; }
+            if i == 1 { return "Watson - Northside"; }
+            if i == 2 { return "Heywood - Vista del Rey"; }
+            if i == 3 { return "Pacifica - West Wind Estate"; }
+            if i == 4 { return "Santo Domingo - Arroyo"; }
+            if i == 5 { return "Westbrook - Japantown"; }
+            if i == 6 { return "Watson - Little China"; }
+            if i == 7 { return "Pacifica - Coastview"; }
+            if i == 8 { return "Heywood - Wellsprings"; }
+            if i == 9 { return "Santo Domingo - Rancho Coronado"; }
+            if i == 10 { return "Dogtown"; }
+            if i == 11 { return "Pacifica - Stadium"; }
+            if i == 12 { return "Watson - Northside Industrial"; }
+            if i == 13 { return "Heywood - Glen North"; }
+            return "Valentino Territory";
+        }
+        
+        if Equals(archetype, "HOMELESS") {
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Watson - Kabuki (Streets)"; }
+            if i == 1 { return "Pacifica - Coastview"; }
+            if i == 2 { return "Heywood - Wellsprings"; }
+            if i == 3 { return "Santo Domingo - Arroyo"; }
+            if i == 4 { return "Watson - Northside (Industrial)"; }
+            if i == 5 { return "City Center - Underpasses"; }
+            if i == 6 { return "Pacifica - Abandoned Mall"; }
+            if i == 7 { return "Santo Domingo - Factory District"; }
+            if i == 8 { return "Various - Migrant"; }
+            return "Badlands - Outskirts";
+        }
+        
+        // General population (20 options)
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "Watson - Little China"; }
+        if i == 1 { return "Watson - Kabuki"; }
+        if i == 2 { return "Heywood - Wellsprings"; }
+        if i == 3 { return "Santo Domingo - Rancho Coronado"; }
+        if i == 4 { return "Westbrook - Japantown"; }
+        if i == 5 { return "Watson - Northside"; }
+        if i == 6 { return "Heywood - The Glen"; }
+        if i == 7 { return "Santo Domingo - Arroyo"; }
+        if i == 8 { return "Heywood - Vista del Rey"; }
+        if i == 9 { return "City Center - Downtown"; }
+        if i == 10 { return "Pacifica - West Wind"; }
+        if i == 11 { return "Westbrook - Charter Hill"; }
+        if i == 12 { return "Watson - Arasaka Waterfront"; }
+        if i == 13 { return "Megabuilding H10 - Watson"; }
+        if i == 14 { return "Megabuilding H8 - Japantown"; }
+        if i == 15 { return "Megabuilding H4 - Arroyo"; }
+        if i == 16 { return "Dogtown"; }
+        if i == 17 { return "Pacifica - Coastview"; }
+        if i == 18 { return "Santo Domingo - Industrial"; }
+        return "Heywood - Glen South";
     }
 
     private static func GenerateEmploymentStatus(seed: Int32, archetype: String) -> String {
-        if Equals(archetype, "CORPO_MANAGER") { return "EMPLOYED - Executive Level"; }
-        if Equals(archetype, "CORPO_DRONE") { return "EMPLOYED - Corporate"; }
-        if Equals(archetype, "HOMELESS") { return "UNEMPLOYED"; }
+        if Equals(archetype, "CORPO_MANAGER") { 
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "EMPLOYED - Executive Level"; }
+            if i == 1 { return "EMPLOYED - Senior Management"; }
+            if i == 2 { return "EMPLOYED - Director Level"; }
+            if i == 3 { return "EMPLOYED - VP Level"; }
+            return "EMPLOYED - C-Suite Adjacent";
+        }
+        if Equals(archetype, "CORPO_DRONE") { 
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "EMPLOYED - Corporate"; }
+            if i == 1 { return "EMPLOYED - Corporate (Probation)"; }
+            if i == 2 { return "EMPLOYED - Corporate (Contract)"; }
+            if i == 3 { return "EMPLOYED - Corporate (Temp)"; }
+            return "EMPLOYED - Corporate (Intern)";
+        }
+        if Equals(archetype, "HOMELESS") { 
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "UNEMPLOYED"; }
+            if i == 1 { return "UNEMPLOYED - Long-term"; }
+            if i == 2 { return "UNEMPLOYED - Disabled"; }
+            if i == 3 { return "PANHANDLING"; }
+            return "INFORMAL - Scavenging";
+        }
         if Equals(archetype, "JUNKIE") {
-            let roll = RandRange(seed, 1, 100);
-            if roll <= 80 { return "UNEMPLOYED"; }
-            return "EMPLOYED - Informal";
+            let i = RandRange(seed, 0, 6);
+            if i == 0 { return "UNEMPLOYED"; }
+            if i == 1 { return "UNEMPLOYED - Unable to work"; }
+            if i == 2 { return "EMPLOYED - Informal"; }
+            if i == 3 { return "UNEMPLOYED - Recently fired"; }
+            if i == 4 { return "GIG ECONOMY - Sporadic"; }
+            if i == 5 { return "SELF-EMPLOYED - Dealer"; }
+            return "DAY LABOR - When sober";
         }
-
-        let statuses: array<String>;
-        ArrayPush(statuses, "EMPLOYED - Full Time");
-        ArrayPush(statuses, "EMPLOYED - Part Time");
-        ArrayPush(statuses, "EMPLOYED - Contract");
-        ArrayPush(statuses, "EMPLOYED - Gig Economy");
-        ArrayPush(statuses, "SELF-EMPLOYED");
-        ArrayPush(statuses, "UNEMPLOYED - Seeking");
-        ArrayPush(statuses, "UNEMPLOYED");
-        ArrayPush(statuses, "EMPLOYED - Informal");
-        ArrayPush(statuses, "RETIRED");
-        ArrayPush(statuses, "DISABLED");
-
         if Equals(archetype, "GANGER") {
-            if RandRange(seed, 1, 100) <= 70 { return "EMPLOYED - Informal"; }
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "EMPLOYED - Informal"; }
+            if i == 1 { return "SELF-EMPLOYED - Street business"; }
+            if i == 2 { return "GANG OPERATIONS"; }
+            if i == 3 { return "CRIMINAL ENTERPRISE"; }
+            if i == 4 { return "PROTECTION SERVICES"; }
+            if i == 5 { return "DISTRIBUTION NETWORK"; }
+            if i == 6 { return "EMPLOYED - Front business"; }
+            if i == 7 { return "FREELANCE - Muscle for hire"; }
+            if i == 8 { return "TERRITORY MANAGEMENT"; }
+            return "COLLECTION SERVICES";
         }
-
-        return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
+        if Equals(archetype, "NOMAD") {
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "EMPLOYED - Clan duties"; }
+            if i == 1 { return "SELF-EMPLOYED - Mechanic"; }
+            if i == 2 { return "EMPLOYED - Smuggling runs"; }
+            if i == 3 { return "FREELANCE - Transport"; }
+            if i == 4 { return "CLAN BUSINESS"; }
+            if i == 5 { return "EMPLOYED - Scavenging operations"; }
+            if i == 6 { return "CONTRACT - Convoy security"; }
+            if i == 7 { return "SELF-EMPLOYED - Trading"; }
+            if i == 8 { return "FREELANCE - Guide services"; }
+            return "CLAN SUPPORT ROLE";
+        }
+        
+        // General population (25 options)
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "EMPLOYED - Full Time"; }
+        if i == 1 { return "EMPLOYED - Part Time"; }
+        if i == 2 { return "EMPLOYED - Contract"; }
+        if i == 3 { return "EMPLOYED - Gig Economy"; }
+        if i == 4 { return "SELF-EMPLOYED"; }
+        if i == 5 { return "UNEMPLOYED - Seeking"; }
+        if i == 6 { return "UNEMPLOYED"; }
+        if i == 7 { return "EMPLOYED - Informal"; }
+        if i == 8 { return "RETIRED"; }
+        if i == 9 { return "DISABLED"; }
+        if i == 10 { return "EMPLOYED - Seasonal"; }
+        if i == 11 { return "EMPLOYED - Night shift"; }
+        if i == 12 { return "EMPLOYED - Multiple jobs"; }
+        if i == 13 { return "FREELANCE"; }
+        if i == 14 { return "ON LEAVE - Medical"; }
+        if i == 15 { return "ON LEAVE - Maternity/Paternity"; }
+        if i == 16 { return "FURLOUGHED"; }
+        if i == 17 { return "EMPLOYED - Probationary"; }
+        if i == 18 { return "EMPLOYED - Apprentice"; }
+        if i == 19 { return "STUDENT"; }
+        if i == 20 { return "EMPLOYED - Remote"; }
+        if i == 21 { return "LAID OFF - Recent"; }
+        if i == 22 { return "UNDEREMPLOYED"; }
+        if i == 23 { return "ZERO HOURS CONTRACT"; }
+        return "TEMP AGENCY";
     }
 
     private static func GenerateEmployer(seed: Int32, archetype: String) -> String {
-        let employers: array<String>;
-
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
-            ArrayPush(employers, "Arasaka Corporation");
-            ArrayPush(employers, "Militech");
-            ArrayPush(employers, "Kang Tao");
-            ArrayPush(employers, "Biotechnica");
-            ArrayPush(employers, "Petrochem");
-            ArrayPush(employers, "Zetatech");
-            ArrayPush(employers, "Kiroshi Opticals");
-            ArrayPush(employers, "Trauma Team International");
-            ArrayPush(employers, "Night City Municipal");
-            ArrayPush(employers, "NCART");
-        } else if Equals(archetype, "YUPPIE") {
-            ArrayPush(employers, "Private Practice");
-            ArrayPush(employers, "Consulting Firm");
-            ArrayPush(employers, "Media Corporation");
-            ArrayPush(employers, "Law Firm");
-            ArrayPush(employers, "Financial Services");
-        } else {
-            ArrayPush(employers, "Various (Gig Work)");
-            ArrayPush(employers, "Local Business");
-            ArrayPush(employers, "Self-Employed");
-            ArrayPush(employers, "Factory (Santo Domingo)");
-            ArrayPush(employers, "Food Service");
-            ArrayPush(employers, "Retail");
-            ArrayPush(employers, "Construction");
-            ArrayPush(employers, "Sanitation");
-            ArrayPush(employers, "Security (Contract)");
-            ArrayPush(employers, "N/A - Unemployed");
+            let i = RandRange(seed, 0, 29);
+            if i == 0 { return "Arasaka Corporation"; }
+            if i == 1 { return "Militech"; }
+            if i == 2 { return "Kang Tao"; }
+            if i == 3 { return "Biotechnica"; }
+            if i == 4 { return "Petrochem"; }
+            if i == 5 { return "Zetatech"; }
+            if i == 6 { return "Kiroshi Opticals"; }
+            if i == 7 { return "Trauma Team International"; }
+            if i == 8 { return "Night City Municipal"; }
+            if i == 9 { return "NCART"; }
+            if i == 10 { return "SovOil"; }
+            if i == 11 { return "IEC"; }
+            if i == 12 { return "Continental Brands"; }
+            if i == 13 { return "All Foods"; }
+            if i == 14 { return "Orbital Air"; }
+            if i == 15 { return "Network News 54"; }
+            if i == 16 { return "World News Service"; }
+            if i == 17 { return "Dynalar Technologies"; }
+            if i == 18 { return "Raven Microcybernetics"; }
+            if i == 19 { return "EuroBank"; }
+            if i == 20 { return "Kendachi"; }
+            if i == 21 { return "Tsunami Defense Systems"; }
+            if i == 22 { return "Budget Arms"; }
+            if i == 23 { return "NetWatch"; }
+            if i == 24 { return "MaxTac Division"; }
+            if i == 25 { return "NCPD Administration"; }
+            if i == 26 { return "Ziggurat"; }
+            if i == 27 { return "Segotari"; }
+            if i == 28 { return "Rocklin Augmentics"; }
+            return "Fuyutsuki Electronics";
         }
-
-        return employers[RandRange(seed, 0, ArraySize(employers) - 1)];
+        
+        if Equals(archetype, "YUPPIE") {
+            let i = RandRange(seed, 0, 14);
+            if i == 0 { return "Private Practice"; }
+            if i == 1 { return "Consulting Firm"; }
+            if i == 2 { return "Media Corporation"; }
+            if i == 3 { return "Law Firm"; }
+            if i == 4 { return "Financial Services"; }
+            if i == 5 { return "Medical Practice"; }
+            if i == 6 { return "Architecture Firm"; }
+            if i == 7 { return "Marketing Agency"; }
+            if i == 8 { return "Real Estate Development"; }
+            if i == 9 { return "Tech Startup"; }
+            if i == 10 { return "Entertainment Industry"; }
+            if i == 11 { return "Investment Banking"; }
+            if i == 12 { return "Cybersecurity Firm"; }
+            if i == 13 { return "Biotech Startup"; }
+            return "Venture Capital";
+        }
+        
+        // General population (40 options)
+        let i = RandRange(seed, 0, 39);
+        if i == 0 { return "Various (Gig Work)"; }
+        if i == 1 { return "Local Business"; }
+        if i == 2 { return "Self-Employed"; }
+        if i == 3 { return "Factory (Santo Domingo)"; }
+        if i == 4 { return "Food Service"; }
+        if i == 5 { return "Retail"; }
+        if i == 6 { return "Construction"; }
+        if i == 7 { return "Sanitation"; }
+        if i == 8 { return "Security (Contract)"; }
+        if i == 9 { return "N/A - Unemployed"; }
+        if i == 10 { return "Delivery Services"; }
+        if i == 11 { return "Rideshare Driver"; }
+        if i == 12 { return "Warehouse (All Foods)"; }
+        if i == 13 { return "Manufacturing Plant"; }
+        if i == 14 { return "Bar/Club Staff"; }
+        if i == 15 { return "Street Vendor"; }
+        if i == 16 { return "Mechanic Shop"; }
+        if i == 17 { return "Cleaning Services"; }
+        if i == 18 { return "Healthcare Aide"; }
+        if i == 19 { return "Childcare"; }
+        if i == 20 { return "Taxi/Transport"; }
+        if i == 21 { return "Hospitality"; }
+        if i == 22 { return "Bouncer/Doorman"; }
+        if i == 23 { return "Small Business Owner"; }
+        if i == 24 { return "Repair Technician"; }
+        if i == 25 { return "Dock Worker"; }
+        if i == 26 { return "Market Stall"; }
+        if i == 27 { return "Hair Salon"; }
+        if i == 28 { return "Laundromat"; }
+        if i == 29 { return "Pawn Shop"; }
+        if i == 30 { return "Gun Store"; }
+        if i == 31 { return "Pharmacy Assistant"; }
+        if i == 32 { return "Grocery Store"; }
+        if i == 33 { return "Electronics Repair"; }
+        if i == 34 { return "Tattoo Parlor"; }
+        if i == 35 { return "Clothing Store"; }
+        if i == 36 { return "Night Market Vendor"; }
+        if i == 37 { return "Recycling Plant"; }
+        if i == 38 { return "Seasonal Work"; }
+        return "Day Labor";
     }
 
     private static func GenerateIncomeLevel(seed: Int32, archetype: String) -> String {
-        if Equals(archetype, "CORPO_MANAGER") { return "€$250,000+ /year"; }
-        if Equals(archetype, "CORPO_DRONE") { return "€$45,000 - €$120,000 /year"; }
-        if Equals(archetype, "YUPPIE") { return "€$80,000 - €$200,000 /year"; }
-        if Equals(archetype, "CIVVIE") { return "€$15,000 - €$45,000 /year"; }
-        if Equals(archetype, "LOWLIFE") { return "€$5,000 - €$15,000 /year"; }
-        if Equals(archetype, "GANGER") { return "€$10,000 - €$50,000 /year (Est.)"; }
-        if Equals(archetype, "JUNKIE") { return "< €$5,000 /year"; }
-        if Equals(archetype, "HOMELESS") { return "NO INCOME"; }
-        if Equals(archetype, "NOMAD") { return "€$8,000 - €$30,000 /year (Est.)"; }
-        return "€$20,000 - €$40,000 /year";
+        if Equals(archetype, "CORPO_MANAGER") { 
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "€$250,000-500,000/year"; }
+            if i == 1 { return "€$500,000-1,000,000/year"; }
+            if i == 2 { return "€$1,000,000+/year"; }
+            if i == 3 { return "€$200,000-350,000/year"; }
+            if i == 4 { return "€$350,000-500,000/year"; }
+            if i == 5 { return "€$150,000-250,000/year + Bonuses"; }
+            if i == 6 { return "€$300,000/year + Stock Options"; }
+            if i == 7 { return "€$400,000/year + Benefits Package"; }
+            if i == 8 { return "€$250,000/year + Performance Bonus"; }
+            return "€$500,000/year + Executive Package";
+        }
+        if Equals(archetype, "CORPO_DRONE") { 
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "€$45,000-60,000/year"; }
+            if i == 1 { return "€$60,000-80,000/year"; }
+            if i == 2 { return "€$80,000-100,000/year"; }
+            if i == 3 { return "€$100,000-120,000/year"; }
+            if i == 4 { return "€$35,000-50,000/year"; }
+            if i == 5 { return "€$50,000/year + Overtime"; }
+            if i == 6 { return "€$70,000/year + Benefits"; }
+            if i == 7 { return "€$55,000/year (Entry Level)"; }
+            if i == 8 { return "€$90,000/year (Senior)"; }
+            return "€$65,000/year + Corporate Housing";
+        }
+        if Equals(archetype, "YUPPIE") { 
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "€$80,000-120,000/year"; }
+            if i == 1 { return "€$120,000-180,000/year"; }
+            if i == 2 { return "€$180,000-250,000/year"; }
+            if i == 3 { return "€$100,000/year + Commission"; }
+            if i == 4 { return "€$150,000/year (Partner Track)"; }
+            if i == 5 { return "€$200,000/year + Profit Share"; }
+            if i == 6 { return "€$90,000/year (Associate)"; }
+            if i == 7 { return "€$130,000/year + Bonuses"; }
+            if i == 8 { return "€$175,000/year (Senior Associate)"; }
+            return "€$250,000+/year (Partner)";
+        }
+        if Equals(archetype, "CIVVIE") { 
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "€$15,000-25,000/year"; }
+            if i == 1 { return "€$25,000-35,000/year"; }
+            if i == 2 { return "€$35,000-45,000/year"; }
+            if i == 3 { return "€$20,000/year + Tips"; }
+            if i == 4 { return "€$30,000/year (Hourly)"; }
+            if i == 5 { return "€$18,000/year (Part-time)"; }
+            if i == 6 { return "€$40,000/year (Skilled)"; }
+            if i == 7 { return "€$22,000/year + Benefits"; }
+            if i == 8 { return "€$28,000/year (Union)"; }
+            return "€$32,000/year (Full-time)";
+        }
+        if Equals(archetype, "LOWLIFE") { 
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "€$5,000-8,000/year"; }
+            if i == 1 { return "€$8,000-12,000/year"; }
+            if i == 2 { return "€$12,000-15,000/year"; }
+            if i == 3 { return "€$3,000-6,000/year (Sporadic)"; }
+            if i == 4 { return "€$10,000/year (Cash)"; }
+            if i == 5 { return "€$7,000/year (Gig Work)"; }
+            if i == 6 { return "€$4,000/year + Scavenging"; }
+            if i == 7 { return "€$9,000/year (Day Labor)"; }
+            if i == 8 { return "€$6,000/year (Unreported)"; }
+            return "VARIABLE - Under €$15,000/year";
+        }
+        if Equals(archetype, "GANGER") { 
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "€$10,000-25,000/year (Est.)"; }
+            if i == 1 { return "€$25,000-50,000/year (Est.)"; }
+            if i == 2 { return "€$50,000-100,000/year (Est.)"; }
+            if i == 3 { return "€$15,000/year + Street Income"; }
+            if i == 4 { return "€$40,000/year (Enforcer)"; }
+            if i == 5 { return "€$75,000/year (Lieutenant)"; }
+            if i == 6 { return "€$20,000/year (Soldier)"; }
+            if i == 7 { return "VARIABLE - Criminal Enterprise"; }
+            if i == 8 { return "€$30,000/year + Territory Cut"; }
+            return "UNREPORTED - Estimated €$35,000+";
+        }
+        if Equals(archetype, "JUNKIE") { 
+            let i = RandRange(seed, 0, 6);
+            if i == 0 { return "< €$5,000/year"; }
+            if i == 1 { return "€$0-2,000/year"; }
+            if i == 2 { return "€$2,000-5,000/year"; }
+            if i == 3 { return "NO STABLE INCOME"; }
+            if i == 4 { return "IRREGULAR - Under €$3,000/year"; }
+            if i == 5 { return "€$1,000/year (Panhandling)"; }
+            return "SURVIVAL INCOME ONLY";
+        }
+        if Equals(archetype, "HOMELESS") { 
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "NO INCOME"; }
+            if i == 1 { return "€$0-500/year (Panhandling)"; }
+            if i == 2 { return "NONE - Relies on shelters"; }
+            if i == 3 { return "€$0-1,000/year (Scavenging)"; }
+            if i == 4 { return "NO DOCUMENTED INCOME"; }
+            return "SUBSISTENCE ONLY";
+        }
+        if Equals(archetype, "NOMAD") { 
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "€$8,000-15,000/year (Est.)"; }
+            if i == 1 { return "€$15,000-25,000/year (Est.)"; }
+            if i == 2 { return "€$25,000-40,000/year (Est.)"; }
+            if i == 3 { return "CLAN-BASED - Shared resources"; }
+            if i == 4 { return "€$20,000/year (Transport runs)"; }
+            if i == 5 { return "€$12,000/year + Trade goods"; }
+            if i == 6 { return "€$30,000/year (Smuggling)"; }
+            if i == 7 { return "VARIABLE - Contract work"; }
+            if i == 8 { return "€$18,000/year (Mechanic)"; }
+            return "NON-MONETARY - Barter economy";
+        }
+        
+        // Default
+        let i = RandRange(seed, 0, 9);
+        if i == 0 { return "€$20,000-30,000/year"; }
+        if i == 1 { return "€$30,000-40,000/year"; }
+        if i == 2 { return "€$15,000-25,000/year"; }
+        if i == 3 { return "€$25,000/year (Average)"; }
+        if i == 4 { return "€$35,000/year + Overtime"; }
+        if i == 5 { return "€$22,000/year (Entry)"; }
+        if i == 6 { return "€$28,000/year (Experienced)"; }
+        if i == 7 { return "€$18,000/year (Part-time)"; }
+        if i == 8 { return "€$32,000/year (Skilled)"; }
+        return "€$24,000/year (Median)";
     }
 
     private static func GeneratePurchase(seed: Int32, archetype: String, wealth: Int32) -> String {
-        let purchases: array<String>;
-
         if wealth >= 100000 {
-            ArrayPush(purchases, "Luxury vehicle - €$" + IntToString(RandRange(seed, 50000, 200000)));
-            ArrayPush(purchases, "Premium cyberware - €$" + IntToString(RandRange(seed, 10000, 75000)));
-            ArrayPush(purchases, "Vacation package - €$" + IntToString(RandRange(seed, 5000, 30000)));
-            ArrayPush(purchases, "Real estate investment - €$" + IntToString(RandRange(seed, 100000, 500000)));
-            ArrayPush(purchases, "Art purchase - €$" + IntToString(RandRange(seed, 2000, 50000)));
-        } else if wealth >= 20000 {
-            ArrayPush(purchases, "Used vehicle - €$" + IntToString(RandRange(seed, 5000, 25000)));
-            ArrayPush(purchases, "Cyberware upgrade - €$" + IntToString(RandRange(seed, 1000, 15000)));
-            ArrayPush(purchases, "Electronics - €$" + IntToString(RandRange(seed, 200, 2000)));
-            ArrayPush(purchases, "Furniture - €$" + IntToString(RandRange(seed, 500, 5000)));
-            ArrayPush(purchases, "Weapon - €$" + IntToString(RandRange(seed, 500, 5000)));
-        } else {
-            ArrayPush(purchases, "Food supplies - €$" + IntToString(RandRange(seed, 20, 200)));
-            ArrayPush(purchases, "Clothing - €$" + IntToString(RandRange(seed, 30, 300)));
-            ArrayPush(purchases, "Basic electronics - €$" + IntToString(RandRange(seed, 50, 500)));
-            ArrayPush(purchases, "Medication - €$" + IntToString(RandRange(seed, 20, 300)));
-            ArrayPush(purchases, "Ammunition - €$" + IntToString(RandRange(seed, 50, 500)));
+            let i = RandRange(seed, 0, 19);
+            if i == 0 { return "Luxury vehicle - €$" + IntToString(RandRange(seed, 80000, 250000)); }
+            if i == 1 { return "Premium cyberware suite - €$" + IntToString(RandRange(seed, 25000, 100000)); }
+            if i == 2 { return "Vacation package (orbital) - €$" + IntToString(RandRange(seed, 15000, 75000)); }
+            if i == 3 { return "Real estate investment - €$" + IntToString(RandRange(seed, 150000, 750000)); }
+            if i == 4 { return "Art collection piece - €$" + IntToString(RandRange(seed, 10000, 100000)); }
+            if i == 5 { return "Custom weapon (legendary) - €$" + IntToString(RandRange(seed, 15000, 50000)); }
+            if i == 6 { return "Personal AV rental - €$" + IntToString(RandRange(seed, 5000, 25000)); }
+            if i == 7 { return "Designer clothing - €$" + IntToString(RandRange(seed, 3000, 15000)); }
+            if i == 8 { return "Fine dining (monthly) - €$" + IntToString(RandRange(seed, 2000, 8000)); }
+            if i == 9 { return "Private security contract - €$" + IntToString(RandRange(seed, 10000, 50000)); }
+            if i == 10 { return "Exclusive club membership - €$" + IntToString(RandRange(seed, 5000, 25000)); }
+            if i == 11 { return "Wine collection - €$" + IntToString(RandRange(seed, 3000, 20000)); }
+            if i == 12 { return "Smart home upgrade - €$" + IntToString(RandRange(seed, 8000, 40000)); }
+            if i == 13 { return "Luxury watch - €$" + IntToString(RandRange(seed, 5000, 30000)); }
+            if i == 14 { return "Private medical procedure - €$" + IntToString(RandRange(seed, 10000, 75000)); }
+            if i == 15 { return "Investment portfolio addition - €$" + IntToString(RandRange(seed, 25000, 150000)); }
+            if i == 16 { return "Rare collectible - €$" + IntToString(RandRange(seed, 5000, 50000)); }
+            if i == 17 { return "High-end electronics - €$" + IntToString(RandRange(seed, 3000, 15000)); }
+            if i == 18 { return "Personal trainer (annual) - €$" + IntToString(RandRange(seed, 5000, 20000)); }
+            return "Charity donation - €$" + IntToString(RandRange(seed, 2000, 25000));
         }
-
-        return purchases[RandRange(seed, 0, ArraySize(purchases) - 1)];
+        
+        if wealth >= 20000 {
+            let i = RandRange(seed, 0, 24);
+            if i == 0 { return "Used vehicle - €$" + IntToString(RandRange(seed, 8000, 30000)); }
+            if i == 1 { return "Cyberware upgrade - €$" + IntToString(RandRange(seed, 2000, 20000)); }
+            if i == 2 { return "Electronics - €$" + IntToString(RandRange(seed, 300, 3000)); }
+            if i == 3 { return "Furniture set - €$" + IntToString(RandRange(seed, 800, 6000)); }
+            if i == 4 { return "Quality weapon - €$" + IntToString(RandRange(seed, 1000, 8000)); }
+            if i == 5 { return "Apartment deposit - €$" + IntToString(RandRange(seed, 2000, 10000)); }
+            if i == 6 { return "Medical procedure - €$" + IntToString(RandRange(seed, 1500, 12000)); }
+            if i == 7 { return "Vacation (domestic) - €$" + IntToString(RandRange(seed, 500, 3000)); }
+            if i == 8 { return "New clothes - €$" + IntToString(RandRange(seed, 200, 1500)); }
+            if i == 9 { return "Gym equipment - €$" + IntToString(RandRange(seed, 300, 2000)); }
+            if i == 10 { return "Tools/Equipment - €$" + IntToString(RandRange(seed, 500, 3000)); }
+            if i == 11 { return "Education course - €$" + IntToString(RandRange(seed, 500, 5000)); }
+            if i == 12 { return "Vehicle repair - €$" + IntToString(RandRange(seed, 500, 4000)); }
+            if i == 13 { return "Home appliance - €$" + IntToString(RandRange(seed, 300, 2500)); }
+            if i == 14 { return "Weapon accessories - €$" + IntToString(RandRange(seed, 200, 1500)); }
+            if i == 15 { return "Entertainment system - €$" + IntToString(RandRange(seed, 500, 4000)); }
+            if i == 16 { return "Personal device - €$" + IntToString(RandRange(seed, 400, 2000)); }
+            if i == 17 { return "Motorcycle - €$" + IntToString(RandRange(seed, 3000, 15000)); }
+            if i == 18 { return "Insurance payment - €$" + IntToString(RandRange(seed, 500, 3000)); }
+            if i == 19 { return "Restaurant meals - €$" + IntToString(RandRange(seed, 100, 800)); }
+            if i == 20 { return "Pet expenses - €$" + IntToString(RandRange(seed, 100, 500)); }
+            if i == 21 { return "Hobby supplies - €$" + IntToString(RandRange(seed, 100, 1000)); }
+            if i == 22 { return "Gift purchase - €$" + IntToString(RandRange(seed, 100, 1000)); }
+            if i == 23 { return "Bar tab - €$" + IntToString(RandRange(seed, 50, 500)); }
+            return "Subscription services - €$" + IntToString(RandRange(seed, 50, 300));
+        }
+        
+        // Low wealth
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "Food supplies - €$" + IntToString(RandRange(seed, 30, 250)); }
+        if i == 1 { return "Basic clothing - €$" + IntToString(RandRange(seed, 20, 150)); }
+        if i == 2 { return "Used electronics - €$" + IntToString(RandRange(seed, 30, 300)); }
+        if i == 3 { return "Medication - €$" + IntToString(RandRange(seed, 20, 200)); }
+        if i == 4 { return "Ammunition - €$" + IntToString(RandRange(seed, 30, 300)); }
+        if i == 5 { return "Bus pass - €$" + IntToString(RandRange(seed, 20, 100)); }
+        if i == 6 { return "Cheap booze - €$" + IntToString(RandRange(seed, 10, 80)); }
+        if i == 7 { return "Street food - €$" + IntToString(RandRange(seed, 5, 50)); }
+        if i == 8 { return "Prepaid phone - €$" + IntToString(RandRange(seed, 20, 100)); }
+        if i == 9 { return "Used weapon - €$" + IntToString(RandRange(seed, 100, 800)); }
+        if i == 10 { return "Rent payment - €$" + IntToString(RandRange(seed, 200, 800)); }
+        if i == 11 { return "Utility bill - €$" + IntToString(RandRange(seed, 50, 200)); }
+        if i == 12 { return "Cheap cyberware mod - €$" + IntToString(RandRange(seed, 100, 500)); }
+        if i == 13 { return "Cigarettes - €$" + IntToString(RandRange(seed, 10, 50)); }
+        if i == 14 { return "Energy drinks - €$" + IntToString(RandRange(seed, 5, 30)); }
+        if i == 15 { return "Basic tools - €$" + IntToString(RandRange(seed, 20, 150)); }
+        if i == 16 { return "Street drugs - €$" + IntToString(RandRange(seed, 20, 200)); }
+        if i == 17 { return "Braindance chips - €$" + IntToString(RandRange(seed, 10, 100)); }
+        if i == 18 { return "Second-hand clothes - €$" + IntToString(RandRange(seed, 10, 80)); }
+        if i == 19 { return "Pawn shop item - €$" + IntToString(RandRange(seed, 20, 150)); }
+        if i == 20 { return "Lottery tickets - €$" + IntToString(RandRange(seed, 5, 50)); }
+        if i == 21 { return "Alcohol - €$" + IntToString(RandRange(seed, 10, 100)); }
+        if i == 22 { return "Vending machine meals - €$" + IntToString(RandRange(seed, 5, 40)); }
+        if i == 23 { return "Basic hygiene supplies - €$" + IntToString(RandRange(seed, 10, 50)); }
+        return "Debt payment - €$" + IntToString(RandRange(seed, 50, 300));
     }
 
     private static func GenerateTaxStatus(seed: Int32, archetype: String) -> String {
-        let roll = RandRange(seed, 1, 100);
-        
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
-            if roll <= 85 { return "COMPLIANT"; }
-            if roll <= 95 { return "AUDIT PENDING"; }
-            return "UNDER INVESTIGATION";
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "COMPLIANT"; }
+            if i == 1 { return "COMPLIANT - Auto-Withheld"; }
+            if i == 2 { return "COMPLIANT - Corporate Filing"; }
+            if i == 3 { return "COMPLIANT - Itemized"; }
+            if i == 4 { return "AUDIT PENDING"; }
+            if i == 5 { return "UNDER INVESTIGATION"; }
+            if i == 6 { return "OVERPAID - Refund Due"; }
+            if i == 7 { return "EXTENSION FILED"; }
+            if i == 8 { return "AMENDED RETURN"; }
+            return "CORPORATE HANDLING";
         }
+        
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
-            if roll <= 30 { return "NO TAX OBLIGATION"; }
-            if roll <= 60 { return "NON-FILER"; }
-            return "DELINQUENT";
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "NO TAX OBLIGATION"; }
+            if i == 1 { return "NON-FILER"; }
+            if i == 2 { return "DELINQUENT"; }
+            if i == 3 { return "BELOW THRESHOLD"; }
+            if i == 4 { return "NO INCOME TO REPORT"; }
+            return "STATUS UNKNOWN";
         }
+        
         if Equals(archetype, "GANGER") {
-            if roll <= 20 { return "COMPLIANT"; }
-            if roll <= 50 { return "NON-FILER"; }
-            return "DELINQUENT";
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "COMPLIANT"; }
+            if i == 1 { return "NON-FILER"; }
+            if i == 2 { return "DELINQUENT"; }
+            if i == 3 { return "UNREPORTED INCOME"; }
+            if i == 4 { return "CASH ONLY - No Records"; }
+            if i == 5 { return "FALSE RETURN FILED"; }
+            if i == 6 { return "UNDER INVESTIGATION"; }
+            return "STATUS UNKNOWN";
         }
 
-        if roll <= 60 { return "COMPLIANT"; }
-        if roll <= 75 { return "MINOR DISCREPANCY"; }
-        if roll <= 90 { return "DELINQUENT"; }
-        return "AUDIT PENDING";
+        // General population (15 options)
+        let i = RandRange(seed, 0, 14);
+        if i == 0 { return "COMPLIANT"; }
+        if i == 1 { return "COMPLIANT - Standard"; }
+        if i == 2 { return "COMPLIANT - Auto-File"; }
+        if i == 3 { return "MINOR DISCREPANCY"; }
+        if i == 4 { return "DELINQUENT"; }
+        if i == 5 { return "AUDIT PENDING"; }
+        if i == 6 { return "PAYMENT PLAN ACTIVE"; }
+        if i == 7 { return "LATE FILING PENALTY"; }
+        if i == 8 { return "NON-FILER"; }
+        if i == 9 { return "EXTENSION FILED"; }
+        if i == 10 { return "REFUND PENDING"; }
+        if i == 11 { return "AMENDED RETURN FILED"; }
+        if i == 12 { return "DISPUTE IN PROGRESS"; }
+        if i == 13 { return "COLLECTIONS ACTIVE"; }
+        return "WAGE LEVY ACTIVE";
     }
 
     private static func HasBankruptcy(seed: Int32, archetype: String) -> Bool {
@@ -644,77 +1205,257 @@ public class FinancialProfileManager {
     }
 
     private static func GenerateTraumaTeamCoverage(seed: Int32, archetype: String, wealth: Int32) -> String {
-        if Equals(archetype, "CORPO_MANAGER") { return "PLATINUM (Full Coverage)"; }
+        if Equals(archetype, "CORPO_MANAGER") {
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "PLATINUM (Full Coverage)"; }
+            if i == 1 { return "PLATINUM EXECUTIVE"; }
+            if i == 2 { return "PLATINUM FAMILY PLAN"; }
+            if i == 3 { return "DIAMOND (VIP)"; }
+            return "CORPORATE UNLIMITED";
+        }
+        
         if Equals(archetype, "YUPPIE") {
-            let roll = RandRange(seed, 1, 100);
-            if roll <= 50 { return "GOLD"; }
-            if roll <= 80 { return "SILVER"; }
-            return "PLATINUM (Full Coverage)";
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "GOLD"; }
+            if i == 1 { return "GOLD PLUS"; }
+            if i == 2 { return "SILVER"; }
+            if i == 3 { return "SILVER PLUS"; }
+            if i == 4 { return "PLATINUM (Full Coverage)"; }
+            if i == 5 { return "GOLD FAMILY"; }
+            if i == 6 { return "PREMIUM INDIVIDUAL"; }
+            return "HIGH-DEDUCTIBLE GOLD";
         }
+        
         if Equals(archetype, "CORPO_DRONE") {
-            let roll = RandRange(seed, 1, 100);
-            if roll <= 30 { return "SILVER (Corporate Plan)"; }
-            if roll <= 60 { return "BRONZE (Corporate Plan)"; }
-            return "NONE (Opt-Out)";
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "SILVER (Corporate Plan)"; }
+            if i == 1 { return "BRONZE (Corporate Plan)"; }
+            if i == 2 { return "CORPORATE BASIC"; }
+            if i == 3 { return "EMPLOYEE STANDARD"; }
+            if i == 4 { return "NONE (Opt-Out)"; }
+            if i == 5 { return "BRONZE PLUS"; }
+            if i == 6 { return "CORPORATE GROUP"; }
+            return "SUBSIDIZED BRONZE";
         }
+        
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
-            return "NONE";
+            let i = RandRange(seed, 0, 2);
+            if i == 0 { return "NONE"; }
+            if i == 1 { return "EXPIRED"; }
+            return "LAPSED - Non-Payment";
         }
         
+        // Based on wealth for others
         if wealth >= 50000 {
-            let roll = RandRange(seed, 1, 100);
-            if roll <= 30 { return "SILVER"; }
-            if roll <= 60 { return "BRONZE"; }
-            return "NONE";
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "SILVER"; }
+            if i == 1 { return "SILVER BASIC"; }
+            if i == 2 { return "BRONZE"; }
+            if i == 3 { return "BRONZE PLUS"; }
+            if i == 4 { return "HIGH-DEDUCTIBLE SILVER"; }
+            return "CATASTROPHIC ONLY";
         }
         
-        if RandRange(seed, 1, 100) <= 15 { return "BRONZE"; }
-        return "NONE";
+        // Low wealth (10 options)
+        let i = RandRange(seed, 0, 9);
+        if i == 0 { return "BRONZE"; }
+        if i == 1 { return "BRONZE BASIC"; }
+        if i == 2 { return "CATASTROPHIC ONLY"; }
+        if i == 3 { return "EMERGENCY ONLY"; }
+        if i == 4 { return "NONE"; }
+        if i == 5 { return "EXPIRED"; }
+        if i == 6 { return "LAPSED"; }
+        if i == 7 { return "PAYMENT PLAN"; }
+        if i == 8 { return "COMMUNITY SUBSIDY"; }
+        return "PENDING APPROVAL";
     }
 
     private static func GenerateHealthInsurance(seed: Int32, archetype: String) -> String {
-        if Equals(archetype, "CORPO_MANAGER") { return "ARASAKA PREMIUM HEALTH"; }
-        if Equals(archetype, "CORPO_DRONE") { return "CORPORATE BASIC PLAN"; }
-        if Equals(archetype, "YUPPIE") { return "PRIVATE HEALTH PLAN"; }
-        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") { return "UNINSURED"; }
+        if Equals(archetype, "CORPO_MANAGER") {
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "ARASAKA PREMIUM HEALTH"; }
+            if i == 1 { return "MILITECH EXECUTIVE CARE"; }
+            if i == 2 { return "CORPORATE PLATINUM PLAN"; }
+            if i == 3 { return "ZETATECH COMPREHENSIVE"; }
+            if i == 4 { return "KANG TAO ELITE CARE"; }
+            if i == 5 { return "BIOTECHNICA WELLNESS PLUS"; }
+            if i == 6 { return "EXECUTIVE CONCIERGE MEDICAL"; }
+            return "UNLIMITED CORPORATE CARE";
+        }
         
-        let roll = RandRange(seed, 1, 100);
-        if roll <= 20 { return "NC PUBLIC HEALTH"; }
-        if roll <= 40 { return "BASIC COVERAGE"; }
-        if roll <= 60 { return "MINIMAL COVERAGE"; }
-        return "UNINSURED";
+        if Equals(archetype, "CORPO_DRONE") {
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "CORPORATE BASIC PLAN"; }
+            if i == 1 { return "EMPLOYEE STANDARD CARE"; }
+            if i == 2 { return "CORPORATE GROUP HEALTH"; }
+            if i == 3 { return "COMPANY HMO"; }
+            if i == 4 { return "CORPORATE PPO"; }
+            if i == 5 { return "EMPLOYEE BRONZE TIER"; }
+            if i == 6 { return "SUBSIDIZED EMPLOYER PLAN"; }
+            return "BASIC CORPORATE COVERAGE";
+        }
+        
+        if Equals(archetype, "YUPPIE") {
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "PRIVATE HEALTH PLAN"; }
+            if i == 1 { return "PREMIUM INDIVIDUAL"; }
+            if i == 2 { return "COMPREHENSIVE PRIVATE"; }
+            if i == 3 { return "HIGH-END PPO"; }
+            if i == 4 { return "BOUTIQUE MEDICAL"; }
+            if i == 5 { return "EXECUTIVE HEALTH PLAN"; }
+            if i == 6 { return "PRIVATE PRACTICE NETWORK"; }
+            return "PREMIUM FAMILY CARE";
+        }
+        
+        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "UNINSURED"; }
+            if i == 1 { return "EMERGENCY ROOM ONLY"; }
+            if i == 2 { return "CHARITY CARE"; }
+            if i == 3 { return "FREE CLINIC ONLY"; }
+            return "LAPSED - Uninsured";
+        }
+        
+        // General population (20 options)
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "NC PUBLIC HEALTH"; }
+        if i == 1 { return "BASIC COVERAGE"; }
+        if i == 2 { return "MINIMAL COVERAGE"; }
+        if i == 3 { return "UNINSURED"; }
+        if i == 4 { return "NC MEDICAID"; }
+        if i == 5 { return "LOW-COST COMMUNITY PLAN"; }
+        if i == 6 { return "CATASTROPHIC ONLY"; }
+        if i == 7 { return "HIGH-DEDUCTIBLE PLAN"; }
+        if i == 8 { return "MARKETPLACE BRONZE"; }
+        if i == 9 { return "MARKETPLACE SILVER"; }
+        if i == 10 { return "EMPLOYER BASIC"; }
+        if i == 11 { return "UNION HEALTH PLAN"; }
+        if i == 12 { return "GIG WORKER COLLECTIVE"; }
+        if i == 13 { return "RIPPERDOC MEMBERSHIP"; }
+        if i == 14 { return "CLINIC SUBSCRIPTION"; }
+        if i == 15 { return "EXPIRED - Seeking Coverage"; }
+        if i == 16 { return "COBRA CONTINUATION"; }
+        if i == 17 { return "SPOUSE'S PLAN"; }
+        if i == 18 { return "PARENT'S PLAN"; }
+        return "PENDING ENROLLMENT";
     }
 
     private static func GenerateBankAffiliation(seed: Int32, archetype: String) -> String {
-        let banks: array<String>;
-        
-        ArrayPush(banks, "EuroBank");
-        ArrayPush(banks, "Night City Savings");
-        ArrayPush(banks, "Arasaka Financial");
-        ArrayPush(banks, "Militech Banking");
-        ArrayPush(banks, "Pacific Credit Union");
-        ArrayPush(banks, "Watson Community Bank");
-        ArrayPush(banks, "Digital First Bank");
-        ArrayPush(banks, "No Bank Account (Cash Only)");
-
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
-            return banks[RandRange(seed, 2, 3)]; // Corporate banks
-        }
-        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
-            return banks[7]; // No account
-        }
-        if RandRange(seed + 5, 1, 100) <= 20 {
-            return banks[7]; // Some unbanked
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Arasaka Financial"; }
+            if i == 1 { return "Militech Banking"; }
+            if i == 2 { return "Kang Tao Financial"; }
+            if i == 3 { return "Zetatech Credit Union"; }
+            if i == 4 { return "Corporate Employee Bank"; }
+            if i == 5 { return "Biotechnica Banking"; }
+            if i == 6 { return "Petrochem Financial Services"; }
+            if i == 7 { return "EuroBank (Corporate)"; }
+            if i == 8 { return "Executive Banking Services"; }
+            return "SovOil Financial";
         }
         
-        return banks[RandRange(seed, 0, 6)];
+        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "No Bank Account (Cash Only)"; }
+            if i == 1 { return "UNBANKED"; }
+            if i == 2 { return "Account Closed - Collections"; }
+            if i == 3 { return "Prepaid Card Only"; }
+            return "Check Cashing Services Only";
+        }
+        
+        if Equals(archetype, "GANGER") {
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "No Bank Account (Cash Only)"; }
+            if i == 1 { return "Prepaid Card Only"; }
+            if i == 2 { return "Watson Community Bank"; }
+            if i == 3 { return "Night City Savings"; }
+            if i == 4 { return "Crypto Wallet Only"; }
+            if i == 5 { return "Multiple Aliases"; }
+            if i == 6 { return "Offshore Account"; }
+            return "Cash Only - No Records";
+        }
+        
+        // General population (25 options)
+        let i = RandRange(seed, 0, 24);
+        if i == 0 { return "EuroBank"; }
+        if i == 1 { return "Night City Savings"; }
+        if i == 2 { return "Pacific Credit Union"; }
+        if i == 3 { return "Watson Community Bank"; }
+        if i == 4 { return "Digital First Bank"; }
+        if i == 5 { return "Heywood Savings & Loan"; }
+        if i == 6 { return "Santo Domingo Credit Union"; }
+        if i == 7 { return "Westbrook Financial"; }
+        if i == 8 { return "NC Municipal Bank"; }
+        if i == 9 { return "People's Bank of NC"; }
+        if i == 10 { return "Online Bank (App Only)"; }
+        if i == 11 { return "Neo-Banking Platform"; }
+        if i == 12 { return "Crypto Exchange Account"; }
+        if i == 13 { return "Badlands Federal"; }
+        if i == 14 { return "Immigrant Services Bank"; }
+        if i == 15 { return "Veterans Credit Union"; }
+        if i == 16 { return "Workers Solidarity Bank"; }
+        if i == 17 { return "No Bank Account (Cash Only)"; }
+        if i == 18 { return "Prepaid Card Account"; }
+        if i == 19 { return "Check Cashing Services"; }
+        if i == 20 { return "Family Member's Account"; }
+        if i == 21 { return "Joint Account"; }
+        if i == 22 { return "Basic Checking Only"; }
+        if i == 23 { return "Savings Account Only"; }
+        return "Multiple Accounts";
     }
 
     private static func GenerateAccountStatus(seed: Int32, creditScore: Int32) -> String {
-        if creditScore >= 650 { return "ACTIVE - GOOD STANDING"; }
-        if creditScore >= 500 { return "ACTIVE - FAIR STANDING"; }
-        if creditScore >= 350 { return "RESTRICTED"; }
-        return "FROZEN / CLOSED";
+        if creditScore >= 750 {
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "ACTIVE - EXCELLENT STANDING"; }
+            if i == 1 { return "ACTIVE - PREMIUM MEMBER"; }
+            if i == 2 { return "ACTIVE - PREFERRED CLIENT"; }
+            if i == 3 { return "ACTIVE - VIP STATUS"; }
+            return "ACTIVE - LONG-STANDING MEMBER";
+        }
+        
+        if creditScore >= 650 {
+            let i = RandRange(seed, 0, 4);
+            if i == 0 { return "ACTIVE - GOOD STANDING"; }
+            if i == 1 { return "ACTIVE - STANDARD MEMBER"; }
+            if i == 2 { return "ACTIVE - REGULAR STATUS"; }
+            if i == 3 { return "ACTIVE - SATISFACTORY"; }
+            return "ACTIVE - NORMAL";
+        }
+        
+        if creditScore >= 500 {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "ACTIVE - FAIR STANDING"; }
+            if i == 1 { return "ACTIVE - UNDER REVIEW"; }
+            if i == 2 { return "ACTIVE - LIMITED SERVICES"; }
+            if i == 3 { return "ACTIVE - OVERDRAFT WARNING"; }
+            if i == 4 { return "ACTIVE - MONITORING"; }
+            return "PROBATIONARY";
+        }
+        
+        if creditScore >= 350 {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "RESTRICTED"; }
+            if i == 1 { return "RESTRICTED - DEPOSITS ONLY"; }
+            if i == 2 { return "RESTRICTED - NO OVERDRAFT"; }
+            if i == 3 { return "SUSPENDED - PENDING REVIEW"; }
+            if i == 4 { return "LIMITED ACCESS"; }
+            return "PROBATION - FINAL WARNING";
+        }
+        
+        // Very poor credit (10 options)
+        let i = RandRange(seed, 0, 9);
+        if i == 0 { return "FROZEN"; }
+        if i == 1 { return "CLOSED - COLLECTIONS"; }
+        if i == 2 { return "CLOSED - NEGATIVE BALANCE"; }
+        if i == 3 { return "CLOSED - FRAUD SUSPECTED"; }
+        if i == 4 { return "ACCOUNT SEIZED"; }
+        if i == 5 { return "LEVIED BY CREDITOR"; }
+        if i == 6 { return "BLACKLISTED"; }
+        if i == 7 { return "NO ACCOUNT"; }
+        if i == 8 { return "PENDING CLOSURE"; }
+        return "TERMINATED";
     }
 }
 

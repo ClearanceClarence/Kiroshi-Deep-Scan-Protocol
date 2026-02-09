@@ -134,8 +134,6 @@ public abstract class TextHousing {
     public static func LIVED_BORDER_TOWN_F() -> String { return "Grew up in a border town. "; }
     public static func LIVED_BORDER_TOWN_M() -> String { return "Grew up in a border town. "; }
     // Expanded Housing - Underground
-    public static func LIVED_METRO_F() -> String { return "Grew up in an abandoned metro station. "; }
-    public static func LIVED_METRO_M() -> String { return "Grew up in an abandoned metro station. "; }
     public static func LIVED_BUNKER_F() -> String { return "Grew up in an underground bunker. "; }
     public static func LIVED_BUNKER_M() -> String { return "Grew up in an underground bunker. "; }
     public static func LIVED_BASEMENT_F() -> String { return "Grew up in a basement apartment. "; }
@@ -159,16 +157,8 @@ public abstract class TextHousing {
     public static func LIVED_RADIATION_M() -> String { return "Grew up in a radiation-affected area. "; }
     public static func LIVED_SCAV_TERR_F() -> String { return "Grew up in Scav territory. "; }
     public static func LIVED_SCAV_TERR_M() -> String { return "Grew up in Scav territory. "; }
-    public static func LIVED_MAELSTROM_F() -> String { return "Grew up in Maelstrom territory. "; }
-    public static func LIVED_MAELSTROM_M() -> String { return "Grew up in Maelstrom territory. "; }
-    public static func LIVED_TYGER_F() -> String { return "Grew up in Tyger Claws territory. "; }
-    public static func LIVED_TYGER_M() -> String { return "Grew up in Tyger Claws territory. "; }
-    public static func LIVED_VALENTINO_F() -> String { return "Grew up in Valentinos territory. "; }
-    public static func LIVED_VALENTINO_M() -> String { return "Grew up in Valentinos territory. "; }
     public static func LIVED_6TH_ST_F() -> String { return "Grew up in 6th Street territory. "; }
     public static func LIVED_6TH_ST_M() -> String { return "Grew up in 6th Street territory. "; }
-    public static func LIVED_ANIMALS_F() -> String { return "Grew up in Animals territory. "; }
-    public static func LIVED_ANIMALS_M() -> String { return "Grew up in Animals territory. "; }
     public static func LIVED_VOODOO_F() -> String { return "Grew up in Voodoo Boys territory. "; }
     public static func LIVED_VOODOO_M() -> String { return "Grew up in Voodoo Boys territory. "; }
     // Expanded Housing - Institutional
@@ -193,14 +183,10 @@ public abstract class TextHousing {
     public static func LIVED_BOAT_M() -> String { return "Grew up on a boat. "; }
     public static func LIVED_HOUSEBOAT_F() -> String { return "Grew up on a houseboat. "; }
     public static func LIVED_HOUSEBOAT_M() -> String { return "Grew up on a houseboat. "; }
-    public static func LIVED_ROOFTOP_F() -> String { return "Grew up in a rooftop shanty. "; }
-    public static func LIVED_ROOFTOP_M() -> String { return "Grew up in a rooftop shanty. "; }
     public static func LIVED_CONSTRUCTION_F() -> String { return "Grew up in an abandoned construction site. "; }
     public static func LIVED_CONSTRUCTION_M() -> String { return "Grew up in an abandoned construction site. "; }
     public static func LIVED_WAREHOUSE_F() -> String { return "Grew up in an abandoned warehouse. "; }
     public static func LIVED_WAREHOUSE_M() -> String { return "Grew up in an abandoned warehouse. "; }
-    public static func LIVED_FACTORY_F() -> String { return "Grew up in an abandoned factory. "; }
-    public static func LIVED_FACTORY_M() -> String { return "Grew up in an abandoned factory. "; }
     public static func LIVED_OFFICE_F() -> String { return "Grew up in an abandoned office building. "; }
     public static func LIVED_OFFICE_M() -> String { return "Grew up in an abandoned office building. "; }
     public static func LIVED_MALL_F() -> String { return "Grew up in an abandoned mall. "; }
@@ -215,14 +201,10 @@ public abstract class TextHousing {
     public static func LIVED_AMUSEMENT_M() -> String { return "Grew up in an abandoned amusement park. "; }
     public static func LIVED_STORAGE_F() -> String { return "Grew up in a storage unit. "; }
     public static func LIVED_STORAGE_M() -> String { return "Grew up in a storage unit. "; }
-    public static func LIVED_CONTAINER_F() -> String { return "Grew up in a shipping container. "; }
-    public static func LIVED_CONTAINER_M() -> String { return "Grew up in a shipping container. "; }
     public static func LIVED_MOTEL_F() -> String { return "Grew up in a run-down motel. "; }
     public static func LIVED_MOTEL_M() -> String { return "Grew up in a run-down motel. "; }
     public static func LIVED_NO_TELL_F() -> String { return "Grew up in a No-Tell Motel. "; }
     public static func LIVED_NO_TELL_M() -> String { return "Grew up in a No-Tell Motel. "; }
-    public static func LIVED_COFFIN_F() -> String { return "Grew up in coffin hotels. "; }
-    public static func LIVED_COFFIN_M() -> String { return "Grew up in coffin hotels. "; }
     public static func LIVED_NOMAD_CAMP_F() -> String { return "Lived in a nomad camp outside the city. "; }
     public static func LIVED_NOMAD_CAMP_M() -> String { return ""; }
     public static func LIVED_ROCKY_F() -> String { return "Lived near Rocky Ridge in the badlands. "; }

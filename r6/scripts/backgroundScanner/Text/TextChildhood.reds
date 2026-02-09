@@ -349,4 +349,180 @@ public abstract class TextChildhood {
     public static func REVENGE_F() -> String { return "Swore revenge for a childhood tragedy. "; }
     public static func REVENGE_M() -> String { return ""; }
 
+    // === NEW CHILDHOOD - STREET LIFE ===
+    public static func STREET_RAT_F() -> String { return "Grew up as a street rat in the slums. "; }
+    public static func STREET_RAT_M() -> String { return ""; }
+    public static func SEWER_KID_F() -> String { return "Lived in the sewers for a year as a child. "; }
+    public static func SEWER_KID_M() -> String { return ""; }
+    public static func ROOF_RUNNER_F() -> String { return "Ran rooftops with a crew of other kids. "; }
+    public static func ROOF_RUNNER_M() -> String { return ""; }
+    public static func TUNNEL_DWELLER_F() -> String { return "Grew up in the old metro tunnels. "; }
+    public static func TUNNEL_DWELLER_M() -> String { return ""; }
+    public static func SQUATTER_KID_F() -> String { return "Squatted in abandoned buildings throughout childhood. "; }
+    public static func SQUATTER_KID_M() -> String { return ""; }
+    public static func BRIDGE_KID_F() -> String { return "Lived under a bridge with other homeless children. "; }
+    public static func BRIDGE_KID_M() -> String { return ""; }
+    public static func CARGO_STOWAWAY_F() -> String { return "Stowed away in cargo containers as a runaway. "; }
+    public static func CARGO_STOWAWAY_M() -> String { return ""; }
+
+    // === NEW CHILDHOOD - CRIME ===
+    public static func WINDOW_BREAKER_F() -> String { return "Broke windows for smash-and-grab crews. "; }
+    public static func WINDOW_BREAKER_M() -> String { return ""; }
+    public static func DISTRACTION_KID_F() -> String { return "Served as a distraction for robbery crews. "; }
+    public static func DISTRACTION_KID_M() -> String { return ""; }
+    public static func SHOPLIFTER_F() -> String { return "Was a prolific shoplifter as a child. "; }
+    public static func SHOPLIFTER_M() -> String { return ""; }
+    public static func CREDIT_CHIP_THIEF_F() -> String { return "Stole credit chips from tourists. "; }
+    public static func CREDIT_CHIP_THIEF_M() -> String { return ""; }
+    public static func WIRE_TAP_KID_F() -> String { return "Learned to tap phone lines at age twelve. "; }
+    public static func WIRE_TAP_KID_M() -> String { return ""; }
+    public static func CAR_BREAK_INS_F() -> String { return "Broke into cars to steal valuables. "; }
+    public static func CAR_BREAK_INS_M() -> String { return ""; }
+    public static func EXTORTION_RUNNER_F() -> String { return "Delivered extortion demands for a local gang. "; }
+    public static func EXTORTION_RUNNER_M() -> String { return ""; }
+    public static func BODY_FINDER_F() -> String { return "Found dead bodies for organ harvesters. "; }
+    public static func BODY_FINDER_M() -> String { return ""; }
+
+    // === NEW CHILDHOOD - TRAUMA ===
+    public static func BOMB_SURVIVOR_F() -> String { return "Survived a terrorist bombing as a child. "; }
+    public static func BOMB_SURVIVOR_M() -> String { return ""; }
+    public static func FLOOD_SURVIVOR_F() -> String { return "Lost everything in the Night City floods. "; }
+    public static func FLOOD_SURVIVOR_M() -> String { return ""; }
+    public static func COLLAPSED_MEGABUILDING_F() -> String { return "Survived a megabuilding collapse. "; }
+    public static func COLLAPSED_MEGABUILDING_M() -> String { return ""; }
+    public static func TOXIC_EXPOSURE_F() -> String { return "Was exposed to toxic chemicals as a child. "; }
+    public static func TOXIC_EXPOSURE_M() -> String { return ""; }
+    public static func RADIATION_KID_F() -> String { return "Grew up near a radiation hotspot. "; }
+    public static func RADIATION_KID_M() -> String { return ""; }
+    public static func FOOD_POISONING_F() -> String { return "Nearly died from contaminated food as a child. "; }
+    public static func FOOD_POISONING_M() -> String { return ""; }
+    public static func DOG_ATTACK_F() -> String { return "Was mauled by feral dogs as a child. "; }
+    public static func DOG_ATTACK_M() -> String { return ""; }
+
+    // === NEW CHILDHOOD - POSITIVE ===
+    public static func SCHOLARSHIP_KID_F() -> String { return "Won a scholarship to a good school. "; }
+    public static func SCHOLARSHIP_KID_M() -> String { return ""; }
+    public static func SAVED_BY_STRANGER_F() -> String { return "Was saved by a kind stranger during a crisis. "; }
+    public static func SAVED_BY_STRANGER_M() -> String { return ""; }
+    public static func ADOPTED_WEALTHY_F() -> String { return "Was adopted by a wealthy family. "; }
+    public static func ADOPTED_WEALTHY_M() -> String { return ""; }
+    public static func TALENT_DISCOVERED_F() -> String { return "Had a talent discovered by a mentor. "; }
+    public static func TALENT_DISCOVERED_M() -> String { return ""; }
+    public static func CONTEST_WINNER_F() -> String { return "Won a major youth contest. "; }
+    public static func CONTEST_WINNER_M() -> String { return ""; }
+    public static func CHILD_STAR_F() -> String { return "Was briefly a child star on a braindance show. "; }
+    public static func CHILD_STAR_M() -> String { return ""; }
+    public static func SPORTS_PRODIGY_F() -> String { return "Was a sports prodigy as a youth. "; }
+    public static func SPORTS_PRODIGY_M() -> String { return ""; }
+    public static func ACADEMIC_STAR_F() -> String { return "Excelled academically and skipped grades. "; }
+    public static func ACADEMIC_STAR_M() -> String { return ""; }
+
+    // === NEW CHILDHOOD - NEUTRAL ===
+    public static func MOVED_OFTEN_F() -> String { return "Moved frequently throughout childhood. "; }
+    public static func MOVED_OFTEN_M() -> String { return ""; }
+    public static func MILITARY_BRAT_F() -> String { return "Grew up as a military brat. "; }
+    public static func MILITARY_BRAT_M() -> String { return ""; }
+    public static func CORPO_KID_F() -> String { return "Grew up in corporate housing. "; }
+    public static func CORPO_KID_M() -> String { return ""; }
+    public static func RAISED_BY_UNCLE_F() -> String { return "Was raised by an uncle after parents disappeared. "; }
+    public static func RAISED_BY_UNCLE_M() -> String { return ""; }
+    public static func RAISED_BY_AUNT_F() -> String { return "Was raised by an aunt. "; }
+    public static func RAISED_BY_AUNT_M() -> String { return ""; }
+    public static func COMMUNE_KID_F() -> String { return "Grew up in a commune outside the city. "; }
+    public static func COMMUNE_KID_M() -> String { return ""; }
+    public static func IMMIGRANT_KID_F() -> String { return "Immigrated to Night City as a child. "; }
+    public static func IMMIGRANT_KID_M() -> String { return ""; }
+    public static func REFUGEE_KID_F() -> String { return "Came to Night City as a war refugee. "; }
+    public static func REFUGEE_KID_M() -> String { return ""; }
+
+    // === NEW CHILDHOOD - SKILLS ===
+    public static func COOKING_KID_F() -> String { return "Learned to cook for the family at a young age. "; }
+    public static func COOKING_KID_M() -> String { return ""; }
+    public static func SEWING_KID_F() -> String { return "Learned to sew and make clothes. "; }
+    public static func SEWING_KID_M() -> String { return ""; }
+    public static func HUNTING_KID_F() -> String { return "Learned to hunt in the Badlands. "; }
+    public static func HUNTING_KID_M() -> String { return ""; }
+    public static func FISHING_KID_F() -> String { return "Spent childhood fishing the toxic waters. "; }
+    public static func FISHING_KID_M() -> String { return ""; }
+    public static func CODING_KID_F() -> String { return "Started coding at age eight. "; }
+    public static func CODING_KID_M() -> String { return ""; }
+    public static func ARTIST_KID_F() -> String { return "Showed artistic talent from a young age. "; }
+    public static func ARTIST_KID_M() -> String { return ""; }
+    public static func DANCER_KID_F() -> String { return "Was a competitive dancer as a child. "; }
+    public static func DANCER_KID_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - TRAUMA ===
+    public static func PARENT_MURDER_F() -> String { return "Witnessed a parent's murder. "; }
+    public static func PARENT_MURDER_M() -> String { return ""; }
+    public static func BUILDING_COLLAPSE_F() -> String { return "Survived a building collapse as a child. "; }
+    public static func BUILDING_COLLAPSE_M() -> String { return ""; }
+    public static func CORPO_WAR_F() -> String { return "Grew up during a corporate war. "; }
+    public static func CORPO_WAR_M() -> String { return ""; }
+    public static func FOOD_SHORTAGE_F() -> String { return "Survived a major food shortage. "; }
+    public static func FOOD_SHORTAGE_M() -> String { return ""; }
+    public static func SICK_PARENT_F() -> String { return "Spent childhood caring for a sick parent. "; }
+    public static func SICK_PARENT_M() -> String { return ""; }
+    public static func SIBLING_DEATH_F() -> String { return "Lost a sibling to gang violence. "; }
+    public static func SIBLING_DEATH_M() -> String { return ""; }
+    public static func CYBERPSYCHO_PARENT_F() -> String { return "Parent went cyberpsycho. "; }
+    public static func CYBERPSYCHO_PARENT_M() -> String { return ""; }
+    public static func QUARANTINE_ZONE_F() -> String { return "Grew up in a quarantine zone. "; }
+    public static func QUARANTINE_ZONE_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - STREET ===
+    public static func DUMPSTER_DIVING_F() -> String { return "Learned to dumpster dive for food. "; }
+    public static func DUMPSTER_DIVING_M() -> String { return ""; }
+    public static func SEWER_LIVING_F() -> String { return "Lived in the sewers for a time. "; }
+    public static func SEWER_LIVING_M() -> String { return ""; }
+    public static func STREET_GANG_F() -> String { return "Ran with a crew of street kids. "; }
+    public static func STREET_GANG_M() -> String { return ""; }
+    public static func HOMELESS_CAMP_F() -> String { return "Grew up in a homeless encampment. "; }
+    public static func HOMELESS_CAMP_M() -> String { return ""; }
+    public static func METRO_KID_F() -> String { return "Lived in abandoned metro tunnels. "; }
+    public static func METRO_KID_M() -> String { return ""; }
+    public static func SQUAT_KID_F() -> String { return "Grew up squatting in abandoned buildings. "; }
+    public static func SQUAT_KID_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - POSITIVE ===
+    public static func MENTOR_FIGURE_F() -> String { return "Had an important mentor figure growing up. "; }
+    public static func MENTOR_FIGURE_M() -> String { return ""; }
+    public static func CHURCH_COMMUNITY_F() -> String { return "Found community through a local church. "; }
+    public static func CHURCH_COMMUNITY_M() -> String { return ""; }
+    public static func YOUTH_CENTER_F() -> String { return "Spent time at a youth center program. "; }
+    public static func YOUTH_CENTER_M() -> String { return ""; }
+    public static func PET_COMPANION_F() -> String { return "Had a beloved pet during childhood. "; }
+    public static func PET_COMPANION_M() -> String { return ""; }
+    public static func LIBRARY_KID_F() -> String { return "Spent childhood reading at the public library. "; }
+    public static func LIBRARY_KID_M() -> String { return ""; }
+    public static func ARCADE_KID_F() -> String { return "Practically lived at the local arcade. "; }
+    public static func ARCADE_KID_M() -> String { return ""; }
+    public static func CAMP_COUNSELOR_F() -> String { return "Attended summer camp in the Badlands. "; }
+    public static func CAMP_COUNSELOR_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - TECH ===
+    public static func DRONE_HOBBY_F() -> String { return "Built and flew drones as a kid. "; }
+    public static func DRONE_HOBBY_M() -> String { return ""; }
+    public static func ROBOT_BUILDER_F() -> String { return "Built robots from scrap parts. "; }
+    public static func ROBOT_BUILDER_M() -> String { return ""; }
+    public static func PIRATE_RADIO_F() -> String { return "Ran a pirate radio station as a teen. "; }
+    public static func PIRATE_RADIO_M() -> String { return ""; }
+    public static func BD_EDITOR_F() -> String { return "Started editing braindances as a teenager. "; }
+    public static func BD_EDITOR_M() -> String { return ""; }
+    public static func SCRIPT_KIDDIE_F() -> String { return "Was a script kiddie running basic hacks. "; }
+    public static func SCRIPT_KIDDIE_M() -> String { return ""; }
+    public static func TECH_RESALE_F() -> String { return "Refurbished old tech to sell on the street. "; }
+    public static func TECH_RESALE_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - CRIME ===
+    public static func FENCE_KID_F() -> String { return "Acted as a fence for stolen goods as a teen. "; }
+    public static func FENCE_KID_M() -> String { return ""; }
+    public static func BREAK_IN_F() -> String { return "Specialized in breaking into apartments. "; }
+    public static func BREAK_IN_M() -> String { return ""; }
+    public static func PROTECTION_F() -> String { return "Collected protection money for a gang. "; }
+    public static func PROTECTION_M() -> String { return ""; }
+    public static func DISTRACTION_F() -> String { return "Used as a distraction during heists. "; }
+    public static func DISTRACTION_M() -> String { return ""; }
+    public static func IDENTITY_THEFT_F() -> String { return "Learned identity theft from a mentor. "; }
+    public static func IDENTITY_THEFT_M() -> String { return ""; }
+
 }

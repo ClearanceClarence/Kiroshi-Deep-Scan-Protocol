@@ -195,54 +195,80 @@ public class RelationshipsManager {
 
     private static func GetAssociateRelationship(seed: Int32, archetype: String, gangAffiliation: String) -> String {
         let isGang = !Equals(gangAffiliation, "NONE") && !Equals(gangAffiliation, "");
-        let roll = RandRange(seed, 1, 100);
         
         if isGang {
-            // Gang-specific relationships (first 6 options)
-            if roll <= 10 { return "Fellow gang member"; }
-            if roll <= 18 { return "Gang superior"; }
-            if roll <= 26 { return "Gang subordinate"; }
-            if roll <= 34 { return "Trusted lieutenant"; }
-            if roll <= 42 { return "Drug supplier"; }
-            if roll <= 50 { return "Weapons contact"; }
+            let i = RandRange(seed, 0, 11);
+            if i == 0 { return "Fellow gang member"; }
+            if i == 1 { return "Gang superior"; }
+            if i == 2 { return "Gang subordinate"; }
+            if i == 3 { return "Trusted lieutenant"; }
+            if i == 4 { return "Drug supplier"; }
+            if i == 5 { return "Weapons contact"; }
+            if i == 6 { return "Enforcer buddy"; }
+            if i == 7 { return "Initiation sponsor"; }
+            if i == 8 { return "Territory partner"; }
+            if i == 9 { return "Getaway driver"; }
+            if i == 10 { return "Safe house contact"; }
+            return "Money handler";
         }
 
-        // Universal relationships
-        if roll <= 56 { return "Childhood friend"; }
-        if roll <= 62 { return "Coworker"; }
-        if roll <= 68 { return "Former partner"; }
-        if roll <= 74 { return "Drinking buddy"; }
-        if roll <= 80 { return "Business associate"; }
-        if roll <= 86 { return "Neighbor"; }
-        if roll <= 90 { return "Fixer contact"; }
-        if roll <= 94 { return "Ripperdoc"; }
-        if roll <= 97 { return "Dealer"; }
-        return "Informant";
+        // Universal relationships (20)
+        let i = RandRange(seed, 0, 19);
+        if i == 0 { return "Childhood friend"; }
+        if i == 1 { return "Coworker"; }
+        if i == 2 { return "Former partner"; }
+        if i == 3 { return "Drinking buddy"; }
+        if i == 4 { return "Business associate"; }
+        if i == 5 { return "Neighbor"; }
+        if i == 6 { return "Fixer contact"; }
+        if i == 7 { return "Ripperdoc"; }
+        if i == 8 { return "Dealer"; }
+        if i == 9 { return "Informant"; }
+        if i == 10 { return "Gym partner"; }
+        if i == 11 { return "Former roommate"; }
+        if i == 12 { return "Gambling buddy"; }
+        if i == 13 { return "Online friend"; }
+        if i == 14 { return "Regular at same bar"; }
+        if i == 15 { return "Church/temple contact"; }
+        if i == 16 { return "Hobby group friend"; }
+        if i == 17 { return "Ex-coworker"; }
+        if i == 18 { return "Mechanic"; }
+        return "Street vendor contact";
     }
 
     private static func GetAssociateStatus(seed: Int32) -> String {
-        let roll = RandRange(seed, 1, 100);
-        if roll <= 30 { return "Active"; }
-        if roll <= 50 { return "Active"; }
-        if roll <= 60 { return "Active"; }
-        if roll <= 70 { return "Deceased (" + IntToString(RandRange(seed + 5, 2070, 2077)) + ")"; }
-        if roll <= 78 { return "Incarcerated"; }
-        if roll <= 84 { return "Missing"; }
-        if roll <= 90 { return "Relocated"; }
-        if roll <= 94 { return "Under Surveillance"; }
-        if roll <= 97 { return "Wanted"; }
+        let i = RandRange(seed, 0, 14);
+        if i == 0 { return "Active"; }
+        if i == 1 { return "Active"; }
+        if i == 2 { return "Active"; }
+        if i == 3 { return "Active - frequent contact"; }
+        if i == 4 { return "Active - occasional contact"; }
+        if i == 5 { return "Deceased (" + IntToString(RandRange(seed + 5, 2070, 2077)) + ")"; }
+        if i == 6 { return "Incarcerated"; }
+        if i == 7 { return "Missing"; }
+        if i == 8 { return "Relocated"; }
+        if i == 9 { return "Under Surveillance"; }
+        if i == 10 { return "Wanted"; }
+        if i == 11 { return "In hiding"; }
+        if i == 12 { return "Hospitalized"; }
+        if i == 13 { return "Off-grid"; }
         return "Unknown";
     }
 
     private static func GetRandomAffiliation(seed: Int32, archetype: String) -> String {
-        let roll = RandRange(seed, 1, 100);
-        if roll <= 25 { return "None"; }
-        if roll <= 45 { return "Unknown"; }
-        if roll <= 55 { return "Arasaka (Suspected)"; }
-        if roll <= 65 { return "Militech (Suspected)"; }
-        if roll <= 78 { return "Criminal (Unaffiliated)"; }
-        if roll <= 90 { return "Fixer Network"; }
-        return "Street Merc";
+        let i = RandRange(seed, 0, 11);
+        if i == 0 { return "None"; }
+        if i == 1 { return "None"; }
+        if i == 2 { return "Unknown"; }
+        if i == 3 { return "Arasaka (Suspected)"; }
+        if i == 4 { return "Militech (Suspected)"; }
+        if i == 5 { return "Criminal (Unaffiliated)"; }
+        if i == 6 { return "Fixer Network"; }
+        if i == 7 { return "Street Merc"; }
+        if i == 8 { return "Netrunner collective"; }
+        if i == 9 { return "Black market"; }
+        if i == 10 { return "Scav connections"; }
+        return "Corporate security";
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -359,13 +385,18 @@ public class RelationshipsManager {
     }
 
     private static func GetFamilyLocation(seed: Int32) -> String {
-        let roll = RandRange(seed, 1, 100);
-        if roll <= 35 { return "Night City"; }
-        if roll <= 55 { return "Night City"; }
-        if roll <= 70 { return "Badlands"; }
-        if roll <= 80 { return "NUSA (Relocated)"; }
-        if roll <= 88 { return "Europe"; }
-        if roll <= 95 { return "Asia"; }
+        let i = RandRange(seed, 0, 11);
+        if i == 0 { return "Night City"; }
+        if i == 1 { return "Night City"; }
+        if i == 2 { return "Night City"; }
+        if i == 3 { return "Badlands"; }
+        if i == 4 { return "NUSA (Relocated)"; }
+        if i == 5 { return "Europe"; }
+        if i == 6 { return "Asia"; }
+        if i == 7 { return "South America"; }
+        if i == 8 { return "Orbital station"; }
+        if i == 9 { return "Crystal Palace"; }
+        if i == 10 { return "Texas Free State"; }
         return "Unknown";
     }
 
@@ -418,15 +449,21 @@ public class RelationshipsManager {
     }
 
     private static func GetEnemyReason(seed: Int32) -> String {
-        let roll = RandRange(seed, 1, 100);
-        if roll <= 12 { return "Business dispute"; }
-        if roll <= 24 { return "Personal betrayal"; }
-        if roll <= 34 { return "Romantic rivalry"; }
-        if roll <= 46 { return "Gang conflict"; }
-        if roll <= 58 { return "Debt dispute"; }
-        if roll <= 68 { return "Family feud"; }
-        if roll <= 78 { return "Territorial dispute"; }
-        if roll <= 90 { return "Past violence"; }
+        let i = RandRange(seed, 0, 14);
+        if i == 0 { return "Business dispute"; }
+        if i == 1 { return "Personal betrayal"; }
+        if i == 2 { return "Romantic rivalry"; }
+        if i == 3 { return "Gang conflict"; }
+        if i == 4 { return "Debt dispute"; }
+        if i == 5 { return "Family feud"; }
+        if i == 6 { return "Territorial dispute"; }
+        if i == 7 { return "Past violence"; }
+        if i == 8 { return "Theft accusation"; }
+        if i == 9 { return "Snitch suspicion"; }
+        if i == 10 { return "Killed their friend"; }
+        if i == 11 { return "Professional rivalry"; }
+        if i == 12 { return "Blackmail situation"; }
+        if i == 13 { return "Drug deal gone bad"; }
         return "Unknown origin";
     }
 
@@ -461,27 +498,41 @@ public class RelationshipsManager {
     }
 
     private static func GetProfessionalContactType(seed: Int32, archetype: String) -> String {
-        let roll = RandRange(seed, 1, 100);
-        
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
-            if roll <= 20 { return "Colleague"; }
-            if roll <= 40 { return "Supervisor"; }
-            if roll <= 60 { return "Client"; }
-            if roll <= 80 { return "Business Partner"; }
-            return "Corporate Contact";
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Colleague"; }
+            if i == 1 { return "Supervisor"; }
+            if i == 2 { return "Client"; }
+            if i == 3 { return "Business Partner"; }
+            if i == 4 { return "Corporate Contact"; }
+            if i == 5 { return "Legal counsel"; }
+            if i == 6 { return "Accountant"; }
+            if i == 7 { return "HR contact"; }
+            if i == 8 { return "Industry contact"; }
+            return "Networking connection";
         }
         
         if Equals(archetype, "GANGER") {
-            if roll <= 20 { return "Fixer"; }
-            if roll <= 40 { return "Arms Dealer"; }
-            if roll <= 60 { return "Ripperdoc"; }
-            if roll <= 80 { return "Drug Supplier"; }
-            return "Information Broker";
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Fixer"; }
+            if i == 1 { return "Arms Dealer"; }
+            if i == 2 { return "Ripperdoc"; }
+            if i == 3 { return "Drug Supplier"; }
+            if i == 4 { return "Information Broker"; }
+            if i == 5 { return "Fence"; }
+            if i == 6 { return "Chop shop owner"; }
+            if i == 7 { return "Bookie"; }
+            if i == 8 { return "Smuggler"; }
+            return "Street doc";
         }
         
-        if roll <= 33 { return "Business Contact"; }
-        if roll <= 66 { return "Service Provider"; }
-        return "Mentor";
+        let i = RandRange(seed, 0, 5);
+        if i == 0 { return "Business Contact"; }
+        if i == 1 { return "Service Provider"; }
+        if i == 2 { return "Mentor"; }
+        if i == 3 { return "Former teacher"; }
+        if i == 4 { return "Trade contact"; }
+        return "Professional acquaintance";
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -551,13 +602,17 @@ public class RelationshipsManager {
     }
 
     private static func GetContactRelationType(seed: Int32) -> String {
-        let roll = RandRange(seed, 1, 100);
-        if roll <= 25 { return "Spouse"; }
-        if roll <= 45 { return "Partner"; }
-        if roll <= 60 { return "Parent"; }
-        if roll <= 75 { return "Sibling"; }
-        if roll <= 90 { return "Friend"; }
-        return "Ex-Partner";
+        let i = RandRange(seed, 0, 9);
+        if i == 0 { return "Spouse"; }
+        if i == 1 { return "Partner"; }
+        if i == 2 { return "Parent"; }
+        if i == 3 { return "Sibling"; }
+        if i == 4 { return "Friend"; }
+        if i == 5 { return "Ex-Partner"; }
+        if i == 6 { return "Child"; }
+        if i == 7 { return "Coworker"; }
+        if i == 8 { return "Roommate"; }
+        return "Neighbor";
     }
 
     private static func CalculateSocialNetworkSize(relations: ref<RelationshipsData>, archetype: String) -> String {

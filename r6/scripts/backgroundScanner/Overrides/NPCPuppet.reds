@@ -22,10 +22,21 @@ public const func CompileScannerChunks() -> Bool {
     // - Generic police/NCPD
     let shouldGenerate = this.IsHuman() && (this.IsCrowd() || this.IsCharacterGanger() || this.IsCharacterPolice() || this.IsPrevention());
 
-    // Skip corporate/military combat NPCs as extra safety measure
+    // Skip corporate/military combat NPCs - only actual soldiers, not employees
     if shouldGenerate {
         let appearanceName = NameToString(this.GetCurrentAppearanceName());
-        if StrContains(appearanceName, "militech") || StrContains(appearanceName, "arasaka") || StrContains(appearanceName, "kang_tao") || StrContains(appearanceName, "trauma_team") || StrContains(appearanceName, "ranger") || StrContains(appearanceName, "netwatch") || StrContains(appearanceName, "max_tac") || StrContains(appearanceName, "maxtac") {
+        // Skip military/tactical units that shouldn't have civilian backstories
+        if StrContains(appearanceName, "militech_soldier") || 
+           StrContains(appearanceName, "militech_mech") ||
+           StrContains(appearanceName, "arasaka_soldier") || 
+           StrContains(appearanceName, "arasaka_ninja") ||
+           StrContains(appearanceName, "arasaka_mech") ||
+           StrContains(appearanceName, "kang_tao_soldier") || 
+           StrContains(appearanceName, "trauma_team") || 
+           StrContains(appearanceName, "ranger") || 
+           StrContains(appearanceName, "netwatch") || 
+           StrContains(appearanceName, "max_tac") || 
+           StrContains(appearanceName, "maxtac") {
             shouldGenerate = false;
         }
     }

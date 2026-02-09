@@ -144,7 +144,7 @@ public class ScannerBackstorySystem extends inkCustomController {
         footerText.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         footerText.SetFontStyle(n"Medium");
         footerText.SetFontSize(KiroshiSettings.GetHeaderFontSize() - 6);
-        footerText.SetText("Kiroshi Optics // Deep Scan Protocol v1.5");
+        footerText.SetText("Kiroshi Optics // Deep Scan Protocol v1.6");
         footerText.SetTintColor(new HDRColor(0.4, 0.4, 0.38, 1.0));
         footerText.SetFitToContent(true);
         footerText.Reparent(footer);

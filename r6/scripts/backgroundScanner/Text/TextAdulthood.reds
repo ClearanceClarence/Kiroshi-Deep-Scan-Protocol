@@ -195,8 +195,6 @@ public abstract class TextAdulthood {
     public static func FRAMED_M() -> String { return "Was framed for a crime he didn't commit. "; }
     public static func PRISON_BREAK_F() -> String { return "Escaped from prison. "; }
     public static func PRISON_BREAK_M() -> String { return "Escaped from prison. "; }
-    public static func PAROLE_F() -> String { return "Currently on parole. "; }
-    public static func PAROLE_M() -> String { return "Currently on parole. "; }
     public static func PAROLE_VIOL_F() -> String { return "Violated parole and is on the run. "; }
     public static func PAROLE_VIOL_M() -> String { return "Violated parole and is on the run. "; }
 
@@ -357,16 +355,12 @@ public abstract class TextAdulthood {
     public static func INDUSTRIAL_ACC_M() -> String { return ""; }
     public static func CHROME_REJECT_F() -> String { return "Suffered chrome rejection and had implants removed. "; }
     public static func CHROME_REJECT_M() -> String { return ""; }
-    public static func CYBERPSYCHO_SCARE_F() -> String { return "Had a cyberpsychosis scare and scaled back on chrome. "; }
-    public static func CYBERPSYCHO_SCARE_M() -> String { return ""; }
     public static func BOOTLEG_CHROME_F() -> String { return "Installed bootleg chrome that caused complications. "; }
     public static func BOOTLEG_CHROME_M() -> String { return ""; }
     public static func SURGERY_F() -> String { return "Underwent major surgery. "; }
     public static func SURGERY_M() -> String { return ""; }
     public static func CHRONIC_F() -> String { return "Developed a chronic illness. "; }
     public static func CHRONIC_M() -> String { return ""; }
-    public static func FLATLINED_F() -> String { return "Flatlined and was revived by ripperdoc. "; }
-    public static func FLATLINED_M() -> String { return ""; }
 
     // === SUBSTANCES ===
     public static func BCME_CHEMHEAD_F() -> String { return "Became a chemhead. "; }
@@ -413,18 +407,8 @@ public abstract class TextAdulthood {
     public static func PILGRIMAGE_M() -> String { return ""; }
 
     // === RELATIONSHIPS ===
-    public static func MARRIED_F() -> String { return "Got married. "; }
-    public static func MARRIED_M() -> String { return ""; }
-    public static func DIVORCED_F() -> String { return "Got divorced. "; }
-    public static func DIVORCED_M() -> String { return ""; }
-    public static func HAD_CHILD_F() -> String { return "Had a child. "; }
-    public static func HAD_CHILD_M() -> String { return ""; }
-    public static func LOST_CHILD_F() -> String { return "Lost a child. "; }
-    public static func LOST_CHILD_M() -> String { return ""; }
     public static func PARTNER_DIED_F() -> String { return "Partner died tragically. "; }
     public static func PARTNER_DIED_M() -> String { return ""; }
-    public static func AFFAIR_F() -> String { return "Had an affair. "; }
-    public static func AFFAIR_M() -> String { return ""; }
     public static func BETRAYED_F() -> String { return "Was betrayed by a close friend. "; }
     public static func BETRAYED_M() -> String { return ""; }
     public static func RECONNECT_FAM_F() -> String { return "Reconnected with estranged family. "; }
@@ -439,8 +423,6 @@ public abstract class TextAdulthood {
     public static func BAND_BROKE_M() -> String { return ""; }
     public static func ALBUM_F() -> String { return "Released an album. "; }
     public static func ALBUM_M() -> String { return ""; }
-    public static func VIRAL_F() -> String { return "Went viral on the net briefly. "; }
-    public static func VIRAL_M() -> String { return ""; }
 
     // === VIOLENCE / COMBAT ===
     public static func SURVIVED_ATK_F() -> String { return "Survived a violent attack. "; }
@@ -483,43 +465,190 @@ public abstract class TextAdulthood {
     public static func POLITICAL_M() -> String { return ""; }
     public static func ACTIVISM_F() -> String { return "Became involved in activism. "; }
     public static func ACTIVISM_M() -> String { return ""; }
-    public static func SURVIVED_MAXTAC_F() -> String { return "Survived a Max-Tac operation. "; }
-    public static func SURVIVED_MAXTAC_M() -> String { return ""; }
-    public static func CYBERPSYCHO_WIT_F() -> String { return "Witnessed a cyberpsycho attack. "; }
-    public static func CYBERPSYCHO_WIT_M() -> String { return ""; }
 
     // === EXPANDED: RELATIONSHIPS ===
-    public static func HEARTBROKEN_F() -> String { return "Had her heart broken. "; }
-    public static func HEARTBROKEN_M() -> String { return "Had his heart broken. "; }
     public static func HEARTBROKEN_ADULT_F() -> String { return "Had her heart broken in adulthood. "; }
     public static func HEARTBROKEN_ADULT_M() -> String { return "Had his heart broken in adulthood. "; }
-    public static func ROMANTIC_F() -> String { return "Found a romantic partner. "; }
-    public static func ROMANTIC_M() -> String { return ""; }
 
     // === EXPANDED: GANG INVOLVEMENT ===
-    public static func JOINED_GANG_F() -> String { return "Joined a gang as an adult. "; }
-    public static func JOINED_GANG_M() -> String { return ""; }
     public static func JOINED_GANG_ADULT_F() -> String { return "Joined a gang later in life. "; }
     public static func JOINED_GANG_ADULT_M() -> String { return ""; }
-    public static func LEFT_GANG_F() -> String { return "Left the gang life behind. "; }
-    public static func LEFT_GANG_M() -> String { return ""; }
 
     // === EXPANDED: MENTORSHIP ===
-    public static func MENTORED_F() -> String { return "Was mentored by an experienced professional. "; }
-    public static func MENTORED_M() -> String { return ""; }
     public static func MENTORED_ADULT_F() -> String { return "Found a mentor who changed her life. "; }
     public static func MENTORED_ADULT_M() -> String { return "Found a mentor who changed his life. "; }
-    public static func MENTOR_F() -> String { return "Became a mentor to younger people. "; }
-    public static func MENTOR_M() -> String { return ""; }
 
     // === EXPANDED: NEAR-DEATH ===
-    public static func NEAR_DEATH_F() -> String { return "Had a near-death experience. "; }
-    public static func NEAR_DEATH_M() -> String { return ""; }
     public static func NEAR_DEATH_ADULT_F() -> String { return "Nearly died as an adult. "; }
     public static func NEAR_DEATH_ADULT_M() -> String { return ""; }
-    public static func FLATLINED_F() -> String { return "Flatlined and was resuscitated. "; }
-    public static func FLATLINED_M() -> String { return ""; }
-    public static func COMA_F() -> String { return "Spent time in a coma. "; }
-    public static func COMA_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: CAREER ===
+    public static func PROMOTED_F() -> String { return "Got promoted at work. "; }
+    public static func PROMOTED_M() -> String { return ""; }
+    public static func FIRED_UNFAIRLY_F() -> String { return "Was fired unfairly. "; }
+    public static func FIRED_UNFAIRLY_M() -> String { return ""; }
+    public static func STARTED_BUSINESS_F() -> String { return "Started a small business. "; }
+    public static func STARTED_BUSINESS_M() -> String { return ""; }
+    public static func BUSINESS_FAILED_F() -> String { return "Had a business venture fail. "; }
+    public static func BUSINESS_FAILED_M() -> String { return ""; }
+    public static func CAREER_CHANGE_F() -> String { return "Made a major career change. "; }
+    public static func CAREER_CHANGE_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: CRIME ===
+    public static func FIRST_KILL_F() -> String { return "Committed her first kill. "; }
+    public static func FIRST_KILL_M() -> String { return "Committed his first kill. "; }
+    public static func HITMAN_JOB_F() -> String { return "Took a job as a hitman. "; }
+    public static func HITMAN_JOB_M() -> String { return ""; }
+    public static func HEIST_SUCCESS_F() -> String { return "Pulled off a successful heist. "; }
+    public static func HEIST_SUCCESS_M() -> String { return ""; }
+    public static func HEIST_FAILED_F() -> String { return "Had a heist go wrong. "; }
+    public static func HEIST_FAILED_M() -> String { return ""; }
+    public static func INFORMANT_F() -> String { return "Became a police informant. "; }
+    public static func INFORMANT_M() -> String { return ""; }
+    public static func WITNESS_PROTECTION_F() -> String { return "Entered witness protection. "; }
+    public static func WITNESS_PROTECTION_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: TRAUMA ===
+    public static func MUGGED_F() -> String { return "Was violently mugged. "; }
+    public static func MUGGED_M() -> String { return ""; }
+    public static func HOME_INVASION_F() -> String { return "Survived a home invasion. "; }
+    public static func HOME_INVASION_M() -> String { return ""; }
+    public static func TORTURED_F() -> String { return "Was tortured for information. "; }
+    public static func TORTURED_M() -> String { return ""; }
+    public static func BUILDING_COLLAPSE_F() -> String { return "Survived a building collapse. "; }
+    public static func BUILDING_COLLAPSE_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: RELATIONSHIPS ===
+    public static func GOT_MARRIED_F() -> String { return "Got married. "; }
+    public static func GOT_MARRIED_M() -> String { return ""; }
+    public static func GOT_DIVORCED_F() -> String { return "Got divorced. "; }
+    public static func GOT_DIVORCED_M() -> String { return ""; }
+    public static func SPOUSE_DIED_F() -> String { return "Lost a spouse to violence. "; }
+    public static func SPOUSE_DIED_M() -> String { return ""; }
+    public static func CHILD_DIED_F() -> String { return "Lost a child. "; }
+    public static func CHILD_DIED_M() -> String { return ""; }
+    public static func CAUGHT_CHEATING_F() -> String { return "Was caught cheating. "; }
+    public static func CAUGHT_CHEATING_M() -> String { return ""; }
+    public static func RECONCILED_F() -> String { return "Reconciled with estranged family. "; }
+    public static func RECONCILED_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: HEALTH ===
+    public static func DIAGNOSED_ILLNESS_F() -> String { return "Was diagnosed with a serious illness. "; }
+    public static func DIAGNOSED_ILLNESS_M() -> String { return ""; }
+    public static func BEAT_ILLNESS_F() -> String { return "Beat a serious illness. "; }
+    public static func BEAT_ILLNESS_M() -> String { return ""; }
+    public static func CYBERWARE_REJECTION_F() -> String { return "Suffered cyberware rejection syndrome. "; }
+    public static func CYBERWARE_REJECTION_M() -> String { return ""; }
+    public static func ORGAN_REPLACEMENT_F() -> String { return "Had an organ replaced with cyberware. "; }
+    public static func ORGAN_REPLACEMENT_M() -> String { return ""; }
+    public static func BRAIN_DAMAGE_F() -> String { return "Suffered brain damage from an accident. "; }
+    public static func BRAIN_DAMAGE_M() -> String { return ""; }
+    public static func LOST_LIMB_F() -> String { return "Lost a limb and got a cybernetic replacement. "; }
+    public static func LOST_LIMB_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: SUCCESS ===
+    public static func LOTTERY_WIN_F() -> String { return "Won a small lottery. "; }
+    public static func LOTTERY_WIN_M() -> String { return ""; }
+    public static func FAMOUS_BRIEFLY_F() -> String { return "Was briefly famous. "; }
+    public static func FAMOUS_BRIEFLY_M() -> String { return ""; }
+    public static func VIRAL_MOMENT_F() -> String { return "Had a viral moment on the net. "; }
+    public static func VIRAL_MOMENT_M() -> String { return ""; }
+    public static func SAVED_SOMEONE_F() -> String { return "Saved someone's life. "; }
+    public static func SAVED_SOMEONE_M() -> String { return ""; }
+    public static func AWARD_F() -> String { return "Won a professional award. "; }
+    public static func AWARD_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: MISC ===
+    public static func WENT_CORPO_F() -> String { return "Went corporate after years on the street. "; }
+    public static func WENT_CORPO_M() -> String { return ""; }
+    public static func LEFT_CORPO_F() -> String { return "Left the corporate world behind. "; }
+    public static func LEFT_CORPO_M() -> String { return ""; }
+    public static func MOVED_DISTRICT_F() -> String { return "Moved to a different district. "; }
+    public static func MOVED_DISTRICT_M() -> String { return ""; }
+    public static func HOMELESS_PERIOD_F() -> String { return "Spent time homeless. "; }
+    public static func HOMELESS_PERIOD_M() -> String { return ""; }
+    public static func DEBT_CRISIS_F() -> String { return "Went through a severe debt crisis. "; }
+    public static func DEBT_CRISIS_M() -> String { return ""; }
+    public static func IDENTITY_STOLEN_F() -> String { return "Had identity stolen. "; }
+    public static func IDENTITY_STOLEN_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: VIOLENCE ===
+    public static func DRIVE_BY_F() -> String { return "Survived a drive-by shooting. "; }
+    public static func DRIVE_BY_M() -> String { return ""; }
+    public static func GANG_BEATING_F() -> String { return "Received a gang beating. "; }
+    public static func GANG_BEATING_M() -> String { return ""; }
+    public static func CARJACKED_F() -> String { return "Was carjacked at gunpoint. "; }
+    public static func CARJACKED_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: WORK DRAMA ===
+    public static func WORKPLACE_AFFAIR_F() -> String { return "Had an affair at work. "; }
+    public static func WORKPLACE_AFFAIR_M() -> String { return ""; }
+    public static func WORKPLACE_ENEMY_F() -> String { return "Made a bitter enemy at work. "; }
+    public static func WORKPLACE_ENEMY_M() -> String { return ""; }
+    public static func QUIT_DRAMATICALLY_F() -> String { return "Quit a job dramatically. "; }
+    public static func QUIT_DRAMATICALLY_M() -> String { return ""; }
+    public static func CORPORATE_PURGE_F() -> String { return "Survived a corporate purge. "; }
+    public static func CORPORATE_PURGE_M() -> String { return ""; }
+    public static func LAYOFF_F() -> String { return "Was laid off unexpectedly. "; }
+    public static func LAYOFF_M() -> String { return ""; }
+    public static func DEMOTION_F() -> String { return "Was demoted at work. "; }
+    public static func DEMOTION_M() -> String { return ""; }
+    public static func TRANSFERRED_F() -> String { return "Was transferred against her will. "; }
+    public static func TRANSFERRED_M() -> String { return "Was transferred against his will. "; }
+
+    // === v1.6 EXPANDED: PERSONAL GROWTH ===
+    public static func LEARNED_LANGUAGE_F() -> String { return "Learned a new language. "; }
+    public static func LEARNED_LANGUAGE_M() -> String { return ""; }
+    public static func GOT_DEGREE_F() -> String { return "Earned a degree. "; }
+    public static func GOT_DEGREE_M() -> String { return ""; }
+    public static func NEW_SKILL_F() -> String { return "Learned a valuable new skill. "; }
+    public static func NEW_SKILL_M() -> String { return ""; }
+    public static func SOBRIETY_F() -> String { return "Got sober after addiction. "; }
+    public static func SOBRIETY_M() -> String { return ""; }
+    public static func THERAPY_F() -> String { return "Started therapy. "; }
+    public static func THERAPY_M() -> String { return ""; }
+    public static func FITNESS_F() -> String { return "Got serious about fitness. "; }
+    public static func FITNESS_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: FAMILY ===
+    public static func LOST_CUSTODY_F() -> String { return "Lost custody of a child. "; }
+    public static func LOST_CUSTODY_M() -> String { return ""; }
+    public static func MISCARRIAGE_F() -> String { return "Suffered a miscarriage. "; }
+    public static func MISCARRIAGE_M() -> String { return ""; }
+    public static func ESTRANGED_FAMILY_F() -> String { return "Became estranged from family. "; }
+    public static func ESTRANGED_FAMILY_M() -> String { return ""; }
+    public static func CARETAKER_F() -> String { return "Became a caretaker for a sick relative. "; }
+    public static func CARETAKER_M() -> String { return ""; }
+    public static func PARENT_DIED_F() -> String { return "Lost a parent. "; }
+    public static func PARENT_DIED_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: LEGAL ===
+    public static func SUED_F() -> String { return "Was sued in civil court. "; }
+    public static func SUED_M() -> String { return ""; }
+    public static func WON_LAWSUIT_F() -> String { return "Won a lawsuit. "; }
+    public static func WON_LAWSUIT_M() -> String { return ""; }
+    public static func LOST_LAWSUIT_F() -> String { return "Lost a lawsuit badly. "; }
+    public static func LOST_LAWSUIT_M() -> String { return ""; }
+    public static func PROBATION_F() -> String { return "Was put on probation. "; }
+    public static func PROBATION_M() -> String { return ""; }
+    public static func CHARGES_DROPPED_F() -> String { return "Had charges dropped. "; }
+    public static func CHARGES_DROPPED_M() -> String { return ""; }
+    public static func WRONGFUL_ARREST_F() -> String { return "Was wrongfully arrested. "; }
+    public static func WRONGFUL_ARREST_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: UNDERWORLD ===
+    public static func FIRST_FIXER_JOB_F() -> String { return "Completed first job for a fixer. "; }
+    public static func FIRST_FIXER_JOB_M() -> String { return ""; }
+    public static func DOUBLE_CROSSED_F() -> String { return "Was double-crossed on a job. "; }
+    public static func DOUBLE_CROSSED_M() -> String { return ""; }
+    public static func SCORED_BIG_F() -> String { return "Scored big on a job. "; }
+    public static func SCORED_BIG_M() -> String { return ""; }
+    public static func BURNED_FIXER_F() -> String { return "Burned a fixer and made enemies. "; }
+    public static func BURNED_FIXER_M() -> String { return ""; }
+    public static func REP_BOOST_F() -> String { return "Reputation increased significantly. "; }
+    public static func REP_BOOST_M() -> String { return ""; }
+    public static func REP_TANK_F() -> String { return "Reputation tanked after a failed job. "; }
+    public static func REP_TANK_M() -> String { return ""; }
 
 }
+

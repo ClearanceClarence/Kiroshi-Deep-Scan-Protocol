@@ -153,10 +153,12 @@ public class BackstoryManager {
 
         // Medical History Section - skip for gang members and NCPD, only on medium/high density
         if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
+            // Blood type always shown first
+            backstoryUI.medicalStatus = "Blood: " + medical.bloodType;
+            
             if ArraySize(medical.chronicConditions) > 0 || ArraySize(medical.pastInjuries) > 0 {
-                backstoryUI.medicalStatus = "";
                 if ArraySize(medical.chronicConditions) > 0 {
-                    backstoryUI.medicalStatus = "Conditions: " + medical.chronicConditions[0];
+                    backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | Conditions: " + medical.chronicConditions[0];
                     // Extra conditions on high density
                     if density >= 3 && ArraySize(medical.chronicConditions) > 1 {
                         backstoryUI.medicalStatus = backstoryUI.medicalStatus + ", " + medical.chronicConditions[1];
@@ -164,14 +166,11 @@ public class BackstoryManager {
                 };
                 // Injuries on high density only
                 if density >= 3 && ArraySize(medical.pastInjuries) > 0 {
-                    if StrLen(backstoryUI.medicalStatus) > 0 {
-                        backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | ";
-                    };
-                    backstoryUI.medicalStatus = backstoryUI.medicalStatus + "Injuries: " + medical.pastInjuries[0];
+                    backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | Injuries: " + medical.pastInjuries[0];
                 };
                 backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | Health: " + medical.healthRating;
             } else {
-                backstoryUI.medicalStatus = "No significant conditions | Health: " + medical.healthRating;
+                backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | No significant conditions | Health: " + medical.healthRating;
             };
         } else {
             backstoryUI.medicalStatus = "";
@@ -763,8 +762,23 @@ public class BackstoryManager {
             return "";
         }
         
-        let fullName = GetLocalizedTextByKey(record.FullDisplayName());
-        if Equals(fullName, "") {
+        // Try method 1: GetTweakDBFullDisplayName (used by scanner)
+        let fullName = target.GetTweakDBFullDisplayName(true);
+        
+        // Try method 2: GetLocalizedTextByKey if first method fails
+        if Equals(fullName, "") || StrLen(fullName) < 3 {
+            fullName = GetLocalizedTextByKey(record.FullDisplayName());
+        }
+        
+        // Check if it's a generic name we should ignore
+        if Equals(fullName, "") || StrLen(fullName) < 3 ||
+           Equals(fullName, "None") || 
+           Equals(fullName, "Enemy") ||
+           Equals(fullName, "Citizen") ||
+           Equals(fullName, "Civilian") ||
+           Equals(fullName, "Gang Member") ||
+           Equals(fullName, "Thug") ||
+           StrContains(fullName, "LocKey") {
             return "";
         }
         

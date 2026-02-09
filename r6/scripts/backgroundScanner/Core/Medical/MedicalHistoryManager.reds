@@ -156,39 +156,93 @@ public class MedicalHistoryManager {
     // Substance-specific medical conditions
     private static func GenerateSubstanceCondition(seed: Int32, substanceType: String) -> String {
         if Equals(substanceType, "alcohol") || Equals(substanceType, "synthetic alcohol") {
-            let conditions: array<String>;
-            ArrayPush(conditions, "Liver damage (alcohol-related)");
-            ArrayPush(conditions, "Cirrhosis - early stage");
-            ArrayPush(conditions, "Alcohol-induced neuropathy");
-            ArrayPush(conditions, "Chronic gastritis");
-            return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Liver damage (alcohol-related)"; }
+            if i == 1 { return "Cirrhosis - early stage"; }
+            if i == 2 { return "Alcohol-induced neuropathy"; }
+            if i == 3 { return "Chronic gastritis"; }
+            if i == 4 { return "Alcoholic cardiomyopathy"; }
+            if i == 5 { return "Wernicke-Korsakoff syndrome (early)"; }
+            if i == 6 { return "Pancreatitis (alcohol-induced)"; }
+            if i == 7 { return "Esophageal varices"; }
+            if i == 8 { return "Alcohol-induced dementia"; }
+            return "Fatty liver disease";
         }
         
         if StrContains(StrLower(substanceType), "synth-coke") || StrContains(StrLower(substanceType), "stim") {
-            let conditions: array<String>;
-            ArrayPush(conditions, "Cardiac arrhythmia (stimulant abuse)");
-            ArrayPush(conditions, "Nasal septum damage");
-            ArrayPush(conditions, "Chronic hypertension");
-            ArrayPush(conditions, "Stimulant-induced anxiety disorder");
-            return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Cardiac arrhythmia (stimulant abuse)"; }
+            if i == 1 { return "Nasal septum damage"; }
+            if i == 2 { return "Chronic hypertension"; }
+            if i == 3 { return "Stimulant-induced anxiety disorder"; }
+            if i == 4 { return "Stimulant psychosis (recurring)"; }
+            if i == 5 { return "Cardiovascular strain"; }
+            if i == 6 { return "Chronic insomnia"; }
+            if i == 7 { return "Bruxism (teeth grinding)"; }
+            if i == 8 { return "Malnutrition (appetite suppression)"; }
+            return "Dopamine receptor damage";
         }
         
         if StrContains(StrLower(substanceType), "black lace") {
-            let conditions: array<String>;
-            ArrayPush(conditions, "Neurotransmitter imbalance");
-            ArrayPush(conditions, "Chronic pain syndrome");
-            ArrayPush(conditions, "Rage disorder (substance-induced)");
-            ArrayPush(conditions, "Adrenal fatigue");
-            return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+            let i = RandRange(seed, 0, 9);
+            if i == 0 { return "Neurotransmitter imbalance"; }
+            if i == 1 { return "Chronic pain syndrome"; }
+            if i == 2 { return "Rage disorder (substance-induced)"; }
+            if i == 3 { return "Adrenal fatigue"; }
+            if i == 4 { return "Combat addiction"; }
+            if i == 5 { return "Pain receptor damage"; }
+            if i == 6 { return "Impulse control disorder"; }
+            if i == 7 { return "Aggression syndrome"; }
+            if i == 8 { return "Endocrine system damage"; }
+            return "Violence-induced PTSD";
+        }
+        
+        if StrContains(StrLower(substanceType), "glitter") {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "Serotonin syndrome (mild)"; }
+            if i == 1 { return "Memory fragmentation"; }
+            if i == 2 { return "Emotional dysregulation"; }
+            if i == 3 { return "Hyperthermia episodes"; }
+            if i == 4 { return "Jaw tension (chronic)"; }
+            return "Dehydration damage";
+        }
+        
+        if StrContains(StrLower(substanceType), "smash") {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "Muscle tissue damage"; }
+            if i == 1 { return "Testosterone imbalance"; }
+            if i == 2 { return "Heart enlargement"; }
+            if i == 3 { return "Liver stress"; }
+            if i == 4 { return "Aggression disorder"; }
+            return "Joint deterioration";
+        }
+        
+        if StrContains(StrLower(substanceType), "spike") || StrContains(StrLower(substanceType), "dorph") {
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "Opioid dependency"; }
+            if i == 1 { return "Respiratory depression risk"; }
+            if i == 2 { return "Chronic constipation"; }
+            if i == 3 { return "Hormonal imbalance"; }
+            if i == 4 { return "Immune suppression"; }
+            if i == 5 { return "Overdose scarring (organs)"; }
+            if i == 6 { return "Needle site infections"; }
+            return "Chronic sedation effects";
         }
         
         // Generic substance condition
-        let conditions: array<String>;
-        ArrayPush(conditions, "Substance use disorder");
-        ArrayPush(conditions, "Liver enzyme abnormalities");
-        ArrayPush(conditions, "Chronic fatigue (substance-related)");
-        ArrayPush(conditions, "Immune system compromise");
-        return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+        let i = RandRange(seed, 0, 11);
+        if i == 0 { return "Substance use disorder"; }
+        if i == 1 { return "Liver enzyme abnormalities"; }
+        if i == 2 { return "Chronic fatigue (substance-related)"; }
+        if i == 3 { return "Immune system compromise"; }
+        if i == 4 { return "Nutritional deficiencies"; }
+        if i == 5 { return "Sleep cycle disruption"; }
+        if i == 6 { return "Cognitive impairment"; }
+        if i == 7 { return "Mood instability"; }
+        if i == 8 { return "Withdrawal syndrome (chronic)"; }
+        if i == 9 { return "Polydrug complications"; }
+        if i == 10 { return "Vascular damage"; }
+        return "Neurological deterioration";
     }
 
     // Emergency visits affected by violence/trauma
@@ -223,37 +277,72 @@ public class MedicalHistoryManager {
         
         if IsDefined(coherence) && coherence.hasViolentPast && RandRange(seed + 50, 1, 100) <= 60 {
             if Equals(coherence.violenceType, "gang") {
-                let injuries: array<String>;
-                ArrayPush(injuries, "Gunshot wound (healed)");
-                ArrayPush(injuries, "Stab wound - gang altercation");
-                ArrayPush(injuries, "Blunt force trauma - gang violence");
-                ArrayPush(injuries, "Multiple lacerations - knife fight");
-                return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+                let i = RandRange(seed, 0, 11);
+                if i == 0 { return "Gunshot wound (healed) - " + IntToString(year); }
+                if i == 1 { return "Stab wound - gang altercation - " + IntToString(year); }
+                if i == 2 { return "Blunt force trauma - gang violence - " + IntToString(year); }
+                if i == 3 { return "Multiple lacerations - knife fight - " + IntToString(year); }
+                if i == 4 { return "Machete wound (healed) - " + IntToString(year); }
+                if i == 5 { return "Baseball bat injuries - " + IntToString(year); }
+                if i == 6 { return "Drive-by shooting injuries - " + IntToString(year); }
+                if i == 7 { return "Crowbar assault wounds - " + IntToString(year); }
+                if i == 8 { return "Curb stomp injuries (facial) - " + IntToString(year); }
+                if i == 9 { return "Brass knuckle trauma - " + IntToString(year); }
+                if i == 10 { return "Chain whip lacerations - " + IntToString(year); }
+                return "Execution attempt survival - " + IntToString(year);
             }
             if Equals(coherence.violenceType, "domestic") {
-                let injuries: array<String>;
-                ArrayPush(injuries, "Contusions - domestic incident");
-                ArrayPush(injuries, "Fracture (set) - fall/assault");
-                ArrayPush(injuries, "Soft tissue injuries");
-                return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+                let i = RandRange(seed, 0, 8);
+                if i == 0 { return "Contusions - domestic incident - " + IntToString(year); }
+                if i == 1 { return "Fracture (set) - fall/assault - " + IntToString(year); }
+                if i == 2 { return "Soft tissue injuries - " + IntToString(year); }
+                if i == 3 { return "Defensive wounds (forearms) - " + IntToString(year); }
+                if i == 4 { return "Strangulation marks (healed) - " + IntToString(year); }
+                if i == 5 { return "Burns (domestic) - " + IntToString(year); }
+                if i == 6 { return "Pushed down stairs - " + IntToString(year); }
+                if i == 7 { return "Blunt object trauma - " + IntToString(year); }
+                return "Multiple old fractures - " + IntToString(year);
             }
             if Equals(coherence.violenceType, "bar fight") {
-                let injuries: array<String>;
-                ArrayPush(injuries, "Broken nose (set)");
-                ArrayPush(injuries, "Facial lacerations - brawl");
-                ArrayPush(injuries, "Concussion - fight");
-                ArrayPush(injuries, "Hand fractures - fight");
-                return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+                let i = RandRange(seed, 0, 9);
+                if i == 0 { return "Broken nose (set) - " + IntToString(year); }
+                if i == 1 { return "Facial lacerations - brawl - " + IntToString(year); }
+                if i == 2 { return "Concussion - fight - " + IntToString(year); }
+                if i == 3 { return "Hand fractures - fight - " + IntToString(year); }
+                if i == 4 { return "Broken bottle wounds - " + IntToString(year); }
+                if i == 5 { return "Teeth knocked out - " + IntToString(year); }
+                if i == 6 { return "Eye socket damage - " + IntToString(year); }
+                if i == 7 { return "Rib fractures - kicked - " + IntToString(year); }
+                if i == 8 { return "Pool cue injuries - " + IntToString(year); }
+                return "Bar stool trauma - " + IntToString(year);
+            }
+            if Equals(coherence.violenceType, "street") {
+                let i = RandRange(seed, 0, 7);
+                if i == 0 { return "Mugging injuries - " + IntToString(year); }
+                if i == 1 { return "Random assault wounds - " + IntToString(year); }
+                if i == 2 { return "Robbery violence - " + IntToString(year); }
+                if i == 3 { return "Carjacking injuries - " + IntToString(year); }
+                if i == 4 { return "Wrong place wrong time - " + IntToString(year); }
+                if i == 5 { return "Bystander shooting - " + IntToString(year); }
+                if i == 6 { return "Drug deal gone wrong - " + IntToString(year); }
+                return "Street racing crash - " + IntToString(year);
             }
         }
         
         if IsDefined(coherence) && coherence.hasTrauma && Equals(coherence.traumaType, "accident") {
-            let injuries: array<String>;
-            ArrayPush(injuries, "Vehicular accident injuries");
-            ArrayPush(injuries, "Industrial accident");
-            ArrayPush(injuries, "Fall injuries - serious");
-            ArrayPush(injuries, "Multiple fractures - accident");
-            return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)] + " - " + IntToString(year);
+            let i = RandRange(seed, 0, 11);
+            if i == 0 { return "Vehicular accident injuries - " + IntToString(year); }
+            if i == 1 { return "Industrial accident - " + IntToString(year); }
+            if i == 2 { return "Fall injuries - serious - " + IntToString(year); }
+            if i == 3 { return "Multiple fractures - accident - " + IntToString(year); }
+            if i == 4 { return "Motorcycle crash - " + IntToString(year); }
+            if i == 5 { return "Construction site accident - " + IntToString(year); }
+            if i == 6 { return "AV crash injuries - " + IntToString(year); }
+            if i == 7 { return "Chemical spill exposure - " + IntToString(year); }
+            if i == 8 { return "Machinery accident - " + IntToString(year); }
+            if i == 9 { return "Explosion injuries - " + IntToString(year); }
+            if i == 10 { return "Structural collapse - " + IntToString(year); }
+            return "Train/Metro accident - " + IntToString(year);
         }
         
         return MedicalHistoryManager.GenerateInjury(seed);
@@ -283,25 +372,27 @@ public class MedicalHistoryManager {
     }
 
     private static func GenerateBloodType(seed: Int32) -> String {
-        let types: array<String>;
-        // Realistic distribution
-        ArrayPush(types, "O+");  // 37%
-        ArrayPush(types, "O+");
-        ArrayPush(types, "O+");
-        ArrayPush(types, "O+");
-        ArrayPush(types, "A+");  // 36%
-        ArrayPush(types, "A+");
-        ArrayPush(types, "A+");
-        ArrayPush(types, "A+");
-        ArrayPush(types, "B+");  // 9%
-        ArrayPush(types, "AB+"); // 3%
-        ArrayPush(types, "O-");  // 7%
-        ArrayPush(types, "A-");  // 6%
-        ArrayPush(types, "B-");  // 1%
-        ArrayPush(types, "AB-"); // 1%
-        ArrayPush(types, "SYNTHETIC"); // Cyberpunk addition
+        let i = RandRange(seed, 0, 24);
         
-        return types[RandRange(seed, 0, ArraySize(types) - 1)];
+        // Common types - weighted by real distribution
+        // O+ (37%)
+        if i >= 0 && i <= 8 { return "O+"; }
+        // A+ (36%)
+        if i >= 9 && i <= 16 { return "A+"; }
+        // B+ (9%)
+        if i == 17 || i == 18 { return "B+"; }
+        // AB+ (3%)
+        if i == 19 { return "AB+"; }
+        // O- (7%)
+        if i == 20 { return "O-"; }
+        // A- (6%)
+        if i == 21 { return "A-"; }
+        // B- (1%)
+        if i == 22 { return "B-"; }
+        // AB- (1%)
+        if i == 23 { return "AB-"; }
+        // Night City additions
+        return "SYNTHETIC";
     }
 
     private static func CalculateBiologicalAge(seed: Int32, chronoAge: Int32, archetype: String) -> Int32 {
@@ -384,68 +475,206 @@ public class MedicalHistoryManager {
     }
 
     private static func GenerateCondition(seed: Int32, archetype: String) -> String {
-        let conditions: array<String>;
+        // Archetype-specific conditions (20% chance)
+        if RandRange(seed + 999, 1, 100) <= 20 {
+            if Equals(archetype, "JUNKIE") {
+                let i = RandRange(seed, 0, 7);
+                if i == 0 { return "Substance Dependency - Active"; }
+                if i == 1 { return "Hepatic Damage"; }
+                if i == 2 { return "Neurochemical Imbalance"; }
+                if i == 3 { return "Malnutrition"; }
+                if i == 4 { return "Track Marks (Infected)"; }
+                if i == 5 { return "Overdose History"; }
+                if i == 6 { return "Kidney Failure (Early Stage)"; }
+                return "Withdrawal Syndrome - Chronic";
+            }
+            if Equals(archetype, "GANGER") {
+                let i = RandRange(seed, 0, 7);
+                if i == 0 { return "Healed Stab Wounds"; }
+                if i == 1 { return "Bullet Fragment Retention"; }
+                if i == 2 { return "Combat Injuries (Multiple)"; }
+                if i == 3 { return "Cauliflower Ear"; }
+                if i == 4 { return "Facial Scarring (Extensive)"; }
+                if i == 5 { return "Nerve Damage (Combat)"; }
+                if i == 6 { return "Hearing Loss (Gunfire)"; }
+                return "Chronic Pain (Gang Violence)";
+            }
+            if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
+                let i = RandRange(seed, 0, 7);
+                if i == 0 { return "Carpal Tunnel Syndrome"; }
+                if i == 1 { return "Stress-Related Hypertension"; }
+                if i == 2 { return "Burnout Syndrome"; }
+                if i == 3 { return "Eye Strain (Chronic)"; }
+                if i == 4 { return "Tension Headaches"; }
+                if i == 5 { return "Insomnia (Work-Related)"; }
+                if i == 6 { return "Gastric Ulcers (Stress)"; }
+                return "Executive Fatigue Syndrome";
+            }
+            if Equals(archetype, "HOMELESS") {
+                let i = RandRange(seed, 0, 7);
+                if i == 0 { return "Exposure Injuries"; }
+                if i == 1 { return "Malnutrition"; }
+                if i == 2 { return "Untreated Infections"; }
+                if i == 3 { return "Parasitic Infection"; }
+                if i == 4 { return "Frostbite Scarring"; }
+                if i == 5 { return "Skin Conditions (Untreated)"; }
+                if i == 6 { return "Dental Decay (Severe)"; }
+                return "Chronic Dehydration";
+            }
+            if Equals(archetype, "NOMAD") {
+                let i = RandRange(seed, 0, 5);
+                if i == 0 { return "Radiation Exposure (Badlands)"; }
+                if i == 1 { return "Dust Lung"; }
+                if i == 2 { return "Sun Damage (Chronic)"; }
+                if i == 3 { return "Dehydration History"; }
+                if i == 4 { return "Vehicle Crash Injuries (Old)"; }
+                return "Desert Fever (Recovered)";
+            }
+        }
 
-        // Common conditions
-        ArrayPush(conditions, "Hypertension");
-        ArrayPush(conditions, "Type 2 Diabetes");
-        ArrayPush(conditions, "Chronic Back Pain");
-        ArrayPush(conditions, "Asthma");
-        ArrayPush(conditions, "Arthritis");
-        ArrayPush(conditions, "Anxiety Disorder");
-        ArrayPush(conditions, "Depression");
-        ArrayPush(conditions, "Migraines");
-        ArrayPush(conditions, "Sleep Disorder");
-        ArrayPush(conditions, "Respiratory Issues (Smog-Related)");
+        // General conditions (80 total)
+        let i = RandRange(seed, 0, 79);
         
-        // Night City specific
-        ArrayPush(conditions, "Cyberware Rejection Syndrome");
-        ArrayPush(conditions, "Neural Degradation (Mild)");
-        ArrayPush(conditions, "Synthetic Organ Maintenance");
-        ArrayPush(conditions, "Radiation Exposure Effects");
-        ArrayPush(conditions, "Combat-Related PTSD");
-        ArrayPush(conditions, "Braindance Dependency");
-        ArrayPush(conditions, "Chronic Pain (Bullet Wound)");
-        ArrayPush(conditions, "Toxin Accumulation");
+        // Common conditions (0-19)
+        if i == 0 { return "Hypertension"; }
+        if i == 1 { return "Type 2 Diabetes"; }
+        if i == 2 { return "Chronic Back Pain"; }
+        if i == 3 { return "Asthma"; }
+        if i == 4 { return "Arthritis"; }
+        if i == 5 { return "Anxiety Disorder"; }
+        if i == 6 { return "Depression"; }
+        if i == 7 { return "Migraines"; }
+        if i == 8 { return "Sleep Disorder"; }
+        if i == 9 { return "Respiratory Issues (Smog-Related)"; }
+        if i == 10 { return "High Cholesterol"; }
+        if i == 11 { return "Acid Reflux"; }
+        if i == 12 { return "Irritable Bowel Syndrome"; }
+        if i == 13 { return "Chronic Fatigue"; }
+        if i == 14 { return "Allergic Rhinitis"; }
+        if i == 15 { return "Eczema"; }
+        if i == 16 { return "Psoriasis"; }
+        if i == 17 { return "Hypothyroidism"; }
+        if i == 18 { return "Hyperthyroidism"; }
+        if i == 19 { return "Anemia"; }
         
-        // Archetype-specific conditions
-        if Equals(archetype, "JUNKIE") {
-            ArrayPush(conditions, "Substance Dependency - Active");
-            ArrayPush(conditions, "Hepatic Damage");
-            ArrayPush(conditions, "Neurochemical Imbalance");
-            ArrayPush(conditions, "Malnutrition");
-        }
-        if Equals(archetype, "GANGER") {
-            ArrayPush(conditions, "Healed Stab Wounds");
-            ArrayPush(conditions, "Bullet Fragment Retention");
-            ArrayPush(conditions, "Combat Injuries (Multiple)");
-        }
-        if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
-            ArrayPush(conditions, "Carpal Tunnel Syndrome");
-            ArrayPush(conditions, "Stress-Related Hypertension");
-            ArrayPush(conditions, "Burnout Syndrome");
-        }
-
-        return conditions[RandRange(seed, 0, ArraySize(conditions) - 1)];
+        // Night City specific (20-39)
+        if i == 20 { return "Cyberware Rejection Syndrome"; }
+        if i == 21 { return "Neural Degradation (Mild)"; }
+        if i == 22 { return "Synthetic Organ Maintenance"; }
+        if i == 23 { return "Radiation Exposure Effects"; }
+        if i == 24 { return "Combat-Related PTSD"; }
+        if i == 25 { return "Braindance Dependency"; }
+        if i == 26 { return "Chronic Pain (Bullet Wound)"; }
+        if i == 27 { return "Toxin Accumulation"; }
+        if i == 28 { return "Cyberpsychosis (Early Warning)"; }
+        if i == 29 { return "Chrome Allergy"; }
+        if i == 30 { return "Neural Port Infection (Recurring)"; }
+        if i == 31 { return "Phantom Limb Syndrome"; }
+        if i == 32 { return "Sensory Overload Disorder"; }
+        if i == 33 { return "Memory Fragmentation"; }
+        if i == 34 { return "Interface Headaches"; }
+        if i == 35 { return "Biomon Dependency"; }
+        if i == 36 { return "Reflex Booster Burnout"; }
+        if i == 37 { return "Kerenzikov Tremors"; }
+        if i == 38 { return "Sandevistan Strain"; }
+        if i == 39 { return "Optical Implant Migraines"; }
+        
+        // Mental health (40-49)
+        if i == 40 { return "Generalized Anxiety Disorder"; }
+        if i == 41 { return "Major Depressive Disorder"; }
+        if i == 42 { return "Bipolar Disorder"; }
+        if i == 43 { return "PTSD"; }
+        if i == 44 { return "Panic Disorder"; }
+        if i == 45 { return "Social Anxiety"; }
+        if i == 46 { return "OCD"; }
+        if i == 47 { return "ADHD"; }
+        if i == 48 { return "Insomnia (Chronic)"; }
+        if i == 49 { return "Dissociative Episodes"; }
+        
+        // Cardiovascular (50-54)
+        if i == 50 { return "Coronary Artery Disease"; }
+        if i == 51 { return "Heart Arrhythmia"; }
+        if i == 52 { return "Heart Murmur"; }
+        if i == 53 { return "Varicose Veins"; }
+        if i == 54 { return "Deep Vein Thrombosis History"; }
+        
+        // Respiratory (55-59)
+        if i == 55 { return "COPD"; }
+        if i == 56 { return "Chronic Bronchitis"; }
+        if i == 57 { return "Emphysema"; }
+        if i == 58 { return "Pneumonia (Recurring)"; }
+        if i == 59 { return "Lung Scarring (Pollution)"; }
+        
+        // Digestive (60-64)
+        if i == 60 { return "Crohn's Disease"; }
+        if i == 61 { return "Ulcerative Colitis"; }
+        if i == 62 { return "Gastric Ulcers"; }
+        if i == 63 { return "Liver Cirrhosis (Early)"; }
+        if i == 64 { return "Fatty Liver Disease"; }
+        
+        // Neurological (65-69)
+        if i == 65 { return "Epilepsy"; }
+        if i == 66 { return "Peripheral Neuropathy"; }
+        if i == 67 { return "Carpal Tunnel"; }
+        if i == 68 { return "Sciatica"; }
+        if i == 69 { return "Vertigo (Chronic)"; }
+        
+        // Autoimmune/Other (70-79)
+        if i == 70 { return "Lupus"; }
+        if i == 71 { return "Rheumatoid Arthritis"; }
+        if i == 72 { return "Fibromyalgia"; }
+        if i == 73 { return "Chronic Kidney Disease"; }
+        if i == 74 { return "Gout"; }
+        if i == 75 { return "Osteoporosis"; }
+        if i == 76 { return "Tinnitus"; }
+        if i == 77 { return "Glaucoma"; }
+        if i == 78 { return "Cataracts (Early)"; }
+        return "Chronic Sinusitis";
     }
 
     private static func GenerateAllergy(seed: Int32) -> String {
-        let allergies: array<String>;
+        let i = RandRange(seed, 0, 34);
         
-        ArrayPush(allergies, "Penicillin");
-        ArrayPush(allergies, "Shellfish");
-        ArrayPush(allergies, "Peanuts");
-        ArrayPush(allergies, "Latex");
-        ArrayPush(allergies, "Synthetic Proteins");
-        ArrayPush(allergies, "Titanium Compounds");
-        ArrayPush(allergies, "Biofoam");
-        ArrayPush(allergies, "Neural Interface Gel");
-        ArrayPush(allergies, "Specific Nanobots");
-        ArrayPush(allergies, "Anesthetic (Type C)");
-        ArrayPush(allergies, "Kibble Additives");
-        ArrayPush(allergies, "Soy Derivatives");
-
-        return allergies[RandRange(seed, 0, ArraySize(allergies) - 1)];
+        // Common allergies (0-9)
+        if i == 0 { return "Penicillin"; }
+        if i == 1 { return "Shellfish"; }
+        if i == 2 { return "Peanuts"; }
+        if i == 3 { return "Latex"; }
+        if i == 4 { return "Sulfa Drugs"; }
+        if i == 5 { return "Aspirin"; }
+        if i == 6 { return "Ibuprofen"; }
+        if i == 7 { return "Eggs"; }
+        if i == 8 { return "Milk Products"; }
+        if i == 9 { return "Wheat/Gluten"; }
+        
+        // Night City specific (10-24)
+        if i == 10 { return "Synthetic Proteins"; }
+        if i == 11 { return "Titanium Compounds"; }
+        if i == 12 { return "Biofoam"; }
+        if i == 13 { return "Neural Interface Gel"; }
+        if i == 14 { return "Specific Nanobots"; }
+        if i == 15 { return "Anesthetic (Type C)"; }
+        if i == 16 { return "Kibble Additives"; }
+        if i == 17 { return "Soy Derivatives"; }
+        if i == 18 { return "Synthetic Blood Components"; }
+        if i == 19 { return "Cyberware Coolant"; }
+        if i == 20 { return "Chrome Polish Compounds"; }
+        if i == 21 { return "Neural Suppressants"; }
+        if i == 22 { return "Biotech Adhesives"; }
+        if i == 23 { return "Recycled Water Treatment"; }
+        if i == 24 { return "SCOP Protein Mix"; }
+        
+        // Medical/Drug allergies (25-34)
+        if i == 25 { return "Morphine Derivatives"; }
+        if i == 26 { return "Contrast Dye"; }
+        if i == 27 { return "Anesthesia (General)"; }
+        if i == 28 { return "Immunosuppressants"; }
+        if i == 29 { return "Antivirals (Common)"; }
+        if i == 30 { return "Synthetic Hormones"; }
+        if i == 31 { return "Stimulant Medications"; }
+        if i == 32 { return "Sedatives (Class B)"; }
+        if i == 33 { return "Anti-Rejection Meds"; }
+        return "Nanobot Repair Fluid";
     }
 
     private static func GetOrganReplacementChance(archetype: String, age: Int32) -> Int32 {
@@ -465,22 +694,43 @@ public class MedicalHistoryManager {
     }
 
     private static func GenerateOrganReplacement(seed: Int32) -> String {
-        let organs: array<String>;
+        let i = RandRange(seed, 0, 29);
         
-        ArrayPush(organs, "Synthetic Liver (Biotechnica)");
-        ArrayPush(organs, "Synthetic Kidney (Left)");
-        ArrayPush(organs, "Synthetic Kidney (Right)");
-        ArrayPush(organs, "Synthetic Heart");
-        ArrayPush(organs, "Synthetic Lung (Left)");
-        ArrayPush(organs, "Synthetic Lung (Right)");
-        ArrayPush(organs, "Cloned Liver");
-        ArrayPush(organs, "Cloned Kidney");
-        ArrayPush(organs, "Artificial Eye (Non-Kiroshi)");
-        ArrayPush(organs, "Synthetic Pancreas");
-        ArrayPush(organs, "Bioengineered Stomach");
-        ArrayPush(organs, "Vat-Grown Skin Grafts");
-
-        return organs[RandRange(seed, 0, ArraySize(organs) - 1)];
+        // Major organs (0-11)
+        if i == 0 { return "Synthetic Liver (Biotechnica)"; }
+        if i == 1 { return "Synthetic Kidney (Left)"; }
+        if i == 2 { return "Synthetic Kidney (Right)"; }
+        if i == 3 { return "Synthetic Heart"; }
+        if i == 4 { return "Synthetic Lung (Left)"; }
+        if i == 5 { return "Synthetic Lung (Right)"; }
+        if i == 6 { return "Cloned Liver"; }
+        if i == 7 { return "Cloned Kidney"; }
+        if i == 8 { return "Artificial Eye (Non-Kiroshi)"; }
+        if i == 9 { return "Synthetic Pancreas"; }
+        if i == 10 { return "Bioengineered Stomach"; }
+        if i == 11 { return "Vat-Grown Skin Grafts"; }
+        
+        // Additional organs (12-19)
+        if i == 12 { return "Synthetic Spleen"; }
+        if i == 13 { return "Artificial Bladder"; }
+        if i == 14 { return "Bioprinted Intestinal Section"; }
+        if i == 15 { return "Synthetic Thyroid"; }
+        if i == 16 { return "Cloned Corneas"; }
+        if i == 17 { return "Artificial Larynx"; }
+        if i == 18 { return "Synthetic Adrenal Glands"; }
+        if i == 19 { return "Bioengineered Bone Marrow"; }
+        
+        // Specialized replacements (20-29)
+        if i == 20 { return "Synthetic Heart Valve"; }
+        if i == 21 { return "Artificial Blood Vessels"; }
+        if i == 22 { return "Cloned Liver (Partial)"; }
+        if i == 23 { return "3D-Printed Trachea"; }
+        if i == 24 { return "Biotech Ear Reconstruction"; }
+        if i == 25 { return "Synthetic Esophagus"; }
+        if i == 26 { return "Lab-Grown Cartilage (Multiple)"; }
+        if i == 27 { return "Artificial Bile Duct"; }
+        if i == 28 { return "Bioprinted Skin (Face)"; }
+        return "Vat-Grown Muscle Tissue";
     }
 
     private static func GenerateLastCheckup(seed: Int32, archetype: String) -> String {
@@ -541,30 +791,99 @@ public class MedicalHistoryManager {
     }
 
     private static func GenerateMedication(seed: Int32, archetype: String) -> String {
-        let medications: array<String>;
-
-        ArrayPush(medications, "SynthBlood Stabilizers");
-        ArrayPush(medications, "NeuroBalance (Generic)");
-        ArrayPush(medications, "HeartGuard");
-        ArrayPush(medications, "PainAway");
-        ArrayPush(medications, "Immunosupressants (Cyberware)");
-        ArrayPush(medications, "SleepEZ");
-        ArrayPush(medications, "Metabolic Boosters");
-        ArrayPush(medications, "Blood Pressure Meds");
-        ArrayPush(medications, "Diabetes Management System");
-        ArrayPush(medications, "Anti-Rejection Meds");
-        ArrayPush(medications, "Respiratory Therapy Inhaler");
-        ArrayPush(medications, "Mood Stabilizers");
-        ArrayPush(medications, "Cognitive Enhancers");
-        ArrayPush(medications, "Bone Density Treatment");
-        
-        if Equals(archetype, "JUNKIE") {
-            ArrayPush(medications, "Addiction Treatment (Non-compliant)");
-            ArrayPush(medications, "Naloxone (Self-Administered)");
-            ArrayPush(medications, "Liver Support Supplements");
+        // Archetype-specific medications (25% chance)
+        if RandRange(seed + 999, 1, 100) <= 25 {
+            if Equals(archetype, "JUNKIE") {
+                let i = RandRange(seed, 0, 5);
+                if i == 0 { return "Addiction Treatment (Non-compliant)"; }
+                if i == 1 { return "Naloxone (Self-Administered)"; }
+                if i == 2 { return "Liver Support Supplements"; }
+                if i == 3 { return "Methadone (Prescription)"; }
+                if i == 4 { return "Anti-Craving Implant Meds"; }
+                return "Vitamin Injections (Deficiency)";
+            }
+            if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
+                let i = RandRange(seed, 0, 5);
+                if i == 0 { return "Executive Focus (Prescription)"; }
+                if i == 1 { return "CorpoCalm (Anti-Anxiety)"; }
+                if i == 2 { return "SleepCycle Regulator"; }
+                if i == 3 { return "StressShield (Cortisol Blocker)"; }
+                if i == 4 { return "NeuroSharp (Cognitive)"; }
+                return "UlcerGuard (Preventive)";
+            }
+            if Equals(archetype, "GANGER") {
+                let i = RandRange(seed, 0, 3);
+                if i == 0 { return "Combat Stim Recovery"; }
+                if i == 1 { return "Trauma Response Meds"; }
+                if i == 2 { return "Scarring Treatment"; }
+                return "Pain Management (Heavy Duty)";
+            }
         }
 
-        return medications[RandRange(seed, 0, ArraySize(medications) - 1)];
+        // General medications (50 total)
+        let i = RandRange(seed, 0, 49);
+        
+        // Cyberware/NC specific (0-14)
+        if i == 0 { return "SynthBlood Stabilizers"; }
+        if i == 1 { return "NeuroBalance (Generic)"; }
+        if i == 2 { return "Immunosuppressants (Cyberware)"; }
+        if i == 3 { return "Anti-Rejection Meds"; }
+        if i == 4 { return "Cognitive Enhancers"; }
+        if i == 5 { return "Cyberware Maintenance Supplements"; }
+        if i == 6 { return "Neural Stabilizers"; }
+        if i == 7 { return "Chrome Compatibility Boosters"; }
+        if i == 8 { return "Implant Anti-Inflammatory"; }
+        if i == 9 { return "Biomonitor Calibration Meds"; }
+        if i == 10 { return "Reflex Enhancer Support"; }
+        if i == 11 { return "Optical Implant Drops"; }
+        if i == 12 { return "Synthetic Organ Nutrients"; }
+        if i == 13 { return "Nanobot Replenishment"; }
+        if i == 14 { return "Cyberpsychosis Preventive"; }
+        
+        // Cardiovascular (15-19)
+        if i == 15 { return "HeartGuard"; }
+        if i == 16 { return "Blood Pressure Meds"; }
+        if i == 17 { return "Cholesterol Blockers"; }
+        if i == 18 { return "Blood Thinners"; }
+        if i == 19 { return "Heart Rhythm Stabilizers"; }
+        
+        // Pain/Inflammation (20-24)
+        if i == 20 { return "PainAway"; }
+        if i == 21 { return "Anti-Inflammatory (Chronic)"; }
+        if i == 22 { return "Nerve Pain Blockers"; }
+        if i == 23 { return "Joint Support Formula"; }
+        if i == 24 { return "Muscle Relaxants"; }
+        
+        // Mental health (25-34)
+        if i == 25 { return "Mood Stabilizers"; }
+        if i == 26 { return "Antidepressants (SSRI)"; }
+        if i == 27 { return "Anti-Anxiety (Daily)"; }
+        if i == 28 { return "PTSD Management"; }
+        if i == 29 { return "Bipolar Medication"; }
+        if i == 30 { return "ADHD Medication"; }
+        if i == 31 { return "SleepEZ"; }
+        if i == 32 { return "Nightmare Suppressants"; }
+        if i == 33 { return "Panic Attack Prevention"; }
+        if i == 34 { return "Stress Hormone Regulators"; }
+        
+        // Metabolic/Endocrine (35-39)
+        if i == 35 { return "Metabolic Boosters"; }
+        if i == 36 { return "Diabetes Management System"; }
+        if i == 37 { return "Thyroid Regulators"; }
+        if i == 38 { return "Hormone Replacement"; }
+        if i == 39 { return "Appetite Suppressants"; }
+        
+        // Respiratory/Other (40-49)
+        if i == 40 { return "Respiratory Therapy Inhaler"; }
+        if i == 41 { return "Asthma Controller"; }
+        if i == 42 { return "Allergy Blockers"; }
+        if i == 43 { return "Bone Density Treatment"; }
+        if i == 44 { return "Immune System Boosters"; }
+        if i == 45 { return "Digestive Enzymes"; }
+        if i == 46 { return "Acid Reflux Control"; }
+        if i == 47 { return "Kidney Function Support"; }
+        if i == 48 { return "Liver Detox Formula"; }
+        return "Vitamin Deficiency Supplements";
     }
 
     private static func GetInjuryCount(seed: Int32, archetype: String) -> Int32 {
@@ -576,22 +895,56 @@ public class MedicalHistoryManager {
     }
 
     private static func GenerateInjury(seed: Int32) -> String {
-        let injuries: array<String>;
-
-        ArrayPush(injuries, "Gunshot wound (healed) - " + IntToString(RandRange(seed, 2065, 2076)));
-        ArrayPush(injuries, "Stab wound - " + IntToString(RandRange(seed, 2068, 2076)));
-        ArrayPush(injuries, "Broken arm (set) - " + IntToString(RandRange(seed, 2060, 2075)));
-        ArrayPush(injuries, "Broken leg (set) - " + IntToString(RandRange(seed, 2060, 2075)));
-        ArrayPush(injuries, "Concussion - " + IntToString(RandRange(seed, 2070, 2077)));
-        ArrayPush(injuries, "Burns (2nd degree) - " + IntToString(RandRange(seed, 2065, 2076)));
-        ArrayPush(injuries, "Vehicular accident injuries - " + IntToString(RandRange(seed, 2065, 2076)));
-        ArrayPush(injuries, "Industrial accident - " + IntToString(RandRange(seed, 2068, 2076)));
-        ArrayPush(injuries, "Chemical exposure - " + IntToString(RandRange(seed, 2070, 2077)));
-        ArrayPush(injuries, "Cyberware malfunction injury - " + IntToString(RandRange(seed, 2072, 2077)));
-        ArrayPush(injuries, "Assault injuries - " + IntToString(RandRange(seed, 2070, 2077)));
-        ArrayPush(injuries, "Fall injuries - " + IntToString(RandRange(seed, 2068, 2076)));
-
-        return injuries[RandRange(seed, 0, ArraySize(injuries) - 1)];
+        let year = RandRange(seed + 500, 2060, 2077);
+        let i = RandRange(seed, 0, 39);
+        
+        // Violent injuries (0-14)
+        if i == 0 { return "Gunshot wound (healed) - " + IntToString(year); }
+        if i == 1 { return "Stab wound - " + IntToString(year); }
+        if i == 2 { return "Assault injuries - " + IntToString(year); }
+        if i == 3 { return "Blunt force trauma - " + IntToString(year); }
+        if i == 4 { return "Multiple lacerations - " + IntToString(year); }
+        if i == 5 { return "Broken jaw (healed) - " + IntToString(year); }
+        if i == 6 { return "Fractured skull - " + IntToString(year); }
+        if i == 7 { return "Bullet fragment retention - " + IntToString(year); }
+        if i == 8 { return "Knife wound (torso) - " + IntToString(year); }
+        if i == 9 { return "Shrapnel injuries - " + IntToString(year); }
+        if i == 10 { return "Strangling trauma - " + IntToString(year); }
+        if i == 11 { return "Broken ribs (multiple) - " + IntToString(year); }
+        if i == 12 { return "Defensive wounds (arms) - " + IntToString(year); }
+        if i == 13 { return "Orbital fracture - " + IntToString(year); }
+        if i == 14 { return "Ruptured eardrum (combat) - " + IntToString(year); }
+        
+        // Accidents (15-24)
+        if i == 15 { return "Vehicular accident injuries - " + IntToString(year); }
+        if i == 16 { return "Industrial accident - " + IntToString(year); }
+        if i == 17 { return "Fall injuries - " + IntToString(year); }
+        if i == 18 { return "Burns (2nd degree) - " + IntToString(year); }
+        if i == 19 { return "Burns (3rd degree) - " + IntToString(year); }
+        if i == 20 { return "Chemical exposure - " + IntToString(year); }
+        if i == 21 { return "Electrical shock injuries - " + IntToString(year); }
+        if i == 22 { return "Crush injuries - " + IntToString(year); }
+        if i == 23 { return "Motorcycle crash - " + IntToString(year); }
+        if i == 24 { return "Workplace accident - " + IntToString(year); }
+        
+        // Fractures/Orthopedic (25-34)
+        if i == 25 { return "Broken arm (set) - " + IntToString(year); }
+        if i == 26 { return "Broken leg (set) - " + IntToString(year); }
+        if i == 27 { return "Concussion - " + IntToString(year); }
+        if i == 28 { return "Spinal injury (recovered) - " + IntToString(year); }
+        if i == 29 { return "Dislocated shoulder - " + IntToString(year); }
+        if i == 30 { return "Torn ACL (repaired) - " + IntToString(year); }
+        if i == 31 { return "Broken collarbone - " + IntToString(year); }
+        if i == 32 { return "Fractured wrist - " + IntToString(year); }
+        if i == 33 { return "Ankle fracture - " + IntToString(year); }
+        if i == 34 { return "Herniated disc - " + IntToString(year); }
+        
+        // Cyberware-related (35-39)
+        if i == 35 { return "Cyberware malfunction injury - " + IntToString(year); }
+        if i == 36 { return "Implant rejection trauma - " + IntToString(year); }
+        if i == 37 { return "Neural port damage - " + IntToString(year); }
+        if i == 38 { return "Reflex booster burnout - " + IntToString(year); }
+        return "Chrome installation complications - " + IntToString(year);
     }
 
     private static func GenerateVaccinationStatus(seed: Int32, archetype: String) -> String {
@@ -627,22 +980,47 @@ public class MedicalHistoryManager {
     }
 
     private static func GenerateGeneticMarker(seed: Int32) -> String {
-        let markers: array<String>;
-
-        ArrayPush(markers, "Elevated cancer risk (BRCA variant)");
-        ArrayPush(markers, "Heart disease predisposition");
-        ArrayPush(markers, "Alzheimer's risk marker");
-        ArrayPush(markers, "Diabetes Type 1 susceptibility");
-        ArrayPush(markers, "Huntington's carrier");
-        ArrayPush(markers, "Cystic fibrosis carrier");
-        ArrayPush(markers, "Enhanced cyberware compatibility");
-        ArrayPush(markers, "Reduced cyberware compatibility");
-        ArrayPush(markers, "Longevity markers (positive)");
-        ArrayPush(markers, "Accelerated aging markers");
-        ArrayPush(markers, "Enhanced muscle development");
-        ArrayPush(markers, "Genetic modification detected");
-
-        return markers[RandRange(seed, 0, ArraySize(markers) - 1)];
+        let i = RandRange(seed, 0, 29);
+        
+        // Disease risk markers (0-11)
+        if i == 0 { return "Elevated cancer risk (BRCA variant)"; }
+        if i == 1 { return "Heart disease predisposition"; }
+        if i == 2 { return "Alzheimer's risk marker"; }
+        if i == 3 { return "Diabetes Type 1 susceptibility"; }
+        if i == 4 { return "Huntington's carrier"; }
+        if i == 5 { return "Cystic fibrosis carrier"; }
+        if i == 6 { return "Parkinson's risk markers"; }
+        if i == 7 { return "Multiple sclerosis susceptibility"; }
+        if i == 8 { return "Schizophrenia risk factors"; }
+        if i == 9 { return "Autoimmune disorder predisposition"; }
+        if i == 10 { return "Colon cancer genetic markers"; }
+        if i == 11 { return "Breast cancer genetic risk"; }
+        
+        // Cyberware compatibility (12-17)
+        if i == 12 { return "Enhanced cyberware compatibility"; }
+        if i == 13 { return "Reduced cyberware compatibility"; }
+        if i == 14 { return "Neural interface optimization"; }
+        if i == 15 { return "Cyberpsychosis resistance markers"; }
+        if i == 16 { return "Cyberpsychosis susceptibility"; }
+        if i == 17 { return "Rapid chrome rejection risk"; }
+        
+        // Aging/Longevity (18-21)
+        if i == 18 { return "Longevity markers (positive)"; }
+        if i == 19 { return "Accelerated aging markers"; }
+        if i == 20 { return "Telomere stability (above average)"; }
+        if i == 21 { return "Premature aging risk"; }
+        
+        // Physical traits (22-25)
+        if i == 22 { return "Enhanced muscle development"; }
+        if i == 23 { return "Above average bone density"; }
+        if i == 24 { return "Fast metabolism markers"; }
+        if i == 25 { return "Slow metabolism markers"; }
+        
+        // Other genetic findings (26-29)
+        if i == 26 { return "Genetic modification detected"; }
+        if i == 27 { return "Unknown genetic anomaly"; }
+        if i == 28 { return "Chimeric DNA markers"; }
+        return "Possible gene therapy modifications";
     }
 
     private static func CalculateHealthRating(medical: ref<MedicalHistoryData>, archetype: String) -> String {

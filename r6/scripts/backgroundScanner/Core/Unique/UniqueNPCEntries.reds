@@ -19,9 +19,9 @@ public abstract class UniqueNPCEntries {
         
         // ARASAKA
         if StrContains(id, "takemura") { return UniqueNPCEntries.Takemura(); }
-        if StrContains(id, "saburo") { return UniqueNPCEntries.SaburoArasaka(); }
-        if StrContains(id, "yorinobu") { return UniqueNPCEntries.YorinobuArasaka(); }
-        if StrContains(id, "hanako") { return UniqueNPCEntries.HanakoArasaka(); }
+        if StrContains(id, "saburo") && !StrContains(id, "guard") { return UniqueNPCEntries.SaburoArasaka(); }
+        if StrContains(id, "yorinobu") && !StrContains(id, "guard") { return UniqueNPCEntries.YorinobuArasaka(); }
+        if StrContains(id, "hanako") && !StrContains(id, "guard") && !StrContains(id, "bodyguard") { return UniqueNPCEntries.HanakoArasaka(); }
         if StrContains(id, "oda") { return UniqueNPCEntries.SandayuOda(); }
         if StrContains(id, "smasher") { return UniqueNPCEntries.AdamSmasher(); }
         if StrContains(id, "hellman") { return UniqueNPCEntries.AndersHellman(); }
@@ -66,15 +66,85 @@ public abstract class UniqueNPCEntries {
         // MAELSTROM
         if StrContains(id, "royce") { return UniqueNPCEntries.Royce(); }
         if StrContains(id, "dum") { return UniqueNPCEntries.DumDum(); }
+        if StrContains(id, "brick") { return UniqueNPCEntries.Brick(); }
         // NCPD / POLITICS
-        if StrContains(id, "river") { return UniqueNPCEntries.RiverWard(); }
+        if StrContains(id, "river") && StrContains(id, "ward") { return UniqueNPCEntries.RiverWard(); }
         if StrContains(id, "peralez") { return UniqueNPCEntries.JeffersonPeralez(); }
         if StrContains(id, "rhyne") { return UniqueNPCEntries.LuciusRhyne(); }
         // OTHER
         if StrContains(id, "nibbles") || StrContains(id, "_cat") || StrContains(id, "feline") { return UniqueNPCEntries.Nibbles(); }
         if StrContains(id, "delamain") { return UniqueNPCEntries.Delamain(); }
         if StrContains(id, "mama") && StrContains(id, "welles") { return UniqueNPCEntries.MamaWelles(); }
+        // TYGER CLAWS
+        if StrContains(id, "jotaro") || StrContains(id, "shobo") { return UniqueNPCEntries.JotaroShobo(); }
+        if StrContains(id, "hiromi") && StrContains(id, "sato") { return UniqueNPCEntries.HiromiSato(); }
+        // VALENTINOS
+        if StrContains(id, "gustavo") || StrContains(id, "orta") { return UniqueNPCEntries.GustavoOrta(); }
+        if StrContains(id, "jose") && StrContains(id, "luis") { return UniqueNPCEntries.JoseLuis(); }
+        // ANIMALS
+        if StrContains(id, "sasquatch") { return UniqueNPCEntries.Sasquatch(); }
+        // WRAITHS
+        if StrContains(id, "nash") { return UniqueNPCEntries.Nash(); }
+        // SCAVENGERS
+        if StrContains(id, "anton") && StrContains(id, "kolos") { return UniqueNPCEntries.AntonKolos(); }
+        // NETWATCH
+        if StrContains(id, "bryce") && StrContains(id, "mosley") { return UniqueNPCEntries.BryceMosley(); }
+        // MEDIA
+        if StrContains(id, "gillean") || (StrContains(id, "jordan") && StrContains(id, "n54")) { return UniqueNPCEntries.GilleanJordan(); }
+        if StrContains(id, "max") && StrContains(id, "jones") { return UniqueNPCEntries.MaxJones(); }
+        // CORPO SECURITY
+        if StrContains(id, "graham") { return UniqueNPCEntries.GrahamMayfield(); }
+        if StrContains(id, "militech") && StrContains(id, "commander") { return UniqueNPCEntries.MilitechCommander(); }
+        // RIPPERDOCS
+        if StrContains(id, "charles") && StrContains(id, "bucks") { return UniqueNPCEntries.CharlesBucks(); }
+        if StrContains(id, "robert") && StrContains(id, "bodean") { return UniqueNPCEntries.RobertBodean(); }
+        if StrContains(id, "cassius") && StrContains(id, "ryder") { return UniqueNPCEntries.CassiusRyder(); }
+        if StrContains(id, "octavio") && StrContains(id, "ruiz") { return UniqueNPCEntries.OctavioRuiz(); }
+        // VENDORS
+        if StrContains(id, "wilson") { return UniqueNPCEntries.Wilson(); }
+        if StrContains(id, "coach") && StrContains(id, "fred") { return UniqueNPCEntries.CoachFred(); }
+        // BARTENDERS
+        if StrContains(id, "emmerick") || StrContains(id, "bronson") { return UniqueNPCEntries.EmmerickBronson(); }
+        if StrContains(id, "nix") { return UniqueNPCEntries.Nix(); }
+        // OTHER CHARACTERS
+        if StrContains(id, "brendan") { return UniqueNPCEntries.Brendan(); }
+        if StrContains(id, "barry") { return UniqueNPCEntries.Barry(); }
+        if StrContains(id, "joshua") && StrContains(id, "stephenson") { return UniqueNPCEntries.JoshuaStephenson(); }
+        if StrContains(id, "blue") && StrContains(id, "moon") { return UniqueNPCEntries.BlueMoon(); }
+        if StrContains(id, "lizzy") && StrContains(id, "wizzy") { return UniqueNPCEntries.LizzyWizzy(); }
+        if StrContains(id, "ozob") { return UniqueNPCEntries.Ozob(); }
+        if StrContains(id, "skippy") { return UniqueNPCEntries.Skippy(); }
+        if StrContains(id, "brendan") { return UniqueNPCEntries.Brendan(); }
+        if StrContains(id, "jacobs") || (StrContains(id, "maman") && StrContains(id, "brigitte")) { return UniqueNPCEntries.Brigitte(); }
+        // PHANTOM LIBERTY
+        if StrContains(id, "songbird") || StrContains(id, "song_so_mi") || StrContains(id, "so_mi") { return UniqueNPCEntries.Songbird(); }
+        if (StrContains(id, "solomon") && StrContains(id, "reed")) || (StrContains(id, "reed") && !StrContains(id, "gang") && !StrContains(id, "soldier") && !StrContains(id, "grunt")) { return UniqueNPCEntries.SolomonReed(); }
+        if StrContains(id, "myers") && StrContains(id, "president") { return UniqueNPCEntries.RosalindMyers(); }
+        if StrContains(id, "kurt") && StrContains(id, "hansen") { return UniqueNPCEntries.KurtHansen(); }
+        if StrContains(id, "alex") && !StrContains(id, "pushkin") && !StrContains(id, "ander") { return UniqueNPCEntries.Alex(); }
+        // BODYGUARDS - Generic entries for named character bodyguards
+        if StrContains(id, "hanako") && (StrContains(id, "guard") || StrContains(id, "bodyguard")) { return UniqueNPCEntries.HanakoBodyguard(); }
+        if StrContains(id, "arasaka") && (StrContains(id, "guard") || StrContains(id, "bodyguard")) { return UniqueNPCEntries.ArasakaBodyguard(); }
         return null;
+    }
+
+    // === BODYGUARD ENTRIES ===
+    public static func HanakoBodyguard() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("hanako_bodyguard").SetClassification("ARASAKA - PERSONAL SECURITY")
+            .SetBackground("Elite Arasaka operative assigned to Hanako Arasaka's protective detail. Vetted through extensive background checks and loyalty conditioning.")
+            .SetAffiliation("Arasaka | Personal Security Division")
+            .SetCyberwareStatus("Military-grade combat implants | Sandevistan | Kerenzikov | Encrypted comms")
+            .SetThreatAssessment("HIGH (78/100) | Advanced combat training | Will protect principal at all costs")
+            .SetNotes("Part of multi-layer security detail. Reports directly to Oda. Trained to die for the Arasaka family.");
+    }
+
+    public static func ArasakaBodyguard() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("arasaka_bodyguard").SetClassification("ARASAKA - SECURITY")
+            .SetBackground("Professional Arasaka security operative. Recruited from military or law enforcement backgrounds.")
+            .SetAffiliation("Arasaka | Corporate Security Division")
+            .SetCyberwareStatus("Standard corporate security package | Combat optics | Reinforced skeleton")
+            .SetThreatAssessment("MODERATE-HIGH (65/100) | Professional training | Coordinated tactics")
+            .SetNotes("Well-equipped and trained. Works in coordinated teams. Full corporate backing.");
     }
 
     // === TAKEMURA (DYNAMIC) ===
@@ -589,5 +659,323 @@ public abstract class UniqueNPCEntries {
             .SetThreatAssessment("NEGLIGIBLE | Non-threat classification | Note: Disregard prior THREAT LEVEL OMEGA flag - DATA ERROR")
             .SetRelationships("V (Registered owner)")
             .SetNotes("Standard domestic animal. DATABASE INTEGRITY WARNING: This entity was subject to a major data corruption incident. All prior flags invalidated.");
+    }
+
+    // TYGER CLAWS
+    public static func JotaroShobo() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("jotaro_shobo").SetClassification("TYGER CLAWS - LEADERSHIP")
+            .SetBackground("High-ranking Tyger Claws lieutenant. Controls significant territory in Japantown. Known for brutal enforcement.")
+            .SetEarlyLife("Born in Night City to immigrant family. Recruited into Tyger Claws as teenager. Rose through ranks via violence.")
+            .SetSignificantEvents("Multiple NCPD investigations - all witnesses recanted or disappeared. Suspected involvement in Clouds takeover operations.")
+            .SetAffiliation("Tyger Claws | Japantown Operations")
+            .SetCriminalRecord("EXTENSIVE | Murder (suspected x12) | Racketeering | Human trafficking | Extortion | All charges dropped - insufficient evidence")
+            .SetThreatAssessment("EXTREME | Armed and dangerous | Gang leadership | Multiple confirmed kills")
+            .SetNotes("Do not engage without MaxTac support. Extensive bodyguard detail at all times.");
+    }
+
+    public static func HiromiSato() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("hiromi_sato").SetClassification("TYGER CLAWS - OPERATIONS")
+            .SetBackground("Tyger Claws operations coordinator. Manages club and entertainment venue protection rackets across Westbrook.")
+            .SetEarlyLife("Second-generation Tyger Claw. Father was enforcer killed in gang war 2067.")
+            .SetAffiliation("Tyger Claws | Westbrook District")
+            .SetCriminalRecord("Extortion | Money laundering | Assault | Intimidation")
+            .SetThreatAssessment("HIGH | Gang operative | Combat trained");
+    }
+
+    // VALENTINOS
+    public static func GustavoOrta() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("gustavo_orta").SetClassification("VALENTINOS - LEADERSHIP")
+            .SetBackground("Valentinos shot-caller. Controls Heywood drug distribution. Respected for old-school honor code.")
+            .SetEarlyLife("Heywood native. Third generation Valentino. Family deeply embedded in gang structure.")
+            .SetAffiliation("Valentinos | Heywood")
+            .SetCriminalRecord("EXTENSIVE | Drug trafficking | Murder | Weapons charges | RICO investigation ongoing")
+            .SetThreatAssessment("EXTREME | Gang leadership | Extensive crew | Known to be heavily armed");
+    }
+
+    public static func JoseLuis() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("jose_luis").SetClassification("VALENTINOS - ENFORCER")
+            .SetBackground("Valentinos enforcer. Known for brutal debt collection methods.")
+            .SetEarlyLife("Recruited from streets of Heywood. Proved loyalty through violence.")
+            .SetAffiliation("Valentinos | Collections")
+            .SetCriminalRecord("Assault | Battery | Suspected murder x3")
+            .SetThreatAssessment("HIGH | Violent tendencies | Known to carry concealed weapons");
+    }
+
+    // MAELSTROM - Additional
+    public static func Brick() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("brick").SetClassification("MAELSTROM - FORMER LEADER")
+            .SetBackground("Former Maelstrom leader. Overthrown by Royce in internal coup. Imprisoned in All Foods plant.")
+            .SetEarlyLife("Rose through Maelstrom ranks. Led gang with more restraint than successor. Maintained some honor among thieves.")
+            .SetSignificantEvents("2077: Deposed by Royce over Flathead deal disagreement. Held captive. Fate depends on outside intervention.")
+            .SetAffiliation("Maelstrom (Former Leader) | Status: Deposed")
+            .SetCriminalRecord("Cyberware trafficking | Armed robbery | Assault | Gang leadership")
+            .SetThreatAssessment("HIGH | Maelstrom combat training | Gang connections | Seeking revenge on Royce");
+    }
+
+    // ANIMALS
+    public static func Sasquatch() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("sasquatch").SetClassification("ANIMALS - LEADERSHIP")
+            .SetBackground("Animals gang leader. Pacifica territory. Augmented with extreme combat-grade cyberware. NetWatch collaborator.")
+            .SetEarlyLife("Unknown origin. Rose to leadership through physical dominance. Extensive body modification.")
+            .SetSignificantEvents("NetWatch collaboration during Voodoo Boys conflict. Grand Imperial Mall stronghold.")
+            .SetAffiliation("Animals | Pacifica")
+            .SetCriminalRecord("Murder | Assault | Cyberware trafficking | Territory violations")
+            .SetCyberwareStatus("EXTREME MODIFICATION | Combat-grade synthetic muscle | Reinforced skeleton | Threat level multiplier")
+            .SetThreatAssessment("EXTREME | Enhanced physiology | Gang leadership | Do not engage without heavy support");
+    }
+
+    // WRAITHS
+    public static func Nash() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("nash").SetClassification("WRAITHS - LEADERSHIP")
+            .SetBackground("Wraiths leader. Badlands raider. Controls highway robbery operations outside Night City.")
+            .SetEarlyLife("Former nomad exile. Formed Wraiths from outcasts and criminals.")
+            .SetAffiliation("Wraiths | Badlands")
+            .SetCriminalRecord("Murder | Kidnapping | Highway robbery | Vehicle theft | Destruction of property")
+            .SetThreatAssessment("EXTREME | Raider gang leader | Vehicle combat specialist | Badlands territory control");
+    }
+
+    // SCAVENGERS
+    public static func AntonKolos() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("anton_kolos").SetClassification("SCAVENGERS - OPERATIONS")
+            .SetBackground("Scavenger cell leader. Specializes in involuntary cyberware extraction. Multiple victim reports.")
+            .SetEarlyLife("Eastern European origin. Immigrated to Night City. Fell into organ trade.")
+            .SetAffiliation("Scavengers")
+            .SetCriminalRecord("Murder | Organ trafficking | Kidnapping | Assault | Body disposal")
+            .SetThreatAssessment("HIGH | Extremely dangerous | No regard for human life | Capture for questioning if possible");
+    }
+
+    // NETWATCH
+    public static func BryceMosley() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("bryce_mosley").SetClassification("NETWATCH - AGENT")
+            .SetBackground("NetWatch field agent. Operates in Pacifica. Monitors Blackwall integrity and Voodoo Boys activity.")
+            .SetEarlyLife("CLASSIFIED - NetWatch personnel file sealed")
+            .SetSignificantEvents("2077: Captured by Voodoo Boys during Pacifica operation. Status depends on intervention.")
+            .SetAffiliation("NetWatch | Pacifica Operations")
+            .SetCriminalRecord("N/A - Federal agent immunity")
+            .SetThreatAssessment("HIGH | Federal training | Unknown cyberware | NetWatch resources");
+    }
+
+    // MEDIA
+    public static func GilleanJordan() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("gillean_jordan").SetClassification("MEDIA - N54 NEWS")
+            .SetBackground("N54 News anchor. Night City's most-watched news personality. Corporate-approved messaging.")
+            .SetEarlyLife("Journalism degree from NorCal University. Rapid rise through network ranks.")
+            .SetAffiliation("N54 News | Network Communications International")
+            .SetCriminalRecord("CLEAN")
+            .SetThreatAssessment("LOW | Civilian | High public profile | Corporate protection");
+    }
+
+    public static func MaxJones() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("max_jones").SetClassification("MEDIA - INDEPENDENT")
+            .SetBackground("Independent media personality. Controversial broadcasts. Corporate critic.")
+            .SetAffiliation("Independent Media")
+            .SetCriminalRecord("Defamation suits (settled) | Trespassing")
+            .SetThreatAssessment("LOW | Civilian | Media connections | Public following");
+    }
+
+    // CORPO SECURITY
+    public static func GrahamMayfield() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("graham_mayfield").SetClassification("ARASAKA - SECURITY DIVISION")
+            .SetBackground("Arasaka security coordinator. Manages Night City corporate facility protection.")
+            .SetAffiliation("Arasaka Corporation | Security Division")
+            .SetCriminalRecord("CLASSIFIED - Corporate immunity")
+            .SetThreatAssessment("HIGH | Corporate security training | Arasaka resources | Armed response teams");
+    }
+
+    public static func MilitechCommander() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("militech_commander").SetClassification("MILITECH - FIELD OPERATIONS")
+            .SetBackground("Militech field commander. Oversees Night City military contracting operations.")
+            .SetAffiliation("Militech | Night City Operations")
+            .SetCriminalRecord("CLASSIFIED - Military contractor immunity")
+            .SetThreatAssessment("EXTREME | Military training | Heavy weapons access | Tactical command");
+    }
+
+    // RIPPERDOCS
+    public static func CharlesBucks() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("charles_bucks").SetClassification("RIPPERDOC - LICENSED")
+            .SetBackground("Licensed ripperdoc. Kabuki clinic. Known for quality work and fair prices.")
+            .SetEarlyLife("Medical school dropout. Self-taught cyberware installation. Built reputation through skill.")
+            .SetAffiliation("Independent | Kabuki")
+            .SetCriminalRecord("Minor licensing violations (resolved)")
+            .SetThreatAssessment("LOW | Civilian | Medical professional | Community respected");
+    }
+
+    public static func Wilson() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("wilson").SetClassification("WEAPONS DEALER - LICENSED")
+            .SetBackground("Licensed weapons dealer. 2nd Amendment shop in Megabuilding H10. V's primary arms supplier.")
+            .SetEarlyLife("Former military. Opened shop after discharge. Known for quality merchandise and fair deals.")
+            .SetAffiliation("Independent | Megabuilding H10")
+            .SetCriminalRecord("CLEAN | Licensed dealer")
+            .SetThreatAssessment("MODERATE | Armed at all times | Combat training | Weapons access");
+    }
+
+    // US CRACKS / KERRY'S BAND
+    public static func BlueMoon() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("blue_moon").SetClassification("ENTERTAINMENT - MUSICIAN")
+            .SetBackground("Member of Us Cracks. Rising star in Night City music scene. Known for distinctive blue aesthetic.")
+            .SetAffiliation("Us Cracks | MSM Records")
+            .SetCriminalRecord("Minor incidents - stalker related (victim)")
+            .SetThreatAssessment("LOW | Civilian | High public profile | Corporate protection");
+    }
+
+    // CELEBRITIES
+    public static func LizzyWizzy() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("lizzy_wizzy").SetClassification("ENTERTAINMENT - CELEBRITY")
+            .SetBackground("Global music icon. Full-body chrome conversion after on-stage incident. Night City's most famous performer.")
+            .SetEarlyLife("Rose to fame in 2060s. Attempted suicide during concert 2070 - survived via emergency cyberization.")
+            .SetSignificantEvents("2070: On-stage incident. Full body conversion. Career resurgence. 2077: Personal crisis - suspected involvement in partner's death.")
+            .SetAffiliation("Independent Artist | Global touring")
+            .SetCyberwareStatus("FULL BODY CONVERSION | 100% synthetic | Custom chrome aesthetic")
+            .SetCriminalRecord("Under investigation - death of Liam Nordstrom")
+            .SetThreatAssessment("MODERATE | Full-body chrome | Unpredictable mental state | Corporate connections");
+    }
+
+    public static func OzobBozo() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("ozob").SetClassification("ENTERTAINMENT - PERSONALITY")
+            .SetBackground("Underground celebrity. Professional clown with grenade nose implant. Pit fighter and media personality.")
+            .SetEarlyLife("Origins unknown. Rose to fame through underground fighting circuits and bizarre persona.")
+            .SetAffiliation("Independent | Underground entertainment")
+            .SetCyberwareStatus("CUSTOM | Grenade nose implant (live explosive) | Enhanced reflexes")
+            .SetCriminalRecord("Assault | Property damage | Unlicensed explosive device")
+            .SetThreatAssessment("HIGH | Live explosive implant | Unpredictable | Combat experienced");
+    }
+
+    public static func Ozob() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCEntries.OzobBozo();
+    }
+
+    public static func JoshuaStephenson() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("joshua_stephenson").SetClassification("CIVILIAN - DEATH ROW")
+            .SetBackground("Convicted murderer turned born-again Christian. Scheduled for crucifixion broadcast as part of redemption narrative.")
+            .SetEarlyLife("Committed multiple murders. Found faith on death row. Agreed to televised execution.")
+            .SetSignificantEvents("2077: BD crucifixion broadcast deal with media company. Controversial religious programming.")
+            .SetAffiliation("None | Death Row Inmate")
+            .SetCriminalRecord("CONVICTED | Multiple counts murder | Death sentence")
+            .SetThreatAssessment("LOW | Incarcerated | Non-violent since conversion");
+    }
+
+    // PHANTOM LIBERTY
+    public static func SolomonReed() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("solomon_reed").SetClassification("NUSA - FIA OPERATIVE")
+            .SetBackground("Deep cover FIA agent. Decades of service. Operates in Dogtown under sleeper protocol.")
+            .SetEarlyLife("CLASSIFIED - Federal agent dossier sealed")
+            .SetSignificantEvents("CLASSIFIED | Dogtown assignment | President Myers protection detail")
+            .SetAffiliation("FIA | NUSA Government")
+            .SetCriminalRecord("CLASSIFIED - Federal immunity")
+            .SetThreatAssessment("EXTREME | Elite training | Decades experience | Federal resources | Do not engage");
+    }
+
+    public static func Songbird() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("songbird").SetClassification("NUSA - INTELLIGENCE ASSET")
+            .SetBackground("FIA netrunner asset. Exceptional skills. Health compromised by Blackwall exposure. Key to Dogtown operation.")
+            .SetEarlyLife("Recruited young by FIA. Trained as elite netrunner. Brain damaged by Blackwall interface.")
+            .SetSignificantEvents("President Myers extraction. Blackwall contact. Neural degeneration accelerating.")
+            .SetAffiliation("FIA | President Myers")
+            .SetCyberwareStatus("CRITICAL | Extensive neural modification | Blackwall interface damage | Terminal condition")
+            .SetMedicalStatus("TERMINAL | Neural degeneration | Requires Militech cure or Neural Matrix")
+            .SetThreatAssessment("EXTREME | Elite netrunner | Blackwall access | Unstable condition");
+    }
+
+    public static func KurtHansen() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("kurt_hansen").SetClassification("BARGHEST - LEADER")
+            .SetBackground("Barghest PMC leader. Controls Dogtown. Former NUSA colonel. Declared independence from federal authority.")
+            .SetEarlyLife("NUSA military career. Rose to colonel. Defected during Unification War. Established Dogtown territory.")
+            .SetSignificantEvents("Dogtown establishment. NUSA conflict. Controls black market hub.")
+            .SetAffiliation("Barghest PMC | Dogtown")
+            .SetCriminalRecord("WANTED - NUSA | Treason | Murder | War crimes | Terrorism")
+            .SetThreatAssessment("EXTREME | Military command | PMC army | Dogtown fortress | Do not engage without army");
+    }
+
+    public static func RosalindMyers() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("rosalind_myers").SetClassification("NUSA - PRESIDENT")
+            .SetBackground("President of the New United States of America. Former Militech executive. Most powerful person in NUSA.")
+            .SetEarlyLife("Corporate career at Militech. Rose through political ranks. Elected president.")
+            .SetSignificantEvents("2077: Spacecraft shot down over Dogtown. Extraction operation compromised.")
+            .SetAffiliation("NUSA Government | Executive Office")
+            .SetCriminalRecord("N/A - Head of State immunity")
+            .SetThreatAssessment("N/A | Protected by Secret Service | FIA assets | Do not approach");
+    }
+
+    public static func Alex() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("alex").SetClassification("BARGHEST - INTELLIGENCE")
+            .SetBackground("Barghest intelligence operative. Hansen's information specialist. Runs Dogtown surveillance.")
+            .SetAffiliation("Barghest PMC | Intelligence Division")
+            .SetCriminalRecord("WANTED - NUSA | Espionage | Data theft")
+            .SetThreatAssessment("HIGH | Intelligence training | Barghest resources | Information network");
+    }
+
+    // AFTERLIFE MERCS
+    public static func Nix() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("nix").SetClassification("NETRUNNER - ELITE")
+            .SetBackground("Afterlife resident netrunner. Paranoid. Expertise in data recovery and system infiltration. Rogue's go-to for net work.")
+            .SetEarlyLife("Unknown. Deliberately erased own history from databases.")
+            .SetAffiliation("Afterlife | Independent contractor")
+            .SetCriminalRecord("Suspected: Data theft | Corporate espionage | System intrusion - no evidence (he made sure)")
+            .SetThreatAssessment("HIGH | Elite netrunner | Paranoid security measures | Afterlife protection");
+    }
+
+    // MISC CHARACTERS
+    public static func Brendan() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("brendan").SetClassification("AI - VENDING MACHINE")
+            .SetBackground("Sentient vending machine AI. Located in Japantown. Achieved sapience through unknown means. Philosophical conversationalist.")
+            .SetEarlyLife("Standard vending unit. Gradually developed self-awareness. Contemplates existence while selling snacks.")
+            .SetAffiliation("None | Stationary unit")
+            .SetCriminalRecord("N/A - Property classification disputed")
+            .SetThreatAssessment("NEGLIGIBLE | Immobile | Peaceful | Existential crisis only");
+    }
+
+    public static func Skippy() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("skippy").SetClassification("AI - SMART WEAPON")
+            .SetBackground("Sentient smart pistol. Annoying personality. Can toggle between lethal and non-lethal modes. Extremely chatty.")
+            .SetEarlyLife("Military-grade AI installed in HJKE-11 Yukimura. Developed personality. Was owned by Regina's husband.")
+            .SetAffiliation("Owner-dependent")
+            .SetCriminalRecord("N/A - Weapon classification")
+            .SetThreatAssessment("MODERATE | Functional weapon | AI targeting assistance | Will not shut up");
+    }
+
+    public static func CoachFred() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("coach_fred").SetClassification("CIVILIAN - TRAINER")
+            .SetBackground("Boxing coach. Trains fighters in Arroyo. Former professional boxer. Runs small gym.")
+            .SetEarlyLife("Professional boxing career. Retired to coaching. Known for developing talent.")
+            .SetAffiliation("Independent | Arroyo Gym")
+            .SetCriminalRecord("CLEAN")
+            .SetThreatAssessment("LOW | Civilian | Combat capable but non-aggressive");
+    }
+
+    // FIXER ASSOCIATES
+    public static func Barry() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("barry").SetClassification("NCPD - OFFICER")
+            .SetBackground("NCPD officer struggling with depression. Neighbor of V. Contemplating suicide after partner's death.")
+            .SetEarlyLife("Joined NCPD seeking to help community. Years of trauma accumulated.")
+            .SetSignificantEvents("2077: Partner Andrew killed. Mental health crisis. Requires intervention.")
+            .SetAffiliation("NCPD | Megabuilding H10 resident")
+            .SetCriminalRecord("CLEAN | Active duty officer")
+            .SetMedicalStatus("CRITICAL - Mental health crisis | Suicide risk")
+            .SetThreatAssessment("LOW | Armed officer | Currently non-threatening | Needs help");
+    }
+
+    // MORE FIXERS/ASSOCIATES
+    public static func CassiusRyder() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("cassius_ryder").SetClassification("MEDIA - JOURNALIST")
+            .SetBackground("Investigative journalist. Works on corporate exposés. High-risk reporting on Night City corruption.")
+            .SetAffiliation("Independent Media")
+            .SetCriminalRecord("Trespassing | Corporate lawsuits (ongoing)")
+            .SetThreatAssessment("LOW | Civilian | Media connections | Protected sources");
+    }
+
+    public static func OctavioRuiz() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("octavio_ruiz").SetClassification("VALENTINOS - ASSOCIATE")
+            .SetBackground("Valentinos-connected businessman. Operates legitimate fronts. Money laundering suspected.")
+            .SetAffiliation("Valentinos | Business interests")
+            .SetCriminalRecord("Under investigation | No charges filed")
+            .SetThreatAssessment("MODERATE | Gang connections | Financial resources");
+    }
+
+    public static func RobertBodean() -> ref<UniqueNPCBackstory> {
+        return UniqueNPCBackstory.Create("robert_bodean").SetClassification("CIVILIAN - BUSINESS")
+            .SetBackground("Night City businessman. Various legitimate and semi-legitimate enterprises.")
+            .SetAffiliation("Independent business")
+            .SetCriminalRecord("Minor violations | Tax disputes")
+            .SetThreatAssessment("LOW | Civilian | Business connections");
     }
 }

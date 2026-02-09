@@ -354,4 +354,61 @@ public abstract class TextJobs {
     public static func JOB_SCRAP_DEALER_F() -> String { return "Dealt in scrap and salvage. "; }
     public static func JOB_SCRAP_DEALER_M() -> String { return ""; }
 
+    // === v1.6 EXPANDED: TECH JOBS ===
+    public static func JOB_TECH_SUPPORT_F() -> String { return "Worked in tech support. "; }
+    public static func JOB_TECH_SUPPORT_M() -> String { return ""; }
+    public static func JOB_SYSADMIN_F() -> String { return "Worked as a systems administrator. "; }
+    public static func JOB_SYSADMIN_M() -> String { return ""; }
+    public static func JOB_DRONE_OP_F() -> String { return "Operated delivery drones. "; }
+    public static func JOB_DRONE_OP_M() -> String { return ""; }
+    public static func JOB_AV_TECH_F() -> String { return "Worked as an AV technician. "; }
+    public static func JOB_AV_TECH_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: CRIMINAL JOBS ===
+    public static func JOB_LOOKOUT_F() -> String { return "Served as a lookout for a crew. "; }
+    public static func JOB_LOOKOUT_M() -> String { return ""; }
+    public static func JOB_GETAWAY_F() -> String { return "Drove getaway for heists. "; }
+    public static func JOB_GETAWAY_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: SERVICE JOBS ===
+    public static func JOB_DAYCARE_F() -> String { return "Worked at a daycare. "; }
+    public static func JOB_DAYCARE_M() -> String { return ""; }
+    public static func JOB_ELDER_CARE_F() -> String { return "Cared for the elderly. "; }
+    public static func JOB_ELDER_CARE_M() -> String { return ""; }
+    public static func JOB_PET_SITTER_F() -> String { return "Worked as a pet sitter. "; }
+    public static func JOB_PET_SITTER_M() -> String { return ""; }
+    public static func JOB_TUTOR_F() -> String { return "Tutored students. "; }
+    public static func JOB_TUTOR_M() -> String { return ""; }
+    public static func JOB_HOUSE_CLEANER_F() -> String { return "Cleaned houses in wealthy areas. "; }
+    public static func JOB_HOUSE_CLEANER_M() -> String { return ""; }
+    public static func JOB_POOL_CLEANER_F() -> String { return "Cleaned pools in Westbrook. "; }
+    public static func JOB_POOL_CLEANER_M() -> String { return ""; }
+    public static func JOB_MASSEUSE_F() -> String { return "Worked as a masseuse. "; }
+    public static func JOB_MASSEUSE_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: TRANSPORT JOBS ===
+    public static func JOB_BUS_DRIVER_F() -> String { return "Drove a city bus. "; }
+    public static func JOB_BUS_DRIVER_M() -> String { return ""; }
+    public static func JOB_METRO_OP_F() -> String { return "Operated the NCART metro. "; }
+    public static func JOB_METRO_OP_M() -> String { return ""; }
+    public static func JOB_CARGO_PILOT_F() -> String { return "Piloted cargo AVs. "; }
+    public static func JOB_CARGO_PILOT_M() -> String { return ""; }
+    public static func JOB_HARBOR_F() -> String { return "Worked at the Night City harbor. "; }
+    public static func JOB_HARBOR_M() -> String { return ""; }
+    public static func JOB_FREIGHT_F() -> String { return "Loaded freight for shipping companies. "; }
+    public static func JOB_FREIGHT_M() -> String { return ""; }
+
+    // === v1.6 EXPANDED: ENTERTAINMENT JOBS ===
+    public static func JOB_DJ_F() -> String { return "Worked as a DJ at clubs. "; }
+    public static func JOB_DJ_M() -> String { return ""; }
+    public static func JOB_PROMOTER_F() -> String { return "Promoted events and clubs. "; }
+    public static func JOB_PROMOTER_M() -> String { return ""; }
+    public static func JOB_ACTOR_F() -> String { return "Worked as an actor in small roles. "; }
+    public static func JOB_ACTOR_M() -> String { return ""; }
+    public static func JOB_STUNT_F() -> String { return "Performed stunts for BD productions. "; }
+    public static func JOB_STUNT_M() -> String { return ""; }
+    public static func JOB_INFLUENCER_F() -> String { return "Tried to make it as an influencer. "; }
+    public static func JOB_INFLUENCER_M() -> String { return ""; }
+
 }
+

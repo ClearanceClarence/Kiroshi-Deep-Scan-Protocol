@@ -1,185 +1,593 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.5.3-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.6.0-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
-A Cyberpunk 2077 mod that extends the scanner system to display procedurally generated NPC data.
+> *Every stranger has a story. Your Kiroshi can read them all.*
+
+A comprehensive scanner overhaul for Cyberpunk 2077 that procedurally generates detailed backstories, criminal records, relationships, and database entries for every NPC in Night City.
+
+---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Features at a Glance](#features-at-a-glance)
+- [Unique NPC Database](#unique-npc-database)
+- [Procedural Generation Systems](#procedural-generation-systems)
+- [Special Classifications](#special-classifications)
+- [Relationship Networks](#relationship-networks)
+- [Name Generation System](#name-generation-system)
+- [Narrative Coherence](#narrative-coherence)
+- [Technical Architecture](#technical-architecture)
+- [Project Structure](#project-structure)
+- [How It Works](#how-it-works)
+- [Configuration](#configuration)
+- [Installation](#installation)
+- [Compatibility](#compatibility)
+- [FAQ](#faq)
+- [Bug Reports](#bug-reports)
+- [Credits](#credits)
+
+---
 
 ## Overview
 
-This mod hooks into the game's scanner UI to inject additional data panels for crowd NPCs, gang members, and NCPD officers. All data is procedurally generated using a seed derived from each NPC's entity ID, ensuring consistent results across game sessions.
+Deep Scan Protocol hooks your Kiroshi optics into every major database in Night City. Scan any civilian and pull their NCPD criminal records, cyberware registry, bank records, medical history, psychological profile, and personal relationships. Scan gang members to access their affiliation data. Scan NCPD officers to access their personnel files.
 
-## Features
+All data is deterministically generated from each NPC's entity ID, ensuring consistent results across game sessions. The same NPC will always produce identical information no matter when you scan them.
 
-### Unique NPC System
+### Database Access
 
-Hand-crafted lore-accurate backstories for 48 named story characters. When scanning unique NPCs like Takemura, Panam, or Judy, you'll see custom-written intel instead of procedurally generated data.
+When scanning NPCs, Deep Scan Protocol queries:
 
-**Features:**
-- TweakDB-based character detection
-- Custom classification banners (e.g., "ARASAKA COUNTERINTEL")
-- Lore-accurate backgrounds, affiliations, and threat assessments
-- Dynamic quest states — entries update based on game progression
-- Extensible entry system for easy additions
+| Database | Information Retrieved |
+|----------|----------------------|
+| **NCPD Criminal Database** | Arrests, charges, convictions, warrant status, threat classification |
+| **Night City Financial Registry** | Credit rating, income bracket, debt status, asset flags |
+| **Trauma Team Medical Records** | Chronic conditions, injury history, cyberware complications |
+| **NetWatch Psychological Index** | Temperament, behavioral flags, violence risk, loyalty markers |
+| **Cyberware Registration System** | Implant inventory, psychosis risk, illegal modifications |
+| **Social Network Analysis** | Family connections, known associates, enemies, professional contacts |
+| **Gang Intelligence Division** | Affiliation, rank, territory, loyalty assessment |
+| **NCPD Personnel System** | Badge number, rank, unit assignment, service record |
 
-**Supported Characters:** Takemura, Panam, Judy, Jackie, Johnny, Rogue, Viktor, all fixers, and 40+ more.
+---
 
-### Full Relationship Networks
+## Features at a Glance
 
-Rich relationship generation for every NPC with realistic family structures:
+| Feature | Count | Description |
+|---------|-------|-------------|
+| **Unique NPC Entries** | 82 | Hand-crafted lore-accurate backstories for named characters |
+| **Life Events** | 698 | Procedural backstory building blocks with stat modifiers |
+| **Special Classifications** | 30 | Hidden status flags for rare NPCs |
+| **Name Combinations** | 18,550+ | Unique full names across all ethnicities |
+| **Ethnicities** | 13 | Culturally appropriate name generation |
+| **Text Entries** | 3,312 | Lines of lore-accurate content |
+| **Relationship Types** | 4 | Family, associates, enemies, professional contacts |
 
-| Relationship Type | Count | Details |
-|-------------------|-------|---------|
-| Associates | 1-8 | Friends, coworkers, fixers, dealers, gang contacts |
-| Family Members | 0-5 | Parents, siblings, grandparents, spouse, children |
-| Enemies | 0-3 | With reasons and threat levels |
-| Professional Contacts | 0-3 | For corpo and ganger archetypes |
+### Smart Data Filtering
 
-**Realistic Families:**
-- Blood relatives share the scanned NPC's actual surname
-- Spouses share family name 80% of the time
-- Gender-appropriate names based on relation type
-- Status tracking (Alive, Deceased, Estranged, Missing)
-- Location data for living family members
+Different NPC types receive contextually appropriate data:
 
-### Name Generation System
+| NPC Type | Displayed Data | Hidden Data |
+|----------|----------------|-------------|
+| **Civilians** | Criminal, financial, medical, cyberware, psych, relationships | None |
+| **Gang Members** | Criminal, gang affiliation, psych, relationships | Financial, medical |
+| **NCPD Officers** | Personnel file, badge, rank, unit, cyberware | Criminal (sealed) |
+| **Children** | Protected status message | Criminal, financial, medical |
+| **Unique NPCs** | Hand-crafted custom intel | Procedural data |
 
-Stack-safe index-based name generation with massive variety:
+---
+
+## Unique NPC Database
+
+82 named characters have hand-written, lore-accurate backstories that completely override procedural generation. These entries feature custom classifications, detailed backgrounds, threat assessments, and dynamic quest states.
+
+### Arasaka Corporation
+
+| Character | Classification | Description |
+|-----------|----------------|-------------|
+| Saburo Arasaka | ARASAKA - EMPEROR | Founder and CEO. Dynamic state changes after The Heist |
+| Yorinobu Arasaka | ARASAKA - HEIR | Rebel son. Patricide flagged post-Heist |
+| Hanako Arasaka | ARASAKA - PRINCESS | Protected diplomatic status |
+| Goro Takemura | ARASAKA - DISAVOWED | Former bodyguard. State changes based on quest progression |
+| Sandayu Oda | ARASAKA - PERSONAL SECURITY | Hanako's primary protection detail |
+| Adam Smasher | ARASAKA - MILITARY ASSET | Full cyborg combat platform |
+| Anders Hellman | ARASAKA - RESEARCH | Relic program lead scientist |
+| Graham Mayfield | ARASAKA - SECURITY | Corporate security operative |
+| Hanako Bodyguards | ARASAKA - PERSONAL SECURITY | Elite protection detail |
+| Arasaka Security | ARASAKA - SECURITY | Standard corporate operatives |
+
+### Militech
+
+| Character | Classification |
+|-----------|----------------|
+| Meredith Stout | MILITECH - COUNTERINTELLIGENCE |
+| Weldon Holt | MILITECH - EXECUTIVE |
+| Militech Commander | MILITECH - FIELD OPERATIONS |
+
+### Fixers
+
+| Character | Territory | Specialty |
+|-----------|-----------|-----------|
+| Rogue Amendiares | Afterlife | Legend. Queen of the Afterlife |
+| Dexter DeShawn | Watson | High-profile jobs. Dynamic state |
+| Wakako Okada | Westbrook | Information broker |
+| Regina Jones | Watson | Street-level, NCPD connections |
+| Sebastian "Padre" Ibarra | Heywood | Valentinos ties, family values |
+| Dakota Smith | Badlands | Nomad specialist |
+| Dino Dinovic | Santo Domingo | Industrial work |
+| Mr. Hands | Pacifica / Dogtown | Phantom Liberty content |
+| El Capitan | Santo Domingo | Vehicle specialist |
+
+### Afterlife Regulars
+
+| Character | Classification | Notes |
+|-----------|----------------|-------|
+| Jackie Welles | MERC - PARTNER | V's partner. Dynamic state after The Heist |
+| T-Bug | MERC - NETRUNNER | Elite netrunner. Dynamic state |
+| Johnny Silverhand | ENGRAM - TERRORIST | Digital ghost. Rockerboy legend |
+| Kerry Eurodyne | CIVILIAN - CELEBRITY | Samurai guitarist |
+| Alt Cunningham | NETRUNNER - BEYOND BLACKWALL | First Soulkiller victim |
+| Claire Russell | CIVILIAN - BARTENDER | Afterlife bartender, racer |
+| Crispin Weyland | MERC - AFTERLIFE | Known as Squama |
+| Nix | NETRUNNER - AFTERLIFE | Resident paranoid netrunner |
+
+### Gang Leadership
+
+#### Maelstrom
+| Character | Role |
+|-----------|------|
+| Royce | Current leader. Took over from Brick |
+| Dum Dum | Lieutenant. Chrome enthusiast |
+| Brick | Former leader. Overthrown by Royce, imprisoned |
+
+#### Tyger Claws
+| Character | Role |
+|-----------|------|
+| Jotaro Shobo | Lieutenant |
+| Hiromi Sato | Operations manager |
+
+#### Valentinos
+| Character | Role |
+|-----------|------|
+| Gustavo Orta | Leadership |
+| Jose Luis | Enforcer |
+| Octavio Ruiz | Associate |
+
+#### Voodoo Boys
+| Character | Role |
+|-----------|------|
+| Brigitte | Maman. Spiritual leader |
+| Placide | Enforcer. Field operations |
+
+#### Other Gangs
+| Character | Gang | Role |
+|-----------|------|------|
+| Sasquatch | Animals | Leader. Extreme cyberware |
+| Nash | Wraiths | Leader. Badlands operations |
+| Anton Kolos | Scavengers | Cell leader |
+
+### Mox & Clouds
+
+| Character | Classification | Notes |
+|-----------|----------------|-------|
+| Judy Alvarez | MOX - TECHIE | BD editor. Evelyn's friend |
+| Evelyn Parker | CIVILIAN - DOLL | Dynamic state based on quest |
+| Maiko Maeda | CLOUDS - MANAGEMENT | Ambitious. Corp connections |
+| Woodman | CLOUDS - SECURITY | Tyger Claws enforcer |
+
+### Aldecaldos
+
+| Character | Role |
+|-----------|------|
+| Panam Palmer | Clan member. Expert driver |
+| Saul Bright | Clan leader |
+| Mitch Anderson | Mechanic. Scorpion's friend |
+
+### Ripperdocs & Medical
+
+| Character | Location | Specialty |
+|-----------|----------|-----------|
+| Viktor Vektor | Little China | V's primary ripper. Ex-boxer |
+| Fingers | Jig-Jig Street | Questionable ethics |
+| Charles Bucks | Kabuki | Budget operations |
+| Misty Olszewski | Misty's Esoterica | Spiritual advisor. Jackie's partner |
+
+### NCPD & Politics
+
+| Character | Role | Notes |
+|-----------|------|-------|
+| River Ward | Detective | Good cop. Family man |
+| Jefferson Peralez | Politician | Mayoral candidate |
+| Lucius Rhyne | Mayor | Dynamic state based on story |
+| Barry | Officer | Suicide crisis storyline |
+
+### NetWatch
+
+| Character | Role |
+|-----------|------|
+| Bryce Mosley | Agent. Pacifica operations |
+
+### Media & Entertainment
+
+| Character | Profession | Notes |
+|-----------|------------|-------|
+| Lizzy Wizzy | Musician | Full-body chrome conversion |
+| Blue Moon | Musician | Us Cracks band member |
+| Ozob Bozo | Fighter | Grenade-nose implant |
+| Joshua Stephenson | Death Row | Crucifixion BD subject |
+| Gillean Jordan | Journalist | N54 News anchor |
+| Max Jones | Journalist | Independent media |
+| Cassius Ryder | Journalist | Investigative reporter |
+
+### Vendors & Services
+
+| Character | Business |
+|-----------|----------|
+| Wilson | 2nd Amendment weapon shop |
+| Coach Fred | Boxing trainer, Arroyo |
+
+### Phantom Liberty Characters
+
+| Character | Classification | Notes |
+|-----------|----------------|-------|
+| Solomon Reed | FIA - DEEP COVER | Legendary sleeper agent |
+| Songbird (So Mi) | FIA - NETRUNNER | Blackwall-damaged. Relic bearer |
+| Kurt Hansen | BARGHEST - LEADER | PMC warlord. Controls Dogtown |
+| Rosalind Myers | NUSA - PRESIDENT | NUSA head of state |
+| Alex | BARGHEST - INTELLIGENCE | Hansen's information specialist |
+
+### Other Notable Characters
+
+| Character | Description |
+|-----------|-------------|
+| Delamain | AI taxi service. Multiple personalities |
+| Mama Welles | Jackie's mother. El Coyote Cojo owner |
+| Nibbles | V's cat. Proper database entry |
+| Brendan | Sentient vending machine. Japantown |
+| Skippy | Sentient smart pistol |
+
+### Dynamic Quest States
+
+These characters have entries that update based on game progression:
+
+| Character | Trigger | Change |
+|-----------|---------|--------|
+| Takemura | The Heist | Shows disavowed status, manhunt data |
+| Jackie Welles | The Heist | Entry reflects fate |
+| T-Bug | The Heist | Status updated |
+| Evelyn Parker | Automatic Love | Reflects storyline events |
+| Dexter DeShawn | The Heist | Dynamic state |
+| Saburo Arasaka | The Heist | Death recorded |
+| Lucius Rhyne | Dream On | Status changes |
+
+---
+
+## Procedural Generation Systems
+
+### Lifepath Events
+
+698 unique events build procedural backstories. Each event includes gender-specific text, stat modifiers, and lifepath weighting.
+
+| Category | Count | Examples |
+|----------|-------|----------|
+| **Upbringing** | ~115 | Family structure, parental jobs, wealth level, childhood trauma, orphan status |
+| **Housing** | ~97 | Megabuilding units, combat zone squats, nomad camps, corpo housing, gang territory |
+| **Childhood** | ~178 | Education, street skills, gang youth, disabilities, talents, trauma, hobbies |
+| **Jobs** | ~103 | Criminal careers, merc work, tech positions, service industry, corpo jobs |
+| **Adulthood** | ~213 | Relationships, violence, health crises, career changes, legal troubles, achievements |
+
+#### Event Structure
+
+Each event carries metadata:
+
+```
+Event: BORN_RICH
+├── Female Text: "Born into wealth. Never wanted for anything."
+├── Male Text: "Born into wealth. Never wanted for anything."
+├── Wealth Modifier: +30
+├── Lifepath Weight: Corpo (high), Street Kid (low), Nomad (low)
+└── Associated Flags: PRIVILEGED, CORPORATE_TIES
+```
+
+### Criminal Record System
+
+| Field | Description |
+|-------|-------------|
+| Status | Clean / Minor Record / Criminal / Wanted / Incarcerated |
+| Arrests | List of specific charges with dates |
+| Convictions | Convicted charges and sentencing |
+| Warrant Status | None / Active / Federal / Corporate |
+| NCPD Classification | Petty Criminal / Known Offender / High Priority / Most Wanted |
+| Corporate Flags | Arasaka / Militech / Kang Tao security alerts |
+
+### Cyberware Registry
+
+| Field | Range | Description |
+|-------|-------|-------------|
+| Total Implants | 0-15 | Number of registered modifications |
+| Categories | Neural / Optical / Skeletal / Dermal / Circulatory | Implant breakdown |
+| Psychosis Risk | 0-100% | Cyberpsychosis probability |
+| Illegal Mods | 0-5 | Unlicensed/black market implants |
+| Registry Status | Compliant / Overdue / Non-Compliant / Flagged | Legal standing |
+
+### Financial Profile
+
+| Field | Options |
+|-------|---------|
+| Credit Rating | AAA / AA / A / B / C / D / Default |
+| Income Bracket | Destitute / Poverty / Working / Middle / Upper / Elite |
+| Debt Status | None / Minor / Significant / Severe / Crushing |
+| Asset Flags | Property / Vehicle / Business / Investments |
+| Corporate Ties | Employment history, severance, litigation |
+
+### Medical History
+
+| Category | Examples |
+|----------|----------|
+| Chronic Conditions | Cyberware rejection, neural degradation, organ failure |
+| Injuries | Combat wounds, industrial accidents, vehicle trauma |
+| Cyberware Complications | Rejection syndrome, phantom limb, signal interference |
+| Substance Issues | Combat stim dependency, alcohol, recreational drugs |
+| Mental Health | PTSD, anxiety, depression, cyberpsychosis markers |
+
+### Psychological Profile
+
+| Field | Description |
+|-------|-------------|
+| Temperament | Stable / Volatile / Aggressive / Withdrawn / Calculating |
+| Behavioral Flags | Violence markers, addiction indicators, manipulation susceptibility |
+| Risk Score | 0-100 violence probability |
+| Loyalty Index | Corporate / Gang / Family / Self loyalty priorities |
+| Notable Traits | Leadership, paranoia, impulsivity, discipline |
+
+---
+
+## Special Classifications
+
+30 rare NPC types appear at configurable odds (default 1:750). These citizens appear completely normal until scanned, revealing hidden status flags.
+
+### Intelligence Assets
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| SLEEPER_AGENT | Deep cover operative awaiting activation orders | EXTREME |
+| DOUBLE_AGENT | Working multiple factions simultaneously | EXTREME |
+| UNDERCOVER_COP | NCPD officer embedded in criminal organization | HIGH |
+| GANG_INFILTRATOR | Law enforcement asset inside gang structure | HIGH |
+| FIXER_ASSET | Confidential informant on fixer payroll | MODERATE |
+| DATA_COURIER | Carries sensitive data in cranial storage | HIGH |
+
+### Corporate Refugees
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| CORPO_WHISTLEBLOWER | Leaked corporate secrets, hunted by former employer | EXTREME |
+| CORPO_DEFECTOR | Fled corporation with sensitive data or technology | EXTREME |
+| BLACKMAIL_VICTIM | Being leveraged by unknown party, unpredictable | MODERATE |
+
+### High-Value Targets
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| WITNESS_PROTECTION | Federal protection program, new identity | HIGH |
+| WITNESS | Saw something they shouldn't have, marked | HIGH |
+| HUNTED | Multiple factions actively seeking termination | EXTREME |
+| MAXTAC_TARGET | On MaxTac priority elimination list | EXTREME |
+| DEBT_COLLECTION | Marked by corporate debt collectors | MODERATE |
+| ORGAN_MARKED | Flagged by scavenger organ harvesting networks | HIGH |
+
+### Medical Anomalies
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| PRE_CYBERPSYCHO | Showing early cyberpsychosis markers, unstable | EXTREME |
+| CLONE_SUBJECT | Product of illegal cloning operation | HIGH |
+| EXPERIMENTAL_SUBJECT | Survived corporate medical experimentation | HIGH |
+| ENGRAM_CANDIDATE | Flagged for Soulkiller compatibility | HIGH |
+| RELIC_COMPATIBLE | Rare biology compatible with Relic technology | EXTREME |
+| TRAUMA_TEAM_MARKED | Platinum coverage or marked for priority extraction | MODERATE |
+
+### Underground
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| HIDDEN_NETRUNNER | Elite netrunner operating in civilian disguise | EXTREME |
+| RETIRED_LEGEND | Former legendary merc/operative, still dangerous | HIGH |
+| LEGACY_CHARACTER | Connected to major historical events | MODERATE |
+
+### Outcasts
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| GHOST | Officially dead, living completely off-grid | HIGH |
+| MILITARY_AWOL | Deserter from NUSA or corporate military | HIGH |
+| NOMAD_EXILE | Cast out from their clan, no backup | MODERATE |
+| CULT_ESCAPEE | Fled from dangerous organization | MODERATE |
+
+### Anomalous
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| AI_CONTACT | In communication with rogue AI beyond Blackwall | EXTREME |
+| TIME_ANOMALY | Temporal displacement markers detected | UNKNOWN |
+
+---
+
+## Relationship Networks
+
+Full relationship generation creates believable social networks for every NPC.
+
+### Relationship Types
+
+| Type | Count | Description |
+|------|-------|-------------|
+| **Family Members** | 0-5 | Blood relatives and spouse |
+| **Known Associates** | 1-8 | Friends, coworkers, contacts |
+| **Known Enemies** | 0-3 | With reasons and threat levels |
+| **Professional Contacts** | 0-3 | Fixers, ripperdocs, dealers |
+
+### Family Generation
+
+| Relation | Gender | Name Inheritance |
+|----------|--------|------------------|
+| Father | Male | Shares family surname |
+| Mother | Female | Shares family surname |
+| Brother | Male | Shares family surname |
+| Sister | Female | Shares family surname |
+| Grandfather | Male | Shares family surname |
+| Grandmother | Female | Shares family surname |
+| Spouse | Variable | 80% shares surname |
+| Child | Variable | Shares family surname |
+
+**Realistic Surnames:** Blood relatives extract and share the scanned NPC's actual displayed surname. If scanning "Arina Lukina", her grandfather becomes "Hector Lukina" rather than a random name.
+
+### Family Status
+
+| Status | Description |
+|--------|-------------|
+| Alive | Living, location tracked |
+| Deceased | Death recorded |
+| Estranged | No contact |
+| Missing | Whereabouts unknown |
+| Unknown | No data available |
+
+### Associate Types
+
+| Category | Examples |
+|----------|----------|
+| **Personal** | Childhood friend, neighbor, ex-partner, roommate |
+| **Professional** | Coworker, business partner, mentor, client |
+| **Criminal** | Fellow gang member, fence, smuggling partner |
+| **Services** | Fixer contact, dealer, ripperdoc, bartender |
+
+### Enemy Generation
+
+| Field | Description |
+|-------|-------------|
+| Name | Generated enemy identifier |
+| Reason | Betrayal, debt, territory, romantic, business |
+| Threat Level | Low / Moderate / High / Extreme |
+| Affiliation | Gang, corpo, independent |
+
+---
+
+## Name Generation System
+
+Stack-safe index-based generation with zero array allocation during runtime.
+
+### Name Pool Statistics
 
 | Category | Count | Description |
 |----------|-------|-------------|
-| Male First Names | 360 | Across 13 ethnicities |
-| Female First Names | 360 | Across 13 ethnicities |
-| Last Names | 330 | Ethnicity-matched surnames |
+| Male First Names | 360 | 27-28 per ethnicity |
+| Female First Names | 360 | 27-28 per ethnicity |
+| Last Names | 330 | 25-26 per ethnicity |
 | Street Aliases | 122 | "Razor", "Ghost", "Chrome", etc. |
-| **Total Combinations** | **18,550+** | Unique full names possible |
+| **Total Combinations** | **18,550+** | Unique full name possibilities |
 
-**Supported Ethnicities:** American, African American, Hispanic, Japanese, Chinese, Korean, Slavic, Indian, Middle Eastern, African, Haitian, Southeast Asian, European
+### Supported Ethnicities
 
-### Expanded Lifepath System
+| Ethnicity | Cultural Background |
+|-----------|---------------------|
+| American | General American names |
+| African American | African American community |
+| Hispanic | Latin American heritage |
+| Japanese | Japanese names with proper structure |
+| Chinese | Chinese names (family name first internally) |
+| Korean | Korean naming conventions |
+| Slavic | Eastern European names |
+| Indian | South Asian subcontinent |
+| Middle Eastern | Arabic, Persian, Turkish names |
+| African | Various African regional names |
+| Haitian | Haitian Creole influenced |
+| Southeast Asian | Vietnamese, Thai, Filipino names |
+| European | Western European variety |
 
-**617 unique life events** across multiple categories:
+### Ethnicity Detection
 
-| Category | Events | Examples |
-|----------|--------|----------|
-| Upbringing | ~150 | Family structure, parental occupations, childhood trauma, wealth backgrounds |
-| Housing | ~80 | Megabuilding apartments, combat zone squats, nomad camps, corpo housing |
-| Childhood | ~160 | Education paths, street life, gang involvement, skills development |
-| Jobs | ~160 | Criminal careers, merc roles, tech positions, service work, corpo jobs |
-| Adulthood | ~70 | Relationships, gang involvement, mentorship, near-death experiences |
-
-All events include appropriate stat modifiers (Body, Reflex, Tech, Int, Cool, Wealth) and lifepath-specific weighting.
-
-### Narrative Coherence System
-
-Optional system that links all NPC data into believable, interconnected stories:
-
-| Theme | Description |
-|-------|-------------|
-| STABLE | Comfortable life, steady job, minimal issues |
-| STRUGGLING | Making ends meet, mounting pressures |
-| CLIMBING | On the rise, ambitious, improving circumstances |
-| FALLING | Things getting worse, spiraling problems |
-| CRIMINAL | Life outside the law, gang ties, illegal income |
-| CORPORATE | Corp lifestyle, clean records, financial security |
-
-**Flag Propagation**: Shared flags propagate across all databases:
-- Substance abuse → liver damage in medical, addiction in psych, drug charges in criminal
-- Violent past → assault charges, combat injuries, aggression markers
-- Financial struggles → matching debt reasons, poor credit, stress-related conditions
-
-## Project Structure
+Names are matched to NPC appearance for consistency:
 
 ```
-r6/scripts/backgroundScanner/
-├── Core/
-│   ├── BackstoryManager.reds          # Main generation orchestrator
-│   ├── BackstoryUI.reds               # UI data struct
-│   ├── NameGenerator.reds             # Index-based name generation (stack-safe)
-│   ├── EthnicityDetector.reds         # NPC ethnicity detection
-│   ├── Coherence/
-│   │   └── CoherenceManager.reds      # Narrative coherence system
-│   ├── Criminal/
-│   │   └── CriminalRecordManager.reds
-│   ├── Cyberware/
-│   │   └── CyberwareRegistryManager.reds
-│   ├── District/
-│   │   └── CrowdDistrictManager.reds
-│   ├── Financial/
-│   │   └── FinancialProfileManager.reds
-│   ├── Gang/
-│   │   └── GangManager.reds
-│   ├── LifePath/
-│   │   ├── LifePath.reds              # Core lifepath class
-│   │   ├── LifePathEvent.reds         # Event class with stat modifiers
-│   │   ├── LifePathEvents.reds        # 617 event definitions & pools
-│   │   └── LifePathPossibilities.reds # Event selection logic
-│   ├── Medical/
-│   │   └── MedicalHistoryManager.reds
-│   ├── NCPD/
-│   │   └── NCPDNameGenerator.reds
-│   ├── Psych/
-│   │   └── PsychProfileManager.reds
-│   ├── Rare/
-│   │   └── RareNPCManager.reds
-│   ├── Relationships/
-│   │   └── RelationshipsManager.reds  # NamePool + full relationship generation
-│   └── Unique/
-│       ├── UniqueNPCData.reds         # Data structure for unique NPCs
-│       ├── UniqueNPCManager.reds      # Detection & lookup system
-│       └── UniqueNPCEntries.reds      # 48 hand-crafted character entries
-├── Overrides/
-│   ├── ScannerNPCBodyGameController.reds  # Scanner UI injection
-│   └── NPCPuppet.reds                      # TweakDB name retrieval
-├── Settings/
-│   └── KiroshiSettings.reds               # Mod Settings Menu integration
-├── Text/
-│   ├── TextAdulthood.reds             # 239 adulthood text entries
-│   ├── TextBackgrounds.reds           # 79 background entries
-│   ├── TextChildhood.reds             # 162 childhood entries
-│   ├── TextCore.reds                  # Core text utilities
-│   ├── TextCorpos.reds                # 106 corporation names
-│   ├── TextHousing.reds               # 149 housing entries
-│   ├── TextJobs.reds                  # 158 job entries
-│   ├── TextLifepaths.reds             # 94 lifepath entries
-│   └── TextUpbringing.reds            # 151 upbringing entries
-├── UI/
-│   ├── NetWatchDBReport.reds              # Custom UI widget
-│   └── ScannerBackstorySystem.reds        # Loading sequence & display
-└── Util/
-    ├── Random.reds
-    ├── String.reds
-    └── ArrayUtils.reds
+Appearance String Analysis:
+├── "asian" → Japanese / Chinese / Korean (weighted random)
+├── "african" → African / African American
+├── "latino" → Hispanic
+├── "eastern" → Slavic / Middle Eastern
+└── Default → Weighted by Night City demographics
 ```
 
-## How It Works
+---
 
-### Seed-Based Generation
+## Narrative Coherence
+
+Optional system that links all generated data into believable, interconnected stories.
+
+### Life Themes
+
+When enabled, NPCs are assigned a core narrative theme that influences all generated data:
+
+| Theme | Description | Effects |
+|-------|-------------|---------|
+| STABLE | Comfortable life, steady employment | Good credit, clean record, healthy |
+| STRUGGLING | Making ends meet, mounting pressure | Debt, stress conditions, minor crimes |
+| CLIMBING | On the rise, ambitious trajectory | Improving finances, career advancement |
+| FALLING | Downward spiral, accumulating problems | Worsening health, legal troubles, debt |
+| CRIMINAL | Life outside the law | Extensive record, gang ties, illegal income |
+| CORPORATE | Corp lifestyle, system player | Clean records, good credit, corpo medical |
+
+### Flag Propagation
+
+Shared flags propagate across all database systems:
+
+| Flag | Criminal | Medical | Psych | Financial |
+|------|----------|---------|-------|-----------|
+| SUBSTANCE_ABUSE | Drug charges | Liver damage | Addiction markers | Debt from habit |
+| VIOLENT_HISTORY | Assault charges | Combat injuries | Aggression flags | Legal fees |
+| FINANCIAL_CRISIS | Fraud/theft | Stress conditions | Anxiety markers | Bad credit, debt |
+| CORPO_BURNOUT | White collar crime | Ulcers, insomnia | Depression | Severance issues |
+| GANG_AFFILIATED | Gang charges | Street injuries | Loyalty markers | Cash economy |
+
+---
+
+## Technical Architecture
+
+### Seed-Based Determinism
+
+Every NPC generates identical data across sessions:
+
 ```swift
 let entityIDHash: Int32 = Cast(EntityID.GetHash(target.GetEntityID()));
 let seed = RandRange(entityIDHash, 0, 2147483647);
+
+// All systems use offsets from base seed
+let criminalSeed = seed + 1000;
+let medicalSeed = seed + 2000;
+let financialSeed = seed + 3000;
+// etc.
 ```
-Each NPC's entity ID is hashed to create a deterministic seed. All generated data uses offsets from this seed, ensuring the same NPC always produces identical results.
 
 ### Stack-Safe Name Generation
 
-The NameGenerator uses index-based selection instead of array allocation:
+Index-based selection prevents stack overflow:
 
 ```swift
-// Zero stack allocation - just an int and string returns
 private static func GetMaleAmericanNames(seed: Int32) -> String {
     let i = RandRange(seed, 0, 34);
     if i == 0 { return "Marcus"; }
     if i == 1 { return "James"; }
-    // ... 35 names total
+    if i == 2 { return "Michael"; }
+    // ... indexed selection continues
     return "Scott";
 }
 ```
 
 ### NamePool System
 
-RelationshipsManager builds a shared name pool once per scan on the heap:
+Relationships build a shared pool once per scan on the heap:
 
 ```swift
 public class NamePool {
@@ -189,113 +597,322 @@ public class NamePool {
     public let aliases: array<String>;
 
     public static func Build(seed: Int32, ethnicity: NPCEthnicity) -> ref<NamePool> {
-        // Collects 20 male, 20 female, 20 last, 15 aliases
-        // All sub-functions index into this - zero allocation during generation
+        let pool = new NamePool();
+        // Pre-generate 20 male, 20 female, 20 last, 15 aliases
+        // All relationship functions index into this shared pool
+        return pool;
     }
 }
 ```
 
 ### Family Name Extraction
 
-Blood relatives share the scanned NPC's actual surname:
+Blood relatives share actual NPC surnames:
 
 ```swift
 private static func ExtractLastName(target: wref<NPCPuppet>) -> String {
-    let fullName = GetLocalizedTextByKey(record.FullDisplayName());
-    // Parse "Arina Lukina" → "Lukina"
-    // Grandfather becomes "Hector Lukina" not random
-}
-```
-
-### Lifepath Event System
-```swift
-public class CrowdScannerEvents {
-    public static func BORN_RICH() -> ref<LifePathEvent> { 
-        return LPE(TextUpbringing.BORN_RICH_F(), TextUpbringing.BORN_RICH_M())
-            .SetWealthMod(30); 
+    // Try scanner display name first
+    let fullName = target.GetTweakDBFullDisplayName(true);
+    
+    // Fallback to localized record
+    if Equals(fullName, "") {
+        fullName = GetLocalizedTextByKey(record.FullDisplayName());
     }
+    
+    // Parse "Arina Lukina" → "Lukina"
+    // Find last space, extract remainder
+    return parsedLastName;
 }
 ```
-Events are defined as static methods returning `LifePathEvent` objects with gender-specific text and stat modifiers.
 
-### NPC Detection
-- **Gang members**: Detected via appearance name patterns (e.g., `tyger`, `maelstrom`, `valentinos`)
-- **NCPD officers**: Detected via `IsPrevention()`, `IsCharacterPolice()`, or appearance name
-- **Children**: Detected via appearance name patterns (`child`, `kid`)
-- **Unique NPCs**: Detected via TweakDB record ID or display name matching
+### NPC Type Detection
 
-### Data Filtering
-Different NPC types receive filtered data:
-- **Civilians**: Full data (criminal, financial, medical, cyberware, relationships)
-- **Gang members**: Criminal record, gang affiliation, psych profile, relationships
-- **NCPD officers**: Personnel file, cyberware, cop-specific backstory
-- **Children**: Restricted/protected data only
+```swift
+// Gang detection via appearance patterns
+if StrContains(appearanceName, "tyger") { gang = "TYGER_CLAWS"; }
+if StrContains(appearanceName, "maelstrom") { gang = "MAELSTROM"; }
+if StrContains(appearanceName, "valentino") { gang = "VALENTINOS"; }
 
-## Settings
+// NCPD detection
+let isNCPD = target.IsPrevention() || 
+             target.IsCharacterPolice() || 
+             StrContains(appearanceName, "ncpd");
 
-All settings accessible via Mod Settings Menu → Kiroshi Deep Scan:
+// Unique NPC detection via TweakDB
+if StrContains(recordId, "takemura") { return UniqueNPCEntries.Takemura(); }
+```
+
+---
+
+## Project Structure
+
+```
+r6/scripts/backgroundScanner/
+├── Core/
+│   ├── BackstoryManager.reds              # Main generation orchestrator
+│   ├── BackstoryUI.reds                   # UI data structures
+│   ├── BackstoryUIExpanded.reds           # Extended UI structures
+│   ├── NameGenerator.reds                 # Index-based name generation
+│   ├── EthnicityDetector.reds             # Appearance-based ethnicity
+│   ├── DatabaseSourceManager.reds         # Data source attribution
+│   ├── CrowdArchetype.reds                # NPC archetype classification
+│   ├── CrowdAssociation.reds              # Association types
+│   ├── CrowdEntity.reds                   # Entity handling
+│   ├── CrowdGender.reds                   # Gender detection
+│   ├── CrowdTrait.reds                    # Individual traits
+│   ├── CrowdTraits.reds                   # Trait collections
+│   ├── CrowdWealth.reds                   # Wealth indicators
+│   ├── ScannerBackstory.reds              # Scanner data structure
+│   │
+│   ├── Coherence/
+│   │   └── CoherenceManager.reds          # Narrative coherence system
+│   │
+│   ├── Criminal/
+│   │   └── CriminalRecordManager.reds     # Criminal record generation
+│   │
+│   ├── Cyberware/
+│   │   └── CyberwareRegistryManager.reds  # Cyberware registry
+│   │
+│   ├── District/
+│   │   └── CrowdDistrictManager.reds      # District-based generation
+│   │
+│   ├── Financial/
+│   │   └── FinancialProfileManager.reds   # Financial data
+│   │
+│   ├── Gang/
+│   │   └── GangManager.reds               # Gang affiliation system
+│   │
+│   ├── LifePath/
+│   │   ├── LifePath.reds                  # Core lifepath class
+│   │   ├── LifePathEvent.reds             # Event with stat modifiers
+│   │   ├── LifePathEvents.reds            # 698 event definitions
+│   │   └── LifePathPossibilities.reds     # Weighted event selection
+│   │
+│   ├── Medical/
+│   │   └── MedicalHistoryManager.reds     # Medical records
+│   │
+│   ├── NCPD/
+│   │   └── NCPDNameGenerator.reds         # NCPD personnel files
+│   │
+│   ├── Psych/
+│   │   └── PsychProfileManager.reds       # Psychological profiles
+│   │
+│   ├── Rare/
+│   │   └── RareNPCManager.reds            # 30 special classifications
+│   │
+│   ├── Relationships/
+│   │   └── RelationshipsManager.reds      # NamePool & relationships
+│   │
+│   └── Unique/
+│       ├── UniqueNPCData.reds             # Unique NPC data structure
+│       ├── UniqueNPCManager.reds          # Detection & lookup
+│       └── UniqueNPCEntries.reds          # 82 character entries
+│
+├── Overrides/
+│   ├── ScannerNPCBodyGameController.reds  # Scanner UI injection
+│   ├── NPCPuppet.reds                     # Scanner chunk compilation
+│   └── UI_ScannerModulesDef.reds          # UI module definitions
+│
+├── Settings/
+│   └── KiroshiSettings.reds               # Mod Settings Menu integration
+│
+├── Text/
+│   ├── TextAdulthood.reds                 # 654 lines - Adult events
+│   ├── TextBackgrounds.reds               # 471 lines - Backgrounds
+│   ├── TextChildhood.reds                 # 528 lines - Childhood events
+│   ├── TextCore.reds                      # Core text utilities
+│   ├── TextCorpos.reds                    # 106 corporation names
+│   ├── TextHousing.reds                   # 305 lines - Housing types
+│   ├── TextJobs.reds                      # 414 lines - Occupations
+│   ├── TextLifepaths.reds                 # 321 lines - Lifepath events
+│   └── TextUpbringing.reds                # 488 lines - Upbringing
+│
+├── UI/
+│   ├── NetWatchDBReport.reds              # Database report widget
+│   ├── ScannerBackstorySystem.reds        # Main UI controller
+│   └── ScannerLoadingText.reds            # Loading sequence
+│
+└── Util/
+    ├── ArrayUtils.reds                    # Array helpers
+    ├── Random.reds                        # RNG utilities
+    └── String.reds                        # String manipulation
+```
+
+---
+
+## Configuration
+
+All settings accessible via **Mod Settings Menu → Kiroshi Deep Scan**
 
 ### Display Options
+
 | Setting | Range | Default | Description |
 |---------|-------|---------|-------------|
-| Data Density | 1-3 | 3 (High) | Information volume per scan |
-| Header Font Size | 14-28 | 20 | Section header size |
+| Data Density | Low / Medium / High | High | Information volume per scan |
+| Header Font Size | 14-28 | 20 | Section header text size |
 | Text Font Size | 18-34 | 26 | Body text size |
 
 ### Generation Mode
+
 | Setting | Options | Default | Description |
 |---------|---------|---------|-------------|
-| Narrative Coherence | On/Off | Off | Links data into consistent stories |
-| Special NPC Rarity | Common/Rare/Mythic | Rare | Frequency of flagged NPCs |
+| Narrative Coherence | On / Off | Off | Link all data into consistent stories |
+| Special NPC Rarity | Common / Rare / Mythic | Rare | Flagged NPC frequency |
+
+**Rarity Values:**
+- Common: 1 in 250 NPCs
+- Rare: 1 in 750 NPCs
+- Mythic: 1 in 2000 NPCs
 
 ### Content Options
+
 | Setting | Default | Description |
 |---------|---------|-------------|
 | Diverse Relationships | Off | Same-sex partnerships, polyamory, chosen family |
-| Body Modification Records | Off | Gender-affirming cyberware (~20% of NPCs) |
-| Display Pronouns | Off | Pronoun field (85% standard, 10% they/them, 5% neo) |
+| Body Modification Records | Off | Gender-affirming cyberware in medical (~20% of NPCs) |
+| Display Pronouns | Off | Shows pronouns (85% standard, 10% they/them, 5% neo) |
 
-## Dependencies
+---
 
-- [redscript](https://github.com/jac3km4/redscript) — Script compiler
-- [Codeware](https://github.com/psiberx/cp2077-codeware) — UI framework (`inkCustomController`)
-- [Mod Settings Menu](https://github.com/jackhumbert/mod_settings) — Runtime settings
+## Installation
 
-## Incompatible Mods
+### Requirements
 
-- [Lifepath Bonuses and Gang-Corp Traits](https://www.nexusmods.com/cyberpunk2077/mods/2217) — Conflicts with scanner override systems
-- [Kiroshi Opticals - Crowd Scanner Expansion](https://www.nexusmods.com/cyberpunk2077/mods/13470) — Uses same scanner hooks
-- [Kiroshi Opticals NetWatch Crowd Scanner](https://www.nexusmods.com/cyberpunk2077/mods/23664) — Duplicate functionality
+| Dependency | Purpose |
+|------------|---------|
+| [redscript](https://github.com/jac3km4/redscript) | Script compilation |
+| [Codeware](https://github.com/psiberx/cp2077-codeware) | UI framework (inkCustomController) |
+| [Mod Settings Menu](https://github.com/jackhumbert/mod_settings) | Runtime settings interface |
 
-## Building
+### Install Methods
 
-No build step required. The game compiles `.reds` files on startup.
+**Vortex / Mod Manager:**
+Click "Mod Manager Download" on Nexus and install through your preferred manager.
 
-Install by copying `r6/` to your game directory:
+**Manual Installation:**
+Extract archive to game directory, merge when prompted:
+
 ```
-Cyberpunk 2077/r6/scripts/backgroundScanner/
+Cyberpunk 2077/
+└── r6/
+    └── scripts/
+        └── backgroundScanner/
+            ├── Core/
+            ├── Overrides/
+            ├── Settings/
+            ├── Text/
+            ├── UI/
+            └── Util/
 ```
 
-## Credits
+### Verify Installation
 
-- **Reki72** — Original [Kiroshi Crowd Scanner](https://www.nexusmods.com/cyberpunk2077/mods/1654)
-- **psiberx** — Codeware
-- **jackhumbert** — Mod Settings Menu
+Check for compilation errors:
+```
+Cyberpunk 2077/r6/logs/redscript_rCURRENT.log
+```
 
-## License
+---
 
-MIT
+## Compatibility
+
+### Incompatible Mods
+
+| Mod | Conflict Reason |
+|-----|-----------------|
+| [Lifepath Bonuses and Gang-Corp Traits](https://www.nexusmods.com/cyberpunk2077/mods/2217) | Scanner override conflicts |
+| [Kiroshi Opticals - Crowd Scanner Expansion](https://www.nexusmods.com/cyberpunk2077/mods/13470) | Duplicate scanner hooks |
+| [Kiroshi Opticals NetWatch Crowd Scanner](https://www.nexusmods.com/cyberpunk2077/mods/23664) | Same functionality |
+
+**Important:** This mod is a **standalone replacement**. Remove any existing Kiroshi scanner mods before installation.
+
+### Compatible
+
+- Phantom Liberty DLC (full support with unique entries)
+- All gameplay mods that don't modify scanner systems
+- Visual/graphics mods
+- UI mods (unless they modify scanner specifically)
+
+---
 
 ## FAQ
 
-**Q: Why does someone show as "NCPD HIGH PRIORITY TARGET" but the base game shows no criminal record?**
+**Q: Nothing appears when I scan certain NPCs (like corporate employees or monks)**
 
-A: The Kiroshi Deep Scan Protocol pulls from multiple database sources beyond standard NCPD public records - including NetWatch surveillance data, corporate security flags, black market bounty boards, and cross-referenced immigration databases. V's scanner has access to information that NCPD either doesn't have, hasn't made public, or has been paid to suppress. Night City runs on secrets and bribes - the "official" record is rarely the complete picture.
+A: The mod generates data for NPCs flagged as crowd, gang members, or NCPD. Some NPC types (corporate employees, monks, vendors) aren't classified as "crowd" by the game. Named characters with unique entries always display custom data regardless of classification.
 
-**Q: My cat has a criminal record for starting a drug war.**
+**Q: Why does an NPC show "HIGH PRIORITY TARGET" but the base game shows no criminal record?**
 
-A: Nibbles and other registered animals now have proper database entries. The procedural generator no longer applies to entities with unique NPC records.
+A: Deep Scan Protocol accesses databases beyond NCPD public records — NetWatch surveillance, corporate security databases, black market bounty boards, and immigration systems. V's Kiroshi accesses information that NCPD either doesn't have, hasn't made public, or has been paid to suppress. Night City runs on secrets and bribes.
 
-**Q: Why do family members share my scanned NPC's last name?**
+**Q: Family members have the same last name as the NPC I scanned. Is that intentional?**
 
-A: Blood relatives (parents, siblings, grandparents, children) now extract and share the actual surname of the NPC you're scanning. If you scan "Arina Lukina", her grandfather will be "Hector Lukina" — not a random name. Spouses share the family name 80% of the time (some keep their maiden name).
+A: Yes. Blood relatives (parents, siblings, grandparents, children) now extract and share the scanned NPC's actual displayed surname. If you scan "Arina Lukina", her grandfather will be "Hector Lukina" — not a randomly generated name. Spouses share the family name 80% of the time.
+
+**Q: How do I find Special Classification NPCs?**
+
+A: Keep scanning. Default rarity is 1 in 750. You can lower this to 1 in 250 (Common) in Mod Settings for more frequent encounters. There are 30 different classifications ranging from sleeper agents to pre-cyberpsychos.
+
+**Q: Why don't Militech soldiers and Arasaka ninjas show backstories?**
+
+A: Military combat NPCs (soldiers, ninjas, mechs, MaxTac, Trauma Team) display vanilla scanner info. This prevents crashes from malformed NPC data that can occur during certain missions. Regular corporate employees show full procedural data.
+
+**Q: Does this work with Phantom Liberty?**
+
+A: Yes. Version 1.6 includes unique hand-crafted entries for Solomon Reed, Songbird, Kurt Hansen, President Myers, and Alex. Dogtown NPCs generate procedural backstories normally.
+
+**Q: What does Narrative Coherence actually do?**
+
+A: When enabled, it assigns each NPC a life theme (Stable, Struggling, Criminal, etc.) and ensures all generated data tells one consistent story. A "Criminal" themed NPC will have gang ties, extensive arrest history, street injuries, and cash-based finances — not random disconnected data.
+
+**Q: My cat Nibbles has a normal database entry now?**
+
+A: Yes. Nibbles and other special entities now have proper unique entries that override procedural generation. No more cats with drug trafficking charges.
+
+---
+
+## Bug Reports
+
+### For Compilation Errors
+
+Include your redscript log file:
+```
+Cyberpunk 2077/r6/logs/redscript_rCURRENT.log
+```
+
+### For Crashes When Scanning Specific NPC
+
+Open CET console, look at the NPC, and run:
+```lua
+print(Game.GetTargetingSystem():GetLookAtObject(GetPlayer(), false, false):GetRecord():GetID())
+```
+
+This prints the NPC's TweakDBID for identification.
+
+### For Incorrect Data Display
+
+Note the NPC type, location, and what appeared wrong. Screenshots help.
+
+---
+
+## Credits
+
+| Contributor | Contribution |
+|-------------|--------------|
+| **Reki72** | Original [Kiroshi Crowd Scanner](https://www.nexusmods.com/cyberpunk2077/mods/1654) |
+| **psiberx** | Codeware framework |
+| **jackhumbert** | Mod Settings Menu |
+| **NPC Nameplates** | TweakDB reference documentation |
+
+---
+
+## License
+
+MIT License — See LICENSE file for full details.
+
+---
+
+<p align="center">
+<b>KIROSHI DEEP SCAN PROTOCOL v1.6.0</b><br>
+<i>Every secret. Revealed.</i>
+</p>

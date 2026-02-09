@@ -266,4 +266,206 @@ public abstract class TextBackgrounds {
     public static func STATUS_COMFORTABLE_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
+    // v1.6 EXPANDED: MORE PERSONALITY TRAITS
+    // ═══════════════════════════════════════════════════════════
+    public static func TRAIT_INTROVERTED_F() -> String { return "Prefers to keep to herself. "; }
+    public static func TRAIT_INTROVERTED_M() -> String { return "Prefers to keep to himself. "; }
+    public static func TRAIT_EXTROVERTED_F() -> String { return "Thrives on social interaction. "; }
+    public static func TRAIT_EXTROVERTED_M() -> String { return ""; }
+    public static func TRAIT_IMPULSIVE_F() -> String { return "Acts on impulse. "; }
+    public static func TRAIT_IMPULSIVE_M() -> String { return ""; }
+    public static func TRAIT_METHODICAL_F() -> String { return "Approaches everything methodically. "; }
+    public static func TRAIT_METHODICAL_M() -> String { return ""; }
+    public static func TRAIT_STUBBORN_F() -> String { return "Notoriously stubborn. "; }
+    public static func TRAIT_STUBBORN_M() -> String { return ""; }
+    public static func TRAIT_ADAPTABLE_F() -> String { return "Adapts quickly to any situation. "; }
+    public static func TRAIT_ADAPTABLE_M() -> String { return ""; }
+    public static func TRAIT_PESSIMIST_F() -> String { return "Always expects the worst. "; }
+    public static func TRAIT_PESSIMIST_M() -> String { return ""; }
+    public static func TRAIT_OPTIMIST_F() -> String { return "Maintains optimism despite everything. "; }
+    public static func TRAIT_OPTIMIST_M() -> String { return ""; }
+    public static func TRAIT_PATIENT_F() -> String { return "Known for her patience. "; }
+    public static func TRAIT_PATIENT_M() -> String { return "Known for his patience. "; }
+    public static func TRAIT_IMPATIENT_F() -> String { return "Has no patience for delays. "; }
+    public static func TRAIT_IMPATIENT_M() -> String { return ""; }
+    public static func TRAIT_GENEROUS_F() -> String { return "Generous to a fault. "; }
+    public static func TRAIT_GENEROUS_M() -> String { return ""; }
+    public static func TRAIT_SELFISH_F() -> String { return "Looks out for number one. "; }
+    public static func TRAIT_SELFISH_M() -> String { return ""; }
+    public static func TRAIT_HONEST_F() -> String { return "Brutally honest. "; }
+    public static func TRAIT_HONEST_M() -> String { return ""; }
+    public static func TRAIT_DECEITFUL_F() -> String { return "Lies as easily as breathing. "; }
+    public static func TRAIT_DECEITFUL_M() -> String { return ""; }
+    public static func TRAIT_HUMBLE_F() -> String { return "Surprisingly humble. "; }
+    public static func TRAIT_HUMBLE_M() -> String { return ""; }
+    public static func TRAIT_ARROGANT_F() -> String { return "Arrogant and knows it. "; }
+    public static func TRAIT_ARROGANT_M() -> String { return ""; }
+    public static func TRAIT_PROTECTIVE_F() -> String { return "Fiercely protective of loved ones. "; }
+    public static func TRAIT_PROTECTIVE_M() -> String { return ""; }
+    public static func TRAIT_DISTANT_F() -> String { return "Keeps everyone at arm's length. "; }
+    public static func TRAIT_DISTANT_M() -> String { return ""; }
+    public static func TRAIT_CURIOUS_F() -> String { return "Curiosity often gets her into trouble. "; }
+    public static func TRAIT_CURIOUS_M() -> String { return "Curiosity often gets him into trouble. "; }
+    public static func TRAIT_APATHETIC_F() -> String { return "Doesn't seem to care about anything. "; }
+    public static func TRAIT_APATHETIC_M() -> String { return ""; }
+
+    // ═══════════════════════════════════════════════════════════
+    // v1.6 EXPANDED: MORE SKILLS
+    // ═══════════════════════════════════════════════════════════
+    public static func SKILL_NETRUNNER_F() -> String { return "Experienced netrunner. "; }
+    public static func SKILL_NETRUNNER_M() -> String { return ""; }
+    public static func SKILL_SNIPER_F() -> String { return "Trained sniper. "; }
+    public static func SKILL_SNIPER_M() -> String { return ""; }
+    public static func SKILL_KNIFE_F() -> String { return "Skilled with blades. "; }
+    public static func SKILL_KNIFE_M() -> String { return ""; }
+    public static func SKILL_MARTIAL_ARTS_F() -> String { return "Trained in martial arts. "; }
+    public static func SKILL_MARTIAL_ARTS_M() -> String { return ""; }
+    public static func SKILL_LOCKPICK_F() -> String { return "Expert lockpick. "; }
+    public static func SKILL_LOCKPICK_M() -> String { return ""; }
+    public static func SKILL_SURVEILLANCE_F() -> String { return "Skilled in surveillance. "; }
+    public static func SKILL_SURVEILLANCE_M() -> String { return ""; }
+    public static func SKILL_FORGERY_F() -> String { return "Talented forger. "; }
+    public static func SKILL_FORGERY_M() -> String { return ""; }
+    public static func SKILL_INTERROGATION_F() -> String { return "Skilled interrogator. "; }
+    public static func SKILL_INTERROGATION_M() -> String { return ""; }
+    public static func SKILL_DISGUISE_F() -> String { return "Master of disguise. "; }
+    public static func SKILL_DISGUISE_M() -> String { return ""; }
+    public static func SKILL_ELECTRONICS_F() -> String { return "Electronics expert. "; }
+    public static func SKILL_ELECTRONICS_M() -> String { return ""; }
+    public static func SKILL_CHEMISTRY_F() -> String { return "Knows chemistry. "; }
+    public static func SKILL_CHEMISTRY_M() -> String { return ""; }
+    public static func SKILL_FIRST_AID_F() -> String { return "Basic first aid training. "; }
+    public static func SKILL_FIRST_AID_M() -> String { return ""; }
+    public static func SKILL_SURVIVAL_F() -> String { return "Wilderness survival skills. "; }
+    public static func SKILL_SURVIVAL_M() -> String { return ""; }
+    public static func SKILL_STREETWISE_F() -> String { return "Streetwise and connected. "; }
+    public static func SKILL_STREETWISE_M() -> String { return ""; }
+    public static func SKILL_PERSUASION_F() -> String { return "Persuasive speaker. "; }
+    public static func SKILL_PERSUASION_M() -> String { return ""; }
+    public static func SKILL_INTIMIDATION_F() -> String { return "Knows how to intimidate. "; }
+    public static func SKILL_INTIMIDATION_M() -> String { return ""; }
+
+    // ═══════════════════════════════════════════════════════════
+    // v1.6 EXPANDED: QUIRKS / HABITS
+    // ═══════════════════════════════════════════════════════════
+    public static func QUIRK_SMOKER_F() -> String { return "Heavy smoker. "; }
+    public static func QUIRK_SMOKER_M() -> String { return ""; }
+    public static func QUIRK_NIGHT_OWL_F() -> String { return "Only comes alive at night. "; }
+    public static func QUIRK_NIGHT_OWL_M() -> String { return ""; }
+    public static func QUIRK_EARLY_BIRD_F() -> String { return "Always up before dawn. "; }
+    public static func QUIRK_EARLY_BIRD_M() -> String { return ""; }
+    public static func QUIRK_COLLECTOR_F() -> String { return "Obsessive collector of old tech. "; }
+    public static func QUIRK_COLLECTOR_M() -> String { return ""; }
+    public static func QUIRK_SUPERSTITIOUS_F() -> String { return "Highly superstitious. "; }
+    public static func QUIRK_SUPERSTITIOUS_M() -> String { return ""; }
+    public static func QUIRK_GERMAPHOBE_F() -> String { return "Germaphobe. "; }
+    public static func QUIRK_GERMAPHOBE_M() -> String { return ""; }
+    public static func QUIRK_INSOMNIAC_F() -> String { return "Chronic insomniac. "; }
+    public static func QUIRK_INSOMNIAC_M() -> String { return ""; }
+    public static func QUIRK_WORKAHOLIC_F() -> String { return "Workaholic tendencies. "; }
+    public static func QUIRK_WORKAHOLIC_M() -> String { return ""; }
+    public static func QUIRK_LUCKY_F() -> String { return "Carries a lucky charm. "; }
+    public static func QUIRK_LUCKY_M() -> String { return ""; }
+    public static func QUIRK_TATTOOS_F() -> String { return "Gets a new tattoo for every major event. "; }
+    public static func QUIRK_TATTOOS_M() -> String { return ""; }
+    public static func QUIRK_MUSIC_F() -> String { return "Always has music playing. "; }
+    public static func QUIRK_MUSIC_M() -> String { return ""; }
+    public static func QUIRK_READER_F() -> String { return "Reads actual physical books. "; }
+    public static func QUIRK_READER_M() -> String { return ""; }
+    public static func QUIRK_FITNESS_F() -> String { return "Obsessed with fitness. "; }
+    public static func QUIRK_FITNESS_M() -> String { return ""; }
+    public static func QUIRK_FOODIE_F() -> String { return "A foodie who seeks out real food. "; }
+    public static func QUIRK_FOODIE_M() -> String { return ""; }
+    public static func QUIRK_ANIMALS_F() -> String { return "Has a soft spot for animals. "; }
+    public static func QUIRK_ANIMALS_M() -> String { return ""; }
+
+    // ═══════════════════════════════════════════════════════════
+    // v1.6 EXPANDED: FEARS / PHOBIAS
+    // ═══════════════════════════════════════════════════════════
+    public static func FEAR_HEIGHTS_F() -> String { return "Afraid of heights. "; }
+    public static func FEAR_HEIGHTS_M() -> String { return ""; }
+    public static func FEAR_WATER_F() -> String { return "Terrified of deep water. "; }
+    public static func FEAR_WATER_M() -> String { return ""; }
+    public static func FEAR_ENCLOSED_F() -> String { return "Claustrophobic. "; }
+    public static func FEAR_ENCLOSED_M() -> String { return ""; }
+    public static func FEAR_CROWDS_F() -> String { return "Anxious in crowds. "; }
+    public static func FEAR_CROWDS_M() -> String { return ""; }
+    public static func FEAR_CYBERWARE_F() -> String { return "Afraid of cyberware. "; }
+    public static func FEAR_CYBERWARE_M() -> String { return ""; }
+    public static func FEAR_AI_F() -> String { return "Distrustful of AI. "; }
+    public static func FEAR_AI_M() -> String { return ""; }
+    public static func FEAR_SCAVS_F() -> String { return "Terrified of Scavengers. "; }
+    public static func FEAR_SCAVS_M() -> String { return ""; }
+    public static func FEAR_MAXTAC_F() -> String { return "Deeply afraid of MaxTac. "; }
+    public static func FEAR_MAXTAC_M() -> String { return ""; }
+    public static func FEAR_DEATH_F() -> String { return "Has an intense fear of death. "; }
+    public static func FEAR_DEATH_M() -> String { return ""; }
+    public static func FEAR_ABANDONMENT_F() -> String { return "Fear of abandonment. "; }
+    public static func FEAR_ABANDONMENT_M() -> String { return ""; }
+
+    // ═══════════════════════════════════════════════════════════
+    // v1.6 EXPANDED: SECRETS
+    // ═══════════════════════════════════════════════════════════
+    public static func SECRET_PAST_F() -> String { return "Hiding a dark past. "; }
+    public static func SECRET_PAST_M() -> String { return ""; }
+    public static func SECRET_IDENTITY_F() -> String { return "Living under a false identity. "; }
+    public static func SECRET_IDENTITY_M() -> String { return ""; }
+    public static func SECRET_INFORMANT_F() -> String { return "Secret informant for the NCPD. "; }
+    public static func SECRET_INFORMANT_M() -> String { return ""; }
+    public static func SECRET_CORPO_SPY_F() -> String { return "Actually a corporate spy. "; }
+    public static func SECRET_CORPO_SPY_M() -> String { return ""; }
+    public static func SECRET_GANG_F() -> String { return "Has hidden gang affiliations. "; }
+    public static func SECRET_GANG_M() -> String { return ""; }
+    public static func SECRET_WITNESS_F() -> String { return "Witnessed something she wasn't supposed to. "; }
+    public static func SECRET_WITNESS_M() -> String { return "Witnessed something he wasn't supposed to. "; }
+    public static func SECRET_MURDER_F() -> String { return "Killed someone and covered it up. "; }
+    public static func SECRET_MURDER_M() -> String { return ""; }
+    public static func SECRET_FAMILY_F() -> String { return "Has a secret family. "; }
+    public static func SECRET_FAMILY_M() -> String { return ""; }
+    public static func SECRET_DEBT_F() -> String { return "Owes dangerous people money. "; }
+    public static func SECRET_DEBT_M() -> String { return ""; }
+    public static func SECRET_SICKNESS_F() -> String { return "Hiding a terminal illness. "; }
+    public static func SECRET_SICKNESS_M() -> String { return ""; }
+
+    // ═══════════════════════════════════════════════════════════
+    // v1.6 EXPANDED: LIFESTYLE
+    // ═══════════════════════════════════════════════════════════
+    public static func LIFE_MINIMALIST_F() -> String { return "Lives a minimalist lifestyle. "; }
+    public static func LIFE_MINIMALIST_M() -> String { return ""; }
+    public static func LIFE_FLASHY_F() -> String { return "Lives flashy, spends big. "; }
+    public static func LIFE_FLASHY_M() -> String { return ""; }
+    public static func LIFE_FRUGAL_F() -> String { return "Extremely frugal. "; }
+    public static func LIFE_FRUGAL_M() -> String { return ""; }
+    public static func LIFE_NOMADIC_F() -> String { return "Never stays in one place long. "; }
+    public static func LIFE_NOMADIC_M() -> String { return ""; }
+    public static func LIFE_HOMEBODY_F() -> String { return "Rarely leaves home. "; }
+    public static func LIFE_HOMEBODY_M() -> String { return ""; }
+    public static func LIFE_PARTY_F() -> String { return "Lives for the nightlife. "; }
+    public static func LIFE_PARTY_M() -> String { return ""; }
+    public static func LIFE_SOLITARY_F() -> String { return "Prefers solitude. "; }
+    public static func LIFE_SOLITARY_M() -> String { return ""; }
+    public static func LIFE_SOCIAL_F() -> String { return "Always surrounded by people. "; }
+    public static func LIFE_SOCIAL_M() -> String { return ""; }
+
+    // ═══════════════════════════════════════════════════════════
+    // v1.6 EXPANDED: BELIEFS
+    // ═══════════════════════════════════════════════════════════
+    public static func BELIEF_RELIGIOUS_F() -> String { return "Deeply religious. "; }
+    public static func BELIEF_RELIGIOUS_M() -> String { return ""; }
+    public static func BELIEF_ATHEIST_F() -> String { return "Staunch atheist. "; }
+    public static func BELIEF_ATHEIST_M() -> String { return ""; }
+    public static func BELIEF_SPIRITUAL_F() -> String { return "Spiritual but not religious. "; }
+    public static func BELIEF_SPIRITUAL_M() -> String { return ""; }
+    public static func BELIEF_TECH_F() -> String { return "Believes technology will save humanity. "; }
+    public static func BELIEF_TECH_M() -> String { return ""; }
+    public static func BELIEF_NATURE_F() -> String { return "Believes in returning to nature. "; }
+    public static func BELIEF_NATURE_M() -> String { return ""; }
+    public static func BELIEF_NIHILIST_F() -> String { return "Nihilistic worldview. "; }
+    public static func BELIEF_NIHILIST_M() -> String { return ""; }
+    public static func BELIEF_KARMA_F() -> String { return "Believes in karma. "; }
+    public static func BELIEF_KARMA_M() -> String { return ""; }
+    public static func BELIEF_FATE_F() -> String { return "Believes everything is fated. "; }
+    public static func BELIEF_FATE_M() -> String { return ""; }
+
+    // ═══════════════════════════════════════════════════════════
 }
