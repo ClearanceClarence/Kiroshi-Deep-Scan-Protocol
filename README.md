@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.6.0-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.6.1-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 > *Every stranger has a story. Your Kiroshi can read them all.*
@@ -62,7 +62,9 @@ When scanning NPCs, Deep Scan Protocol queries:
 | **Unique NPC Entries** | 82 | Hand-crafted lore-accurate backstories for named characters |
 | **Life Events** | 698 | Procedural backstory building blocks with stat modifiers |
 | **Special Classifications** | 30 | Hidden status flags for rare NPCs |
-| **Name Combinations** | 18,550+ | Unique full names across all ethnicities |
+| **Name Combinations** | 260,000+ | Unique full names across all ethnicities |
+| **Name Entries** | 3,900 | Individual names (100 male + 100 female + 100 last per ethnicity) |
+| **Street Aliases** | 120 | Gang associate nicknames |
 | **Ethnicities** | 13 | Culturally appropriate name generation |
 | **Text Entries** | 3,312 | Lines of lore-accurate content |
 | **Relationship Types** | 4 | Family, associates, enemies, professional contacts |
@@ -477,35 +479,44 @@ Full relationship generation creates believable social networks for every NPC.
 
 ## Name Generation System
 
-Stack-safe index-based generation with zero array allocation during runtime.
+Stack-safe index-based generation with modular ethnicity files. Zero array allocation during runtime.
 
 ### Name Pool Statistics
 
 | Category | Count | Description |
 |----------|-------|-------------|
-| Male First Names | 360 | 27-28 per ethnicity |
-| Female First Names | 360 | 27-28 per ethnicity |
-| Last Names | 330 | 25-26 per ethnicity |
-| Street Aliases | 122 | "Razor", "Ghost", "Chrome", etc. |
-| **Total Combinations** | **18,550+** | Unique full name possibilities |
+| Male First Names | 1,300 | 100 per ethnicity × 13 ethnicities |
+| Female First Names | 1,300 | 100 per ethnicity × 13 ethnicities |
+| Last Names | 1,300 | 100 per ethnicity × 13 ethnicities |
+| Street Aliases | 120 | "Razor", "Ghost", "Chrome", etc. |
+| **Total Name Entries** | **3,900** | Individual names in database |
+| **Total Combinations** | **260,000+** | Unique full name possibilities |
+
+### Name Combinations per Ethnicity
+
+Each ethnicity provides 20,000 unique full name combinations:
+- Male names: 100 first × 100 last = 10,000 combinations
+- Female names: 100 first × 100 last = 10,000 combinations
+- Total per ethnicity: 20,000 combinations
+- 13 ethnicities × 20,000 = **260,000 total combinations**
 
 ### Supported Ethnicities
 
-| Ethnicity | Cultural Background |
-|-----------|---------------------|
-| American | General American names |
-| African American | African American community |
-| Hispanic | Latin American heritage |
-| Japanese | Japanese names with proper structure |
-| Chinese | Chinese names (family name first internally) |
-| Korean | Korean naming conventions |
-| Slavic | Eastern European names |
-| Indian | South Asian subcontinent |
-| Middle Eastern | Arabic, Persian, Turkish names |
-| African | Various African regional names |
-| Haitian | Haitian Creole influenced |
-| Southeast Asian | Vietnamese, Thai, Filipino names |
-| European | Western European variety |
+| Ethnicity | Cultural Background | File |
+|-----------|---------------------|------|
+| American | General American names | `AmericanNames.reds` |
+| African American | African American community | `AfricanAmericanNames.reds` |
+| Hispanic | Latin American heritage | `HispanicNames.reds` |
+| Japanese | Japanese names with proper structure | `JapaneseNames.reds` |
+| Chinese | Chinese names (family name first internally) | `ChineseNames.reds` |
+| Korean | Korean naming conventions | `KoreanNames.reds` |
+| Slavic | Eastern European names | `SlavicNames.reds` |
+| Indian | South Asian subcontinent | `IndianNames.reds` |
+| Middle Eastern | Arabic, Persian, Turkish names | `MiddleEasternNames.reds` |
+| African | Various African regional names | `AfricanNames.reds` |
+| Haitian | Haitian Creole influenced | `HaitianNames.reds` |
+| Southeast Asian | Vietnamese, Thai, Filipino names | `SoutheastAsianNames.reds` |
+| European | Western European variety | `EuropeanNames.reds` |
 
 ### Ethnicity Detection
 
@@ -652,9 +663,10 @@ r6/scripts/backgroundScanner/
 │   ├── BackstoryManager.reds              # Main generation orchestrator
 │   ├── BackstoryUI.reds                   # UI data structures
 │   ├── BackstoryUIExpanded.reds           # Extended UI structures
-│   ├── NameGenerator.reds                 # Index-based name generation
+│   ├── NameGenerator.reds                 # Ethnicity routing + 120 street aliases
 │   ├── EthnicityDetector.reds             # Appearance-based ethnicity
 │   ├── DatabaseSourceManager.reds         # Data source attribution
+│   ├── ExpandedBackstoryManager.reds      # Extended generation logic
 │   ├── CrowdArchetype.reds                # NPC archetype classification
 │   ├── CrowdAssociation.reds              # Association types
 │   ├── CrowdEntity.reds                   # Entity handling
@@ -663,6 +675,21 @@ r6/scripts/backgroundScanner/
 │   ├── CrowdTraits.reds                   # Trait collections
 │   ├── CrowdWealth.reds                   # Wealth indicators
 │   ├── ScannerBackstory.reds              # Scanner data structure
+│   │
+│   ├── Names/                             # Modular name system (v1.6.1)
+│   │   ├── AmericanNames.reds             # 100 male + 100 female + 100 last
+│   │   ├── AfricanAmericanNames.reds      # 100 male + 100 female + 100 last
+│   │   ├── HispanicNames.reds             # 100 male + 100 female + 100 last
+│   │   ├── JapaneseNames.reds             # 100 male + 100 female + 100 last
+│   │   ├── ChineseNames.reds              # 100 male + 100 female + 100 last
+│   │   ├── KoreanNames.reds               # 100 male + 100 female + 100 last
+│   │   ├── SlavicNames.reds               # 100 male + 100 female + 100 last
+│   │   ├── IndianNames.reds               # 100 male + 100 female + 100 last
+│   │   ├── MiddleEasternNames.reds        # 100 male + 100 female + 100 last
+│   │   ├── AfricanNames.reds              # 100 male + 100 female + 100 last
+│   │   ├── HaitianNames.reds              # 100 male + 100 female + 100 last
+│   │   ├── SoutheastAsianNames.reds       # 100 male + 100 female + 100 last
+│   │   └── EuropeanNames.reds             # 100 male + 100 female + 100 last
 │   │
 │   ├── Coherence/
 │   │   └── CoherenceManager.reds          # Narrative coherence system
@@ -913,6 +940,6 @@ MIT License — See LICENSE file for full details.
 ---
 
 <p align="center">
-<b>KIROSHI DEEP SCAN PROTOCOL v1.6.0</b><br>
+<b>KIROSHI DEEP SCAN PROTOCOL v1.6.1</b><br>
 <i>Every secret. Revealed.</i>
 </p>

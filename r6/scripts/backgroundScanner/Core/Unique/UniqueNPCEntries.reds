@@ -29,7 +29,7 @@ public abstract class UniqueNPCEntries {
         if StrContains(id, "meredith") { return UniqueNPCEntries.MeredithStout(); }
         if StrContains(id, "holt") { return UniqueNPCEntries.WeldonHolt(); }
         // FIXERS
-        if StrContains(id, "dex") || StrContains(id, "deshawn") { return UniqueNPCEntries.DexterDeShawn(); }
+        if (StrContains(id, "dex") && !StrContains(id, "index")) || StrContains(id, "deshawn") { return UniqueNPCEntries.DexterDeShawn(); }
         if StrContains(id, "wakako") { return UniqueNPCEntries.WakakoOkada(); }
         if StrContains(id, "regina") { return UniqueNPCEntries.ReginaJones(); }
         if StrContains(id, "padre") { return UniqueNPCEntries.Padre(); }
@@ -58,14 +58,14 @@ public abstract class UniqueNPCEntries {
         if StrContains(id, "woodman") { return UniqueNPCEntries.Woodman(); }
         // ALDECALDOS
         if StrContains(id, "panam") { return UniqueNPCEntries.PanamPalmer(); }
-        if StrContains(id, "saul") { return UniqueNPCEntries.SaulBright(); }
-        if StrContains(id, "mitch") { return UniqueNPCEntries.MitchAnderson(); }
+        if StrContains(id, "saul") && !StrContains(id, "assault") { return UniqueNPCEntries.SaulBright(); }
+        if StrContains(id, "mitch") && !StrContains(id, "switch") && !StrContains(id, "glitch") { return UniqueNPCEntries.MitchAnderson(); }
         // VOODOO BOYS
         if StrContains(id, "brigitte") { return UniqueNPCEntries.Brigitte(); }
         if StrContains(id, "placide") { return UniqueNPCEntries.Placide(); }
         // MAELSTROM
         if StrContains(id, "royce") { return UniqueNPCEntries.Royce(); }
-        if StrContains(id, "dum") { return UniqueNPCEntries.DumDum(); }
+        if StrContains(id, "dum") && !StrContains(id, "medium") && !StrContains(id, "random") { return UniqueNPCEntries.DumDum(); }
         if StrContains(id, "brick") { return UniqueNPCEntries.Brick(); }
         // NCPD / POLITICS
         if StrContains(id, "river") && StrContains(id, "ward") { return UniqueNPCEntries.RiverWard(); }
@@ -79,7 +79,7 @@ public abstract class UniqueNPCEntries {
         if StrContains(id, "jotaro") || StrContains(id, "shobo") { return UniqueNPCEntries.JotaroShobo(); }
         if StrContains(id, "hiromi") && StrContains(id, "sato") { return UniqueNPCEntries.HiromiSato(); }
         // VALENTINOS
-        if StrContains(id, "gustavo") || StrContains(id, "orta") { return UniqueNPCEntries.GustavoOrta(); }
+        if (StrContains(id, "gustavo") || StrContains(id, "orta")) && !StrContains(id, "escort") && !StrContains(id, "transport") { return UniqueNPCEntries.GustavoOrta(); }
         if StrContains(id, "jose") && StrContains(id, "luis") { return UniqueNPCEntries.JoseLuis(); }
         // ANIMALS
         if StrContains(id, "sasquatch") { return UniqueNPCEntries.Sasquatch(); }
@@ -105,7 +105,7 @@ public abstract class UniqueNPCEntries {
         if StrContains(id, "coach") && StrContains(id, "fred") { return UniqueNPCEntries.CoachFred(); }
         // BARTENDERS
         if StrContains(id, "emmerick") || StrContains(id, "bronson") { return UniqueNPCEntries.EmmerickBronson(); }
-        if StrContains(id, "nix") { return UniqueNPCEntries.Nix(); }
+        if StrContains(id, "nix") && !StrContains(id, "phoenix") { return UniqueNPCEntries.Nix(); }
         // OTHER CHARACTERS
         if StrContains(id, "brendan") { return UniqueNPCEntries.Brendan(); }
         if StrContains(id, "barry") { return UniqueNPCEntries.Barry(); }

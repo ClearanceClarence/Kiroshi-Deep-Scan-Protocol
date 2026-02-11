@@ -553,19 +553,20 @@ public class BackstoryManager {
         let lowerName = StrLower(appearanceName);
         
         // Common child appearance indicators in CP2077
+        // Be specific to avoid false positives on young adults
         if StrContains(lowerName, "child") { return true; };
         if StrContains(lowerName, "_kid_") { return true; };
-        if StrContains(lowerName, "_kid") { return true; };
-        if StrContains(lowerName, "kid_") { return true; };
+        if StrContains(lowerName, "_kid") && !StrContains(lowerName, "street_kid") { return true; };
+        if StrContains(lowerName, "kid_") && !StrContains(lowerName, "street_kid") { return true; };
         if StrContains(lowerName, "_boy_") { return true; };
         if StrContains(lowerName, "_girl_") { return true; };
-        if StrContains(lowerName, "young_") { return true; };
-        if StrContains(lowerName, "_young") { return true; };
-        if StrContains(lowerName, "teen") { return true; };
         if StrContains(lowerName, "juvenile") { return true; };
-        if StrContains(lowerName, "minor") { return true; };
         if StrContains(lowerName, "urchin") { return true; };
-        if StrContains(lowerName, "street_kid") { return true; };
+        
+        // Removed: "young_", "_young" - too broad, matches young adults
+        // Removed: "teen" - could match "canteen", "fourteen", adult young NPCs
+        // Removed: "minor" - could match "miner", other words
+        // Removed: "street_kid" - this is a lifepath, not age indicator
         
         return false;
     }
