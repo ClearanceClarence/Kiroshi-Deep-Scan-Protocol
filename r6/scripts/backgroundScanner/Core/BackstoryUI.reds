@@ -28,4 +28,7 @@ public struct BackstoryUI {
   public let isUnique: Bool;
   public let uniqueClassification: String;
 
+  // Debug info (only shown when debug mode enabled)
+  public let debugInfo: String;
+
 }

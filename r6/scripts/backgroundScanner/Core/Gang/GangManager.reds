@@ -33,6 +33,10 @@ public class GangManager {
         if StrContains(appearanceName, "aldecaldo") {
             return "ALDECALDOS";
         }
+        // Barghest - Dogtown militia
+        if StrContains(appearanceName, "barghest") {
+            return "BARGHEST";
+        }
 
         return "NONE";
     }
@@ -74,6 +78,7 @@ public class GangManager {
         if Equals(affiliation, "SCAVENGERS") { return "Scavengers"; }
         if Equals(affiliation, "WRAITHS") { return "Wraiths"; }
         if Equals(affiliation, "ALDECALDOS") { return "Aldecaldos"; }
+        if Equals(affiliation, "BARGHEST") { return "Barghest Militia"; }
         return "Unknown Gang";
     }
 

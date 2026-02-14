@@ -42,7 +42,9 @@ public class BackstoryManager {
         }
 
         // Detect NCPD early - they get different treatment
-        let isNCPD: Bool = NCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice();
+        // Barghest uses Prevention archetype but are NOT NCPD - exclude them
+        let isBarghest: Bool = Equals(gangAffiliation, "BARGHEST") || StrContains(appearanceName, "barghest");
+        let isNCPD: Bool = !isBarghest && (NCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice());
 
         // Check if coherence mode is enabled in settings
         let coherence: ref<CoherenceProfile>;
@@ -64,6 +66,9 @@ public class BackstoryManager {
         // Build BackstoryUI
         let backstoryUI: BackstoryUI;
         
+        // Check if this is a gang member (not Barghest - they have separate handling)
+        let isGangMember: Bool = !Equals(gangAffiliation, "NONE") && !isBarghest;
+        
         // NCPD officers get cop-specific backstory, not civilian backstory
         if isNCPD {
             backstoryUI.background = BackstoryManager.GenerateNCPDBackground(seed, lifePath);
@@ -74,6 +79,26 @@ public class BackstoryManager {
                 backstoryUI.earlyLife = "";
             };
             backstoryUI.significantEvents = BackstoryManager.GenerateNCPDRecentActivity(seed, lifePath);
+        } else if isBarghest {
+            // Barghest get militia-style backgrounds
+            let barghestData = BarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
+            backstoryUI.background = barghestData.background;
+            if density >= 2 {
+                backstoryUI.earlyLife = "Prior service: " + barghestData.formerAffiliation + ". " + IntToString(barghestData.yearsService) + " years military experience.";
+            } else {
+                backstoryUI.earlyLife = "";
+            };
+            backstoryUI.significantEvents = "Joined Barghest " + IntToString(barghestData.yearsBarghest) + " years ago. Combat role: " + barghestData.combatRole + ".";
+        } else if isGangMember {
+            // Gang members get gang-specific detailed backstories
+            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
+            backstoryUI.background = gangData.background;
+            if density >= 2 {
+                backstoryUI.earlyLife = IntToString(gangData.yearsActive) + " years with " + gangData.gangName + ". Role: " + gangData.role + ".";
+            } else {
+                backstoryUI.earlyLife = "";
+            };
+            backstoryUI.significantEvents = gangData.recentActivity;
         } else {
             backstoryUI.background = background;
             // Early life only on medium/high density
@@ -92,8 +117,8 @@ public class BackstoryManager {
             backstoryUI.pronouns = "";
         };
 
-        // Criminal Record Section - skip for NCPD (they have personnel files instead)
-        if criminal.hasRecord && !isNCPD {
+        // Criminal Record Section - skip for NCPD, Barghest, and gang members (they have their own records)
+        if criminal.hasRecord && !isNCPD && !isBarghest && !isGangMember {
             backstoryUI.criminalRecord = "Status: " + criminal.status;
             // Show arrests on medium/high density
             if density >= 2 && ArraySize(criminal.arrests) > 0 {
@@ -176,8 +201,40 @@ public class BackstoryManager {
             backstoryUI.medicalStatus = "";
         };
 
-        // Behavioral Profile Section (replaces threat assessment) - skip for NCPD
-        if !isNCPD {
+        // Behavioral Profile Section (replaces threat assessment) - skip for NCPD, custom for Barghest and gang members
+        if isBarghest {
+            // Barghest get military threat assessment
+            let barghestData = BarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
+            backstoryUI.threatAssessment = "HOSTILE | Military trained | " + barghestData.combatRole;
+            if density >= 2 {
+                backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Confirmed kills: " + IntToString(barghestData.confirmedKills);
+            };
+            if density >= 3 {
+                backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Hansen loyalist";
+            };
+        } else if isGangMember {
+            // Gang members get gang-appropriate threat assessment
+            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
+            
+            // Threat level based on gang type
+            let threatPrefix: String = "HOSTILE";
+            if Equals(gangAffiliation, "MOXES") || Equals(gangAffiliation, "ALDECALDOS") {
+                threatPrefix = "CAUTION";
+            };
+            
+            backstoryUI.threatAssessment = threatPrefix + " | " + gangData.gangName;
+            if density >= 2 {
+                backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | " + gangData.role;
+                if gangData.bodyCount > 0 {
+                    backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Bodies: " + IntToString(gangData.bodyCount);
+                };
+            };
+            if density >= 3 {
+                if ArraySize(gangData.distinguishingMarks) > 0 {
+                    backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Marks: " + gangData.distinguishingMarks[0];
+                };
+            };
+        } else if !isNCPD {
             let temperament = PsychProfileManager.GetTemperament(psych.stabilityScore, psych.threatLevel);
             let disposition = PsychProfileManager.GetDisposition(seed + 5500, archetype);
             
@@ -202,23 +259,23 @@ public class BackstoryManager {
             backstoryUI.threatAssessment = "";
         };
 
-        // Gang Affiliation Section
-        if !Equals(gangAffiliation, "NONE") {
-            let gangProfile = GangManager.GenerateGangProfile(seed + 6000, gangAffiliation);
-            backstoryUI.gangAffiliation = gangProfile.gangName + " | Rank: " + gangProfile.memberRank;
+        // Gang Affiliation Section - use detailed profiles (no rank - game shows that as NPC name)
+        if isGangMember {
+            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
+            backstoryUI.gangAffiliation = gangData.gangName + " | " + gangData.role;
             // Extra details on medium/high density
             if density >= 2 {
-                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Loyalty: " + gangProfile.loyaltyRating;
-                if density >= 3 && StrLen(gangProfile.territory) > 0 {
-                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Territory: " + gangProfile.territory;
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Loyalty: " + gangData.loyaltyRating;
+                if density >= 3 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Territory: " + gangData.territory;
                 };
             };
         } else {
             backstoryUI.gangAffiliation = "";
         };
 
-        // Rare NPC Flag - skip for NCPD, show on all density levels (it's rare enough)
-        if !isNCPD && RareNPCManager.ShouldBeRareNPC(seed + 9999) {
+        // Rare NPC Flag - skip for NCPD, Barghest, and gang members, show on all density levels (it's rare enough)
+        if !isNCPD && !isBarghest && !isGangMember && RareNPCManager.ShouldBeRareNPC(seed + 9999) {
             let rareData = RareNPCManager.Generate(seed + 10000, archetype);
             backstoryUI.rareFlag = rareData.displayFlag + " - " + rareData.rareType;
         } else {
@@ -280,12 +337,78 @@ public class BackstoryManager {
                 };
                 backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + ncpdData.dutyStatus;
             };
+        } else if isBarghest {
+            // Barghest get militia service records
+            let barghestData = BarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
+            
+            // Build display name with callsign if present
+            let displayName: String = "";
+            if NotEquals(barghestData.callsign, "") {
+                displayName = barghestData.barghestRank + " \"" + barghestData.callsign + "\" " + barghestData.fullName;
+            } else {
+                displayName = barghestData.barghestRank + " " + barghestData.fullName;
+            };
+            
+            backstoryUI.ncpdOfficer = displayName + " | MOS: " + barghestData.mos;
+            // Extra Barghest details on medium/high density
+            if density >= 2 {
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Prior: " + barghestData.formerAffiliation;
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Sector: " + barghestData.assignedSector;
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | " + IntToString(barghestData.yearsBarghest) + " yrs Barghest";
+                if density >= 3 && barghestData.confirmedKills > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Confirmed: " + IntToString(barghestData.confirmedKills);
+                };
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Loyalty: " + barghestData.loyaltyRating;
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + barghestData.dutyStatus;
+            };
+        } else if isGangMember {
+            // Gang members get detailed gang records (no rank/name - game shows that)
+            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
+            
+            backstoryUI.ncpdOfficer = gangData.role + " | " + IntToString(gangData.yearsActive) + " yrs active";
+            
+            // Extra gang details on medium/high density
+            if density >= 2 {
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Territory: " + gangData.territory;
+                
+                // Gang-specific stats
+                if Equals(gangAffiliation, "MAELSTROM") && gangData.chromePercentage > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Chrome: " + IntToString(gangData.chromePercentage) + "%";
+                };
+                if Equals(gangAffiliation, "ANIMALS") && gangData.fightWins > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Fight Record: " + IntToString(gangData.fightWins) + "W-" + IntToString(gangData.fightLosses) + "L";
+                };
+                if Equals(gangAffiliation, "VOODOO_BOYS") && gangData.systemsCompromised > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Systems Hit: " + IntToString(gangData.systemsCompromised);
+                };
+                if Equals(gangAffiliation, "SCAVENGERS") && gangData.organsHarvested > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Harvests: " + IntToString(gangData.organsHarvested);
+                };
+                if Equals(gangAffiliation, "WRAITHS") && gangData.successfulRaids > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Raids: " + IntToString(gangData.successfulRaids);
+                };
+                if Equals(gangAffiliation, "ALDECALDOS") && gangData.convoyRuns > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Convoy Runs: " + IntToString(gangData.convoyRuns);
+                };
+                if Equals(gangAffiliation, "MOXES") && gangData.peopleProtected > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Protected: " + IntToString(gangData.peopleProtected);
+                };
+                if Equals(gangAffiliation, "6TH_STREET") && NotEquals(gangData.priorService, "") {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Prior: " + gangData.priorService;
+                };
+                
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Loyalty: " + gangData.loyaltyRating;
+                if density >= 3 && gangData.bodyCount > 0 {
+                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Body Count: " + IntToString(gangData.bodyCount);
+                };
+                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + gangData.status;
+            };
         } else {
             backstoryUI.ncpdOfficer = "";
         };
 
-        // Relationships - skip for NCPD, only on medium/high density
-        if density >= 2 && !isNCPD {
+        // Relationships - skip for NCPD, Barghest, and gang members, only on medium/high density
+        if density >= 2 && !isNCPD && !isBarghest && !isGangMember {
             // Get NPC's last name so family members share it
             let npcLastName = BackstoryManager.ExtractLastName(target);
             let relations = RelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);

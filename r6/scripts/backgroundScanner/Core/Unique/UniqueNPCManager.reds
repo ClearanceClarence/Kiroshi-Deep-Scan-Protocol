@@ -7,11 +7,57 @@ public abstract class UniqueNPCManager {
     public static func IsUniqueNPC(target: wref<NPCPuppet>) -> Bool {
         let recordId = UniqueNPCManager.GetCharacterRecordId(target);
         if UniqueNPCManager.HasEntry(recordId) {
+            // Check quest requirements for specific NPCs
+            if !UniqueNPCManager.MeetsQuestRequirements(target, recordId) {
+                return false;
+            }
             return true;
         }
         // Fallback: check by display name
         let displayName = UniqueNPCManager.GetDisplayName(target);
-        return UniqueNPCManager.HasEntry(displayName);
+        if UniqueNPCManager.HasEntry(displayName) {
+            if !UniqueNPCManager.MeetsQuestRequirements(target, displayName) {
+                return false;
+            }
+            return true;
+        }
+        return false;
+    }
+
+    // Check if quest requirements are met for certain NPCs
+    public static func MeetsQuestRequirements(target: wref<NPCPuppet>, recordId: String) -> Bool {
+        let id = StrLower(recordId);
+        let game = target.GetGame();
+        
+        // Viktor - only after first ripperdoc visit (q001_01_victor)
+        if StrContains(id, "viktor") || StrContains(id, "vektor") {
+            return UniqueNPCManager.IsFactTrue(game, "q001_01_victor_done") || 
+                   UniqueNPCManager.IsFactTrue(game, "q001_done") ||
+                   UniqueNPCManager.IsQuestComplete(game, "q001_01_victor");
+        }
+        
+        // All other NPCs don't have quest requirements
+        return true;
+    }
+    
+    // Helper: Check if a game fact is set (non-zero)
+    public static func IsFactTrue(game: GameInstance, factName: String) -> Bool {
+        let qs = GameInstance.GetQuestsSystem(game);
+        if IsDefined(qs) {
+            return qs.GetFact(StringToName(factName)) > 0;
+        }
+        return false;
+    }
+    
+    // Helper: Check if a quest phase is complete via journal
+    public static func IsQuestComplete(game: GameInstance, questId: String) -> Bool {
+        let journal = GameInstance.GetJournalManager(game);
+        if IsDefined(journal) {
+            // Try to get quest state - if we've interacted with Viktor, the quest should be tracked
+            let factValue = GameInstance.GetQuestsSystem(game).GetFact(StringToName(questId));
+            return factValue > 0;
+        }
+        return false;
     }
 
     // Get the character's TweakDB record ID as a string

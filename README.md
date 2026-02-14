@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.6.1-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.6.2-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 > *Every stranger has a story. Your Kiroshi can read them all.*
@@ -68,6 +68,7 @@ When scanning NPCs, Deep Scan Protocol queries:
 | **Ethnicities** | 13 | Culturally appropriate name generation |
 | **Text Entries** | 3,312 | Lines of lore-accurate content |
 | **Relationship Types** | 4 | Family, associates, enemies, professional contacts |
+| **Gang Profiles** | 11 | Detailed profiles for all gangs + Barghest militia |
 
 ### Smart Data Filtering
 
@@ -239,7 +240,7 @@ Different NPC types receive contextually appropriate data:
 | Solomon Reed | FIA - DEEP COVER | Legendary sleeper agent |
 | Songbird (So Mi) | FIA - NETRUNNER | Blackwall-damaged. Relic bearer |
 | Kurt Hansen | BARGHEST - LEADER | PMC warlord. Controls Dogtown |
-| Rosalind Myers | NUSA - PRESIDENT | NUSA head of state |
+| Rosalind Myers | NUSA - PRESIDENT | NUSA head of state. Former Militech CEO. Unification War architect |
 | Alex | BARGHEST - INTELLIGENCE | Hansen's information specialist |
 
 ### Other Notable Characters
@@ -345,6 +346,19 @@ Event: BORN_RICH
 | Risk Score | 0-100 violence probability |
 | Loyalty Index | Corporate / Gang / Family / Self loyalty priorities |
 | Notable Traits | Leadership, paranoia, impulsivity, discipline |
+
+### Gang Profile System
+
+Comprehensive profiles for all 10 Night City gangs plus Barghest militia. Each gang has unique:
+
+| Element | Description |
+|---------|-------------|
+| Ranks | Gang-specific hierarchy (e.g., Tyger Claws use Japanese terms) |
+| Specializations | Role-appropriate jobs per gang culture |
+| Territories | Accurate Night City locations |
+| Loyalty Systems | Gang-appropriate loyalty ratings |
+| Backstories | 6+ unique backgrounds per gang |
+| Statistics | Gang-specific stats (chrome %, fight records, harvests, raids, etc.) |
 
 ---
 
@@ -691,6 +705,9 @@ r6/scripts/backgroundScanner/
 │   │   ├── SoutheastAsianNames.reds       # 100 male + 100 female + 100 last
 │   │   └── EuropeanNames.reds             # 100 male + 100 female + 100 last
 │   │
+│   ├── Barghest/
+│   │   └── BarghestProfileManager.reds    # Barghest militia profiles
+│   │
 │   ├── Coherence/
 │   │   └── CoherenceManager.reds          # Narrative coherence system
 │   │
@@ -706,8 +723,20 @@ r6/scripts/backgroundScanner/
 │   ├── Financial/
 │   │   └── FinancialProfileManager.reds   # Financial data
 │   │
-│   ├── Gang/
-│   │   └── GangManager.reds               # Gang affiliation system
+│   ├── Gang/                              # Modular gang profiles (v1.6.2)
+│   │   ├── GangManager.reds               # Gang detection & routing
+│   │   ├── GangProfileGenerator.reds      # Profile delegation
+│   │   ├── GangProfileUtils.reds          # Shared utilities & data class
+│   │   ├── TygerClawsProfile.reds         # Tyger Claws profiles
+│   │   ├── MaelstromProfile.reds          # Maelstrom profiles
+│   │   ├── ValentinosProfile.reds         # Valentinos profiles
+│   │   ├── SixthStreetProfile.reds        # 6th Street profiles
+│   │   ├── AnimalsProfile.reds            # Animals profiles
+│   │   ├── VoodooBoysProfile.reds         # Voodoo Boys profiles
+│   │   ├── MoxesProfile.reds              # Moxes profiles
+│   │   ├── ScavengersProfile.reds         # Scavengers profiles
+│   │   ├── WraithsProfile.reds            # Wraiths profiles
+│   │   └── AldecaldosProfile.reds         # Aldecaldos profiles
 │   │
 │   ├── LifePath/
 │   │   ├── LifePath.reds                  # Core lifepath class
@@ -940,6 +969,6 @@ MIT License — See LICENSE file for full details.
 ---
 
 <p align="center">
-<b>KIROSHI DEEP SCAN PROTOCOL v1.6.1</b><br>
+<b>KIROSHI DEEP SCAN PROTOCOL v1.6.2</b><br>
 <i>Every secret. Revealed.</i>
 </p>

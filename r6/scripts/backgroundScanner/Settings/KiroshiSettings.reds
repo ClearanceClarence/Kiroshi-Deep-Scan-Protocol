@@ -91,6 +91,12 @@ public class KiroshiDeepScanSettings {
     @runtimeProperty("ModSettings.displayName", "Display Pronouns")
     @runtimeProperty("ModSettings.description", "Shows pronoun information in NPC scan data. Includes they/them and neopronouns for some NPCs.")
     public let enablePronounDisplay: Bool = false;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Developer")
+    @runtimeProperty("ModSettings.displayName", "Debug Mode")
+    @runtimeProperty("ModSettings.description", "Shows raw NPC TweakDB ID and appearance name in scanner. Useful for reporting bugs or creating unique NPC entries.")
+    public let enableDebugMode: Bool = false;
 }
 
 // Static helper class for accessing settings from anywhere
@@ -187,6 +193,14 @@ public abstract class KiroshiSettings {
         let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().enablePronounDisplay;
+        }
+        return false;
+    }
+
+    public static func DebugModeEnabled() -> Bool {
+        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().enableDebugMode;
         }
         return false;
     }

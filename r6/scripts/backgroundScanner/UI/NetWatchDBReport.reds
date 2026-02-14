@@ -52,6 +52,9 @@ public class NetWatchDBReport extends inkCustomController {
     private let m_pronounsSection: wref<inkCompoundWidget>;
     private let m_pronounsValue: wref<inkText>;
 
+    private let m_debugSection: wref<inkCompoundWidget>;
+    private let m_debugValue: wref<inkText>;
+
     protected cb func OnCreate() -> Void {
         this.CreateWidgets();
     }
@@ -130,6 +133,11 @@ public class NetWatchDBReport extends inkCustomController {
         this.m_pronounsSection = this.CreateDataSection(root, "Pronouns", n"pronouns",
             new HDRColor(0.8, 0.6, 1.0, 1.0));
         this.m_pronounsValue = this.m_pronounsSection.GetWidget(n"pronouns_value") as inkText;
+
+        // Debug section - orange/amber color to stand out
+        this.m_debugSection = this.CreateDataSection(root, "Debug Info", n"debug",
+            new HDRColor(1.0, 0.6, 0.2, 1.0));
+        this.m_debugValue = this.m_debugSection.GetWidget(n"debug_value") as inkText;
     }
 
     // Alert section - bold colored header
@@ -332,6 +340,14 @@ public class NetWatchDBReport extends inkCustomController {
         } else {
             this.m_pronounsSection.SetVisible(false);
         };
+
+        // Debug Info (only shown when debug mode enabled in settings)
+        if StrLen(this.m_backstoryUI.debugInfo) > 0 {
+            this.m_debugValue.SetText(this.m_backstoryUI.debugInfo);
+            this.m_debugSection.SetVisible(true);
+        } else {
+            this.m_debugSection.SetVisible(false);
+        };
     }
 
     private func UpdateFontSizes() -> Void {
@@ -353,6 +369,7 @@ public class NetWatchDBReport extends inkCustomController {
         this.UpdateSectionFontSize(this.m_medicalSection, n"medical", headerSize, textSize);
         this.UpdateSectionFontSize(this.m_relationshipsSection, n"relationships", headerSize, textSize);
         this.UpdateSectionFontSize(this.m_pronounsSection, n"pronouns", headerSize, textSize);
+        this.UpdateSectionFontSize(this.m_debugSection, n"debug", headerSize, textSize);
     }
 
     private func UpdateSectionFontSize(section: wref<inkCompoundWidget>, name: CName, headerSize: Int32, textSize: Int32) -> Void {
