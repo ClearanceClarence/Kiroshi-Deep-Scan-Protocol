@@ -43,7 +43,7 @@ public class BackstoryManager {
 
         // Detect NCPD early - they get different treatment
         // Barghest uses Prevention archetype but are NOT NCPD - exclude them
-        let isBarghest: Bool = Equals(gangAffiliation, "BARGHEST") || StrContains(appearanceName, "barghest");
+        let isBarghest: Bool = Equals(gangAffiliation, "BARGHEST") || StrContains(appearanceName, "barghest") || StrContains(appearanceName, "kurtz");
         let isNCPD: Bool = !isBarghest && (NCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice());
 
         // Check if coherence mode is enabled in settings
@@ -262,13 +262,43 @@ public class BackstoryManager {
         // Gang Affiliation Section - use detailed profiles (no rank - game shows that as NPC name)
         if isGangMember {
             let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
-            backstoryUI.gangAffiliation = gangData.gangName + " | " + gangData.role;
+            backstoryUI.gangAffiliation = gangData.gangName + " | " + gangData.role + " | " + IntToString(gangData.yearsActive) + " yrs active";
+            
             // Extra details on medium/high density
             if density >= 2 {
-                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Loyalty: " + gangData.loyaltyRating;
-                if density >= 3 {
-                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Territory: " + gangData.territory;
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Territory: " + gangData.territory;
+                
+                // Gang-specific stats
+                if Equals(gangAffiliation, "MAELSTROM") && gangData.chromePercentage > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Chrome: " + IntToString(gangData.chromePercentage) + "%";
                 };
+                if Equals(gangAffiliation, "ANIMALS") && gangData.fightWins > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Fight Record: " + IntToString(gangData.fightWins) + "W-" + IntToString(gangData.fightLosses) + "L";
+                };
+                if Equals(gangAffiliation, "VOODOO_BOYS") && gangData.systemsCompromised > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Systems Hit: " + IntToString(gangData.systemsCompromised);
+                };
+                if Equals(gangAffiliation, "SCAVENGERS") && gangData.organsHarvested > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Harvests: " + IntToString(gangData.organsHarvested);
+                };
+                if Equals(gangAffiliation, "WRAITHS") && gangData.successfulRaids > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Raids: " + IntToString(gangData.successfulRaids);
+                };
+                if Equals(gangAffiliation, "ALDECALDOS") && gangData.convoyRuns > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Convoy Runs: " + IntToString(gangData.convoyRuns);
+                };
+                if Equals(gangAffiliation, "MOXES") && gangData.peopleProtected > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Protected: " + IntToString(gangData.peopleProtected);
+                };
+                if Equals(gangAffiliation, "6TH_STREET") && NotEquals(gangData.priorService, "") {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Prior: " + gangData.priorService;
+                };
+                
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Loyalty: " + gangData.loyaltyRating;
+                if density >= 3 && gangData.bodyCount > 0 {
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Body Count: " + IntToString(gangData.bodyCount);
+                };
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Status: " + gangData.status;
             };
         } else {
             backstoryUI.gangAffiliation = "";
@@ -338,7 +368,7 @@ public class BackstoryManager {
                 backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + ncpdData.dutyStatus;
             };
         } else if isBarghest {
-            // Barghest get militia service records
+            // Barghest get militia service records - use gangAffiliation, not ncpdOfficer
             let barghestData = BarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
             
             // Build display name with callsign if present
@@ -349,60 +379,19 @@ public class BackstoryManager {
                 displayName = barghestData.barghestRank + " " + barghestData.fullName;
             };
             
-            backstoryUI.ncpdOfficer = displayName + " | MOS: " + barghestData.mos;
+            backstoryUI.gangAffiliation = "Barghest Militia | " + displayName + " | MOS: " + barghestData.mos;
             // Extra Barghest details on medium/high density
             if density >= 2 {
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Prior: " + barghestData.formerAffiliation;
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Sector: " + barghestData.assignedSector;
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | " + IntToString(barghestData.yearsBarghest) + " yrs Barghest";
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Prior: " + barghestData.formerAffiliation;
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Sector: " + barghestData.assignedSector;
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | " + IntToString(barghestData.yearsBarghest) + " yrs Barghest";
                 if density >= 3 && barghestData.confirmedKills > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Confirmed: " + IntToString(barghestData.confirmedKills);
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Confirmed: " + IntToString(barghestData.confirmedKills);
                 };
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Loyalty: " + barghestData.loyaltyRating;
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + barghestData.dutyStatus;
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Loyalty: " + barghestData.loyaltyRating;
+                backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + " | Status: " + barghestData.dutyStatus;
             };
-        } else if isGangMember {
-            // Gang members get detailed gang records (no rank/name - game shows that)
-            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
-            
-            backstoryUI.ncpdOfficer = gangData.role + " | " + IntToString(gangData.yearsActive) + " yrs active";
-            
-            // Extra gang details on medium/high density
-            if density >= 2 {
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Territory: " + gangData.territory;
-                
-                // Gang-specific stats
-                if Equals(gangAffiliation, "MAELSTROM") && gangData.chromePercentage > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Chrome: " + IntToString(gangData.chromePercentage) + "%";
-                };
-                if Equals(gangAffiliation, "ANIMALS") && gangData.fightWins > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Fight Record: " + IntToString(gangData.fightWins) + "W-" + IntToString(gangData.fightLosses) + "L";
-                };
-                if Equals(gangAffiliation, "VOODOO_BOYS") && gangData.systemsCompromised > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Systems Hit: " + IntToString(gangData.systemsCompromised);
-                };
-                if Equals(gangAffiliation, "SCAVENGERS") && gangData.organsHarvested > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Harvests: " + IntToString(gangData.organsHarvested);
-                };
-                if Equals(gangAffiliation, "WRAITHS") && gangData.successfulRaids > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Raids: " + IntToString(gangData.successfulRaids);
-                };
-                if Equals(gangAffiliation, "ALDECALDOS") && gangData.convoyRuns > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Convoy Runs: " + IntToString(gangData.convoyRuns);
-                };
-                if Equals(gangAffiliation, "MOXES") && gangData.peopleProtected > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Protected: " + IntToString(gangData.peopleProtected);
-                };
-                if Equals(gangAffiliation, "6TH_STREET") && NotEquals(gangData.priorService, "") {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Prior: " + gangData.priorService;
-                };
-                
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Loyalty: " + gangData.loyaltyRating;
-                if density >= 3 && gangData.bodyCount > 0 {
-                    backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Body Count: " + IntToString(gangData.bodyCount);
-                };
-                backstoryUI.ncpdOfficer = backstoryUI.ncpdOfficer + " | Status: " + gangData.status;
-            };
+            backstoryUI.ncpdOfficer = "";
         } else {
             backstoryUI.ncpdOfficer = "";
         };

@@ -36,6 +36,11 @@ public class TygerClawsProfile {
         ArrayPush(specs, "Human Trafficking");
         ArrayPush(specs, "Drug Distribution");
         ArrayPush(specs, "Arasaka Liaison");
+        ArrayPush(specs, "Money Laundering");
+        ArrayPush(specs, "Netrunner Ops");
+        ArrayPush(specs, "Street Racing Circuit");
+        ArrayPush(specs, "Blackmail/Extortion");
+        ArrayPush(specs, "Import/Export Coordination");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -67,6 +72,15 @@ public class TygerClawsProfile {
         if RandRange(seed + 720, 1, 100) <= 40 {
             ArrayPush(tattoos, "Full irezumi back piece");
         }
+        if RandRange(seed + 730, 1, 100) <= 50 {
+            ArrayPush(tattoos, "Neon dragon sleeve");
+        }
+        if RandRange(seed + 740, 1, 100) <= 30 {
+            ArrayPush(tattoos, "Missing finger tip (yubitsume)");
+        }
+        if RandRange(seed + 750, 1, 100) <= 35 {
+            ArrayPush(tattoos, "Subdermal luminous ink (face)");
+        }
         profile.distinguishingMarks = tattoos;
         
         // Backstory
@@ -77,6 +91,12 @@ public class TygerClawsProfile {
         ArrayPush(backstories, "Street kid from Kabuki. Joined young, rose fast. The neon runs through these veins now.");
         ArrayPush(backstories, "Recruited from Japantown youth. Proved loyalty through blood. Never looked back.");
         ArrayPush(backstories, "Debt to the Claws could only be paid one way - service. Now the debt is someone else's problem.");
+        ArrayPush(backstories, "Ran a pachinko parlor that was already Claw territory. Paying protection became joining the family.");
+        ArrayPush(backstories, "Father was Shatei, grandfather was Kyodai. Blood obligation. Refusing was never an option.");
+        ArrayPush(backstories, "Won a street race in Japantown. Claws noticed. Driving skills got a foot in the door - blade skills kept it open.");
+        ArrayPush(backstories, "Former joytoy at Clouds. Saw too much. The Claws offered a new role - one where nobody touches you uninvited.");
+        ArrayPush(backstories, "Dishonored a rival gang boss in a card game. Needed protection fast. Tyger Claws respect a good gambler.");
+        ArrayPush(backstories, "Served time in a NUSA federal prison. Met Claw brothers inside. Came out with a new family and new purpose.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -86,6 +106,11 @@ public class TygerClawsProfile {
         ArrayPush(activities, "Enforcing Arasaka interests in Westbrook.");
         ArrayPush(activities, "Running security at the clubs. Eyes everywhere.");
         ArrayPush(activities, "Managing joytoy operations. Premium clientele only.");
+        ArrayPush(activities, "Laundering eddies through pachinko parlors. Clean money, dirty work.");
+        ArrayPush(activities, "Street racing circuit enforcement. House always wins.");
+        ArrayPush(activities, "Meeting with Arasaka contact. New shipment arrangements.");
+        ArrayPush(activities, "Disciplining a member who skimmed off collections. Yubitsume pending.");
+        ArrayPush(activities, "Expanding influence into Charter Hill. New restaurant fronts opening.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         // Status

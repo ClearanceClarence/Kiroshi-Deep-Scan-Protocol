@@ -37,6 +37,11 @@ public class AldecaldosProfile {
         ArrayPush(specs, "Tech Specialist");
         ArrayPush(specs, "Convoy Defense");
         ArrayPush(specs, "Supply Management");
+        ArrayPush(specs, "Solar Tech Maintenance");
+        ArrayPush(specs, "Animal Husbandry");
+        ArrayPush(specs, "Water Purification");
+        ArrayPush(specs, "Communications/Radio");
+        ArrayPush(specs, "Youth Training");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -70,6 +75,15 @@ public class AldecaldosProfile {
         if RandRange(seed + 720, 1, 100) <= 40 {
             ArrayPush(marks, "Family memorial marks");
         }
+        if RandRange(seed + 730, 1, 100) <= 55 {
+            ArrayPush(marks, "Calloused mechanic hands");
+        }
+        if RandRange(seed + 740, 1, 100) <= 35 {
+            ArrayPush(marks, "Desert sun tan lines");
+        }
+        if RandRange(seed + 750, 1, 100) <= 30 {
+            ArrayPush(marks, "Clan beadwork jewelry");
+        }
         profile.distinguishingMarks = marks;
         
         // Backstory
@@ -80,6 +94,12 @@ public class AldecaldosProfile {
         ArrayPush(backstories, "Outsider taken in when no one else would. Clan doesn't judge where you're from, only who you become.");
         ArrayPush(backstories, "Former corpo who woke up. Everything they said about nomads was lies. Found truth on the road.");
         ArrayPush(backstories, "Married into the clan. Took time to earn trust. Now would die for familia without hesitation.");
+        ArrayPush(backstories, "Orphaned by a Wraith raid. Aldecaldos found the wreckage and a scared kid. Raised as their own.");
+        ArrayPush(backstories, "Mechanic who kept a convoy alive through a three-day sandstorm. Earned a permanent spot that night.");
+        ArrayPush(backstories, "Ran from a corpo contract on my life. Aldecaldos don't ask questions when someone needs shelter.");
+        ArrayPush(backstories, "Grew up fixing solar panels at Rocky Ridge. Every watt of power is a small victory against the wasteland.");
+        ArrayPush(backstories, "Former street kid from Heywood. City was eating me alive. The open road healed what concrete broke.");
+        ArrayPush(backstories, "Voted into the clan by council after smuggling medical supplies through Militech checkpoints. Actions earned the name.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -89,6 +109,11 @@ public class AldecaldosProfile {
         ArrayPush(activities, "Convoy escort. Getting goods through Wraith territory.");
         ArrayPush(activities, "Tech salvage in the wastes. One person's trash is our survival.");
         ArrayPush(activities, "Clan gathering. Family comes first, always.");
+        ArrayPush(activities, "Solar array expansion at Rocky Ridge. More power means more independence.");
+        ArrayPush(activities, "Water purification rig repair. Can't afford downtime in the desert.");
+        ArrayPush(activities, "Negotiating trade deal with a Night City fixer. Fair terms or no deal.");
+        ArrayPush(activities, "Scouting new camp locations. Need to stay ahead of the Wraith patrols.");
+        ArrayPush(activities, "Teaching younger members to drive and shoot. Survival skills are a birthright.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);

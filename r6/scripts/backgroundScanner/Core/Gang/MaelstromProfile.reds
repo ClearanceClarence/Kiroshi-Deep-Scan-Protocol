@@ -36,6 +36,11 @@ public class MaelstromProfile {
         ArrayPush(specs, "Arms Dealing");
         ArrayPush(specs, "Intimidation");
         ArrayPush(specs, "Borg Conversion");
+        ArrayPush(specs, "ICE Cracking");
+        ArrayPush(specs, "Flathead Deployment");
+        ArrayPush(specs, "Sensory Override Tech");
+        ArrayPush(specs, "Pain Editor Tuning");
+        ArrayPush(specs, "Combat Stimulant Brewing");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -70,6 +75,15 @@ public class MaelstromProfile {
         if RandRange(seed + 720, 1, 100) <= 30 {
             ArrayPush(marks, "Full limb conversions");
         }
+        if RandRange(seed + 730, 1, 100) <= 45 {
+            ArrayPush(marks, "Exposed wiring along jawline");
+        }
+        if RandRange(seed + 740, 1, 100) <= 35 {
+            ArrayPush(marks, "Vocal modulator distortion");
+        }
+        if RandRange(seed + 750, 1, 100) <= 25 {
+            ArrayPush(marks, "Subdermal LED arrays");
+        }
         profile.distinguishingMarks = marks;
         
         // Backstory
@@ -80,6 +94,12 @@ public class MaelstromProfile {
         ArrayPush(backstories, "Born defective. Meat body was failing. Maelstrom offered replacement - piece by piece, becoming perfect.");
         ArrayPush(backstories, "Street doc gone too far. Lost license, found family. Now installs chrome for those worthy of ascension.");
         ArrayPush(backstories, "They took everything in a raid. Rebuilt from scrap and rage. More machine than meat now. Stronger.");
+        ArrayPush(backstories, "Flatlined on the operating table. Came back wrong - or came back right. Depends who's asking. Chrome remembers.");
+        ArrayPush(backstories, "Worked the All Foods Plant before Brick's time. Watched the collective evolve. Every upgrade brings clarity.");
+        ArrayPush(backstories, "Military cyberware went haywire after discharge. Every clinic turned away. Maelstrom said come as you are.");
+        ArrayPush(backstories, "Ran with Scavs first. Realized they waste what they take. Maelstrom uses every piece. Efficiency over butchery.");
+        ArrayPush(backstories, "Used to hear the machines whispering. Therapists called it psychosis. Maelstrom called it a gift.");
+        ArrayPush(backstories, "Totentanz regular turned true believer. The bass broke something open. Chrome filled the cracks.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -89,6 +109,11 @@ public class MaelstromProfile {
         ArrayPush(activities, "Running cyberware through Northside. Military grade.");
         ArrayPush(activities, "Recruitment drive. Finding those ready for conversion.");
         ArrayPush(activities, "Territory dispute with Scavs. They take organs. We take everything.");
+        ArrayPush(activities, "Testing prototype optics ripped from an Arasaka shipment. Promising results.");
+        ArrayPush(activities, "Borg conversion ceremony at the plant. Another brother ascends tonight.");
+        ArrayPush(activities, "Raiding a ripperdoc clinic for surgical tools. Ours broke during last install.");
+        ArrayPush(activities, "Flathead recon sweep of Watson tunnels. Mapping new expansion routes.");
+        ArrayPush(activities, "Intercepting Militech chrome transport. Driver was persuaded to cooperate.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);

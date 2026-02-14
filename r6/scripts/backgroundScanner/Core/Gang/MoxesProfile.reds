@@ -31,6 +31,11 @@ public class MoxesProfile {
         ArrayPush(specs, "Safe House Ops");
         ArrayPush(specs, "Intelligence");
         ArrayPush(specs, "Self-Defense Training");
+        ArrayPush(specs, "Victim Counseling");
+        ArrayPush(specs, "Surveillance/Counter-Surveillance");
+        ArrayPush(specs, "Legal Aid Coordination");
+        ArrayPush(specs, "Supply Procurement");
+        ArrayPush(specs, "Communications/Alerts");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -63,6 +68,15 @@ public class MoxesProfile {
         if RandRange(seed + 720, 1, 100) <= 50 {
             ArrayPush(marks, "Lizzie memorial mark");
         }
+        if RandRange(seed + 730, 1, 100) <= 45 {
+            ArrayPush(marks, "Neon hair coloring");
+        }
+        if RandRange(seed + 740, 1, 100) <= 35 {
+            ArrayPush(marks, "Self-defense scarring");
+        }
+        if RandRange(seed + 750, 1, 100) <= 30 {
+            ArrayPush(marks, "Customized baseball bat");
+        }
         profile.distinguishingMarks = marks;
         
         // Backstory
@@ -73,6 +87,12 @@ public class MoxesProfile {
         ArrayPush(backstories, "Former joytoy who fought back. Moxes welcomed and trained. Now a guardian instead of prey.");
         ArrayPush(backstories, "Believed in Lizzie's mission. Her death made it stronger. The cause continues.");
         ArrayPush(backstories, "Outsider who proved dedication. Moxes judge by actions, not background. Found family.");
+        ArrayPush(backstories, "Escaped a Tyger Claw operation. Moxes took in, patched up, and gave a bat. Repaying that debt every day.");
+        ArrayPush(backstories, "BD editor who saw too many snuff scrolls. Decided to fight the source. Moxes were the only ones who cared.");
+        ArrayPush(backstories, "Grew up watching friends disappear into trafficking networks. Moxes were the first to actually do something about it.");
+        ArrayPush(backstories, "Former NCPD who quit when brass buried trafficking cases. Found the Moxes actually enforce justice.");
+        ArrayPush(backstories, "Transitioned on the streets with no support. Moxes provided safety, medical contacts, and belonging.");
+        ArrayPush(backstories, "Bartender at Lizzie's who picked up a weapon when Claws came knocking. Never put it back down.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -82,6 +102,11 @@ public class MoxesProfile {
         ArrayPush(activities, "Investigating trafficking reports. Predators don't operate in our territory.");
         ArrayPush(activities, "Community self-defense class. Everyone deserves to feel safe.");
         ArrayPush(activities, "BD production oversight. Ethical content, fair compensation.");
+        ArrayPush(activities, "Raided a Scav den near Kabuki. Three workers recovered alive.");
+        ArrayPush(activities, "Setting up a new safe house. Location classified, need-to-know only.");
+        ArrayPush(activities, "Gathering intel on a Tyger Claw trafficking pipeline. Planning intervention.");
+        ArrayPush(activities, "Medical supply run for workers without clinic access. No questions asked.");
+        ArrayPush(activities, "Coordinating with a fixer on a client who roughed up a joytoy. Justice pending.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);

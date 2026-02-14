@@ -33,8 +33,8 @@ public class GangManager {
         if StrContains(appearanceName, "aldecaldo") {
             return "ALDECALDOS";
         }
-        // Barghest - Dogtown militia
-        if StrContains(appearanceName, "barghest") {
+        // Barghest - Dogtown militia (Kurt Hansen's army)
+        if StrContains(appearanceName, "barghest") || StrContains(appearanceName, "kurtz") {
             return "BARGHEST";
         }
 

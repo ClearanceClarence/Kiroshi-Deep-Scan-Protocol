@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.6.2-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.7-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 > *Every stranger has a story. Your Kiroshi can read them all.*
@@ -59,9 +59,9 @@ When scanning NPCs, Deep Scan Protocol queries:
 
 | Feature | Count | Description |
 |---------|-------|-------------|
-| **Unique NPC Entries** | 82 | Hand-crafted lore-accurate backstories for named characters |
-| **Life Events** | 698 | Procedural backstory building blocks with stat modifiers |
-| **Special Classifications** | 30 | Hidden status flags for rare NPCs |
+| **Unique NPC Entries** | 173 | Hand-crafted lore-accurate backstories for named characters |
+| **Life Events** | 699 | Procedural backstory building blocks with stat modifiers |
+| **Special Classifications** | 90 | Hidden status flags for rare NPCs |
 | **Name Combinations** | 260,000+ | Unique full names across all ethnicities |
 | **Name Entries** | 3,900 | Individual names (100 male + 100 female + 100 last per ethnicity) |
 | **Street Aliases** | 120 | Gang associate nicknames |
@@ -86,7 +86,7 @@ Different NPC types receive contextually appropriate data:
 
 ## Unique NPC Database
 
-82 named characters have hand-written, lore-accurate backstories that completely override procedural generation. These entries feature custom classifications, detailed backgrounds, threat assessments, and dynamic quest states.
+82 named characters have hand-written, lore-accurate backstories that completely override procedural generation. These entries feature custom classifications, detailed backgrounds, threat assessments, and dynamic quest states. An additional 91 NPCs from across Night City also have unique entries, bringing the total to 173.
 
 ### Arasaka Corporation
 
@@ -273,7 +273,7 @@ These characters have entries that update based on game progression:
 
 ### Lifepath Events
 
-698 unique events build procedural backstories. Each event includes gender-specific text, stat modifiers, and lifepath weighting.
+699 unique events build procedural backstories. Each event includes gender-specific text, stat modifiers, and lifepath weighting.
 
 | Category | Count | Examples |
 |----------|-------|----------|
@@ -357,14 +357,14 @@ Comprehensive profiles for all 10 Night City gangs plus Barghest militia. Each g
 | Specializations | Role-appropriate jobs per gang culture |
 | Territories | Accurate Night City locations |
 | Loyalty Systems | Gang-appropriate loyalty ratings |
-| Backstories | 6+ unique backgrounds per gang |
+| Backstories | 12+ unique backgrounds per gang |
 | Statistics | Gang-specific stats (chrome %, fight records, harvests, raids, etc.) |
 
 ---
 
 ## Special Classifications
 
-30 rare NPC types appear at configurable odds (default 1:750). These citizens appear completely normal until scanned, revealing hidden status flags.
+90 rare NPC types appear at configurable odds (default 1:750). These citizens appear completely normal until scanned, revealing hidden status flags.
 
 ### Intelligence Assets
 
@@ -376,14 +376,24 @@ Comprehensive profiles for all 10 Night City gangs plus Barghest militia. Each g
 | GANG_INFILTRATOR | Law enforcement asset inside gang structure | HIGH |
 | FIXER_ASSET | Confidential informant on fixer payroll | MODERATE |
 | DATA_COURIER | Carries sensitive data in cranial storage | HIGH |
+| NCPD_INFORMANT | Registered confidential informant embedded in gang | LOW |
+| DRAGON_COURIER | Active courier on Kang Tao's smuggling pipeline | MODERATE |
+| DARK_NET_LEGEND | Physical identity behind legendary dark net persona | MODERATE |
+| SMUGGLER_TUNNEL_OPERATOR | Operates Night City underground smuggling tunnels | MODERATE |
 
-### Corporate Refugees
+### Corporate
 
 | Classification | Description | Danger Level |
 |----------------|-------------|--------------|
 | CORPO_WHISTLEBLOWER | Leaked corporate secrets, hunted by former employer | EXTREME |
 | CORPO_DEFECTOR | Fled corporation with sensitive data or technology | EXTREME |
+| CORPO_HEIR_HIDING | Runaway heir to corporate dynasty living undercover | LOW |
+| CORPO_ASSET_FROZEN | All assets seized by corporation, financial serf | LOW |
+| CORPO_INTERN_TRAPPED | Locked into predatory decades-long unpaid contract | NONE |
+| CORPO_DEBT_SLAVE | Inherited generational corporate debt, never payable | LOW |
+| INDENTURED_CORPO | Under indentured servitude contract, corporate property | LOW |
 | BLACKMAIL_VICTIM | Being leveraged by unknown party, unpredictable | MODERATE |
+| PROXY_VOTER | Voting in elections using multiple stolen identities | LOW |
 
 ### High-Value Targets
 
@@ -393,19 +403,68 @@ Comprehensive profiles for all 10 Night City gangs plus Barghest militia. Each g
 | WITNESS | Saw something they shouldn't have, marked | HIGH |
 | HUNTED | Multiple factions actively seeking termination | EXTREME |
 | MAXTAC_TARGET | On MaxTac priority elimination list | EXTREME |
+| ACTIVE_BOUNTY | Active contract with bounty hunters assigned | HIGH |
+| REAPER_CONTRACT | Assassination order with countdown timer | VICTIM |
 | DEBT_COLLECTION | Marked by corporate debt collectors | MODERATE |
 | ORGAN_MARKED | Flagged by scavenger organ harvesting networks | HIGH |
+| MISSING_PERSON | Matches biometrics of officially deceased/missing individual | LOW |
 
-### Medical Anomalies
+### Medical & Biological
 
 | Classification | Description | Danger Level |
 |----------------|-------------|--------------|
 | PRE_CYBERPSYCHO | Showing early cyberpsychosis markers, unstable | EXTREME |
+| CYBERPSYCHO_RECOVERED | Recovered cyberpsycho under monitoring, relapse possible | MODERATE |
 | CLONE_SUBJECT | Product of illegal cloning operation | HIGH |
 | EXPERIMENTAL_SUBJECT | Survived corporate medical experimentation | HIGH |
 | ENGRAM_CANDIDATE | Flagged for Soulkiller compatibility | HIGH |
 | RELIC_COMPATIBLE | Rare biology compatible with Relic technology | EXTREME |
-| TRAUMA_TEAM_MARKED | Platinum coverage or marked for priority extraction | MODERATE |
+| TRAUMA_TEAM_MARKED | Flagged as DO NOT RESUSCITATE in TT database | MODERATE |
+| IMMUNE_ANOMALY | Anomalous immune system, zero cyberware rejection | LOW |
+| GENETIC_CHIMERA | Two distinct genetic profiles, forensically invisible | LOW |
+| BIOPLAGUE_CARRIER | Carries dormant pathogen or nanotech contamination | BIOHAZARD |
+| RADIATION_EXPOSURE | Significant radiation exposure with genetic anomalies | LOW |
+| FLATLINE_REVIVED | Clinically dead then spontaneously revived, cause unknown | LOW |
+| CONTAMINATED_SCOP | Biomarkers from contaminated SCOP food supply | NONE |
+
+### Neural & Cyberware
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| NEURAL_DIVERGENT | Anomalous neural architecture, extreme quickhack resistance | MODERATE |
+| UNREGISTERED_CHROME | Carrying unregistered military-grade cyberware | HIGH |
+| INFECTED_FIRMWARE | Implants contain dormant malware, may override motor functions | MODERATE |
+| IMPLANT_BOMB | Carries concealed explosive implant with remote trigger | EXTREME |
+| DOLL_CHIP_SLEEPER | Dormant behavioral modification chip, remote activation capable | MODERATE |
+| MEMORY_WIPED | Professional memory erasure, true identity irrecoverable | UNKNOWN |
+| SIGNAL_CARRIER | Broadcasting encrypted signal from neural implant involuntarily | LOW |
+| BLACK_ICE_SURVIVOR | Survived fatal Black ICE encounter, residual neural damage | MODERATE |
+| BRAINDANCE_ADDICT | Severe BD addiction, cannot distinguish memories from reality | LOW |
+
+### AI & Digital
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| AI_CONTACT | In communication with rogue AI beyond Blackwall | EXTREME |
+| AI_PUPPET | Behavioral patterns consistent with external AI control | EXTREME |
+| BLACKWALL_TOUCHED | Confirmed contact with entity beyond the Blackwall | UNKNOWN |
+| DELAMAIN_GLITCH | Neural implant contains Delamain AI personality fragment | MODERATE |
+| GHOST_IN_MACHINE | No physical existence prior to recent years, possibly non-human | UNKNOWN |
+| PERSONALITY_FRAGMENT | Carries partial personality overlay from engram contamination | UNPREDICTABLE |
+| SOUL_SPLIT | Consciousness exists in multiple locations simultaneously | UNPREDICTABLE |
+| SOULKILLER_SURVIVOR | Survived Soulkiller extraction, both copy and original exist | LOW |
+| ARASAKA_ENGRAM_ECHO | Exhibits behavioral patterns matching Mikoshi-stored engram | LOW |
+| TECHNO_NECRO | Practicing illegal engram manipulation and trafficking | MODERATE |
+
+### Covert Programs
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| NIGHT_CORP_SUBJECT | Active test subject in Night Corp neural programming initiative | UNKNOWN |
+| PERALEZ_PROTOCOL | Undergoing same behavioral modification as political figures | UNKNOWN |
+| DREAMTECH_VICTIM | Unwitting victim of dream-layer neural programming | MODERATE |
+| SYNTHETIC_SLEEPER | Contains lab-grown synthetic biological tissue at cellular level | UNKNOWN |
+| DEEP_FAKE_IDENTITY | Entire identity is AI-generated, true identity irrecoverable | UNKNOWN |
 
 ### Underground
 
@@ -414,8 +473,11 @@ Comprehensive profiles for all 10 Night City gangs plus Barghest militia. Each g
 | HIDDEN_NETRUNNER | Elite netrunner operating in civilian disguise | EXTREME |
 | RETIRED_LEGEND | Former legendary merc/operative, still dangerous | HIGH |
 | LEGACY_CHARACTER | Connected to major historical events | MODERATE |
+| ILLEGAL_BD_PRODUCER | Producer of illegal XBD content | HIGH |
+| WETWORK_RETIRED | Retired corporate assassination operative | EXTREME |
+| MAXTAC_WASHOUT | Former MaxTac operative, retains training and augmentation | EXTREME |
 
-### Outcasts
+### Outcasts & Survivors
 
 | Classification | Description | Danger Level |
 |----------------|-------------|--------------|
@@ -423,13 +485,31 @@ Comprehensive profiles for all 10 Night City gangs plus Barghest militia. Each g
 | MILITARY_AWOL | Deserter from NUSA or corporate military | HIGH |
 | NOMAD_EXILE | Cast out from their clan, no backup | MODERATE |
 | CULT_ESCAPEE | Fled from dangerous organization | MODERATE |
+| COMBAT_ZONE_SURVIVOR | Survived major Night City disaster or conflict | MODERATE |
+| GHOST_TOWN_SURVIVOR | Last resident of abandoned settlement | LOW |
+| FERAL_ZONE_BORN | Born in dead zone with zero civilization contact | LOW |
+| CHILD_SOLDIER_GROWN | Former child combatant from corporate war | MODERATE |
+| CARGO_STOWAWAY | Arrived as undocumented stowaway, exists outside all systems | NONE |
+| SCOP_FARMER_REFUGEE | Fled agricultural collapse zone, potential whistleblower | NONE |
+
+### Identity & Records
+
+| Classification | Description | Danger Level |
+|----------------|-------------|--------------|
+| IDENTITY_STOLEN | Living under stolen identity, biometrics mismatch | UNKNOWN |
+| BURIED_PAST | Entire history professionally erased, military-grade scrub | UNKNOWN |
+| ILLEGAL_PROCREATION | Born outside licensed procreation system, no records | NONE |
+| CHRONO_DISPLACED | Cryogenically preserved and recently revived | NONE |
+| ORBITAL_RETURNEE | Lived off-world, possesses rare orbital knowledge | LOW |
+| POLITICAL_DISSIDENT | Flagged for anti-corporate or separatist political activity | LOW |
+| PRECOG_SUBJECT | Demonstrates statistically impossible predictive accuracy | LOW |
 
 ### Anomalous
 
 | Classification | Description | Danger Level |
 |----------------|-------------|--------------|
-| AI_CONTACT | In communication with rogue AI beyond Blackwall | EXTREME |
 | TIME_ANOMALY | Temporal displacement markers detected | UNKNOWN |
+| ARASAKA_BLOODLINE | Genetic match to hidden branch of Arasaka family | LOW |
 
 ---
 
@@ -690,7 +770,7 @@ r6/scripts/backgroundScanner/
 │   ├── CrowdWealth.reds                   # Wealth indicators
 │   ├── ScannerBackstory.reds              # Scanner data structure
 │   │
-│   ├── Names/                             # Modular name system (v1.6.1)
+│   ├── Names/                             # Modular name system
 │   │   ├── AmericanNames.reds             # 100 male + 100 female + 100 last
 │   │   ├── AfricanAmericanNames.reds      # 100 male + 100 female + 100 last
 │   │   ├── HispanicNames.reds             # 100 male + 100 female + 100 last
@@ -723,7 +803,7 @@ r6/scripts/backgroundScanner/
 │   ├── Financial/
 │   │   └── FinancialProfileManager.reds   # Financial data
 │   │
-│   ├── Gang/                              # Modular gang profiles (v1.6.2)
+│   ├── Gang/                              # Modular gang profiles (v1.7)
 │   │   ├── GangManager.reds               # Gang detection & routing
 │   │   ├── GangProfileGenerator.reds      # Profile delegation
 │   │   ├── GangProfileUtils.reds          # Shared utilities & data class
@@ -741,7 +821,7 @@ r6/scripts/backgroundScanner/
 │   ├── LifePath/
 │   │   ├── LifePath.reds                  # Core lifepath class
 │   │   ├── LifePathEvent.reds             # Event with stat modifiers
-│   │   ├── LifePathEvents.reds            # 698 event definitions
+│   │   ├── LifePathEvents.reds            # 699 event definitions
 │   │   └── LifePathPossibilities.reds     # Weighted event selection
 │   │
 │   ├── Medical/
@@ -754,7 +834,7 @@ r6/scripts/backgroundScanner/
 │   │   └── PsychProfileManager.reds       # Psychological profiles
 │   │
 │   ├── Rare/
-│   │   └── RareNPCManager.reds            # 30 special classifications
+│   │   └── RareNPCManager.reds            # 90 special classifications
 │   │
 │   ├── Relationships/
 │   │   └── RelationshipsManager.reds      # NamePool & relationships
@@ -762,7 +842,7 @@ r6/scripts/backgroundScanner/
 │   └── Unique/
 │       ├── UniqueNPCData.reds             # Unique NPC data structure
 │       ├── UniqueNPCManager.reds          # Detection & lookup
-│       └── UniqueNPCEntries.reds          # 82 character entries
+│       └── UniqueNPCEntries.reds          # 173 character entries
 │
 ├── Overrides/
 │   ├── ScannerNPCBodyGameController.reds  # Scanner UI injection
@@ -907,7 +987,7 @@ A: Yes. Blood relatives (parents, siblings, grandparents, children) now extract 
 
 **Q: How do I find Special Classification NPCs?**
 
-A: Keep scanning. Default rarity is 1 in 750. You can lower this to 1 in 250 (Common) in Mod Settings for more frequent encounters. There are 30 different classifications ranging from sleeper agents to pre-cyberpsychos.
+A: Keep scanning. Default rarity is 1 in 750. You can lower this to 1 in 250 (Common) in Mod Settings for more frequent encounters. There are 90 different classifications ranging from sleeper agents to pre-cyberpsychos.
 
 **Q: Why don't Militech soldiers and Arasaka ninjas show backstories?**
 
@@ -915,7 +995,7 @@ A: Military combat NPCs (soldiers, ninjas, mechs, MaxTac, Trauma Team) display v
 
 **Q: Does this work with Phantom Liberty?**
 
-A: Yes. Version 1.6 includes unique hand-crafted entries for Solomon Reed, Songbird, Kurt Hansen, President Myers, and Alex. Dogtown NPCs generate procedural backstories normally.
+A: Yes. Version 1.7 includes unique hand-crafted entries for Solomon Reed, Songbird, Kurt Hansen, President Myers, and Alex. Dogtown NPCs generate procedural backstories normally.
 
 **Q: What does Narrative Coherence actually do?**
 
@@ -945,6 +1025,17 @@ print(Game.GetTargetingSystem():GetLookAtObject(GetPlayer(), false, false):GetRe
 
 This prints the NPC's TweakDBID for identification.
 
+### For NPC Not Detected Correctly
+
+Open CET console, look at the NPC, and run:
+```lua
+print(Game.GetTargetingSystem():GetLookAtObject(GetPlayer(), false, false):GetCurrentAppearanceName())
+```
+
+This prints the appearance name, which helps identify NPCs that use unexpected appearance patterns.
+
+Alternatively, enable **Debug Mode** in Mod Settings Menu → Kiroshi Deep Scan → Developer, then scan the NPC and screenshot the scan info to include in your bug report.
+
 ### For Incorrect Data Display
 
 Note the NPC type, location, and what appeared wrong. Screenshots help.
@@ -969,6 +1060,6 @@ MIT License — See LICENSE file for full details.
 ---
 
 <p align="center">
-<b>KIROSHI DEEP SCAN PROTOCOL v1.6.2</b><br>
+<b>KIROSHI DEEP SCAN PROTOCOL v1.7</b><br>
 <i>Every secret. Revealed.</i>
 </p>

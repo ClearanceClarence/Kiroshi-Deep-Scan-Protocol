@@ -37,6 +37,11 @@ public class VoodooBoysProfile {
         ArrayPush(specs, "Territory Defense");
         ArrayPush(specs, "Surveillance");
         ArrayPush(specs, "Wetwork Support");
+        ArrayPush(specs, "Daemon Crafting");
+        ArrayPush(specs, "Signal Jamming");
+        ArrayPush(specs, "Dead Drop Networks");
+        ArrayPush(specs, "Rogue AI Containment");
+        ArrayPush(specs, "Community Net Access");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -71,6 +76,15 @@ public class VoodooBoysProfile {
         if RandRange(seed + 720, 1, 100) <= 40 {
             ArrayPush(marks, "Haitian spiritual symbols");
         }
+        if RandRange(seed + 730, 1, 100) <= 50 {
+            ArrayPush(marks, "Bloodshot eyes from deep dives");
+        }
+        if RandRange(seed + 740, 1, 100) <= 35 {
+            ArrayPush(marks, "Neural burn scarring at temples");
+        }
+        if RandRange(seed + 750, 1, 100) <= 30 {
+            ArrayPush(marks, "Protective gris-gris charms");
+        }
         profile.distinguishingMarks = marks;
         
         // Backstory
@@ -81,6 +95,12 @@ public class VoodooBoysProfile {
         ArrayPush(backstories, "Grew up with a deck in hand. Natural talent caught Brigitte's attention. Trained in ways outsiders never see.");
         ArrayPush(backstories, "Outsider who proved loyalty. Rare for non-Haitians. The spirits accepted - that's what matters.");
         ArrayPush(backstories, "Lost family to corpo data theft. Learned to fight back in the Net. VDBs gave purpose to the rage.");
+        ArrayPush(backstories, "Grandmother was a real mambo back in Haiti. Said the loa would find new homes. She was right - they live in the Net.");
+        ArrayPush(backstories, "NetWatch killed a friend during a raid. Pacifica doesn't forget. The Blackwall is their weapon - it will be ours.");
+        ArrayPush(backstories, "Grew up in the ruins when Pacifica was abandoned. No corps came to help. VDBs built something from nothing.");
+        ArrayPush(backstories, "Flatlined during a deep dive and saw what waits beyond. Came back different. The others understand.");
+        ArrayPush(backstories, "Former corpo netrunner who discovered what NetWatch really guards. Defected to the only people seeking real answers.");
+        ArrayPush(backstories, "Second generation Pacifica. Parents built this community with bare hands. Protecting it with code and will.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -90,6 +110,11 @@ public class VoodooBoysProfile {
         ArrayPush(activities, "Protecting Pacifica servers. Outsiders keep probing. Keep failing.");
         ArrayPush(activities, "Ritual dive scheduled. Contacting the other side requires preparation.");
         ArrayPush(activities, "Training new runners. Knowledge passes to the worthy.");
+        ArrayPush(activities, "Intercepted NetWatch probe near Coastview. Traced and neutralized.");
+        ArrayPush(activities, "Daemon deployment across Night City infrastructure. Sleeper protocol.");
+        ArrayPush(activities, "Community network maintenance. Pacifica stays connected on our terms.");
+        ArrayPush(activities, "Encrypted data auction. Corpo secrets fetch premium prices.");
+        ArrayPush(activities, "Blackwall fluctuation detected. Council convened. Something is changing.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);

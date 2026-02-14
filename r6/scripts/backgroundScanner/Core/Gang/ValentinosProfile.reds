@@ -37,6 +37,11 @@ public class ValentinosProfile {
         ArrayPush(specs, "Community Relations");
         ArrayPush(specs, "Debt Collection");
         ArrayPush(specs, "Honor Enforcement");
+        ArrayPush(specs, "Street Racing");
+        ArrayPush(specs, "Fencing Stolen Goods");
+        ArrayPush(specs, "Lowrider Mechanic");
+        ArrayPush(specs, "Recruitment/Initiation");
+        ArrayPush(specs, "Gambling Operations");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -71,6 +76,15 @@ public class ValentinosProfile {
         if RandRange(seed + 730, 1, 100) <= 40 {
             ArrayPush(tattoos, "Memorial portraits");
         }
+        if RandRange(seed + 740, 1, 100) <= 55 {
+            ArrayPush(tattoos, "Gold tooth implants");
+        }
+        if RandRange(seed + 750, 1, 100) <= 35 {
+            ArrayPush(tattoos, "Rosary bead wrist tattoo");
+        }
+        if RandRange(seed + 760, 1, 100) <= 30 {
+            ArrayPush(tattoos, "Valentino cross on neck");
+        }
         profile.distinguishingMarks = tattoos;
         
         // Backstory
@@ -81,6 +95,12 @@ public class ValentinosProfile {
         ArrayPush(backstories, "Started boosting cars young. Valentinos saw potential. Now handling bigger jobs for the familia.");
         ArrayPush(backstories, "Came from nothing. Valentinos offered respect, purpose, brotherhood. Would die for these streets.");
         ArrayPush(backstories, "Ex-military, returned to Heywood. Skills serve the community now. La familia needed soldiers.");
+        ArrayPush(backstories, "Crossed the border with nothing but a prayer. Valentinos were the first to offer a hand. Owe them everything.");
+        ArrayPush(backstories, "Mother lit candles at the Santa Muerte shrine every night. When she died, the Valentinos paid for everything. Blood debt.");
+        ArrayPush(backstories, "Was a boxer in The Glen. Lost a fixed fight, owed the wrong people. Valentinos settled the debt. Now settling theirs.");
+        ArrayPush(backstories, "Sicario from way back. Other gangs wanted muscle. Valentinos wanted loyalty. Only one of those earns respect.");
+        ArrayPush(backstories, "Grew up watching lowriders cruise Vista del Rey. Always knew which crew to ride with. Gold forever.");
+        ArrayPush(backstories, "Abuela was one of the originals. Her stories built this. Carrying the legacy forward - with honor.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -90,6 +110,11 @@ public class ValentinosProfile {
         ArrayPush(activities, "Community protection detail. Valentinos watch over their own.");
         ArrayPush(activities, "Enforcing honor debts. Some lessons taught with gold, others with lead.");
         ArrayPush(activities, "Car acquisition specialist. High-end vehicles for high-end clients.");
+        ArrayPush(activities, "Organizing the Santa Muerte procession. The dead walk with us tonight.");
+        ArrayPush(activities, "Lowrider meet in The Glen. Business and pleasure. Mostly business.");
+        ArrayPush(activities, "Settling a blood feud between two Valentino families. Delicate work.");
+        ArrayPush(activities, "Expanding into Wellsprings. New territory means new revenue.");
+        ArrayPush(activities, "Weapons cache resupply from a Militech contact. Premium iron at family prices.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);

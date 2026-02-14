@@ -133,7 +133,7 @@ public abstract class UniqueNPCEntries {
         // PHANTOM LIBERTY
         if StrContains(id, "songbird") || StrContains(id, "song_so_mi") || StrContains(id, "so_mi") { return UniqueNPCEntries.Songbird(); }
         if (StrContains(id, "solomon") && StrContains(id, "reed")) || (StrContains(id, "reed") && !StrContains(id, "gang") && !StrContains(id, "soldier") && !StrContains(id, "grunt") && !StrContains(id, "breed") && !StrContains(id, "greed") && !StrContains(id, "freed") && !StrContains(id, "creed") && (StrContains(id, "fixer") || StrContains(id, "nusa") || StrContains(id, "fia") || StrContains(id, "agent") || StrContains(id, "dogtown"))) { return UniqueNPCEntries.SolomonReed(); }
-        if StrContains(id, "president_myers") || StrContains(id, "rosalind_myers") || (StrContains(id, "myers") && (StrContains(id, "nusa") || StrContains(id, "president"))) { return UniqueNPCEntries.RosalindMyers(); }
+        if StrContains(id, "president_myers") || StrContains(id, "rosalind_myers") || Equals(id, "character.myers") || (StrContains(id, "myers") && (StrContains(id, "nusa") || StrContains(id, "president"))) { return UniqueNPCEntries.RosalindMyers(); }
         if StrContains(id, "kurt") && StrContains(id, "hansen") { return UniqueNPCEntries.KurtHansen(); }
         if StrContains(id, "alex") && !StrContains(id, "pushkin") && !StrContains(id, "ander") && !StrContains(id, "alexis") && !StrContains(id, "alexa") && (StrContains(id, "barghest") || StrContains(id, "dogtown") || StrContains(id, "stadium")) { return UniqueNPCEntries.Alex(); }
         // BODYGUARDS - Generic entries for named character bodyguards
@@ -529,11 +529,15 @@ public abstract class UniqueNPCEntries {
     }
 
     public static func JohnnySilverhand() -> ref<UniqueNPCBackstory> {
-        return UniqueNPCBackstory.Create("johnny").SetClassification("DECEASED / ENGRAM")
-            .SetBackground("Robert John Linder. 1988-2023. Rockerboy. Samurai frontman. Anti-corporate terrorist.")
-            .SetSignificantEvents("DECEASED 2023. Led Arasaka Tower assault. Killed by Adam Smasher. Engram may exist.")
-            .SetCriminalRecord("TERRORISM | MASS MURDER | CLOSED - DECEASED")
-            .SetNotes("LEGEND. Symbol of resistance. Engram status UNCONFIRMED.");
+        return UniqueNPCBackstory.Create("johnny").SetClassification("ENGRAM - TERRORIST / ROCKERBOY")
+            .SetBackground("Robert John Linder. Born 1988. Ex-NUSA Marine, deserted after Central America. Founded Samurai 2003. Most influential rockerboy of his generation. Anti-corporate revolutionary.")
+            .SetEarlyLife("Military family. Deployed Central America. Went AWOL after witnessing corpo atrocities. Reinvented himself in Night City underground.")
+            .SetSignificantEvents("2008: Alt Cunningham. 2013: Alt killed by Arasaka, digitized by Soulkiller. 2023: Nuked Arasaka Tower. Killed by Adam Smasher. Engram extracted.")
+            .SetAffiliation("Samurai (frontman) | Aldecaldos (allied) | Anti-corpo underground")
+            .SetCriminalRecord("TERRORISM | MASS MURDER | MILITARY DESERTION | FILE STATUS: CLOSED - DECEASED 2023")
+            .SetCyberwareStatus("Cyberarm (left, silver) | Military-grade reflexes | Status: DESTROYED")
+            .SetThreatAssessment("DECEASED | If engram exists: CATASTROPHIC risk to Arasaka")
+            .SetNotes("THE Rockerboy. Narcissistic. Self-destructive. Genuinely believed in his cause. 50 years dead and still dangerous.");
     }
 
     public static func KerryEurodyne() -> ref<UniqueNPCBackstory> {

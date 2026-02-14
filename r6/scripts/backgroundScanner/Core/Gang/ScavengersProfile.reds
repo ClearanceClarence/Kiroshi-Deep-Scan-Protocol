@@ -37,6 +37,11 @@ public class ScavengersProfile {
         ArrayPush(specs, "Site Security");
         ArrayPush(specs, "Intimidation");
         ArrayPush(specs, "Clean-up Crew");
+        ArrayPush(specs, "Sedation Specialist");
+        ArrayPush(specs, "Cold Storage Management");
+        ArrayPush(specs, "Buyer Liaison");
+        ArrayPush(specs, "Transport Logistics");
+        ArrayPush(specs, "Street Surveillance");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory - Scavs operate everywhere
@@ -71,6 +76,15 @@ public class ScavengersProfile {
         if RandRange(seed + 720, 1, 100) <= 40 {
             ArrayPush(marks, "Eastern European prison tattoos");
         }
+        if RandRange(seed + 730, 1, 100) <= 45 {
+            ArrayPush(marks, "Chemical staining on hands");
+        }
+        if RandRange(seed + 740, 1, 100) <= 35 {
+            ArrayPush(marks, "Faint antiseptic smell");
+        }
+        if RandRange(seed + 750, 1, 100) <= 30 {
+            ArrayPush(marks, "Mismatched salvaged optics");
+        }
         profile.distinguishingMarks = marks;
         
         // Backstory
@@ -81,6 +95,12 @@ public class ScavengersProfile {
         ArrayPush(backstories, "Debt to the wrong people. Only way out was through. Now too deep to ever leave.");
         ArrayPush(backstories, "Sociopath by diagnosis. Found the one job where that's an asset. Cutting comes naturally.");
         ArrayPush(backstories, "Family back home needs money. Don't ask where it comes from. Just send it.");
+        ArrayPush(backstories, "Worked in a corpo organ farm. Laid off. Took the skills freelance. Market's always hungry.");
+        ArrayPush(backstories, "Human trafficking victim who turned the tables. Learned the business from the inside out.");
+        ArrayPush(backstories, "Ex-paramedic who realized saving lives paid nothing. Taking them apart pays everything.");
+        ArrayPush(backstories, "Grew up in the Watson sewers. Nobody notices what happens underground. Perfect for the trade.");
+        ArrayPush(backstories, "Former Maelstrom who wasn't crazy enough for the chrome cult. Scavs just want product. Simpler.");
+        ArrayPush(backstories, "Immigrated on a shipping container. The smugglers offered a job on arrival. Didn't have the luxury of saying no.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -90,6 +110,11 @@ public class ScavengersProfile {
         ArrayPush(activities, "Black market delivery. Premium chrome, no questions.");
         ArrayPush(activities, "Site relocation. NCPD got too close to the old spot.");
         ArrayPush(activities, "Scouting new hunting grounds. Supply and demand.");
+        ArrayPush(activities, "Cleaning a crime scene. Bleach and patience. No traces left.");
+        ArrayPush(activities, "Negotiating with a ripperdoc buyer. Wants specific blood types.");
+        ArrayPush(activities, "Baiting a trap in Kabuki. Tourist district - easy pickings.");
+        ArrayPush(activities, "Cold storage maintenance. Product spoils if temp fluctuates.");
+        ArrayPush(activities, "Disposing of a problem. Someone talked. Someone won't anymore.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);

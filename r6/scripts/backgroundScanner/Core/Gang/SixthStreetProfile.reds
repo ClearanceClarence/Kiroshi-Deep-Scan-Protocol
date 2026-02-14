@@ -37,6 +37,11 @@ public class SixthStreetProfile {
         ArrayPush(specs, "Intelligence");
         ArrayPush(specs, "Supply/Logistics");
         ArrayPush(specs, "Sniper");
+        ArrayPush(specs, "Combat Medic");
+        ArrayPush(specs, "Communications/Comms");
+        ArrayPush(specs, "Drone Operations");
+        ArrayPush(specs, "Perimeter Security");
+        ArrayPush(specs, "Recruitment Sergeant");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -81,6 +86,15 @@ public class SixthStreetProfile {
         if RandRange(seed + 730, 1, 100) <= 30 {
             ArrayPush(tattoos, "Memorial names - fallen brothers");
         }
+        if RandRange(seed + 740, 1, 100) <= 45 {
+            ArrayPush(tattoos, "Dog tags (original or replica)");
+        }
+        if RandRange(seed + 750, 1, 100) <= 35 {
+            ArrayPush(tattoos, "Combat action scars");
+        }
+        if RandRange(seed + 760, 1, 100) <= 25 {
+            ArrayPush(tattoos, "Bald eagle chest piece");
+        }
         profile.distinguishingMarks = tattoos;
         
         // Backstory
@@ -91,6 +105,12 @@ public class SixthStreetProfile {
         ArrayPush(backstories, "Lost squad overseas to corpo orders. Found new brothers in Santo Domingo. Fighting for something real now.");
         ArrayPush(backstories, "Ex-Militech. Got tired of corporate wars. 6th Street fights for the neighborhood, not shareholders.");
         ArrayPush(backstories, "Never served, but trained by vets. Earned respect through dedication. Community over everything.");
+        ArrayPush(backstories, "Discharged after refusing an unlawful order. Military didn't want heroes. 6th Street does.");
+        ArrayPush(backstories, "Grew up watching veterans drink at Red Dirt. Their stories shaped everything. Enlisted at sixteen.");
+        ArrayPush(backstories, "Border patrol went sideways. Three friends didn't come home. Came back to Santo Domingo with a purpose.");
+        ArrayPush(backstories, "Ran with gangs as a kid. 6th Street pulled out of that life. Gave discipline instead of chaos.");
+        ArrayPush(backstories, "Weapons instructor with nowhere to teach. 6th Street needed trainers. Perfect fit for a patriot.");
+        ArrayPush(backstories, "Wife was killed in a Valentino crossfire. Picked up a rifle and never put it down. This neighborhood will be safe.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -100,6 +120,11 @@ public class SixthStreetProfile {
         ArrayPush(activities, "Training new recruits. Standards matter. Discipline saves lives.");
         ArrayPush(activities, "Territory patrol. Rancho Coronado stays American.");
         ArrayPush(activities, "Community cookout security. Protecting our people, our way.");
+        ArrayPush(activities, "Weapons maintenance day. Every rifle cleaned, every scope zeroed.");
+        ArrayPush(activities, "Intercepted Valentino scouts in Arroyo. Sent them home with a message.");
+        ArrayPush(activities, "Running a shooting competition at the range. Winner gets a new piece.");
+        ArrayPush(activities, "Escorting a supply truck through contested territory. No incidents.");
+        ArrayPush(activities, "Meeting with city council rep. Negotiating community funding. Politely.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);

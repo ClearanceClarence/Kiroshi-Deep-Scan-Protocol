@@ -37,6 +37,11 @@ public class AnimalsProfile {
         ArrayPush(specs, "Debt Collection");
         ArrayPush(specs, "Club Bouncer");
         ArrayPush(specs, "Fight Pit Champion");
+        ArrayPush(specs, "Juice Brewing");
+        ArrayPush(specs, "Cage Match Promoter");
+        ArrayPush(specs, "Body Disposal");
+        ArrayPush(specs, "Convoy Escort");
+        ArrayPush(specs, "Street Brawl Enforcer");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -72,6 +77,15 @@ public class AnimalsProfile {
         if RandRange(seed + 720, 1, 100) <= 40 {
             ArrayPush(marks, "Animal brand tattoo");
         }
+        if RandRange(seed + 730, 1, 100) <= 50 {
+            ArrayPush(marks, "Broken nose (multiple times)");
+        }
+        if RandRange(seed + 740, 1, 100) <= 35 {
+            ArrayPush(marks, "Cauliflower ears");
+        }
+        if RandRange(seed + 750, 1, 100) <= 30 {
+            ArrayPush(marks, "Gorilla Arms implants");
+        }
         profile.distinguishingMarks = marks;
         
         // Backstory
@@ -82,6 +96,12 @@ public class AnimalsProfile {
         ArrayPush(backstories, "Was prey once. Someone else's victim. Never again. The pack protects its own, and destroys everything else.");
         ArrayPush(backstories, "Fighting is the only language that matters. Found family in the pits. Win or die - simple philosophy.");
         ArrayPush(backstories, "Bouncer turned soldier. Security work pays, but the real rush is in the ring. Pack respects winners.");
+        ArrayPush(backstories, "Got hooked on the juice working construction. When the site closed, the pack was the only place left.");
+        ArrayPush(backstories, "Underground boxing circuit burned out. Animals offered real fights - no refs, no rules, no limits.");
+        ArrayPush(backstories, "Sasquatch personally tested during initiation. Survived three rounds. Most don't last one.");
+        ArrayPush(backstories, "Corpo gym rat who got bored lifting for vanity. Animals lift for war. Real purpose behind the iron.");
+        ArrayPush(backstories, "Pacifica kid who watched VDBs hide behind screens. Wanted to solve problems with fists, not code.");
+        ArrayPush(backstories, "Spent two years in a NUSA prison. Came out bigger than when going in. Pack recognized the hunger.");
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
@@ -91,6 +111,11 @@ public class AnimalsProfile {
         ArrayPush(activities, "Muscle contract in Pacifica. Client wanted intimidation. Delivered.");
         ArrayPush(activities, "Juice distribution run. Keeping the pack supplied with the good stuff.");
         ArrayPush(activities, "Collecting debts. Most people pay when they see us coming. Smart.");
+        ArrayPush(activities, "Cage match tonight in West Wind. Betting pool is already deep.");
+        ArrayPush(activities, "Escorting a fixer through VDB territory. They looked but didn't touch.");
+        ArrayPush(activities, "New juice formula testing. Volunteer batch. Results are promising.");
+        ArrayPush(activities, "Clearing squatters from a building the pack wants. Didn't take long.");
+        ArrayPush(activities, "Recruitment tryouts. Line of wannabes outside the gym. Most won't last.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = GangProfileUtils.GetStatus(seed + 1000);
