@@ -1,22 +1,22 @@
 // Kiroshi Deep Scan Protocol - Unique NPC Manager
 // Detects and retrieves hand-crafted backstories for named characters
 
-public abstract class UniqueNPCManager {
+public abstract class KdspUniqueNPCManager {
 
     // Check if an NPC is a unique/named character we have data for
     public static func IsUniqueNPC(target: wref<NPCPuppet>) -> Bool {
-        let recordId = UniqueNPCManager.GetCharacterRecordId(target);
-        if UniqueNPCManager.HasEntry(recordId) {
+        let recordId = KdspUniqueNPCManager.GetCharacterRecordId(target);
+        if KdspUniqueNPCManager.HasEntry(recordId) {
             // Check quest requirements for specific NPCs
-            if !UniqueNPCManager.MeetsQuestRequirements(target, recordId) {
+            if !KdspUniqueNPCManager.MeetsQuestRequirements(target, recordId) {
                 return false;
             }
             return true;
         }
         // Fallback: check by display name
-        let displayName = UniqueNPCManager.GetDisplayName(target);
-        if UniqueNPCManager.HasEntry(displayName) {
-            if !UniqueNPCManager.MeetsQuestRequirements(target, displayName) {
+        let displayName = KdspUniqueNPCManager.GetDisplayName(target);
+        if KdspUniqueNPCManager.HasEntry(displayName) {
+            if !KdspUniqueNPCManager.MeetsQuestRequirements(target, displayName) {
                 return false;
             }
             return true;
@@ -31,9 +31,9 @@ public abstract class UniqueNPCManager {
         
         // Viktor - only after first ripperdoc visit (q001_01_victor)
         if StrContains(id, "viktor") || StrContains(id, "vektor") {
-            return UniqueNPCManager.IsFactTrue(game, "q001_01_victor_done") || 
-                   UniqueNPCManager.IsFactTrue(game, "q001_done") ||
-                   UniqueNPCManager.IsQuestComplete(game, "q001_01_victor");
+            return KdspUniqueNPCManager.IsFactTrue(game, "q001_01_victor_done") || 
+                   KdspUniqueNPCManager.IsFactTrue(game, "q001_done") ||
+                   KdspUniqueNPCManager.IsQuestComplete(game, "q001_01_victor");
         }
         
         // All other NPCs don't have quest requirements
@@ -81,18 +81,18 @@ public abstract class UniqueNPCManager {
     // Check if we have an entry for this character ID
     // Add new characters here using StrContains for flexible matching
     public static func HasEntry(recordId: String) -> Bool {
-        return IsDefined(UniqueNPCEntries.GetEntry(recordId));
+        return IsDefined(KdspUniqueNPCEntries.GetEntry(recordId));
     }
 
     // Get the backstory for a unique NPC
-    public static func GetBackstory(target: wref<NPCPuppet>) -> ref<UniqueNPCBackstory> {
-        let recordId = UniqueNPCManager.GetCharacterRecordId(target);
-        let entry = UniqueNPCEntries.GetEntry(recordId);
+    public static func GetBackstory(target: wref<NPCPuppet>) -> ref<KdspUniqueNPCBackstory> {
+        let recordId = KdspUniqueNPCManager.GetCharacterRecordId(target);
+        let entry = KdspUniqueNPCEntries.GetEntry(recordId);
         if IsDefined(entry) {
             return entry;
         }
         // Fallback: try by display name
-        let displayName = UniqueNPCManager.GetDisplayName(target);
-        return UniqueNPCEntries.GetEntry(displayName);
+        let displayName = KdspUniqueNPCManager.GetDisplayName(target);
+        return KdspUniqueNPCEntries.GetEntry(displayName);
     }
 }

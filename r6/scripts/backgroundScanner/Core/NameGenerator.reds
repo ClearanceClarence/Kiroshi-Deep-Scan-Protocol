@@ -4,23 +4,23 @@
 // 100 names per category per gender = 3,900 total names across 13 ethnicities
 // Names delegated to separate files in Core/Names/ for maintainability
 
-public class NameGenerator {
+public class KdspNameGenerator {
 
     // ══════════════════════════════════════════════════════════════════════
     // MAIN ENTRY POINTS
     // ══════════════════════════════════════════════════════════════════════
 
-    public static func GenerateFullNameByEthnicity(seed: Int32, gender: String, ethnicity: NPCEthnicity) -> String {
-        let firstName = NameGenerator.GetFirstNameByEthnicity(seed, gender, ethnicity);
-        let lastName = NameGenerator.GetLastNameByEthnicity(seed + 100, ethnicity);
+    public static func GenerateFullNameByEthnicity(seed: Int32, gender: String, ethnicity: KdspNPCEthnicity) -> String {
+        let firstName = KdspNameGenerator.GetFirstNameByEthnicity(seed, gender, ethnicity);
+        let lastName = KdspNameGenerator.GetLastNameByEthnicity(seed + 100, ethnicity);
         return firstName + " " + lastName;
     }
 
-    public static func GetFirstNameByEthnicity(seed: Int32, gender: String, ethnicity: NPCEthnicity) -> String {
+    public static func GetFirstNameByEthnicity(seed: Int32, gender: String, ethnicity: KdspNPCEthnicity) -> String {
         if Equals(gender, "male") {
-            return NameGenerator.GetMaleFirstNameByEthnicity(seed, ethnicity);
+            return KdspNameGenerator.GetMaleFirstNameByEthnicity(seed, ethnicity);
         }
-        return NameGenerator.GetFemaleFirstNameByEthnicity(seed, ethnicity);
+        return KdspNameGenerator.GetFemaleFirstNameByEthnicity(seed, ethnicity);
     }
 
     public static func GetRandomGender(seed: Int32) -> String {
@@ -34,36 +34,36 @@ public class NameGenerator {
     // MALE FIRST NAMES BY ETHNICITY
     // ══════════════════════════════════════════════════════════════════════
 
-    public static func GetMaleFirstNameByEthnicity(seed: Int32, ethnicity: NPCEthnicity) -> String {
+    public static func GetMaleFirstNameByEthnicity(seed: Int32, ethnicity: KdspNPCEthnicity) -> String {
         switch ethnicity {
-            case NPCEthnicity.American:
-                return AmericanNames.GetMaleFirstName(seed);
-            case NPCEthnicity.AfricanAmerican:
-                return AfricanAmericanNames.GetMaleFirstName(seed);
-            case NPCEthnicity.Hispanic:
-                return HispanicNames.GetMaleFirstName(seed);
-            case NPCEthnicity.Japanese:
-                return JapaneseNames.GetMaleFirstName(seed);
-            case NPCEthnicity.Chinese:
-                return ChineseNames.GetMaleFirstName(seed);
-            case NPCEthnicity.Korean:
-                return KoreanNames.GetMaleFirstName(seed);
-            case NPCEthnicity.Slavic:
-                return SlavicNames.GetMaleFirstName(seed);
-            case NPCEthnicity.Indian:
-                return IndianNames.GetMaleFirstName(seed);
-            case NPCEthnicity.MiddleEastern:
-                return MiddleEasternNames.GetMaleFirstName(seed);
-            case NPCEthnicity.African:
-                return AfricanNames.GetMaleFirstName(seed);
-            case NPCEthnicity.SoutheastAsian:
-                return SoutheastAsianNames.GetMaleFirstName(seed);
-            case NPCEthnicity.European:
-                return EuropeanNames.GetMaleFirstName(seed);
-            case NPCEthnicity.Haitian:
-                return HaitianNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.American:
+                return KdspAmericanNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.AfricanAmerican:
+                return KdspAfricanAmericanNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.Hispanic:
+                return KdspHispanicNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.Japanese:
+                return KdspJapaneseNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.Chinese:
+                return KdspChineseNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.Korean:
+                return KdspKoreanNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.Slavic:
+                return KdspSlavicNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.Indian:
+                return KdspIndianNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.MiddleEastern:
+                return KdspMiddleEasternNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.African:
+                return KdspAfricanNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.SoutheastAsian:
+                return KdspSoutheastAsianNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.European:
+                return KdspEuropeanNames.GetMaleFirstName(seed);
+            case KdspNPCEthnicity.Haitian:
+                return KdspHaitianNames.GetMaleFirstName(seed);
             default:
-                return AmericanNames.GetMaleFirstName(seed);
+                return KdspAmericanNames.GetMaleFirstName(seed);
         }
     }
 
@@ -71,36 +71,36 @@ public class NameGenerator {
     // FEMALE FIRST NAMES BY ETHNICITY
     // ══════════════════════════════════════════════════════════════════════
 
-    public static func GetFemaleFirstNameByEthnicity(seed: Int32, ethnicity: NPCEthnicity) -> String {
+    public static func GetFemaleFirstNameByEthnicity(seed: Int32, ethnicity: KdspNPCEthnicity) -> String {
         switch ethnicity {
-            case NPCEthnicity.American:
-                return AmericanNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.AfricanAmerican:
-                return AfricanAmericanNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.Hispanic:
-                return HispanicNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.Japanese:
-                return JapaneseNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.Chinese:
-                return ChineseNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.Korean:
-                return KoreanNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.Slavic:
-                return SlavicNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.Indian:
-                return IndianNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.MiddleEastern:
-                return MiddleEasternNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.African:
-                return AfricanNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.SoutheastAsian:
-                return SoutheastAsianNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.European:
-                return EuropeanNames.GetFemaleFirstName(seed);
-            case NPCEthnicity.Haitian:
-                return HaitianNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.American:
+                return KdspAmericanNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.AfricanAmerican:
+                return KdspAfricanAmericanNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.Hispanic:
+                return KdspHispanicNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.Japanese:
+                return KdspJapaneseNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.Chinese:
+                return KdspChineseNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.Korean:
+                return KdspKoreanNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.Slavic:
+                return KdspSlavicNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.Indian:
+                return KdspIndianNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.MiddleEastern:
+                return KdspMiddleEasternNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.African:
+                return KdspAfricanNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.SoutheastAsian:
+                return KdspSoutheastAsianNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.European:
+                return KdspEuropeanNames.GetFemaleFirstName(seed);
+            case KdspNPCEthnicity.Haitian:
+                return KdspHaitianNames.GetFemaleFirstName(seed);
             default:
-                return AmericanNames.GetFemaleFirstName(seed);
+                return KdspAmericanNames.GetFemaleFirstName(seed);
         }
     }
 
@@ -108,36 +108,36 @@ public class NameGenerator {
     // LAST NAMES BY ETHNICITY
     // ══════════════════════════════════════════════════════════════════════
 
-    public static func GetLastNameByEthnicity(seed: Int32, ethnicity: NPCEthnicity) -> String {
+    public static func GetLastNameByEthnicity(seed: Int32, ethnicity: KdspNPCEthnicity) -> String {
         switch ethnicity {
-            case NPCEthnicity.American:
-                return AmericanNames.GetLastName(seed);
-            case NPCEthnicity.AfricanAmerican:
-                return AfricanAmericanNames.GetLastName(seed);
-            case NPCEthnicity.Hispanic:
-                return HispanicNames.GetLastName(seed);
-            case NPCEthnicity.Japanese:
-                return JapaneseNames.GetLastName(seed);
-            case NPCEthnicity.Chinese:
-                return ChineseNames.GetLastName(seed);
-            case NPCEthnicity.Korean:
-                return KoreanNames.GetLastName(seed);
-            case NPCEthnicity.Slavic:
-                return SlavicNames.GetLastName(seed);
-            case NPCEthnicity.Indian:
-                return IndianNames.GetLastName(seed);
-            case NPCEthnicity.MiddleEastern:
-                return MiddleEasternNames.GetLastName(seed);
-            case NPCEthnicity.African:
-                return AfricanNames.GetLastName(seed);
-            case NPCEthnicity.SoutheastAsian:
-                return SoutheastAsianNames.GetLastName(seed);
-            case NPCEthnicity.European:
-                return EuropeanNames.GetLastName(seed);
-            case NPCEthnicity.Haitian:
-                return HaitianNames.GetLastName(seed);
+            case KdspNPCEthnicity.American:
+                return KdspAmericanNames.GetLastName(seed);
+            case KdspNPCEthnicity.AfricanAmerican:
+                return KdspAfricanAmericanNames.GetLastName(seed);
+            case KdspNPCEthnicity.Hispanic:
+                return KdspHispanicNames.GetLastName(seed);
+            case KdspNPCEthnicity.Japanese:
+                return KdspJapaneseNames.GetLastName(seed);
+            case KdspNPCEthnicity.Chinese:
+                return KdspChineseNames.GetLastName(seed);
+            case KdspNPCEthnicity.Korean:
+                return KdspKoreanNames.GetLastName(seed);
+            case KdspNPCEthnicity.Slavic:
+                return KdspSlavicNames.GetLastName(seed);
+            case KdspNPCEthnicity.Indian:
+                return KdspIndianNames.GetLastName(seed);
+            case KdspNPCEthnicity.MiddleEastern:
+                return KdspMiddleEasternNames.GetLastName(seed);
+            case KdspNPCEthnicity.African:
+                return KdspAfricanNames.GetLastName(seed);
+            case KdspNPCEthnicity.SoutheastAsian:
+                return KdspSoutheastAsianNames.GetLastName(seed);
+            case KdspNPCEthnicity.European:
+                return KdspEuropeanNames.GetLastName(seed);
+            case KdspNPCEthnicity.Haitian:
+                return KdspHaitianNames.GetLastName(seed);
             default:
-                return AmericanNames.GetLastName(seed);
+                return KdspAmericanNames.GetLastName(seed);
         }
     }
 

@@ -1,10 +1,10 @@
 // Voodoo Boys Gang Profile Generator
 // Haitian netrunner collective seeking answers beyond the Blackwall
 
-public class VoodooBoysProfile {
+public class KdspVoodooBoysProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "VOODOO_BOYS";
         profile.gangName = "Voodoo Boys";
         profile.headerLabel = "VOODOO BOYS NET RECORD";
@@ -63,7 +63,7 @@ public class VoodooBoysProfile {
         profile.netDepth = RandRange(seed + 360, 3, 9); // How deep they dive
         
         // Loyalty
-        profile.loyaltyRating = VoodooBoysProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspVoodooBoysProfile.GetLoyalty(seed + 600);
         
         // Marks
         let marks: array<String>;
@@ -117,7 +117,7 @@ public class VoodooBoysProfile {
         ArrayPush(activities, "Blackwall fluctuation detected. Council convened. Something is changing.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

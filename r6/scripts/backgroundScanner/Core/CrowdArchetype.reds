@@ -1,4 +1,4 @@
-enum CrowdArchetype {
+enum KdspCrowdArchetype {
     Corpo = 1,
     Nomad = 2,
     Homeless = 3,

@@ -1,7 +1,7 @@
 // Ethnicity Detection System
 // Parses NPC appearance strings to determine likely ethnicity for name matching
 
-enum NPCEthnicity {
+enum KdspNPCEthnicity {
     American = 0,
     AfricanAmerican = 1,
     Hispanic = 2,
@@ -18,10 +18,10 @@ enum NPCEthnicity {
     Mixed = 99
 }
 
-public class EthnicityDetector {
+public class KdspEthnicityDetector {
 
     // Main detection function - analyzes appearance string
-    public static func GetEthnicityFromAppearance(appearanceName: String, gangAffiliation: String) -> NPCEthnicity {
+    public static func GetEthnicityFromAppearance(appearanceName: String, gangAffiliation: String) -> KdspNPCEthnicity {
         let lower = StrLower(appearanceName);
         
         // ══════════════════════════════════════════════════════════════
@@ -30,27 +30,27 @@ public class EthnicityDetector {
         
         // Tyger Claws - Japanese
         if Equals(gangAffiliation, "TYGER_CLAWS") {
-            return NPCEthnicity.Japanese;
+            return KdspNPCEthnicity.Japanese;
         }
         
         // Valentinos - Hispanic
         if Equals(gangAffiliation, "VALENTINOS") {
-            return NPCEthnicity.Hispanic;
+            return KdspNPCEthnicity.Hispanic;
         }
         
         // Voodoo Boys - Haitian
         if Equals(gangAffiliation, "VOODOO_BOYS") {
-            return NPCEthnicity.Haitian;
+            return KdspNPCEthnicity.Haitian;
         }
         
         // 6th Street - American
         if Equals(gangAffiliation, "6TH_STREET") {
-            return NPCEthnicity.American;
+            return KdspNPCEthnicity.American;
         }
         
         // Scavengers - Slavic
         if Equals(gangAffiliation, "SCAVENGERS") {
-            return NPCEthnicity.Slavic;
+            return KdspNPCEthnicity.Slavic;
         }
         
         // ══════════════════════════════════════════════════════════════
@@ -59,108 +59,108 @@ public class EthnicityDetector {
         
         // Japanese indicators
         if StrContains(lower, "japanese") || StrContains(lower, "_jpn_") || StrContains(lower, "_jp_") {
-            return NPCEthnicity.Japanese;
+            return KdspNPCEthnicity.Japanese;
         }
         if StrContains(lower, "tyger") || StrContains(lower, "tiger_claw") {
-            return NPCEthnicity.Japanese;
+            return KdspNPCEthnicity.Japanese;
         }
         
         // Chinese indicators
         if StrContains(lower, "chinese") || StrContains(lower, "_chn_") || StrContains(lower, "_ch_") {
-            return NPCEthnicity.Chinese;
+            return KdspNPCEthnicity.Chinese;
         }
         
         // Korean indicators
         if StrContains(lower, "korean") || StrContains(lower, "_kor_") || StrContains(lower, "_kr_") {
-            return NPCEthnicity.Korean;
+            return KdspNPCEthnicity.Korean;
         }
         
         // Generic Asian - randomize between Japanese/Chinese/Korean
         if StrContains(lower, "asian") || StrContains(lower, "_as_") || StrContains(lower, "_asn_") {
-            return NPCEthnicity.Japanese; // Default Asian to Japanese for Night City
+            return KdspNPCEthnicity.Japanese; // Default Asian to Japanese for Night City
         }
         
         // Hispanic/Latino indicators
         if StrContains(lower, "latino") || StrContains(lower, "latina") || StrContains(lower, "hispanic") {
-            return NPCEthnicity.Hispanic;
+            return KdspNPCEthnicity.Hispanic;
         }
         if StrContains(lower, "_lat_") || StrContains(lower, "_hsp_") || StrContains(lower, "valentino") {
-            return NPCEthnicity.Hispanic;
+            return KdspNPCEthnicity.Hispanic;
         }
         if StrContains(lower, "mexican") || StrContains(lower, "_mex_") {
-            return NPCEthnicity.Hispanic;
+            return KdspNPCEthnicity.Hispanic;
         }
         
         // African-American indicators
         if StrContains(lower, "african_american") || StrContains(lower, "_aa_") || StrContains(lower, "_afam_") {
-            return NPCEthnicity.AfricanAmerican;
+            return KdspNPCEthnicity.AfricanAmerican;
         }
         if StrContains(lower, "black_") || StrContains(lower, "_black") || StrContains(lower, "_blk_") {
-            return NPCEthnicity.AfricanAmerican;
+            return KdspNPCEthnicity.AfricanAmerican;
         }
         
         // Haitian indicators (Voodoo Boys territory)
         if StrContains(lower, "haitian") || StrContains(lower, "haiti") {
-            return NPCEthnicity.Haitian;
+            return KdspNPCEthnicity.Haitian;
         }
         if StrContains(lower, "voodoo") || StrContains(lower, "vdb") || StrContains(lower, "pacifica") {
-            return NPCEthnicity.Haitian;
+            return KdspNPCEthnicity.Haitian;
         }
         
         // African indicators (Nigerian, etc.)
         if StrContains(lower, "african") || StrContains(lower, "_afr_") {
-            return NPCEthnicity.African;
+            return KdspNPCEthnicity.African;
         }
         
         // Slavic/Eastern European indicators
         if StrContains(lower, "slavic") || StrContains(lower, "russian") || StrContains(lower, "polish") {
-            return NPCEthnicity.Slavic;
+            return KdspNPCEthnicity.Slavic;
         }
         if StrContains(lower, "_slv_") || StrContains(lower, "_rus_") || StrContains(lower, "_eur_east") {
-            return NPCEthnicity.Slavic;
+            return KdspNPCEthnicity.Slavic;
         }
         if StrContains(lower, "scav") {
-            return NPCEthnicity.Slavic;
+            return KdspNPCEthnicity.Slavic;
         }
         
         // Indian/South Asian indicators
         if StrContains(lower, "indian") || StrContains(lower, "south_asian") || StrContains(lower, "_ind_") {
-            return NPCEthnicity.Indian;
+            return KdspNPCEthnicity.Indian;
         }
         if StrContains(lower, "pakistani") || StrContains(lower, "bangladeshi") {
-            return NPCEthnicity.Indian;
+            return KdspNPCEthnicity.Indian;
         }
         
         // Middle Eastern indicators
         if StrContains(lower, "middle_east") || StrContains(lower, "arab") || StrContains(lower, "_me_") {
-            return NPCEthnicity.MiddleEastern;
+            return KdspNPCEthnicity.MiddleEastern;
         }
         if StrContains(lower, "persian") || StrContains(lower, "iranian") {
-            return NPCEthnicity.MiddleEastern;
+            return KdspNPCEthnicity.MiddleEastern;
         }
         
         // Southeast Asian indicators
         if StrContains(lower, "southeast") || StrContains(lower, "vietnamese") || StrContains(lower, "thai") {
-            return NPCEthnicity.SoutheastAsian;
+            return KdspNPCEthnicity.SoutheastAsian;
         }
         if StrContains(lower, "_sea_") || StrContains(lower, "filipino") || StrContains(lower, "indonesian") {
-            return NPCEthnicity.SoutheastAsian;
+            return KdspNPCEthnicity.SoutheastAsian;
         }
         
         // European indicators (non-Slavic)
         if StrContains(lower, "european") || StrContains(lower, "_eur_") {
-            return NPCEthnicity.European;
+            return KdspNPCEthnicity.European;
         }
         if StrContains(lower, "german") || StrContains(lower, "french") || StrContains(lower, "italian") {
-            return NPCEthnicity.European;
+            return KdspNPCEthnicity.European;
         }
         if StrContains(lower, "british") || StrContains(lower, "irish") || StrContains(lower, "nordic") {
-            return NPCEthnicity.European;
+            return KdspNPCEthnicity.European;
         }
         
         // Caucasian/White indicators - default to American
         if StrContains(lower, "caucasian") || StrContains(lower, "_cau_") || StrContains(lower, "white") {
-            return NPCEthnicity.American;
+            return KdspNPCEthnicity.American;
         }
         
         // ══════════════════════════════════════════════════════════════
@@ -169,98 +169,98 @@ public class EthnicityDetector {
         
         // Arasaka employees - likely Japanese
         if StrContains(lower, "arasaka") {
-            return NPCEthnicity.Japanese;
+            return KdspNPCEthnicity.Japanese;
         }
         
         // Kang Tao - likely Chinese
         if StrContains(lower, "kang_tao") || StrContains(lower, "kangtao") {
-            return NPCEthnicity.Chinese;
+            return KdspNPCEthnicity.Chinese;
         }
         
         // ══════════════════════════════════════════════════════════════
         // DEFAULT - Mixed/Random
         // ══════════════════════════════════════════════════════════════
-        return NPCEthnicity.Mixed;
+        return KdspNPCEthnicity.Mixed;
     }
     
     // Get ethnicity from seed when appearance doesn't give clear signals
-    public static func GetRandomEthnicity(seed: Int32) -> NPCEthnicity {
+    public static func GetRandomEthnicity(seed: Int32) -> KdspNPCEthnicity {
         // Night City demographics weighted distribution
         // Based on lore: heavy Japanese, Hispanic, American presence
         let roll = RandRange(seed, 0, 100);
         
         if roll < 18 {
-            return NPCEthnicity.American;        // 18%
+            return KdspNPCEthnicity.American;        // 18%
         }
         if roll < 33 {
-            return NPCEthnicity.Hispanic;        // 15%
+            return KdspNPCEthnicity.Hispanic;        // 15%
         }
         if roll < 48 {
-            return NPCEthnicity.Japanese;        // 15%
+            return KdspNPCEthnicity.Japanese;        // 15%
         }
         if roll < 58 {
-            return NPCEthnicity.AfricanAmerican; // 10%
+            return KdspNPCEthnicity.AfricanAmerican; // 10%
         }
         if roll < 66 {
-            return NPCEthnicity.Chinese;         // 8%
+            return KdspNPCEthnicity.Chinese;         // 8%
         }
         if roll < 73 {
-            return NPCEthnicity.Slavic;          // 7%
+            return KdspNPCEthnicity.Slavic;          // 7%
         }
         if roll < 78 {
-            return NPCEthnicity.Haitian;         // 5% (Pacifica)
+            return KdspNPCEthnicity.Haitian;         // 5% (Pacifica)
         }
         if roll < 83 {
-            return NPCEthnicity.European;        // 5%
+            return KdspNPCEthnicity.European;        // 5%
         }
         if roll < 87 {
-            return NPCEthnicity.Korean;          // 4%
+            return KdspNPCEthnicity.Korean;          // 4%
         }
         if roll < 91 {
-            return NPCEthnicity.Indian;          // 4%
+            return KdspNPCEthnicity.Indian;          // 4%
         }
         if roll < 94 {
-            return NPCEthnicity.MiddleEastern;   // 3%
+            return KdspNPCEthnicity.MiddleEastern;   // 3%
         }
         if roll < 97 {
-            return NPCEthnicity.African;         // 3%
+            return KdspNPCEthnicity.African;         // 3%
         }
         if roll < 100 {
-            return NPCEthnicity.SoutheastAsian;  // 3%
+            return KdspNPCEthnicity.SoutheastAsian;  // 3%
         }
-        return NPCEthnicity.Mixed;               // fallback
+        return KdspNPCEthnicity.Mixed;               // fallback
     }
     
     // Convert enum to string for debugging
-    public static func EthnicityToString(ethnicity: NPCEthnicity) -> String {
+    public static func EthnicityToString(ethnicity: KdspNPCEthnicity) -> String {
         switch ethnicity {
-            case NPCEthnicity.American:
+            case KdspNPCEthnicity.American:
                 return "American";
-            case NPCEthnicity.AfricanAmerican:
+            case KdspNPCEthnicity.AfricanAmerican:
                 return "African-American";
-            case NPCEthnicity.Hispanic:
+            case KdspNPCEthnicity.Hispanic:
                 return "Hispanic";
-            case NPCEthnicity.Japanese:
+            case KdspNPCEthnicity.Japanese:
                 return "Japanese";
-            case NPCEthnicity.Chinese:
+            case KdspNPCEthnicity.Chinese:
                 return "Chinese";
-            case NPCEthnicity.Korean:
+            case KdspNPCEthnicity.Korean:
                 return "Korean";
-            case NPCEthnicity.Slavic:
+            case KdspNPCEthnicity.Slavic:
                 return "Slavic";
-            case NPCEthnicity.Indian:
+            case KdspNPCEthnicity.Indian:
                 return "Indian";
-            case NPCEthnicity.MiddleEastern:
+            case KdspNPCEthnicity.MiddleEastern:
                 return "Middle Eastern";
-            case NPCEthnicity.African:
+            case KdspNPCEthnicity.African:
                 return "African";
-            case NPCEthnicity.SoutheastAsian:
+            case KdspNPCEthnicity.SoutheastAsian:
                 return "Southeast Asian";
-            case NPCEthnicity.European:
+            case KdspNPCEthnicity.European:
                 return "European";
-            case NPCEthnicity.Haitian:
+            case KdspNPCEthnicity.Haitian:
                 return "Haitian";
-            case NPCEthnicity.Mixed:
+            case KdspNPCEthnicity.Mixed:
                 return "Mixed";
             default:
                 return "Unknown";

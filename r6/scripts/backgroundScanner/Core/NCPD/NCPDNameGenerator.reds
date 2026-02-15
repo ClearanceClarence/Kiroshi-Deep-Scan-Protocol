@@ -1,5 +1,5 @@
 // NCPD Officer Name Generation System
-public class NCPDNameGenerator {
+public class KdspNCPDNameGenerator {
 
     public static func IsNCPD(appearanceName: String) -> Bool {
         if StrContains(appearanceName, "ncpd") || StrContains(appearanceName, "police") || StrContains(appearanceName, "cop") {
@@ -21,43 +21,43 @@ public class NCPDNameGenerator {
         return false;
     }
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String, ethnicity: NPCEthnicity) -> ref<NCPDOfficerData> {
-        let data: ref<NCPDOfficerData> = new NCPDOfficerData();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String, ethnicity: KdspNPCEthnicity) -> ref<KdspNCPDOfficerData> {
+        let data: ref<KdspNCPDOfficerData> = new KdspNCPDOfficerData();
         
-        // Generate name using shared NameGenerator with correct gender and ethnicity
-        data.fullName = NameGenerator.GenerateFullNameByEthnicity(seed, gender, ethnicity);
+        // Generate name using shared KdspNameGenerator with correct gender and ethnicity
+        data.fullName = KdspNameGenerator.GenerateFullNameByEthnicity(seed, gender, ethnicity);
         
         // Extract last name for radio calls - use ethnicity-aware
-        let lastName = NameGenerator.GetLastNameByEthnicity(seed + 100, ethnicity);
+        let lastName = KdspNameGenerator.GetLastNameByEthnicity(seed + 100, ethnicity);
         data.lastName = lastName;
         
         // Determine unit type
-        if NCPDNameGenerator.IsMaxTac(appearanceName) {
+        if KdspNCPDNameGenerator.IsMaxTac(appearanceName) {
             data.unit = "MAX-TAC";
-            data.rank = NCPDNameGenerator.GetMaxTacRank(seed + 200);
+            data.rank = KdspNCPDNameGenerator.GetMaxTacRank(seed + 200);
             data.badge = "MT-" + IntToString(RandRange(seed + 300, 1000, 9999));
-            data.specialization = NCPDNameGenerator.GetMaxTacSpecialization(seed + 400);
+            data.specialization = KdspNCPDNameGenerator.GetMaxTacSpecialization(seed + 400);
             data.yearsOfService = RandRange(seed + 500, 5, 20);
             data.confirmedNeutralizations = RandRange(seed + 600, 10, 150);
         } else {
-            data.unit = NCPDNameGenerator.GetUnit(seed + 200);
-            data.rank = NCPDNameGenerator.GetRank(seed + 250);
-            data.badge = NCPDNameGenerator.GetBadgeNumber(seed + 300);
+            data.unit = KdspNCPDNameGenerator.GetUnit(seed + 200);
+            data.rank = KdspNCPDNameGenerator.GetRank(seed + 250);
+            data.badge = KdspNCPDNameGenerator.GetBadgeNumber(seed + 300);
             data.specialization = "";
             data.yearsOfService = RandRange(seed + 500, 1, 25);
             data.confirmedNeutralizations = 0;
         }
         
         // Assignment district
-        data.assignedDistrict = NCPDNameGenerator.GetDistrict(seed + 700);
+        data.assignedDistrict = KdspNCPDNameGenerator.GetDistrict(seed + 700);
         
         // Service record
         data.commendations = RandRange(seed + 800, 0, 12);
         data.disciplinaryActions = RandRange(seed + 900, 0, 3);
-        data.partnerStatus = NCPDNameGenerator.GetPartnerStatus(seed + 1000);
+        data.partnerStatus = KdspNCPDNameGenerator.GetPartnerStatus(seed + 1000);
         
         // Status
-        data.dutyStatus = NCPDNameGenerator.GetDutyStatus(seed + 1100);
+        data.dutyStatus = KdspNCPDNameGenerator.GetDutyStatus(seed + 1100);
         
         return data;
     }
@@ -170,7 +170,7 @@ public class NCPDNameGenerator {
     }
 }
 
-public class NCPDOfficerData {
+public class KdspNCPDOfficerData {
     public let fullName: String;
     public let lastName: String;
     public let rank: String;

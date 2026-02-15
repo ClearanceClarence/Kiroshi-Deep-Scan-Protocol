@@ -1,5 +1,5 @@
 // Upbringing and family origins
-public abstract class TextUpbringing {
+public abstract class KdspTextUpbringing {
     // === POSITIVE/STABLE ===
     public static func LVG_MOT_FAT_F() -> String { return "Grew up with a loving mother and father. "; }
     public static func LVG_MOT_FAT_M() -> String { return ""; }

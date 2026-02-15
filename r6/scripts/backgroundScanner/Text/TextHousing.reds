@@ -1,5 +1,5 @@
 // Housing and living situations
-public abstract class TextHousing {
+public abstract class KdspTextHousing {
     // === HOMELESS / STREET ===
     public static func LIVED_ALLEY_F() -> String { return "Lived in an alley. "; }
     public static func LIVED_ALLEY_M() -> String { return ""; }

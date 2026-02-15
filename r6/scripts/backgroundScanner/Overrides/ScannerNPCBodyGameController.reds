@@ -1,4 +1,4 @@
-import CrowdScanner.UI.ScannerBackstorySystem
+import CrowdScanner.UI.KdspScannerBackstorySystem
 import Codeware.UI.inkCustomController
 
 @addField(ScannerNPCBodyGameController)
@@ -14,7 +14,7 @@ private let m_isFullyScanned: Bool;
 private let m_scanBlackboard: wref<IBlackboard>;
 
 @addField(ScannerNPCBodyGameController)
-private let m_scannerBackstorySystem: ref<ScannerBackstorySystem>;
+private let m_scannerBackstorySystem: ref<KdspScannerBackstorySystem>;
 
 @addField(ScannerNPCBodyGameController)
 private let m_nameCallbackID: ref<CallbackHandle>;
@@ -49,9 +49,9 @@ protected cb func OnInitialize() -> Bool {
 
   this.OnNameChanged(this.m_chunkBlackboard.GetVariant(this.m_chunkBlackboardDef.ScannerName));
 
-  this.m_backstoryCallbackID = this.m_chunkBlackboard.RegisterDelayedListenerVariant(this.m_chunkBlackboardDef.ScannerBackstory, this, n"OnBackstoryChanged");
+  this.m_backstoryCallbackID = this.m_chunkBlackboard.RegisterDelayedListenerVariant(this.m_chunkBlackboardDef.KdspScannerBackstory, this, n"OnBackstoryChanged");
 
-  this.OnBackstoryChanged(this.m_chunkBlackboard.GetVariant(this.m_chunkBlackboardDef.ScannerBackstory));
+  this.OnBackstoryChanged(this.m_chunkBlackboard.GetVariant(this.m_chunkBlackboardDef.KdspScannerBackstory));
 }
 
 @addMethod(ScannerNPCBodyGameController)
@@ -69,7 +69,7 @@ protected cb func OnStateChanged(val: Variant) -> Bool {
 
 @addMethod(ScannerNPCBodyGameController)
 protected cb func OnBackstoryChanged(val: Variant) -> Bool {
-  let backstoryChunk: ref<ScannerBackstory> = FromVariant<ref<ScannerBackstory>>(val);
+  let backstoryChunk: ref<KdspScannerBackstory> = FromVariant<ref<KdspScannerBackstory>>(val);
   
   // Skip if backstory is marked as empty (unique NPCs)
   if IsDefined(backstoryChunk) && backstoryChunk.IsEmpty() {
@@ -142,7 +142,7 @@ private func RenderNPCBackstory() -> Void {
   leftPanel.SetSizeRule(inkESizeRule.Stretch);
 
   // Add backstory to left panel
-  let scannerBackstorySystem = ScannerBackstorySystem.Create();
+  let scannerBackstorySystem = KdspScannerBackstorySystem.Create();
   this.m_scannerBackstorySystem = scannerBackstorySystem;
   this.m_scannerBackstorySystem.Reparent(leftPanel);
 

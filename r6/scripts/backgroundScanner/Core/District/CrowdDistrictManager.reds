@@ -1,5 +1,5 @@
 // District-Aware Generation System
-public class CrowdDistrictManager {
+public class KdspCrowdDistrictManager {
 
     public static func GetCurrentDistrict(position: Vector4) -> String {
         // This would ideally use game's district detection
@@ -37,30 +37,30 @@ public class CrowdDistrictManager {
         return "UNKNOWN";
     }
 
-    public static func GenerateDistrictProfile(seed: Int32, district: String, archetype: String) -> ref<DistrictProfileData> {
-        let profile: ref<DistrictProfileData> = new DistrictProfileData();
+    public static func GenerateDistrictProfile(seed: Int32, district: String, archetype: String) -> ref<KdspDistrictProfileData> {
+        let profile: ref<KdspDistrictProfileData> = new KdspDistrictProfileData();
 
         profile.currentDistrict = district;
-        profile.districtName = CrowdDistrictManager.GetDistrictFullName(district);
-        profile.districtDescription = CrowdDistrictManager.GetDistrictDescription(district);
+        profile.districtName = KdspCrowdDistrictManager.GetDistrictFullName(district);
+        profile.districtDescription = KdspCrowdDistrictManager.GetDistrictDescription(district);
         
         // How long they've been in the district
-        profile.residencyLength = CrowdDistrictManager.GenerateResidencyLength(seed, district, archetype);
+        profile.residencyLength = KdspCrowdDistrictManager.GenerateResidencyLength(seed, district, archetype);
         
         // Standing in district
-        profile.localStanding = CrowdDistrictManager.GenerateLocalStanding(seed + 100, district, archetype);
+        profile.localStanding = KdspCrowdDistrictManager.GenerateLocalStanding(seed + 100, district, archetype);
         
         // District-specific connections
-        profile.localConnections = CrowdDistrictManager.GenerateLocalConnections(seed + 200, district, archetype);
+        profile.localConnections = KdspCrowdDistrictManager.GenerateLocalConnections(seed + 200, district, archetype);
         
         // District-weighted backstory elements
-        profile.districtBackstoryElements = CrowdDistrictManager.GenerateDistrictBackstory(seed + 300, district, archetype);
+        profile.districtBackstoryElements = KdspCrowdDistrictManager.GenerateDistrictBackstory(seed + 300, district, archetype);
         
         // Local threats/concerns
-        profile.localThreats = CrowdDistrictManager.GetDistrictThreats(district);
+        profile.localThreats = KdspCrowdDistrictManager.GetDistrictThreats(district);
         
         // Dominant faction
-        profile.dominantFaction = CrowdDistrictManager.GetDominantFaction(district);
+        profile.dominantFaction = KdspCrowdDistrictManager.GetDominantFaction(district);
 
         return profile;
     }
@@ -319,8 +319,8 @@ public class CrowdDistrictManager {
     }
 
     // District-based archetype weight modifiers
-    public static func GetArchetypeWeightsForDistrict(district: String) -> ref<DistrictArchetypeWeights> {
-        let weights: ref<DistrictArchetypeWeights> = new DistrictArchetypeWeights();
+    public static func GetArchetypeWeightsForDistrict(district: String) -> ref<KdspDistrictArchetypeWeights> {
+        let weights: ref<KdspDistrictArchetypeWeights> = new KdspDistrictArchetypeWeights();
 
         if Equals(district, "CITY_CENTER") {
             weights.corpoManagerWeight = 30;
@@ -370,7 +370,7 @@ public class CrowdDistrictManager {
     }
 }
 
-public class DistrictProfileData {
+public class KdspDistrictProfileData {
     public let currentDistrict: String;
     public let districtName: String;
     public let districtDescription: String;
@@ -382,7 +382,7 @@ public class DistrictProfileData {
     public let dominantFaction: String;
 }
 
-public class DistrictArchetypeWeights {
+public class KdspDistrictArchetypeWeights {
     public let corpoManagerWeight: Int32;
     public let corpoDroneWeight: Int32;
     public let yuppieWeight: Int32;

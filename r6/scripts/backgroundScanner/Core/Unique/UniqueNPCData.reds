@@ -1,7 +1,7 @@
 // Kiroshi Deep Scan Protocol - Unique NPC Data Structures
 // Hand-crafted backstories for named story characters
 
-public class UniqueNPCBackstory {
+public class KdspUniqueNPCBackstory {
     public let characterId: String;          // TweakDB character ID (e.g., "Character.intim_takemura")
     public let displayName: String;          // Override display name if needed
     public let background: String;           // Origin/background story
@@ -17,8 +17,8 @@ public class UniqueNPCBackstory {
     public let notes: String;                // Additional intel/notes
     public let classification: String;       // Database classification (e.g., "ARASAKA PERSONNEL", "FIXER")
 
-    public static func Create(id: String) -> ref<UniqueNPCBackstory> {
-        let self = new UniqueNPCBackstory();
+    public static func Create(id: String) -> ref<KdspUniqueNPCBackstory> {
+        let self = new KdspUniqueNPCBackstory();
         self.characterId = id;
         self.displayName = "";
         self.background = "";
@@ -37,74 +37,74 @@ public class UniqueNPCBackstory {
     }
 
     // Builder pattern methods for clean entry creation
-    public func SetDisplayName(name: String) -> ref<UniqueNPCBackstory> {
+    public func SetDisplayName(name: String) -> ref<KdspUniqueNPCBackstory> {
         this.displayName = name;
         return this;
     }
 
-    public func SetBackground(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetBackground(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.background = text;
         return this;
     }
 
-    public func SetEarlyLife(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetEarlyLife(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.earlyLife = text;
         return this;
     }
 
-    public func SetSignificantEvents(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetSignificantEvents(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.significantEvents = text;
         return this;
     }
 
-    public func SetAffiliation(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetAffiliation(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.affiliation = text;
         return this;
     }
 
-    public func SetCriminalRecord(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetCriminalRecord(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.criminalRecord = text;
         return this;
     }
 
-    public func SetCyberwareStatus(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetCyberwareStatus(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.cyberwareStatus = text;
         return this;
     }
 
-    public func SetFinancialStatus(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetFinancialStatus(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.financialStatus = text;
         return this;
     }
 
-    public func SetMedicalStatus(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetMedicalStatus(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.medicalStatus = text;
         return this;
     }
 
-    public func SetThreatAssessment(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetThreatAssessment(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.threatAssessment = text;
         return this;
     }
 
-    public func SetRelationships(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetRelationships(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.relationships = text;
         return this;
     }
 
-    public func SetNotes(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetNotes(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.notes = text;
         return this;
     }
 
-    public func SetClassification(text: String) -> ref<UniqueNPCBackstory> {
+    public func SetClassification(text: String) -> ref<KdspUniqueNPCBackstory> {
         this.classification = text;
         return this;
     }
 
-    // Convert to BackstoryUI for display
-    public func ToBackstoryUI() -> BackstoryUI {
-        let ui: BackstoryUI;
+    // Convert to KdspBackstoryUI for display
+    public func ToBackstoryUI() -> KdspBackstoryUI {
+        let ui: KdspBackstoryUI;
         ui.background = this.background;
         ui.earlyLife = this.earlyLife;
         ui.significantEvents = this.significantEvents;

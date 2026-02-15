@@ -2,9 +2,9 @@ module CrowdScanner.UI
 
 import Codeware.UI.inkCustomController
 
-public class NetWatchDBReport extends inkCustomController {
+public class KdspNetWatchDBReport extends inkCustomController {
 
-    private let m_backstoryUI: BackstoryUI;
+    private let m_backstoryUI: KdspBackstoryUI;
     private let m_root: wref<inkCompoundWidget>;
     
     // Alert sections
@@ -61,7 +61,7 @@ public class NetWatchDBReport extends inkCustomController {
 
     protected func CreateWidgets() -> Void {
         let root: ref<inkVerticalPanel> = new inkVerticalPanel();
-        root.SetName(n"NetWatchDBReport");
+        root.SetName(n"KdspNetWatchDBReport");
         root.SetHAlign(inkEHorizontalAlign.Left);
         root.SetVAlign(inkEVerticalAlign.Top);
         root.SetMargin(new inkMargin(0.0, 15.0, 0.0, 0.0));
@@ -153,7 +153,7 @@ public class NetWatchDBReport extends inkCustomController {
         header.SetName(StringToName(NameToString(name) + "_header"));
         header.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         header.SetFontStyle(n"Semi-Bold");
-        header.SetFontSize(KiroshiSettings.GetHeaderFontSize());
+        header.SetFontSize(KdspSettings.GetHeaderFontSize());
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText(headerText);
         header.SetTintColor(color);
@@ -165,7 +165,7 @@ public class NetWatchDBReport extends inkCustomController {
         value.SetName(StringToName(NameToString(name) + "_value"));
         value.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         value.SetFontStyle(n"Medium");
-        value.SetFontSize(KiroshiSettings.GetTextFontSize());
+        value.SetFontSize(KdspSettings.GetTextFontSize());
         value.SetTintColor(color);
         value.SetMargin(new inkMargin(0.0, 0.0, 0.0, 0.0));
         value.SetFitToContent(true);
@@ -189,7 +189,7 @@ public class NetWatchDBReport extends inkCustomController {
         header.SetName(StringToName(NameToString(name) + "_header"));
         header.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         header.SetFontStyle(n"Semi-Bold");
-        header.SetFontSize(KiroshiSettings.GetHeaderFontSize());
+        header.SetFontSize(KdspSettings.GetHeaderFontSize());
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText(headerText);
         header.SetTintColor(new HDRColor(0.72, 0.65, 0.55, 1.0));
@@ -202,7 +202,7 @@ public class NetWatchDBReport extends inkCustomController {
         value.SetName(StringToName(NameToString(name) + "_value"));
         value.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         value.SetFontStyle(n"Medium");
-        value.SetFontSize(KiroshiSettings.GetTextFontSize());
+        value.SetFontSize(KdspSettings.GetTextFontSize());
         value.SetTintColor(valueColor);
         value.SetMargin(new inkMargin(0.0, 0.0, 0.0, 0.0));
         value.SetFitToContent(true);
@@ -212,7 +212,7 @@ public class NetWatchDBReport extends inkCustomController {
         return section;
     }
 
-    public func SetBackstory(backstoryUI: BackstoryUI) {
+    public func SetBackstory(backstoryUI: KdspBackstoryUI) {
         this.m_backstoryUI = backstoryUI;
         
         // Update font sizes from settings (allows mid-game changes)
@@ -351,8 +351,8 @@ public class NetWatchDBReport extends inkCustomController {
     }
 
     private func UpdateFontSizes() -> Void {
-        let headerSize = KiroshiSettings.GetHeaderFontSize();
-        let textSize = KiroshiSettings.GetTextFontSize();
+        let headerSize = KdspSettings.GetHeaderFontSize();
+        let textSize = KdspSettings.GetTextFontSize();
         
         // Update all header fonts
         this.UpdateSectionFontSize(this.m_classificationSection, n"classification", headerSize, textSize);
@@ -390,8 +390,8 @@ public class NetWatchDBReport extends inkCustomController {
         this.GetRootWidget().SetVisible(visible);
     }
 
-    public static func Create() -> ref<NetWatchDBReport> {
-        let self: ref<NetWatchDBReport> = new NetWatchDBReport();
+    public static func Create() -> ref<KdspNetWatchDBReport> {
+        let self: ref<KdspNetWatchDBReport> = new KdspNetWatchDBReport();
         self.CreateInstance();
         return self;
     }

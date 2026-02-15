@@ -1,5 +1,5 @@
 // Jobs and career paths
-public abstract class TextJobs {
+public abstract class KdspTextJobs {
     // === CRIMINAL / STREET ===
     public static func JOB_LOCAL_FIXER_F() -> String { return "Started doing jobs for a local fixer. "; }
     public static func JOB_LOCAL_FIXER_M() -> String { return ""; }

@@ -1,4 +1,4 @@
-enum CrowdAssociation {
+enum KdspCrowdAssociation {
     Arasaka = 0,
     Militech = 1,
     Aldecados = 2,

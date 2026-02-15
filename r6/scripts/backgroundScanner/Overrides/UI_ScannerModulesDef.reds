@@ -1,2 +1,2 @@
 @addField(UI_ScannerModulesDef)
-public let ScannerBackstory: BlackboardID_Variant;
+public let KdspScannerBackstory: BlackboardID_Variant;

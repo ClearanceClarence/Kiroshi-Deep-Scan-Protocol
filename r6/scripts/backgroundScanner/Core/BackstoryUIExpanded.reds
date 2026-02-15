@@ -1,5 +1,5 @@
-// Expanded BackstoryUI with all new data categories
-public struct BackstoryUIExpanded {
+// Expanded KdspBackstoryUI with all new data categories
+public struct KdspBackstoryUIExpanded {
     // Original fields
     public let background: String;
     public let earlyLife: String;
@@ -65,14 +65,14 @@ public struct BackstoryUIExpanded {
     public let dataIntegrity: Int32;
 }
 
-public struct AssociateData {
+public struct KdspAssociateData {
     public let name: String;
     public let relationship: String;
     public let status: String;
     public let affiliation: String;
 }
 
-public struct CyberwareData {
+public struct KdspCyberwareData {
     public let name: String;
     public let manufacturer: String;
     public let slot: String;
@@ -80,7 +80,7 @@ public struct CyberwareData {
     public let condition: String;
 }
 
-public struct CrimeRecord {
+public struct KdspCrimeRecord {
     public let crime: String;
     public let year: Int32;
     public let status: String;

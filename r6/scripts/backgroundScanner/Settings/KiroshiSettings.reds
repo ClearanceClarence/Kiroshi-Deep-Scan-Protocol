@@ -2,17 +2,17 @@
 // Requires: Mod Settings Menu (https://www.nexusmods.com/cyberpunk2077/mods/4885)
 
 // Enum for Special NPC Rarity dropdown
-enum SpecialNPCRarity {
+enum KdspSpecialNPCRarity {
     Common = 0,
     Rare = 1,
     Mythic = 2
 }
 
-public class KiroshiDeepScanSystem extends ScriptableSystem {
-    private let m_settings: ref<KiroshiDeepScanSettings>;
+public class KdspDeepScanSystem extends ScriptableSystem {
+    private let m_settings: ref<KdspDeepScanSettings>;
 
     private func OnAttach() -> Void {
-        this.m_settings = new KiroshiDeepScanSettings();
+        this.m_settings = new KdspDeepScanSettings();
         ModSettings.RegisterListenerToClass(this.m_settings);
     }
 
@@ -21,17 +21,17 @@ public class KiroshiDeepScanSystem extends ScriptableSystem {
         this.m_settings = null;
     }
 
-    public static func GetInstance(gameInstance: GameInstance) -> ref<KiroshiDeepScanSystem> {
-        let system = GameInstance.GetScriptableSystemsContainer(gameInstance).Get(n"KiroshiDeepScanSystem") as KiroshiDeepScanSystem;
+    public static func GetInstance(gameInstance: GameInstance) -> ref<KdspDeepScanSystem> {
+        let system = GameInstance.GetScriptableSystemsContainer(gameInstance).Get(n"KdspDeepScanSystem") as KdspDeepScanSystem;
         return system;
     }
 
-    public func GetSettings() -> ref<KiroshiDeepScanSettings> {
+    public func GetSettings() -> ref<KdspDeepScanSettings> {
         return this.m_settings;
     }
 }
 
-public class KiroshiDeepScanSettings {
+public class KdspDeepScanSettings {
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
     @runtimeProperty("ModSettings.category", "Display Options")
     @runtimeProperty("ModSettings.displayName", "Data Density")
@@ -72,7 +72,7 @@ public class KiroshiDeepScanSettings {
     @runtimeProperty("ModSettings.displayValues.Common", "Common (1 in 250)")
     @runtimeProperty("ModSettings.displayValues.Rare", "Rare (1 in 750)")
     @runtimeProperty("ModSettings.displayValues.Mythic", "Mythic (1 in 2000)")
-    public let specialNPCRarity: SpecialNPCRarity = SpecialNPCRarity.Rare;
+    public let specialNPCRarity: KdspSpecialNPCRarity = KdspSpecialNPCRarity.Rare;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
     @runtimeProperty("ModSettings.category", "Content Options")
@@ -100,11 +100,11 @@ public class KiroshiDeepScanSettings {
 }
 
 // Static helper class for accessing settings from anywhere
-public abstract class KiroshiSettings {
+public abstract class KdspSettings {
     
     // Returns 1 (Low), 2 (Medium), or 3 (High/Full)
     public static func GetDataDensity() -> Int32 {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().dataDensity;
         }
@@ -112,7 +112,7 @@ public abstract class KiroshiSettings {
     }
 
     public static func GetHeaderFontSize() -> Int32 {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().headerFontSize;
         }
@@ -120,7 +120,7 @@ public abstract class KiroshiSettings {
     }
 
     public static func GetTextFontSize() -> Int32 {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().textFontSize;
         }
@@ -129,21 +129,21 @@ public abstract class KiroshiSettings {
 
     // Helper to check density levels
     public static func IsLowDensity() -> Bool {
-        return KiroshiSettings.GetDataDensity() == 1;
+        return KdspSettings.GetDataDensity() == 1;
     }
 
     public static func IsMediumDensity() -> Bool {
-        return KiroshiSettings.GetDataDensity() == 2;
+        return KdspSettings.GetDataDensity() == 2;
     }
 
     public static func IsHighDensity() -> Bool {
-        return KiroshiSettings.GetDataDensity() >= 3;
+        return KdspSettings.GetDataDensity() >= 3;
     }
 
     // Returns max items for lists based on density
     // High=max, Medium=half, Low=1-2
     public static func GetMaxListItems(maxItems: Int32) -> Int32 {
-        let density = KiroshiSettings.GetDataDensity();
+        let density = KdspSettings.GetDataDensity();
         if density == 1 {
             return Max(1, maxItems / 4);
         } else if density == 2 {
@@ -153,7 +153,7 @@ public abstract class KiroshiSettings {
     }
 
     public static func CoherenceEnabled() -> Bool {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().enableCoherence;
         }
@@ -161,20 +161,20 @@ public abstract class KiroshiSettings {
     }
 
     public static func GetSpecialNPCRarity() -> Int32 {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             let option = system.GetSettings().specialNPCRarity;
             // Convert enum to actual rarity value
             // Common = 250, Rare = 750, Mythic = 2000
-            if Equals(option, SpecialNPCRarity.Common) { return 250; }
-            if Equals(option, SpecialNPCRarity.Rare) { return 750; }
-            if Equals(option, SpecialNPCRarity.Mythic) { return 2000; }
+            if Equals(option, KdspSpecialNPCRarity.Common) { return 250; }
+            if Equals(option, KdspSpecialNPCRarity.Rare) { return 750; }
+            if Equals(option, KdspSpecialNPCRarity.Mythic) { return 2000; }
         }
         return 750; // Default to Rare
     }
 
     public static func DiverseRelationshipsEnabled() -> Bool {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().enableDiverseRelationships;
         }
@@ -182,7 +182,7 @@ public abstract class KiroshiSettings {
     }
 
     public static func BodyModRecordsEnabled() -> Bool {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().enableBodyModRecords;
         }
@@ -190,7 +190,7 @@ public abstract class KiroshiSettings {
     }
 
     public static func PronounDisplayEnabled() -> Bool {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().enablePronounDisplay;
         }
@@ -198,7 +198,7 @@ public abstract class KiroshiSettings {
     }
 
     public static func DebugModeEnabled() -> Bool {
-        let system = KiroshiDeepScanSystem.GetInstance(GetGameInstance());
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
             return system.GetSettings().enableDebugMode;
         }

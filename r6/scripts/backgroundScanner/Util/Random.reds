@@ -19,7 +19,7 @@ public func RandTrueFalse(seed: Int32) -> Bool {
 }
 
 // Calculates the cumulative density of a weighted set of events.
-public static func CDF(weightedEvents: array<ref<LifePathEvent>>) -> array<Int32> {
+public static func CDF(weightedEvents: array<ref<KdspLifePathEvent>>) -> array<Int32> {
     let i = 0;
     let cumulativeWeights: array<Int32>;
     let prev = 0;

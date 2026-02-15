@@ -1,13 +1,13 @@
-public class ScannerBackstory extends ScannerChunk {
+public class KdspScannerBackstory extends ScannerChunk {
 
-    private let backstory: BackstoryUI;
+    private let backstory: KdspBackstoryUI;
     private let isEmpty: Bool;
 
-    public final const func GetBackstory() -> BackstoryUI {
+    public final const func GetBackstory() -> KdspBackstoryUI {
         return this.backstory;
     }
 
-    public final func Set(b: BackstoryUI) -> Void {
+    public final func Set(b: KdspBackstoryUI) -> Void {
         this.backstory = b;
         this.isEmpty = false;
     }

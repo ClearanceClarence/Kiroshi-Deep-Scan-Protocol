@@ -1,5 +1,5 @@
 // Adult life events
-public abstract class TextAdulthood {
+public abstract class KdspTextAdulthood {
     // === FINANCIAL ===
     public static func LOST_GAMBLE_F() -> String { return "Lost €$%eddies% Eurodollars gambling. "; }
     public static func LOST_GAMBLE_M() -> String { return ""; }

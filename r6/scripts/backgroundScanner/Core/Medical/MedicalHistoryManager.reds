@@ -1,121 +1,121 @@
 // Medical History Generation System
-public class MedicalHistoryManager {
+public class KdspMedicalHistoryManager {
 
     // Legacy function for backward compatibility
-    public static func Generate(seed: Int32, archetype: String, age: Int32) -> ref<MedicalHistoryData> {
-        return MedicalHistoryManager.GenerateCoherent(seed, archetype, age, null);
+    public static func Generate(seed: Int32, archetype: String, age: Int32) -> ref<KdspMedicalHistoryData> {
+        return KdspMedicalHistoryManager.GenerateCoherent(seed, archetype, age, null);
     }
 
     // Coherent generation using life profile
-    public static func GenerateCoherent(seed: Int32, archetype: String, age: Int32, coherence: ref<CoherenceProfile>) -> ref<MedicalHistoryData> {
-        let medical: ref<MedicalHistoryData> = new MedicalHistoryData();
-        let density = KiroshiSettings.GetDataDensity();
+    public static func GenerateCoherent(seed: Int32, archetype: String, age: Int32, coherence: ref<KdspCoherenceProfile>) -> ref<KdspMedicalHistoryData> {
+        let medical: ref<KdspMedicalHistoryData> = new KdspMedicalHistoryData();
+        let density = KdspSettings.GetDataDensity();
 
         // Basic info - always shown
-        medical.bloodType = MedicalHistoryManager.GenerateBloodType(seed);
+        medical.bloodType = KdspMedicalHistoryManager.GenerateBloodType(seed);
         medical.age = age;
-        medical.biologicalAge = MedicalHistoryManager.CalculateBiologicalAgeCoherent(seed + 10, age, archetype, coherence);
+        medical.biologicalAge = KdspMedicalHistoryManager.CalculateBiologicalAgeCoherent(seed + 10, age, archetype, coherence);
         
         // Physical stats - only on medium/high
         if density >= 2 {
-            medical.height = MedicalHistoryManager.GenerateHeight(seed + 20, archetype);
-            medical.weight = MedicalHistoryManager.GenerateWeight(seed + 30, archetype);
+            medical.height = KdspMedicalHistoryManager.GenerateHeight(seed + 20, archetype);
+            medical.weight = KdspMedicalHistoryManager.GenerateWeight(seed + 30, archetype);
         }
 
         // Conditions - limited by density
-        let conditionCount = MedicalHistoryManager.GetConditionCountCoherent(seed + 100, archetype, age, coherence);
-        conditionCount = KiroshiSettings.GetMaxListItems(conditionCount);
+        let conditionCount = KdspMedicalHistoryManager.GetConditionCountCoherent(seed + 100, archetype, age, coherence);
+        conditionCount = KdspSettings.GetMaxListItems(conditionCount);
         
         let i = 0;
         while i < conditionCount {
-            ArrayPush(medical.chronicConditions, MedicalHistoryManager.GenerateConditionCoherent(seed + 110 + (i * 17), archetype, coherence));
+            ArrayPush(medical.chronicConditions, KdspMedicalHistoryManager.GenerateConditionCoherent(seed + 110 + (i * 17), archetype, coherence));
             i += 1;
         }
 
         // Add substance-related conditions if coherence indicates
         if IsDefined(coherence) && coherence.hasSubstanceIssues && RandRange(seed + 150, 1, 100) <= 70 {
-            ArrayPush(medical.chronicConditions, MedicalHistoryManager.GenerateSubstanceCondition(seed + 151, coherence.substanceType));
+            ArrayPush(medical.chronicConditions, KdspMedicalHistoryManager.GenerateSubstanceCondition(seed + 151, coherence.substanceType));
         }
 
         // Allergies - only on medium/high density
         if density >= 2 && RandRange(seed + 200, 1, 100) <= 35 {
             let allergyCount = RandRange(seed + 210, 1, 4);
-            allergyCount = KiroshiSettings.GetMaxListItems(allergyCount);
+            allergyCount = KdspSettings.GetMaxListItems(allergyCount);
             i = 0;
             while i < allergyCount {
-                ArrayPush(medical.allergies, MedicalHistoryManager.GenerateAllergy(seed + 220 + (i * 13)));
+                ArrayPush(medical.allergies, KdspMedicalHistoryManager.GenerateAllergy(seed + 220 + (i * 13)));
                 i += 1;
             }
         }
 
         // Organ replacements - limited by density
-        let organChance = MedicalHistoryManager.GetOrganReplacementChance(archetype, age);
+        let organChance = KdspMedicalHistoryManager.GetOrganReplacementChance(archetype, age);
         if RandRange(seed + 300, 1, 100) <= organChance {
             let organCount = RandRange(seed + 310, 1, 3);
-            organCount = KiroshiSettings.GetMaxListItems(organCount);
+            organCount = KdspSettings.GetMaxListItems(organCount);
             i = 0;
             while i < organCount {
-                ArrayPush(medical.organReplacements, MedicalHistoryManager.GenerateOrganReplacement(seed + 320 + (i * 19)));
+                ArrayPush(medical.organReplacements, KdspMedicalHistoryManager.GenerateOrganReplacement(seed + 320 + (i * 19)));
                 i += 1;
             }
         }
 
         // Medical visits - only on medium/high
         if density >= 2 {
-            medical.lastCheckup = MedicalHistoryManager.GenerateLastCheckup(seed + 400, archetype);
-            medical.ripperdocVisits = MedicalHistoryManager.GenerateRipperdocVisits(seed + 410, archetype);
-            medical.emergencyVisits = MedicalHistoryManager.GenerateEmergencyVisitsCoherent(seed + 420, archetype, coherence);
+            medical.lastCheckup = KdspMedicalHistoryManager.GenerateLastCheckup(seed + 400, archetype);
+            medical.ripperdocVisits = KdspMedicalHistoryManager.GenerateRipperdocVisits(seed + 410, archetype);
+            medical.emergencyVisits = KdspMedicalHistoryManager.GenerateEmergencyVisitsCoherent(seed + 420, archetype, coherence);
         }
 
         // Donor status - only on high density
         if density >= 3 {
-            medical.donorStatus = MedicalHistoryManager.GenerateDonorStatus(seed + 500, archetype);
+            medical.donorStatus = KdspMedicalHistoryManager.GenerateDonorStatus(seed + 500, archetype);
             medical.organDonorCard = RandRange(seed + 510, 1, 100) <= 30;
         }
 
         // Medications - limited by density
-        let medCount = MedicalHistoryManager.GetMedicationCount(seed + 600, archetype, ArraySize(medical.chronicConditions));
-        medCount = KiroshiSettings.GetMaxListItems(medCount);
+        let medCount = KdspMedicalHistoryManager.GetMedicationCount(seed + 600, archetype, ArraySize(medical.chronicConditions));
+        medCount = KdspSettings.GetMaxListItems(medCount);
         i = 0;
         while i < medCount {
-            ArrayPush(medical.currentMedications, MedicalHistoryManager.GenerateMedication(seed + 610 + (i * 23), archetype));
+            ArrayPush(medical.currentMedications, KdspMedicalHistoryManager.GenerateMedication(seed + 610 + (i * 23), archetype));
             i += 1;
         }
 
         // Injuries - limited by density
-        let injuryCount = MedicalHistoryManager.GetInjuryCountCoherent(seed + 700, archetype, coherence);
-        injuryCount = KiroshiSettings.GetMaxListItems(injuryCount);
+        let injuryCount = KdspMedicalHistoryManager.GetInjuryCountCoherent(seed + 700, archetype, coherence);
+        injuryCount = KdspSettings.GetMaxListItems(injuryCount);
         i = 0;
         while i < injuryCount {
-            ArrayPush(medical.pastInjuries, MedicalHistoryManager.GenerateInjuryCoherent(seed + 710 + (i * 29), coherence));
+            ArrayPush(medical.pastInjuries, KdspMedicalHistoryManager.GenerateInjuryCoherent(seed + 710 + (i * 29), coherence));
             i += 1;
         }
 
         // Vaccinations - only on high density
         if density >= 3 {
-            medical.vaccinationStatus = MedicalHistoryManager.GenerateVaccinationStatus(seed + 800, archetype);
+            medical.vaccinationStatus = KdspMedicalHistoryManager.GenerateVaccinationStatus(seed + 800, archetype);
         }
 
         // Mental health - always shown (important)
-        medical.mentalHealthFlag = MedicalHistoryManager.HasMentalHealthFlagCoherent(seed + 900, archetype, coherence);
+        medical.mentalHealthFlag = KdspMedicalHistoryManager.HasMentalHealthFlagCoherent(seed + 900, archetype, coherence);
 
         // Genetic markers - only on high density
         if density >= 3 && RandRange(seed + 1000, 1, 100) <= 25 {
-            ArrayPush(medical.geneticMarkers, MedicalHistoryManager.GenerateGeneticMarker(seed + 1010));
+            ArrayPush(medical.geneticMarkers, KdspMedicalHistoryManager.GenerateGeneticMarker(seed + 1010));
             if RandRange(seed + 1020, 1, 100) <= 30 {
-                ArrayPush(medical.geneticMarkers, MedicalHistoryManager.GenerateGeneticMarker(seed + 1030));
+                ArrayPush(medical.geneticMarkers, KdspMedicalHistoryManager.GenerateGeneticMarker(seed + 1030));
             }
         }
 
         // Overall health rating
-        medical.healthRating = MedicalHistoryManager.CalculateHealthRating(medical, archetype);
+        medical.healthRating = KdspMedicalHistoryManager.CalculateHealthRating(medical, archetype);
 
         return medical;
     }
 
     // Biological age affected by substance abuse and trauma
-    private static func CalculateBiologicalAgeCoherent(seed: Int32, chronoAge: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let bioAge = MedicalHistoryManager.CalculateBiologicalAge(seed, chronoAge, archetype);
+    private static func CalculateBiologicalAgeCoherent(seed: Int32, chronoAge: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let bioAge = KdspMedicalHistoryManager.CalculateBiologicalAge(seed, chronoAge, archetype);
         
         if IsDefined(coherence) {
             if coherence.hasSubstanceIssues { bioAge += RandRange(seed + 5, 3, 8); }
@@ -128,8 +128,8 @@ public class MedicalHistoryManager {
     }
 
     // Condition count influenced by coherence
-    private static func GetConditionCountCoherent(seed: Int32, archetype: String, age: Int32, coherence: ref<CoherenceProfile>) -> Int32 {
-        let base = MedicalHistoryManager.GetConditionCount(seed, archetype, age);
+    private static func GetConditionCountCoherent(seed: Int32, archetype: String, age: Int32, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let base = KdspMedicalHistoryManager.GetConditionCount(seed, archetype, age);
         
         if IsDefined(coherence) {
             if coherence.hasChronicHealth { base += 1; }
@@ -142,15 +142,15 @@ public class MedicalHistoryManager {
     }
 
     // Generate condition that matches coherence
-    private static func GenerateConditionCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateConditionCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         // 40% chance to generate coherence-matching condition
         if IsDefined(coherence) && RandRange(seed + 50, 1, 100) <= 40 {
             if coherence.hasSubstanceIssues {
-                return MedicalHistoryManager.GenerateSubstanceCondition(seed, coherence.substanceType);
+                return KdspMedicalHistoryManager.GenerateSubstanceCondition(seed, coherence.substanceType);
             }
         }
         
-        return MedicalHistoryManager.GenerateCondition(seed, archetype);
+        return KdspMedicalHistoryManager.GenerateCondition(seed, archetype);
     }
 
     // Substance-specific medical conditions
@@ -246,8 +246,8 @@ public class MedicalHistoryManager {
     }
 
     // Emergency visits affected by violence/trauma
-    private static func GenerateEmergencyVisitsCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let base = MedicalHistoryManager.GenerateEmergencyVisits(seed, archetype);
+    private static func GenerateEmergencyVisitsCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let base = KdspMedicalHistoryManager.GenerateEmergencyVisits(seed, archetype);
         
         if IsDefined(coherence) {
             if coherence.hasViolentPast { base += RandRange(seed + 5, 1, 3); }
@@ -258,8 +258,8 @@ public class MedicalHistoryManager {
     }
 
     // Injury count influenced by violence
-    private static func GetInjuryCountCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let base = MedicalHistoryManager.GetInjuryCount(seed, archetype);
+    private static func GetInjuryCountCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let base = KdspMedicalHistoryManager.GetInjuryCount(seed, archetype);
         
         if IsDefined(coherence) {
             if coherence.hasViolentPast { base += RandRange(seed + 5, 1, 3); }
@@ -272,7 +272,7 @@ public class MedicalHistoryManager {
     }
 
     // Injury type matches violence type
-    private static func GenerateInjuryCoherent(seed: Int32, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateInjuryCoherent(seed: Int32, coherence: ref<KdspCoherenceProfile>) -> String {
         let year = RandRange(seed + 1000, 2065, 2077);
         
         if IsDefined(coherence) && coherence.hasViolentPast && RandRange(seed + 50, 1, 100) <= 60 {
@@ -345,11 +345,11 @@ public class MedicalHistoryManager {
             return "Train/Metro accident - " + IntToString(year);
         }
         
-        return MedicalHistoryManager.GenerateInjury(seed);
+        return KdspMedicalHistoryManager.GenerateInjury(seed);
     }
 
     // Mental health flag influenced by trauma
-    private static func HasMentalHealthFlagCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Bool {
+    private static func HasMentalHealthFlagCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Bool {
         let chance: Int32;
         
         if Equals(archetype, "JUNKIE") { chance = 80; }
@@ -1023,7 +1023,7 @@ public class MedicalHistoryManager {
         return "Possible gene therapy modifications";
     }
 
-    private static func CalculateHealthRating(medical: ref<MedicalHistoryData>, archetype: String) -> String {
+    private static func CalculateHealthRating(medical: ref<KdspMedicalHistoryData>, archetype: String) -> String {
         let score = 100;
 
         // Deductions
@@ -1049,7 +1049,7 @@ public class MedicalHistoryManager {
     }
 }
 
-public class MedicalHistoryData {
+public class KdspMedicalHistoryData {
     public let bloodType: String;
     public let age: Int32;
     public let biologicalAge: Int32;

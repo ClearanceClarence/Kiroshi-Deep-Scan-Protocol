@@ -1,48 +1,48 @@
 // Gang Profile Generator - Main Entry Point
 // Delegates to individual gang profile classes for generation
 
-public class GangProfileGenerator {
+public class KdspGangProfileGenerator {
 
-    public static func Generate(seed: Int32, gangAffiliation: String, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
+    public static func Generate(seed: Int32, gangAffiliation: String, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         
         // Delegate to gang-specific generators
         if Equals(gangAffiliation, "TYGER_CLAWS") {
-            return TygerClawsProfile.Generate(seed, appearanceName, gender);
+            return KdspTygerClawsProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "MAELSTROM") {
-            return MaelstromProfile.Generate(seed, appearanceName, gender);
+            return KdspMaelstromProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "VALENTINOS") {
-            return ValentinosProfile.Generate(seed, appearanceName, gender);
+            return KdspValentinosProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "6TH_STREET") {
-            return SixthStreetProfile.Generate(seed, appearanceName, gender);
+            return KdspSixthStreetProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "ANIMALS") {
-            return AnimalsProfile.Generate(seed, appearanceName, gender);
+            return KdspAnimalsProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "VOODOO_BOYS") {
-            return VoodooBoysProfile.Generate(seed, appearanceName, gender);
+            return KdspVoodooBoysProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "MOXES") {
-            return MoxesProfile.Generate(seed, appearanceName, gender);
+            return KdspMoxesProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "SCAVENGERS") {
-            return ScavengersProfile.Generate(seed, appearanceName, gender);
+            return KdspScavengersProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "WRAITHS") {
-            return WraithsProfile.Generate(seed, appearanceName, gender);
+            return KdspWraithsProfile.Generate(seed, appearanceName, gender);
         }
         if Equals(gangAffiliation, "ALDECALDOS") {
-            return AldecaldosProfile.Generate(seed, appearanceName, gender);
+            return KdspAldecaldosProfile.Generate(seed, appearanceName, gender);
         }
         
         // Fallback for unknown gangs
-        return GangProfileGenerator.GenerateGeneric(seed, gangAffiliation, gender);
+        return KdspGangProfileGenerator.GenerateGeneric(seed, gangAffiliation, gender);
     }
 
-    private static func GenerateGeneric(seed: Int32, gangAffiliation: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    private static func GenerateGeneric(seed: Int32, gangAffiliation: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = gangAffiliation;
         profile.gangName = gangAffiliation;
         profile.headerLabel = "GANG MEMBER FILE";

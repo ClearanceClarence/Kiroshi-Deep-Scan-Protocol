@@ -1,85 +1,85 @@
 // Financial Profile Generation System
-public class FinancialProfileManager {
+public class KdspFinancialProfileManager {
 
     // Legacy function for backward compatibility
-    public static func Generate(seed: Int32, archetype: String) -> ref<FinancialProfileData> {
-        return FinancialProfileManager.GenerateCoherent(seed, archetype, null);
+    public static func Generate(seed: Int32, archetype: String) -> ref<KdspFinancialProfileData> {
+        return KdspFinancialProfileManager.GenerateCoherent(seed, archetype, null);
     }
 
     // Coherent generation using life profile
-    public static func GenerateCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> ref<FinancialProfileData> {
-        let profile: ref<FinancialProfileData> = new FinancialProfileData();
-        let density = KiroshiSettings.GetDataDensity();
+    public static func GenerateCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> ref<KdspFinancialProfileData> {
+        let profile: ref<KdspFinancialProfileData> = new KdspFinancialProfileData();
+        let density = KdspSettings.GetDataDensity();
 
         // Generate credit score - always shown
-        profile.creditScore = FinancialProfileManager.GenerateCreditScoreCoherent(seed, archetype, coherence);
-        profile.creditTier = FinancialProfileManager.GetCreditTier(profile.creditScore);
+        profile.creditScore = KdspFinancialProfileManager.GenerateCreditScoreCoherent(seed, archetype, coherence);
+        profile.creditTier = KdspFinancialProfileManager.GetCreditTier(profile.creditScore);
 
         // Generate wealth indicator - always shown
-        profile.estimatedWealth = FinancialProfileManager.GenerateWealthCoherent(seed + 100, archetype, coherence);
-        profile.wealthTier = FinancialProfileManager.GetWealthTier(profile.estimatedWealth);
+        profile.estimatedWealth = KdspFinancialProfileManager.GenerateWealthCoherent(seed + 100, archetype, coherence);
+        profile.wealthTier = KdspFinancialProfileManager.GetWealthTier(profile.estimatedWealth);
 
         // Debt information - always shown
         if IsDefined(coherence) {
             profile.hasDebt = coherence.isInDebt;
         } else {
-            profile.hasDebt = FinancialProfileManager.HasDebt(seed + 200, archetype, profile.creditScore);
+            profile.hasDebt = KdspFinancialProfileManager.HasDebt(seed + 200, archetype, profile.creditScore);
         }
         
         if profile.hasDebt {
-            profile.debtAmount = FinancialProfileManager.GenerateDebtAmountCoherent(seed + 210, archetype, coherence);
-            profile.debtHolder = FinancialProfileManager.GenerateDebtHolderCoherent(seed + 220, archetype, coherence);
-            profile.debtStatus = FinancialProfileManager.GenerateDebtStatus(seed + 230, profile.creditScore);
+            profile.debtAmount = KdspFinancialProfileManager.GenerateDebtAmountCoherent(seed + 210, archetype, coherence);
+            profile.debtHolder = KdspFinancialProfileManager.GenerateDebtHolderCoherent(seed + 220, archetype, coherence);
+            profile.debtStatus = KdspFinancialProfileManager.GenerateDebtStatus(seed + 230, profile.creditScore);
         }
 
         // Property status - only on medium/high
         if density >= 2 {
-            profile.propertyStatus = FinancialProfileManager.GeneratePropertyStatus(seed + 300, archetype, profile.estimatedWealth);
-            profile.residenceType = FinancialProfileManager.GenerateResidenceType(seed + 310, archetype);
-            profile.residenceDistrict = FinancialProfileManager.GenerateResidenceDistrict(seed + 320, archetype);
+            profile.propertyStatus = KdspFinancialProfileManager.GeneratePropertyStatus(seed + 300, archetype, profile.estimatedWealth);
+            profile.residenceType = KdspFinancialProfileManager.GenerateResidenceType(seed + 310, archetype);
+            profile.residenceDistrict = KdspFinancialProfileManager.GenerateResidenceDistrict(seed + 320, archetype);
         }
 
         // Employment status - always shown
-        profile.employmentStatus = FinancialProfileManager.GenerateEmploymentStatusCoherent(seed + 400, archetype, coherence);
-        profile.employer = FinancialProfileManager.GenerateEmployer(seed + 410, archetype);
-        profile.incomeLevel = FinancialProfileManager.GenerateIncomeLevelCoherent(seed + 420, archetype, coherence);
+        profile.employmentStatus = KdspFinancialProfileManager.GenerateEmploymentStatusCoherent(seed + 400, archetype, coherence);
+        profile.employer = KdspFinancialProfileManager.GenerateEmployer(seed + 410, archetype);
+        profile.incomeLevel = KdspFinancialProfileManager.GenerateIncomeLevelCoherent(seed + 420, archetype, coherence);
 
         // Recent purchases - only on high density
         if density >= 3 {
             let purchaseCount = RandRange(seed + 500, 0, 4);
-            purchaseCount = KiroshiSettings.GetMaxListItems(purchaseCount);
+            purchaseCount = KdspSettings.GetMaxListItems(purchaseCount);
             let i = 0;
             while i < purchaseCount {
-                ArrayPush(profile.recentPurchases, FinancialProfileManager.GeneratePurchase(seed + 510 + (i * 33), archetype, profile.estimatedWealth));
+                ArrayPush(profile.recentPurchases, KdspFinancialProfileManager.GeneratePurchase(seed + 510 + (i * 33), archetype, profile.estimatedWealth));
                 i += 1;
             }
         }
 
         // Financial flags - only on medium/high
         if density >= 2 {
-            profile.taxStatus = FinancialProfileManager.GenerateTaxStatus(seed + 600, archetype);
-            profile.bankruptcyHistory = FinancialProfileManager.HasBankruptcyCoherent(seed + 610, archetype, coherence);
-            profile.corporateAsset = FinancialProfileManager.IsCorporateAsset(seed + 620, archetype, profile.debtStatus);
+            profile.taxStatus = KdspFinancialProfileManager.GenerateTaxStatus(seed + 600, archetype);
+            profile.bankruptcyHistory = KdspFinancialProfileManager.HasBankruptcyCoherent(seed + 610, archetype, coherence);
+            profile.corporateAsset = KdspFinancialProfileManager.IsCorporateAsset(seed + 620, archetype, profile.debtStatus);
         }
 
         // Insurance - only on medium/high
         if density >= 2 {
-            profile.traumaTeamCoverage = FinancialProfileManager.GenerateTraumaTeamCoverage(seed + 700, archetype, profile.estimatedWealth);
-            profile.healthInsurance = FinancialProfileManager.GenerateHealthInsurance(seed + 710, archetype);
+            profile.traumaTeamCoverage = KdspFinancialProfileManager.GenerateTraumaTeamCoverage(seed + 700, archetype, profile.estimatedWealth);
+            profile.healthInsurance = KdspFinancialProfileManager.GenerateHealthInsurance(seed + 710, archetype);
         }
 
         // Bank accounts - only on high density
         if density >= 3 {
-            profile.bankAffiliation = FinancialProfileManager.GenerateBankAffiliation(seed + 800, archetype);
-            profile.accountStatus = FinancialProfileManager.GenerateAccountStatus(seed + 810, profile.creditScore);
+            profile.bankAffiliation = KdspFinancialProfileManager.GenerateBankAffiliation(seed + 800, archetype);
+            profile.accountStatus = KdspFinancialProfileManager.GenerateAccountStatus(seed + 810, profile.creditScore);
         }
 
         return profile;
     }
 
     // Credit score influenced by life theme
-    private static func GenerateCreditScoreCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let score = FinancialProfileManager.GenerateCreditScore(seed, archetype);
+    private static func GenerateCreditScoreCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let score = KdspFinancialProfileManager.GenerateCreditScore(seed, archetype);
         
         if IsDefined(coherence) {
             if Equals(coherence.lifeTheme, "FALLING") { score -= RandRange(seed + 5, 50, 150); }
@@ -96,8 +96,8 @@ public class FinancialProfileManager {
     }
 
     // Wealth influenced by life theme
-    private static func GenerateWealthCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let wealth = FinancialProfileManager.GenerateWealth(seed, archetype);
+    private static func GenerateWealthCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let wealth = KdspFinancialProfileManager.GenerateWealth(seed, archetype);
         
         if IsDefined(coherence) {
             if Equals(coherence.lifeTheme, "FALLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.5); }
@@ -110,8 +110,8 @@ public class FinancialProfileManager {
     }
 
     // Debt amount coherent with reason
-    private static func GenerateDebtAmountCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let base = FinancialProfileManager.GenerateDebtAmount(seed, archetype);
+    private static func GenerateDebtAmountCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let base = KdspFinancialProfileManager.GenerateDebtAmount(seed, archetype);
         
         if IsDefined(coherence) && NotEquals(coherence.debtReason, "") {
             if Equals(coherence.debtReason, "medical bills") { base = RandRange(seed, 10000, 150000); }
@@ -126,7 +126,7 @@ public class FinancialProfileManager {
     }
 
     // Debt holder coherent with reason
-    private static func GenerateDebtHolderCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateDebtHolderCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) && NotEquals(coherence.debtReason, "") {
             if Equals(coherence.debtReason, "medical bills") {
                 let holders: array<String>;
@@ -162,11 +162,11 @@ public class FinancialProfileManager {
             }
         }
         
-        return FinancialProfileManager.GenerateDebtHolder(seed, archetype);
+        return KdspFinancialProfileManager.GenerateDebtHolder(seed, archetype);
     }
 
     // Employment status influenced by job history
-    private static func GenerateEmploymentStatusCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateEmploymentStatusCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) {
             if Equals(coherence.jobHistory, "none") { return "UNEMPLOYED"; }
             if Equals(coherence.jobHistory, "criminal") {
@@ -189,11 +189,11 @@ public class FinancialProfileManager {
             if Equals(coherence.jobHistory, "steady") { return "Full-time employed"; }
         }
         
-        return FinancialProfileManager.GenerateEmploymentStatus(seed, archetype);
+        return KdspFinancialProfileManager.GenerateEmploymentStatus(seed, archetype);
     }
 
     // Income level coherent with life theme
-    private static func GenerateIncomeLevelCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateIncomeLevelCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) {
             if Equals(coherence.lifeTheme, "FALLING") {
                 let levels: array<String>;
@@ -218,11 +218,11 @@ public class FinancialProfileManager {
             }
         }
         
-        return FinancialProfileManager.GenerateIncomeLevel(seed, archetype);
+        return KdspFinancialProfileManager.GenerateIncomeLevel(seed, archetype);
     }
 
     // Bankruptcy more likely with falling life theme
-    private static func HasBankruptcyCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Bool {
+    private static func HasBankruptcyCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Bool {
         let chance = 10;
         
         if IsDefined(coherence) {
@@ -1459,7 +1459,7 @@ public class FinancialProfileManager {
     }
 }
 
-public class FinancialProfileData {
+public class KdspFinancialProfileData {
     public let creditScore: Int32;
     public let creditTier: String;
     public let estimatedWealth: Int32;

@@ -1,10 +1,10 @@
 // Maelstrom Gang Profile Generator
 // Chrome cult obsessed with cybernetic transcendence
 
-public class MaelstromProfile {
+public class KdspMaelstromProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "MAELSTROM";
         profile.gangName = "Maelstrom";
         profile.headerLabel = "MAELSTROM COLLECTIVE RECORD";
@@ -54,14 +54,14 @@ public class MaelstromProfile {
         
         // Stats
         profile.yearsActive = RandRange(seed + 300, 1, 10);
-        profile.bodyCount = MaelstromProfile.GetBodyCount(seed + 400, profile.rank) + RandRange(seed + 410, 5, 20);
+        profile.bodyCount = KdspMaelstromProfile.GetBodyCount(seed + 400, profile.rank) + RandRange(seed + 410, 5, 20);
         profile.arrestCount = RandRange(seed + 500, 0, 3);
         
         // Chrome percentage - unique to Maelstrom
         profile.chromePercentage = RandRange(seed + 550, 40, 95);
         
         // Loyalty
-        profile.loyaltyRating = MaelstromProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspMaelstromProfile.GetLoyalty(seed + 600);
         
         // Marks - Maelstrom prefer chrome to ink
         let marks: array<String>;
@@ -116,7 +116,7 @@ public class MaelstromProfile {
         ArrayPush(activities, "Intercepting Militech chrome transport. Driver was persuaded to cooperate.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

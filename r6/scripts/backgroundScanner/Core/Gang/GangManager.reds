@@ -1,5 +1,5 @@
 // Gang Detection and Management System
-public class GangManager {
+public class KdspGangManager {
 
     public static func DetectGangAffiliation(appearanceName: String, district: String) -> String {
         // Check appearance name for gang indicators
@@ -41,28 +41,28 @@ public class GangManager {
         return "NONE";
     }
 
-    public static func GenerateGangProfile(seed: Int32, gangAffiliation: String) -> ref<GangProfileData> {
-        let profile: ref<GangProfileData> = new GangProfileData();
+    public static func GenerateGangProfile(seed: Int32, gangAffiliation: String) -> ref<KdspGangProfileData> {
+        let profile: ref<KdspGangProfileData> = new KdspGangProfileData();
         
-        profile.gangName = GangManager.GetFullGangName(gangAffiliation);
+        profile.gangName = KdspGangManager.GetFullGangName(gangAffiliation);
         profile.gangAffiliation = gangAffiliation;
-        profile.territory = GangManager.GetGangTerritory(gangAffiliation);
-        profile.leadership = GangManager.GetGangLeadership(gangAffiliation);
-        profile.activities = GangManager.GetGangActivities(gangAffiliation);
-        profile.allies = GangManager.GetGangAllies(gangAffiliation);
-        profile.enemies = GangManager.GetGangEnemies(gangAffiliation);
+        profile.territory = KdspGangManager.GetGangTerritory(gangAffiliation);
+        profile.leadership = KdspGangManager.GetGangLeadership(gangAffiliation);
+        profile.activities = KdspGangManager.GetGangActivities(gangAffiliation);
+        profile.allies = KdspGangManager.GetGangAllies(gangAffiliation);
+        profile.enemies = KdspGangManager.GetGangEnemies(gangAffiliation);
         
         // Member-specific info
-        profile.memberRank = GangManager.GenerateMemberRank(seed, gangAffiliation);
+        profile.memberRank = KdspGangManager.GenerateMemberRank(seed, gangAffiliation);
         profile.joinYear = RandRange(seed + 100, 2065, 2077);
-        profile.confirmedKills = GangManager.GenerateConfirmedKills(seed + 200, profile.memberRank);
-        profile.specialization = GangManager.GenerateSpecialization(seed + 300, gangAffiliation);
-        profile.loyaltyRating = GangManager.GenerateLoyaltyRating(seed + 400);
-        profile.gangTattoos = GangManager.GenerateGangTattoos(seed + 500, gangAffiliation);
-        profile.knownHangouts = GangManager.GenerateKnownHangouts(seed + 600, gangAffiliation);
+        profile.confirmedKills = KdspGangManager.GenerateConfirmedKills(seed + 200, profile.memberRank);
+        profile.specialization = KdspGangManager.GenerateSpecialization(seed + 300, gangAffiliation);
+        profile.loyaltyRating = KdspGangManager.GenerateLoyaltyRating(seed + 400);
+        profile.gangTattoos = KdspGangManager.GenerateGangTattoos(seed + 500, gangAffiliation);
+        profile.knownHangouts = KdspGangManager.GenerateKnownHangouts(seed + 600, gangAffiliation);
 
         // Generate gang-specific backstory elements
-        profile.gangBackstory = GangManager.GenerateGangBackstory(seed + 700, gangAffiliation, profile.memberRank);
+        profile.gangBackstory = KdspGangManager.GenerateGangBackstory(seed + 700, gangAffiliation, profile.memberRank);
 
         return profile;
     }
@@ -400,7 +400,7 @@ public class GangManager {
     }
 }
 
-public class GangProfileData {
+public class KdspGangProfileData {
     public let gangName: String;
     public let gangAffiliation: String;
     public let territory: String;

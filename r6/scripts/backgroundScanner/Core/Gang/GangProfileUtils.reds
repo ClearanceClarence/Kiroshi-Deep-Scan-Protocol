@@ -1,7 +1,7 @@
 // Gang Profile Utilities and Data Classes
 // Shared functions and structures for all gang profiles
 
-public class GangProfileUtils {
+public class KdspGangProfileUtils {
 
     public static func GetStatus(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
@@ -28,7 +28,7 @@ public class GangProfileUtils {
 }
 
 // Data structure for detailed gang profiles
-public class DetailedGangProfile {
+public class KdspDetailedGangProfile {
     public let gangAffiliation: String;
     public let gangName: String;
     public let headerLabel: String;

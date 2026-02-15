@@ -1,7 +1,7 @@
 // Scanner Loading Text Generator
 // Generates immersive randomized loading messages
 
-public class ScannerLoadingText {
+public class KdspScannerLoadingText {
 
     // Generate a set of loading lines for the scanner
     // Line count adjusted by data density setting
@@ -10,7 +10,7 @@ public class ScannerLoadingText {
         
         // Determine line count based on density
         // Low: 2-3, Medium: 3-5, High: 3-8
-        let density = KiroshiSettings.GetDataDensity();
+        let density = KdspSettings.GetDataDensity();
         let lineCount: Int32;
         
         if density == 1 {
@@ -22,7 +22,7 @@ public class ScannerLoadingText {
         }
         
         // Always start with connection
-        ArrayPush(lines, ScannerLoadingText.GetConnectionLine(seed));
+        ArrayPush(lines, KdspScannerLoadingText.GetConnectionLine(seed));
         
         // Fill middle lines based on count
         let i = 1;
@@ -31,25 +31,25 @@ public class ScannerLoadingText {
             
             // 15% chance of error/warning line (only on medium/high)
             if density >= 2 && lineType <= 15 {
-                ArrayPush(lines, ScannerLoadingText.GetErrorLine(seed + (i * 77)));
+                ArrayPush(lines, KdspScannerLoadingText.GetErrorLine(seed + (i * 77)));
             }
             // 30% chance of database line
             else if lineType <= 45 {
-                ArrayPush(lines, ScannerLoadingText.GetDatabaseLine(seed + (i * 100)));
+                ArrayPush(lines, KdspScannerLoadingText.GetDatabaseLine(seed + (i * 100)));
             }
             // 30% chance of processing line
             else if lineType <= 75 {
-                ArrayPush(lines, ScannerLoadingText.GetProcessingLine(seed + (i * 123)));
+                ArrayPush(lines, KdspScannerLoadingText.GetProcessingLine(seed + (i * 123)));
             }
             // 25% chance of status line
             else {
-                ArrayPush(lines, ScannerLoadingText.GetStatusLine(seed + (i * 147)));
+                ArrayPush(lines, KdspScannerLoadingText.GetStatusLine(seed + (i * 147)));
             }
             i += 1;
         }
         
         // Always end with success
-        ArrayPush(lines, ScannerLoadingText.GetSuccessLine(seed + 999));
+        ArrayPush(lines, KdspScannerLoadingText.GetSuccessLine(seed + 999));
         
         return lines;
     }

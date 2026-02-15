@@ -1,4 +1,4 @@
-public class LifePath {
+public class KdspLifePath {
     public let hasParents: Bool;
     public let archetype: String;
     public let career: String;
@@ -7,13 +7,13 @@ public class LifePath {
     public let gender: String;
     public let background: String;
     public let seed: Int32;
-    public let possibleEvents: ref<LifePathPossibilities>;
+    public let possibleEvents: ref<KdspLifePathPossibilities>;
 
-    public static func Create(target: wref<NPCPuppet>) -> ref<LifePath> {
-		let self: ref<LifePath> = new LifePath();
+    public static func Create(target: wref<NPCPuppet>) -> ref<KdspLifePath> {
+		let self: ref<KdspLifePath> = new KdspLifePath();
         self.gender = self.GetGender(target);
         self.archetype = self.GetCrowdArchetype(target);
-        self.possibleEvents = new LifePathPossibilities();
+        self.possibleEvents = new KdspLifePathPossibilities();
         self.possibleEvents.Initialize(self.archetype);
 		return self;
 	}

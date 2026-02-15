@@ -1,35 +1,35 @@
 // Psychological Assessment Generation System
-public class PsychProfileManager {
+public class KdspPsychProfileManager {
 
     // Legacy function for backward compatibility
-    public static func Generate(seed: Int32, archetype: String, criminalRecord: ref<CriminalRecordData>, cyberware: ref<CyberwareRegistryData>) -> ref<PsychProfileData> {
-        return PsychProfileManager.GenerateCoherent(seed, archetype, null);
+    public static func Generate(seed: Int32, archetype: String, criminalRecord: ref<KdspCriminalRecordData>, cyberware: ref<KdspCyberwareRegistryData>) -> ref<KdspPsychProfileData> {
+        return KdspPsychProfileManager.GenerateCoherent(seed, archetype, null);
     }
 
     // Coherent generation using life profile
-    public static func GenerateCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> ref<PsychProfileData> {
-        let profile: ref<PsychProfileData> = new PsychProfileData();
-        let density = KiroshiSettings.GetDataDensity();
+    public static func GenerateCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> ref<KdspPsychProfileData> {
+        let profile: ref<KdspPsychProfileData> = new KdspPsychProfileData();
+        let density = KdspSettings.GetDataDensity();
 
         // Threat assessment - always shown
-        profile.threatLevel = PsychProfileManager.CalculateThreatLevelCoherent(seed, archetype, coherence);
-        profile.threatColor = PsychProfileManager.GetThreatColor(profile.threatLevel);
-        profile.threatDescription = PsychProfileManager.GetThreatDescription(profile.threatLevel, archetype);
+        profile.threatLevel = KdspPsychProfileManager.CalculateThreatLevelCoherent(seed, archetype, coherence);
+        profile.threatColor = KdspPsychProfileManager.GetThreatColor(profile.threatLevel);
+        profile.threatDescription = KdspPsychProfileManager.GetThreatDescription(profile.threatLevel, archetype);
 
         // Combat assessment - only on medium/high
         if density >= 2 {
-            profile.combatTraining = PsychProfileManager.AssessCombatTrainingCoherent(seed + 100, archetype, coherence);
-            profile.armedLikelihood = PsychProfileManager.AssessArmedLikelihoodCoherent(seed + 110, archetype, coherence);
-            profile.approachRecommendation = PsychProfileManager.GetApproachRecommendation(profile.threatLevel, profile.armedLikelihood);
+            profile.combatTraining = KdspPsychProfileManager.AssessCombatTrainingCoherent(seed + 100, archetype, coherence);
+            profile.armedLikelihood = KdspPsychProfileManager.AssessArmedLikelihoodCoherent(seed + 110, archetype, coherence);
+            profile.approachRecommendation = KdspPsychProfileManager.GetApproachRecommendation(profile.threatLevel, profile.armedLikelihood);
         }
 
         // Personality traits - limited by density
         let traitCount = RandRange(seed + 200, 2, 5);
-        traitCount = KiroshiSettings.GetMaxListItems(traitCount);
+        traitCount = KdspSettings.GetMaxListItems(traitCount);
         
         let i = 0;
         while i < traitCount {
-            ArrayPush(profile.personalityTraits, PsychProfileManager.GeneratePersonalityTraitCoherent(seed + 210 + (i * 31), archetype, coherence));
+            ArrayPush(profile.personalityTraits, KdspPsychProfileManager.GeneratePersonalityTraitCoherent(seed + 210 + (i * 31), archetype, coherence));
             i += 1;
         }
 
@@ -38,11 +38,11 @@ public class PsychProfileManager {
         if IsDefined(coherence) && (coherence.hasViolentPast || coherence.hasSubstanceIssues || coherence.hasTrauma) {
             flagCount += 1; // More flags for troubled individuals
         }
-        flagCount = KiroshiSettings.GetMaxListItems(flagCount);
+        flagCount = KdspSettings.GetMaxListItems(flagCount);
         
         i = 0;
         while i < flagCount {
-            ArrayPush(profile.behavioralFlags, PsychProfileManager.GenerateBehavioralFlagCoherent(seed + 310 + (i * 37), archetype, coherence));
+            ArrayPush(profile.behavioralFlags, KdspPsychProfileManager.GenerateBehavioralFlagCoherent(seed + 310 + (i * 37), archetype, coherence));
             i += 1;
         }
 
@@ -50,19 +50,19 @@ public class PsychProfileManager {
         if IsDefined(coherence) && coherence.hasSubstanceIssues {
             profile.hasAddictions = true;
             // Generate addiction matching the substance type
-            ArrayPush(profile.addictions, PsychProfileManager.GenerateAddictionFromSubstance(seed + 420, coherence.substanceType));
+            ArrayPush(profile.addictions, KdspPsychProfileManager.GenerateAddictionFromSubstance(seed + 420, coherence.substanceType));
             // Maybe add secondary addiction - only on high density
             if density >= 3 && RandRange(seed + 421, 1, 100) <= 30 {
-                ArrayPush(profile.addictions, PsychProfileManager.GenerateAddiction(seed + 422, archetype));
+                ArrayPush(profile.addictions, KdspPsychProfileManager.GenerateAddiction(seed + 422, archetype));
             }
         } else {
-            profile.hasAddictions = PsychProfileManager.HasAddictions(seed + 400, archetype);
+            profile.hasAddictions = KdspPsychProfileManager.HasAddictions(seed + 400, archetype);
             if profile.hasAddictions {
                 let addictionCount = RandRange(seed + 410, 1, 3);
-                addictionCount = KiroshiSettings.GetMaxListItems(addictionCount);
+                addictionCount = KdspSettings.GetMaxListItems(addictionCount);
                 i = 0;
                 while i < addictionCount {
-                    ArrayPush(profile.addictions, PsychProfileManager.GenerateAddiction(seed + 420 + (i * 43), archetype));
+                    ArrayPush(profile.addictions, KdspPsychProfileManager.GenerateAddiction(seed + 420 + (i * 43), archetype));
                     i += 1;
                 }
             }
@@ -71,53 +71,53 @@ public class PsychProfileManager {
         // Trauma history - USE COHERENCE for consistency
         if IsDefined(coherence) && coherence.hasTrauma {
             // Generate trauma matching the type
-            ArrayPush(profile.traumaEvents, PsychProfileManager.GenerateTraumaFromType(seed + 520, coherence.traumaType));
+            ArrayPush(profile.traumaEvents, KdspPsychProfileManager.GenerateTraumaFromType(seed + 520, coherence.traumaType));
             // Maybe add secondary trauma - only on high density
             if density >= 3 && RandRange(seed + 521, 1, 100) <= 40 {
-                ArrayPush(profile.traumaEvents, PsychProfileManager.GenerateTraumaEvent(seed + 522, archetype));
+                ArrayPush(profile.traumaEvents, KdspPsychProfileManager.GenerateTraumaEvent(seed + 522, archetype));
             }
         } else {
-            let traumaChance = PsychProfileManager.GetTraumaChance(archetype);
+            let traumaChance = KdspPsychProfileManager.GetTraumaChance(archetype);
             if RandRange(seed + 500, 1, 100) <= traumaChance {
                 let traumaCount = RandRange(seed + 510, 1, 3);
-                traumaCount = KiroshiSettings.GetMaxListItems(traumaCount);
+                traumaCount = KdspSettings.GetMaxListItems(traumaCount);
                 i = 0;
                 while i < traumaCount {
-                    ArrayPush(profile.traumaEvents, PsychProfileManager.GenerateTraumaEvent(seed + 520 + (i * 47), archetype));
+                    ArrayPush(profile.traumaEvents, KdspPsychProfileManager.GenerateTraumaEvent(seed + 520 + (i * 47), archetype));
                     i += 1;
                 }
             }
         }
 
         // Psychological evaluation
-        profile.psychEvaluation = PsychProfileManager.GeneratePsychEvaluationCoherent(seed + 600, archetype, coherence);
-        profile.lastEvalDate = PsychProfileManager.GenerateLastEvalDate(seed + 610, archetype);
+        profile.psychEvaluation = KdspPsychProfileManager.GeneratePsychEvaluationCoherent(seed + 600, archetype, coherence);
+        profile.lastEvalDate = KdspPsychProfileManager.GenerateLastEvalDate(seed + 610, archetype);
 
         // Stability assessment - influenced by coherence
-        profile.stabilityScore = PsychProfileManager.CalculateStabilityScoreCoherent(profile, coherence);
-        profile.stabilityRating = PsychProfileManager.GetStabilityRating(profile.stabilityScore);
+        profile.stabilityScore = KdspPsychProfileManager.CalculateStabilityScoreCoherent(profile, coherence);
+        profile.stabilityRating = KdspPsychProfileManager.GetStabilityRating(profile.stabilityScore);
 
         // Known vendettas - more likely with violent past
-        if PsychProfileManager.HasVendettaCoherent(seed + 700, archetype, coherence) {
+        if KdspPsychProfileManager.HasVendettaCoherent(seed + 700, archetype, coherence) {
             profile.hasVendetta = true;
-            profile.vendettaTarget = PsychProfileManager.GenerateVendettaTarget(seed + 710, archetype);
+            profile.vendettaTarget = KdspPsychProfileManager.GenerateVendettaTarget(seed + 710, archetype);
         }
 
         // Ideology / beliefs
-        profile.ideologyFlags = PsychProfileManager.GenerateIdeologyFlags(seed + 800, archetype);
+        profile.ideologyFlags = KdspPsychProfileManager.GenerateIdeologyFlags(seed + 800, archetype);
 
         // Risk factors
-        profile.riskFactors = PsychProfileManager.GenerateRiskFactorsCoherent(seed + 900, archetype, coherence);
+        profile.riskFactors = KdspPsychProfileManager.GenerateRiskFactorsCoherent(seed + 900, archetype, coherence);
 
         // Recommendation
-        profile.handlingRecommendation = PsychProfileManager.GenerateHandlingRecommendation(profile);
+        profile.handlingRecommendation = KdspPsychProfileManager.GenerateHandlingRecommendation(profile);
 
         return profile;
     }
 
     // Threat level influenced by violent past
-    private static func CalculateThreatLevelCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let base = PsychProfileManager.CalculateThreatLevelBase(seed, archetype);
+    private static func CalculateThreatLevelCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let base = KdspPsychProfileManager.CalculateThreatLevelBase(seed, archetype);
         
         if IsDefined(coherence) {
             if coherence.hasViolentPast { base += RandRange(seed + 5, 15, 30); }
@@ -130,7 +130,7 @@ public class PsychProfileManager {
     }
 
     // Combat training influenced by violent history
-    private static func AssessCombatTrainingCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func AssessCombatTrainingCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) && coherence.hasViolentPast {
             if Equals(coherence.violenceType, "gang") {
                 let training: array<String>;
@@ -140,22 +140,22 @@ public class PsychProfileManager {
                 return training[RandRange(seed, 0, ArraySize(training) - 1)];
             }
         }
-        return PsychProfileManager.AssessCombatTraining(seed, archetype);
+        return KdspPsychProfileManager.AssessCombatTraining(seed, archetype);
     }
 
     // Armed likelihood influenced by violence
-    private static func AssessArmedLikelihoodCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func AssessArmedLikelihoodCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) && coherence.hasViolentPast {
             let roll = RandRange(seed, 1, 100);
             if roll <= 50 { return "HIGH"; }
             if roll <= 80 { return "MODERATE"; }
             return "LOW";
         }
-        return PsychProfileManager.AssessArmedLikelihood(seed, archetype, null);
+        return KdspPsychProfileManager.AssessArmedLikelihood(seed, archetype, null);
     }
 
     // Personality traits influenced by life theme
-    private static func GeneratePersonalityTraitCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GeneratePersonalityTraitCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) && RandRange(seed + 50, 1, 100) <= 40 {
             if Equals(coherence.lifeTheme, "FALLING") {
                 let traits: array<String>;
@@ -193,11 +193,11 @@ public class PsychProfileManager {
                 return traits[RandRange(seed, 0, ArraySize(traits) - 1)];
             }
         }
-        return PsychProfileManager.GeneratePersonalityTrait(seed, archetype);
+        return KdspPsychProfileManager.GeneratePersonalityTrait(seed, archetype);
     }
 
     // Behavioral flags coherent with issues
-    private static func GenerateBehavioralFlagCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateBehavioralFlagCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) && RandRange(seed + 50, 1, 100) <= 50 {
             if coherence.hasViolentPast {
                 let flags: array<String>;
@@ -224,7 +224,7 @@ public class PsychProfileManager {
                 return flags[RandRange(seed, 0, ArraySize(flags) - 1)];
             }
         }
-        return PsychProfileManager.GenerateBehavioralFlag(seed, archetype);
+        return KdspPsychProfileManager.GenerateBehavioralFlag(seed, archetype);
     }
 
     // Generate addiction matching substance type
@@ -296,7 +296,7 @@ public class PsychProfileManager {
     }
 
     // Psych evaluation coherent with issues
-    private static func GeneratePsychEvaluationCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GeneratePsychEvaluationCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) {
             if coherence.hasSubstanceIssues && coherence.hasTrauma {
                 return "Dual diagnosis - substance use disorder with PTSD. High risk.";
@@ -314,11 +314,11 @@ public class PsychProfileManager {
                 return "Deteriorating mental state. Intervention may be needed.";
             }
         }
-        return PsychProfileManager.GeneratePsychEvaluation(seed, archetype, null);
+        return KdspPsychProfileManager.GeneratePsychEvaluation(seed, archetype, null);
     }
 
     // Stability score influenced by coherence
-    private static func CalculateStabilityScoreCoherent(profile: ref<PsychProfileData>, coherence: ref<CoherenceProfile>) -> Int32 {
+    private static func CalculateStabilityScoreCoherent(profile: ref<KdspPsychProfileData>, coherence: ref<KdspCoherenceProfile>) -> Int32 {
         let score = 70; // Base score
         
         // Deductions from profile
@@ -343,7 +343,7 @@ public class PsychProfileManager {
     }
 
     // Vendetta more likely with violent past
-    private static func HasVendettaCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Bool {
+    private static func HasVendettaCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Bool {
         let chance = 15;
         
         if IsDefined(coherence) {
@@ -358,7 +358,7 @@ public class PsychProfileManager {
     }
 
     // Risk factors coherent with issues
-    private static func GenerateRiskFactorsCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> array<String> {
+    private static func GenerateRiskFactorsCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> array<String> {
         let factors: array<String>;
         
         if IsDefined(coherence) {
@@ -422,8 +422,8 @@ public class PsychProfileManager {
         return base;
     }
 
-    private static func CalculateThreatLevel(seed: Int32, archetype: String, criminal: ref<CriminalRecordData>, cyberware: ref<CyberwareRegistryData>) -> Int32 {
-        let base = PsychProfileManager.CalculateThreatLevelBase(seed, archetype);
+    private static func CalculateThreatLevel(seed: Int32, archetype: String, criminal: ref<KdspCriminalRecordData>, cyberware: ref<KdspCyberwareRegistryData>) -> Int32 {
+        let base = KdspPsychProfileManager.CalculateThreatLevelBase(seed, archetype);
 
         // Criminal record - reduced impact
         if IsDefined(criminal) && criminal.hasRecord {
@@ -612,7 +612,7 @@ public class PsychProfileManager {
         return "Online Combat Tutorials Only";
     }
 
-    private static func AssessArmedLikelihood(seed: Int32, archetype: String, criminal: ref<CriminalRecordData>) -> String {
+    private static func AssessArmedLikelihood(seed: Int32, archetype: String, criminal: ref<KdspCriminalRecordData>) -> String {
         let likelihood: Int32 = 30;
 
         if Equals(archetype, "GANGER") { likelihood = 90; }
@@ -1135,7 +1135,7 @@ public class PsychProfileManager {
         return "Cyberpsychosis episode (witnessed) (" + IntToString(year) + ")";
     }
 
-    private static func GeneratePsychEvaluation(seed: Int32, archetype: String, profile: ref<PsychProfileData>) -> String {
+    private static func GeneratePsychEvaluation(seed: Int32, archetype: String, profile: ref<KdspPsychProfileData>) -> String {
         if profile.threatLevel >= 70 {
             return "HIGH RISK - Professional intervention recommended. Subject displays multiple concerning indicators.";
         }
@@ -1164,7 +1164,7 @@ public class PsychProfileManager {
         return "NO EVALUATION ON FILE";
     }
 
-    private static func CalculateStabilityScore(profile: ref<PsychProfileData>, cyberware: ref<CyberwareRegistryData>) -> Int32 {
+    private static func CalculateStabilityScore(profile: ref<KdspPsychProfileData>, cyberware: ref<KdspCyberwareRegistryData>) -> Int32 {
         let score = 80;
 
         // Deductions
@@ -1200,7 +1200,7 @@ public class PsychProfileManager {
         return "CRITICAL - EMERGENCY INTERVENTION NEEDED";
     }
 
-    private static func HasVendetta(seed: Int32, archetype: String, criminal: ref<CriminalRecordData>) -> Bool {
+    private static func HasVendetta(seed: Int32, archetype: String, criminal: ref<KdspCriminalRecordData>) -> Bool {
         let chance: Int32 = 10;
 
         if Equals(archetype, "GANGER") { chance = 35; }
@@ -1429,7 +1429,7 @@ public class PsychProfileManager {
         return flags;
     }
 
-    private static func GenerateRiskFactors(seed: Int32, archetype: String, profile: ref<PsychProfileData>) -> array<String> {
+    private static func GenerateRiskFactors(seed: Int32, archetype: String, profile: ref<KdspPsychProfileData>) -> array<String> {
         let factors: array<String>;
 
         if profile.threatLevel >= 60 {
@@ -1457,7 +1457,7 @@ public class PsychProfileManager {
         return factors;
     }
 
-    private static func GenerateHandlingRecommendation(profile: ref<PsychProfileData>) -> String {
+    private static func GenerateHandlingRecommendation(profile: ref<KdspPsychProfileData>) -> String {
         if profile.threatLevel >= 80 {
             return "EXTREME CAUTION. MaxTac referral may be warranted. Do not engage without significant backup.";
         }
@@ -1671,7 +1671,7 @@ public class PsychProfileManager {
     }
 }
 
-public class PsychProfileData {
+public class KdspPsychProfileData {
     public let threatLevel: Int32;
     public let threatColor: String;
     public let threatDescription: String;

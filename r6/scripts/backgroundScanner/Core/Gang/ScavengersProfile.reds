@@ -1,10 +1,10 @@
 // Scavengers Gang Profile Generator
 // Organ harvesters and chrome thieves operating in cells
 
-public class ScavengersProfile {
+public class KdspScavengersProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "SCAVENGERS";
         profile.gangName = "Scavengers";
         profile.headerLabel = "SCAVENGER CELL RECORD";
@@ -63,7 +63,7 @@ public class ScavengersProfile {
         profile.organsHarvested = RandRange(seed + 350, 20, 500);
         
         // Loyalty - Scavs are mercenary
-        profile.loyaltyRating = ScavengersProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspScavengersProfile.GetLoyalty(seed + 600);
         
         // Marks
         let marks: array<String>;
@@ -117,7 +117,7 @@ public class ScavengersProfile {
         ArrayPush(activities, "Disposing of a problem. Someone talked. Someone won't anymore.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

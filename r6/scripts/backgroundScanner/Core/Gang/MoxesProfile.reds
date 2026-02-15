@@ -1,10 +1,10 @@
 // Moxes Gang Profile Generator
 // Protective collective defending sex workers and marginalized people
 
-public class MoxesProfile {
+public class KdspMoxesProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "MOXES";
         profile.gangName = "The Moxes";
         profile.headerLabel = "MOXES COLLECTIVE FILE";
@@ -55,7 +55,7 @@ public class MoxesProfile {
         profile.peopleProtected = RandRange(seed + 350, 5, 100);
         
         // Loyalty
-        profile.loyaltyRating = MoxesProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspMoxesProfile.GetLoyalty(seed + 600);
         
         // Style
         let marks: array<String>;
@@ -109,7 +109,7 @@ public class MoxesProfile {
         ArrayPush(activities, "Coordinating with a fixer on a client who roughed up a joytoy. Justice pending.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

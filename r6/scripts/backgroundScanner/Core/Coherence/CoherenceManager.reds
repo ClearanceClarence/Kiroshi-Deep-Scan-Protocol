@@ -2,7 +2,7 @@
 // Generates a unified "life theme" that influences all other generators
 // Ensures criminal records match medical history, finances match lifestyle, etc.
 
-public class CoherenceProfile {
+public class KdspCoherenceProfile {
     // Life circumstances
     public let lifeTheme: String;           // STRUGGLING, STABLE, CLIMBING, FALLING, CRIMINAL, CORPORATE
     public let hasSubstanceIssues: Bool;
@@ -27,27 +27,27 @@ public class CoherenceProfile {
     public let relationshipPattern: String; // "stable", "chaotic", "loner", "serial"
 }
 
-public class CoherenceManager {
+public class KdspCoherenceManager {
 
     // Generate a coherent life profile based on archetype
-    public static func Generate(seed: Int32, archetype: String, age: Int32, gangAffiliation: String) -> ref<CoherenceProfile> {
-        let profile = new CoherenceProfile();
+    public static func Generate(seed: Int32, archetype: String, age: Int32, gangAffiliation: String) -> ref<KdspCoherenceProfile> {
+        let profile = new KdspCoherenceProfile();
         
         // ══════════════════════════════════════════════════════════════
         // DETERMINE LIFE THEME BASED ON ARCHETYPE
         // ══════════════════════════════════════════════════════════════
         
-        profile.lifeTheme = CoherenceManager.DetermineLifeTheme(seed, archetype, gangAffiliation);
+        profile.lifeTheme = KdspCoherenceManager.DetermineLifeTheme(seed, archetype, gangAffiliation);
         
         // ══════════════════════════════════════════════════════════════
         // SUBSTANCE ISSUES - Coherent across medical, criminal, psych
         // ══════════════════════════════════════════════════════════════
         
-        let substanceChance = CoherenceManager.GetSubstanceChance(archetype, profile.lifeTheme);
+        let substanceChance = KdspCoherenceManager.GetSubstanceChance(archetype, profile.lifeTheme);
         profile.hasSubstanceIssues = RandRange(seed + 100, 1, 100) <= substanceChance;
         
         if profile.hasSubstanceIssues {
-            profile.substanceType = CoherenceManager.GetSubstanceType(seed + 101, archetype);
+            profile.substanceType = KdspCoherenceManager.GetSubstanceType(seed + 101, archetype);
         } else {
             profile.substanceType = "";
         }
@@ -56,11 +56,11 @@ public class CoherenceManager {
         // VIOLENT PAST - Coherent across criminal, medical, psych
         // ══════════════════════════════════════════════════════════════
         
-        let violenceChance = CoherenceManager.GetViolenceChance(archetype, gangAffiliation, profile.lifeTheme);
+        let violenceChance = KdspCoherenceManager.GetViolenceChance(archetype, gangAffiliation, profile.lifeTheme);
         profile.hasViolentPast = RandRange(seed + 200, 1, 100) <= violenceChance;
         
         if profile.hasViolentPast {
-            profile.violenceType = CoherenceManager.GetViolenceType(seed + 201, archetype, gangAffiliation);
+            profile.violenceType = KdspCoherenceManager.GetViolenceType(seed + 201, archetype, gangAffiliation);
         } else {
             profile.violenceType = "";
         }
@@ -69,11 +69,11 @@ public class CoherenceManager {
         // TRAUMA - Coherent across medical, psych, backstory
         // ══════════════════════════════════════════════════════════════
         
-        let traumaChance = CoherenceManager.GetTraumaChance(archetype, profile.lifeTheme, age);
+        let traumaChance = KdspCoherenceManager.GetTraumaChance(archetype, profile.lifeTheme, age);
         profile.hasTrauma = RandRange(seed + 300, 1, 100) <= traumaChance;
         
         if profile.hasTrauma {
-            profile.traumaType = CoherenceManager.GetTraumaType(seed + 301, archetype, profile.hasViolentPast);
+            profile.traumaType = KdspCoherenceManager.GetTraumaType(seed + 301, archetype, profile.hasViolentPast);
         } else {
             profile.traumaType = "";
         }
@@ -82,11 +82,11 @@ public class CoherenceManager {
         // DEBT - Coherent across financial, medical, criminal
         // ══════════════════════════════════════════════════════════════
         
-        let debtChance = CoherenceManager.GetDebtChance(archetype, profile.lifeTheme);
+        let debtChance = KdspCoherenceManager.GetDebtChance(archetype, profile.lifeTheme);
         profile.isInDebt = RandRange(seed + 400, 1, 100) <= debtChance;
         
         if profile.isInDebt {
-            profile.debtReason = CoherenceManager.GetDebtReason(seed + 401, archetype, profile.hasSubstanceIssues, profile.hasChronicHealth);
+            profile.debtReason = KdspCoherenceManager.GetDebtReason(seed + 401, archetype, profile.hasSubstanceIssues, profile.hasChronicHealth);
         } else {
             profile.debtReason = "";
         }
@@ -95,23 +95,23 @@ public class CoherenceManager {
         // CHRONIC HEALTH - Coherent across medical, financial
         // ══════════════════════════════════════════════════════════════
         
-        let healthChance = CoherenceManager.GetChronicHealthChance(archetype, age, profile.hasSubstanceIssues);
+        let healthChance = KdspCoherenceManager.GetChronicHealthChance(archetype, age, profile.hasSubstanceIssues);
         profile.hasChronicHealth = RandRange(seed + 500, 1, 100) <= healthChance;
         
         // ══════════════════════════════════════════════════════════════
         // CAREER & EDUCATION COHERENCE
         // ══════════════════════════════════════════════════════════════
         
-        profile.jobHistory = CoherenceManager.GetJobHistory(seed + 600, archetype, profile.lifeTheme);
-        profile.educationLevel = CoherenceManager.GetEducationLevel(seed + 610, archetype);
+        profile.jobHistory = KdspCoherenceManager.GetJobHistory(seed + 600, archetype, profile.lifeTheme);
+        profile.educationLevel = KdspCoherenceManager.GetEducationLevel(seed + 610, archetype);
         
         // ══════════════════════════════════════════════════════════════
         // FAMILY & RELATIONSHIP COHERENCE
         // ══════════════════════════════════════════════════════════════
         
-        profile.familyStatus = CoherenceManager.GetFamilyStatus(seed + 700, archetype, profile.lifeTheme, profile.hasTrauma);
-        profile.hasChildren = CoherenceManager.DetermineHasChildren(seed + 710, age, archetype, profile.lifeTheme);
-        profile.relationshipPattern = CoherenceManager.GetRelationshipPattern(seed + 720, archetype, profile.lifeTheme, profile.hasSubstanceIssues);
+        profile.familyStatus = KdspCoherenceManager.GetFamilyStatus(seed + 700, archetype, profile.lifeTheme, profile.hasTrauma);
+        profile.hasChildren = KdspCoherenceManager.DetermineHasChildren(seed + 710, age, archetype, profile.lifeTheme);
+        profile.relationshipPattern = KdspCoherenceManager.GetRelationshipPattern(seed + 720, archetype, profile.lifeTheme, profile.hasSubstanceIssues);
         
         return profile;
     }

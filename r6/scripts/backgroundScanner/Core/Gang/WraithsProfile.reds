@@ -1,10 +1,10 @@
 // Wraiths Gang Profile Generator
 // Raffen Shiv raiders terrorizing the Badlands highways
 
-public class WraithsProfile {
+public class KdspWraithsProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "WRAITHS";
         profile.gangName = "Wraiths";
         profile.headerLabel = "WRAITHS RAFFEN SHIV FILE";
@@ -63,7 +63,7 @@ public class WraithsProfile {
         profile.successfulRaids = RandRange(seed + 350, 10, 200);
         
         // Loyalty
-        profile.loyaltyRating = WraithsProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspWraithsProfile.GetLoyalty(seed + 600);
         
         // Marks
         let marks: array<String>;
@@ -117,7 +117,7 @@ public class WraithsProfile {
         ArrayPush(activities, "War rig maintenance. The fleet needs to be ready for the next big score.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

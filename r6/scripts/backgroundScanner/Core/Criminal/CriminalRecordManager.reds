@@ -1,17 +1,17 @@
 // Criminal Record Generation System
-public class CriminalRecordManager {
+public class KdspCriminalRecordManager {
 
     // Legacy function for backward compatibility
-    public static func Generate(seed: Int32, archetype: String, gangAffil: String) -> ref<CriminalRecordData> {
-        return CriminalRecordManager.GenerateCoherent(seed, archetype, gangAffil, null);
+    public static func Generate(seed: Int32, archetype: String, gangAffil: String) -> ref<KdspCriminalRecordData> {
+        return KdspCriminalRecordManager.GenerateCoherent(seed, archetype, gangAffil, null);
     }
 
     // Coherent generation using life profile
-    public static func GenerateCoherent(seed: Int32, archetype: String, gangAffil: String, coherence: ref<CoherenceProfile>) -> ref<CriminalRecordData> {
-        let record: ref<CriminalRecordData> = new CriminalRecordData();
+    public static func GenerateCoherent(seed: Int32, archetype: String, gangAffil: String, coherence: ref<KdspCoherenceProfile>) -> ref<KdspCriminalRecordData> {
+        let record: ref<KdspCriminalRecordData> = new KdspCriminalRecordData();
         
         // Determine if they have a criminal record - influenced by coherence
-        let hasCriminalRecord = CriminalRecordManager.HasCriminalRecordCoherent(seed, archetype, coherence);
+        let hasCriminalRecord = KdspCriminalRecordManager.HasCriminalRecordCoherent(seed, archetype, coherence);
         record.hasRecord = hasCriminalRecord;
 
         if !hasCriminalRecord {
@@ -21,43 +21,43 @@ public class CriminalRecordManager {
         }
 
         // Generate criminal status - influenced by violence/substance flags
-        record.status = CriminalRecordManager.GenerateStatusCoherent(seed, archetype, coherence);
-        record.warrantStatus = CriminalRecordManager.GenerateWarrantStatus(seed + 100, archetype);
+        record.status = KdspCriminalRecordManager.GenerateStatusCoherent(seed, archetype, coherence);
+        record.warrantStatus = KdspCriminalRecordManager.GenerateWarrantStatus(seed + 100, archetype);
         
         // Generate arrests - coherent with life theme, limited by density
-        let arrestCount = CriminalRecordManager.GetArrestCountCoherent(seed + 200, archetype, coherence);
-        arrestCount = KiroshiSettings.GetMaxListItems(arrestCount);
+        let arrestCount = KdspCriminalRecordManager.GetArrestCountCoherent(seed + 200, archetype, coherence);
+        arrestCount = KdspSettings.GetMaxListItems(arrestCount);
         
         let i = 0;
         while i < arrestCount {
-            ArrayPush(record.arrests, CriminalRecordManager.GenerateArrestCoherent(seed + (i * 77), archetype, gangAffil, coherence));
+            ArrayPush(record.arrests, KdspCriminalRecordManager.GenerateArrestCoherent(seed + (i * 77), archetype, gangAffil, coherence));
             i += 1;
         }
 
         // Generate convictions - limited by density
         let convictionCount = RandRange(seed + 300, 0, arrestCount);
-        convictionCount = KiroshiSettings.GetMaxListItems(convictionCount);
+        convictionCount = KdspSettings.GetMaxListItems(convictionCount);
         
         i = 0;
         while i < convictionCount {
-            ArrayPush(record.convictions, CriminalRecordManager.GenerateConviction(seed + (i * 88), archetype));
+            ArrayPush(record.convictions, KdspCriminalRecordManager.GenerateConviction(seed + (i * 88), archetype));
             i += 1;
         }
 
         // Gang affiliation details
         if !Equals(gangAffil, "NONE") && !Equals(gangAffil, "") {
             record.gangAffiliation = gangAffil;
-            record.gangRank = CriminalRecordManager.GenerateGangRank(seed + 400, archetype);
-            record.gangStatus = CriminalRecordManager.GenerateGangStatus(seed + 500);
+            record.gangRank = KdspCriminalRecordManager.GenerateGangRank(seed + 400, archetype);
+            record.gangStatus = KdspCriminalRecordManager.GenerateGangStatus(seed + 500);
         }
 
         // NCPD threat classification
-        record.ncpdClassification = CriminalRecordManager.GenerateNCPDClassification(seed + 600, archetype, ArraySize(record.arrests));
+        record.ncpdClassification = KdspCriminalRecordManager.GenerateNCPDClassification(seed + 600, archetype, ArraySize(record.arrests));
 
         return record;
     }
 
-    private static func HasCriminalRecordCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Bool {
+    private static func HasCriminalRecordCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Bool {
         let chance: Int32;
         
         if Equals(archetype, "CORPO_MANAGER") { chance = 5; }
@@ -88,10 +88,10 @@ public class CriminalRecordManager {
     }
 
     private static func HasCriminalRecord(seed: Int32, archetype: String) -> Bool {
-        return CriminalRecordManager.HasCriminalRecordCoherent(seed, archetype, null);
+        return KdspCriminalRecordManager.HasCriminalRecordCoherent(seed, archetype, null);
     }
 
-    private static func GenerateStatusCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateStatusCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         // If coherence indicates violent past, weight towards violent offenses
         if IsDefined(coherence) && coherence.hasViolentPast {
             let roll = RandRange(seed, 1, 100);
@@ -112,7 +112,7 @@ public class CriminalRecordManager {
             return "MANDATORY REHAB ORDERED";
         }
 
-        return CriminalRecordManager.GenerateStatus(seed, archetype);
+        return KdspCriminalRecordManager.GenerateStatus(seed, archetype);
     }
 
     private static func GenerateStatus(seed: Int32, archetype: String) -> String {
@@ -210,8 +210,8 @@ public class CriminalRecordManager {
         return "NONE";
     }
 
-    private static func GetArrestCountCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let base = CriminalRecordManager.GetArrestCount(seed, archetype);
+    private static func GetArrestCountCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let base = KdspCriminalRecordManager.GetArrestCount(seed, archetype);
         
         if IsDefined(coherence) {
             // Life theme modifiers
@@ -234,7 +234,7 @@ public class CriminalRecordManager {
         return RandRange(seed, 1, 3);
     }
 
-    private static func GenerateArrestCoherent(seed: Int32, archetype: String, gangAffil: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateArrestCoherent(seed: Int32, archetype: String, gangAffil: String, coherence: ref<KdspCoherenceProfile>) -> String {
         let year = RandRange(seed + 1000, 2060, 2077);
         
         // If coherence gives us specific crime types, use them
@@ -283,7 +283,7 @@ public class CriminalRecordManager {
         }
         
         // Fall back to standard generation
-        return CriminalRecordManager.GenerateArrest(seed, archetype, gangAffil);
+        return KdspCriminalRecordManager.GenerateArrest(seed, archetype, gangAffil);
     }
 
     private static func GenerateArrest(seed: Int32, archetype: String, gangAffil: String) -> String {
@@ -636,7 +636,7 @@ public class CriminalRecordManager {
     }
 }
 
-public class CriminalRecordData {
+public class KdspCriminalRecordData {
     public let hasRecord: Bool;
     public let status: String;
     public let warrantStatus: String;

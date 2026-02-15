@@ -1,10 +1,10 @@
 // Aldecaldos Gang Profile Generator
 // Nomad clan focused on family, freedom, and the open road
 
-public class AldecaldosProfile {
+public class KdspAldecaldosProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "ALDECALDOS";
         profile.gangName = "Aldecaldos";
         profile.headerLabel = "ALDECALDOS CLAN RECORD";
@@ -62,7 +62,7 @@ public class AldecaldosProfile {
         profile.convoyRuns = RandRange(seed + 350, 20, 500);
         
         // Loyalty
-        profile.loyaltyRating = AldecaldosProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspAldecaldosProfile.GetLoyalty(seed + 600);
         
         // Style
         let marks: array<String>;
@@ -116,7 +116,7 @@ public class AldecaldosProfile {
         ArrayPush(activities, "Teaching younger members to drive and shoot. Survival skills are a birthright.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

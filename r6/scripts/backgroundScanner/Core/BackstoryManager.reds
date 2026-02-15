@@ -1,4 +1,4 @@
-public class BackstoryManager {
+public class KdspBackstoryManager {
 
     // SEED VERSION - Increment this to regenerate all NPC backstories on next load
     // Change this value when making major content updates
@@ -6,82 +6,82 @@ public class BackstoryManager {
         return 3;
     }
 
-    public static func GenerateBackstoryUI(target: wref<NPCPuppet>) -> BackstoryUI {
+    public static func GenerateBackstoryUI(target: wref<NPCPuppet>) -> KdspBackstoryUI {
         let entityIDHash: Int32 = Cast(EntityID.GetHash(target.GetEntityID()));
         // Seed version allows forcing regeneration of all NPCs when mod is updated
-        let seed = RandRange(entityIDHash + (BackstoryManager.GetSeedVersion() * 100000), 0, 2147483647);
-        let lifePath: ref<LifePath> = LifePath.Create(target);
+        let seed = RandRange(entityIDHash + (KdspBackstoryManager.GetSeedVersion() * 100000), 0, 2147483647);
+        let lifePath: ref<KdspLifePath> = KdspLifePath.Create(target);
         
         // Get data density setting
-        let density = KiroshiSettings.GetDataDensity();
+        let density = KdspSettings.GetDataDensity();
 
         // Get appearance for detection
         let appearanceName = NameToString(target.GetCurrentAppearanceName());
         
         // Check if NPC is a child - generate age-appropriate content
-        if BackstoryManager.IsChildNPC(appearanceName) {
-            return BackstoryManager.GenerateChildBackstory(seed, lifePath);
+        if KdspBackstoryManager.IsChildNPC(appearanceName) {
+            return KdspBackstoryManager.GenerateChildBackstory(seed, lifePath);
         };
 
         // Original backstory generation for adults
-        let background = BackstoryManager.GenerateChildhoodHome(seed, lifePath) + BackstoryManager.GenerateUpbringingEvent(seed, lifePath);
-        let earlyLife = BackstoryManager.GenerateChildhoodEvents(seed, lifePath);
-        let significantEvents = BackstoryManager.GenerateFirstJob(seed, lifePath) + BackstoryManager.GenerateAdultEvents(seed, lifePath);
+        let background = KdspBackstoryManager.GenerateChildhoodHome(seed, lifePath) + KdspBackstoryManager.GenerateUpbringingEvent(seed, lifePath);
+        let earlyLife = KdspBackstoryManager.GenerateChildhoodEvents(seed, lifePath);
+        let significantEvents = KdspBackstoryManager.GenerateFirstJob(seed, lifePath) + KdspBackstoryManager.GenerateAdultEvents(seed, lifePath);
 
         // Get context for expanded systems
         let archetype = lifePath.archetype;
-        let gangAffiliation = GangManager.DetectGangAffiliation(appearanceName, "");
-        let wealth = BackstoryManager.GetWealthScore(archetype);
-        let age = BackstoryManager.GetAge(seed, archetype);
+        let gangAffiliation = KdspGangManager.DetectGangAffiliation(appearanceName, "");
+        let wealth = KdspBackstoryManager.GetWealthScore(archetype);
+        let age = KdspBackstoryManager.GetAge(seed, archetype);
 
         // Detect ethnicity from appearance and gang affiliation
-        let ethnicity = EthnicityDetector.GetEthnicityFromAppearance(appearanceName, gangAffiliation);
-        if Equals(ethnicity, NPCEthnicity.Mixed) {
+        let ethnicity = KdspEthnicityDetector.GetEthnicityFromAppearance(appearanceName, gangAffiliation);
+        if Equals(ethnicity, KdspNPCEthnicity.Mixed) {
             // No clear ethnicity detected, use random weighted by Night City demographics
-            ethnicity = EthnicityDetector.GetRandomEthnicity(seed + 888);
+            ethnicity = KdspEthnicityDetector.GetRandomEthnicity(seed + 888);
         }
 
         // Detect NCPD early - they get different treatment
         // Barghest uses Prevention archetype but are NOT NCPD - exclude them
         let isBarghest: Bool = Equals(gangAffiliation, "BARGHEST") || StrContains(appearanceName, "barghest") || StrContains(appearanceName, "kurtz");
-        let isNCPD: Bool = !isBarghest && (NCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice());
+        let isNCPD: Bool = !isBarghest && (KdspNCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice());
 
         // Check if coherence mode is enabled in settings
-        let coherence: ref<CoherenceProfile>;
-        if KiroshiSettings.CoherenceEnabled() {
+        let coherence: ref<KdspCoherenceProfile>;
+        if KdspSettings.CoherenceEnabled() {
             // Generate coherence profile - this ensures all data is interconnected
-            coherence = CoherenceManager.Generate(seed + 500, archetype, age, gangAffiliation);
+            coherence = KdspCoherenceManager.Generate(seed + 500, archetype, age, gangAffiliation);
         } else {
             // No coherence - each system generates independently (maximum variety)
             coherence = null;
         }
 
         // Generate expanded data (coherence may be null for independent generation)
-        let criminal = CriminalRecordManager.GenerateCoherent(seed + 1000, archetype, gangAffiliation, coherence);
-        let cyberware = CyberwareRegistryManager.GenerateCoherent(seed + 2000, archetype, wealth, coherence);
-        let financial = FinancialProfileManager.GenerateCoherent(seed + 3000, archetype, coherence);
-        let medical = MedicalHistoryManager.GenerateCoherent(seed + 4000, archetype, age, coherence);
-        let psych = PsychProfileManager.GenerateCoherent(seed + 5000, archetype, coherence);
+        let criminal = KdspCriminalRecordManager.GenerateCoherent(seed + 1000, archetype, gangAffiliation, coherence);
+        let cyberware = KdspCyberwareRegistryManager.GenerateCoherent(seed + 2000, archetype, wealth, coherence);
+        let financial = KdspFinancialProfileManager.GenerateCoherent(seed + 3000, archetype, coherence);
+        let medical = KdspMedicalHistoryManager.GenerateCoherent(seed + 4000, archetype, age, coherence);
+        let psych = KdspPsychProfileManager.GenerateCoherent(seed + 5000, archetype, coherence);
 
-        // Build BackstoryUI
-        let backstoryUI: BackstoryUI;
+        // Build KdspBackstoryUI
+        let backstoryUI: KdspBackstoryUI;
         
         // Check if this is a gang member (not Barghest - they have separate handling)
         let isGangMember: Bool = !Equals(gangAffiliation, "NONE") && !isBarghest;
         
         // NCPD officers get cop-specific backstory, not civilian backstory
         if isNCPD {
-            backstoryUI.background = BackstoryManager.GenerateNCPDBackground(seed, lifePath);
+            backstoryUI.background = KdspBackstoryManager.GenerateNCPDBackground(seed, lifePath);
             // Early life only on medium/high density
             if density >= 2 {
-                backstoryUI.earlyLife = BackstoryManager.GenerateNCPDEarlyLife(seed, lifePath);
+                backstoryUI.earlyLife = KdspBackstoryManager.GenerateNCPDEarlyLife(seed, lifePath);
             } else {
                 backstoryUI.earlyLife = "";
             };
-            backstoryUI.significantEvents = BackstoryManager.GenerateNCPDRecentActivity(seed, lifePath);
+            backstoryUI.significantEvents = KdspBackstoryManager.GenerateNCPDRecentActivity(seed, lifePath);
         } else if isBarghest {
             // Barghest get militia-style backgrounds
-            let barghestData = BarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
+            let barghestData = KdspBarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
             backstoryUI.background = barghestData.background;
             if density >= 2 {
                 backstoryUI.earlyLife = "Prior service: " + barghestData.formerAffiliation + ". " + IntToString(barghestData.yearsService) + " years military experience.";
@@ -91,7 +91,7 @@ public class BackstoryManager {
             backstoryUI.significantEvents = "Joined Barghest " + IntToString(barghestData.yearsBarghest) + " years ago. Combat role: " + barghestData.combatRole + ".";
         } else if isGangMember {
             // Gang members get gang-specific detailed backstories
-            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
+            let gangData = KdspGangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
             backstoryUI.background = gangData.background;
             if density >= 2 {
                 backstoryUI.earlyLife = IntToString(gangData.yearsActive) + " years with " + gangData.gangName + ". Role: " + gangData.role + ".";
@@ -111,8 +111,8 @@ public class BackstoryManager {
         };
 
         // Generate pronouns if enabled - only on high density
-        if density >= 3 && KiroshiSettings.PronounDisplayEnabled() {
-            backstoryUI.pronouns = BackstoryManager.GeneratePronouns(seed + 7777, lifePath.gender);
+        if density >= 3 && KdspSettings.PronounDisplayEnabled() {
+            backstoryUI.pronouns = KdspBackstoryManager.GeneratePronouns(seed + 7777, lifePath.gender);
         } else {
             backstoryUI.pronouns = "";
         };
@@ -153,7 +153,7 @@ public class BackstoryManager {
                     backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | REJECTED IMPLANTS DETECTED";
                 };
                 // Check for body modification implants and display them
-                let bodyModFound: String = BackstoryManager.FindBodyModImplant(cyberware);
+                let bodyModFound: String = KdspBackstoryManager.FindBodyModImplant(cyberware);
                 if NotEquals(bodyModFound, "") {
                     backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | BODY MOD: " + bodyModFound;
                 };
@@ -204,7 +204,7 @@ public class BackstoryManager {
         // Behavioral Profile Section (replaces threat assessment) - skip for NCPD, custom for Barghest and gang members
         if isBarghest {
             // Barghest get military threat assessment
-            let barghestData = BarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
+            let barghestData = KdspBarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
             backstoryUI.threatAssessment = "HOSTILE | Military trained | " + barghestData.combatRole;
             if density >= 2 {
                 backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Confirmed kills: " + IntToString(barghestData.confirmedKills);
@@ -214,7 +214,7 @@ public class BackstoryManager {
             };
         } else if isGangMember {
             // Gang members get gang-appropriate threat assessment
-            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
+            let gangData = KdspGangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
             
             // Threat level based on gang type
             let threatPrefix: String = "HOSTILE";
@@ -235,8 +235,8 @@ public class BackstoryManager {
                 };
             };
         } else if !isNCPD {
-            let temperament = PsychProfileManager.GetTemperament(psych.stabilityScore, psych.threatLevel);
-            let disposition = PsychProfileManager.GetDisposition(seed + 5500, archetype);
+            let temperament = KdspPsychProfileManager.GetTemperament(psych.stabilityScore, psych.threatLevel);
+            let disposition = KdspPsychProfileManager.GetDisposition(seed + 5500, archetype);
             
             backstoryUI.threatAssessment = temperament;
             // Add disposition on medium/high density
@@ -261,7 +261,7 @@ public class BackstoryManager {
 
         // Gang Affiliation Section - use detailed profiles (no rank - game shows that as NPC name)
         if isGangMember {
-            let gangData = GangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
+            let gangData = KdspGangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
             backstoryUI.gangAffiliation = gangData.gangName + " | " + gangData.role + " | " + IntToString(gangData.yearsActive) + " yrs active";
             
             // Extra details on medium/high density
@@ -305,8 +305,8 @@ public class BackstoryManager {
         };
 
         // Rare NPC Flag - skip for NCPD, Barghest, and gang members, show on all density levels (it's rare enough)
-        if !isNCPD && !isBarghest && !isGangMember && RareNPCManager.ShouldBeRareNPC(seed + 9999) {
-            let rareData = RareNPCManager.Generate(seed + 10000, archetype);
+        if !isNCPD && !isBarghest && !isGangMember && KdspRareNPCManager.ShouldBeRareNPC(seed + 9999) {
+            let rareData = KdspRareNPCManager.Generate(seed + 10000, archetype);
             backstoryUI.rareFlag = rareData.displayFlag + " - " + rareData.rareType;
         } else {
             backstoryUI.rareFlag = "";
@@ -314,7 +314,7 @@ public class BackstoryManager {
 
         // NCPD Officer Detection and Name Generation
         if isNCPD {
-            let ncpdData = NCPDNameGenerator.Generate(seed + 7000, appearanceName, lifePath.gender, ethnicity);
+            let ncpdData = KdspNCPDNameGenerator.Generate(seed + 7000, appearanceName, lifePath.gender, ethnicity);
             
             // Try to get real name from TweakDB
             let realName: String = target.GetTweakDBFullDisplayName(true);
@@ -369,7 +369,7 @@ public class BackstoryManager {
             };
         } else if isBarghest {
             // Barghest get militia service records - use gangAffiliation, not ncpdOfficer
-            let barghestData = BarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
+            let barghestData = KdspBarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
             
             // Build display name with callsign if present
             let displayName: String = "";
@@ -399,8 +399,8 @@ public class BackstoryManager {
         // Relationships - skip for NCPD, Barghest, and gang members, only on medium/high density
         if density >= 2 && !isNCPD && !isBarghest && !isGangMember {
             // Get NPC's last name so family members share it
-            let npcLastName = BackstoryManager.ExtractLastName(target);
-            let relations = RelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
+            let npcLastName = KdspBackstoryManager.ExtractLastName(target);
+            let relations = KdspRelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
             backstoryUI.relationships = "";
             
             // Status and dependents
@@ -534,57 +534,57 @@ public class BackstoryManager {
         return RandRange(seed + 8888, 20, 55);
     }
 
-    private static func GenerateUpbringingEvent(seed: Int32, lifePath: ref<LifePath>) -> String {
-        return BackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedUpbringingEvents, lifePath.possibleEvents.m_cdfWeightedUpbringingEvents);
+    private static func GenerateUpbringingEvent(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
+        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedUpbringingEvents, lifePath.possibleEvents.m_cdfWeightedUpbringingEvents);
     }
 
-    public static func GenerateChildhoodHome(seed: Int32, lifePath: ref<LifePath>) -> String {
-        return BackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedHomeEvents, lifePath.possibleEvents.m_cdfWeightedHomeEvents);
+    public static func GenerateChildhoodHome(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
+        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedHomeEvents, lifePath.possibleEvents.m_cdfWeightedHomeEvents);
     }
 
-    private static func GenerateChildhoodEvents(seed: Int32, lifePath: ref<LifePath>) -> String {
+    private static func GenerateChildhoodEvents(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
         let childhoodEvents: String;
         let eventsCount: Int32 = RandRange(seed + 21620, 1, 2);
 
         let i = 0;
         while i < eventsCount {
-            childhoodEvents += BackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedChildhoodEvents, lifePath.possibleEvents.m_cdfWeightedChildhoodEvents);
+            childhoodEvents += KdspBackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedChildhoodEvents, lifePath.possibleEvents.m_cdfWeightedChildhoodEvents);
             i += 1;
         }  
         return childhoodEvents;
     }
 
-    private static func GenerateFirstJob(seed: Int32, lifePath: ref<LifePath>) -> String {
-        return BackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedJobEvents, lifePath.possibleEvents.m_cdfWeightedJobEvents);
+    private static func GenerateFirstJob(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
+        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedJobEvents, lifePath.possibleEvents.m_cdfWeightedJobEvents);
     }
 
-    private static func GenerateAdultEvents(seed: Int32, lifePath: ref<LifePath>) -> String {
+    private static func GenerateAdultEvents(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
         let adultEvents: String;
         let eventsCount: Int32 = RandRange(seed + 21620, 1, 2);
 
         let i = 0;
         while i < eventsCount {
-            adultEvents += BackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedAdultEvents, lifePath.possibleEvents.m_cdfWeightedAdultEvents);
+            adultEvents += KdspBackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedAdultEvents, lifePath.possibleEvents.m_cdfWeightedAdultEvents);
             i += 1;
         }  
         return adultEvents;
     }
 
-    private static func GenerateEvent(seed: Int32, lifePath: ref<LifePath>, arr: array<ref<LifePathEvent>>, cdf: array<Int32>) -> String {
+    private static func GenerateEvent(seed: Int32, lifePath: ref<KdspLifePath>, arr: array<ref<KdspLifePathEvent>>, cdf: array<Int32>) -> String {
         let cdfSize = ArraySize(cdf);
         let totalWeight = cdf[cdfSize - 1];
         let val = RandRange(seed, 0, totalWeight);
-        let eventIndex = BackstoryManager.getCorrespondingIndex(cdf, val);
+        let eventIndex = KdspBackstoryManager.getCorrespondingIndex(cdf, val);
 
         let event = arr[eventIndex];
         let eventText = event.GetText(lifePath.gender);
-        return BackstoryManager.FillReplacements(seed, eventText);
+        return KdspBackstoryManager.FillReplacements(seed, eventText);
     }
 
     private static func FillReplacements(seed: Int32, text: String) -> String {
         let ret = text;
         if(StrContains(ret, "%corp%")) {
-            ret = ReplaceFirst(ret, "%corp%", BackstoryManager.GetRandomCorpo(seed));
+            ret = ReplaceFirst(ret, "%corp%", KdspBackstoryManager.GetRandomCorpo(seed));
         };
         if(StrContains(ret, "%eddies%")) {
             ret = ReplaceFirst(ret, "%eddies%", IntToString(RandRange(seed, 100, 10000)));
@@ -614,44 +614,44 @@ public class BackstoryManager {
     private static func GetRandomCorpo(seed: Int32) -> String {
         let corpos: array<String>;
         
-        ArrayPush(corpos, TextCorpos.NIPPON_NETWORK());
-        ArrayPush(corpos, TextCorpos.DIVERSE_MEDIA());
-        ArrayPush(corpos, TextCorpos.WORLD_NEWS());
-        ArrayPush(corpos, TextCorpos.AKAROMI());
-        ArrayPush(corpos, TextCorpos.CONAG());
-        ArrayPush(corpos, TextCorpos.NN54());
-        ArrayPush(corpos, TextCorpos.PETROCHEM());
-        ArrayPush(corpos, TextCorpos.SOVOIL());
-        ArrayPush(corpos, TextCorpos.ARASAKA());
-        ArrayPush(corpos, TextCorpos.KANG_TAO());
-        ArrayPush(corpos, TextCorpos.MILITECH());
-        ArrayPush(corpos, TextCorpos.MITSU_SUGO());
-        ArrayPush(corpos, TextCorpos.SEG_ATARI());
-        ArrayPush(corpos, TextCorpos.TDS());
-        ArrayPush(corpos, TextCorpos.AHI());
-        ArrayPush(corpos, TextCorpos.EBM());
-        ArrayPush(corpos, TextCorpos.IEC());
-        ArrayPush(corpos, TextCorpos.MICROTECH());
-        ArrayPush(corpos, TextCorpos.ZETATECH());
-        ArrayPush(corpos, TextCorpos.ADREK_ROBO());
-        ArrayPush(corpos, TextCorpos.AKAGI_SYS());
-        ArrayPush(corpos, TextCorpos.BAKU_CHIPMASTERS());
-        ArrayPush(corpos, TextCorpos.BIOTECHNICA());
-        ArrayPush(corpos, TextCorpos.CYPHIRE());
-        ArrayPush(corpos, TextCorpos.DAKAI());
-        ArrayPush(corpos, TextCorpos.DYNALAR());
-        ArrayPush(corpos, TextCorpos.KENJIRI());
-        ArrayPush(corpos, TextCorpos.KIROSHI());
-        ArrayPush(corpos, TextCorpos.TTI());
-        ArrayPush(corpos, TextCorpos.MAF());
-        ArrayPush(corpos, TextCorpos.TOYOTA());
-        ArrayPush(corpos, TextCorpos.FUYUTSUKI());
-        ArrayPush(corpos, TextCorpos.ORBITAL_AIR());
-        ArrayPush(corpos, TextCorpos.WORLDSAT());
-        ArrayPush(corpos, TextCorpos.EUROBANK());
-        ArrayPush(corpos, TextCorpos.FUJIWARA());
-        ArrayPush(corpos, TextCorpos.INFOCOMP());
-        ArrayPush(corpos, TextCorpos.BAKENEKO());
+        ArrayPush(corpos, KdspTextCorpos.NIPPON_NETWORK());
+        ArrayPush(corpos, KdspTextCorpos.DIVERSE_MEDIA());
+        ArrayPush(corpos, KdspTextCorpos.WORLD_NEWS());
+        ArrayPush(corpos, KdspTextCorpos.AKAROMI());
+        ArrayPush(corpos, KdspTextCorpos.CONAG());
+        ArrayPush(corpos, KdspTextCorpos.NN54());
+        ArrayPush(corpos, KdspTextCorpos.PETROCHEM());
+        ArrayPush(corpos, KdspTextCorpos.SOVOIL());
+        ArrayPush(corpos, KdspTextCorpos.ARASAKA());
+        ArrayPush(corpos, KdspTextCorpos.KANG_TAO());
+        ArrayPush(corpos, KdspTextCorpos.MILITECH());
+        ArrayPush(corpos, KdspTextCorpos.MITSU_SUGO());
+        ArrayPush(corpos, KdspTextCorpos.SEG_ATARI());
+        ArrayPush(corpos, KdspTextCorpos.TDS());
+        ArrayPush(corpos, KdspTextCorpos.AHI());
+        ArrayPush(corpos, KdspTextCorpos.EBM());
+        ArrayPush(corpos, KdspTextCorpos.IEC());
+        ArrayPush(corpos, KdspTextCorpos.MICROTECH());
+        ArrayPush(corpos, KdspTextCorpos.ZETATECH());
+        ArrayPush(corpos, KdspTextCorpos.ADREK_ROBO());
+        ArrayPush(corpos, KdspTextCorpos.AKAGI_SYS());
+        ArrayPush(corpos, KdspTextCorpos.BAKU_CHIPMASTERS());
+        ArrayPush(corpos, KdspTextCorpos.BIOTECHNICA());
+        ArrayPush(corpos, KdspTextCorpos.CYPHIRE());
+        ArrayPush(corpos, KdspTextCorpos.DAKAI());
+        ArrayPush(corpos, KdspTextCorpos.DYNALAR());
+        ArrayPush(corpos, KdspTextCorpos.KENJIRI());
+        ArrayPush(corpos, KdspTextCorpos.KIROSHI());
+        ArrayPush(corpos, KdspTextCorpos.TTI());
+        ArrayPush(corpos, KdspTextCorpos.MAF());
+        ArrayPush(corpos, KdspTextCorpos.TOYOTA());
+        ArrayPush(corpos, KdspTextCorpos.FUYUTSUKI());
+        ArrayPush(corpos, KdspTextCorpos.ORBITAL_AIR());
+        ArrayPush(corpos, KdspTextCorpos.WORLDSAT());
+        ArrayPush(corpos, KdspTextCorpos.EUROBANK());
+        ArrayPush(corpos, KdspTextCorpos.FUJIWARA());
+        ArrayPush(corpos, KdspTextCorpos.INFOCOMP());
+        ArrayPush(corpos, KdspTextCorpos.BAKENEKO());
 
         let corpoVal = RandRange(seed + 41948, 0, ArraySize(corpos)-1);
 
@@ -684,8 +684,8 @@ public class BackstoryManager {
     }
 
     // Generate age-appropriate backstory for child NPCs
-    private static func GenerateChildBackstory(seed: Int32, lifePath: ref<LifePath>) -> BackstoryUI {
-        let backstoryUI: BackstoryUI;
+    private static func GenerateChildBackstory(seed: Int32, lifePath: ref<KdspLifePath>) -> KdspBackstoryUI {
+        let backstoryUI: KdspBackstoryUI;
         
         // === BACKGROUND (School/Living Situation) ===
         let backgrounds: array<String>;
@@ -769,7 +769,7 @@ public class BackstoryManager {
         return backstoryUI;
     }
 
-    private static func FindBodyModImplant(cyberware: ref<CyberwareRegistryData>) -> String {
+    private static func FindBodyModImplant(cyberware: ref<KdspCyberwareRegistryData>) -> String {
         let i: Int32 = 0;
         while i < ArraySize(cyberware.implants) {
             let implant = cyberware.implants[i];
@@ -816,7 +816,7 @@ public class BackstoryManager {
     }
 
     // NCPD-specific backstory generation
-    private static func GenerateNCPDBackground(seed: Int32, lifePath: ref<LifePath>) -> String {
+    private static func GenerateNCPDBackground(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
         let backgrounds: array<String>;
         ArrayPush(backgrounds, "Academy graduate. Family has history of NCPD service.");
         ArrayPush(backgrounds, "Former corporate security, recruited by NCPD.");
@@ -834,7 +834,7 @@ public class BackstoryManager {
         return backgrounds[RandRange(seed + 100, 0, ArraySize(backgrounds) - 1)];
     }
 
-    private static func GenerateNCPDEarlyLife(seed: Int32, lifePath: ref<LifePath>) -> String {
+    private static func GenerateNCPDEarlyLife(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
         let events: array<String>;
         ArrayPush(events, "Completed standard patrol rotation. No incidents.");
         ArrayPush(events, "Early commendation for bravery during gang shootout.");
@@ -850,7 +850,7 @@ public class BackstoryManager {
         return events[RandRange(seed + 200, 0, ArraySize(events) - 1)];
     }
 
-    private static func GenerateNCPDRecentActivity(seed: Int32, lifePath: ref<LifePath>) -> String {
+    private static func GenerateNCPDRecentActivity(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
         let activities: array<String>;
         ArrayPush(activities, "Currently on standard patrol rotation. Performance satisfactory.");
         ArrayPush(activities, "Recently involved in successful gang operation. Commendation pending.");

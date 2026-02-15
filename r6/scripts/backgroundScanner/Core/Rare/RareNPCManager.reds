@@ -1,10 +1,10 @@
 // Rare NPC Generation System
 // Handles special flagged NPCs with unique classifications and backstories
-public class RareNPCManager {
+public class KdspRareNPCManager {
 
     // Check if this NPC should be rare based on settings
     public static func ShouldBeRareNPC(seed: Int32) -> Bool {
-        let rarity = KiroshiSettings.GetSpecialNPCRarity();
+        let rarity = KdspSettings.GetSpecialNPCRarity();
         
         // 0 = disabled
         if rarity <= 0 {
@@ -15,287 +15,287 @@ public class RareNPCManager {
         return RandRange(seed, 1, rarity) == 1;
     }
 
-    public static func Generate(seed: Int32, archetype: String) -> ref<RareNPCData> {
-        let rareData: ref<RareNPCData> = new RareNPCData();
+    public static func Generate(seed: Int32, archetype: String) -> ref<KdspRareNPCData> {
+        let rareData: ref<KdspRareNPCData> = new KdspRareNPCData();
 
         // Determine rare type
-        let rareType = RareNPCManager.DetermineRareType(seed);
+        let rareType = KdspRareNPCManager.DetermineRareType(seed);
         rareData.rareType = rareType;
         rareData.isRare = true;
 
         // Generate based on type - Original types
         if Equals(rareType, "SLEEPER_AGENT") {
-            rareData = RareNPCManager.GenerateSleeperAgent(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateSleeperAgent(seed, rareData);
         }
         else if Equals(rareType, "PRE_CYBERPSYCHO") {
-            rareData = RareNPCManager.GeneratePreCyberpsycho(seed, rareData);
+            rareData = KdspRareNPCManager.GeneratePreCyberpsycho(seed, rareData);
         }
         else if Equals(rareType, "LEGACY_CHARACTER") {
-            rareData = RareNPCManager.GenerateLegacyCharacter(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateLegacyCharacter(seed, rareData);
         }
         else if Equals(rareType, "TIME_ANOMALY") {
-            rareData = RareNPCManager.GenerateTimeAnomaly(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateTimeAnomaly(seed, rareData);
         }
         else if Equals(rareType, "GHOST") {
-            rareData = RareNPCManager.GenerateGhost(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateGhost(seed, rareData);
         }
         else if Equals(rareType, "WITNESS") {
-            rareData = RareNPCManager.GenerateWitness(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateWitness(seed, rareData);
         }
         else if Equals(rareType, "HUNTED") {
-            rareData = RareNPCManager.GenerateHunted(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateHunted(seed, rareData);
         }
         else if Equals(rareType, "AI_CONTACT") {
-            rareData = RareNPCManager.GenerateAIContact(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateAIContact(seed, rareData);
         }
         else if Equals(rareType, "CORPO_WHISTLEBLOWER") {
-            rareData = RareNPCManager.GenerateWhistleblower(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateWhistleblower(seed, rareData);
         }
         else if Equals(rareType, "HIDDEN_NETRUNNER") {
-            rareData = RareNPCManager.GenerateHiddenNetrunner(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateHiddenNetrunner(seed, rareData);
         }
         // v1.6 Expanded types
         else if Equals(rareType, "UNDERCOVER_COP") {
-            rareData = RareNPCManager.GenerateUndercoverCop(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateUndercoverCop(seed, rareData);
         }
         else if Equals(rareType, "RETIRED_LEGEND") {
-            rareData = RareNPCManager.GenerateRetiredLegend(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateRetiredLegend(seed, rareData);
         }
         else if Equals(rareType, "CLONE_SUBJECT") {
-            rareData = RareNPCManager.GenerateCloneSubject(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCloneSubject(seed, rareData);
         }
         else if Equals(rareType, "MAXTAC_TARGET") {
-            rareData = RareNPCManager.GenerateMaxtacTarget(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateMaxtacTarget(seed, rareData);
         }
         else if Equals(rareType, "WITNESS_PROTECTION") {
-            rareData = RareNPCManager.GenerateWitnessProtection(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateWitnessProtection(seed, rareData);
         }
         else if Equals(rareType, "ENGRAM_CANDIDATE") {
-            rareData = RareNPCManager.GenerateEngramCandidate(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateEngramCandidate(seed, rareData);
         }
         else if Equals(rareType, "CORPO_DEFECTOR") {
-            rareData = RareNPCManager.GenerateCorpoDefector(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCorpoDefector(seed, rareData);
         }
         else if Equals(rareType, "GANG_INFILTRATOR") {
-            rareData = RareNPCManager.GenerateGangInfiltrator(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateGangInfiltrator(seed, rareData);
         }
         else if Equals(rareType, "TRAUMA_TEAM_MARKED") {
-            rareData = RareNPCManager.GenerateTraumaTeamMarked(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateTraumaTeamMarked(seed, rareData);
         }
         else if Equals(rareType, "FIXER_ASSET") {
-            rareData = RareNPCManager.GenerateFixerAsset(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateFixerAsset(seed, rareData);
         }
         else if Equals(rareType, "BLACKMAIL_VICTIM") {
-            rareData = RareNPCManager.GenerateBlackmailVictim(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateBlackmailVictim(seed, rareData);
         }
         else if Equals(rareType, "MILITARY_AWOL") {
-            rareData = RareNPCManager.GenerateMilitaryAwol(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateMilitaryAwol(seed, rareData);
         }
         else if Equals(rareType, "EXPERIMENTAL_SUBJECT") {
-            rareData = RareNPCManager.GenerateExperimentalSubject(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateExperimentalSubject(seed, rareData);
         }
         else if Equals(rareType, "DEBT_COLLECTION") {
-            rareData = RareNPCManager.GenerateDebtCollection(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDebtCollection(seed, rareData);
         }
         else if Equals(rareType, "ORGAN_MARKED") {
-            rareData = RareNPCManager.GenerateOrganMarked(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateOrganMarked(seed, rareData);
         }
         else if Equals(rareType, "CULT_ESCAPEE") {
-            rareData = RareNPCManager.GenerateCultEscapee(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCultEscapee(seed, rareData);
         }
         else if Equals(rareType, "RELIC_COMPATIBLE") {
-            rareData = RareNPCManager.GenerateRelicCompatible(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateRelicCompatible(seed, rareData);
         }
         else if Equals(rareType, "DATA_COURIER") {
-            rareData = RareNPCManager.GenerateDataCourier(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDataCourier(seed, rareData);
         }
         else if Equals(rareType, "DOUBLE_AGENT") {
-            rareData = RareNPCManager.GenerateDoubleAgent(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDoubleAgent(seed, rareData);
         }
         else if Equals(rareType, "NOMAD_EXILE") {
-            rareData = RareNPCManager.GenerateNomadExile(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateNomadExile(seed, rareData);
         }
         // v1.7 New types
         else if Equals(rareType, "BRAINDANCE_ADDICT") {
-            rareData = RareNPCManager.GenerateBraindanceAddict(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateBraindanceAddict(seed, rareData);
         }
         else if Equals(rareType, "NIGHT_CORP_SUBJECT") {
-            rareData = RareNPCManager.GenerateNightCorpSubject(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateNightCorpSubject(seed, rareData);
         }
         else if Equals(rareType, "DOLL_CHIP_SLEEPER") {
-            rareData = RareNPCManager.GenerateDollChipSleeper(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDollChipSleeper(seed, rareData);
         }
         else if Equals(rareType, "SOULKILLER_SURVIVOR") {
-            rareData = RareNPCManager.GenerateSoulkillerSurvivor(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateSoulkillerSurvivor(seed, rareData);
         }
         else if Equals(rareType, "BLACKWALL_TOUCHED") {
-            rareData = RareNPCManager.GenerateBlackwallTouched(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateBlackwallTouched(seed, rareData);
         }
         else if Equals(rareType, "SIGNAL_CARRIER") {
-            rareData = RareNPCManager.GenerateSignalCarrier(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateSignalCarrier(seed, rareData);
         }
         else if Equals(rareType, "MEMORY_WIPED") {
-            rareData = RareNPCManager.GenerateMemoryWiped(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateMemoryWiped(seed, rareData);
         }
         else if Equals(rareType, "IDENTITY_STOLEN") {
-            rareData = RareNPCManager.GenerateIdentityStolen(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateIdentityStolen(seed, rareData);
         }
         else if Equals(rareType, "MISSING_PERSON") {
-            rareData = RareNPCManager.GenerateMissingPerson(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateMissingPerson(seed, rareData);
         }
         else if Equals(rareType, "ACTIVE_BOUNTY") {
-            rareData = RareNPCManager.GenerateActiveBounty(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateActiveBounty(seed, rareData);
         }
         else if Equals(rareType, "UNREGISTERED_CHROME") {
-            rareData = RareNPCManager.GenerateUnregisteredChrome(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateUnregisteredChrome(seed, rareData);
         }
         else if Equals(rareType, "POLITICAL_DISSIDENT") {
-            rareData = RareNPCManager.GeneratePoliticalDissident(seed, rareData);
+            rareData = KdspRareNPCManager.GeneratePoliticalDissident(seed, rareData);
         }
         else if Equals(rareType, "NEURAL_DIVERGENT") {
-            rareData = RareNPCManager.GenerateNeuralDivergent(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateNeuralDivergent(seed, rareData);
         }
         else if Equals(rareType, "SYNTHETIC_SLEEPER") {
-            rareData = RareNPCManager.GenerateSyntheticSleeper(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateSyntheticSleeper(seed, rareData);
         }
         else if Equals(rareType, "BURIED_PAST") {
-            rareData = RareNPCManager.GenerateBuriedPast(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateBuriedPast(seed, rareData);
         }
         else if Equals(rareType, "COMBAT_ZONE_SURVIVOR") {
-            rareData = RareNPCManager.GenerateCombatZoneSurvivor(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCombatZoneSurvivor(seed, rareData);
         }
         else if Equals(rareType, "ARASAKA_BLOODLINE") {
-            rareData = RareNPCManager.GenerateArasakaBloodline(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateArasakaBloodline(seed, rareData);
         }
         else if Equals(rareType, "BIOPLAGUE_CARRIER") {
-            rareData = RareNPCManager.GenerateBioplagueCarrier(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateBioplagueCarrier(seed, rareData);
         }
         else if Equals(rareType, "REAPER_CONTRACT") {
-            rareData = RareNPCManager.GenerateReaperContract(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateReaperContract(seed, rareData);
         }
         else if Equals(rareType, "DELAMAIN_GLITCH") {
-            rareData = RareNPCManager.GenerateDelaminGlitch(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDelaminGlitch(seed, rareData);
         }
         else if Equals(rareType, "IMPLANT_BOMB") {
-            rareData = RareNPCManager.GenerateImplantBomb(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateImplantBomb(seed, rareData);
         }
         else if Equals(rareType, "NCPD_INFORMANT") {
-            rareData = RareNPCManager.GenerateNCPDInformant(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateNCPDInformant(seed, rareData);
         }
         else if Equals(rareType, "TECHNO_NECRO") {
-            rareData = RareNPCManager.GenerateTechnoNecro(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateTechnoNecro(seed, rareData);
         }
         else if Equals(rareType, "RADIATION_EXPOSURE") {
-            rareData = RareNPCManager.GenerateRadiationExposure(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateRadiationExposure(seed, rareData);
         }
         else if Equals(rareType, "AI_PUPPET") {
-            rareData = RareNPCManager.GenerateAIPuppet(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateAIPuppet(seed, rareData);
         }
         else if Equals(rareType, "BLACK_ICE_SURVIVOR") {
-            rareData = RareNPCManager.GenerateBlackIceSurvivor(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateBlackIceSurvivor(seed, rareData);
         }
         else if Equals(rareType, "PERSONALITY_FRAGMENT") {
-            rareData = RareNPCManager.GeneratePersonalityFragment(seed, rareData);
+            rareData = KdspRareNPCManager.GeneratePersonalityFragment(seed, rareData);
         }
         else if Equals(rareType, "CORPO_ASSET_FROZEN") {
-            rareData = RareNPCManager.GenerateCorpoAssetFrozen(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCorpoAssetFrozen(seed, rareData);
         }
         else if Equals(rareType, "DREAMTECH_VICTIM") {
-            rareData = RareNPCManager.GenerateDreamtechVictim(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDreamtechVictim(seed, rareData);
         }
         else if Equals(rareType, "CONTAMINATED_SCOP") {
-            rareData = RareNPCManager.GenerateContaminatedScop(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateContaminatedScop(seed, rareData);
         }
         // v1.7 New types (continued)
         else if Equals(rareType, "CORPO_HEIR_HIDING") {
-            rareData = RareNPCManager.GenerateCorpoHeirHiding(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCorpoHeirHiding(seed, rareData);
         }
         else if Equals(rareType, "FLATLINE_REVIVED") {
-            rareData = RareNPCManager.GenerateFlatlineRevived(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateFlatlineRevived(seed, rareData);
         }
         else if Equals(rareType, "ILLEGAL_BD_PRODUCER") {
-            rareData = RareNPCManager.GenerateIllegalBDProducer(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateIllegalBDProducer(seed, rareData);
         }
         else if Equals(rareType, "DEEP_FAKE_IDENTITY") {
-            rareData = RareNPCManager.GenerateDeepFakeIdentity(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDeepFakeIdentity(seed, rareData);
         }
         else if Equals(rareType, "CYBERPSYCHO_RECOVERED") {
-            rareData = RareNPCManager.GenerateCyberpsychoRecovered(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCyberpsychoRecovered(seed, rareData);
         }
         else if Equals(rareType, "DRAGON_COURIER") {
-            rareData = RareNPCManager.GenerateDragonCourier(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDragonCourier(seed, rareData);
         }
         else if Equals(rareType, "PERALEZ_PROTOCOL") {
-            rareData = RareNPCManager.GeneratePeralezProtocol(seed, rareData);
+            rareData = KdspRareNPCManager.GeneratePeralezProtocol(seed, rareData);
         }
         else if Equals(rareType, "IMMUNE_ANOMALY") {
-            rareData = RareNPCManager.GenerateImmuneAnomaly(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateImmuneAnomaly(seed, rareData);
         }
         else if Equals(rareType, "GHOST_IN_MACHINE") {
-            rareData = RareNPCManager.GenerateGhostInMachine(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateGhostInMachine(seed, rareData);
         }
         else if Equals(rareType, "INDENTURED_CORPO") {
-            rareData = RareNPCManager.GenerateIndenturedCorpo(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateIndenturedCorpo(seed, rareData);
         }
         else if Equals(rareType, "SCOP_FARMER_REFUGEE") {
-            rareData = RareNPCManager.GenerateScorpFarmerRefugee(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateScorpFarmerRefugee(seed, rareData);
         }
         else if Equals(rareType, "PRECOG_SUBJECT") {
-            rareData = RareNPCManager.GeneratePrecogSubject(seed, rareData);
+            rareData = KdspRareNPCManager.GeneratePrecogSubject(seed, rareData);
         }
         else if Equals(rareType, "SMUGGLER_TUNNEL_OPERATOR") {
-            rareData = RareNPCManager.GenerateSmugglerTunnel(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateSmugglerTunnel(seed, rareData);
         }
         else if Equals(rareType, "ARASAKA_ENGRAM_ECHO") {
-            rareData = RareNPCManager.GenerateArasakaEngramEcho(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateArasakaEngramEcho(seed, rareData);
         }
         else if Equals(rareType, "FERAL_ZONE_BORN") {
-            rareData = RareNPCManager.GenerateFeralZoneBorn(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateFeralZoneBorn(seed, rareData);
         }
         else if Equals(rareType, "CORPO_INTERN_TRAPPED") {
-            rareData = RareNPCManager.GenerateCorpoInternTrapped(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCorpoInternTrapped(seed, rareData);
         }
         else if Equals(rareType, "MAXTAC_WASHOUT") {
-            rareData = RareNPCManager.GenerateMaxtacWashout(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateMaxtacWashout(seed, rareData);
         }
         else if Equals(rareType, "PROXY_VOTER") {
-            rareData = RareNPCManager.GenerateProxyVoter(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateProxyVoter(seed, rareData);
         }
         else if Equals(rareType, "GENETIC_CHIMERA") {
-            rareData = RareNPCManager.GenerateGeneticChimera(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateGeneticChimera(seed, rareData);
         }
         else if Equals(rareType, "DARK_NET_LEGEND") {
-            rareData = RareNPCManager.GenerateDarkNetLegend(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateDarkNetLegend(seed, rareData);
         }
         else if Equals(rareType, "CARGO_STOWAWAY") {
-            rareData = RareNPCManager.GenerateCargoStowaway(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCargoStowaway(seed, rareData);
         }
         else if Equals(rareType, "CHRONO_DISPLACED") {
-            rareData = RareNPCManager.GenerateChronoDisplaced(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateChronoDisplaced(seed, rareData);
         }
         else if Equals(rareType, "SOUL_SPLIT") {
-            rareData = RareNPCManager.GenerateSoulSplit(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateSoulSplit(seed, rareData);
         }
         else if Equals(rareType, "INFECTED_FIRMWARE") {
-            rareData = RareNPCManager.GenerateInfectedFirmware(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateInfectedFirmware(seed, rareData);
         }
         else if Equals(rareType, "WETWORK_RETIRED") {
-            rareData = RareNPCManager.GenerateWetworkRetired(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateWetworkRetired(seed, rareData);
         }
         else if Equals(rareType, "CHILD_SOLDIER_GROWN") {
-            rareData = RareNPCManager.GenerateChildSoldierGrown(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateChildSoldierGrown(seed, rareData);
         }
         else if Equals(rareType, "ILLEGAL_PROCREATION") {
-            rareData = RareNPCManager.GenerateIllegalProcreation(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateIllegalProcreation(seed, rareData);
         }
         else if Equals(rareType, "ORBITAL_RETURNEE") {
-            rareData = RareNPCManager.GenerateOrbitalReturnee(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateOrbitalReturnee(seed, rareData);
         }
         else if Equals(rareType, "CORPO_DEBT_SLAVE") {
-            rareData = RareNPCManager.GenerateCorpoDebtSlave(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateCorpoDebtSlave(seed, rareData);
         }
         else if Equals(rareType, "GHOST_TOWN_SURVIVOR") {
-            rareData = RareNPCManager.GenerateGhostTownSurvivor(seed, rareData);
+            rareData = KdspRareNPCManager.GenerateGhostTownSurvivor(seed, rareData);
         }
 
         return rareData;
@@ -403,7 +403,7 @@ public class RareNPCManager {
         return "GHOST_TOWN_SURVIVOR";
     }
 
-    private static func GenerateSleeperAgent(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateSleeperAgent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "██ DEEP COVER OPERATIVE ██";
         data.flagColor = "RED";
         
@@ -423,7 +423,7 @@ public class RareNPCManager {
         data.description += "WARNING: Do not approach. Do not engage. Report sighting immediately.";
 
         data.hiddenInfo = "Agent has been embedded for " + IntToString(RandRange(seed + 20, 2, 15)) + " years. ";
-        data.hiddenInfo += "Cover identity rated: DEEP. Suspected mission: " + RareNPCManager.GetSleeperMission(seed + 30);
+        data.hiddenInfo += "Cover identity rated: DEEP. Suspected mission: " + KdspRareNPCManager.GetSleeperMission(seed + 30);
 
         data.scannerWarning = "FILE LOCKED - CLEARANCE INSUFFICIENT";
         data.dangerLevel = "UNKNOWN - ASSUME EXTREME";
@@ -443,7 +443,7 @@ public class RareNPCManager {
         return missions[RandRange(seed, 0, ArraySize(missions) - 1)];
     }
 
-    private static func GeneratePreCyberpsycho(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GeneratePreCyberpsycho(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⚠ CYBERPSYCHOSIS WARNING ⚠";
         data.flagColor = "ORANGE";
 
@@ -481,7 +481,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateLegacyCharacter(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateLegacyCharacter(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "★ HISTORICAL CONNECTION ★";
         data.flagColor = "GOLD";
 
@@ -517,7 +517,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateTimeAnomaly(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateTimeAnomaly(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ TEMPORAL ANOMALY ◈";
         data.flagColor = "PURPLE";
 
@@ -551,7 +551,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateGhost(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateGhost(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "? ENTITY NOT FOUND ?";
         data.flagColor = "GREY";
 
@@ -581,7 +581,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateWitness(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateWitness(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◉ PROTECTED WITNESS ◉";
         data.flagColor = "BLUE";
 
@@ -610,7 +610,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateHunted(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateHunted(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⊗ ACTIVE HUNT TARGET ⊗";
         data.flagColor = "RED";
 
@@ -646,7 +646,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateAIContact(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateAIContact(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◬ BLACKWALL CONTACT ◬";
         data.flagColor = "CYAN";
 
@@ -668,7 +668,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateWhistleblower(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateWhistleblower(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◇ CORPORATE LEAK ◇";
         data.flagColor = "YELLOW";
 
@@ -685,10 +685,10 @@ public class RareNPCManager {
 
         data.description = "CORPORATE ALERT: Subject identified as source of confidential data leak from " + corp + ". ";
         data.description += "Leak severity: " + (RandRange(seed + 10, 1, 100) <= 50 ? "CRITICAL" : "SIGNIFICANT") + ". ";
-        data.description += "Data compromised: " + RareNPCManager.GetLeakedData(seed + 20) + ". ";
+        data.description += "Data compromised: " + KdspRareNPCManager.GetLeakedData(seed + 20) + ". ";
         data.description += "Corporate response: ACTIVE RETRIEVAL OPERATION.";
 
-        data.hiddenInfo = "Former position: " + RareNPCManager.GetCorpoPosition(seed + 30) + ". ";
+        data.hiddenInfo = "Former position: " + KdspRareNPCManager.GetCorpoPosition(seed + 30) + ". ";
         data.hiddenInfo += "Data sold to: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Media outlet" : "Rival corporation") + ". ";
         data.hiddenInfo += "Price received: €$" + IntToString(RandRange(seed + 50, 100000, 5000000));
 
@@ -722,7 +722,7 @@ public class RareNPCManager {
         return positions[RandRange(seed, 0, ArraySize(positions) - 1)];
     }
 
-    private static func GenerateHiddenNetrunner(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateHiddenNetrunner(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ HIDDEN NETRUNNER ◈";
         data.flagColor = "CYAN";
 
@@ -758,7 +758,7 @@ public class RareNPCManager {
     // v1.6 EXPANDED FLAGGED INDIVIDUAL TYPES
     // ═══════════════════════════════════════════════════════════════════════
 
-    private static func GenerateUndercoverCop(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateUndercoverCop(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◉ UNDERCOVER OFFICER ◉";
         data.flagColor = "BLUE";
         data.secretAffiliation = "NCPD SPECIAL OPERATIONS";
@@ -778,7 +778,7 @@ public class RareNPCManager {
         data.description += "WARNING: Blowing cover could result in officer death and case collapse.";
 
         data.hiddenInfo = "Badge number: [CLASSIFIED]. Real identity protected by court order. ";
-        data.hiddenInfo += "Current target: " + RareNPCManager.GetUndercoverTarget(seed + 20);
+        data.hiddenInfo += "Current target: " + KdspRareNPCManager.GetUndercoverTarget(seed + 20);
 
         data.scannerWarning = "NCPD PROTECTED ASSET - DO NOT EXPOSE";
         data.dangerLevel = "VARIABLE - DEEP COVER";
@@ -796,7 +796,7 @@ public class RareNPCManager {
         return "Fixer network mapping";
     }
 
-    private static func GenerateRetiredLegend(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateRetiredLegend(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "★ RETIRED LEGEND ★";
         data.flagColor = "GOLD";
 
@@ -810,7 +810,7 @@ public class RareNPCManager {
         ArrayPush(details, "Former elite netrunner who survived multiple Blackwall encounters. Now living quietly under assumed identity.");
 
         ArrayPush(professions, "Retired Fixer");
-        ArrayPush(details, "Once controlled half the contracts in " + RareNPCManager.GetDistrict(seed) + ". Knows where all the bodies are buried.");
+        ArrayPush(details, "Once controlled half the contracts in " + KdspRareNPCManager.GetDistrict(seed) + ". Knows where all the bodies are buried.");
 
         ArrayPush(professions, "Former MaxTac");
         ArrayPush(details, "Ex-MaxTac operative with classified kill count. Left under mysterious circumstances. Still receives pension.");
@@ -841,7 +841,7 @@ public class RareNPCManager {
         return "City Center";
     }
 
-    private static func GenerateCloneSubject(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCloneSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ CLONE DETECTED ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "BIOTECHNICA SUBJECT";
@@ -864,13 +864,13 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateMaxtacTarget(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateMaxtacTarget(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⚠ MAXTAC TARGET ⚠";
         data.flagColor = "RED";
         data.secretAffiliation = "ACTIVE MAXTAC WARRANT";
 
         let priority = RandRange(seed, 1, 5);
-        let reason = RareNPCManager.GetMaxtacReason(seed + 10);
+        let reason = KdspRareNPCManager.GetMaxtacReason(seed + 10);
 
         data.description = "MAXTAC ALERT: Subject is Priority " + IntToString(priority) + " target. ";
         data.description += "Reason: " + reason + ". ";
@@ -897,12 +897,12 @@ public class RareNPCManager {
         return "Military-grade cyberware illegal";
     }
 
-    private static func GenerateWitnessProtection(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateWitnessProtection(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ WITNESS PROTECTION ◈";
         data.flagColor = "BLUE";
         data.secretAffiliation = "NUSA WITNESS PROGRAM";
 
-        let witnessed = RareNPCManager.GetWitnessedEvent(seed);
+        let witnessed = KdspRareNPCManager.GetWitnessedEvent(seed);
         let years = IntToString(RandRange(seed + 10, 1, 15));
 
         data.description = "CLASSIFIED: Subject in federal witness protection. Original identity sealed. ";
@@ -930,7 +930,7 @@ public class RareNPCManager {
         return "Government corruption";
     }
 
-    private static func GenerateEngramCandidate(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateEngramCandidate(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◎ ENGRAM CANDIDATE ◎";
         data.flagColor = "CYAN";
         data.secretAffiliation = "ARASAKA SOUL PROJECT";
@@ -953,7 +953,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateCorpoDefector(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCorpoDefector(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▼ CORPORATE DEFECTOR ▼";
         data.flagColor = "YELLOW";
 
@@ -975,7 +975,7 @@ public class RareNPCManager {
         data.description += "Kill order from " + fromCorp + ": ACTIVE. ";
         data.description += "Protection from " + toCorp + ": " + (RandRange(seed + 30, 1, 100) <= 50 ? "CONFIRMED" : "RUMORED");
 
-        data.hiddenInfo = "Original position: " + RareNPCManager.GetCorpoPosition(seed + 40) + ". ";
+        data.hiddenInfo = "Original position: " + KdspRareNPCManager.GetCorpoPosition(seed + 40) + ". ";
         data.hiddenInfo += "Data value estimate: €$" + IntToString(RandRange(seed + 50, 10000000, 100000000)) + ". ";
         data.hiddenInfo += "Assassination attempts: " + IntToString(RandRange(seed + 60, 1, 8));
 
@@ -985,7 +985,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateGangInfiltrator(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateGangInfiltrator(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◉ GANG INFILTRATOR ◉";
         data.flagColor = "ORANGE";
 
@@ -1004,7 +1004,7 @@ public class RareNPCManager {
 
         data.description = "GANG INTEL: Subject is embedded infiltrator within " + infiltrated + ". ";
         data.description += "Employer: " + employer + ". Time embedded: " + IntToString(RandRange(seed + 20, 1, 5)) + " years. ";
-        data.description += "Position achieved: " + RareNPCManager.GetGangPosition(seed + 30) + ". ";
+        data.description += "Position achieved: " + KdspRareNPCManager.GetGangPosition(seed + 30) + ". ";
         data.description += "Discovery would result in immediate execution.";
 
         data.hiddenInfo = "Intelligence gathered on: Leadership, operations, alliances. ";
@@ -1026,12 +1026,12 @@ public class RareNPCManager {
         return "Trusted soldier";
     }
 
-    private static func GenerateTraumaTeamMarked(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateTraumaTeamMarked(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✚ TRAUMA TEAM FLAGGED ✚";
         data.flagColor = "RED";
         data.secretAffiliation = "TRAUMA TEAM DNR";
 
-        let reason = RareNPCManager.GetTraumaReason(seed);
+        let reason = KdspRareNPCManager.GetTraumaReason(seed);
 
         data.description = "TRAUMA TEAM ALERT: Subject flagged in TT database. Status: DO NOT RESUSCITATE. ";
         data.description += "Reason: " + reason + ". ";
@@ -1057,13 +1057,13 @@ public class RareNPCManager {
         return "Corporate blacklist request";
     }
 
-    private static func GenerateFixerAsset(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateFixerAsset(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ FIXER ASSET ◈";
         data.flagColor = "GREEN";
         data.secretAffiliation = "FIXER NETWORK";
 
-        let role = RareNPCManager.GetFixerRole(seed);
-        let fixer = RareNPCManager.GetFixerName(seed + 10);
+        let role = KdspRareNPCManager.GetFixerRole(seed);
+        let fixer = KdspRareNPCManager.GetFixerName(seed + 10);
 
         data.description = "STREET INTEL: Subject is a protected asset of fixer " + fixer + ". ";
         data.description += "Role: " + role + ". ";
@@ -1102,13 +1102,13 @@ public class RareNPCManager {
         return "Unknown Fixer";
     }
 
-    private static func GenerateBlackmailVictim(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateBlackmailVictim(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◆ BLACKMAIL VICTIM ◆";
         data.flagColor = "YELLOW";
         data.secretAffiliation = "COMPROMISED INDIVIDUAL";
 
-        let secret = RareNPCManager.GetBlackmailSecret(seed);
-        let blackmailer = RareNPCManager.GetBlackmailerType(seed + 10);
+        let secret = KdspRareNPCManager.GetBlackmailSecret(seed);
+        let blackmailer = KdspRareNPCManager.GetBlackmailerType(seed + 10);
 
         data.description = "INTEL: Subject is being blackmailed. ";
         data.description += "Compromising material: " + secret + ". ";
@@ -1144,7 +1144,7 @@ public class RareNPCManager {
         return "Unknown party";
     }
 
-    private static func GenerateMilitaryAwol(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateMilitaryAwol(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▲ MILITARY DESERTER ▲";
         data.flagColor = "RED";
 
@@ -1158,7 +1158,7 @@ public class RareNPCManager {
         let branch = branches[RandRange(seed, 0, ArraySize(branches) - 1)];
         data.secretAffiliation = "AWOL - " + branch;
 
-        let rank = RareNPCManager.GetMilitaryRank(seed + 10);
+        let rank = KdspRareNPCManager.GetMilitaryRank(seed + 10);
         let years = IntToString(RandRange(seed + 20, 1, 10));
 
         data.description = "MILITARY ALERT: Subject is AWOL from " + branch + ". ";
@@ -1186,7 +1186,7 @@ public class RareNPCManager {
         return "Special Forces Operative";
     }
 
-    private static func GenerateExperimentalSubject(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateExperimentalSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ EXPERIMENTAL SUBJECT ⧫";
         data.flagColor = "PURPLE";
 
@@ -1217,12 +1217,12 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDebtCollection(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDebtCollection(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "€$ DEBT MARKED €$";
         data.flagColor = "YELLOW";
         data.secretAffiliation = "CORPO DEBT COLLECTION";
 
-        let creditor = RareNPCManager.GetCreditor(seed);
+        let creditor = KdspRareNPCManager.GetCreditor(seed);
         let amount = IntToString(RandRange(seed + 10, 100000, 5000000));
 
         data.description = "FINANCIAL ALERT: Subject owes €$" + amount + " to " + creditor + ". ";
@@ -1250,7 +1250,7 @@ public class RareNPCManager {
         return "Multiple creditors";
     }
 
-    private static func GenerateOrganMarked(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateOrganMarked(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✖ ORGAN MARKED ✖";
         data.flagColor = "RED";
         data.secretAffiliation = "SCAV TARGET";
@@ -1271,7 +1271,7 @@ public class RareNPCManager {
 
         data.hiddenInfo = "Previous abduction attempts: " + IntToString(RandRange(seed + 40, 0, 3)) + ". ";
         data.hiddenInfo += "Scav teams assigned: " + IntToString(RandRange(seed + 50, 1, 3)) + ". ";
-        data.hiddenInfo += "Best opportunity: " + RareNPCManager.GetHarvestOpportunity(seed + 60);
+        data.hiddenInfo += "Best opportunity: " + KdspRareNPCManager.GetHarvestOpportunity(seed + 60);
 
         data.scannerWarning = "SCAV TARGET - ABDUCTION RISK";
         data.dangerLevel = "VICTIM - NOT THREAT";
@@ -1288,7 +1288,7 @@ public class RareNPCManager {
         return "Work location";
     }
 
-    private static func GenerateCultEscapee(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCultEscapee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◎ CULT ESCAPEE ◎";
         data.flagColor = "ORANGE";
 
@@ -1318,7 +1318,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateRelicCompatible(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateRelicCompatible(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ RELIC COMPATIBLE ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "ARASAKA INTEREST";
@@ -1340,13 +1340,13 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDataCourier(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDataCourier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ DATA COURIER ◈";
         data.flagColor = "GREEN";
         data.secretAffiliation = "COURIER NETWORK";
 
-        let dataType = RareNPCManager.GetCourierData(seed);
-        let client = RareNPCManager.GetCourierClient(seed + 10);
+        let dataType = KdspRareNPCManager.GetCourierData(seed);
+        let client = KdspRareNPCManager.GetCourierClient(seed + 10);
 
         data.description = "INTEL: Subject is active data courier. Current payload: " + dataType + ". ";
         data.description += "Client: " + client + ". ";
@@ -1382,12 +1382,12 @@ public class RareNPCManager {
         return "Multiple clients";
     }
 
-    private static func GenerateDoubleAgent(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDoubleAgent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ DOUBLE AGENT ✦";
         data.flagColor = "RED";
 
-        let org1 = RareNPCManager.GetAgentOrg(seed);
-        let org2 = RareNPCManager.GetAgentOrg(seed + 10);
+        let org1 = KdspRareNPCManager.GetAgentOrg(seed);
+        let org2 = KdspRareNPCManager.GetAgentOrg(seed + 10);
         data.secretAffiliation = "SERVING: " + org1 + " AND " + org2;
 
         data.description = "INTELLIGENCE ALERT: Subject confirmed as double agent. ";
@@ -1417,7 +1417,7 @@ public class RareNPCManager {
         return "UNKNOWN PARTY";
     }
 
-    private static func GenerateNomadExile(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateNomadExile(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▼ NOMAD EXILE ▼";
         data.flagColor = "ORANGE";
 
@@ -1431,7 +1431,7 @@ public class RareNPCManager {
         let clan = clans[RandRange(seed, 0, ArraySize(clans) - 1)];
         data.secretAffiliation = "EXILED FROM " + clan;
 
-        let reason = RareNPCManager.GetExileReason(seed + 10);
+        let reason = KdspRareNPCManager.GetExileReason(seed + 10);
 
         data.description = "NOMAD INTEL: Subject exiled from " + clan + " clan. ";
         data.description += "Reason: " + reason + ". ";
@@ -1462,7 +1462,7 @@ public class RareNPCManager {
     // v1.7 NEW CLASSIFICATIONS (30 types)
     // ===================================
 
-    private static func GenerateBraindanceAddict(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateBraindanceAddict(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ BRAINDANCE DISSOCIATION ◈";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "NONE - MEDICAL CONCERN";
@@ -1493,7 +1493,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateNightCorpSubject(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateNightCorpSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "██ NIGHT CORP PROJECT ██";
         data.flagColor = "RED";
         data.secretAffiliation = "NIGHT CORP - OPERATION CARPE NOCTEM";
@@ -1514,7 +1514,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDollChipSleeper(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDollChipSleeper(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◉ DORMANT DOLL CHIP ◉";
         data.flagColor = "YELLOW";
         data.secretAffiliation = "CLOUDS / UNKNOWN OPERATOR";
@@ -1534,7 +1534,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateSoulkillerSurvivor(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateSoulkillerSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ SOULKILLER ANOMALY ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "ARASAKA SOUL PROJECT";
@@ -1554,7 +1554,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateBlackwallTouched(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateBlackwallTouched(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ BLACKWALL CONTACT ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "NETWATCH FLAGGED";
@@ -1584,7 +1584,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateSignalCarrier(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateSignalCarrier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ SIGNAL CARRIER ◈";
         data.flagColor = "GREEN";
         data.secretAffiliation = "UNKNOWN - TRANSMITTING";
@@ -1605,7 +1605,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateMemoryWiped(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateMemoryWiped(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◆ MEMORY ERASURE ◆";
         data.flagColor = "YELLOW";
         data.secretAffiliation = "IDENTITY MODIFIED";
@@ -1635,7 +1635,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateIdentityStolen(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateIdentityStolen(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▲ IDENTITY FRAUD ▲";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "FALSE IDENTITY";
@@ -1647,7 +1647,7 @@ public class RareNPCManager {
 
         data.hiddenInfo = "Using current identity for: " + IntToString(RandRange(seed + 20, 1, 15)) + " years. ";
         data.hiddenInfo += "Real identity flagged in: " + IntToString(RandRange(seed + 30, 0, 3)) + " other jurisdictions. ";
-        data.hiddenInfo += "Likely reason: " + RareNPCManager.GetIdentityTheftReason(seed + 40);
+        data.hiddenInfo += "Likely reason: " + KdspRareNPCManager.GetIdentityTheftReason(seed + 40);
 
         data.scannerWarning = "BIOMETRIC MISMATCH DETECTED";
         data.dangerLevel = "UNKNOWN - IDENTITY CONCEALS PAST";
@@ -1665,7 +1665,7 @@ public class RareNPCManager {
         return "Unknown - too many possibilities";
     }
 
-    private static func GenerateMissingPerson(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateMissingPerson(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▼ OFFICIALLY DECEASED ▼";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "NCPD CLOSED FILE";
@@ -1676,7 +1676,7 @@ public class RareNPCManager {
         data.description += "Match confidence: " + IntToString(RandRange(seed + 10, 92, 99)) + "%. ";
         data.description += "Subject appears unaware of their official status or is deliberately hiding.";
 
-        data.hiddenInfo = "Original disappearance linked to: " + RareNPCManager.GetDisappearanceCase(seed + 20) + ". ";
+        data.hiddenInfo = "Original disappearance linked to: " + KdspRareNPCManager.GetDisappearanceCase(seed + 20) + ". ";
         data.hiddenInfo += "Insurance payout on death: €$" + IntToString(RandRange(seed + 30, 50000, 2000000)) + ". ";
         data.hiddenInfo += "Family notification: NOT RECOMMENDED without further investigation";
 
@@ -1696,7 +1696,7 @@ public class RareNPCManager {
         return "Circumstances unknown";
     }
 
-    private static func GenerateActiveBounty(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateActiveBounty(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✖ ACTIVE BOUNTY ✖";
         data.flagColor = "RED";
 
@@ -1726,7 +1726,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateUnregisteredChrome(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateUnregisteredChrome(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⚠ UNREGISTERED CYBERWARE ⚠";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "NCPD CHROME REGISTRY VIOLATION";
@@ -1749,7 +1749,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GeneratePoliticalDissident(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GeneratePoliticalDissident(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▲ POLITICAL FLAG ▲";
         data.flagColor = "RED";
 
@@ -1779,7 +1779,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateNeuralDivergent(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateNeuralDivergent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ NEURAL ANOMALY ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "RESEARCH INTEREST";
@@ -1801,7 +1801,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateSyntheticSleeper(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateSyntheticSleeper(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ SYNTHETIC BIOLOGY ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "BIOTECHNICA SUBJECT";
@@ -1823,7 +1823,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateBuriedPast(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateBuriedPast(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◆ ERASED HISTORY ◆";
         data.flagColor = "YELLOW";
         data.secretAffiliation = "PROFESSIONALLY SCRUBBED";
@@ -1843,7 +1843,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateCombatZoneSurvivor(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCombatZoneSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "★ COMBAT ZONE SURVIVOR ★";
         data.flagColor = "GOLD";
         data.secretAffiliation = "PACIFICA SURVIVOR";
@@ -1872,7 +1872,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateArasakaBloodline(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateArasakaBloodline(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "██ ARASAKA BLOODLINE ██";
         data.flagColor = "RED";
         data.secretAffiliation = "ARASAKA FAMILY - HIDDEN BRANCH";
@@ -1899,7 +1899,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateBioplagueCarrier(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateBioplagueCarrier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "☣ BIOHAZARD CARRIER ☣";
         data.flagColor = "RED";
         data.secretAffiliation = "CDC / BIOTECHNICA WATCH";
@@ -1928,7 +1928,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateReaperContract(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateReaperContract(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✖ REAPER CONTRACT ✖";
         data.flagColor = "RED";
         data.secretAffiliation = "MARKED FOR DEATH";
@@ -1958,7 +1958,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDelaminGlitch(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDelaminGlitch(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ DELAMAIN FRAGMENT ◈";
         data.flagColor = "CYAN";
         data.secretAffiliation = "DELAMAIN CORE FRAGMENT";
@@ -1988,7 +1988,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateImplantBomb(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateImplantBomb(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⚠ CONCEALED EXPLOSIVE ⚠";
         data.flagColor = "RED";
         data.secretAffiliation = "EXPLOSIVE THREAT";
@@ -2016,7 +2016,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateNCPDInformant(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateNCPDInformant(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◉ NCPD INFORMANT ◉";
         data.flagColor = "BLUE";
         data.secretAffiliation = "NCPD INTELLIGENCE DIVISION";
@@ -2046,13 +2046,13 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateTechnoNecro(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateTechnoNecro(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ TECHNO-NECROMANCER ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "ILLEGAL ENGRAM OPERATIONS";
 
         data.description = "NETWATCH ALERT: Subject is practicing illegal engram manipulation. ";
-        data.description += "Activity: " + RareNPCManager.GetNecroActivity(seed) + ". ";
+        data.description += "Activity: " + KdspRareNPCManager.GetNecroActivity(seed) + ". ";
         data.description += "Engrams in possession: estimated " + IntToString(RandRange(seed + 10, 2, 20)) + ". ";
         data.description += "This violates the Night City Digital Persons Act and carries a mandatory life sentence.";
 
@@ -2076,7 +2076,7 @@ public class RareNPCManager {
         return "Digital resurrection experiments";
     }
 
-    private static func GenerateRadiationExposure(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateRadiationExposure(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "☢ RADIATION EXPOSURE ☢";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "WASTELAND CONTAMINATION";
@@ -2104,7 +2104,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateAIPuppet(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateAIPuppet(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "██ AI INFLUENCED ██";
         data.flagColor = "RED";
         data.secretAffiliation = "ROGUE AI ASSET";
@@ -2124,7 +2124,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateBlackIceSurvivor(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateBlackIceSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ BLACK ICE SURVIVOR ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "NETRUNNER CASUALTY - SURVIVED";
@@ -2153,7 +2153,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GeneratePersonalityFragment(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GeneratePersonalityFragment(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ PERSONALITY OVERLAY ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "ENGRAM CONTAMINATION";
@@ -2182,7 +2182,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateCorpoAssetFrozen(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCorpoAssetFrozen(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "€$ ASSET FROZEN €$";
         data.flagColor = "YELLOW";
 
@@ -2211,7 +2211,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDreamtechVictim(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDreamtechVictim(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ DREAMTECH SUBJECT ◈";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "NIGHT CORP DREAMTECH";
@@ -2231,7 +2231,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateContaminatedScop(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateContaminatedScop(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⚠ SCOP CONTAMINATION ⚠";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "CONTAMINATION VICTIM";
@@ -2264,7 +2264,7 @@ public class RareNPCManager {
     // v1.7 NEW CLASSIFICATIONS CONTINUED (30 types)
     // ===================================
 
-    private static func GenerateCorpoHeirHiding(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCorpoHeirHiding(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "██ HIDDEN HEIR ██";
         data.flagColor = "GOLD";
 
@@ -2285,7 +2285,7 @@ public class RareNPCManager {
         data.description += "Estimated inheritance value: €$" + IntToString(RandRange(seed + 20, 100000000, 999000000)) + " if claim pursued.";
 
         data.hiddenInfo = "Corporate security searches: " + (RandRange(seed + 30, 1, 100) <= 60 ? "ACTIVE" : "SUSPENDED - Presumed dead") + ". ";
-        data.hiddenInfo += "Reason for flight: " + RareNPCManager.GetHeirFlightReason(seed + 40) + ". ";
+        data.hiddenInfo += "Reason for flight: " + KdspRareNPCManager.GetHeirFlightReason(seed + 40) + ". ";
         data.hiddenInfo += "Board rival interest in subject's return: HIGH";
 
         data.scannerWarning = "CORPORATE TARGET - EXTRACTION TEAMS DEPLOYED";
@@ -2304,7 +2304,7 @@ public class RareNPCManager {
         return "Unknown - Left without notice";
     }
 
-    private static func GenerateFlatlineRevived(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateFlatlineRevived(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ FLATLINE SURVIVOR ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "MEDICAL ANOMALY";
@@ -2326,7 +2326,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateIllegalBDProducer(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateIllegalBDProducer(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▲ XBD PRODUCER ▲";
         data.flagColor = "RED";
         data.secretAffiliation = "ILLEGAL BD NETWORK";
@@ -2355,7 +2355,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDeepFakeIdentity(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDeepFakeIdentity(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ DEEP FAKE PERSONA ◈";
         data.flagColor = "YELLOW";
         data.secretAffiliation = "AI-GENERATED IDENTITY";
@@ -2375,7 +2375,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateCyberpsychoRecovered(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCyberpsychoRecovered(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "★ RECOVERED CYBERPSYCHO ★";
         data.flagColor = "GOLD";
         data.secretAffiliation = "MAXTAC REHABILITATION";
@@ -2397,13 +2397,13 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDragonCourier(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDragonCourier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◉ DRAGON ROUTE ◉";
         data.flagColor = "GREEN";
         data.secretAffiliation = "KANG TAO SMUGGLING NETWORK";
 
         data.description = "INTELLIGENCE: Subject is an active courier on the Dragon Route - Kang Tao's unofficial smuggling pipeline. ";
-        data.description += "Cargo type: " + RareNPCManager.GetDragonCargo(seed) + ". ";
+        data.description += "Cargo type: " + KdspRareNPCManager.GetDragonCargo(seed) + ". ";
         data.description += "Route: " + (RandRange(seed + 10, 1, 100) <= 50 ? "Shanghai to Night City" : "Night City to Pacific Rim") + ". ";
         data.description += "Runs completed: " + IntToString(RandRange(seed + 20, 5, 100)) + ". Never intercepted.";
 
@@ -2427,7 +2427,7 @@ public class RareNPCManager {
         return "Unknown - Sealed containers";
     }
 
-    private static func GeneratePeralezProtocol(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GeneratePeralezProtocol(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "██ PERALEZ PROTOCOL ██";
         data.flagColor = "RED";
         data.secretAffiliation = "UNKNOWN HANDLER - BEHAVIORAL MODIFICATION";
@@ -2447,7 +2447,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateImmuneAnomaly(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateImmuneAnomaly(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ IMMUNE ANOMALY ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "BIOTECHNICA PRIORITY";
@@ -2467,7 +2467,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateGhostInMachine(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateGhostInMachine(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ DIGITAL PHANTOM ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "UNKNOWN - POSSIBLY NON-HUMAN";
@@ -2487,7 +2487,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateIndenturedCorpo(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateIndenturedCorpo(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "€$ CORPO INDENTURE €$";
         data.flagColor = "YELLOW";
 
@@ -2518,7 +2518,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateScorpFarmerRefugee(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateScorpFarmerRefugee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▼ FOOD CRISIS REFUGEE ▼";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "AGRICULTURAL COLLAPSE ZONE";
@@ -2547,7 +2547,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GeneratePrecogSubject(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GeneratePrecogSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ PRECOGNITIVE FLAG ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "NUSA INTELLIGENCE INTEREST";
@@ -2567,13 +2567,13 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateSmugglerTunnel(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateSmugglerTunnel(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◉ TUNNEL OPERATOR ◉";
         data.flagColor = "GREEN";
         data.secretAffiliation = "UNDERGROUND SMUGGLING";
 
         data.description = "NCPD INTEL: Subject operates a section of Night City's underground smuggling tunnel network. ";
-        data.description += "Tunnel connects: " + RareNPCManager.GetTunnelRoute(seed) + ". ";
+        data.description += "Tunnel connects: " + KdspRareNPCManager.GetTunnelRoute(seed) + ". ";
         data.description += "Monthly throughput: estimated €$" + IntToString(RandRange(seed + 10, 1000000, 20000000)) + " in goods. ";
         data.description += "Clients include: gangs, corpos, fixers, and foreign agents.";
 
@@ -2597,7 +2597,7 @@ public class RareNPCManager {
         return "Classified - Multiple routes";
     }
 
-    private static func GenerateArasakaEngramEcho(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateArasakaEngramEcho(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ ENGRAM ECHO ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "ARASAKA SOUL PROJECT - LEAK";
@@ -2617,7 +2617,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateFeralZoneBorn(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateFeralZoneBorn(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "★ FERAL ZONE ORIGIN ★";
         data.flagColor = "GOLD";
         data.secretAffiliation = "NO PRIOR CIVILIZATION CONTACT";
@@ -2646,7 +2646,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateCorpoInternTrapped(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCorpoInternTrapped(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "€$ TRAPPED INTERN €$";
         data.flagColor = "YELLOW";
 
@@ -2674,12 +2674,12 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateMaxtacWashout(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateMaxtacWashout(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▲ MAXTAC FORMER ▲";
         data.flagColor = "RED";
         data.secretAffiliation = "MAXTAC - DISCHARGED";
 
-        data.description = "MAXTAC FILE: Subject is former MaxTac operative. Discharge reason: " + RareNPCManager.GetMaxtacDischarge(seed) + ". ";
+        data.description = "MAXTAC FILE: Subject is former MaxTac operative. Discharge reason: " + KdspRareNPCManager.GetMaxtacDischarge(seed) + ". ";
         data.description += "Service duration: " + IntToString(RandRange(seed + 10, 2, 12)) + " years. ";
         data.description += "Confirmed cyberpsycho takedowns: " + IntToString(RandRange(seed + 20, 5, 50)) + ". ";
         data.description += "Current threat assessment: EXTREME. Retains all training and most augmentation.";
@@ -2704,7 +2704,7 @@ public class RareNPCManager {
         return "Classified";
     }
 
-    private static func GenerateProxyVoter(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateProxyVoter(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ PROXY CITIZEN ◈";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "CORPORATE ELECTORAL FRAUD";
@@ -2726,7 +2726,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateGeneticChimera(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateGeneticChimera(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ GENETIC CHIMERA ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "BIOTECHNICA INTEREST";
@@ -2746,7 +2746,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateDarkNetLegend(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateDarkNetLegend(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ DARK NET LEGEND ◈";
         data.flagColor = "GREEN";
         data.secretAffiliation = "DARK NET PERSONA";
@@ -2776,7 +2776,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateCargoStowaway(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCargoStowaway(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▼ ILLEGAL ENTRY ▼";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "UNDOCUMENTED IMMIGRANT";
@@ -2805,7 +2805,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateChronoDisplaced(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateChronoDisplaced(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "◈ CRYO REVIVAL ◈";
         data.flagColor = "CYAN";
         data.secretAffiliation = "CRYOGENIC SUBJECT";
@@ -2828,7 +2828,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateSoulSplit(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateSoulSplit(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⧫ SOUL FRAGMENTATION ⧫";
         data.flagColor = "PURPLE";
         data.secretAffiliation = "SOULKILLER ANOMALY";
@@ -2848,7 +2848,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateInfectedFirmware(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateInfectedFirmware(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "⚠ INFECTED CHROME ⚠";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "COMPROMISED CYBERWARE";
@@ -2870,7 +2870,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateWetworkRetired(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateWetworkRetired(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✖ RETIRED OPERATIVE ✖";
         data.flagColor = "RED";
         data.secretAffiliation = "FORMER WET TEAM";
@@ -2892,7 +2892,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateChildSoldierGrown(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateChildSoldierGrown(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "★ CONFLICT SURVIVOR ★";
         data.flagColor = "GOLD";
         data.secretAffiliation = "CORPORATE WAR CONSCRIPT";
@@ -2922,7 +2922,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateIllegalProcreation(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateIllegalProcreation(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "▲ UNLICENSED BIRTH ▲";
         data.flagColor = "ORANGE";
         data.secretAffiliation = "POPULATION CONTROL VIOLATION";
@@ -2942,7 +2942,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateOrbitalReturnee(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateOrbitalReturnee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "✦ ORBITAL RETURNEE ✦";
         data.flagColor = "CYAN";
         data.secretAffiliation = "ORBITAL AIR / ESA RECORDS";
@@ -2972,7 +2972,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateCorpoDebtSlave(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateCorpoDebtSlave(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "€$ DEBT SERVITUDE €$";
         data.flagColor = "YELLOW";
         data.secretAffiliation = "GENERATIONAL DEBT";
@@ -2992,7 +2992,7 @@ public class RareNPCManager {
         return data;
     }
 
-    private static func GenerateGhostTownSurvivor(seed: Int32, data: ref<RareNPCData>) -> ref<RareNPCData> {
+    private static func GenerateGhostTownSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = "★ GHOST TOWN ORIGIN ★";
         data.flagColor = "GOLD";
         data.secretAffiliation = "ABANDONED SETTLEMENT";
@@ -3022,7 +3022,7 @@ public class RareNPCManager {
     }
 }
 
-public class RareNPCData {
+public class KdspRareNPCData {
     public let isRare: Bool;
     public let rareType: String;
     public let displayFlag: String;

@@ -1,10 +1,10 @@
 // Valentinos Gang Profile Generator
 // Family-oriented Heywood gang with Santa Muerte devotion
 
-public class ValentinosProfile {
+public class KdspValentinosProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "VALENTINOS";
         profile.gangName = "Valentinos";
         profile.headerLabel = "VALENTINOS FAMILIA RECORD";
@@ -56,11 +56,11 @@ public class ValentinosProfile {
         
         // Stats
         profile.yearsActive = RandRange(seed + 300, 1, 20);
-        profile.bodyCount = ValentinosProfile.GetBodyCount(seed + 400, profile.rank);
+        profile.bodyCount = KdspValentinosProfile.GetBodyCount(seed + 400, profile.rank);
         profile.arrestCount = RandRange(seed + 500, 0, 8);
         
         // Loyalty
-        profile.loyaltyRating = ValentinosProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspValentinosProfile.GetLoyalty(seed + 600);
         
         // Tattoos - Valentinos have religious imagery
         let tattoos: array<String>;
@@ -117,7 +117,7 @@ public class ValentinosProfile {
         ArrayPush(activities, "Weapons cache resupply from a Militech contact. Premium iron at family prices.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

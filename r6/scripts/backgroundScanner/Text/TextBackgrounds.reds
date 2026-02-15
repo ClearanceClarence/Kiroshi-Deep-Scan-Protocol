@@ -2,7 +2,7 @@
 * Background text entries
 * Professions, personality traits, and distinguishing characteristics
 */
-public abstract class TextBackgrounds {
+public abstract class KdspTextBackgrounds {
 
     // ═══════════════════════════════════════════════════════════
     // PERSONALITY TRAITS

@@ -1,10 +1,10 @@
 // Animals Gang Profile Generator
 // Strength-obsessed pack with underground fighting culture
 
-public class AnimalsProfile {
+public class KdspAnimalsProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "ANIMALS";
         profile.gangName = "Animals";
         profile.headerLabel = "ANIMALS PACK RECORD";
@@ -55,7 +55,7 @@ public class AnimalsProfile {
         
         // Stats
         profile.yearsActive = RandRange(seed + 300, 1, 12);
-        profile.bodyCount = AnimalsProfile.GetBodyCount(seed + 400, profile.rank) + RandRange(seed + 410, 0, 15);
+        profile.bodyCount = KdspAnimalsProfile.GetBodyCount(seed + 400, profile.rank) + RandRange(seed + 410, 0, 15);
         profile.arrestCount = RandRange(seed + 500, 0, 6);
         
         // Fight record - unique to Animals
@@ -63,7 +63,7 @@ public class AnimalsProfile {
         profile.fightLosses = RandRange(seed + 360, 0, 20);
         
         // Loyalty
-        profile.loyaltyRating = AnimalsProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspAnimalsProfile.GetLoyalty(seed + 600);
         
         // Physical markers
         let marks: array<String>;
@@ -118,7 +118,7 @@ public class AnimalsProfile {
         ArrayPush(activities, "Recruitment tryouts. Line of wannabes outside the gym. Most won't last.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

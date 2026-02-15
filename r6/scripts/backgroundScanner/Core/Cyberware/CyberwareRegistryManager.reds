@@ -1,15 +1,15 @@
 // Cyberware Registry Generation System
-public class CyberwareRegistryManager {
+public class KdspCyberwareRegistryManager {
 
     // Legacy function for backward compatibility
-    public static func Generate(seed: Int32, archetype: String, wealth: Int32) -> ref<CyberwareRegistryData> {
-        return CyberwareRegistryManager.GenerateCoherent(seed, archetype, wealth, null);
+    public static func Generate(seed: Int32, archetype: String, wealth: Int32) -> ref<KdspCyberwareRegistryData> {
+        return KdspCyberwareRegistryManager.GenerateCoherent(seed, archetype, wealth, null);
     }
 
     // Coherent generation using life profile
-    public static func GenerateCoherent(seed: Int32, archetype: String, wealth: Int32, coherence: ref<CoherenceProfile>) -> ref<CyberwareRegistryData> {
-        let registry: ref<CyberwareRegistryData> = new CyberwareRegistryData();
-        let density = KiroshiSettings.GetDataDensity();
+    public static func GenerateCoherent(seed: Int32, archetype: String, wealth: Int32, coherence: ref<KdspCoherenceProfile>) -> ref<KdspCyberwareRegistryData> {
+        let registry: ref<KdspCyberwareRegistryData> = new KdspCyberwareRegistryData();
+        let density = KdspSettings.GetDataDensity();
 
         // Adjust wealth based on coherence
         let effectiveWealth = wealth;
@@ -21,14 +21,14 @@ public class CyberwareRegistryManager {
         }
 
         // Determine cyberware count based on archetype and wealth - limited by density
-        let cyberwareCount = CyberwareRegistryManager.GetCyberwareCount(seed, archetype, effectiveWealth);
-        cyberwareCount = KiroshiSettings.GetMaxListItems(cyberwareCount);
+        let cyberwareCount = KdspCyberwareRegistryManager.GetCyberwareCount(seed, archetype, effectiveWealth);
+        cyberwareCount = KdspSettings.GetMaxListItems(cyberwareCount);
         registry.totalImplants = cyberwareCount;
 
         // Generate individual cyberware entries
         let i = 0;
         while i < cyberwareCount {
-            let cyberware = CyberwareRegistryManager.GenerateCyberwareCoherent(seed + (i * 123), archetype, effectiveWealth, coherence);
+            let cyberware = KdspCyberwareRegistryManager.GenerateCyberwareCoherent(seed + (i * 123), archetype, effectiveWealth, coherence);
             ArrayPush(registry.implants, cyberware);
             
             if !cyberware.isLegal {
@@ -39,15 +39,15 @@ public class CyberwareRegistryManager {
         }
 
         // Body Modification cyberware - only on high density
-        if density >= 3 && KiroshiSettings.BodyModRecordsEnabled() && RandRange(seed + 450, 1, 100) <= 20 {
-            let bodyMod = CyberwareRegistryManager.GenerateBodyModCyberware(seed + 460, effectiveWealth);
+        if density >= 3 && KdspSettings.BodyModRecordsEnabled() && RandRange(seed + 450, 1, 100) <= 20 {
+            let bodyMod = KdspCyberwareRegistryManager.GenerateBodyModCyberware(seed + 460, effectiveWealth);
             ArrayPush(registry.implants, bodyMod);
             registry.totalImplants += 1;
         }
 
         // Calculate cyberpsychosis risk - always shown
-        registry.cyberpsychosisRisk = CyberwareRegistryManager.CalculateCyberpsychosisRiskCoherent(seed + 500, registry.implants, archetype, coherence);
-        registry.cyberpsychosisStatus = CyberwareRegistryManager.GetCyberpsychosisStatus(registry.cyberpsychosisRisk);
+        registry.cyberpsychosisRisk = KdspCyberwareRegistryManager.CalculateCyberpsychosisRiskCoherent(seed + 500, registry.implants, archetype, coherence);
+        registry.cyberpsychosisStatus = KdspCyberwareRegistryManager.GetCyberpsychosisStatus(registry.cyberpsychosisRisk);
 
         // Generate rejected/failed implants - only on medium/high
         if density >= 2 {
@@ -61,10 +61,10 @@ public class CyberwareRegistryManager {
             if RandRange(seed + 600, 1, 100) <= rejectChance {
                 registry.hasRejectedImplants = true;
                 let rejectCount = RandRange(seed + 610, 1, 3);
-                rejectCount = KiroshiSettings.GetMaxListItems(rejectCount);
+                rejectCount = KdspSettings.GetMaxListItems(rejectCount);
                 i = 0;
                 while i < rejectCount {
-                    ArrayPush(registry.rejectedImplants, CyberwareRegistryManager.GenerateRejectedImplant(seed + 700 + (i * 50)));
+                    ArrayPush(registry.rejectedImplants, KdspCyberwareRegistryManager.GenerateRejectedImplant(seed + 700 + (i * 50)));
                     i += 1;
                 }
             }
@@ -72,21 +72,21 @@ public class CyberwareRegistryManager {
 
         // Last ripperdoc visit - only on high density
         if density >= 3 {
-            registry.lastRipperdocVisit = CyberwareRegistryManager.GenerateLastVisit(seed + 800);
-            registry.preferredRipperdoc = CyberwareRegistryManager.GenerateRipperdocCoherent(seed + 900, archetype, coherence);
+            registry.lastRipperdocVisit = KdspCyberwareRegistryManager.GenerateLastVisit(seed + 800);
+            registry.preferredRipperdoc = KdspCyberwareRegistryManager.GenerateRipperdocCoherent(seed + 900, archetype, coherence);
         }
 
         // Warranty status - only on high density
         if density >= 3 {
-            registry.warrantyStatus = CyberwareRegistryManager.GenerateWarrantyStatusCoherent(seed + 1000, effectiveWealth, coherence);
+            registry.warrantyStatus = KdspCyberwareRegistryManager.GenerateWarrantyStatusCoherent(seed + 1000, effectiveWealth, coherence);
         }
 
         return registry;
     }
 
     // Cyberware quality and legality affected by life theme
-    private static func GenerateCyberwareCoherent(seed: Int32, archetype: String, wealth: Int32, coherence: ref<CoherenceProfile>) -> ref<CyberwareImplant> {
-        let cyberware = CyberwareRegistryManager.GenerateCyberware(seed, archetype, wealth);
+    private static func GenerateCyberwareCoherent(seed: Int32, archetype: String, wealth: Int32, coherence: ref<KdspCoherenceProfile>) -> ref<KdspCyberwareImplant> {
+        let cyberware = KdspCyberwareRegistryManager.GenerateCyberware(seed, archetype, wealth);
         
         // Criminal theme = more likely illegal
         if IsDefined(coherence) && Equals(coherence.lifeTheme, "CRIMINAL") {
@@ -99,8 +99,8 @@ public class CyberwareRegistryManager {
     }
 
     // Cyberpsychosis risk influenced by substance abuse
-    private static func CalculateCyberpsychosisRiskCoherent(seed: Int32, implants: array<ref<CyberwareImplant>>, archetype: String, coherence: ref<CoherenceProfile>) -> Int32 {
-        let risk = CyberwareRegistryManager.CalculateCyberpsychosisRisk(seed, implants, archetype);
+    private static func CalculateCyberpsychosisRiskCoherent(seed: Int32, implants: array<ref<KdspCyberwareImplant>>, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
+        let risk = KdspCyberwareRegistryManager.CalculateCyberpsychosisRisk(seed, implants, archetype);
         
         if IsDefined(coherence) {
             // Substance abuse increases cyberpsychosis risk (neurotransmitter imbalance)
@@ -115,7 +115,7 @@ public class CyberwareRegistryManager {
     }
 
     // Ripperdoc choice influenced by criminal lifestyle
-    private static func GenerateRipperdocCoherent(seed: Int32, archetype: String, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateRipperdocCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) && Equals(coherence.lifeTheme, "CRIMINAL") {
             let docs: array<String>;
             ArrayPush(docs, "Unlicensed clinic (Kabuki)");
@@ -125,11 +125,11 @@ public class CyberwareRegistryManager {
             ArrayPush(docs, "Scav chop shop survivor");
             return docs[RandRange(seed, 0, ArraySize(docs) - 1)];
         }
-        return CyberwareRegistryManager.GenerateRipperdoc(seed, archetype);
+        return KdspCyberwareRegistryManager.GenerateRipperdoc(seed, archetype);
     }
 
     // Warranty affected by life circumstances
-    private static func GenerateWarrantyStatusCoherent(seed: Int32, wealth: Int32, coherence: ref<CoherenceProfile>) -> String {
+    private static func GenerateWarrantyStatusCoherent(seed: Int32, wealth: Int32, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) {
             if Equals(coherence.lifeTheme, "FALLING") || Equals(coherence.lifeTheme, "STRUGGLING") {
                 let statuses: array<String>;
@@ -140,7 +140,7 @@ public class CyberwareRegistryManager {
                 return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
             }
         }
-        return CyberwareRegistryManager.GenerateWarrantyStatus(seed, wealth);
+        return KdspCyberwareRegistryManager.GenerateWarrantyStatus(seed, wealth);
     }
 
     private static func GetCyberwareCount(seed: Int32, archetype: String, wealth: Int32) -> Int32 {
@@ -165,35 +165,35 @@ public class CyberwareRegistryManager {
         return base;
     }
 
-    private static func GenerateCyberware(seed: Int32, archetype: String, wealth: Int32) -> ref<CyberwareImplant> {
-        let implant: ref<CyberwareImplant> = new CyberwareImplant();
+    private static func GenerateCyberware(seed: Int32, archetype: String, wealth: Int32) -> ref<KdspCyberwareImplant> {
+        let implant: ref<KdspCyberwareImplant> = new KdspCyberwareImplant();
 
         // Select slot
-        implant.slot = CyberwareRegistryManager.GetRandomSlot(seed);
+        implant.slot = KdspCyberwareRegistryManager.GetRandomSlot(seed);
         
         // Select implant based on slot
-        implant.name = CyberwareRegistryManager.GetImplantForSlot(seed + 10, implant.slot, archetype);
+        implant.name = KdspCyberwareRegistryManager.GetImplantForSlot(seed + 10, implant.slot, archetype);
         
         // Select manufacturer
-        implant.manufacturer = CyberwareRegistryManager.GetManufacturer(seed + 20, wealth, archetype);
+        implant.manufacturer = KdspCyberwareRegistryManager.GetManufacturer(seed + 20, wealth, archetype);
         
         // Determine legality
-        implant.isLegal = CyberwareRegistryManager.DetermineIfLegal(seed + 30, archetype, implant.name);
+        implant.isLegal = KdspCyberwareRegistryManager.DetermineIfLegal(seed + 30, archetype, implant.name);
         
         // Condition
-        implant.condition = CyberwareRegistryManager.GetCondition(seed + 40, wealth);
+        implant.condition = KdspCyberwareRegistryManager.GetCondition(seed + 40, wealth);
         
         // Installation year
         implant.installYear = RandRange(seed + 50, 2065, 2077);
 
         // Grade
-        implant.grade = CyberwareRegistryManager.GetGrade(seed + 60, wealth);
+        implant.grade = KdspCyberwareRegistryManager.GetGrade(seed + 60, wealth);
 
         return implant;
     }
 
-    private static func GenerateBodyModCyberware(seed: Int32, wealth: Int32) -> ref<CyberwareImplant> {
-        let implant: ref<CyberwareImplant> = new CyberwareImplant();
+    private static func GenerateBodyModCyberware(seed: Int32, wealth: Int32) -> ref<KdspCyberwareImplant> {
+        let implant: ref<KdspCyberwareImplant> = new KdspCyberwareImplant();
 
         implant.slot = "Body Modification";
         
@@ -237,13 +237,13 @@ public class CyberwareRegistryManager {
         implant.isLegal = true;
         
         // Condition based on wealth
-        implant.condition = CyberwareRegistryManager.GetCondition(seed + 20, wealth);
+        implant.condition = KdspCyberwareRegistryManager.GetCondition(seed + 20, wealth);
         
         // Installation year
         implant.installYear = RandRange(seed + 30, 2068, 2077);
 
         // Grade based on wealth
-        implant.grade = CyberwareRegistryManager.GetGrade(seed + 40, wealth);
+        implant.grade = KdspCyberwareRegistryManager.GetGrade(seed + 40, wealth);
 
         return implant;
     }
@@ -703,7 +703,7 @@ public class CyberwareRegistryManager {
         return "Salvage Grade";
     }
 
-    private static func CalculateCyberpsychosisRisk(seed: Int32, implants: array<ref<CyberwareImplant>>, archetype: String) -> Int32 {
+    private static func CalculateCyberpsychosisRisk(seed: Int32, implants: array<ref<KdspCyberwareImplant>>, archetype: String) -> Int32 {
         let baseRisk = ArraySize(implants) * 5;
         
         // Illegal implants increase risk
@@ -937,9 +937,9 @@ public class CyberwareRegistryManager {
     }
 }
 
-public class CyberwareRegistryData {
+public class KdspCyberwareRegistryData {
     public let totalImplants: Int32;
-    public let implants: array<ref<CyberwareImplant>>;
+    public let implants: array<ref<KdspCyberwareImplant>>;
     public let hasIllegalCyberware: Bool;
     public let illegalCount: Int32;
     public let cyberpsychosisRisk: Int32;
@@ -951,7 +951,7 @@ public class CyberwareRegistryData {
     public let warrantyStatus: String;
 }
 
-public class CyberwareImplant {
+public class KdspCyberwareImplant {
     public let name: String;
     public let slot: String;
     public let manufacturer: String;

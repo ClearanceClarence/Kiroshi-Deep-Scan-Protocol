@@ -1,77 +1,77 @@
 // Expanded Backstory Manager
 // Main orchestrator that ties together all expanded NPC generation systems
 
-public class ExpandedBackstoryManager {
+public class KdspExpandedBackstoryManager {
 
     // Main entry point - generates complete expanded NPC data
-    public static func GenerateExpandedProfile(npc: wref<NPCPuppet>) -> ref<ExpandedNPCData> {
-        let data: ref<ExpandedNPCData> = new ExpandedNPCData();
+    public static func GenerateExpandedProfile(npc: wref<NPCPuppet>) -> ref<KdspExpandedNPCData> {
+        let data: ref<KdspExpandedNPCData> = new KdspExpandedNPCData();
 
         // Get seed from entity for deterministic generation
-        let seed = ExpandedBackstoryManager.GetSeedFromEntity(npc);
+        let seed = KdspExpandedBackstoryManager.GetSeedFromEntity(npc);
 
         // Get NPC appearance info
         let appearanceName = NameToString(npc.GetCurrentAppearanceName());
-        let gender = ExpandedBackstoryManager.DetermineGender(npc);
+        let gender = KdspExpandedBackstoryManager.DetermineGender(npc);
 
         // Determine archetype
-        data.archetype = ExpandedBackstoryManager.DetermineArchetype(appearanceName);
+        data.archetype = KdspExpandedBackstoryManager.DetermineArchetype(appearanceName);
 
         // Detect gang affiliation from appearance
-        let gangAffiliation = GangManager.DetectGangAffiliation(appearanceName, "");
+        let gangAffiliation = KdspGangManager.DetectGangAffiliation(appearanceName, "");
 
         // Generate age (needed for medical)
-        let age = ExpandedBackstoryManager.GenerateAge(seed, data.archetype);
+        let age = KdspExpandedBackstoryManager.GenerateAge(seed, data.archetype);
 
         // Check for rare NPC (1 in 1000)
-        let isRare = RareNPCManager.ShouldBeRareNPC(seed + 9999);
+        let isRare = KdspRareNPCManager.ShouldBeRareNPC(seed + 9999);
         if isRare {
-            data.rareData = RareNPCManager.Generate(seed + 10000, data.archetype);
+            data.rareData = KdspRareNPCManager.Generate(seed + 10000, data.archetype);
         } else {
-            data.rareData = new RareNPCData();
+            data.rareData = new KdspRareNPCData();
             data.rareData.isRare = false;
         }
 
         // Generate all subsystems
         // Criminal Record
-        data.criminalRecord = CriminalRecordManager.Generate(seed + 1000, data.archetype, gangAffiliation);
+        data.criminalRecord = KdspCriminalRecordManager.Generate(seed + 1000, data.archetype, gangAffiliation);
 
         // Cyberware Registry
-        let wealthEstimate = ExpandedBackstoryManager.EstimateWealth(data.archetype);
-        data.cyberwareRegistry = CyberwareRegistryManager.Generate(seed + 2000, data.archetype, wealthEstimate);
+        let wealthEstimate = KdspExpandedBackstoryManager.EstimateWealth(data.archetype);
+        data.cyberwareRegistry = KdspCyberwareRegistryManager.Generate(seed + 2000, data.archetype, wealthEstimate);
 
         // Financial Profile
-        data.financialProfile = FinancialProfileManager.Generate(seed + 3000, data.archetype);
+        data.financialProfile = KdspFinancialProfileManager.Generate(seed + 3000, data.archetype);
 
         // Medical History
-        data.medicalHistory = MedicalHistoryManager.Generate(seed + 4000, data.archetype, age);
+        data.medicalHistory = KdspMedicalHistoryManager.Generate(seed + 4000, data.archetype, age);
 
         // Psychological Profile (depends on criminal and cyberware)
-        data.psychProfile = PsychProfileManager.Generate(seed + 5000, data.archetype, data.criminalRecord, data.cyberwareRegistry);
+        data.psychProfile = KdspPsychProfileManager.Generate(seed + 5000, data.archetype, data.criminalRecord, data.cyberwareRegistry);
 
         // Gang Profile (if affiliated)
         if !Equals(gangAffiliation, "NONE") {
-            data.gangProfile = GangManager.GenerateGangProfile(seed + 6000, gangAffiliation);
+            data.gangProfile = KdspGangManager.GenerateGangProfile(seed + 6000, gangAffiliation);
         } else {
-            data.gangProfile = new GangProfileData();
+            data.gangProfile = new KdspGangProfileData();
             data.gangProfile.gangAffiliation = "NONE";
         }
 
         // Detect ethnicity for name generation
-        let ethnicity = EthnicityDetector.GetEthnicityFromAppearance(appearanceName, gangAffiliation);
-        if Equals(ethnicity, NPCEthnicity.Mixed) {
-            ethnicity = EthnicityDetector.GetRandomEthnicity(seed + 888);
+        let ethnicity = KdspEthnicityDetector.GetEthnicityFromAppearance(appearanceName, gangAffiliation);
+        if Equals(ethnicity, KdspNPCEthnicity.Mixed) {
+            ethnicity = KdspEthnicityDetector.GetRandomEthnicity(seed + 888);
         }
 
         // Relationships
-        data.relationships = RelationshipsManager.Generate(seed + 7000, data.archetype, gangAffiliation, ethnicity);
+        data.relationships = KdspRelationshipsManager.Generate(seed + 7000, data.archetype, gangAffiliation, ethnicity);
 
         // District Profile
-        let district = CrowdDistrictManager.DetectDistrictFromAppearance(appearanceName);
+        let district = KdspCrowdDistrictManager.DetectDistrictFromAppearance(appearanceName);
         if Equals(district, "UNKNOWN") {
             district = "WATSON";
         }
-        data.districtProfile = CrowdDistrictManager.GenerateDistrictProfile(seed + 8000, district, data.archetype);
+        data.districtProfile = KdspCrowdDistrictManager.GenerateDistrictProfile(seed + 8000, district, data.archetype);
 
         // Store additional metadata
         data.seed = seed;
@@ -83,13 +83,13 @@ public class ExpandedBackstoryManager {
     }
 
     // Generate data for a specific database view
-    public static func GenerateDatabaseView(data: ref<ExpandedNPCData>, databaseType: String) -> ref<DatabaseViewData> {
-        return DatabaseSourceManager.GenerateDatabaseView(data.seed, databaseType, data);
+    public static func GenerateDatabaseView(data: ref<KdspExpandedNPCData>, databaseType: String) -> ref<KdspDatabaseViewData> {
+        return KdspDatabaseSourceManager.GenerateDatabaseView(data.seed, databaseType, data);
     }
 
     // Get a quick threat summary (for UI display)
-    public static func GetQuickThreatSummary(data: ref<ExpandedNPCData>) -> ref<ThreatSummaryData> {
-        let summary: ref<ThreatSummaryData> = new ThreatSummaryData();
+    public static func GetQuickThreatSummary(data: ref<KdspExpandedNPCData>) -> ref<KdspThreatSummaryData> {
+        let summary: ref<KdspThreatSummaryData> = new KdspThreatSummaryData();
 
         summary.threatLevel = data.psychProfile.threatLevel;
         summary.threatColor = data.psychProfile.threatColor;
@@ -190,28 +190,28 @@ public class ExpandedBackstoryManager {
     }
 
     public static func GetAvailableDatabases() -> array<String> {
-        return DatabaseSourceManager.GetAvailableDatabases();
+        return KdspDatabaseSourceManager.GetAvailableDatabases();
     }
 }
 
-public class ExpandedNPCData {
+public class KdspExpandedNPCData {
     public let seed: Int32;
     public let gender: String;
     public let age: Int32;
     public let archetype: String;
     public let appearanceName: String;
-    public let criminalRecord: ref<CriminalRecordData>;
-    public let cyberwareRegistry: ref<CyberwareRegistryData>;
-    public let financialProfile: ref<FinancialProfileData>;
-    public let medicalHistory: ref<MedicalHistoryData>;
-    public let psychProfile: ref<PsychProfileData>;
-    public let gangProfile: ref<GangProfileData>;
-    public let relationships: ref<RelationshipsData>;
-    public let districtProfile: ref<DistrictProfileData>;
-    public let rareData: ref<RareNPCData>;
+    public let criminalRecord: ref<KdspCriminalRecordData>;
+    public let cyberwareRegistry: ref<KdspCyberwareRegistryData>;
+    public let financialProfile: ref<KdspFinancialProfileData>;
+    public let medicalHistory: ref<KdspMedicalHistoryData>;
+    public let psychProfile: ref<KdspPsychProfileData>;
+    public let gangProfile: ref<KdspGangProfileData>;
+    public let relationships: ref<KdspRelationshipsData>;
+    public let districtProfile: ref<KdspDistrictProfileData>;
+    public let rareData: ref<KdspRareNPCData>;
 }
 
-public class ThreatSummaryData {
+public class KdspThreatSummaryData {
     public let threatLevel: Int32;
     public let threatColor: String;
     public let armedStatus: String;

@@ -1,43 +1,43 @@
 // Barghest Militia Profile Generation System
 // Kurt Hansen's private military force in Dogtown
-public class BarghestProfileManager {
+public class KdspBarghestProfileManager {
 
     public static func IsBarghest(appearanceName: String, gangAffiliation: String) -> Bool {
         return StrContains(appearanceName, "barghest") || Equals(gangAffiliation, "BARGHEST");
     }
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String, ethnicity: NPCEthnicity) -> ref<BarghestProfileData> {
-        let data: ref<BarghestProfileData> = new BarghestProfileData();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String, ethnicity: KdspNPCEthnicity) -> ref<KdspBarghestProfileData> {
+        let data: ref<KdspBarghestProfileData> = new KdspBarghestProfileData();
         
         // Generate name
-        data.fullName = NameGenerator.GenerateFullNameByEthnicity(seed, gender, ethnicity);
-        data.callsign = BarghestProfileManager.GenerateCallsign(seed + 50);
+        data.fullName = KdspNameGenerator.GenerateFullNameByEthnicity(seed, gender, ethnicity);
+        data.callsign = KdspBarghestProfileManager.GenerateCallsign(seed + 50);
         
         // Military background
-        data.formerAffiliation = BarghestProfileManager.GetFormerAffiliation(seed + 100);
-        data.militaryRank = BarghestProfileManager.GetMilitaryRank(seed + 150, appearanceName);
-        data.barghestRank = BarghestProfileManager.GetBarghestRank(seed + 200, appearanceName);
+        data.formerAffiliation = KdspBarghestProfileManager.GetFormerAffiliation(seed + 100);
+        data.militaryRank = KdspBarghestProfileManager.GetMilitaryRank(seed + 150, appearanceName);
+        data.barghestRank = KdspBarghestProfileManager.GetBarghestRank(seed + 200, appearanceName);
         data.yearsService = RandRange(seed + 250, 2, 15);
         data.yearsBarghest = RandRange(seed + 260, 1, 8);
         
         // Specialization based on unit type
-        data.mos = BarghestProfileManager.GetMOS(seed + 300, appearanceName);
-        data.combatRole = BarghestProfileManager.GetCombatRole(seed + 350, appearanceName);
+        data.mos = KdspBarghestProfileManager.GetMOS(seed + 300, appearanceName);
+        data.combatRole = KdspBarghestProfileManager.GetCombatRole(seed + 350, appearanceName);
         
         // Service record
         data.deployments = RandRange(seed + 400, 1, 12);
-        data.confirmedKills = BarghestProfileManager.GetConfirmedKills(seed + 450, data.barghestRank);
+        data.confirmedKills = KdspBarghestProfileManager.GetConfirmedKills(seed + 450, data.barghestRank);
         data.commendations = RandRange(seed + 500, 0, 8);
         data.disciplinaryActions = RandRange(seed + 550, 0, 2);
         
         // Status
-        data.loyaltyRating = BarghestProfileManager.GetLoyaltyRating(seed + 600);
-        data.dutyStatus = BarghestProfileManager.GetDutyStatus(seed + 650);
-        data.assignedSector = BarghestProfileManager.GetAssignedSector(seed + 700);
+        data.loyaltyRating = KdspBarghestProfileManager.GetLoyaltyRating(seed + 600);
+        data.dutyStatus = KdspBarghestProfileManager.GetDutyStatus(seed + 650);
+        data.assignedSector = KdspBarghestProfileManager.GetAssignedSector(seed + 700);
         
         // Background
-        data.reasonJoined = BarghestProfileManager.GetReasonJoined(seed + 800);
-        data.background = BarghestProfileManager.GenerateBackground(seed + 900, data.formerAffiliation, data.reasonJoined);
+        data.reasonJoined = KdspBarghestProfileManager.GetReasonJoined(seed + 800);
+        data.background = KdspBarghestProfileManager.GenerateBackground(seed + 900, data.formerAffiliation, data.reasonJoined);
         
         return data;
     }
@@ -304,7 +304,7 @@ public class BarghestProfileManager {
         return backgrounds[RandRange(seed, 0, ArraySize(backgrounds) - 1)];
     }
 
-    public static func FormatServiceRecord(data: ref<BarghestProfileData>) -> String {
+    public static func FormatServiceRecord(data: ref<KdspBarghestProfileData>) -> String {
         let record = "";
         
         if NotEquals(data.callsign, "") {
@@ -323,7 +323,7 @@ public class BarghestProfileManager {
     }
 }
 
-public class BarghestProfileData {
+public class KdspBarghestProfileData {
     public let fullName: String;
     public let callsign: String;
     public let formerAffiliation: String;

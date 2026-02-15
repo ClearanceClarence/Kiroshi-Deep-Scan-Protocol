@@ -1,7 +1,7 @@
 @wrapMethod(NPCPuppet)
 public const func CompileScannerChunks() -> Bool {
     let scannerBlackboard: wref<IBlackboard>;
-    let backstoryChunk: ref<ScannerBackstory>;
+    let backstoryChunk: ref<KdspScannerBackstory>;
 
     // Safety check - ensure we have a valid game instance
     let game = this.GetGame();
@@ -15,21 +15,21 @@ public const func CompileScannerChunks() -> Bool {
     }
 
     // First check: Is this a unique/named NPC with a hand-crafted backstory?
-    if UniqueNPCManager.IsUniqueNPC(this) {
-        let uniqueBackstory = UniqueNPCManager.GetBackstory(this);
+    if KdspUniqueNPCManager.IsUniqueNPC(this) {
+        let uniqueBackstory = KdspUniqueNPCManager.GetBackstory(this);
         if IsDefined(uniqueBackstory) {
-            backstoryChunk = new ScannerBackstory();
+            backstoryChunk = new KdspScannerBackstory();
             let backstoryUI = uniqueBackstory.ToBackstoryUI();
             
             // Add debug info if enabled
-            if KiroshiSettings.DebugModeEnabled() {
+            if KdspSettings.DebugModeEnabled() {
                 let recordID = this.GetRecordID();
                 let appearanceName = NameToString(this.GetCurrentAppearanceName());
                 backstoryUI.debugInfo = "TweakDBID: " + TDBID.ToStringDEBUG(recordID) + "\nAppearance: " + appearanceName;
             }
             
             backstoryChunk.Set(backstoryUI);
-            scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.ScannerBackstory, ToVariant(backstoryChunk));
+            scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.KdspScannerBackstory, ToVariant(backstoryChunk));
             return wrappedMethod();
         }
     }
@@ -60,24 +60,24 @@ public const func CompileScannerChunks() -> Bool {
     }
 
     if shouldGenerate {
-        let backstoryUI = BackstoryManager.GenerateBackstoryUI(this);
+        let backstoryUI = KdspBackstoryManager.GenerateBackstoryUI(this);
         
         // Add debug info if enabled
-        if KiroshiSettings.DebugModeEnabled() {
+        if KdspSettings.DebugModeEnabled() {
             let recordID = this.GetRecordID();
             let appearanceName = NameToString(this.GetCurrentAppearanceName());
             backstoryUI.debugInfo = "TweakDBID: " + TDBID.ToStringDEBUG(recordID) + "\nAppearance: " + appearanceName;
         }
         
-        backstoryChunk = new ScannerBackstory();
+        backstoryChunk = new KdspScannerBackstory();
         backstoryChunk.Set(backstoryUI);
-        scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.ScannerBackstory, ToVariant(backstoryChunk));
+        scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.KdspScannerBackstory, ToVariant(backstoryChunk));
     } else {
-        backstoryChunk = new ScannerBackstory();
+        backstoryChunk = new KdspScannerBackstory();
         
         // Still show debug info for skipped NPCs if debug mode enabled
-        if KiroshiSettings.DebugModeEnabled() {
-            let backstoryUI: BackstoryUI;
+        if KdspSettings.DebugModeEnabled() {
+            let backstoryUI: KdspBackstoryUI;
             let recordID = this.GetRecordID();
             let appearanceName = NameToString(this.GetCurrentAppearanceName());
             backstoryUI.debugInfo = "TweakDBID: " + TDBID.ToStringDEBUG(recordID) + "\nAppearance: " + appearanceName + "\n[No backstory generated for this NPC type]";
@@ -87,7 +87,7 @@ public const func CompileScannerChunks() -> Bool {
             backstoryChunk.SetEmpty();
         }
         
-        scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.ScannerBackstory, ToVariant(backstoryChunk));
+        scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.KdspScannerBackstory, ToVariant(backstoryChunk));
     }
     return wrappedMethod();
 }

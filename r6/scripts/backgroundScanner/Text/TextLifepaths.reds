@@ -3,7 +3,7 @@
 * Backstories and events tailored to Street Kid, Nomad, and Corpo lifepaths
 * These can be used to generate more coherent backstories based on NPC archetype
 */
-public abstract class TextLifepaths {
+public abstract class KdspTextLifepaths {
 
     // ═══════════════════════════════════════════════════════════
     // STREET KID - UPBRINGING

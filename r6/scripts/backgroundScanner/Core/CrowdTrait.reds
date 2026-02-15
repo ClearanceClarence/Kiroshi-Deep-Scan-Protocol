@@ -1,5 +1,5 @@
 // TraitName, BaseWealth, (hashmap???)
-enum CrowdTrait  {
+enum KdspCrowdTrait  {
     Medical = 0, // Ripperdocs, nurses, etc... 		service__medical_wa_nurse_wa_02, service__vendor_ma__wbr_jpn_medic_01 anything with traumateam
     Driver = 1, // Drivers, pre-disposes car-based events 		service__driver_ma__driver_dino
     Fixer = 2, // (fixer)

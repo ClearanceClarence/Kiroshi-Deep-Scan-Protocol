@@ -2,14 +2,14 @@ module CrowdScanner.UI
 
 import Codeware.UI.inkCustomController
 
-public class ScannerBackstorySystem extends inkCustomController {
+public class KdspScannerBackstorySystem extends inkCustomController {
 
     protected let m_root: ref<inkVerticalPanel>;
     protected let m_scanCompleted: Bool;
-    protected let m_netWatchDbReport: ref<NetWatchDBReport>;
+    protected let m_netWatchDbReport: ref<KdspNetWatchDBReport>;
     protected let m_loadingPanel: wref<inkCompoundWidget>;
     protected let m_fluffFooter: wref<inkCompoundWidget>;
-    protected let m_backstory: BackstoryUI;
+    protected let m_backstory: KdspBackstoryUI;
     protected let m_loadingLineCount: Int32;
 
     protected cb func OnInitialize() -> Bool {
@@ -27,7 +27,7 @@ public class ScannerBackstorySystem extends inkCustomController {
 
     protected func CreateWidgets() -> Void {
         let root: ref<inkVerticalPanel> = new inkVerticalPanel();
-        root.SetName(n"ScannerBackstorySystem");
+        root.SetName(n"KdspScannerBackstorySystem");
         root.SetHAlign(inkEHorizontalAlign.Left);
         root.SetVAlign(inkEVerticalAlign.Top);
         root.SetAnchor(inkEAnchor.TopLeft);
@@ -79,7 +79,7 @@ public class ScannerBackstorySystem extends inkCustomController {
 
         // Generate randomized loading text using true random seed
         let loadingSeed = Cast<Int32>(RandF() * 999999.0);
-        let loadingLines = ScannerLoadingText.GenerateLoadingSequence(loadingSeed);
+        let loadingLines = KdspScannerLoadingText.GenerateLoadingSequence(loadingSeed);
         let lineCount = ArraySize(loadingLines);
         
         // Store line count for animation
@@ -87,7 +87,7 @@ public class ScannerBackstorySystem extends inkCustomController {
 
         // Dynamically create loading lines
         let i = 0;
-        let loadingFontSize = KiroshiSettings.GetTextFontSize() - 8; // Slightly smaller than main text
+        let loadingFontSize = KdspSettings.GetTextFontSize() - 8; // Slightly smaller than main text
         if loadingFontSize < 14 { loadingFontSize = 14; }
         
         while i < lineCount {
@@ -125,7 +125,7 @@ public class ScannerBackstorySystem extends inkCustomController {
         // ═══════════════════════════════════════════════════════════
         // MAIN REPORT
         // ═══════════════════════════════════════════════════════════
-        this.m_netWatchDbReport = NetWatchDBReport.Create();
+        this.m_netWatchDbReport = KdspNetWatchDBReport.Create();
         this.m_netWatchDbReport.Reparent(root);
 
         // ═══════════════════════════════════════════════════════════
@@ -143,7 +143,7 @@ public class ScannerBackstorySystem extends inkCustomController {
         let footerText: ref<inkText> = new inkText();
         footerText.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         footerText.SetFontStyle(n"Medium");
-        footerText.SetFontSize(KiroshiSettings.GetHeaderFontSize() - 6);
+        footerText.SetFontSize(KdspSettings.GetHeaderFontSize() - 6);
         footerText.SetText("Kiroshi Optics // Deep Scan Protocol v1.7");
         footerText.SetTintColor(new HDRColor(0.4, 0.4, 0.38, 1.0));
         footerText.SetFitToContent(true);
@@ -186,7 +186,7 @@ public class ScannerBackstorySystem extends inkCustomController {
         }
     }
 
-    public func IsBackstoryEmpty(backstoryUI: BackstoryUI) -> Bool {
+    public func IsBackstoryEmpty(backstoryUI: KdspBackstoryUI) -> Bool {
         if Equals(backstoryUI.background, "") {
             return true;
         } else {
@@ -202,7 +202,7 @@ public class ScannerBackstorySystem extends inkCustomController {
         this.m_fluffFooter.SetVisible(false);
     }
 
-    public func SetBackstory(backstoryUI: BackstoryUI) {
+    public func SetBackstory(backstoryUI: KdspBackstoryUI) {
         this.m_backstory = backstoryUI;
         
         // Update font sizes from settings
@@ -215,8 +215,8 @@ public class ScannerBackstorySystem extends inkCustomController {
     }
 
     private func UpdateFontSizes() -> Void {
-        let headerSize = KiroshiSettings.GetHeaderFontSize();
-        let textSize = KiroshiSettings.GetTextFontSize();
+        let headerSize = KdspSettings.GetHeaderFontSize();
+        let textSize = KdspSettings.GetTextFontSize();
         let loadingSize = textSize - 8;
         if loadingSize < 14 { loadingSize = 14; }
         let footerSize = headerSize - 6;
@@ -254,8 +254,8 @@ public class ScannerBackstorySystem extends inkCustomController {
         }
     }
 
-    public static func Create() -> ref<ScannerBackstorySystem> {
-        let self: ref<ScannerBackstorySystem> = new ScannerBackstorySystem();
+    public static func Create() -> ref<KdspScannerBackstorySystem> {
+        let self: ref<KdspScannerBackstorySystem> = new KdspScannerBackstorySystem();
         self.CreateInstance();
         return self;
     }

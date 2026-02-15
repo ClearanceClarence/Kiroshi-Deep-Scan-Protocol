@@ -1,38 +1,38 @@
 // Relationships Generation System - Full Version (Shared Pool, Stack-Safe)
-// Uses a heap-allocated NamePool built once per scan to avoid repeated stack array allocations.
+// Uses a heap-allocated KdspNamePool built once per scan to avoid repeated stack array allocations.
 // All sub-functions receive the pre-built pool and just index into it - zero allocation.
 
 // ══════════════════════════════════════════════════════════════════════
 // NAME POOL - Pre-built on heap, passed to all generation functions
 // ══════════════════════════════════════════════════════════════════════
-public class NamePool {
+public class KdspNamePool {
     public let maleFirstNames: array<String>;
     public let femaleFirstNames: array<String>;
     public let lastNames: array<String>;
     public let aliases: array<String>;
 
-    // Build a name pool for a given ethnicity by collecting names from NameGenerator.
-    // Each NameGenerator call temporarily allocates a stack array, but they happen
+    // Build a name pool for a given ethnicity by collecting names from KdspNameGenerator.
+    // Each KdspNameGenerator call temporarily allocates a stack array, but they happen
     // sequentially in this flat loop - stack frames release between iterations.
-    // Once built, sub-functions never touch NameGenerator again.
-    public static func Build(seed: Int32, ethnicity: NPCEthnicity) -> ref<NamePool> {
-        let pool: ref<NamePool> = new NamePool();
+    // Once built, sub-functions never touch KdspNameGenerator again.
+    public static func Build(seed: Int32, ethnicity: KdspNPCEthnicity) -> ref<KdspNamePool> {
+        let pool: ref<KdspNamePool> = new KdspNamePool();
         let i = 0;
         
         // Collect 20 male first names, 20 female first names, 20 last names
         // Using widely-spaced seeds to maximize variety
         while i < 20 {
             let s = seed + (i * 137);
-            ArrayPush(pool.maleFirstNames, NameGenerator.GetFirstNameByEthnicity(s, "male", ethnicity));
-            ArrayPush(pool.femaleFirstNames, NameGenerator.GetFirstNameByEthnicity(s + 50, "female", ethnicity));
-            ArrayPush(pool.lastNames, NameGenerator.GetLastNameByEthnicity(s + 100, ethnicity));
+            ArrayPush(pool.maleFirstNames, KdspNameGenerator.GetFirstNameByEthnicity(s, "male", ethnicity));
+            ArrayPush(pool.femaleFirstNames, KdspNameGenerator.GetFirstNameByEthnicity(s + 50, "female", ethnicity));
+            ArrayPush(pool.lastNames, KdspNameGenerator.GetLastNameByEthnicity(s + 100, ethnicity));
             i += 1;
         }
 
         // Collect 15 aliases
         i = 0;
         while i < 15 {
-            ArrayPush(pool.aliases, NameGenerator.GetStreetAlias(seed + (i * 89)));
+            ArrayPush(pool.aliases, KdspNameGenerator.GetStreetAlias(seed + (i * 89)));
             i += 1;
         }
         
@@ -73,18 +73,18 @@ public class NamePool {
 // ══════════════════════════════════════════════════════════════════════
 // RELATIONSHIPS MANAGER - Full generation restored
 // ══════════════════════════════════════════════════════════════════════
-public class RelationshipsManager {
+public class KdspRelationshipsManager {
 
-    public static func Generate(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: NPCEthnicity) -> ref<RelationshipsData> {
+    public static func Generate(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: KdspNPCEthnicity) -> ref<KdspRelationshipsData> {
         // No NPC name provided - use random family name
-        return RelationshipsManager.GenerateWithName(seed, archetype, gangAffiliation, ethnicity, "");
+        return KdspRelationshipsManager.GenerateWithName(seed, archetype, gangAffiliation, ethnicity, "");
     }
 
-    public static func GenerateWithName(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: NPCEthnicity, npcLastName: String) -> ref<RelationshipsData> {
-        let relations: ref<RelationshipsData> = new RelationshipsData();
+    public static func GenerateWithName(seed: Int32, archetype: String, gangAffiliation: String, ethnicity: KdspNPCEthnicity, npcLastName: String) -> ref<KdspRelationshipsData> {
+        let relations: ref<KdspRelationshipsData> = new KdspRelationshipsData();
         
         // Build name pool ONCE on the heap - all sub-functions reuse this
-        let pool: ref<NamePool> = NamePool.Build(seed, ethnicity);
+        let pool: ref<KdspNamePool> = KdspNamePool.Build(seed, ethnicity);
         
         // Family last name - use NPC's actual last name if provided, otherwise random
         let familyLastName: String;
@@ -95,57 +95,57 @@ public class RelationshipsManager {
         }
 
         // Romantic history
-        relations.romanticHistory = RelationshipsManager.GetRomanticHistory(seed + 200, archetype);
+        relations.romanticHistory = KdspRelationshipsManager.GetRomanticHistory(seed + 200, archetype);
         
         // Relationship status and dependents
-        relations.currentRelationshipStatus = RelationshipsManager.GetRelationshipStatus(seed + 210, archetype);
-        relations.dependents = RelationshipsManager.GetDependents(seed + 300, archetype);
+        relations.currentRelationshipStatus = KdspRelationshipsManager.GetRelationshipStatus(seed + 210, archetype);
+        relations.dependents = KdspRelationshipsManager.GetDependents(seed + 300, archetype);
         
         // Emergency contact
         if RandRange(seed + 400, 1, 100) <= 60 {
-            let ecGender = NameGenerator.GetRandomGender(seed + 415);
+            let ecGender = KdspNameGenerator.GetRandomGender(seed + 415);
             let ecName = pool.GetFullName(seed + 410, ecGender);
-            relations.emergencyContact = ecName + " (" + RelationshipsManager.GetContactRelationType(seed + 420) + ")";
+            relations.emergencyContact = ecName + " (" + KdspRelationshipsManager.GetContactRelationType(seed + 420) + ")";
         } else {
             relations.emergencyContact = "NONE ON FILE";
         }
 
         // Known associates - full count restored
-        let associateCount = RelationshipsManager.GetAssociateCount(seed, archetype, gangAffiliation);
+        let associateCount = KdspRelationshipsManager.GetAssociateCount(seed, archetype, gangAffiliation);
         let i = 0;
         while i < associateCount {
-            ArrayPush(relations.knownAssociates, RelationshipsManager.GenerateAssociate(seed + (i * 100), archetype, gangAffiliation, pool));
+            ArrayPush(relations.knownAssociates, KdspRelationshipsManager.GenerateAssociate(seed + (i * 100), archetype, gangAffiliation, pool));
             i += 1;
         }
 
         // Family members - full tree restored
-        let familyCount = RelationshipsManager.GetFamilyCount(seed + 100, archetype);
+        let familyCount = KdspRelationshipsManager.GetFamilyCount(seed + 100, archetype);
         i = 0;
         while i < familyCount {
-            ArrayPush(relations.familyMembers, RelationshipsManager.GenerateFamilyMember(seed + 110 + (i * 73), archetype, familyLastName, pool));
+            ArrayPush(relations.familyMembers, KdspRelationshipsManager.GenerateFamilyMember(seed + 110 + (i * 73), archetype, familyLastName, pool));
             i += 1;
         }
 
         // Enemies
-        let enemyCount = RelationshipsManager.GetEnemyCount(seed + 500, archetype);
+        let enemyCount = KdspRelationshipsManager.GetEnemyCount(seed + 500, archetype);
         i = 0;
         while i < enemyCount {
-            ArrayPush(relations.knownEnemies, RelationshipsManager.GenerateEnemy(seed + 520 + (i * 80), archetype, gangAffiliation, pool));
+            ArrayPush(relations.knownEnemies, KdspRelationshipsManager.GenerateEnemy(seed + 520 + (i * 80), archetype, gangAffiliation, pool));
             i += 1;
         }
 
         // Professional contacts
-        if RelationshipsManager.HasProfessionalContacts(archetype) {
+        if KdspRelationshipsManager.HasProfessionalContacts(archetype) {
             let proCount = RandRange(seed + 600, 1, 3);
             i = 0;
             while i < proCount {
-                ArrayPush(relations.professionalContacts, RelationshipsManager.GenerateProfessionalContact(seed + 610 + (i * 90), archetype, pool));
+                ArrayPush(relations.professionalContacts, KdspRelationshipsManager.GenerateProfessionalContact(seed + 610 + (i * 90), archetype, pool));
                 i += 1;
             }
         }
 
         // Social network size
-        relations.socialNetworkSize = RelationshipsManager.CalculateSocialNetworkSize(relations, archetype);
+        relations.socialNetworkSize = KdspRelationshipsManager.CalculateSocialNetworkSize(relations, archetype);
         
         return relations;
     }
@@ -163,11 +163,11 @@ public class RelationshipsManager {
         return RandRange(seed, 1, 4);
     }
 
-    private static func GenerateAssociate(seed: Int32, archetype: String, gangAffiliation: String, pool: ref<NamePool>) -> ref<AssociateInfo> {
-        let associate: ref<AssociateInfo> = new AssociateInfo();
+    private static func GenerateAssociate(seed: Int32, archetype: String, gangAffiliation: String, pool: ref<KdspNamePool>) -> ref<KdspAssociateInfo> {
+        let associate: ref<KdspAssociateInfo> = new KdspAssociateInfo();
 
         // Name from pre-built pool - zero allocation
-        let gender = NameGenerator.GetRandomGender(seed + 999);
+        let gender = KdspNameGenerator.GetRandomGender(seed + 999);
         associate.name = pool.GetFullName(seed, gender);
         associate.isAlias = false;
         
@@ -178,16 +178,16 @@ public class RelationshipsManager {
         }
 
         // Relationship type
-        associate.relationship = RelationshipsManager.GetAssociateRelationship(seed + 20, archetype, gangAffiliation);
+        associate.relationship = KdspRelationshipsManager.GetAssociateRelationship(seed + 20, archetype, gangAffiliation);
 
         // Status
-        associate.status = RelationshipsManager.GetAssociateStatus(seed + 30);
+        associate.status = KdspRelationshipsManager.GetAssociateStatus(seed + 30);
 
         // Affiliation
         if !Equals(gangAffiliation, "NONE") && !Equals(gangAffiliation, "") && RandRange(seed + 40, 1, 100) <= 70 {
             associate.affiliation = gangAffiliation;
         } else {
-            associate.affiliation = RelationshipsManager.GetRandomAffiliation(seed + 50, archetype);
+            associate.affiliation = KdspRelationshipsManager.GetRandomAffiliation(seed + 50, archetype);
         }
 
         return associate;
@@ -281,11 +281,11 @@ public class RelationshipsManager {
         return RandRange(seed, 0, 4);
     }
 
-    private static func GenerateFamilyMember(seed: Int32, archetype: String, familyLastName: String, pool: ref<NamePool>) -> ref<FamilyMemberInfo> {
-        let family: ref<FamilyMemberInfo> = new FamilyMemberInfo();
+    private static func GenerateFamilyMember(seed: Int32, archetype: String, familyLastName: String, pool: ref<KdspNamePool>) -> ref<KdspFamilyMemberInfo> {
+        let family: ref<KdspFamilyMemberInfo> = new KdspFamilyMemberInfo();
 
         // Relation type via roll - no array needed
-        family.relation = RelationshipsManager.GetFamilyRelationType(seed);
+        family.relation = KdspRelationshipsManager.GetFamilyRelationType(seed);
         
         // Determine gender based on relation
         let gender = "male";
@@ -297,20 +297,20 @@ public class RelationshipsManager {
             gender = "male";
         } else if Equals(family.relation, "Non-binary Sibling") || Equals(family.relation, "Chosen Family") ||
                   Equals(family.relation, "Same-sex Spouse") || Equals(family.relation, "Partner (polyam)") {
-            gender = NameGenerator.GetRandomGender(seed + 5);
+            gender = KdspNameGenerator.GetRandomGender(seed + 5);
         } else if Equals(family.relation, "Aunt") {
             gender = "female";
         } else if Equals(family.relation, "Uncle") {
             gender = "male";
         } else if Equals(family.relation, "Spouse") || Equals(family.relation, "Child") || Equals(family.relation, "Cousin") {
-            gender = NameGenerator.GetRandomGender(seed + 5);
+            gender = KdspNameGenerator.GetRandomGender(seed + 5);
         }
         
         // First name from pool
         let firstName = pool.GetFirstName(seed + 10, gender);
         
         // Blood relatives share the family last name
-        if RelationshipsManager.IsBloodRelative(family.relation) {
+        if KdspRelationshipsManager.IsBloodRelative(family.relation) {
             family.name = firstName + " " + familyLastName;
         } else if Equals(family.relation, "Spouse") || Equals(family.relation, "Same-sex Spouse") || 
                   Equals(family.relation, "Partner (polyam)") {
@@ -336,14 +336,14 @@ public class RelationshipsManager {
         // Location (only for living family)
         family.location = "";
         if Equals(family.status, "Alive") {
-            family.location = RelationshipsManager.GetFamilyLocation(seed + 30);
+            family.location = KdspRelationshipsManager.GetFamilyLocation(seed + 30);
         }
 
         return family;
     }
 
     private static func GetFamilyRelationType(seed: Int32) -> String {
-        let diverse = KiroshiSettings.DiverseRelationshipsEnabled();
+        let diverse = KdspSettings.DiverseRelationshipsEnabled();
         let maxRoll = 11;
         if diverse { maxRoll = 18; }
         
@@ -405,7 +405,7 @@ public class RelationshipsManager {
     // ══════════════════════════════════════════════════════════════════════
 
     private static func GetEnemyCount(seed: Int32, archetype: String) -> Int32 {
-        let chance = RelationshipsManager.GetEnemyChance(archetype);
+        let chance = KdspRelationshipsManager.GetEnemyChance(archetype);
         if RandRange(seed, 1, 100) <= chance {
             if Equals(archetype, "GANGER") || Equals(archetype, "LOWLIFE") {
                 return RandRange(seed + 10, 1, 3);
@@ -423,11 +423,11 @@ public class RelationshipsManager {
         return 20;
     }
 
-    private static func GenerateEnemy(seed: Int32, archetype: String, gangAffiliation: String, pool: ref<NamePool>) -> ref<EnemyInfo> {
-        let enemy: ref<EnemyInfo> = new EnemyInfo();
+    private static func GenerateEnemy(seed: Int32, archetype: String, gangAffiliation: String, pool: ref<KdspNamePool>) -> ref<KdspEnemyInfo> {
+        let enemy: ref<KdspEnemyInfo> = new KdspEnemyInfo();
 
         // Name from pool or alias
-        let gender = NameGenerator.GetRandomGender(seed + 3);
+        let gender = KdspNameGenerator.GetRandomGender(seed + 3);
         enemy.name = pool.GetFullName(seed, gender);
         
         // 40% chance for alias instead
@@ -436,7 +436,7 @@ public class RelationshipsManager {
         }
 
         // Reason for enmity
-        enemy.reason = RelationshipsManager.GetEnemyReason(seed + 20);
+        enemy.reason = KdspRelationshipsManager.GetEnemyReason(seed + 20);
 
         // Threat level
         let roll = RandRange(seed + 30, 1, 100);
@@ -479,14 +479,14 @@ public class RelationshipsManager {
         return false;
     }
 
-    private static func GenerateProfessionalContact(seed: Int32, archetype: String, pool: ref<NamePool>) -> ref<ProfessionalContactInfo> {
-        let contact: ref<ProfessionalContactInfo> = new ProfessionalContactInfo();
+    private static func GenerateProfessionalContact(seed: Int32, archetype: String, pool: ref<KdspNamePool>) -> ref<KdspProfessionalContactInfo> {
+        let contact: ref<KdspProfessionalContactInfo> = new KdspProfessionalContactInfo();
 
-        let gender = NameGenerator.GetRandomGender(seed + 999);
+        let gender = KdspNameGenerator.GetRandomGender(seed + 999);
         contact.name = pool.GetFullName(seed, gender);
 
         // Type based on archetype
-        contact.type = RelationshipsManager.GetProfessionalContactType(seed + 10, archetype);
+        contact.type = KdspRelationshipsManager.GetProfessionalContactType(seed + 10, archetype);
         
         if RandRange(seed + 20, 1, 100) <= 50 {
             contact.frequency = "Regular contact";
@@ -540,7 +540,7 @@ public class RelationshipsManager {
     // ══════════════════════════════════════════════════════════════════════
 
     private static func GetRomanticHistory(seed: Int32, archetype: String) -> String {
-        let diverse = KiroshiSettings.DiverseRelationshipsEnabled();
+        let diverse = KdspSettings.DiverseRelationshipsEnabled();
         let maxRoll = 9;
         if diverse { maxRoll = 15; }
         
@@ -564,7 +564,7 @@ public class RelationshipsManager {
     }
 
     private static func GetRelationshipStatus(seed: Int32, archetype: String) -> String {
-        let diverse = KiroshiSettings.DiverseRelationshipsEnabled();
+        let diverse = KdspSettings.DiverseRelationshipsEnabled();
         let maxRoll = 10;
         if diverse { maxRoll = 15; }
         
@@ -615,7 +615,7 @@ public class RelationshipsManager {
         return "Neighbor";
     }
 
-    private static func CalculateSocialNetworkSize(relations: ref<RelationshipsData>, archetype: String) -> String {
+    private static func CalculateSocialNetworkSize(relations: ref<KdspRelationshipsData>, archetype: String) -> String {
         let total = ArraySize(relations.knownAssociates) + ArraySize(relations.familyMembers) + 
                    ArraySize(relations.professionalContacts) + relations.dependents;
 
@@ -630,19 +630,19 @@ public class RelationshipsManager {
 // DATA CLASSES
 // ══════════════════════════════════════════════════════════════════════
 
-public class RelationshipsData {
-    public let knownAssociates: array<ref<AssociateInfo>>;
-    public let familyMembers: array<ref<FamilyMemberInfo>>;
+public class KdspRelationshipsData {
+    public let knownAssociates: array<ref<KdspAssociateInfo>>;
+    public let familyMembers: array<ref<KdspFamilyMemberInfo>>;
     public let romanticHistory: String;
     public let currentRelationshipStatus: String;
     public let dependents: Int32;
     public let emergencyContact: String;
-    public let knownEnemies: array<ref<EnemyInfo>>;
-    public let professionalContacts: array<ref<ProfessionalContactInfo>>;
+    public let knownEnemies: array<ref<KdspEnemyInfo>>;
+    public let professionalContacts: array<ref<KdspProfessionalContactInfo>>;
     public let socialNetworkSize: String;
 }
 
-public class AssociateInfo {
+public class KdspAssociateInfo {
     public let name: String;
     public let isAlias: Bool;
     public let relationship: String;
@@ -650,20 +650,20 @@ public class AssociateInfo {
     public let affiliation: String;
 }
 
-public class FamilyMemberInfo {
+public class KdspFamilyMemberInfo {
     public let name: String;
     public let relation: String;
     public let status: String;
     public let location: String;
 }
 
-public class EnemyInfo {
+public class KdspEnemyInfo {
     public let name: String;
     public let reason: String;
     public let threatLevel: String;
 }
 
-public class ProfessionalContactInfo {
+public class KdspProfessionalContactInfo {
     public let name: String;
     public let type: String;
     public let frequency: String;

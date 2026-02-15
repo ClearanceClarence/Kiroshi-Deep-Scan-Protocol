@@ -1,5 +1,5 @@
 // Corporation names for the %corp% token
-public abstract class TextCorpos {
+public abstract class KdspTextCorpos {
     // Media
     public static func NIPPON_NETWORK() -> String { return "Nippon Network"; }
     public static func DIVERSE_MEDIA() -> String { return "Diverse Media Systems"; }

@@ -1,5 +1,5 @@
 // Childhood events and early life experiences
-public abstract class TextChildhood {
+public abstract class KdspTextChildhood {
     // === GANG / CRIMINAL ===
     public static func JOINED_GANG_F() -> String { return "Joined a gang at an early age. "; }
     public static func JOINED_GANG_M() -> String { return ""; }

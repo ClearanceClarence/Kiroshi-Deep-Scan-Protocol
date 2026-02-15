@@ -16,7 +16,7 @@
 * %years% - Picks a random amount of years to insert into the string
 * %young_age% - Picks a random age within childhood/teenage years
 */
-public abstract class TextCore {
+public abstract class KdspTextCore {
     // Static Scanner Texts
     public static func SCANNER_BACKGROUND() -> String { return "Background"; }
     public static func SCANNER_CHILDHOOD() -> String { return "Early Life"; }

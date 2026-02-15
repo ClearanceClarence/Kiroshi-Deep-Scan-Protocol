@@ -1,4 +1,4 @@
-enum CrowdGender {
+enum KdspCrowdGender {
     Female = 0,
     Male = 1
 }

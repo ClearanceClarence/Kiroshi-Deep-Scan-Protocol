@@ -12,26 +12,26 @@
 * types for characters. More on that here: https://stackoverflow.com/questions/4463561/weighted-random-selection-from-array
 *
 */
-public class LifePathPossibilities {
+public class KdspLifePathPossibilities {
 
     // Upbringing
-    public final let m_weightedUpbringingEvents: array<ref<LifePathEvent>>;
+    public final let m_weightedUpbringingEvents: array<ref<KdspLifePathEvent>>;
     public final let m_cdfWeightedUpbringingEvents: array<Int32>;
 
     // Home
-    public final let m_weightedHomeEvents: array<ref<LifePathEvent>>;
+    public final let m_weightedHomeEvents: array<ref<KdspLifePathEvent>>;
     public final let m_cdfWeightedHomeEvents: array<Int32>;
 
     // Childhood 
-    public final let m_weightedChildhoodEvents: array<ref<LifePathEvent>>;
+    public final let m_weightedChildhoodEvents: array<ref<KdspLifePathEvent>>;
     public final let m_cdfWeightedChildhoodEvents: array<Int32>;
 
     // Job 
-    public final let m_weightedJobEvents: array<ref<LifePathEvent>>;
+    public final let m_weightedJobEvents: array<ref<KdspLifePathEvent>>;
     public final let m_cdfWeightedJobEvents: array<Int32>;
 
     // Adulthood 
-    public final let m_weightedAdultEvents: array<ref<LifePathEvent>>;
+    public final let m_weightedAdultEvents: array<ref<KdspLifePathEvent>>;
     public final let m_cdfWeightedAdultEvents: array<Int32>;
 
     public func Initialize(archetype: String) -> Void {

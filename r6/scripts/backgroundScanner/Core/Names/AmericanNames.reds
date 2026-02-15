@@ -1,5 +1,5 @@
 // American Names - 100 male, 100 female, 100 last names
-public abstract class AmericanNames {
+public abstract class KdspAmericanNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
         let i = RandRange(seed, 0, 100);

@@ -1,4 +1,4 @@
-public struct BackstoryUI {
+public struct KdspBackstoryUI {
 
   public let background: String;
 

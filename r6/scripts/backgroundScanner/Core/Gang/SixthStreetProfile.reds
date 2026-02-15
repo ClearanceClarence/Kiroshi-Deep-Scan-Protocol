@@ -1,10 +1,10 @@
 // 6th Street Gang Profile Generator
 // Military veterans turned community defenders
 
-public class SixthStreetProfile {
+public class KdspSixthStreetProfile {
 
-    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<DetailedGangProfile> {
-        let profile: ref<DetailedGangProfile> = new DetailedGangProfile();
+    public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
+        let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "6TH_STREET";
         profile.gangName = "6th Street";
         profile.headerLabel = "6TH STREET VETERAN FILE";
@@ -56,7 +56,7 @@ public class SixthStreetProfile {
         
         // Stats
         profile.yearsActive = RandRange(seed + 300, 1, 25);
-        profile.bodyCount = SixthStreetProfile.GetBodyCount(seed + 400, profile.rank);
+        profile.bodyCount = KdspSixthStreetProfile.GetBodyCount(seed + 400, profile.rank);
         profile.arrestCount = RandRange(seed + 500, 0, 4);
         
         // Military service - unique to 6th Street
@@ -70,7 +70,7 @@ public class SixthStreetProfile {
         profile.priorService = services[RandRange(seed + 350, 0, ArraySize(services) - 1)];
         
         // Loyalty
-        profile.loyaltyRating = SixthStreetProfile.GetLoyalty(seed + 600);
+        profile.loyaltyRating = KdspSixthStreetProfile.GetLoyalty(seed + 600);
         
         // Tattoos - American/military imagery
         let tattoos: array<String>;
@@ -127,7 +127,7 @@ public class SixthStreetProfile {
         ArrayPush(activities, "Meeting with city council rep. Negotiating community funding. Politely.");
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
-        profile.status = GangProfileUtils.GetStatus(seed + 1000);
+        profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);
         
         return profile;
     }

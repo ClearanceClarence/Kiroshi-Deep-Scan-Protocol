@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.7-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.7.1-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 > *Every stranger has a story. Your Kiroshi can read them all.*
@@ -28,6 +28,7 @@ A comprehensive scanner overhaul for Cyberpunk 2077 that procedurally generates 
 - [Compatibility](#compatibility)
 - [FAQ](#faq)
 - [Bug Reports](#bug-reports)
+- [Changelog](#changelog)
 - [Credits](#credits)
 
 ---
@@ -660,6 +661,10 @@ Shared flags propagate across all database systems:
 
 ## Technical Architecture
 
+### Namespace Prefix
+
+All classes, structs, and enums use the `Kdsp` (Kiroshi Deep Scan Protocol) prefix to prevent naming conflicts with other mods. For example: `KdspRareNPCData`, `KdspNamePool`, `KdspGangManager`, `KdspNPCEthnicity`.
+
 ### Seed-Based Determinism
 
 Every NPC generates identical data across sessions:
@@ -695,14 +700,14 @@ private static func GetMaleAmericanNames(seed: Int32) -> String {
 Relationships build a shared pool once per scan on the heap:
 
 ```swift
-public class NamePool {
+public class KdspNamePool {
     public let maleFirstNames: array<String>;
     public let femaleFirstNames: array<String>;
     public let lastNames: array<String>;
     public let aliases: array<String>;
 
-    public static func Build(seed: Int32, ethnicity: NPCEthnicity) -> ref<NamePool> {
-        let pool = new NamePool();
+    public static func Build(seed: Int32, ethnicity: KdspNPCEthnicity) -> ref<KdspNamePool> {
+        let pool = new KdspNamePool();
         // Pre-generate 20 male, 20 female, 20 last, 15 aliases
         // All relationship functions index into this shared pool
         return pool;
@@ -744,7 +749,7 @@ let isNCPD = target.IsPrevention() ||
              StrContains(appearanceName, "ncpd");
 
 // Unique NPC detection via TweakDB
-if StrContains(recordId, "takemura") { return UniqueNPCEntries.Takemura(); }
+if StrContains(recordId, "takemura") { return KdspUniqueNPCEntries.Takemura(); }
 ```
 
 ---
@@ -837,7 +842,7 @@ r6/scripts/backgroundScanner/
 │   │   └── RareNPCManager.reds            # 90 special classifications
 │   │
 │   ├── Relationships/
-│   │   └── RelationshipsManager.reds      # NamePool & relationships
+│   │   └── RelationshipsManager.reds      # KdspNamePool & relationships
 │   │
 │   └── Unique/
 │       ├── UniqueNPCData.reds             # Unique NPC data structure
@@ -995,7 +1000,7 @@ A: Military combat NPCs (soldiers, ninjas, mechs, MaxTac, Trauma Team) display v
 
 **Q: Does this work with Phantom Liberty?**
 
-A: Yes. Version 1.7 includes unique hand-crafted entries for Solomon Reed, Songbird, Kurt Hansen, President Myers, and Alex. Dogtown NPCs generate procedural backstories normally.
+A: Yes. The mod includes unique hand-crafted entries for Solomon Reed, Songbird, Kurt Hansen, President Myers, and Alex. Dogtown NPCs generate procedural backstories normally.
 
 **Q: What does Narrative Coherence actually do?**
 
@@ -1042,6 +1047,12 @@ Note the NPC type, location, and what appeared wrong. Screenshots help.
 
 ---
 
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for full version history.
+
+---
+
 ## Credits
 
 | Contributor | Contribution |
@@ -1060,6 +1071,6 @@ MIT License — See LICENSE file for full details.
 ---
 
 <p align="center">
-<b>KIROSHI DEEP SCAN PROTOCOL v1.7</b><br>
+<b>KIROSHI DEEP SCAN PROTOCOL v1.7.1</b><br>
 <i>Every secret. Revealed.</i>
 </p>
