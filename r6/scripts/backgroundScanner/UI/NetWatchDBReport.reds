@@ -215,9 +215,9 @@ public class KdspNetWatchDBReport extends inkCustomController {
     public func SetBackstory(backstoryUI: KdspBackstoryUI) {
         this.m_backstoryUI = backstoryUI;
         
-        // Update font sizes from settings (allows mid-game changes)
+        // Update font sizes in case settings changed
         this.UpdateFontSizes();
-
+        
         // Unique NPC Classification Banner
         if this.m_backstoryUI.isUnique && StrLen(this.m_backstoryUI.uniqueClassification) > 0 {
             this.m_classificationValue.SetText(this.m_backstoryUI.uniqueClassification);

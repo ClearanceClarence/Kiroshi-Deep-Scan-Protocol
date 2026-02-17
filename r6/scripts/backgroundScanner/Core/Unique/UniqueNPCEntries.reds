@@ -10,6 +10,8 @@ public abstract class KdspQuestProgressHelper {
     }
     public static func IsEvelynDead() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"q109_done"); }
     public static func IsRhyneDead() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"sq026_done"); }
+    public static func IsFoughtTheLawDone() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"sq012_done"); }
+    public static func IsDreamOnDone() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"sq006_done"); }
 }
 
 public abstract class KdspUniqueNPCEntries {
@@ -53,7 +55,7 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "misty") && !StrContains(id, "mistyped") && !StrContains(id, "misty_fog") && (StrContains(id, "olszewski") || StrContains(id, "esoterica") || StrContains(id, "shop")) { return KdspUniqueNPCEntries.MistyOlszewski(); }
         if StrContains(id, "lucy") && StrContains(id, "thackery") { return KdspUniqueNPCEntries.LucyThackery(); }
         // MOX / CLOUDS
-        if StrContains(id, "judy") && (StrContains(id, "alvarez") || StrContains(id, "mox") || StrContains(id, "techie") || StrContains(id, "braindance")) { return KdspUniqueNPCEntries.JudyAlvarez(); }
+        if StrContains(id, "judy") { return KdspUniqueNPCEntries.JudyAlvarez(); }
         if StrContains(id, "evelyn") { return KdspUniqueNPCEntries.EvelynParker(); }
         if StrContains(id, "maiko") { return KdspUniqueNPCEntries.MaikoMaeda(); }
         if StrContains(id, "woodman") { return KdspUniqueNPCEntries.Woodman(); }
@@ -73,6 +75,8 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "fredrik") && StrContains(id, "persson") { return KdspUniqueNPCEntries.FredrikPersson(); }
         // NCPD / POLITICS
         if StrContains(id, "river") && StrContains(id, "ward") && !StrContains(id, "driver") { return KdspUniqueNPCEntries.RiverWard(); }
+        if StrContains(id, "jefferson") && StrContains(id, "peralez") { return KdspUniqueNPCEntries.JeffersonPeralez(); }
+        if StrContains(id, "elizabeth") && StrContains(id, "peralez") { return KdspUniqueNPCEntries.ElizabethPeralez(); }
         if StrContains(id, "peralez") { return KdspUniqueNPCEntries.JeffersonPeralez(); }
         if StrContains(id, "rhyne") { return KdspUniqueNPCEntries.LuciusRhyne(); }
         // OTHER
@@ -111,7 +115,9 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "nix") && !StrContains(id, "phoenix") && !StrContains(id, "nixie") && (StrContains(id, "afterlife") || StrContains(id, "netrunner") || StrContains(id, "bartender")) { return KdspUniqueNPCEntries.Nix(); }
         // OTHER CHARACTERS
         if StrContains(id, "brendan") && (StrContains(id, "vending") || StrContains(id, "machine") || StrContains(id, "ai") || StrContains(id, "bot")) { return KdspUniqueNPCEntries.Brendan(); }
-        if StrContains(id, "barry") && (StrContains(id, "ncpd") || StrContains(id, "cop") || StrContains(id, "officer") || StrContains(id, "megabuilding") || StrContains(id, "suicide")) { return KdspUniqueNPCEntries.Barry(); }
+        if StrContains(id, "mq010_barry") { return KdspUniqueNPCEntries.Barry(); }
+        if StrContains(id, "mq010_mendez") { return KdspUniqueNPCEntries.JuanMendez(); }
+        if StrContains(id, "mq010_petrova") { return KdspUniqueNPCEntries.NadiaPetrova(); }
         if StrContains(id, "joshua") && StrContains(id, "stephenson") { return KdspUniqueNPCEntries.JoshuaStephenson(); }
         if StrContains(id, "blue") && StrContains(id, "moon") && !StrContains(id, "blueprint") { return KdspUniqueNPCEntries.BlueMoon(); }
         if StrContains(id, "lizzy") && StrContains(id, "wizzy") { return KdspUniqueNPCEntries.LizzyWizzy(); }
@@ -135,7 +141,29 @@ public abstract class KdspUniqueNPCEntries {
         if (StrContains(id, "solomon") && StrContains(id, "reed")) || (StrContains(id, "reed") && !StrContains(id, "gang") && !StrContains(id, "soldier") && !StrContains(id, "grunt") && !StrContains(id, "breed") && !StrContains(id, "greed") && !StrContains(id, "freed") && !StrContains(id, "creed") && (StrContains(id, "fixer") || StrContains(id, "nusa") || StrContains(id, "fia") || StrContains(id, "agent") || StrContains(id, "dogtown"))) { return KdspUniqueNPCEntries.SolomonReed(); }
         if StrContains(id, "president_myers") || StrContains(id, "rosalind_myers") || Equals(id, "character.myers") || (StrContains(id, "myers") && (StrContains(id, "nusa") || StrContains(id, "president"))) { return KdspUniqueNPCEntries.RosalindMyers(); }
         if StrContains(id, "kurt") && StrContains(id, "hansen") { return KdspUniqueNPCEntries.KurtHansen(); }
-        if StrContains(id, "alex") && !StrContains(id, "pushkin") && !StrContains(id, "ander") && !StrContains(id, "alexis") && !StrContains(id, "alexa") && (StrContains(id, "barghest") || StrContains(id, "dogtown") || StrContains(id, "stadium")) { return KdspUniqueNPCEntries.Alex(); }
+        if Equals(id, "character.alex") || StrContains(id, "xenakis") || StrContains(id, "alena") { return KdspUniqueNPCEntries.AlenaXenakis(); }
+        // PL VENDORS - LONGSHORE STACKS
+        if StrContains(id, "cz_con_gunsmith") || (StrContains(id, "leon") && StrContains(id, "watson")) { return KdspUniqueNPCEntries.LeonWatson(); }
+        if StrContains(id, "cz_con_ripdoc") || StrContains(id, "lahovary") { return KdspUniqueNPCEntries.CostinLahovary(); }
+        if StrContains(id, "q302_homeless_scav_caliente") || (StrContains(id, "q302") && StrContains(id, "roland")) { return KdspUniqueNPCEntries.RonaldMalone(); }
+        if StrContains(id, "cz_con_medicstore") || (StrContains(id, "susanna") && StrContains(id, "mack")) { return KdspUniqueNPCEntries.SusannaMack(); }
+        // PL - ANIMALS / NO EASY WAY OUT
+        if StrContains(id, "mq306_angie") || StrContains(id, "angelica") || StrContains(id, "whelan") { return KdspUniqueNPCEntries.AngelicaWhelan(); }
+        if StrContains(id, "mq306_damir") || StrContains(id, "kovac") { return KdspUniqueNPCEntries.DamirKovac(); }
+        if StrContains(id, "mq306_aaron") || (StrContains(id, "aaron") && StrContains(id, "waines")) { return KdspUniqueNPCEntries.AaronWaines(); }
+        if StrContains(id, "mq306_boxer") || (StrContains(id, "william") && StrContains(id, "correy")) { return KdspUniqueNPCEntries.WilliamCorrey(); }
+        // PL - GIGS
+        if StrContains(id, "ep1_12_alan_noel") || (StrContains(id, "alan") && StrContains(id, "noel")) { return KdspUniqueNPCEntries.AlanNoel(); }
+        if StrContains(id, "ep1_12_courier") || (StrContains(id, "kyle") && StrContains(id, "araujo")) { return KdspUniqueNPCEntries.KyleAraujo(); }
+        // PL VENDORS - EBM PETROCHEM STADIUM
+        if StrContains(id, "cz_stadium_medic") || (StrContains(id, "saki") && StrContains(id, "seo")) { return KdspUniqueNPCEntries.SakiSeo(); }
+        if StrContains(id, "cz_stadium_ripperdoc") || (StrContains(id, "eron") && StrContains(id, "acedo")) { return KdspUniqueNPCEntries.EronAcedo(); }
+        if StrContains(id, "cz_stadium_black_market") || (StrContains(id, "herold") && StrContains(id, "lowe")) { return KdspUniqueNPCEntries.HeroldLowe(); }
+        if StrContains(id, "cz_stadium_netrunner") || (StrContains(id, "sammy") && StrContains(id, "taylor")) { return KdspUniqueNPCEntries.SammyTaylor(); }
+        if (StrContains(id, "stadium_junk") && StrContains(id, "marcin")) || (StrContains(id, "marcin") && StrContains(id, "iwinski")) { return KdspUniqueNPCEntries.MarcinIwinski(); }
+        if (StrContains(id, "stadium_junk") && StrContains(id, "michal")) || (StrContains(id, "michal") && StrContains(id, "kicinski")) { return KdspUniqueNPCEntries.MichalKicinski(); }
+        if StrContains(id, "cz_stadium_clothing") || (StrContains(id, "david") && StrContains(id, "walker")) { return KdspUniqueNPCEntries.DavidWalker(); }
+        if StrContains(id, "cz_stadium_gunsmith") || (StrContains(id, "sophia") && StrContains(id, "dupont")) { return KdspUniqueNPCEntries.SophiaDupont(); }
         // BODYGUARDS - Generic entries for named character bodyguards
         if StrContains(id, "hanako") && (StrContains(id, "guard") || StrContains(id, "bodyguard")) { return KdspUniqueNPCEntries.HanakoBodyguard(); }
         if StrContains(id, "arasaka") && (StrContains(id, "guard") || StrContains(id, "bodyguard")) { return KdspUniqueNPCEntries.ArasakaBodyguard(); }
@@ -717,12 +745,89 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func JeffersonPeralez() -> ref<KdspUniqueNPCBackstory> {
+        if KdspQuestProgressHelper.IsDreamOnDone() {
+            return KdspUniqueNPCBackstory.Create("peralez").SetClassification("POLITICIAN - COMPROMISED")
+                .SetBackground("Night City councilman. Frontrunner mayoral candidate. Anti-corruption platform. Previously retained V as private investigator. Public image remains spotless despite mounting anomalies in personal life.")
+                .SetEarlyLife("Law degree from Night City University. Entered politics young. Built reputation on transparency and anti-gang initiatives in Heywood. One of the few politicians not wholly owned by corporate interests.")
+                .SetSignificantEvents("City council election | Anti-corruption legislation | Mayor Rhyne investigation | Retained V for private case | Penthouse security breach | Anomalous behavioral shifts reported by close contacts")
+                .SetAffiliation("Night City Council | Mayoral Candidate")
+                .SetCriminalRecord("CLEAN | No charges | No warrants | Unusually clean for Night City politics")
+                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants - ACTIVITY FLAGGED")
+                .SetFinancialStatus("Upper bracket | Campaign funding: legitimate sources verified | Personal assets: Charter Hill penthouse")
+                .SetMedicalStatus("FLAGGED: Anomalous neural patterns detected | Implant activity inconsistent with registered hardware | Memory engram irregularities | Subject unaware of condition")
+                .SetThreatAssessment("LOW (15/100) | Non-combatant | Private security detail | THIRD-PARTY INTEREST FLAGGED")
+                .SetRelationships("Elizabeth Peralez (Wife) | Night City Council (Colleagues) | NCPD (Professional contacts)")
+                .SetNotes("Believes himself to be in full control of his own mind. He is not. Someone is rewriting Night City's next mayor from the inside.");
+        }
+        if KdspQuestProgressHelper.IsFoughtTheLawDone() {
+            return KdspUniqueNPCBackstory.Create("peralez").SetClassification("POLITICIAN - MAYORAL CANDIDATE")
+                .SetBackground("Night City councilman. Frontrunner mayoral candidate. Anti-corruption platform. Previously retained V as private investigator regarding Mayor Rhyne's death.")
+                .SetEarlyLife("Law degree from Night City University. Entered politics young. Built reputation on transparency and anti-gang initiatives in Heywood. One of the few politicians not wholly owned by corporate interests.")
+                .SetSignificantEvents("City council election | Anti-corruption legislation | Mayor Rhyne investigation | Retained V for private case")
+                .SetAffiliation("Night City Council | Mayoral Candidate")
+                .SetCriminalRecord("CLEAN | No charges | No warrants | Unusually clean for Night City politics")
+                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
+                .SetFinancialStatus("Upper bracket | Campaign funding: legitimate sources verified | Personal assets: Charter Hill penthouse")
+                .SetMedicalStatus("Good | Regular checkups | Stress: ELEVATED (campaign pressure)")
+                .SetThreatAssessment("LOW (15/100) | Non-combatant | Private security detail")
+                .SetRelationships("Elizabeth Peralez (Wife) | Night City Council (Colleagues) | NCPD (Professional contacts)")
+                .SetNotes("Rare genuine reformer. Campaign gaining momentum. Powerful interests are paying close attention.");
+        }
         return KdspUniqueNPCBackstory.Create("peralez").SetClassification("POLITICIAN")
-            .SetBackground("Night City councilman. Mayoral candidate. Anti-corruption platform. Genuinely idealistic.")
+            .SetBackground("Night City councilman. Mayoral candidate. Anti-corruption platform. Genuinely idealistic. Runs on promise to clean up Night City governance.")
+            .SetEarlyLife("Law degree from Night City University. Entered politics young. Built reputation on transparency and anti-gang initiatives in Heywood. One of the few politicians not wholly owned by corporate interests.")
+            .SetSignificantEvents("City council election | Anti-corruption legislation | Mayoral campaign announcement")
             .SetAffiliation("Night City Council | Mayoral Candidate")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | Security detail")
-            .SetRelationships("Elizabeth Peralez (Wife)")
+            .SetCriminalRecord("CLEAN | No charges | No warrants | Unusually clean for Night City politics")
+            .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
+            .SetFinancialStatus("Upper bracket | Campaign funding: legitimate sources verified | Personal assets: Charter Hill penthouse")
+            .SetMedicalStatus("Good | Regular checkups | No flags")
+            .SetThreatAssessment("LOW (15/100) | Non-combatant | Private security detail")
+            .SetRelationships("Elizabeth Peralez (Wife) | Night City Council (Colleagues)")
             .SetNotes("Rare genuine reformer. Powerful interests oppose him.");
+    }
+
+    public static func ElizabethPeralez() -> ref<KdspUniqueNPCBackstory> {
+        if KdspQuestProgressHelper.IsDreamOnDone() {
+            return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification("POLITICIAN - CAMPAIGN DIRECTOR | FLAGGED")
+                .SetBackground("Wife and campaign manager to Jefferson Peralez. Political strategist. Retained V to investigate security breach at Peralez penthouse. Increasingly aware that something is wrong with her husband.")
+                .SetEarlyLife("Corporate communications background. Worked in PR for several mid-tier Night City firms before pivoting to political consulting. Met Jefferson during his first council campaign. Became indispensable to his operation.")
+                .SetSignificantEvents("Managed husband's council campaign | Hired V for penthouse investigation | Reported anomalous items and behavioral shifts in home | Evidence of external tampering discovered")
+                .SetAffiliation("Peralez Campaign | Night City Political Elite")
+                .SetCriminalRecord("CLEAN | No charges | No warrants")
+                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants - ACTIVITY FLAGGED: patterns mirror husband's anomalies")
+                .SetFinancialStatus("Upper bracket | Joint assets with Jefferson Peralez | Charter Hill penthouse")
+                .SetMedicalStatus("FLAGGED: Neural pattern anomalies consistent with husband's readings | Possible external influence on cognition and memory | Subject may be partially aware of condition")
+                .SetThreatAssessment("LOW (10/100) | Non-combatant | Shares husband's security detail | THIRD-PARTY INTEREST FLAGGED")
+                .SetRelationships("Jefferson Peralez (Husband) | Campaign staff (Employer)")
+                .SetNotes("Knows something is deeply wrong. Carrying the weight of that knowledge alone. The ones responsible know she knows.");
+        }
+        if KdspQuestProgressHelper.IsFoughtTheLawDone() {
+            return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification("POLITICIAN - CAMPAIGN DIRECTOR")
+                .SetBackground("Wife and campaign manager to Jefferson Peralez. Political strategist. Sharp, calculating, fiercely protective of her husband's career and safety. Recently contacted outside help regarding concerns at home.")
+                .SetEarlyLife("Corporate communications background. Worked in PR for several mid-tier Night City firms before pivoting to political consulting. Met Jefferson during his first council campaign. Became indispensable to his operation.")
+                .SetSignificantEvents("Managed husband's council campaign | Oversaw Rhyne investigation media response | Reported unusual incidents at Peralez penthouse")
+                .SetAffiliation("Peralez Campaign | Night City Political Elite")
+                .SetCriminalRecord("CLEAN | No charges | No warrants")
+                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
+                .SetFinancialStatus("Upper bracket | Joint assets with Jefferson Peralez | Charter Hill penthouse")
+                .SetMedicalStatus("Good | Stress: ELEVATED | Sleep disturbances reported")
+                .SetThreatAssessment("LOW (10/100) | Non-combatant | Shares husband's security detail")
+                .SetRelationships("Jefferson Peralez (Husband) | Campaign staff (Employer)")
+                .SetNotes("The brains behind the campaign. Campaign gaining traction. Has been reporting unusual occurrences at home. Trusts her instincts over official explanations.");
+        }
+        return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification("POLITICIAN - CAMPAIGN DIRECTOR")
+            .SetBackground("Wife and campaign manager to Jefferson Peralez. Former corporate PR specialist turned political strategist. Runs day-to-day operations of the Peralez mayoral campaign. Known for being the sharper half of the partnership.")
+            .SetEarlyLife("Corporate communications background. Worked in PR for several mid-tier Night City firms before pivoting to political consulting. Met Jefferson during his first council campaign. Became indispensable to his operation.")
+            .SetSignificantEvents("Managed husband's council campaign | Key strategist behind anti-corruption messaging")
+            .SetAffiliation("Peralez Campaign | Night City Political Elite")
+            .SetCriminalRecord("CLEAN | No charges | No warrants")
+            .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
+            .SetFinancialStatus("Upper bracket | Joint assets with Jefferson Peralez | Charter Hill penthouse")
+            .SetMedicalStatus("Good | No flags")
+            .SetThreatAssessment("LOW (10/100) | Non-combatant | Shares husband's security detail")
+            .SetRelationships("Jefferson Peralez (Husband) | Campaign staff (Employer)")
+            .SetNotes("The real operator behind the campaign. Connected, resourceful, and not afraid to hire outside help when problems exceed her reach.");
     }
 
     public static func LuciusRhyne() -> ref<KdspUniqueNPCBackstory> {
@@ -1001,12 +1106,187 @@ public abstract class KdspUniqueNPCEntries {
             .SetThreatAssessment("EXTREME | Commander-in-Chief | Nuclear authority | FIA assets | Secret Service | Most dangerous person in NUSA");
     }
 
-    public static func Alex() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("alex").SetClassification("BARGHEST - INTELLIGENCE")
-            .SetBackground("Barghest intelligence operative. Hansen's information specialist. Runs Dogtown surveillance.")
-            .SetAffiliation("Barghest PMC | Intelligence Division")
-            .SetCriminalRecord("WANTED - NUSA | Espionage | Data theft")
-            .SetThreatAssessment("HIGH | Intelligence training | Barghest resources | Information network");
+    public static func AlenaXenakis() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("alena_xenakis").SetClassification("FIA - DEEP COVER OPERATIVE")
+            .SetBackground("Alena Xenakis, alias 'Alex.' Former aspiring braindance actress from the Los Angeles Metroplex slums. Recruited by Solomon Reed after the FIA discovered her talent at a front studio.")
+            .SetEarlyLife("Grew up in LA Metroplex slums. Joined a BD studio that turned out to be an FIA front. Acting skills drew agency attention.")
+            .SetSignificantEvents("Deployed to Dogtown as deep cover agent post-Unification War. Seven years undercover. Runs The Moth bar as cover identity.")
+            .SetAffiliation("FIA | NUSA Intelligence")
+            .SetCyberwareStatus("Shapeshifting implants (identity alteration) | Neural interface")
+            .SetThreatAssessment("HIGH (70/100) | Trained operative | FIA resources | Master of disguise")
+            .SetNotes("Gifted chameleon. Years undercover have sharpened a ruthless edge. Counting down to retirement.");
+    }
+
+    // === PHANTOM LIBERTY - LONGSHORE STACKS VENDORS ===
+
+    public static func LeonWatson() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("leon_watson").SetClassification("VENDOR - WEAPONS")
+            .SetBackground("Weapon vendor operating in the Longshore Stacks, Dogtown. Supplies firearms and ammunition to Dogtown residents.")
+            .SetAffiliation("Independent | Longshore Stacks market")
+            .SetThreatAssessment("LOW (20/100) | Armed merchant | Neutral party")
+            .SetNotes("One of Dogtown's few reliable arms dealers outside Hansen's black market.");
+    }
+
+    public static func CostinLahovary() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("costin_lahovary").SetClassification("RIPPERDOC - UNLICENSED")
+            .SetBackground("Former licensed Medtech from Night City. Had medical license revoked under unclear circumstances. Relocated to Dogtown in the 2070s.")
+            .SetSignificantEvents("License revocation. Fled to Dogtown. Established makeshift clinic in the Longshore Stacks.")
+            .SetAffiliation("Independent | Longshore Stacks")
+            .SetCyberwareStatus("Full ripperdoc surgical suite (unlicensed)")
+            .SetThreatAssessment("LOW (15/100) | Non-combatant | Medical knowledge")
+            .SetNotes("Lack of medical license is an open secret among Dogtown locals. Competent despite the circumstances.");
+    }
+
+    public static func RonaldMalone() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("ronald_malone").SetClassification("VENDOR - JUNK DEALER")
+            .SetBackground("Ronald P.T. Malone, aka 'The Dogtown Prodigy,' 'Pacifica Typhoon.' Dogtown resident and junk vendor. Former competitive sprinter who ran 100m in 6 seconds under booster effects.")
+            .SetEarlyLife("Rose to fame as a sprinter. Career stalled when new augmented athletes from Fiona Vargas's neuromotor program outpaced him.")
+            .SetSignificantEvents("Retired from athletics. Reinvented himself as Dogtown's most well-connected junk dealer and information broker.")
+            .SetAffiliation("Independent | Dogtown community")
+            .SetThreatAssessment("LOW (10/100) | Non-combatant | Extensive local knowledge")
+            .SetNotes("Knows Dogtown inside and out. Willing to share information — for a price. Wears NCU Signet Ring.");
+    }
+
+    public static func SusannaMack() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("susanna_mack").SetClassification("EX-TRAUMA TEAM MEDIC")
+            .SetBackground("Former Trauma Team medic laying low in Dogtown. A helmet malfunction during a mid-extraction exposed her face to hostile parties. Working as a meds vendor until the heat clears.")
+            .SetAffiliation("Former Trauma Team | Independent")
+            .SetCyberwareStatus("Gorilla Arms (single, right arm) | Dermal optic implants")
+            .SetMedicalStatus("Trained paramedic. Trauma Team field certification (suspended).")
+            .SetThreatAssessment("MODERATE (40/100) | Combat medic training | Gorilla Arms | Trauma Team experience")
+            .SetNotes("Still wears the Trauma Team logo. Not hiding well. Competent healer — dangerous if cornered.");
+    }
+
+    // === PHANTOM LIBERTY - NO EASY WAY OUT CHARACTERS ===
+
+    public static func AngelicaWhelan() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("angelica_whelan").SetClassification("ANIMALS - PACK ALPHA")
+            .SetBackground("Pack-leader of the Animals in Dogtown. Unlike most Animals, relies on cunning and business acumen rather than raw muscle. Controls underground fight-fixing operations.")
+            .SetAffiliation("Animals | Dogtown pack")
+            .SetCriminalRecord("Fight-fixing | Extortion | Illegal implant operations | Coercion of athletes")
+            .SetCyberwareStatus("Unknown combat implants | Control chip tech (remote incapacitation)")
+            .SetThreatAssessment("HIGH (65/100) | Gang backing | Cunning strategist | Armed and dangerous")
+            .SetNotes("Carries iconic 'Cheetah' pistol. Witty and calculating. Manipulates fighters via implanted control chips.");
+    }
+
+    public static func DamirKovac() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("damir_kovac").SetClassification("RIPPERDOC - ANIMALS AFFILIATE")
+            .SetBackground("Ripperdoc operating in Terra Cognita, Dogtown. Left Night City after clients accused him of deliberately sabotaging implant performance to ensure repeat business.")
+            .SetSignificantEvents("Accused of implant sabotage. Fled NC. Now works for Scavengers and takes jobs from Animals.")
+            .SetAffiliation("Scavengers | Animals (contract work)")
+            .SetCyberwareStatus("Full ripperdoc surgical suite | Experimental implant knowledge")
+            .SetThreatAssessment("LOW (20/100) | Non-combatant | Neurotic | Valuable skills")
+            .SetNotes("Competent but unethical. Has a habit of sticking his nose where it doesn't belong. Craves peace and quiet.");
+    }
+
+    public static func AaronWaines() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("aaron_waines").SetClassification("ATHLETE - BOXER")
+            .SetBackground("Talented young boxer born and bred in Dogtown. Former Animals associate. Father was a construction worker assigned to the Anatomicon building in Terra Cognita.")
+            .SetEarlyLife("Grew up in Dogtown. Joined the Animals who paid for his combat implants. Career plagued by suspicious losses.")
+            .SetAffiliation("Former Animals | Independent")
+            .SetCyberwareStatus("Combat implants (Animals-funded) | Neural failsafe device (inner ear)")
+            .SetThreatAssessment("MODERATE (45/100) | Trained boxer | Combat cyberware | Physically dangerous")
+            .SetNotes("Promising career undermined by shady circumstances. Seeking to break free and fight clean.");
+    }
+
+    public static func WilliamCorrey() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("william_correy").SetClassification("ATHLETE - BOXER")
+            .SetBackground("Professional boxer active in Dogtown's underground fight circuit. Opponent of Aaron Waines in a notable bout at Eden Plaza.")
+            .SetAffiliation("Independent | Dogtown fight circuit")
+            .SetThreatAssessment("MODERATE (40/100) | Trained fighter | Combat cyberware")
+            .SetNotes("Tough competitor. Part of Dogtown's thriving underground boxing scene.");
+    }
+
+    // === PHANTOM LIBERTY - GIGS ===
+
+    public static func AlanNoel() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("alan_noel").SetClassification("NETWATCH - UNDERCOVER AGENT")
+            .SetBackground("NetWatch agent (ID: 32387). Operating undercover within the Voodoo Boys of Dogtown. Blood type: O-. Investigating VDB practice of hacking implants of uncooperative targets.")
+            .SetAffiliation("NetWatch | Infiltrating Voodoo Boys")
+            .SetThreatAssessment("HIGH (60/100) | NetWatch training | Netrunner capabilities | Deep cover")
+            .SetNotes("Months deep in VDB territory. Hates the assignment. Working to dismantle VDB's implant-hacking network from within.");
+    }
+
+    public static func KyleAraujo() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("kyle_araujo").SetClassification("BARGHEST - COURIER")
+            .SetBackground("BARGHEST recruit assigned to courier duties. Moves goods and supplies across Dogtown for the organization.")
+            .SetAffiliation("BARGHEST")
+            .SetCriminalRecord("Suspected smuggling | Supply chain irregularities | Warehouse stock discrepancies")
+            .SetThreatAssessment("LOW (25/100) | BARGHEST soldier | Standard military gear")
+            .SetNotes("Unreliable. Frequently absent from post. Known for making excuses about 'urgent business' at the Luxor.");
+    }
+
+    // === PHANTOM LIBERTY - EBM PETROCHEM STADIUM VENDORS ===
+
+    public static func SakiSeo() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("saki_seo").SetClassification("VENDOR - MEDICAL SUPPLIES")
+            .SetBackground("Meds vendor operating at the EBM Petrochem Stadium black market in Dogtown. Supplies pharmaceuticals and medical consumables.")
+            .SetAffiliation("Independent | Stadium black market")
+            .SetThreatAssessment("LOW (10/100) | Non-combatant | Medical supplier")
+            .SetNotes("One of the few reliable sources of medical supplies in Dogtown's stadium market.");
+    }
+
+    public static func EronAcedo() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("eron_acedo").SetClassification("RIPPERDOC - BLACK MARKET")
+            .SetBackground("Ripperdoc operating from a bloodstained bathroom in the EBM Petrochem Stadium. Deflects all questions about his past with dry humor.")
+            .SetAffiliation("Independent | Stadium black market")
+            .SetCriminalRecord("RUMORED: Hiding from a cartel. Details unknown — he won't say.")
+            .SetCyberwareStatus("Full surgical suite (improvised facility)")
+            .SetThreatAssessment("LOW (15/100) | Non-combatant | Valuable black market services")
+            .SetNotes("Works out of a literal bathroom. Answers every personal question with a joke. Something serious drove him to Dogtown.");
+    }
+
+    public static func HeroldLowe() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("herold_lowe").SetClassification("VENDOR - BLACK MARKET ARMS")
+            .SetBackground("Black market weapon vendor at the EBM Petrochem Stadium. Specializes in rare and iconic weapons. Evasive about where his inventory comes from.")
+            .SetAffiliation("Independent | Stadium black market")
+            .SetCyberwareStatus("Extensive cyberware (origin unclear — offers different stories each time)")
+            .SetThreatAssessment("MODERATE (35/100) | Heavily chromed | Armed dealer | Connected")
+            .SetNotes("Stocks weapons that surface from all over Night City. Ask where they came from and you'll get a different story every time.");
+    }
+
+    public static func SammyTaylor() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("sammy_taylor").SetClassification("VENDOR - NETRUNNER SUPPLIES")
+            .SetBackground("Owner of the netrunner supply store at the EBM Petrochem Stadium in Dogtown. Sells quickhacks and netrunning equipment.")
+            .SetAffiliation("Independent | Stadium black market")
+            .SetThreatAssessment("LOW (15/100) | Netrunner knowledge | Non-combatant")
+            .SetNotes("Usually busy working in the back. Ring the bell if you need service.");
+    }
+
+    public static func MarcinIwinski() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("marcin_iwinski").SetClassification("VENDOR - JUNK DEALER")
+            .SetBackground("Junk vendor at the EBM Petrochem Stadium. Business partners with Michal Kicinski. Ambitious plans to expand beyond the stadium.")
+            .SetAffiliation("Independent | Stadium market")
+            .SetFinancialStatus("Modest. Plans to take out a loan. Dreams of building a company merging video games and braindance.")
+            .SetThreatAssessment("LOW (5/100) | Non-combatant | Entrepreneurial dreamer")
+            .SetNotes("Big dreams for a junk dealer. Talks endlessly about his business expansion plans.");
+    }
+
+    public static func MichalKicinski() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("michal_kicinski").SetClassification("VENDOR - JUNK DEALER")
+            .SetBackground("Junk vendor at the EBM Petrochem Stadium. Business partner of Marcin Iwinski. The quieter half of the operation.")
+            .SetAffiliation("Independent | Stadium market")
+            .SetThreatAssessment("LOW (5/100) | Non-combatant")
+            .SetNotes("Tends to bump his head on the ceiling of their van. Endures Marcin's grand plans with patience.");
+    }
+
+    public static func DavidWalker() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("david_walker").SetClassification("VENDOR - CLOTHING")
+            .SetBackground("Clothing vendor at the EBM Petrochem Stadium in Dogtown. Father of Tommie Walker, a young athlete with professional potential.")
+            .SetAffiliation("Independent | Stadium market")
+            .SetRelationships("Tommie Walker (Son)")
+            .SetThreatAssessment("LOW (10/100) | Non-combatant | Family man")
+            .SetNotes("Devoted father. Hopes his son Tommie can make it out of Dogtown through athletics.");
+    }
+
+    public static func SophiaDupont() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("sophia_dupont").SetClassification("VENDOR - WEAPONS EMPORIUM")
+            .SetBackground("Veteran weapon vendor at the EBM Petrochem Stadium. Runs a well-stocked emporium. Claims to have been in business before most of her customers were born.")
+            .SetAffiliation("Independent | Stadium market")
+            .SetRelationships("Chris, Darius, Matt (Sons — handle deliveries, retrieval, and security)")
+            .SetFinancialStatus("Well-established. Long-running business. Militech supply contacts.")
+            .SetThreatAssessment("MODERATE (30/100) | Armed household | Three sons providing security | Military-grade inventory")
+            .SetNotes("'Business clean as Saburo Arasaka's conscience.' Has a crate marked 'For Mr. Wick' in the back.");
     }
 
     // AFTERLIFE MERCS
@@ -1049,14 +1329,48 @@ public abstract class KdspUniqueNPCEntries {
 
     // FIXER ASSOCIATES
     public static func Barry() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("barry").SetClassification("NCPD - OFFICER")
-            .SetBackground("NCPD officer struggling with depression. Neighbor of V. Contemplating suicide after partner's death.")
-            .SetEarlyLife("Joined NCPD seeking to help community. Years of trauma accumulated.")
-            .SetSignificantEvents("2077: Partner Andrew killed. Mental health crisis. Requires intervention.")
-            .SetAffiliation("NCPD | Megabuilding H10 resident")
-            .SetCriminalRecord("CLEAN | Active duty officer")
-            .SetMedicalStatus("CRITICAL - Mental health crisis | Suicide risk")
-            .SetThreatAssessment("LOW | Armed officer | Currently non-threatening | Needs help");
+        return KdspUniqueNPCBackstory.Create("barry").SetClassification("NCPD - FORMER OFFICER")
+            .SetBackground("Former NCPD officer. Resigned from active duty citing personal reasons. Lives in Megabuilding H10, one floor below V's apartment. Currently on indefinite leave. Not responding to colleagues' attempts at contact.")
+            .SetEarlyLife("Joined NCPD out of genuine desire to help the community. Years on the force wore him down. Watched cases get buried, perps walk free, and colleagues stop caring. Struggled to find anyone on the force who understood.")
+            .SetSignificantEvents("Years of NCPD service | Grew disillusioned with corruption and bureaucracy | Recently lost his closest companion | Withdrew from social contact | Former colleagues have reported concern for his wellbeing")
+            .SetAffiliation("NCPD (Former) | Megabuilding H10 Resident")
+            .SetCriminalRecord("CLEAN | No charges | Former officer in good standing | Honorable separation")
+            .SetCyberwareStatus("Standard civilian suite | Personal link | Former NCPD-issue implants decommissioned")
+            .SetFinancialStatus("Lower bracket | Mortgage on H10 apartment (NCPD rate) | No active income | Savings depleting")
+            .SetMedicalStatus("FLAGGED: Mental health crisis indicators | No recent medical visits | Former colleagues have requested wellness check | Subject isolating")
+            .SetThreatAssessment("LOW (20/100) | Former officer combat training | Currently non-threatening | AT-RISK INDIVIDUAL")
+            .SetRelationships("Juan Mendez (Former colleague) | Nadia Petrova (Former colleague) | Andrew (Deceased - closest companion)")
+            .SetNotes("Good cop who couldn't survive the system. Lost the one friend who never judged him. His former colleagues are worried. Someone should check on him.");
+    }
+
+    public static func JuanMendez() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("juan_mendez").SetClassification("NCPD - SENIOR OFFICER")
+            .SetBackground("Senior NCPD officer. Cybercrimes Unit. Stationed in Kabuki. Loyal to the badge but carries his own scars from years on the force. Currently off-duty, checking on a former colleague who has gone silent.")
+            .SetEarlyLife("Academy graduate. Family has a history of NCPD service. Raised to believe in the system. Completed crisis negotiation training. Has seen enough of Night City to know the system is broken, but stays because someone has to.")
+            .SetSignificantEvents("14 years NCPD service | Cybercrimes Unit assignment | Multiple commendations | Worked a child murder case that still haunts him | Currently attempting welfare check on former colleague Barry Lewis")
+            .SetAffiliation("NCPD | Cybercrimes Unit | Kabuki District")
+            .SetCriminalRecord("CLEAN | No charges | No internal affairs flags | Exemplary service record")
+            .SetCyberwareStatus("Implants: 5 | NCPD-issue optics and neural link | Status: MODERATE-HIGH | Monitored")
+            .SetFinancialStatus("Middle bracket | Standard NCPD compensation | Stable")
+            .SetMedicalStatus("Good | Stress: ELEVATED | Prior incident-related trauma on file but cleared for duty")
+            .SetThreatAssessment("MODERATE (45/100) | NCPD combat training | Armed | Standard officer threat profile")
+            .SetRelationships("Nadia Petrova (Partner) | Barry Lewis (Former colleague - currently checking on) | NCPD Kabuki Precinct (Unit)")
+            .SetNotes("Struggles to express concern in ways that land. Means well but doesn't always know how to reach people who are hurting. Working on it.");
+    }
+
+    public static func NadiaPetrova() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("nadia_petrova").SetClassification("NCPD - OFFICER")
+            .SetBackground("NCPD officer. Street Enforcement division. Stationed in Rancho Coronado. Academy scholarship recipient. Night City native. Currently off-duty, conducting welfare check on former colleague Barry Lewis alongside partner Mendez.")
+            .SetEarlyLife("Night City native. Earned academy scholarship on merit. Transferred between precincts twice during career. Standard career progression. Known for being more perceptive than her partner when it comes to reading people.")
+            .SetSignificantEvents("20 years NCPD service | Street Enforcement assignment | Rancho Coronado district posting | Requested transfer to specialized unit (application pending) | Currently attempting welfare check on Barry Lewis")
+            .SetAffiliation("NCPD | Street Enforcement | Rancho Coronado District")
+            .SetCriminalRecord("CLEAN | No charges | No internal affairs flags | Solid service record")
+            .SetCyberwareStatus("Implants: 4 | NCPD-issue optics and neural link | Status: LOW-MODERATE | Stable")
+            .SetFinancialStatus("Middle bracket | Standard NCPD compensation | Stable")
+            .SetMedicalStatus("Good | No flags | Regular department physicals")
+            .SetThreatAssessment("MODERATE (45/100) | NCPD combat training | Armed | Standard officer threat profile")
+            .SetRelationships("Juan Mendez (Partner) | Barry Lewis (Former colleague - currently checking on) | NCPD Rancho Coronado Precinct (Unit)")
+            .SetNotes("The one who pushed to check on Barry in person after he stopped answering holos. More emotionally attuned than Mendez. Worries they waited too long.");
     }
 
     // MORE FIXERS/ASSOCIATES

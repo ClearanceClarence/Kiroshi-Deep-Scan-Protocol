@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.7.1-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.7.2-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 > *Every stranger has a story. Your Kiroshi can read them all.*
@@ -60,7 +60,7 @@ When scanning NPCs, Deep Scan Protocol queries:
 
 | Feature | Count | Description |
 |---------|-------|-------------|
-| **Unique NPC Entries** | 173 | Hand-crafted lore-accurate backstories for named characters |
+| **Unique NPC Entries** | 194 | Hand-crafted lore-accurate backstories for named characters |
 | **Life Events** | 699 | Procedural backstory building blocks with stat modifiers |
 | **Special Classifications** | 90 | Hidden status flags for rare NPCs |
 | **Name Combinations** | 260,000+ | Unique full names across all ethnicities |
@@ -87,7 +87,7 @@ Different NPC types receive contextually appropriate data:
 
 ## Unique NPC Database
 
-82 named characters have hand-written, lore-accurate backstories that completely override procedural generation. These entries feature custom classifications, detailed backgrounds, threat assessments, and dynamic quest states. An additional 91 NPCs from across Night City also have unique entries, bringing the total to 173.
+82 named characters have hand-written, lore-accurate backstories that completely override procedural generation. These entries feature custom classifications, detailed backgrounds, threat assessments, and dynamic quest states. An additional 112 NPCs from across Night City and Dogtown also have unique entries, bringing the total to 194.
 
 ### Arasaka Corporation
 
@@ -178,7 +178,7 @@ Different NPC types receive contextually appropriate data:
 
 | Character | Classification | Notes |
 |-----------|----------------|-------|
-| Judy Alvarez | MOX - TECHIE | BD editor. Evelyn's friend |
+| Judy Alvarez | TECHNICIAN - MOX | BD editor. Evelyn's friend |
 | Evelyn Parker | CIVILIAN - DOLL | Dynamic state based on quest |
 | Maiko Maeda | CLOUDS - MANAGEMENT | Ambitious. Corp connections |
 | Woodman | CLOUDS - SECURITY | Tyger Claws enforcer |
@@ -242,7 +242,45 @@ Different NPC types receive contextually appropriate data:
 | Songbird (So Mi) | FIA - NETRUNNER | Blackwall-damaged. Relic bearer |
 | Kurt Hansen | BARGHEST - LEADER | PMC warlord. Controls Dogtown |
 | Rosalind Myers | NUSA - PRESIDENT | NUSA head of state. Former Militech CEO. Unification War architect |
-| Alex | BARGHEST - INTELLIGENCE | Hansen's information specialist |
+| Alena "Alex" Xenakis | FIA - DEEP COVER OPERATIVE | Ex-BD actress. Shapeshifter. Runs The Moth bar as cover |
+
+### Phantom Liberty — Longshore Stacks
+
+| Character | Classification | Notes |
+|-----------|----------------|-------|
+| Leon Watson | VENDOR - WEAPONS | Dogtown arms dealer |
+| Costin Lahovary | RIPPERDOC - UNLICENSED | Former NC medtech. License revoked |
+| Ronald "Typhoon" Malone | VENDOR - JUNK | Ex-sprinter. Dogtown's info broker |
+| Susanna Mack | EX-TRAUMA TEAM MEDIC | Laying low after helmet malfunction exposed her identity |
+
+### Phantom Liberty — EBM Petrochem Stadium
+
+| Character | Classification | Notes |
+|-----------|----------------|-------|
+| Sophia Dupont | VENDOR - WEAPONS EMPORIUM | Veteran dealer. Three sons run security |
+| David Walker | VENDOR - CLOTHING | Father of Tommie Walker |
+| Herold Lowe | VENDOR - BLACK MARKET ARMS | Sells rare iconic weapons. Evasive about sources |
+| Sammy Taylor | VENDOR - NETRUNNER SUPPLIES | Stadium netrunner shop owner |
+| Saki Seo | VENDOR - MEDICAL SUPPLIES | Stadium meds vendor |
+| Eron Acedo | RIPPERDOC - BLACK MARKET | Works from a bloodstained bathroom. Hiding from a cartel |
+| Marcin Iwiński | VENDOR - JUNK | CD Projekt founder easter egg. Dreams of a games/BD company |
+| Michał Kiciński | VENDOR - JUNK | CD Projekt founder easter egg. Marcin's business partner |
+
+### Phantom Liberty — No Easy Way Out
+
+| Character | Classification | Notes |
+|-----------|----------------|-------|
+| Angelica Whelan | ANIMALS - PACK ALPHA | Cunning fight-fixer. Controls underground boxing |
+| Damir Kovac | RIPPERDOC - ANIMALS AFFILIATE | Accused of implant sabotage. Works for Scavs |
+| Aaron Waines | ATHLETE - BOXER | Dogtown boxer with implanted control chip |
+| William Correy | ATHLETE - BOXER | Aaron's opponent in Eden Plaza bout |
+
+### Phantom Liberty — Gigs
+
+| Character | Classification | Notes |
+|-----------|----------------|-------|
+| Alan Noël | NETWATCH - UNDERCOVER | Infiltrating Voodoo Boys in Dogtown |
+| Kyle Araujo | BARGHEST - COURIER | Unreliable supply runner |
 
 ### Other Notable Characters
 
@@ -1000,7 +1038,7 @@ A: Military combat NPCs (soldiers, ninjas, mechs, MaxTac, Trauma Team) display v
 
 **Q: Does this work with Phantom Liberty?**
 
-A: Yes. The mod includes unique hand-crafted entries for Solomon Reed, Songbird, Kurt Hansen, President Myers, and Alex. Dogtown NPCs generate procedural backstories normally.
+A: Yes. The mod includes unique hand-crafted entries for Solomon Reed, Songbird, Kurt Hansen, President Myers, Alex, and 15 additional Dogtown NPCs including all stadium and Longshore Stacks vendors, No Easy Way Out quest characters, and Treating Symptoms gig targets. Dogtown crowd NPCs generate procedural backstories normally.
 
 **Q: What does Narrative Coherence actually do?**
 
@@ -1071,6 +1109,6 @@ MIT License — See LICENSE file for full details.
 ---
 
 <p align="center">
-<b>KIROSHI DEEP SCAN PROTOCOL v1.7.1</b><br>
+<b>KIROSHI DEEP SCAN PROTOCOL v1.7.2</b><br>
 <i>Every secret. Revealed.</i>
 </p>

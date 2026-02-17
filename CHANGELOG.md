@@ -4,6 +4,25 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [1.7.2]
+
+### Phantom Liberty Expansion (+20 Unique NPCs)
+
+- Added Longshore Stacks vendors: Leon Watson (weapons), Costin Lahovary (ripperdoc), Ronald "Typhoon" Malone (junk), Susanna Mack (meds/ex-Trauma Team)
+- Added EBM Petrochem Stadium vendors: Sophia Dupont (weapons emporium), David Walker (clothing), Herold Lowe (black market arms), Sammy Taylor (netrunner supplies), Saki Seo (meds), Eron Acedo (ripperdoc)
+- Added Stadium easter egg NPCs: Marcin Iwiński and Michał Kiciński (junk vendors / CD Projekt founders cameo)
+- Added No Easy Way Out quest characters: Angelica Whelan (Animals pack alpha), Damir Kovac (ripperdoc), Aaron Waines (boxer), William Correy (opponent boxer)
+- Added Treating Symptoms gig characters: Alan Noël (undercover NetWatch agent), Kyle Araujo (BARGHEST courier)
+
+### Fixes
+
+- Fixed Judy Alvarez showing blank entry due to overly-strict detection pattern failing on simple TweakDBID "Character.Judy"
+- Fixed Alena "Alex" Xenakis entry — corrected from wrong "BARGHEST - INTELLIGENCE" to proper "FIA - DEEP COVER OPERATIVE" with full lore-accurate backstory
+- Rewrote all Phantom Liberty detection patterns to use actual TweakDBIDs from in-game testing instead of name-based matching
+- Most PL vendor TweakDBIDs use role-based IDs (e.g. "cz_stadium_gunsmith_01") rather than character names, requiring exact ID matching
+
+---
+
 ## [1.7.1]
 
 - Renamed all 104 classes, structs, and enums with `Kdsp` prefix to prevent naming conflicts with other mods

@@ -21,6 +21,11 @@ public abstract class KdspUniqueNPCManager {
             }
             return true;
         }
+        // Fallback: check by appearance name
+        let appearanceName = KdspUniqueNPCManager.GetAppearanceName(target);
+        if KdspUniqueNPCManager.HasEntry(appearanceName) {
+            return true;
+        }
         return false;
     }
 
@@ -93,6 +98,17 @@ public abstract class KdspUniqueNPCManager {
         }
         // Fallback: try by display name
         let displayName = KdspUniqueNPCManager.GetDisplayName(target);
-        return KdspUniqueNPCEntries.GetEntry(displayName);
+        entry = KdspUniqueNPCEntries.GetEntry(displayName);
+        if IsDefined(entry) {
+            return entry;
+        }
+        // Fallback: try by appearance name
+        let appearanceName = KdspUniqueNPCManager.GetAppearanceName(target);
+        return KdspUniqueNPCEntries.GetEntry(appearanceName);
+    }
+
+    // Get the NPC's current appearance name
+    public static func GetAppearanceName(target: wref<NPCPuppet>) -> String {
+        return NameToString(target.GetCurrentAppearanceName());
     }
 }
