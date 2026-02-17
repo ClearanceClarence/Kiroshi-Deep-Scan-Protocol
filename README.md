@@ -1,7 +1,7 @@
 # Kiroshi Deep Scan Protocol
 
 ![Cyberpunk 2077](https://img.shields.io/badge/Cyberpunk%202077-FFD700?style=flat-square)
-![Version](https://img.shields.io/badge/version-1.7.2-5ef6e1?style=flat-square)
+![Version](https://img.shields.io/badge/version-1.7.2.1-5ef6e1?style=flat-square)
 ![License](https://img.shields.io/badge/license-MIT-blue?style=flat-square)
 
 > *Every stranger has a story. Your Kiroshi can read them all.*
@@ -1109,6 +1109,6 @@ MIT License — See LICENSE file for full details.
 ---
 
 <p align="center">
-<b>KIROSHI DEEP SCAN PROTOCOL v1.7.2</b><br>
+<b>KIROSHI DEEP SCAN PROTOCOL v1.7.2.1</b><br>
 <i>Every secret. Revealed.</i>
 </p>

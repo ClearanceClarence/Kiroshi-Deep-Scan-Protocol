@@ -1099,7 +1099,7 @@ public abstract class KdspUniqueNPCEntries {
         return KdspUniqueNPCBackstory.Create("rosalind_myers").SetClassification("NUSA - PRESIDENT")
             .SetBackground("President of the New United States of America. Former Militech CEO. Architect of the Unification War. Ruthless pragmatist willing to sacrifice anything - and anyone - to rebuild America.")
             .SetEarlyLife("Rose through Militech ranks. CEO by 2060. Transitioned to politics. Won presidency on reunification platform. Ordered military operations that killed thousands.")
-            .SetSignificantEvents("Militech CEO tenure. Unification War architect. 2077: Space Force One shot down over Dogtown. Stranded in hostile territory. Extraction compromised by Songbird's betrayal.")
+            .SetSignificantEvents("Militech CEO tenure. Unification War architect. Multiple assassination attempts on record. FIA maintains ongoing protection details classified above TOP SECRET.")
             .SetAffiliation("NUSA Government | Executive Office | Former Militech")
             .SetCriminalRecord("IMMUNE - Head of State | War crimes allegations (unsubstantiated) | Civilian casualties (classified)")
             .SetNotes("Calculating | Manipulative | Believes ends justify means | Views people as assets | Will promise anything to survive | Do not trust")

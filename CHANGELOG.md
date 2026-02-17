@@ -4,6 +4,12 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [1.7.2.1]
+
+- Removed Phantom Liberty spoilers from President Myers entry
+
+---
+
 ## [1.7.2]
 
 ### Phantom Liberty Expansion (+20 Unique NPCs)
