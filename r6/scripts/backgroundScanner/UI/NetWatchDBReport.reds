@@ -64,7 +64,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         root.SetName(n"KdspNetWatchDBReport");
         root.SetHAlign(inkEHorizontalAlign.Left);
         root.SetVAlign(inkEVerticalAlign.Top);
-        root.SetMargin(new inkMargin(0.0, 15.0, 0.0, 0.0));
+        root.SetMargin(new inkMargin(0.0, KdspSettings.GetSectionMargin(15.0), 0.0, 0.0));
         root.SetFitToContent(true);
         this.SetRootWidget(root);
         this.m_root = root;
@@ -145,7 +145,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         let section: ref<inkVerticalPanel> = new inkVerticalPanel();
         section.SetName(name);
         section.SetFitToContent(true);
-        section.SetMargin(new inkMargin(0.0, 0.0, 0.0, 14.0));
+        section.SetMargin(new inkMargin(0.0, 0.0, 0.0, KdspSettings.GetSectionMargin(14.0)));
         section.SetVisible(false);
         section.Reparent(parent);
 
@@ -157,7 +157,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText(headerText);
         header.SetTintColor(color);
-        header.SetMargin(new inkMargin(0.0, 0.0, 0.0, 4.0));
+        header.SetMargin(new inkMargin(0.0, 0.0, 0.0, KdspSettings.GetHeaderValueGap(4.0)));
         header.SetFitToContent(true);
         header.Reparent(section);
 
@@ -180,7 +180,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         let section: ref<inkVerticalPanel> = new inkVerticalPanel();
         section.SetName(name);
         section.SetFitToContent(true);
-        section.SetMargin(new inkMargin(0.0, 0.0, 0.0, 12.0));
+        section.SetMargin(new inkMargin(0.0, 0.0, 0.0, KdspSettings.GetSectionMargin(12.0)));
         section.SetVisible(false);
         section.Reparent(parent);
 
@@ -193,7 +193,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText(headerText);
         header.SetTintColor(new HDRColor(0.72, 0.65, 0.55, 1.0));
-        header.SetMargin(new inkMargin(0.0, 0.0, 0.0, 3.0));
+        header.SetMargin(new inkMargin(0.0, 0.0, 0.0, KdspSettings.GetHeaderValueGap(3.0)));
         header.SetFitToContent(true);
         header.Reparent(section);
 
@@ -354,32 +354,36 @@ public class KdspNetWatchDBReport extends inkCustomController {
         let headerSize = KdspSettings.GetHeaderFontSize();
         let textSize = KdspSettings.GetTextFontSize();
         
-        // Update all header fonts
-        this.UpdateSectionFontSize(this.m_classificationSection, n"classification", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_specialSection, n"special", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_ncpdSection, n"ncpd", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_backgroundSection, n"background", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_earlyLifeSection, n"earlylife", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_recentSection, n"recent", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_threatSection, n"threat", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_criminalSection, n"criminal", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_gangSection, n"gang", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_cyberSection, n"cyber", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_financeSection, n"finance", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_medicalSection, n"medical", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_relationshipsSection, n"relationships", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_pronounsSection, n"pronouns", headerSize, textSize);
-        this.UpdateSectionFontSize(this.m_debugSection, n"debug", headerSize, textSize);
+        // Update all header fonts and section spacing
+        this.UpdateSectionFontSize(this.m_classificationSection, n"classification", headerSize, textSize, KdspSettings.GetSectionMargin(14.0), KdspSettings.GetHeaderValueGap(4.0));
+        this.UpdateSectionFontSize(this.m_specialSection, n"special", headerSize, textSize, KdspSettings.GetSectionMargin(14.0), KdspSettings.GetHeaderValueGap(4.0));
+        this.UpdateSectionFontSize(this.m_ncpdSection, n"ncpd", headerSize, textSize, KdspSettings.GetSectionMargin(14.0), KdspSettings.GetHeaderValueGap(4.0));
+        this.UpdateSectionFontSize(this.m_backgroundSection, n"background", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_earlyLifeSection, n"earlylife", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_recentSection, n"recent", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_threatSection, n"threat", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_criminalSection, n"criminal", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_gangSection, n"gang", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_cyberSection, n"cyber", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_financeSection, n"finance", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_medicalSection, n"medical", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_relationshipsSection, n"relationships", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_pronounsSection, n"pronouns", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_debugSection, n"debug", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
     }
 
-    private func UpdateSectionFontSize(section: wref<inkCompoundWidget>, name: CName, headerSize: Int32, textSize: Int32) -> Void {
+    private func UpdateSectionFontSize(section: wref<inkCompoundWidget>, name: CName, headerSize: Int32, textSize: Int32, sectionMargin: Float, headerGap: Float) -> Void {
         if !IsDefined(section) { return; }
+        
+        // Update section spacing
+        section.SetMargin(new inkMargin(0.0, 0.0, 0.0, sectionMargin));
         
         let header = section.GetWidget(StringToName(NameToString(name) + "_header")) as inkText;
         let value = section.GetWidget(StringToName(NameToString(name) + "_value")) as inkText;
         
         if IsDefined(header) {
             header.SetFontSize(headerSize);
+            header.SetMargin(new inkMargin(0.0, 0.0, 0.0, headerGap));
         }
         if IsDefined(value) {
             value.SetFontSize(textSize);

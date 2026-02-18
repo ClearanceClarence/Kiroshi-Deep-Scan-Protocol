@@ -376,21 +376,21 @@ public class KdspMedicalHistoryManager {
         
         // Common types - weighted by real distribution
         // O+ (37%)
-        if i >= 0 && i <= 8 { return "O+"; }
+        if i >= 0 && i <= 8 { return "O RhD+"; }
         // A+ (36%)
-        if i >= 9 && i <= 16 { return "A+"; }
+        if i >= 9 && i <= 16 { return "A RhD+"; }
         // B+ (9%)
-        if i == 17 || i == 18 { return "B+"; }
+        if i == 17 || i == 18 { return "B RhD+"; }
         // AB+ (3%)
-        if i == 19 { return "AB+"; }
+        if i == 19 { return "AB RhD+"; }
         // O- (7%)
-        if i == 20 { return "O-"; }
+        if i == 20 { return "O RhD-"; }
         // A- (6%)
-        if i == 21 { return "A-"; }
+        if i == 21 { return "A RhD-"; }
         // B- (1%)
-        if i == 22 { return "B-"; }
+        if i == 22 { return "B RhD-"; }
         // AB- (1%)
-        if i == 23 { return "AB-"; }
+        if i == 23 { return "AB RhD-"; }
         // Night City additions
         return "SYNTHETIC";
     }

@@ -155,6 +155,32 @@ public abstract class KdspUniqueNPCEntries {
         // PL - GIGS
         if StrContains(id, "ep1_12_alan_noel") || (StrContains(id, "alan") && StrContains(id, "noel")) { return KdspUniqueNPCEntries.AlanNoel(); }
         if StrContains(id, "ep1_12_courier") || (StrContains(id, "kyle") && StrContains(id, "araujo")) { return KdspUniqueNPCEntries.KyleAraujo(); }
+        // PL - GIG: DOGTOWN SAINTS
+        if StrContains(id, "sts_ep1_01__nika") { return KdspUniqueNPCEntries.NikaYankovich(); }
+        if StrContains(id, "sts_ep1_01__priest") { return KdspUniqueNPCEntries.OdellBlanco(); }
+        if StrContains(id, "sts_ep1_01__anthony") { return KdspUniqueNPCEntries.AnthonyAndersonRipper(); }
+        // PL - GIG: PROTOTYPE IN THE SCRAPER
+        if StrContains(id, "_mq306__damir") { return KdspUniqueNPCEntries.HasanDemir(); }
+        // PL - GIG: WAITING FOR DODGER
+        if StrContains(id, "sts_ep1_10__bill") { return KdspUniqueNPCEntries.BillMitchel(); }
+        if StrContains(id, "sts_ep1_10__charles") { return KdspUniqueNPCEntries.CharlesWilson(); }
+        if StrContains(id, "sts_ep1_10__dodger") { return KdspUniqueNPCEntries.CarlRobinson(); }
+        // PL - GIG: THE MAN WHO KILLED JASON FOREMAN
+        if StrContains(id, "sts_ep1_03__hanna") { return KdspUniqueNPCEntries.BrianaDolson(); }
+        // PL - GIG: SPY IN THE JUNGLE
+        if StrContains(id, "sts_ep1_08__steven") { return KdspUniqueNPCEntries.StevenSantos(); }
+        if StrContains(id, "sts_ep1_08__janet") { return KdspUniqueNPCEntries.AnaFriedman(); }
+        if StrContains(id, "sts_ep1_08__fiodor") { return KdspUniqueNPCEntries.BorisRibakov(); }
+        if StrContains(id, "sts_ep1_08__katya") { return KdspUniqueNPCEntries.KatyaKarelina(); }
+        // PL - GIG: TALENT ACADEMY
+        if StrContains(id, "sts_ep1_13__netrunner") { return KdspUniqueNPCEntries.Baird(); }
+        if StrContains(id, "sts_ep1_13__tom") { return KdspUniqueNPCEntries.TommieWalker(); }
+        if StrContains(id, "sts_ep1_13__fiona") { return KdspUniqueNPCEntries.FionaVargas(); }
+        // PL - GIG: HEAVIEST OF HEARTS
+        if StrContains(id, "sts_ep1_06__client") { return KdspUniqueNPCEntries.MichaelMaldonado(); }
+        if StrContains(id, "sts_ep1_06__georgina") { return KdspUniqueNPCEntries.GeorginaZembinsky(); }
+        // PL - GIG: ROADS TO REDEMPTION
+        if StrContains(id, "sts_ep1_07__nele") { return KdspUniqueNPCEntries.NeleSpringer(); }
         // PL VENDORS - EBM PETROCHEM STADIUM
         if StrContains(id, "cz_stadium_medic") || (StrContains(id, "saki") && StrContains(id, "seo")) { return KdspUniqueNPCEntries.SakiSeo(); }
         if StrContains(id, "cz_stadium_ripperdoc") || (StrContains(id, "eron") && StrContains(id, "acedo")) { return KdspUniqueNPCEntries.EronAcedo(); }
@@ -1974,63 +2000,17 @@ public abstract class KdspUniqueNPCEntries {
             .SetThreatAssessment("MODERATE | Armed | Potentially Scavenger tactics | Ruthless if cornered");
     }
 
-    public static func StevenSantos() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("steven_santos").SetClassification("CRIMINAL")
-            .SetBackground("Criminal operator in Night City with focus on Heywood area. Possible gang connections but keeps affiliation ambiguous for flexibility.")
-            .SetCriminalRecord("MULTIPLE OFFENSES | Theft | Smuggling | Assault")
-            .SetThreatAssessment("MODERATE | Armed | Operates in gang territory");
-    }
-
-    public static func AnaFriedman() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ana_friedman").SetClassification("CIVILIAN")
-            .SetBackground("Night City resident. Limited public information available. German-Jewish heritage.")
-            .SetCriminalRecord("CLEAN | No criminal history")
-            .SetThreatAssessment("LOW | Civilian | Non-combatant");
-    }
-
-    public static func BorisRibakov() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("boris_ribakov").SetClassification("SCAVENGER")
-            .SetBackground("Russian criminal with confirmed Scavenger gang affiliation. Involved in involuntary cyberware extraction operations. Possible connections to Bratva (Russian mafia) networks operating in Night City.")
-            .SetAffiliation("Scavengers")
-            .SetCriminalRecord("ORGAN TRAFFICKING | Cyberware theft | Kidnapping | Assault | Russian criminal network ties")
-            .SetNotes("Ruthless | Views people as product | No moral boundaries | Violence is business tool")
-            .SetThreatAssessment("HIGH | Scavenger tactics | Well-armed | Will not surrender | Backup likely nearby");
-    }
-
-    public static func KatyaKarelina() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("katya_karelina").SetClassification("SCAVENGER")
-            .SetBackground("Russian female operating with Scavenger crews in Night City. Handles logistics and victim selection for cyberware extraction operations.")
-            .SetAffiliation("Scavengers")
-            .SetCriminalRecord("TRAFFICKING | Kidnapping | Accessory to murder | Scavenger operations")
-            .SetThreatAssessment("MODERATE | Armed | Scavenger backup likely | Dangerous in group");
-    }
-
-    public static func FionaVargas() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("fiona_vargas").SetClassification("CRIMINAL")
-            .SetBackground("Criminal operator in Night City, primarily active in areas bordering Valentino territory. May have loose gang affiliations.")
-            .SetCriminalRecord("CRIMINAL ACTIVITY | Theft | Possible gang connections")
-            .SetThreatAssessment("MODERATE | Potentially armed | Operates in dangerous territory");
-    }
-
     public static func LeonRinder() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("leon_rinder").SetClassification("CRIMINAL")
-            .SetBackground("Criminal operator in Night City. German heritage. Involved in various illegal enterprises.")
-            .SetCriminalRecord("MULTIPLE OFFENSES | Criminal activity")
-            .SetThreatAssessment("MODERATE | Armed suspect");
-    }
-
-    public static func BrianaDolson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("briana_dolson").SetClassification("CIVILIAN")
-            .SetBackground("Night City resident. Limited public information available.")
-            .SetCriminalRecord("CLEAN")
-            .SetThreatAssessment("LOW | Civilian | Non-combatant");
-    }
-
-    public static func MichaelMaldonado() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("michael_maldonado").SetClassification("CRIMINAL - HEYWOOD")
-            .SetBackground("Criminal operator active in Heywood district. Possible Valentino connections given operational area, though not confirmed as full member.")
-            .SetCriminalRecord("CRIMINAL ACTIVITY | Theft | Assault | Gang territory operations")
-            .SetThreatAssessment("MODERATE | Armed | Operates in Valentino territory | May have backup");
+        return KdspUniqueNPCBackstory.Create("leon_rinder").SetClassification("BARGHEST - FORMER TRIGGERMAN")
+            .SetBackground("Leon Rinder. One of Kurt Hansen's former triggermen. Discharged from BARGHEST under unclear circumstances. Responsible for the massacre of eight civilians in the Longshore Stacks, including a young man named Jason Foreman. Currently hiding in an abandoned motel in Pacifica, guarded by a single elite bodyguard.")
+            .SetEarlyLife("Military background funneled into BARGHEST private military service. Rose through Hansen's ranks as a reliable enforcer. Something broke — the massacre in the Stacks was not an ordered hit. The question is what caused him to snap.")
+            .SetAffiliation("BARGHEST (Former — discharged)")
+            .SetCriminalRecord("MASS MURDER | Eight civilian deaths in Longshore Stacks | Former BARGHEST enforcement operations | Possible cyberpsychosis-related violence")
+            .SetMedicalStatus("CRITICAL — CYBERPSYCHOSIS INDICATORS | Memory gaps surrounding massacre | Cannot recall killing anyone | Classic dissociative symptoms consistent with advanced cyberware rejection")
+            .SetCyberwareStatus("HEAVY MILITARY-GRADE | Extensive combat augmentation from BARGHEST service | Possible contributing factor to psychological deterioration")
+            .SetRelationships("Kurt Hansen (Former commander — discharged him) | Yasha Ivanov (Bodyguard — loyal) | Briana Dolson (Community representative — wants him dead) | Longshore Stacks community (Victims' families — seeking justice)")
+            .SetNotes("May not fully understand what he did | Offers his dog tags and stash location in exchange for his life | Stash contains Dezerter iconic shotgun | Can be referred to Regina Jones for cyberpsychosis treatment if identified")
+            .SetThreatAssessment("HIGH | Former military elite | Heavy cyberware | Bodyguard Yasha Ivanov must be defeated first | Unstable — cyberpsychosis makes behavior unpredictable");
     }
 
     public static func JasmineDixon() -> ref<KdspUniqueNPCBackstory> {
@@ -2278,5 +2258,226 @@ public abstract class KdspUniqueNPCEntries {
             .SetRelationships("Bradley Costigan (Husband - imprisoned)")
             .SetNotes("Innocent civilian | Traumatized by circumstances | Resilient | Has family support network")
             .SetThreatAssessment("NONE | Non-combatant | No combat training | Vulnerable");
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // PHANTOM LIBERTY - GIG NPCs
+    // ═══════════════════════════════════════════════════════════
+
+    // --- DOGTOWN SAINTS ---
+
+    public static func NikaYankovich() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("nika_yankovich").SetClassification("SCAVENGER - DOGTOWN CELL")
+            .SetBackground("Nika Yankovich. Twin sister of Gaspar Yankovich. Scavenger operating in Dogtown. Unusual among her crew — held in high regard because she actually cares about something beyond chrome and eddies. Family.")
+            .SetEarlyLife("Raised alongside twin brother Gaspar. Despite being born minutes apart, always assumed the role of protective older sister. When Gaspar developed an addiction to immunosuppressants, Nika blamed herself. Before she could force him into rehab, he vanished in Dogtown.")
+            .SetAffiliation("Scavengers - Dogtown")
+            .SetCriminalRecord("SCAVENGER OPERATIONS | Organ/implant harvesting | Breaking and entering | Armed intimidation | Hostage situation at Haven Clinic, Montaña de Oro Ave")
+            .SetRelationships("Gaspar Yankovich (Twin brother - missing) | Tim Brent (Associate - dealer, owes Gaspar eddies) | Scavenger crew (Loyal)")
+            .SetNotes("Fiercely protective of family | Emotional | Dangerous when desperate | Last known lead on Gaspar pointed to Haven Clinic")
+            .SetThreatAssessment("MODERATE-HIGH | Armed and volatile | Will escalate when cornered | Scav backup nearby");
+    }
+
+    public static func OdellBlanco() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("odell_blanco").SetClassification("CIVILIAN - CLERGY")
+            .SetBackground("Father Odell Blanco. Pastor operating out of Haven Clinic, an abandoned church on Montaña de Oro Ave in Dogtown. Partners with a local ripperdoc to provide medical care and used implants to those who can't afford Trauma Team — which in Dogtown means everyone.")
+            .SetEarlyLife("Called to service in one of Night City's most godless districts. Survives on donations and goodwill. Built Haven Clinic into a lifeline for Longshore Stacks residents who have nowhere else to turn.")
+            .SetCriminalRecord("CLEAN | No criminal record")
+            .SetRelationships("Anthony Anderson (Partner - ripperdoc at Haven Clinic) | Father Graeff (Correspondence - clergy contact) | Haven Clinic patients (Congregation)")
+            .SetNotes("Genuinely altruistic | Pragmatic faith | Refuses to abandon Dogtown | Will call in outside help when overwhelmed")
+            .SetThreatAssessment("NONE | Non-combatant | Unarmed | High community value");
+    }
+
+    public static func AnthonyAndersonRipper() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("anthony_anderson").SetClassification("RIPPERDOC - UNLICENSED")
+            .SetBackground("Dr. Anthony Anderson. Ripperdoc operating out of Haven Clinic, a converted church in Dogtown's Longshore Stacks. Known for providing used implants and medical care to residents who can't pay. One of Dogtown's few genuinely charitable figures — though even saints have secrets in this district.")
+            .SetEarlyLife("Medical background. Chose to set up practice in Dogtown rather than pursue corporate clients. Partnered with Father Odell Blanco to establish Haven Clinic as a community resource.")
+            .SetAffiliation("Haven Clinic - Longshore Stacks")
+            .SetCriminalRecord("UNLICENSED MEDICAL PRACTICE | Unregistered implant installation | Use of salvaged/secondhand cyberware | Possible medical ethics violations — details classified")
+            .SetRelationships("Odell Blanco (Partner - clergy) | Tara Anderson (Wife) | Haven Clinic patients (Dependents)")
+            .SetCyberwareStatus("Standard ripperdoc toolkit | Diagnostic optics | Surgical suite in clinic basement")
+            .SetNotes("Outwardly selfless | Morally complex | Barricades when threatened | Patients depend on his survival")
+            .SetThreatAssessment("LOW | Non-combatant | Medical professional | High community value — loss would devastate local healthcare");
+    }
+
+    // --- PROTOTYPE IN THE SCRAPER ---
+
+    public static func HasanDemir() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("hasan_demir").SetClassification("ZETATECH - TECHIE (AWOL)")
+            .SetBackground("Hasan Demir. Former Zetatech engineer specializing in prototype ocular systems. Clever and convincing, capable of bold moves — but consistently underestimates how his audacity drives him toward perilous situations. Currently AWOL from Zetatech with corporate property in his possession.")
+            .SetEarlyLife("Dedicated his career to Zetatech. Years of service left him feeling undercompensated for his contributions. Resentment built until he decided to take what he felt he was owed.")
+            .SetAffiliation("Zetatech (Former — deserted)")
+            .SetCriminalRecord("CORPORATE THEFT | Unauthorized removal of prototype hardware | Breach of Zetatech employment contract | Misappropriation of proprietary technology")
+            .SetCyberwareStatus("PROTOTYPE ZETATECH OCULAR IMPLANT — self-installed | Experimental tech of immense value | Industry analysts suggest potential to rival Kiroshi Optics product line")
+            .SetRelationships("Zetatech (Former employer — actively searching for him) | Mr. Hands (Fixer — contract involvement)")
+            .SetNotes("Intelligent but reckless | Talks his way out of corners | Self-installed experimental chrome — either brilliant or suicidal | Scavengers took interest in his prototype")
+            .SetThreatAssessment("LOW-MODERATE | Non-combatant | High-value target to multiple parties | Prototype makes him a walking payday");
+    }
+
+    // --- WAITING FOR DODGER ---
+
+    public static func BillMitchel() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("bill_mitchel").SetClassification("NCPD - OFFICER")
+            .SetBackground("Officer Bill Mitchel. NCPD. The epitome of mediocrity. Mediocre dreams, mediocre needs, and an overall mediocre life. His attempts to break out of this pattern are plain to see. Husband of Stella Ramos.")
+            .SetEarlyLife("Joined NCPD because a friend suggested it. Never learned how to say no. Career defined by going along with whatever path of least resistance presented itself.")
+            .SetAffiliation("NCPD")
+            .SetCriminalRecord("OFFICER FILE | Internal affairs: PENDING REVIEW | Possible connections to BARGHEST drug operations in Coastview — investigation ongoing")
+            .SetRelationships("Stella Ramos (Wife) | Charles Wilson (Partner - NCPD) | Carl 'Dodger' Robinson (BARGHEST — adversarial)")
+            .SetNotes("Risk-averse | People-pleaser | Terrible liar | Aspires to something more but lacks the spine | Dreams of opening a food stand")
+            .SetThreatAssessment("LOW | Standard NCPD sidearm | Unlikely to initiate combat | Will follow stronger personalities");
+    }
+
+    public static func CharlesWilson() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("charles_wilson").SetClassification("NCPD - OFFICER")
+            .SetBackground("Officer Charles Wilson. NCPD. Partner of Bill Mitchel. Currently assigned to Dogtown-adjacent operations. The more competent half of the Mitchel-Wilson unit, though that's a low bar.")
+            .SetEarlyLife("NCPD career officer. Paired with Bill Mitchel. More capable than his partner but dragged into the same compromising situations.")
+            .SetAffiliation("NCPD")
+            .SetCriminalRecord("OFFICER FILE | Internal affairs: PENDING REVIEW | Linked to same BARGHEST entanglement as partner Mitchel")
+            .SetRelationships("Bill Mitchel (Partner - NCPD) | Stella Ramos (Friend - Bill's wife) | Carl 'Dodger' Robinson (BARGHEST — adversarial)")
+            .SetNotes("More competent than Mitchel | Pragmatic | Better under pressure | Still managed to end up in the same mess")
+            .SetThreatAssessment("LOW | Standard NCPD equipment | Marginally more effective than partner");
+    }
+
+    public static func CarlRobinson() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("carl_robinson").SetClassification("BARGHEST - LIEUTENANT")
+            .SetBackground("Carl 'Dodger' Robinson. High-ranking BARGHEST operator. If you want to escape your past, you go to Night City. If the past catches up, you flee to the Badlands. If several pasts all want you dead — you hop to Dogtown and pray Hansen likes you. Dodger's prayers were answered.")
+            .SetEarlyLife("Multiple criminal histories across jurisdictions. Fled to Dogtown after burning bridges with NCPD, Tyger Claws, and nomad clans simultaneously. Hansen saw value in his skills and took him in.")
+            .SetAffiliation("BARGHEST")
+            .SetCriminalRecord("THREE LIFE SENTENCES (NCPD — outstanding) | Grave insult to prominent Tyger Claws boss | Robbery of nomad clan — several million eddies | Drug manufacturing and distribution in Coastview")
+            .SetRelationships("Kurt Hansen (Commander — patron) | BARGHEST soldiers (Subordinates) | NCPD, Tyger Claws, Nomads (Enemies — all actively hostile)")
+            .SetCyberwareStatus("Combat-grade BARGHEST implants | Reflexes tuned for close-quarters | Armed and chrome-heavy")
+            .SetNotes("Ruthless | Entertained by audacity | Runs drug ops from converted NCPD precinct | Three separate factions want him dead | Carries iconic Rosco revolver")
+            .SetThreatAssessment("HIGH | Armed combatant | BARGHEST backup on-site | Multiple bodyguards | Do not underestimate");
+    }
+
+    // --- THE MAN WHO KILLED JASON FOREMAN ---
+
+    public static func BrianaDolson() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("briana_dolson").SetClassification("CIVILIAN - COMMUNITY LEADER")
+            .SetBackground("Briana Dolson. Longshore Stacks' unofficial representative. Organizes community vigils and acts as the voice of residents who have no one else to speak for them. Currently seeking justice for eight civilians killed in a massacre by a former BARGHEST triggerman.")
+            .SetEarlyLife("Rose to prominence in Longshore Stacks through sheer force of will. When nobody else stepped up, Briana did. Became the person the community turns to when Dogtown's violence hits home.")
+            .SetCriminalRecord("CLEAN | No criminal record | Contracted mercenary services through Mr. Hands for community protection")
+            .SetRelationships("Longshore Stacks community (Dependents) | Mr. Hands (Fixer — hired merc on her behalf) | Jason Foreman (Victim — community member, murdered)")
+            .SetNotes("Strong-willed | Expects results | Protective of her community | Will not forgive easily | Meets only during evening vigils (22:00-06:00)")
+            .SetThreatAssessment("NONE | Non-combatant | Political influence within Longshore Stacks");
+    }
+
+    // --- SPY IN THE JUNGLE ---
+
+    public static func StevenSantos() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("steven_santos").SetClassification("BIA - RISK ASSESSMENT SPECIALIST")
+            .SetBackground("Steven Santos. Brazilian Intelligence Agency. Risk assessment specialist. A patriot willing to sacrifice much for his country — perhaps not his life, but at the very least his self-respect. Knows when a mission is in jeopardy, and when to look the other way and keep things under wraps.")
+            .SetEarlyLife("Rose through BIA ranks as a dependable, if morally flexible, operative. The kind of man who says 'if I don't do it, someone else will' and 'that's just how the system works.' When his conscience gets too murky, he makes an effort to clean it up. Just not too clean.")
+            .SetAffiliation("Brazilian Intelligence Agency")
+            .SetCriminalRecord("CLASSIFIED | BIA operative | Operating in Dogtown without official agency authorization")
+            .SetRelationships("Ana Friedman (Partner - BIA) | Mark Bana (Mentor/colleague - status unknown) | Mr. Hands (Fixer — contracted V)")
+            .SetNotes("Pragmatic to a fault | Prioritizes survival over justice | Will undercut his own partner to protect himself | Currently operating off-books in Dogtown")
+            .SetThreatAssessment("MODERATE | Intelligence training | Armed | Not a frontline combatant | Dangerous through information rather than firepower");
+    }
+
+    public static func AnaFriedman() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("ana_friedman").SetClassification("BIA - FIELD AGENT")
+            .SetBackground("Ana Friedman. Brazilian Intelligence Agency. Field operative partnered with Steven Santos. Currently in Dogtown investigating the reactivation of a colleague's biomonitor signal. Operating without official BIA authorization due to the political sensitivity of the situation.")
+            .SetEarlyLife("BIA career agent. Trained under Mark Bana. More idealistic than her partner Santos — believes in doing the right thing even when the system would prefer she didn't.")
+            .SetAffiliation("Brazilian Intelligence Agency")
+            .SetCriminalRecord("CLASSIFIED | BIA operative | Unauthorized field operation in sovereign Dogtown territory")
+            .SetRelationships("Steven Santos (Partner - BIA) | Mark Bana (Mentor - biomonitor signal reactivated) | Mr. Hands (Fixer — contracted V)")
+            .SetNotes("Idealistic | Driven by loyalty to fallen colleagues | Will push for truth regardless of cost | Tensions with partner over how far to go")
+            .SetThreatAssessment("MODERATE | Intelligence training | Armed | More willing to take risks than Santos");
+    }
+
+    public static func BorisRibakov() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("boris_ribakov").SetClassification("SOVOIL - ELITE OPERATIVE")
+            .SetBackground("Boris Ribakov. SovOil corporate black-ops. Elite soldier deployed to Night City on a termination contract. Operates with military precision, advanced stealth technology, and zero regard for collateral damage. Currently embedded in Organitopia, Terra Cognita.")
+            .SetEarlyLife("SovOil military pipeline. Trained as tier-one corporate operative. Specializes in high-value target elimination in hostile environments. Scavenger crews in the area answer to him by intimidation.")
+            .SetAffiliation("SovOil")
+            .SetCriminalRecord("CLASSIFIED — SOVOIL CORPORATE DENIABLE | Contract assassinations | Multiple unauthorized military operations on foreign soil")
+            .SetCyberwareStatus("MILITARY-GRADE | Optical camouflage | Sandevistan acceleration | Charge-jump locomotion | Militech Griffin drone deployment system | Holographic decoy projectors")
+            .SetRelationships("SovOil (Handler — corporate command) | Scavenger crews (Subordinates — intimidated into compliance)")
+            .SetNotes("Apex predator | Uses sniper rifle from elevated positions, switches to Smart SMG at close range | Deploys smoke grenades + flashbangs | Will retreat and re-engage | Carries iconic Pizdets SMG")
+            .SetThreatAssessment("EXTREME | Tier-one combatant | Stealth + heavy firepower | Drone support | Do NOT engage without preparation");
+    }
+
+    public static func KatyaKarelina() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("katya_karelina").SetClassification("SOVOIL - FORMER INTERROGATOR")
+            .SetBackground("Katya Karelina. Former SovOil interrogation specialist. Once part of the corporate machine, now marked for termination by her own employers. Hiding in Organitopia's abandoned museum complex in Terra Cognita. Desperate, resourceful, and willing to trade anything for survival.")
+            .SetEarlyLife("SovOil career operative specializing in information extraction. Participated in interrogations that 'never happened.' When the corporation decided to clean house, she found herself on the wrong side of the ledger.")
+            .SetAffiliation("SovOil (Former — terminated)")
+            .SetCriminalRecord("CLASSIFIED — SOVOIL DENIABLE | Enhanced interrogation | Involvement in deaths of foreign intelligence personnel | Identity fraud | Signal spoofing using stolen biomonitor")
+            .SetRelationships("SovOil (Former employer — actively hunting her) | Boris Ribakov (Assassin — sent to eliminate her) | Olya Sergeeva (Contact)")
+            .SetNotes("Master of deception | Will impersonate others to survive | Knows SovOil secrets worth killing for | Offers stash coordinates as bargaining chip")
+            .SetThreatAssessment("LOW-MODERATE | Not a frontline combatant | Dangerous through manipulation and information | Valuable intelligence asset");
+    }
+
+    // --- TALENT ACADEMY ---
+
+    public static func Baird() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("baird").SetClassification("NETRUNNER - FREELANCE")
+            .SetBackground("Baird. Freelance netrunner on retainer with Mr. Hands. Specializes in identity fabrication and digital cover stories. Provides operational support for high-profile infiltration gigs throughout Dogtown.")
+            .SetEarlyLife("Career netrunner. Built reputation as reliable support for fixer operations. Doesn't ask too many questions about the jobs — just makes sure the fake IDs hold up long enough.")
+            .SetAffiliation("Mr. Hands (Retainer)")
+            .SetCriminalRecord("NETRUNNING | Identity fraud | Digital forgery | Corporate systems intrusion")
+            .SetCyberwareStatus("Full netrunning suite | Optimized for rapid identity fabrication and systems spoofing")
+            .SetNotes("Professional | Methodical briefer | Doesn't elaborate beyond what's needed | Creates covers good enough to pass biometric scans")
+            .SetThreatAssessment("MODERATE via Net | Minimal physical threat | Support operative, not frontline");
+    }
+
+    public static func TommieWalker() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("tommie_walker").SetClassification("CIVILIAN - MINOR")
+            .SetBackground("Tommie Walker. Young athlete enrolled at the Center for Neuromotor Development in Dogtown. Son of David Walker, clothing vendor at EBM Petrochem Stadium. One of many Dogtown kids betting everything on a chance to get signed by an off-world sports team and escape the district.")
+            .SetEarlyLife("Grew up in Dogtown. Father runs a clothing stall at the stadium. Enrolled in Dr. Fiona Vargas' academy — the only shot most Dogtown kids have at leaving. The stakes couldn't be higher: get signed or come out with nothing but cyberware debt.")
+            .SetCriminalRecord("CLEAN | Minor | No criminal record")
+            .SetRelationships("David Walker (Father - stadium vendor) | Fiona Vargas (Academy director) | Fellow academy athletes (Peers)")
+            .SetNotes("Resourceful | Curious | Found places he shouldn't be | The system he's in chews up more kids than it launches")
+            .SetThreatAssessment("NONE | Minor | Non-combatant | Protected status");
+    }
+
+    public static func FionaVargas() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("fiona_vargas").SetClassification("CORPORATE - MEDICAL DIRECTOR")
+            .SetBackground("Dr. Fiona Vargas. Head of the Center for Neuromotor Development, Site 341. Extremely talented ripperdoc specializing in cybernetic implants for young athletes. Operates in Dogtown to avoid taxes, regulations, and oversight. Her office walls are covered in medals, trophies, and awards won by the athletes she helped mould.")
+            .SetEarlyLife("Became a respected ripper in the community quickly. Faced a choice — stay at the hospital and treat patients, or start cybermodifying athletes. Help people, or make money. The trophies on her wall tell you which she chose.")
+            .SetAffiliation("Center for Neuromotor Development - Site 341")
+            .SetCriminalRecord("TAX EVASION | Unregulated medical procedures on minors | Operating outside NUSA medical oversight | Scout contract fraud — under investigation by Mr. Hands' client")
+            .SetFinancialStatus("WEALTHY | International scout contracts | Sizeable transfer fees | All untaxed")
+            .SetRelationships("Academy athletes (Subjects) | International sports scouts (Clients) | Mr. Hands (Fixer — contract against her operations)")
+            .SetNotes("Talented and cynical in equal measure | Will negotiate when cornered | Exploits Dogtown kids' desperation for profit | Those who don't get signed are left with cyberware debt their families can't cover")
+            .SetThreatAssessment("LOW direct | HIGH indirect | Armed security staff on premises | Will send mercs after threats to her operation");
+    }
+
+    // --- HEAVIEST OF HEARTS ---
+
+    public static func MichaelMaldonado() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("michael_maldonado").SetClassification("CIVILIAN - BUSINESS OWNER")
+            .SetBackground("Michael Maldonado. Small business owner operating beneath The Needle in central Dogtown. A man blessed with two things that go together many a time — a son and trouble. Those who possess very little are the most afraid to lose whatever they love.")
+            .SetEarlyLife("Built a small business in Dogtown. Raised son Eric in the district. The kind of man who never leaves his shop — not because business is good, but because the world outside keeps getting worse.")
+            .SetAffiliation("Independent")
+            .SetCriminalRecord("WITNESS TESTIMONY | Testified against own son Eric Maldonado | Claims testimony was coerced | Details disputed by District Attorney's office")
+            .SetRelationships("Eric Maldonado (Son - Valentinos member, incarcerated) | Georgina Zembinsky (D.A. — adversarial) | Hank Davis (D.A.'s partner — adversarial) | Mr. Hands (Fixer — hired V)")
+            .SetNotes("Desperate father | Claims he was tortured into giving false testimony | Story doesn't fully add up | Willing to pay well for someone with very little")
+            .SetThreatAssessment("NONE | Non-combatant | Civilian | Financially motivated");
+    }
+
+    public static func GeorginaZembinsky() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("georgina_zembinsky").SetClassification("DISTRICT ATTORNEY - DOGTOWN")
+            .SetBackground("Georgina Zembinsky. District Attorney operating out of the Heavy Hearts club in Dogtown. Pursuing a high-profile case involving Valentinos gang activity. Works alongside partner Hank Davis. Frequents the VIP section of Heavy Hearts — one of the few places in Dogtown where the law still pretends to function.")
+            .SetEarlyLife("Legal career built in Dogtown's impossible jurisdiction. Learned that justice in this district requires methods the NUSA bar association wouldn't approve of. Has been chasing a serial murderer connected to the Valentinos for two years.")
+            .SetAffiliation("Dogtown District Attorney's Office")
+            .SetCriminalRecord("NONE ON RECORD | Accusations of coerced testimony — unproven | Allegations of enhanced interrogation techniques — denied | Uses Valentinos informants to build cases")
+            .SetRelationships("Hank Davis (Partner/bodyguard) | Michael Maldonado (Witness — adversarial) | Eric Maldonado (Defendant — Valentinos) | Hector Sacristán (Target — high-ranking Valentinos, alleged serial murderer) | Judge Nathaniel Edwards (Correspondence)")
+            .SetNotes("Ruthless prosecutor | Believes the ends justify the means | Has video testimony evidence on secure terminal | Willing to negotiate when outmatched | Hank Davis provides physical security")
+            .SetThreatAssessment("LOW direct | Hank Davis serves as armed protection | VIP section of Heavy Hearts has additional security | Political connections make her dangerous to cross");
+    }
+
+    // --- ROADS TO REDEMPTION ---
+
+    public static func NeleSpringer() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("nele_springer").SetClassification("CRIMSON HARVEST - DEFECTOR")
+            .SetBackground("Nele Springer. Former member of the Crimson Harvest terrorist organization since 2074. Recently indicated desire to leave the group and prevent further attacks. A brilliant chemist carrying the weight of blood she didn't intend to spill.")
+            .SetEarlyLife("Grew up on her family's corn farm in Indiana with four siblings. When the farm went bankrupt and her parents were forced to sell their land to Biotechnica, Springer moved to Night City. A compensation payout for children of relocated farmers funded her chemistry degree. The university proved to be a breeding ground for revolutionary recruiters — when Crimson Harvest offered, she didn't hesitate.")
+            .SetAffiliation("Crimson Harvest (Defecting)")
+            .SetCriminalRecord("TERRORISM | Crimson Harvest membership since 2074 | Involvement in anti-Biotechnica sabotage operations | Connected to civilian casualties — extent of direct involvement disputed | WANTED by Biotechnica corporate security")
+            .SetMedicalStatus("Psychological: Guilt-driven | Tormented by the belief her education was bought with her parents' suffering | Never stopped feeling like a stranger in Night City")
+            .SetRelationships("Crimson Harvest (Former cell — defecting) | Biotechnica (Primary target — also hunting her) | Mr. Hands (Fixer — contracted V to assist) | Four siblings (Family — Indiana)")
+            .SetNotes("Brilliant chemist | True believer turned disillusioned | Sabotaging Biotechnica felt like alleviating her family's pain — until reality caught up | Biotechnica agents actively pursuing her in Dogtown")
+            .SetThreatAssessment("MODERATE | Chemistry expertise makes her dangerous in theory | Not a direct combatant | Multiple hostile parties tracking her location");
     }
 }

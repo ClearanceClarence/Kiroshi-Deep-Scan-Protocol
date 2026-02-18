@@ -74,6 +74,9 @@ public class KdspFinancialProfileManager {
             profile.accountStatus = KdspFinancialProfileManager.GenerateAccountStatus(seed + 810, profile.creditScore);
         }
 
+        // Night City ID - always generated
+        profile.ncID = KdspFinancialProfileManager.GenerateNCID(seed + 900, archetype);
+
         return profile;
     }
 
@@ -166,7 +169,12 @@ public class KdspFinancialProfileManager {
     }
 
     // Employment status influenced by job history
+    // Poor archetypes always use their own employment tables - coherence cannot override
     private static func GenerateEmploymentStatusCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
+        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") || Equals(archetype, "LOWLIFE") {
+            return KdspFinancialProfileManager.GenerateEmploymentStatus(seed, archetype);
+        }
+
         if IsDefined(coherence) {
             if Equals(coherence.jobHistory, "none") { return "UNEMPLOYED"; }
             if Equals(coherence.jobHistory, "criminal") {
@@ -193,7 +201,13 @@ public class KdspFinancialProfileManager {
     }
 
     // Income level coherent with life theme
+    // Poor archetypes always use their own income tables - coherence themes cannot inflate them
     private static func GenerateIncomeLevelCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
+        // Poor archetypes: always use archetype-specific income, never coherence overrides
+        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") || Equals(archetype, "LOWLIFE") {
+            return KdspFinancialProfileManager.GenerateIncomeLevel(seed, archetype);
+        }
+
         if IsDefined(coherence) {
             if Equals(coherence.lifeTheme, "FALLING") {
                 let levels: array<String>;
@@ -1204,70 +1218,114 @@ public class KdspFinancialProfileManager {
         return false;
     }
 
+    // Trauma Team coverage uses canonical 2077 tiers: Silver, Gold, Platinum
+    // Clients can subscribe for as little as 24 hours
     private static func GenerateTraumaTeamCoverage(seed: Int32, archetype: String, wealth: Int32) -> String {
         if Equals(archetype, "CORPO_MANAGER") {
-            let i = RandRange(seed, 0, 4);
-            if i == 0 { return "PLATINUM (Full Coverage)"; }
-            if i == 1 { return "PLATINUM EXECUTIVE"; }
-            if i == 2 { return "PLATINUM FAMILY PLAN"; }
-            if i == 3 { return "DIAMOND (VIP)"; }
-            return "CORPORATE UNLIMITED";
+            let i = RandRange(seed, 0, 7);
+            if i == 0 { return "PLATINUM - Corporate Plan"; }
+            if i == 1 { return "PLATINUM - Annual"; }
+            if i == 2 { return "PLATINUM - Family Plan"; }
+            if i == 3 { return "GOLD - Corporate Plan"; }
+            if i == 4 { return "PLATINUM - Executive Benefit"; }
+            if i == 5 { return "GOLD - Annual"; }
+            if i == 6 { return "PLATINUM - Employer Provided"; }
+            return "GOLD - Employer Provided";
         }
         
         if Equals(archetype, "YUPPIE") {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "GOLD"; }
-            if i == 1 { return "GOLD PLUS"; }
-            if i == 2 { return "SILVER"; }
-            if i == 3 { return "SILVER PLUS"; }
-            if i == 4 { return "PLATINUM (Full Coverage)"; }
-            if i == 5 { return "GOLD FAMILY"; }
-            if i == 6 { return "PREMIUM INDIVIDUAL"; }
-            return "HIGH-DEDUCTIBLE GOLD";
+            if i == 0 { return "GOLD - Annual"; }
+            if i == 1 { return "GOLD - Monthly"; }
+            if i == 2 { return "PLATINUM - Annual"; }
+            if i == 3 { return "SILVER - Annual"; }
+            if i == 4 { return "GOLD - Family Plan"; }
+            if i == 5 { return "SILVER - Monthly"; }
+            if i == 6 { return "GOLD - Self-Employed"; }
+            return "PLATINUM - Monthly";
         }
         
         if Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "SILVER (Corporate Plan)"; }
-            if i == 1 { return "BRONZE (Corporate Plan)"; }
-            if i == 2 { return "CORPORATE BASIC"; }
-            if i == 3 { return "EMPLOYEE STANDARD"; }
-            if i == 4 { return "NONE (Opt-Out)"; }
-            if i == 5 { return "BRONZE PLUS"; }
-            if i == 6 { return "CORPORATE GROUP"; }
-            return "SUBSIDIZED BRONZE";
+            if i == 0 { return "SILVER - Corporate Plan"; }
+            if i == 1 { return "SILVER - Employer Provided"; }
+            if i == 2 { return "GOLD - Corporate Plan"; }
+            if i == 3 { return "SILVER - Monthly"; }
+            if i == 4 { return "NONE"; }
+            if i == 5 { return "SILVER - Annual"; }
+            if i == 6 { return "GOLD - Employer Provided"; }
+            return "SILVER - Subsidized";
         }
         
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
-            let i = RandRange(seed, 0, 2);
+            let i = RandRange(seed, 0, 3);
             if i == 0 { return "NONE"; }
             if i == 1 { return "EXPIRED"; }
-            return "LAPSED - Non-Payment";
+            if i == 2 { return "LAPSED - Non-Payment"; }
+            return "NONE - Never Subscribed";
         }
         
-        // Based on wealth for others
-        if wealth >= 50000 {
+        if Equals(archetype, "LOWLIFE") {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "SILVER"; }
-            if i == 1 { return "SILVER BASIC"; }
-            if i == 2 { return "BRONZE"; }
-            if i == 3 { return "BRONZE PLUS"; }
-            if i == 4 { return "HIGH-DEDUCTIBLE SILVER"; }
-            return "CATASTROPHIC ONLY";
+            if i == 0 { return "NONE"; }
+            if i == 1 { return "EXPIRED"; }
+            if i == 2 { return "LAPSED - Non-Payment"; }
+            if i == 3 { return "SILVER - 24-Hour Plan (Occasional)"; }
+            if i == 4 { return "NONE - Cannot Afford"; }
+            return "SILVER - Lapsed";
         }
         
-        // Low wealth (10 options)
-        let i = RandRange(seed, 0, 9);
-        if i == 0 { return "BRONZE"; }
-        if i == 1 { return "BRONZE BASIC"; }
-        if i == 2 { return "CATASTROPHIC ONLY"; }
-        if i == 3 { return "EMERGENCY ONLY"; }
-        if i == 4 { return "NONE"; }
-        if i == 5 { return "EXPIRED"; }
-        if i == 6 { return "LAPSED"; }
-        if i == 7 { return "PAYMENT PLAN"; }
-        if i == 8 { return "COMMUNITY SUBSIDY"; }
-        return "PENDING APPROVAL";
+        if Equals(archetype, "GANGER") {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "NONE"; }
+            if i == 1 { return "SILVER - Monthly"; }
+            if i == 2 { return "EXPIRED"; }
+            if i == 3 { return "SILVER - 24-Hour Plan (Occasional)"; }
+            if i == 4 { return "GOLD - Monthly"; }
+            return "NONE - Blacklisted";
+        }
+        
+        if Equals(archetype, "NOMAD") {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "NONE"; }
+            if i == 1 { return "NONE - Outside Service Area"; }
+            if i == 2 { return "SILVER - 24-Hour Plan (Occasional)"; }
+            if i == 3 { return "EXPIRED"; }
+            if i == 4 { return "NONE - Clan Medics Only"; }
+            return "SILVER - Monthly";
+        }
+        
+        // General population - based on wealth
+        if wealth >= 100000 {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "GOLD - Annual"; }
+            if i == 1 { return "GOLD - Monthly"; }
+            if i == 2 { return "SILVER - Annual"; }
+            if i == 3 { return "PLATINUM - Monthly"; }
+            if i == 4 { return "GOLD - Family Plan"; }
+            return "SILVER - Monthly";
+        }
+        
+        if wealth >= 25000 {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "SILVER - Monthly"; }
+            if i == 1 { return "SILVER - Annual"; }
+            if i == 2 { return "NONE"; }
+            if i == 3 { return "SILVER - 24-Hour Plan (Occasional)"; }
+            if i == 4 { return "GOLD - Monthly"; }
+            return "EXPIRED";
+        }
+        
+        // Low wealth
+        let i = RandRange(seed, 0, 7);
+        if i == 0 { return "NONE"; }
+        if i == 1 { return "EXPIRED"; }
+        if i == 2 { return "LAPSED - Non-Payment"; }
+        if i == 3 { return "SILVER - 24-Hour Plan (Occasional)"; }
+        if i == 4 { return "NONE - Cannot Afford"; }
+        if i == 5 { return "SILVER - Lapsed"; }
+        if i == 6 { return "NONE - Never Subscribed"; }
+        return "EXPIRED - Seeking Renewal";
     }
 
     private static func GenerateHealthInsurance(seed: Int32, archetype: String) -> String {
@@ -1457,6 +1515,40 @@ public class KdspFinancialProfileManager {
         if i == 8 { return "PENDING CLOSURE"; }
         return "TERMINATED";
     }
+
+    private static func GenerateNCID(seed: Int32, archetype: String) -> String {
+        // Homeless / Junkie - often lost, expired, or never had ID
+        if Equals(archetype, "HOMELESS") {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "UNREGISTERED"; }
+            if i == 1 { return "EXPIRED"; }
+            if i == 2 { return "REVOKED"; }
+            if i == 3 { return "LOST/MISSING"; }
+            // Some still have one
+            return "NC" + IntToString(RandRange(seed + 1, 100000, 999999));
+        }
+
+        if Equals(archetype, "JUNKIE") {
+            let i = RandRange(seed, 0, 6);
+            if i == 0 { return "SUSPENDED"; }
+            if i == 1 { return "EXPIRED"; }
+            // Most still have one
+            return "NC" + IntToString(RandRange(seed + 1, 100000, 999999));
+        }
+
+        // Nomads - different system or no NC registration
+        if Equals(archetype, "NOMAD") {
+            let i = RandRange(seed, 0, 5);
+            if i == 0 { return "NO NC REGISTRATION"; }
+            if i == 1 { return "CLAN ID ONLY"; }
+            if i == 2 { return "TEMPORARY PASS"; }
+            // Some registered in the city
+            return "NC" + IntToString(RandRange(seed + 1, 100000, 999999));
+        }
+
+        // Everyone else gets a standard NC ID
+        return "NC" + IntToString(RandRange(seed + 1, 100000, 999999));
+    }
 }
 
 public class KdspFinancialProfileData {
@@ -1482,4 +1574,5 @@ public class KdspFinancialProfileData {
     public let healthInsurance: String;
     public let bankAffiliation: String;
     public let accountStatus: String;
+    public let ncID: String;
 }

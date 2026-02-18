@@ -68,6 +68,9 @@ public class KdspBackstoryManager {
         
         // Check if this is a gang member (not Barghest - they have separate handling)
         let isGangMember: Bool = !Equals(gangAffiliation, "NONE") && !isBarghest;
+
+        // Night City ID - always shown
+        backstoryUI.ncID = financial.ncID;
         
         // NCPD officers get cop-specific backstory, not civilian backstory
         if isNCPD {
@@ -164,7 +167,7 @@ public class KdspBackstoryManager {
 
         // Financial Status Section - skip for gang members and NCPD, only on medium/high density
         if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
-            backstoryUI.financialStatus = "Credit Rating: " + financial.creditTier + " | Income: " + financial.incomeLevel;
+            backstoryUI.financialStatus = "ID: " + financial.ncID + " | Credit Rating: " + financial.creditTier + " | Income: " + financial.incomeLevel;
             if financial.hasDebt {
                 backstoryUI.financialStatus = backstoryUI.financialStatus + " | DEBT: " + financial.debtStatus;
             };
@@ -197,6 +200,16 @@ public class KdspBackstoryManager {
             } else {
                 backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | No significant conditions | Health: " + medical.healthRating;
             };
+            // Trauma Team coverage indicator
+            let ttCoverage = financial.traumaTeamCoverage;
+            let ttTier: String;
+            let dashPos = StrFindFirst(ttCoverage, " - ");
+            if dashPos >= 0 {
+                ttTier = StrLeft(ttCoverage, dashPos);
+            } else {
+                ttTier = ttCoverage;
+            };
+            backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | TT: " + ttTier;
         } else {
             backstoryUI.medicalStatus = "";
         };

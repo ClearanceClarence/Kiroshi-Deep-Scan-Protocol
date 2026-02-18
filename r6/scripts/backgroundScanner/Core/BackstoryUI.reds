@@ -11,6 +11,7 @@ public struct KdspBackstoryUI {
   public let cyberwareStatus: String;
   public let financialStatus: String;
   public let medicalStatus: String;
+  public let ncID: String;
   public let threatAssessment: String;
   public let gangAffiliation: String;
   public let rareFlag: String;

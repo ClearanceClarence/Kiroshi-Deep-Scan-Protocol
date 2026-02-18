@@ -200,7 +200,7 @@ public class KdspDatabaseSourceManager {
 
         // Medical priority
         let priorityText = "Coverage Tier: " + data.financialProfile.traumaTeamCoverage + "\n";
-        if Equals(data.financialProfile.traumaTeamCoverage, "NONE") {
+        if StrContains(data.financialProfile.traumaTeamCoverage, "NONE") || StrContains(data.financialProfile.traumaTeamCoverage, "EXPIRED") || StrContains(data.financialProfile.traumaTeamCoverage, "LAPSED") {
             priorityText += "Response Priority: NON-CLIENT\n";
             priorityText += "Payment Status: CASH ON DELIVERY";
         } else {
@@ -253,8 +253,7 @@ public class KdspDatabaseSourceManager {
     private static func GetResponsePriority(coverage: String) -> String {
         if StrContains(coverage, "PLATINUM") { return "IMMEDIATE (< 3 min)"; }
         if StrContains(coverage, "GOLD") { return "PRIORITY (< 5 min)"; }
-        if StrContains(coverage, "SILVER") { return "STANDARD (< 10 min)"; }
-        if StrContains(coverage, "BRONZE") { return "BASIC (< 15 min)"; }
+        if StrContains(coverage, "SILVER") { return "STANDARD (< 7 min)"; }
         return "NON-CLIENT";
     }
 

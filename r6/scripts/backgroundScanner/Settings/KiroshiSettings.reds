@@ -1,6 +1,14 @@
 // Kiroshi Deep Scan - Mod Settings Integration
 // Requires: Mod Settings Menu (https://www.nexusmods.com/cyberpunk2077/mods/4885)
 
+// Enum for Compact Mode dropdown
+enum KdspCompactMode {
+    Off = 0,
+    Tight = 1,
+    Tighter = 2,
+    Tightest = 3
+}
+
 // Enum for Special NPC Rarity dropdown
 enum KdspSpecialNPCRarity {
     Common = 0,
@@ -33,69 +41,79 @@ public class KdspDeepScanSystem extends ScriptableSystem {
 
 public class KdspDeepScanSettings {
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Display Options")
+    @runtimeProperty("ModSettings.category", "Display")
     @runtimeProperty("ModSettings.displayName", "Data Density")
-    @runtimeProperty("ModSettings.description", "Controls how much information is displayed per scan. High = Full detailed reports (default). Medium = Condensed data, fewer entries. Low = Minimal essential info only.")
+    @runtimeProperty("ModSettings.description", "Amount of information shown per scan. High shows full reports, Medium shows condensed data, Low shows essentials only.")
     @runtimeProperty("ModSettings.step", "1")
     @runtimeProperty("ModSettings.min", "1")
     @runtimeProperty("ModSettings.max", "3")
     public let dataDensity: Int32 = 3;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Display Options")
+    @runtimeProperty("ModSettings.category", "Display")
     @runtimeProperty("ModSettings.displayName", "Header Font Size")
-    @runtimeProperty("ModSettings.description", "Font size for section headers (Background, Criminal Record, etc). Default: 20")
+    @runtimeProperty("ModSettings.description", "Size of section headers like Background, Criminal Record, etc.")
     @runtimeProperty("ModSettings.step", "2")
     @runtimeProperty("ModSettings.min", "14")
     @runtimeProperty("ModSettings.max", "28")
     public let headerFontSize: Int32 = 20;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Display Options")
+    @runtimeProperty("ModSettings.category", "Display")
     @runtimeProperty("ModSettings.displayName", "Text Font Size")
-    @runtimeProperty("ModSettings.description", "Font size for data text content. Default: 26")
+    @runtimeProperty("ModSettings.description", "Size of the body text within each section.")
     @runtimeProperty("ModSettings.step", "2")
     @runtimeProperty("ModSettings.min", "18")
     @runtimeProperty("ModSettings.max", "34")
     public let textFontSize: Int32 = 26;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Generation Mode")
+    @runtimeProperty("ModSettings.category", "Display")
+    @runtimeProperty("ModSettings.displayName", "Compact Mode")
+    @runtimeProperty("ModSettings.description", "Reduces spacing between sections. Useful if other scanner mods add content and the panel gets too tall.")
+    @runtimeProperty("ModSettings.displayValues.Off", "Off")
+    @runtimeProperty("ModSettings.displayValues.Tight", "Tight")
+    @runtimeProperty("ModSettings.displayValues.Tighter", "Tighter")
+    @runtimeProperty("ModSettings.displayValues.Tightest", "Tightest")
+    public let compactMode: KdspCompactMode = KdspCompactMode.Off;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Generation")
     @runtimeProperty("ModSettings.displayName", "Narrative Coherence")
-    @runtimeProperty("ModSettings.description", "Links NPC data together into believable stories. Criminal records explain backstory events, jobs match wealth levels, medical history reflects lifestyle. Disabled = maximum variety, Enabled = tighter narratives.")
+    @runtimeProperty("ModSettings.description", "Links all NPC data into one consistent story. Jobs match wealth, criminal history matches psych profile, medical records reflect lifestyle. Off gives maximum variety.")
     public let enableCoherence: Bool = false;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Generation Mode")
+    @runtimeProperty("ModSettings.category", "Generation")
     @runtimeProperty("ModSettings.displayName", "Special NPC Rarity")
-    @runtimeProperty("ModSettings.description", "How often special flagged NPCs appear (sleeper agents, pre-cyberpsychos, witnesses, etc).")
+    @runtimeProperty("ModSettings.description", "How often NPCs have hidden status flags like sleeper agents, pre-cyberpsychos, or witnesses.")
     @runtimeProperty("ModSettings.displayValues.Common", "Common (1 in 250)")
     @runtimeProperty("ModSettings.displayValues.Rare", "Rare (1 in 750)")
     @runtimeProperty("ModSettings.displayValues.Mythic", "Mythic (1 in 2000)")
     public let specialNPCRarity: KdspSpecialNPCRarity = KdspSpecialNPCRarity.Rare;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Content Options")
-    @runtimeProperty("ModSettings.displayName", "Enable Diverse Relationships")
-    @runtimeProperty("ModSettings.description", "Includes same-sex relationships, polyamory, and varied romantic configurations in NPC backstories. Lore-friendly for Night City.")
+    @runtimeProperty("ModSettings.category", "Content")
+    @runtimeProperty("ModSettings.displayName", "Diverse Relationships")
+    @runtimeProperty("ModSettings.description", "Includes same-sex partnerships, polyamory, and varied relationship types in NPC backstories.")
     public let enableDiverseRelationships: Bool = false;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Content Options")
-    @runtimeProperty("ModSettings.displayName", "Enable Body Modification Records")
-    @runtimeProperty("ModSettings.description", "Includes gender-affirming cyberware in NPC medical records. Reflects the body modification culture of Night City.")
+    @runtimeProperty("ModSettings.category", "Content")
+    @runtimeProperty("ModSettings.displayName", "Body Modification Records")
+    @runtimeProperty("ModSettings.description", "Includes gender-affirming cyberware in NPC medical records.")
     public let enableBodyModRecords: Bool = false;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Content Options")
-    @runtimeProperty("ModSettings.displayName", "Display Pronouns")
-    @runtimeProperty("ModSettings.description", "Shows pronoun information in NPC scan data. Includes they/them and neopronouns for some NPCs.")
+    @runtimeProperty("ModSettings.category", "Content")
+    @runtimeProperty("ModSettings.displayName", "Pronouns")
+    @runtimeProperty("ModSettings.description", "Shows pronoun information in scan data.")
     public let enablePronounDisplay: Bool = false;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
     @runtimeProperty("ModSettings.category", "Developer")
     @runtimeProperty("ModSettings.displayName", "Debug Mode")
-    @runtimeProperty("ModSettings.description", "Shows raw NPC TweakDB ID and appearance name in scanner. Useful for reporting bugs or creating unique NPC entries.")
+    @runtimeProperty("ModSettings.description", "Shows the NPC's TweakDB ID and appearance name in the scanner. Useful for bug reports.")
     public let enableDebugMode: Bool = false;
 }
 
@@ -203,5 +221,35 @@ public abstract class KdspSettings {
             return system.GetSettings().enableDebugMode;
         }
         return false;
+    }
+
+    // Compact Mode helpers
+    public static func GetCompactLevel() -> Int32 {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            let mode = system.GetSettings().compactMode;
+            if Equals(mode, KdspCompactMode.Tight) { return 1; }
+            if Equals(mode, KdspCompactMode.Tighter) { return 2; }
+            if Equals(mode, KdspCompactMode.Tightest) { return 3; }
+        }
+        return 0; // Off
+    }
+
+    // Returns section bottom margin with compact offset
+    public static func GetSectionMargin(baseMargin: Float) -> Float {
+        let level = KdspSettings.GetCompactLevel();
+        if level == 1 { return MaxF(1.0, baseMargin - 7.0); }
+        if level == 2 { return MaxF(1.0, baseMargin - 10.0); }
+        if level == 3 { return 0.0; }
+        return baseMargin;
+    }
+
+    // Returns header-to-value gap with compact offset
+    public static func GetHeaderValueGap(baseGap: Float) -> Float {
+        let level = KdspSettings.GetCompactLevel();
+        if level == 1 { return MaxF(0.0, baseGap - 2.0); }
+        if level == 2 { return 0.0; }
+        if level == 3 { return 0.0; }
+        return baseGap;
     }
 }

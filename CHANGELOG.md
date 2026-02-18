@@ -4,6 +4,42 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [1.8.0]
+
+### Phantom Liberty Gig NPCs (+20 Unique Entries)
+
+- Added Dogtown Saints: Nika Yankovich (Scavenger, Gaspar's twin sister), Odell Blanco (Haven Clinic pastor), Anthony Anderson (ripperdoc held hostage)
+- Added Prototype in the Scraper: Hasan Demir (former Zetatech techie with prototype ocular implant)
+- Added Waiting for Dodger: Bill Mitchel, Charles Wilson, Carl Robinson
+- Added The Man Who Killed Jason Foreman: Briana Dolson
+- Added Spy in the Jungle: Steven Santos, Ana Friedman, Boris Ribakov, Katya Karelina
+- Added Talent Academy: Baird, Tommie Walker, Fiona Vargas, David Walker
+- Added Heaviest of Hearts: Michael Maldonado, Georgina Zembinsky
+- Added Roads to Redemption: Nele Springer
+- Total unique NPC entries: 204
+
+### New Systems
+
+- Added Night City ID numbers (NC######) to financial records — homeless NPCs show UNREGISTERED or REVOKED, nomads show CLAN ID ONLY or NO NC REGISTRATION
+- Added RhD blood type notation to medical records replacing basic blood types (e.g. A RhD+, O RhD−, AB RhD+)
+- Added Trauma Team coverage tier indicator to medical summary line (TT: PLATINUM / GOLD / SILVER / NONE)
+- Added Trauma Team as selectable database source with full coverage file: tier, response priority, payment status, cyberware compatibility, chronic conditions, emergency contact, response history — non-clients show CASH ON DELIVERY
+
+### Display
+
+- Added Compact Mode setting with four levels (Off / Tight / Tighter / Tightest) that progressively reduces spacing between scanner sections for compatibility with other scanner mods
+- Added Debug Mode under Developer settings showing raw TweakDB ID and appearance name in scanner output for bug reporting
+- Cleaned up all Mod Settings entries — renamed categories (Display Options → Display, Generation Mode → Generation, Content Options → Content), removed redundant "Enable" prefixes from toggle names, rewrote all descriptions for consistency
+
+### Fixes
+
+- Fixed financial profile generation for poor archetypes where homeless and junkie NPCs could generate corporate-level salaries — income and employment now properly override to match archetype
+- Fixed Trauma Team coverage tiers to use only canonical Cyberpunk 2077 tiers (Silver / Gold / Platinum) instead of invented names
+- Fixed Trauma Team database view display logic where selecting Trauma Team source on non-clients failed because detection only checked for exact "NONE" instead of handling EXPIRED and LAPSED variants
+- Fixed compilation errors caused by duplicate function definitions when adding new gig NPC entries
+
+---
+
 ## [1.7.2.1]
 
 - Removed Phantom Liberty spoilers from President Myers entry

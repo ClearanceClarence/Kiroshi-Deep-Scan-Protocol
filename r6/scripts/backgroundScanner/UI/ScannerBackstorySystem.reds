@@ -43,7 +43,7 @@ public class KdspScannerBackstorySystem extends inkCustomController {
         let headerContainer: ref<inkVerticalPanel> = new inkVerticalPanel();
         headerContainer.SetName(n"header_container");
         headerContainer.SetFitToContent(true);
-        headerContainer.SetMargin(new inkMargin(0.0, 0.0, 0.0, 12.0));
+        headerContainer.SetMargin(new inkMargin(0.0, 0.0, 0.0, KdspSettings.GetSectionMargin(12.0)));
         headerContainer.Reparent(root);
         
         // Main header text - styled like section headers but slightly larger
@@ -51,7 +51,7 @@ public class KdspScannerBackstorySystem extends inkCustomController {
         header.SetName(n"main_header");
         header.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         header.SetFontStyle(n"Semi-Bold");
-        header.SetFontSize(22);
+        header.SetFontSize(KdspSettings.GetHeaderFontSize() + 2);
         header.SetLetterCase(textLetterCase.UpperCase);
         header.SetText("Deep Scan Protocol");
         header.SetTintColor(new HDRColor(0.369, 0.965, 0.878, 0.9)); // Cyan, slightly transparent
@@ -103,19 +103,19 @@ public class KdspScannerBackstorySystem extends inkCustomController {
             if i == lineCount - 1 {
                 loadLine.SetFontStyle(n"Semi-Bold");
                 loadLine.SetTintColor(new HDRColor(0.5, 1.0, 0.5, 1.0));
-                loadLine.SetMargin(new inkMargin(0.0, 6.0, 0.0, 0.0));
+                loadLine.SetMargin(new inkMargin(0.0, KdspSettings.GetHeaderValueGap(6.0), 0.0, 0.0));
             }
             // Error/warning lines - yellow/orange
             else if StrContains(loadingLines[i], "ERROR") || StrContains(loadingLines[i], "WARNING") || StrContains(loadingLines[i], "ALERT") {
                 loadLine.SetFontStyle(n"Medium");
                 loadLine.SetTintColor(new HDRColor(1.0, 0.7, 0.2, 0.9));
-                if i > 0 { loadLine.SetMargin(new inkMargin(0.0, 3.0, 0.0, 0.0)); }
+                if i > 0 { loadLine.SetMargin(new inkMargin(0.0, KdspSettings.GetHeaderValueGap(3.0), 0.0, 0.0)); }
             }
             // Normal lines - cyan
             else {
                 loadLine.SetFontStyle(n"Medium");
                 loadLine.SetTintColor(new HDRColor(0.369, 0.965, 0.878, 0.8));
-                if i > 0 { loadLine.SetMargin(new inkMargin(0.0, 3.0, 0.0, 0.0)); }
+                if i > 0 { loadLine.SetMargin(new inkMargin(0.0, KdspSettings.GetHeaderValueGap(3.0), 0.0, 0.0)); }
             }
             
             loadLine.Reparent(loadingPanel);
@@ -134,7 +134,7 @@ public class KdspScannerBackstorySystem extends inkCustomController {
         let footer: ref<inkVerticalPanel> = new inkVerticalPanel();
         footer.SetName(n"footer");
         footer.SetFitToContent(true);
-        footer.SetMargin(new inkMargin(0.0, 15.0, 0.0, 0.0));
+        footer.SetMargin(new inkMargin(0.0, KdspSettings.GetSectionMargin(15.0), 0.0, 0.0));
         footer.SetHAlign(inkEHorizontalAlign.Left);
         footer.SetVisible(false);
         footer.Reparent(root);
@@ -222,14 +222,15 @@ public class KdspScannerBackstorySystem extends inkCustomController {
         let footerSize = headerSize - 6;
         if footerSize < 10 { footerSize = 10; }
         
-        // Update main header (now inside header_container)
+        // Update header container margin
         let headerContainer = this.m_root.GetWidget(n"header_container") as inkCompoundWidget;
         if IsDefined(headerContainer) {
+            headerContainer.SetMargin(new inkMargin(0.0, 0.0, 0.0, KdspSettings.GetSectionMargin(12.0)));
             let mainHeader = headerContainer.GetWidget(n"main_header") as inkText;
             if IsDefined(mainHeader) {
                 // Keep it at 24 or scale with header setting
                 let scaledSize = 24 + (headerSize - 20);
-                if scaledSize < 20 { scaledSize = 20; }
+                if scaledSize < 16 { scaledSize = 16; }
                 mainHeader.SetFontSize(scaledSize);
             }
         }
@@ -247,6 +248,7 @@ public class KdspScannerBackstorySystem extends inkCustomController {
         // Update footer
         let footer = this.m_fluffFooter as inkCompoundWidget;
         if IsDefined(footer) {
+            footer.SetMargin(new inkMargin(0.0, KdspSettings.GetSectionMargin(15.0), 0.0, 0.0));
             let footerText = footer.GetWidgetByIndex(0) as inkText;
             if IsDefined(footerText) {
                 footerText.SetFontSize(footerSize);
