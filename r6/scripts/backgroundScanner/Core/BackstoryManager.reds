@@ -2,8 +2,9 @@ public class KdspBackstoryManager {
 
     // SEED VERSION - Increment this to regenerate all NPC backstories on next load
     // Change this value when making major content updates
+    // v1.8.1: Incremented for cross-system coherence fixes
     public static func GetSeedVersion() -> Int32 {
-        return 3;
+        return 4;
     }
 
     public static func GenerateBackstoryUI(target: wref<NPCPuppet>) -> KdspBackstoryUI {
@@ -46,22 +47,133 @@ public class KdspBackstoryManager {
         let isBarghest: Bool = Equals(gangAffiliation, "BARGHEST") || StrContains(appearanceName, "barghest") || StrContains(appearanceName, "kurtz");
         let isNCPD: Bool = !isBarghest && (KdspNCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice());
 
-        // Check if coherence mode is enabled in settings
+        // Narrative Coherence is always active — ensures all data systems tell one consistent story
         let coherence: ref<KdspCoherenceProfile>;
-        if KdspSettings.CoherenceEnabled() {
-            // Generate coherence profile - this ensures all data is interconnected
-            coherence = KdspCoherenceManager.Generate(seed + 500, archetype, age, gangAffiliation);
-        } else {
-            // No coherence - each system generates independently (maximum variety)
-            coherence = null;
-        }
+        coherence = KdspCoherenceManager.Generate(seed + 500, archetype, age, gangAffiliation);
 
-        // Generate expanded data (coherence may be null for independent generation)
+        // Generate expanded data with coherence profile
         let criminal = KdspCriminalRecordManager.GenerateCoherent(seed + 1000, archetype, gangAffiliation, coherence);
         let cyberware = KdspCyberwareRegistryManager.GenerateCoherent(seed + 2000, archetype, wealth, coherence);
         let financial = KdspFinancialProfileManager.GenerateCoherent(seed + 3000, archetype, coherence);
         let medical = KdspMedicalHistoryManager.GenerateCoherent(seed + 4000, archetype, age, coherence);
         let psych = KdspPsychProfileManager.GenerateCoherent(seed + 5000, archetype, coherence);
+
+        // ══════════════════════════════════════════════════════════════
+        // v1.8.1 CROSS-SYSTEM COHERENCE: Rejected Implants → Medical
+        // If cyberware registry shows rejected implants, medical records
+        // must reflect the condition and health rating must downgrade.
+        // A synthetic organ being rejected is a serious medical event.
+        // ══════════════════════════════════════════════════════════════
+        if cyberware.hasRejectedImplants {
+            // Check if medical already has a rejection condition
+            let hasRejectionCondition = false;
+            let rci = 0;
+            while rci < ArraySize(medical.chronicConditions) {
+                if StrContains(medical.chronicConditions[rci], "ejection") || StrContains(medical.chronicConditions[rci], "rejection") {
+                    hasRejectionCondition = true;
+                }
+                rci += 1;
+            }
+            // Add rejection syndrome if not already present
+            if !hasRejectionCondition {
+                let rejRoll = RandRange(seed + 9300, 0, 4);
+                if rejRoll == 0 { ArrayPush(medical.chronicConditions, "Implant rejection syndrome - active immunosuppressant therapy"); }
+                else if rejRoll == 1 { ArrayPush(medical.chronicConditions, "Chronic implant rejection - tissue necrosis risk"); }
+                else if rejRoll == 2 { ArrayPush(medical.chronicConditions, "Synthetic organ rejection - requires daily immunosuppressants"); }
+                else if rejRoll == 3 { ArrayPush(medical.chronicConditions, "Cyberware rejection - inflammatory response ongoing"); }
+                else { ArrayPush(medical.chronicConditions, "Implant incompatibility - scheduled for removal"); }
+            }
+            // Downgrade health rating - rejected implants are serious
+            if Equals(medical.healthRating, "EXCELLENT") || Equals(medical.healthRating, "GOOD") {
+                medical.healthRating = "POOR";
+            } else if Equals(medical.healthRating, "FAIR") {
+                medical.healthRating = "POOR";
+            }
+            // POOR stays POOR, CRITICAL/TERMINAL stay as-is
+
+            // Rejected implants also elevate cyberpsychosis risk (immune stress, pain, inflammation)
+            cyberware.cyberpsychosisRisk += RandRange(seed + 9310, 15, 30);
+            if cyberware.cyberpsychosisRisk > 100 { cyberware.cyberpsychosisRisk = 100; }
+            // Refresh status string from updated risk
+            if cyberware.cyberpsychosisRisk >= 80 { cyberware.cyberpsychosisStatus = "CRITICAL - REJECTION COMPLICATIONS"; }
+            else if cyberware.cyberpsychosisRisk >= 60 { cyberware.cyberpsychosisStatus = "HIGH - REJECTION INDUCED INSTABILITY"; }
+            else if cyberware.cyberpsychosisRisk >= 40 { cyberware.cyberpsychosisStatus = "ELEVATED - IMPLANT REJECTION STRESS"; }
+            // Below 40 keeps original status (rejection bump wasn't enough to change tier)
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // v1.8.1 CROSS-SYSTEM COHERENCE: Sex Worker Appearance → Criminal + Medical
+        // NPCs with "sexworker" in appearance name should have fitting arrests.
+        // Poor sex workers additionally have multiple STIs on record.
+        // ══════════════════════════════════════════════════════════════
+        let isSexWorker = StrContains(appearanceName, "sexworker");
+        let isPoorSexWorker = StrContains(appearanceName, "sexworker_poor");
+
+        if isSexWorker {
+            // Ensure they have a criminal record
+            criminal.hasRecord = true;
+            if Equals(criminal.status, "CLEAN") || Equals(criminal.status, "") {
+                criminal.status = "MINOR OFFENSES";
+            }
+
+            // Clear existing arrests and replace with sex work related charges
+            ArrayClear(criminal.arrests);
+            let swYear1 = RandRange(seed + 9400, 2068, 2077);
+            let swYear2 = RandRange(seed + 9401, 2065, swYear1);
+
+            // First arrest
+            let swRoll1 = RandRange(seed + 9410, 0, 4);
+            if swRoll1 == 0 { ArrayPush(criminal.arrests, "Solicitation (" + IntToString(swYear1) + ")"); }
+            else if swRoll1 == 1 { ArrayPush(criminal.arrests, "Unlicensed sex work (" + IntToString(swYear1) + ")"); }
+            else if swRoll1 == 2 { ArrayPush(criminal.arrests, "Solicitation - vice sweep (" + IntToString(swYear1) + ")"); }
+            else if swRoll1 == 3 { ArrayPush(criminal.arrests, "Prostitution - unlicensed (" + IntToString(swYear1) + ")"); }
+            else { ArrayPush(criminal.arrests, "Solicitation - NCPD vice op (" + IntToString(swYear1) + ")"); }
+
+            // Second arrest
+            let swRoll2 = RandRange(seed + 9420, 0, 5);
+            if swRoll2 == 0 { ArrayPush(criminal.arrests, "Loitering to solicit (" + IntToString(swYear2) + ")"); }
+            else if swRoll2 == 1 { ArrayPush(criminal.arrests, "Public indecency (" + IntToString(swYear2) + ")"); }
+            else if swRoll2 == 2 { ArrayPush(criminal.arrests, "No joytoy license (" + IntToString(swYear2) + ")"); }
+            else if swRoll2 == 3 { ArrayPush(criminal.arrests, "Curfew violation - vice (" + IntToString(swYear2) + ")"); }
+            else if swRoll2 == 4 { ArrayPush(criminal.arrests, "Solicitation - repeat (" + IntToString(swYear2) + ")"); }
+            else { ArrayPush(criminal.arrests, "Vice code violation (" + IntToString(swYear2) + ")"); }
+
+            // NCPD classification fitting for sex work
+            let swClassRoll = RandRange(seed + 9440, 0, 3);
+            if swClassRoll == 0 { criminal.ncpdClassification = "VICE - REPEAT OFFENDER"; }
+            else if swClassRoll == 1 { criminal.ncpdClassification = "VICE - MONITORED"; }
+            else if swClassRoll == 2 { criminal.ncpdClassification = "LOW PRIORITY - VICE"; }
+            else { criminal.ncpdClassification = "VICE - KNOWN ASSOCIATE"; }
+        }
+
+        if isPoorSexWorker {
+            // Poor sex workers have STIs on medical record — always 2
+            let stiRoll1 = RandRange(seed + 9510, 0, 5);
+            if stiRoll1 == 0 { ArrayPush(medical.chronicConditions, "Gonorrhea - resistant strain"); }
+            else if stiRoll1 == 1 { ArrayPush(medical.chronicConditions, "Chlamydia - recurrent"); }
+            else if stiRoll1 == 2 { ArrayPush(medical.chronicConditions, "HPV - high risk strain"); }
+            else if stiRoll1 == 3 { ArrayPush(medical.chronicConditions, "Herpes simplex - chronic"); }
+            else if stiRoll1 == 4 { ArrayPush(medical.chronicConditions, "Syphilis - partially treated"); }
+            else { ArrayPush(medical.chronicConditions, "Gonorrhea - recurrent"); }
+
+            let stiRoll2 = RandRange(seed + 9520, 0, 5);
+            if stiRoll2 == 0 { ArrayPush(medical.chronicConditions, "HIV-7 positive - managed"); }
+            else if stiRoll2 == 1 { ArrayPush(medical.chronicConditions, "Hepatitis C - chronic"); }
+            else if stiRoll2 == 2 { ArrayPush(medical.chronicConditions, "Trichomoniasis - persistent"); }
+            else if stiRoll2 == 3 { ArrayPush(medical.chronicConditions, "Syphilis - latent stage"); }
+            else if stiRoll2 == 4 { ArrayPush(medical.chronicConditions, "Hepatitis B - carrier"); }
+            else { ArrayPush(medical.chronicConditions, "HPV - lesions present"); }
+
+            // Health downgrade for STIs
+            if Equals(medical.healthRating, "EXCELLENT") || Equals(medical.healthRating, "GOOD") || Equals(medical.healthRating, "FAIR") {
+                medical.healthRating = "POOR";
+            }
+
+            // Also upgrade criminal status for poor sex workers
+            if Equals(criminal.status, "MINOR OFFENSES") {
+                criminal.status = "REPEAT OFFENDER";
+            }
+        }
 
         // Build KdspBackstoryUI
         let backstoryUI: KdspBackstoryUI;
@@ -414,7 +526,120 @@ public class KdspBackstoryManager {
             // Get NPC's last name so family members share it
             let npcLastName = KdspBackstoryManager.ExtractLastName(target);
             let relations = KdspRelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
+
+            // ══════════════════════════════════════════════════════════════
+            // v1.8.1 CROSS-SYSTEM COHERENCE: Marriage → Relationships
+            // If significant events mention marriage, relationship status
+            // must say "Married" and a spouse must exist in family list.
+            // ══════════════════════════════════════════════════════════════
+            if StrContains(significantEvents, "married") {
+                relations.currentRelationshipStatus = "Married";
+                // Check if a spouse already exists
+                let hasSpouse = false;
+                let msi = 0;
+                while msi < ArraySize(relations.familyMembers) {
+                    if Equals(relations.familyMembers[msi].relation, "Spouse") || Equals(relations.familyMembers[msi].relation, "Same-sex Spouse") {
+                        hasSpouse = true;
+                    }
+                    msi += 1;
+                }
+                // Inject a spouse if none exists
+                if !hasSpouse {
+                    let spouse = new KdspFamilyMemberInfo();
+                    let spouseGender = KdspNameGenerator.GetRandomGender(seed + 9100);
+                    let spouseFirst = KdspNameGenerator.GetFirstNameByEthnicity(seed + 9110, spouseGender, ethnicity);
+                    let spouseLast: String;
+                    // 80% chance spouse shares last name, 20% keeps maiden name
+                    if NotEquals(npcLastName, "") && RandRange(seed + 9130, 1, 100) <= 80 {
+                        spouseLast = npcLastName;
+                    } else {
+                        spouseLast = KdspNameGenerator.GetLastNameByEthnicity(seed + 9120, ethnicity);
+                    }
+                    spouse.name = spouseFirst + " " + spouseLast;
+                    spouse.relation = "Spouse";
+                    spouse.status = "Alive";
+                    spouse.location = "Night City";
+                    ArrayPush(relations.familyMembers, spouse);
+                }
+            }
+
+            // ══════════════════════════════════════════════════════════════
+            // v1.8.1 CROSS-SYSTEM COHERENCE: Grudge Holder → Enemies
+            // If psych profile flags vendetta/grudge-holder, the NPC must
+            // have at least one enemy. A grudge holder with zero enemies
+            // is an obvious contradiction.
+            // ══════════════════════════════════════════════════════════════
+            if psych.hasVendetta && ArraySize(relations.knownEnemies) == 0 {
+                let grudgeEnemy = new KdspEnemyInfo();
+                let enemyGender = KdspNameGenerator.GetRandomGender(seed + 9200);
+                grudgeEnemy.name = KdspNameGenerator.GetFirstNameByEthnicity(seed + 9210, enemyGender, ethnicity) + " " + KdspNameGenerator.GetLastNameByEthnicity(seed + 9220, ethnicity);
+                // Use vendetta target as context if available
+                if NotEquals(psych.vendettaTarget, "") {
+                    grudgeEnemy.reason = "Vendetta (" + psych.vendettaTarget + ")";
+                } else {
+                    grudgeEnemy.reason = "Personal vendetta";
+                }
+                // Grudge holders tend toward higher threat enemies
+                let grudgeThreatRoll = RandRange(seed + 9230, 1, 100);
+                if grudgeThreatRoll <= 30 { grudgeEnemy.threatLevel = "Moderate"; }
+                else if grudgeThreatRoll <= 70 { grudgeEnemy.threatLevel = "High"; }
+                else { grudgeEnemy.threatLevel = "Extreme"; }
+                ArrayPush(relations.knownEnemies, grudgeEnemy);
+            }
+
+            // ══════════════════════════════════════════════════════════════
+            // v1.8.1 CROSS-SYSTEM COHERENCE: Sex Worker → Known Clients
+            // Sex workers should have a small list of known clients in
+            // their associates. These are NCPD-flagged repeat clients.
+            // ══════════════════════════════════════════════════════════════
+            if isSexWorker {
+                // Sex workers don't need recent activity — other sections tell the story
+                backstoryUI.significantEvents = "";
+
+                // Clear existing associates — sex workers' known contacts are clients
+                ArrayClear(relations.knownAssociates);
+
+                // Generate exactly 2 known clients
+                let cli = 0;
+                while cli < 2 {
+                    let client = new KdspAssociateInfo();
+                    let clientGender = RandRange(seed + 9560 + (cli * 31), 1, 100);
+                    let cGender: String;
+                    if clientGender <= 85 { cGender = "Male"; } else { cGender = "Female"; }
+                    let clientFirst = KdspNameGenerator.GetFirstNameByEthnicity(seed + 9570 + (cli * 41), cGender, KdspEthnicityDetector.GetRandomEthnicity(seed + 9575 + (cli * 23)));
+                    let clientLast = KdspNameGenerator.GetLastNameByEthnicity(seed + 9580 + (cli * 51), KdspEthnicityDetector.GetRandomEthnicity(seed + 9585 + (cli * 37)));
+                    client.name = clientFirst + " " + clientLast;
+                    client.isAlias = false;
+
+                    // Short client descriptors
+                    let clientTypeRoll = RandRange(seed + 9590 + (cli * 61), 0, 9);
+                    if clientTypeRoll == 0 { client.relationship = "Repeat client"; }
+                    else if clientTypeRoll == 1 { client.relationship = "Regular - flagged"; }
+                    else if clientTypeRoll == 2 { client.relationship = "Client - NCPD flagged"; }
+                    else if clientTypeRoll == 3 { client.relationship = "Client - corpo"; }
+                    else if clientTypeRoll == 4 { client.relationship = "Repeat - violent"; }
+                    else if clientTypeRoll == 5 { client.relationship = "Client - surveilled"; }
+                    else if clientTypeRoll == 6 { client.relationship = "Client - warrant"; }
+                    else if clientTypeRoll == 7 { client.relationship = "Regular - married"; }
+                    else if clientTypeRoll == 8 { client.relationship = "Client - via fixer"; }
+                    else { client.relationship = "Occasional client"; }
+
+                    client.status = "Active";
+                    client.affiliation = "";
+                    ArrayPush(relations.knownAssociates, client);
+                    cli += 1;
+                }
+
+                // Override relationship status
+                let swRelRoll = RandRange(seed + 9650, 0, 3);
+                if swRelRoll == 0 { relations.currentRelationshipStatus = "Single"; }
+                else if swRelRoll == 1 { relations.currentRelationshipStatus = "It's Complicated"; }
+                else if swRelRoll == 2 { relations.currentRelationshipStatus = "Single"; }
+                else { relations.currentRelationshipStatus = "In a relationship"; }
+            }
+
             backstoryUI.relationships = "";
+            let compactRel = KdspSettings.CompactRelationshipsEnabled();
             
             // Status and dependents
             backstoryUI.relationships = relations.currentRelationshipStatus;
@@ -422,8 +647,8 @@ public class KdspBackstoryManager {
                 backstoryUI.relationships = backstoryUI.relationships + " | Dependents: " + IntToString(relations.dependents);
             };
             
-            // Emergency contact - high density only
-            if density >= 3 && !Equals(relations.emergencyContact, "NONE ON FILE") {
+            // Emergency contact - full mode, high density only
+            if !compactRel && density >= 3 && !Equals(relations.emergencyContact, "NONE ON FILE") {
                 backstoryUI.relationships = backstoryUI.relationships + " | Emergency: " + relations.emergencyContact;
             };
             
@@ -432,7 +657,7 @@ public class KdspBackstoryManager {
                 backstoryUI.relationships = backstoryUI.relationships + " | Family: ";
                 let i = 0;
                 let maxFamily = 2;
-                if density >= 3 {
+                if !compactRel && density >= 3 {
                     maxFamily = 4;
                 };
                 if ArraySize(relations.familyMembers) < maxFamily {
@@ -460,7 +685,7 @@ public class KdspBackstoryManager {
                 backstoryUI.relationships = backstoryUI.relationships + " | Associates: ";
                 let i = 0;
                 let maxShow = 2;
-                if density >= 3 {
+                if !compactRel && density >= 3 {
                     maxShow = 3;
                 };
                 if ArraySize(relations.knownAssociates) < maxShow {
@@ -479,8 +704,8 @@ public class KdspBackstoryManager {
                 };
             };
             
-            // Professional contacts - high density only
-            if density >= 3 && ArraySize(relations.professionalContacts) > 0 {
+            // Professional contacts - full mode, high density only
+            if !compactRel && density >= 3 && ArraySize(relations.professionalContacts) > 0 {
                 backstoryUI.relationships = backstoryUI.relationships + " | Contacts: ";
                 let i = 0;
                 while i < ArraySize(relations.professionalContacts) {
@@ -502,18 +727,22 @@ public class KdspBackstoryManager {
                     if i > 0 {
                         backstoryUI.relationships = backstoryUI.relationships + ", ";
                     };
-                    backstoryUI.relationships = backstoryUI.relationships + enemy.name + " (" + enemy.reason + " - " + enemy.threatLevel + ")";
+                    if compactRel {
+                        backstoryUI.relationships = backstoryUI.relationships + enemy.name + " (" + enemy.reason + ")";
+                    } else {
+                        backstoryUI.relationships = backstoryUI.relationships + enemy.name + " (" + enemy.reason + " - " + enemy.threatLevel + ")";
+                    };
                     i += 1;
                 };
             };
             
-            // Romantic history - high density only
-            if density >= 3 && !Equals(relations.romanticHistory, "") {
+            // Romantic history - full mode, high density only
+            if !compactRel && density >= 3 && !Equals(relations.romanticHistory, "") {
                 backstoryUI.relationships = backstoryUI.relationships + " | History: " + relations.romanticHistory;
             };
             
-            // Social network size - high density only
-            if density >= 3 {
+            // Social network size - full mode, high density only
+            if !compactRel && density >= 3 {
                 backstoryUI.relationships = backstoryUI.relationships + " | Network: " + relations.socialNetworkSize;
             };
         } else {

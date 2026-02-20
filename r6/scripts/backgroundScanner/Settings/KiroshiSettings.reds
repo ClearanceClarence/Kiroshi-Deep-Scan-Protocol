@@ -78,10 +78,10 @@ public class KdspDeepScanSettings {
     public let compactMode: KdspCompactMode = KdspCompactMode.Off;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
-    @runtimeProperty("ModSettings.category", "Generation")
-    @runtimeProperty("ModSettings.displayName", "Narrative Coherence")
-    @runtimeProperty("ModSettings.description", "Links all NPC data into one consistent story. Jobs match wealth, criminal history matches psych profile, medical records reflect lifestyle. Off gives maximum variety.")
-    public let enableCoherence: Bool = false;
+    @runtimeProperty("ModSettings.category", "Display")
+    @runtimeProperty("ModSettings.displayName", "Compact Relationships")
+    @runtimeProperty("ModSettings.description", "Trims the Relationships section to essentials: status, 2 family, 2 associates, enemies. Off shows the full version with emergency contact, professional contacts, romantic history, and network size.")
+    public let compactRelationships: Bool = true;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
     @runtimeProperty("ModSettings.category", "Generation")
@@ -170,12 +170,10 @@ public abstract class KdspSettings {
         return maxItems;
     }
 
+    // Narrative Coherence is always enabled as of v1.8.1
+    // Cross-system data must always be consistent
     public static func CoherenceEnabled() -> Bool {
-        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
-        if IsDefined(system) && IsDefined(system.GetSettings()) {
-            return system.GetSettings().enableCoherence;
-        }
-        return false;
+        return true;
     }
 
     public static func GetSpecialNPCRarity() -> Int32 {
@@ -221,6 +219,14 @@ public abstract class KdspSettings {
             return system.GetSettings().enableDebugMode;
         }
         return false;
+    }
+
+    public static func CompactRelationshipsEnabled() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().compactRelationships;
+        }
+        return true; // Default on
     }
 
     // Compact Mode helpers

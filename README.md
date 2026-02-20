@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=1a1a2e" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-1.8.0-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-1.8.1-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=1a1a2e" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=1a1a2e" alt="License">
 </p>
@@ -30,7 +30,7 @@
 │                                                                              │
 │  ▸ Overview .................. What this mod does                            │
 │  ▸ Database Access .......... 8 queryable data sources                       │
-│  ▸ Unique NPC Database ...... 204 hand-written character files               │
+│  ▸ Unique NPC Database ...... 216 hand-written character files               │
 │  ▸ Procedural Generation .... Systems that build NPC lives                   │
 │  ▸ Special Classifications .. 90 hidden NPC types                            │
 │  ▸ Relationships ............ Social network generation                      │
@@ -56,7 +56,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 <table>
 <tr>
-<td align="center"><h3>204</h3><sub>UNIQUE NPCs</sub></td>
+<td align="center"><h3>216</h3><sub>UNIQUE NPCs</sub></td>
 <td align="center"><h3>699</h3><sub>LIFE EVENTS</sub></td>
 <td align="center"><h3>90</h3><sub>CLASSIFICATIONS</sub></td>
 <td align="center"><h3>260K+</h3><sub>NAME COMBOS</sub></td>
@@ -68,6 +68,10 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 <td align="center"><h3>8</h3><sub>DATA SOURCES</sub></td>
 </tr>
 </table>
+
+<br>
+
+> **`216 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`**
 
 <br>
 
@@ -109,7 +113,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 ## █▓▒░ UNIQUE NPC DATABASE
 
-204 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
+216 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
 
 <details>
 <summary><b>▸ ARASAKA CORPORATION</b> — 10 entries</summary>
@@ -259,7 +263,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  NEW IN v1.8.0 — DOGTOWN GIG PERSONNEL                                       ║
+║   DOGTOWN GIG PERSONNEL                                                      ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
@@ -480,7 +484,7 @@ Every NPC gets a procedurally generated social network.
 
 ## █▓▒░ NARRATIVE COHERENCE
 
-Optional system. Assigns a life theme, ensures every data point tells one consistent story.
+Always active. Every NPC is assigned a life theme that ensures all data tells one consistent story.
 
 | Theme | Criminal | Medical | Financial | Psych |
 |:--|:--|:--|:--|:--|
@@ -491,7 +495,7 @@ Optional system. Assigns a life theme, ensures every data point tells one consis
 | **CRIMINAL** | Extensive | Street injuries | Illegal income | Aggression |
 | **CORPORATE** | White collar | Corpo medical | Good credit | Calculated |
 
-> Flags propagate across systems — `SUBSTANCE_ABUSE` generates drug charges in criminal, liver damage in medical, addiction markers in psych, and debt-from-habit in financial. Everything connects.
+> Flags propagate across systems — `SUBSTANCE_ABUSE` generates drug charges in criminal, liver damage in medical, addiction markers in psych, and debt-from-habit in financial. Cross-system checks ensure married NPCs always have a spouse listed, grudge-holders always have enemies, and rejected implants always affect medical records. Everything connects.
 
 <br>
 
@@ -507,12 +511,12 @@ All settings: **Mod Settings Menu → Kiroshi Deep Scan**
 | Header Font Size | 14–28 | 20 |
 | Text Font Size | 18–34 | 26 |
 | Compact Mode | Off / Tight / Tighter / Tightest | Off |
+| Compact Relationships | On / Off | On |
 
 ### ░ Generation
 
 | Setting | Options | Default |
 |:--|:--|:--|
-| Narrative Coherence | On / Off | Off |
 | Special NPC Rarity | Common (1:250) / Rare (1:750) / Mythic (1:2000) | Rare |
 
 ### ░ Content
@@ -618,9 +622,9 @@ Full support. 43 unique hand-crafted Dogtown entries including Solomon Reed, Son
 </details>
 
 <details>
-<summary><b>▸ What does Narrative Coherence do?</b></summary>
+<summary><b>▸ How does Narrative Coherence work?</b></summary>
 <br>
-Assigns a life theme (Stable, Struggling, Criminal, etc.) and ensures all data tells one story. A "Falling" NPC has declining credit, substance issues, recent termination, lapsed Trauma Team coverage, and growing debt — not random disconnected data.
+Every NPC is assigned a life theme (Stable, Struggling, Criminal, etc.) and all data systems reference it. A "Falling" NPC has declining credit, substance issues, recent termination, lapsed Trauma Team coverage, and growing debt — not random disconnected data. This is always active.
 </details>
 
 <details>
@@ -753,7 +757,7 @@ r6/scripts/backgroundScanner/
 │   ├── Psych/                             Psychological profiles
 │   ├── Rare/                              90 special classifications
 │   ├── Relationships/                     KdspNamePool + social networks
-│   └── Unique/                            204 character entries
+│   └── Unique/                            216 character entries
 │
 ├── Overrides/
 │   ├── ScannerNPCBodyGameController.reds  Scanner UI injection
@@ -806,8 +810,8 @@ MIT — See [LICENSE](LICENSE) for details.
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║           KIROSHI DEEP SCAN PROTOCOL v1.8.0                                  ║
-║           DATABASES: 8 ■ UNIQUE NPCs: 204 ■ CLASSIFICATIONS: 90              ║
+║           KIROSHI DEEP SCAN PROTOCOL v1.8.1                                  ║
+║           DATABASES: 8 ■ UNIQUE NPCs: 216 ■ CLASSIFICATIONS: 90              ║
 ║                                                                              ║
 ║           Every NPC is a person.                                             ║
 ║                                                                              ║

@@ -190,6 +190,19 @@ public abstract class KdspUniqueNPCEntries {
         if (StrContains(id, "stadium_junk") && StrContains(id, "michal")) || (StrContains(id, "michal") && StrContains(id, "kicinski")) { return KdspUniqueNPCEntries.MichalKicinski(); }
         if StrContains(id, "cz_stadium_clothing") || (StrContains(id, "david") && StrContains(id, "walker")) { return KdspUniqueNPCEntries.DavidWalker(); }
         if StrContains(id, "cz_stadium_gunsmith") || (StrContains(id, "sophia") && StrContains(id, "dupont")) { return KdspUniqueNPCEntries.SophiaDupont(); }
+        // PL - BLACK SAPPHIRE PARTY (q303 - You Know My Name)
+        if StrContains(id, "paradise_jago") || StrContains(id, "mq304__jago") { return KdspUniqueNPCEntries.JagoSzabo(); }
+        if StrContains(id, "paradise_bennett") || StrContains(id, "mq304_bennett") { return KdspUniqueNPCEntries.ChesterBennett(); }
+        if StrContains(id, "mq304_jago_bodyguard") { return KdspUniqueNPCEntries.CharlesGraham(); }
+        if StrContains(id, "azegami") || StrContains(id, "paradise_tc_leader_01") { return KdspUniqueNPCEntries.JunAzegami(); }
+        if (StrContains(id, "ichida") && !StrContains(id, "uchida")) || StrContains(id, "paradise_tc_leader_02") { return KdspUniqueNPCEntries.MarcusIchida(); }
+        if StrContains(id, "paradise_ruth") || StrContains(id, "ruth_dzeng") { return KdspUniqueNPCEntries.RuthDzeng(); }
+        if StrContains(id, "paradise_reverend") || (StrContains(id, "colver") && StrContains(id, "priest")) { return KdspUniqueNPCEntries.ReverendColver(); }
+        if Equals(id, "character.bello") || StrContains(id, "bello_default") { return KdspUniqueNPCEntries.AuroreCassel(); }
+        if Equals(id, "character.theo") || StrContains(id, "theo_default") { return KdspUniqueNPCEntries.AymericCassel(); }
+        if StrContains(id, "paradise_ziggy") || StrContains(id, "ziggy_q") { return KdspUniqueNPCEntries.ZiggyQ(); }
+        if StrContains(id, "paradise_iqbal") || StrContains(id, "arif_iqbal") { return KdspUniqueNPCEntries.ArifIqbal(); }
+        if StrContains(id, "paradise_kavorkin") || StrContains(id, "kavorkin") { return KdspUniqueNPCEntries.JoshKavorkin(); }
         // BODYGUARDS - Generic entries for named character bodyguards
         if StrContains(id, "hanako") && (StrContains(id, "guard") || StrContains(id, "bodyguard")) { return KdspUniqueNPCEntries.HanakoBodyguard(); }
         if StrContains(id, "arasaka") && (StrContains(id, "guard") || StrContains(id, "bodyguard")) { return KdspUniqueNPCEntries.ArasakaBodyguard(); }
@@ -2465,6 +2478,181 @@ public abstract class KdspUniqueNPCEntries {
             .SetRelationships("Hank Davis (Partner/bodyguard) | Michael Maldonado (Witness — adversarial) | Eric Maldonado (Defendant — Valentinos) | Hector Sacristán (Target — high-ranking Valentinos, alleged serial murderer) | Judge Nathaniel Edwards (Correspondence)")
             .SetNotes("Ruthless prosecutor | Believes the ends justify the means | Has video testimony evidence on secure terminal | Willing to negotiate when outmatched | Hank Davis provides physical security")
             .SetThreatAssessment("LOW direct | Hank Davis serves as armed protection | VIP section of Heavy Hearts has additional security | Political connections make her dangerous to cross");
+    }
+
+    // === PHANTOM LIBERTY - BLACK SAPPHIRE PARTY (q303 - You Know My Name) ===
+
+    // --- BARGHEST ---
+
+    public static func JagoSzabo() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("jago_szabo").SetClassification("BARGHEST - LIEUTENANT")
+            .SetBackground("Jago Szabo. Hungarian-born ex-NUSA military officer. One of Kurt Hansen's most trusted lieutenants. Handles Barghest's external negotiations and high-profile arms deals. Known for a polished demeanor that masks ruthless efficiency. The suit he wears to Black Sapphire events costs more than most Dogtown residents earn in a year.")
+            .SetEarlyLife("Born in Budapest before the European collapse. Military family. Emigrated to NUSA as a teenager. Enlisted at 18, served in the Unification War under Colonel Hansen. When Hansen defected, Szabo followed without hesitation.")
+            .SetSignificantEvents("Unification War veteran. Followed Hansen into Dogtown. Promoted to lieutenant after organizing the Sapphire Arms Expo — Barghest's first public-facing weapons showcase. Now manages all diplomatic functions at the Black Sapphire.")
+            .SetAffiliation("Barghest PMC | Kurt Hansen's inner circle")
+            .SetCriminalRecord("WANTED - NUSA | Desertion | Arms trafficking | Conspiracy | Multiple counts of murder (wartime, unproven)")
+            .SetCyberwareStatus("Military-grade optics | Subdermal armor | Encrypted Barghest comms | Kiroshi upgrade (threat detection)")
+            .SetFinancialStatus("AFFLUENT | Arms deal commissions | Black Sapphire revenue share | Hansen's favor")
+            .SetRelationships("Kurt Hansen (Commander - loyal) | Chester Bennett (Fellow officer - trusted) | Tyger Claws leadership (Business contacts)")
+            .SetNotes("Diplomatic but dangerous | Smiles while negotiating your death | Fluent in five languages | Never seen without a pressed suit in social settings")
+            .SetThreatAssessment("HIGH (75/100) | Combat veteran | Armed at all times | Barghest soldiers on call | Do not underestimate the charm");
+    }
+
+    public static func ChesterBennett() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("chester_bennett").SetClassification("BARGHEST - OFFICER")
+            .SetBackground("Chester Bennett. American. Career soldier turned PMC officer. Barghest's logistics and security coordinator for Dogtown's public-facing operations. Responsible for Black Sapphire perimeter security and VIP handling. Where Szabo is the handshake, Bennett is the fist behind it.")
+            .SetEarlyLife("Grew up in the ruins of Baltimore after the Unification War tore through the Eastern Seaboard. No family left to speak of. Joined NUSA military at 16 with forged papers. Served under Hansen's command during the final campaigns.")
+            .SetSignificantEvents("Baltimore survivor. Unification War veteran. Followed Hansen to Dogtown. Oversaw construction of the Black Sapphire's security infrastructure. Personally vetted every attendee of the first three Sapphire events.")
+            .SetAffiliation("Barghest PMC | Security division")
+            .SetCriminalRecord("WANTED - NUSA | Desertion | War crimes (alleged) | Smuggling | Racketeering")
+            .SetCyberwareStatus("Reinforced skeleton | Gorilla arms | Military-grade optics | Ballistic co-processor")
+            .SetFinancialStatus("COMFORTABLE | Barghest officer salary | Black Sapphire security contract")
+            .SetRelationships("Kurt Hansen (Commander) | Jago Szabo (Fellow officer - works closely) | Charles Graham (Subordinate - bodyguard detail)")
+            .SetNotes("Quiet professional | Watches everything | Prefers actions over words | The kind of soldier who sleeps with one eye open")
+            .SetThreatAssessment("HIGH (72/100) | Combat veteran | Heavy cyberware | Armed | Controls Sapphire security detail");
+    }
+
+    public static func CharlesGraham() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("charles_graham").SetClassification("BARGHEST - BODYGUARD")
+            .SetBackground("Charles Graham. Barghest heavy. Personal bodyguard assigned to Jago Szabo during high-profile events. Built like a tank wrapped in combat armor. Equipped with charge jump legs and flashbang grenades — the kind of firepower you bring when diplomacy fails mid-sentence.")
+            .SetEarlyLife("Texas panhandle. Ranch family. Grew up handling cattle and firearms in equal measure. Drifted into mercenary work after drought killed the ranch and his parents with it. Hansen's recruiters found him in a Heywood fight pit.")
+            .SetSignificantEvents("Recruited into Barghest from underground fighting circuit. Assigned to VIP protection detail after killing three Scavengers with his bare hands during a supply run. Permanent assignment to Szabo's security.")
+            .SetAffiliation("Barghest PMC | VIP protection detail")
+            .SetCriminalRecord("WANTED - NUSA | Desertion | Assault | Multiple homicides (combat context) | Unlicensed cyberware modifications")
+            .SetCyberwareStatus("Reinforced tendons (charge jump capable) | Gorilla arms | Subdermal armor | Flashbang deployment system | Pain inhibitors")
+            .SetRelationships("Jago Szabo (Principal - protective detail) | Chester Bennett (Superior officer)")
+            .SetNotes("Minimal conversation | Maximum violence when provoked | Loyal to Szabo specifically, not just Barghest | Eats enough for three people")
+            .SetThreatAssessment("VERY HIGH (80/100) | Heavy combat specialist | Charge jump capability | Flashbang equipped | Will engage immediately if principal threatened");
+    }
+
+    // --- TYGER CLAWS ---
+
+    public static func JunAzegami() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("jun_azegami").SetClassification("TYGER CLAWS - UNDERBOSS")
+            .SetBackground("Jun Azegami (畦上 潤). Senior Tyger Claws underboss overseeing Japantown and Kabuki operations. Represents the Claws' interests at high-level inter-gang negotiations. His presence at the Black Sapphire signals Tyger Claws are looking to expand their reach into Dogtown's arms and XBD markets. Old school yakuza mentality in a chrome-plated world.")
+            .SetEarlyLife("Born in Chiba, Japan. Son of a mid-ranking Tyger Claws enforcer who operated out of the original Tokyo chapter. Sent to Night City at 19 to apprentice under the NC branch. Rose through the ranks through a combination of business acumen and targeted violence.")
+            .SetSignificantEvents("Took over Kabuki operations after the previous boss disappeared. Brokered the Tyger Claws-Maelstrom XBD distribution agreement. Now expanding into Dogtown's unregulated markets through Hansen's blessing.")
+            .SetAffiliation("Tyger Claws | Japantown/Kabuki division")
+            .SetCriminalRecord("NCPD: 14 arrests, 0 convictions | Racketeering | Extortion | Suspected homicide (x6) | Witnesses consistently recant")
+            .SetCyberwareStatus("Mantis blades (concealed, retracted) | Kerenzikov | Sandevistan | Subdermal armor")
+            .SetFinancialStatus("WEALTHY | Multiple front businesses in Japantown | Jig-Jig Street revenue | XBD distribution profits")
+            .SetRelationships("Marcus Ichida (Fellow underboss - attends as pair) | Jago Szabo (Barghest contact - business) | Jotaro Shobo (Former associate - deceased)")
+            .SetNotes("Traditional | Observes Japanese business etiquette even when discussing murder | Never drinks at these events — always watching | Left hand never leaves his lap")
+            .SetThreatAssessment("EXTREME (85/100) | Mantis blades | Sandevistan equipped | Decades of combat experience | Tyger Claws reinforcements on speed dial");
+    }
+
+    public static func MarcusIchida() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("marcus_ichida").SetClassification("TYGER CLAWS - UNDERBOSS")
+            .SetBackground("Marcus Ichida (市田 マーカス). Japanese-American. Second-generation Night City Tyger Claws. Co-manages the gang's external relations alongside Jun Azegami. Where Azegami is the traditionalist, Ichida is the modernizer — pushing the Claws into legitimate business fronts while maintaining iron control over their illegal operations. Attends the Black Sapphire as the public-facing negotiator.")
+            .SetEarlyLife("Born in Night City, Watson district. Father was a Tyger Claws accountant. Educated at Arasaka-funded academy in Japantown. Business degree from NC Metro University — paid for by gang money. Recruited formally at 22, but grew up in the life.")
+            .SetSignificantEvents("Established multiple Tyger Claws front corporations. Negotiated territorial agreements with Valentinos and Maelstrom. Currently brokering a deal with Barghest for exclusive distribution rights in Dogtown.")
+            .SetAffiliation("Tyger Claws | External relations / Business operations")
+            .SetCriminalRecord("NCPD: 8 arrests, 0 convictions | Money laundering | Tax evasion | RICO investigation (ongoing, no charges filed)")
+            .SetCyberwareStatus("Kiroshi optics (recording suite) | Neural interface (encrypted) | Subdermal armor | Monowire (concealed)")
+            .SetFinancialStatus("WEALTHY | Corporate fronts | Legitimate investments | Japantown real estate portfolio")
+            .SetRelationships("Jun Azegami (Fellow underboss - mutual respect) | Jago Szabo (Barghest contact) | Arasaka mid-level contacts (business)")
+            .SetNotes("Educated and articulate | Dresses corpo, thinks yakuza | Records every conversation through Kiroshi implants | The smarter and more dangerous of the pair in a boardroom")
+            .SetThreatAssessment("HIGH (70/100) | Monowire | Combat-trained but prefers to delegate | Real danger is his connections and resources");
+    }
+
+    // --- MEDIA / TV HOSTS ---
+
+    public static func RuthDzeng() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("ruth_dzeng").SetClassification("MEDIA - DMS NETWORK HOST")
+            .SetBackground("Ruth Dzeng. Anchor and senior correspondent for DMS (Data Mainstream Services). One of Night City's most recognized faces in broadcast journalism. Covers high-society events, corporate politics, and gang-adjacent power brokers. Her presence at the Black Sapphire is professional — she's here to report, network, and gather material for her next series on Dogtown's transformation under Hansen.")
+            .SetEarlyLife("Born in San Francisco to a family of second-generation Chinese-American journalists. Her mother covered the Unification War for the Pacific Standard. Ruth inherited the instincts and none of the idealism. Moved to Night City after DMS offered her the anchor desk at 28.")
+            .SetSignificantEvents("Broke the Watson Waterfront corruption story in 2073. Landed exclusive interview with a Militech VP during the Arasaka-Militech proxy conflict. Currently developing a long-form piece on Dogtown as a 'sovereign experiment.'")
+            .SetAffiliation("DMS Network | Night City press corps")
+            .SetCriminalRecord("CLEAN | One defamation lawsuit (settled out of court, Biotechnica)")
+            .SetCyberwareStatus("Kiroshi optics (recording suite, live-feed capable) | Neural interface (teleprompter overlay) | Voice modulator (broadcast-grade)")
+            .SetFinancialStatus("AFFLUENT | DMS salary | Speaking engagements | Book deal (pending)")
+            .SetRelationships("DMS producers (Professional) | Night City media network (Competitors and colleagues) | Various fixers (Sources)")
+            .SetNotes("Sharp interviewer | Knows when to push and when to smile | Never off the record | Camera-ready at all times")
+            .SetThreatAssessment("NONE (direct) | Influence through broadcast reach | Can destroy reputations with a single segment");
+    }
+
+    public static func ZiggyQ() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("ziggy_q").SetClassification("MEDIA - N64 PERSONALITY")
+            .SetBackground("Ziggy Q. Stage name. Real name classified — and he'd like to keep it that way. Network 64's most popular entertainment host. Famous for his outrageous on-air persona, celebrity interviews, and willingness to say anything for ratings. At the Black Sapphire for content — every handshake is a potential segment, every scandal a sweeps-week special.")
+            .SetEarlyLife("Rumored origins range from a corpo family in Westbrook to a Heywood street kid who talked his way onto a pirate broadcast. The truth is probably somewhere in between. What's confirmed: he appeared on N64's late-night slot in 2071 and never left.")
+            .SetSignificantEvents("'Ziggy After Dark' debuted 2071, became N54's highest-rated show within six months. Viral segment interviewing a cyberpsycho mid-episode. Banned from three Arasaka facilities for unauthorized filming.")
+            .SetAffiliation("Network 64 (N64) | Night City entertainment media")
+            .SetCriminalRecord("Trespassing (x3, dismissed) | Unauthorized recording (x2, settled) | Contempt of court (1, community service)")
+            .SetCyberwareStatus("Kiroshi optics (always recording) | Neural editor (real-time highlight reel) | Voice modulator | Mood-reactive LED subdermal tattoos")
+            .SetFinancialStatus("WEALTHY | N64 contract | Endorsement deals | Merchandise line ('Ziggy Q Approved')")
+            .SetNotes("Loud, strategic, and smarter than he lets on | The buffoon act is exactly that — an act | Has dirt on half of Night City's elite")
+            .SetThreatAssessment("NONE (direct) | Extremely dangerous to reputations | Has a direct line to millions of viewers");
+    }
+
+    public static func ArifIqbal() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("arif_iqbal").SetClassification("MEDIA - WNS CORRESPONDENT")
+            .SetBackground("Arif Iqbal. Senior international correspondent for WNS (World News Service). Specializes in conflict zones, failed states, and corporate-sovereign disputes. Covering Dogtown's Black Sapphire event as part of a broader WNS series on post-Unification War power vacuums. The kind of journalist who's been shot at in four continents and still shows up to parties in a tailored suit.")
+            .SetEarlyLife("Born in Islamabad. Studied journalism at the University of Lahore before securing a WNS internship. First assignment was covering the Karachi port bombing of 2063. Never looked back.")
+            .SetSignificantEvents("Embedded with NUSA forces during the Unification War. Covered the fall of Busan to corporate PMCs. Award-winning documentary on Arasaka's influence in Southeast Asian politics. Currently the only WNS journalist with standing access to Dogtown.")
+            .SetAffiliation("WNS (World News Service) | International press")
+            .SetCriminalRecord("CLEAN | Detained twice (conflict zones — released) | Press credentials valid across NUSA and Free States")
+            .SetCyberwareStatus("Kiroshi optics (documentary-grade recording) | Translation implant (12 languages) | Reinforced subdermal plating (journalist armor, conflict zone standard)")
+            .SetFinancialStatus("COMFORTABLE | WNS salary | Documentary residuals | Freelance consulting")
+            .SetNotes("Calm under fire — literally | Asks uncomfortable questions with a gentle voice | Never reveals sources | Respects Hansen enough to attend, doesn't trust him enough to turn his back")
+            .SetThreatAssessment("NONE (direct) | International press protection | WNS legal team on retainer | Killing him would be an international incident");
+    }
+
+    public static func JoshKavorkin() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("josh_kavorkin").SetClassification("MEDIA - WNS ANALYST")
+            .SetBackground("Josh Kavorkin. WNS political analyst and on-air commentator. Covers Night City governance, NUSA federal politics, and corporate power structures. Known for his measured delivery and ability to explain complex geopolitical situations to a mass audience. At the Black Sapphire networking with power brokers and gathering material for his evening analysis segment.")
+            .SetEarlyLife("Born in Chicago. Russian-American family. Father was a political science professor at the University of Chicago before it was absorbed by Militech's educational trust. Josh inherited the academic temperament and parlayed it into broadcast journalism.")
+            .SetSignificantEvents("Correctly predicted the outcome of three consecutive NUSA elections. His analysis of the Unification War's economic impact became required reading at several universities. Regular panelist on WNS's flagship debate show.")
+            .SetAffiliation("WNS (World News Service) | Political analysis division")
+            .SetCriminalRecord("CLEAN")
+            .SetCyberwareStatus("Kiroshi optics (standard media suite) | Neural interface (data overlay, live statistics feed)")
+            .SetFinancialStatus("COMFORTABLE | WNS contract | University speaking fees | Published author")
+            .SetRelationships("WNS editorial board (Professional) | Arif Iqbal (Colleague - mutual respect) | Various political contacts (Sources)")
+            .SetNotes("Thoughtful and deliberate | Never speculates without data | The kind of journalist politicians fear because he does his homework")
+            .SetThreatAssessment("NONE (direct) | Influence through analysis and commentary | Can shift public opinion with a single broadcast");
+    }
+
+    // --- PARTY GUESTS ---
+
+    public static func ReverendColver() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("reverend_colver").SetClassification("CLERGY - NIGHT CITY DIOCESE")
+            .SetBackground("Reverend Colver. One of Night City's few remaining ordained ministers. Operates a small congregation in Pacifica's remains and serves as spiritual advisor to several wealthy patrons — which is how he ended up with an invitation to the Black Sapphire. The collar gets him into rooms that guns cannot.")
+            .SetEarlyLife("Seminary education in the NUSA heartland. Took his first parish in Night City in 2058 when the diocese couldn't find anyone else willing to go. Twenty years later, he's still here — held together by faith and the kind of stubbornness only clergy possess.")
+            .SetSignificantEvents("Rebuilt St. Ambrose parish after the Pacifica collapse. Provides sanctuary services to war refugees in Dogtown's border zones. Quietly brokers ceasefire agreements between smaller gangs. His neutrality is his currency.")
+            .SetAffiliation("Night City Diocese | Unaffiliated (political)")
+            .SetCriminalRecord("CLEAN | Cited once for operating an unlicensed shelter (dismissed)")
+            .SetCyberwareStatus("Minimal | Basic neural interface | Kiroshi optics (standard)")
+            .SetFinancialStatus("MODEST | Parish income | Wealthy patrons donate generously | Funds redirected to charitable work")
+            .SetRelationships("Various wealthy patrons (Spiritual advisor) | Pacifica communities (Pastor) | Hansen's administration (Tolerated)")
+            .SetNotes("Genuine faith in a faithless city | Knows everyone's secrets from confession | Never weaponizes them | The one person in the room with no angle to play")
+            .SetThreatAssessment("NONE | Non-combatant | Protected by social convention and genuine neutrality");
+    }
+
+    public static func AuroreCassel() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("aurore_cassel").SetClassification("SOCIALITE - FRENCH EXPATRIATE")
+            .SetBackground("Aurore Cassel. French-born socialite. Twin sister of Aymeric Cassel. The Cassels are fixtures of Night City's ultra-wealthy social circuit — old European money that survived the continental collapse by diversifying into Night City real estate and corpo stock before everyone else saw the writing on the wall. Aurore handles the family's social capital with surgical precision.")
+            .SetEarlyLife("Born in Lyon, France. Privately educated across what remained of the EU. The family relocated to Night City when Aurore and Aymeric were teenagers, converting their European holdings into a Night City portfolio worth billions.")
+            .SetSignificantEvents("Co-hosts the annual Cassel Foundation Gala — Night City's most exclusive charity event. Rumored to have brokered introductions between Arasaka executives and European banking interests. The Black Sapphire is one of the few venues she considers worth attending.")
+            .SetAffiliation("Cassel Family | High society")
+            .SetCriminalRecord("CLEAN | One civil suit (defamation, won)")
+            .SetCyberwareStatus("Cosmetic-grade implants only | Kiroshi optics (social overlay) | Anti-aging suite | Subdermal UV protection")
+            .SetFinancialStatus("ULTRA-WEALTHY | Family trust | Night City real estate | European banking interests | Corpo stock portfolio")
+            .SetRelationships("Aymeric Cassel (Twin brother - inseparable) | Night City's corporate elite (Social circle) | Various fixers (Discreet arrangements)")
+            .SetNotes("Charming and lethal in conversation | Every word is calculated | Speaks four languages fluently | Treats Night City like a chess board she's already winning")
+            .SetThreatAssessment("NONE (direct) | Enormous financial and social influence | Can end careers with a phone call");
+    }
+
+    public static func AymericCassel() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("aymeric_cassel").SetClassification("SOCIALITE - FRENCH EXPATRIATE")
+            .SetBackground("Aymeric Cassel. French-born socialite and investor. Twin brother of Aurore Cassel. Where Aurore manages the family's social presence, Aymeric manages the money. A venture capitalist with stakes in everything from Dogtown reconstruction projects to Biotechnica subsidiaries. Quieter than his sister but arguably more dangerous — money moves faster than gossip.")
+            .SetEarlyLife("Born in Lyon, France. Studied finance in Zurich before the Swiss banking collapse. Relocated to Night City with the family. Built the Cassel investment portfolio from inherited European wealth into a Night City powerhouse.")
+            .SetSignificantEvents("Led the Cassel acquisition of three Watson waterfront properties. Early investor in Dogtown's reconstruction — one of the few outsiders Hansen permits to operate financially in his territory. Rumored to hold leverage over at least two city councilors.")
+            .SetAffiliation("Cassel Family | Cassel Ventures")
+            .SetCriminalRecord("CLEAN | SEC investigation (closed, no charges) | Tax optimization (legal)")
+            .SetCyberwareStatus("Minimal cosmetic | Neural interface (financial data feeds) | Kiroshi optics (social overlay)")
+            .SetFinancialStatus("ULTRA-WEALTHY | Venture capital | Real estate | Corpo investments | Dogtown reconstruction stakes")
+            .SetRelationships("Aurore Cassel (Twin sister - inseparable) | Kurt Hansen (Business arrangement - cautious) | Various corpo boards (Investor)")
+            .SetNotes("Quiet, observant, patient | Lets Aurore do the talking while he reads the room | The checkbook behind the charm | Prefers whiskey neat and conversations short")
+            .SetThreatAssessment("NONE (direct) | Financial leverage over multiple parties | Bankrolls operations that others execute");
     }
 
     // --- ROADS TO REDEMPTION ---

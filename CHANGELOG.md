@@ -4,6 +4,38 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [1.8.1]
+
+### Cross-System Coherence Fixes
+
+Three fixes addressing feedback where independently generated systems produced contradictory data on the same NPC.
+
+- **Marriage ↔ Relationships:** If an NPC's significant events include "Is married" or "Got married", the Relationships section now forces status to "Married" and guarantees a spouse entry in the family list — no more married NPCs with "It's Complicated" and no spouse listed
+- **Grudge Holder ↔ Enemies:** If the Psych Profile flags an NPC as a grudge-holder (hasVendetta), the Relationships section now guarantees at least one enemy — grudge holders with zero enemies was an obvious contradiction
+- **Rejected Implants ↔ Medical & Cyberware:** If the Cyberware Registry shows rejected implants, the Medical section now adds an implant rejection condition (5 variants: rejection syndrome, tissue necrosis risk, synthetic organ rejection, inflammatory response, scheduled removal) and health rating downgrades to POOR minimum — cyberware status also elevates (rejection stress adds 15–30% to cyberpsychosis risk with rejection-specific status labels)
+- **Sex Worker Appearance ↔ Criminal & Medical:** NPCs with "sexworker" in their appearance name now get 2 sex work specific arrests (solicitation, unlicensed joytoy work, vice code violations) replacing generic criminal records, with NCPD vice classification and 2 known clients in relationships — NPCs with "sexworker_poor" additionally receive 2 STIs on their medical record, health downgraded to POOR, and criminal status upgraded to REPEAT OFFENDER
+
+### Narrative Coherence — Always On
+
+- Removed Narrative Coherence toggle from Mod Settings — coherence is now always active
+- There is no reason for NPC data to contradict itself; independent generation produced obvious inconsistencies (married with no spouse, grudge-holder with no enemies, rejected implants with good health)
+- `CoherenceEnabled()` now always returns true, BackstoryManager always generates a coherence profile
+- Setting removed from the Generation category in Mod Settings Menu
+
+### New Setting — Compact Relationships
+
+- Added **Compact Relationships** toggle under Display settings (default: On)
+- **On (default):** Status, 2 family, 2 associates, enemies (reason only)
+- **Off:** Full version with emergency contact, up to 4 family, 3 associates, professional contacts, enemies with threat level, romantic history, network size
+
+### Technical
+
+- Seed version incremented to 4 — all NPCs will regenerate fresh data on next game load
+- All cross-checks run in BackstoryManager after individual systems generate, before UI strings are built — no changes to individual manager files
+- Cross-check seeds use 9100–9540 offset range to avoid collisions with existing generation
+
+---
+
 ## [1.8.0]
 
 ### Phantom Liberty Gig NPCs (+20 Unique Entries)
