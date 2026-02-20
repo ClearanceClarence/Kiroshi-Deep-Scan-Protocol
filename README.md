@@ -11,7 +11,7 @@
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  KIROSHI OPTICS v4.2 — DEEP SCAN PROTOCOL                                    ║
+║  KIROSHI OPTICS v1.8.1 — DEEP SCAN PROTOCOL                                  ║
 ║  STATUS: ONLINE ■ DATABASES: 8 CONNECTED ■ CLASSIFIED ACCESS: GRANTED        ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
