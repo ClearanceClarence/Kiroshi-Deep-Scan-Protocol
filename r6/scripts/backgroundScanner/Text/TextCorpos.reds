@@ -103,4 +103,34 @@ public abstract class KdspTextCorpos {
     public static func NC_HOUSING() -> String { return "Night City Housing Authority"; }
     public static func STEEL_HORIZON() -> String { return "Steel Horizon Construction"; }
 
+    // Food & Agriculture
+    public static func NOURISH_CORP() -> String { return "Nourish Corp"; }
+    public static func SYNTHESIS_AGRICULTURE() -> String { return "Synthesis Agriculture"; }
+
+    // Pharmaceuticals
+    public static func RAVEN_MICROCYBERNETICS() -> String { return "Raven Microcybernetics"; }
+    public static func BIODYNAMIK() -> String { return "BioDynamik"; }
+    public static func MEDTECH_PHARMA() -> String { return "MedTech Pharma"; }
+
+    // Private Military / Security
+    public static func LAZARUS_MILITARY() -> String { return "Lazarus Military"; }
+    public static func IRON_GUARD_SEC() -> String { return "Iron Guard Security"; }
+    public static func BLACKWALL_SECURITIES() -> String { return "Blackwall Securities"; }
+
+    // Media & Communications  
+    public static func WNS() -> String { return "World News Service"; }
+    public static func EXCELSIOR() -> String { return "Excelsior Media Group"; }
+    public static func NEON_ARCADE_MEDIA() -> String { return "Neon Arcade Media"; }
+
+    // Transportation
+
+    // Utilities & Infrastructure
+    public static func NC_POWER() -> String { return "Night City Power & Gas"; }
+    public static func HYDRO_NC() -> String { return "Hydro NC"; }
+    public static func DATAVAULT() -> String { return "DataVault Solutions"; }
+
+    // Cybernetics & Chrome
+    public static func TSUNAMI_DEFENSE() -> String { return "Tsunami Defense Systems"; }
+    public static func ARASAKA_CYBERNETICS() -> String { return "Arasaka Cybernetics Division"; }
+
 }

@@ -525,4 +525,102 @@ public abstract class KdspTextChildhood {
     public static func IDENTITY_THEFT_F() -> String { return "Learned identity theft from a mentor. "; }
     public static func IDENTITY_THEFT_M() -> String { return ""; }
 
+    // === EXPANDED CHILDHOOD - SURVIVAL ===
+    public static func DUMPSTER_MEALS_F() -> String { return "Ate meals from dumpsters behind restaurants. "; }
+    public static func DUMPSTER_MEALS_M() -> String { return ""; }
+    public static func SLEPT_SHIFTS_F() -> String { return "Slept in shifts with other kids to watch for danger. "; }
+    public static func SLEPT_SHIFTS_M() -> String { return ""; }
+    public static func RAIN_COLLECTOR_F() -> String { return "Collected rainwater to sell in dry seasons. "; }
+    public static func RAIN_COLLECTOR_M() -> String { return ""; }
+    public static func TUNNEL_RUNNER_F() -> String { return "Used maintenance tunnels to travel safely across districts. "; }
+    public static func TUNNEL_RUNNER_M() -> String { return ""; }
+    public static func ROOFTOP_SLEEPER_F() -> String { return "Slept on rooftops to avoid street-level danger. "; }
+    public static func ROOFTOP_SLEEPER_M() -> String { return ""; }
+    public static func HOSPITAL_SQUATTER_F() -> String { return "Squatted in hospital waiting rooms for warmth. "; }
+    public static func HOSPITAL_SQUATTER_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - FAMILY ===
+    public static func RAISED_BY_SIBLING_F() -> String { return "Was raised by an older sibling. "; }
+    public static func RAISED_BY_SIBLING_M() -> String { return ""; }
+    public static func PARENT_IN_PRISON_F() -> String { return "Had a parent in prison for most of childhood. "; }
+    public static func PARENT_IN_PRISON_M() -> String { return ""; }
+    public static func PARENT_DISAPPEARED_F() -> String { return "A parent disappeared one day without explanation. "; }
+    public static func PARENT_DISAPPEARED_M() -> String { return ""; }
+    public static func RAISED_BY_GANG_F() -> String { return "Was essentially raised by a gang. "; }
+    public static func RAISED_BY_GANG_M() -> String { return ""; }
+    public static func CARETAKER_CHILD_F() -> String { return "Took care of younger siblings from an early age. "; }
+    public static func CARETAKER_CHILD_M() -> String { return ""; }
+    public static func FAMILY_SPLIT_F() -> String { return "Family was split apart by circumstances. "; }
+    public static func FAMILY_SPLIT_M() -> String { return ""; }
+    public static func ABANDONED_HOSPITAL_F() -> String { return "Was abandoned at a hospital as an infant. "; }
+    public static func ABANDONED_HOSPITAL_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - NC SPECIFIC ===
+    public static func KABUKI_KID_F() -> String { return "Grew up in the streets of Kabuki. "; }
+    public static func KABUKI_KID_M() -> String { return ""; }
+    public static func HEYWOOD_KID_F() -> String { return "Grew up in Heywood. Learned to be tough early. "; }
+    public static func HEYWOOD_KID_M() -> String { return ""; }
+    public static func PACIFICA_KID_F() -> String { return "Grew up in Pacifica after the resort collapse. "; }
+    public static func PACIFICA_KID_M() -> String { return ""; }
+    public static func MEGABUILDING_KID_F() -> String { return "Never left the megabuilding until age twelve. "; }
+    public static func MEGABUILDING_KID_M() -> String { return ""; }
+    public static func BADLANDS_KID_F() -> String { return "Grew up in the Badlands. Knew how to drive before reading. "; }
+    public static func BADLANDS_KID_M() -> String { return ""; }
+    public static func CHARTER_HILL_KID_F() -> String { return "Grew up in Charter Hill. Had it better than most. "; }
+    public static func CHARTER_HILL_KID_M() -> String { return ""; }
+    public static func DOGTOWN_KID_F() -> String { return "Grew up in Dogtown under Barghest rule. "; }
+    public static func DOGTOWN_KID_M() -> String { return ""; }
+    public static func WATSON_KID_F() -> String { return "Grew up in Watson. Learned the streets fast. "; }
+    public static func WATSON_KID_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - CYBERWARE ===
+    public static func FIRST_CHROME_YOUNG_F() -> String { return "Got first chrome implant at age thirteen. "; }
+    public static func FIRST_CHROME_YOUNG_M() -> String { return ""; }
+    public static func CHROME_ENVY_F() -> String { return "Envied other kids with cyberware. "; }
+    public static func CHROME_ENVY_M() -> String { return ""; }
+    public static func RIPPER_ASSISTANT_F() -> String { return "Helped a ripperdoc as a kid in exchange for free chrome. "; }
+    public static func RIPPER_ASSISTANT_M() -> String { return ""; }
+    public static func STOLEN_OPTICS_F() -> String { return "First optics were stolen from a body. "; }
+    public static func STOLEN_OPTICS_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - EDUCATION ===
+    public static func STREET_EDUCATED_F() -> String { return "Never attended school. Learned everything on the street. "; }
+    public static func STREET_EDUCATED_M() -> String { return ""; }
+    public static func TUTOR_F() -> String { return "Had a private tutor paid for by a benefactor. "; }
+    public static func TUTOR_M() -> String { return ""; }
+    public static func TEACHER_MENTOR_F() -> String { return "Had a teacher who believed in her potential. "; }
+    public static func TEACHER_MENTOR_M() -> String { return "Had a teacher who believed in his potential. "; }
+
+    // === EXPANDED CHILDHOOD - SOCIAL ===
+    public static func LONER_KID_F() -> String { return "Was a loner as a child. "; }
+    public static func LONER_KID_M() -> String { return ""; }
+    public static func POPULAR_KID_F() -> String { return "Was popular growing up. "; }
+    public static func POPULAR_KID_M() -> String { return ""; }
+    public static func BULLY_F() -> String { return "Was a bully as a kid. "; }
+    public static func BULLY_M() -> String { return ""; }
+    public static func PEACEMAKER_F() -> String { return "Always played peacemaker between friends. "; }
+    public static func PEACEMAKER_M() -> String { return ""; }
+    public static func STREET_PERFORMER_F() -> String { return "Performed on the street for eddies as a kid. "; }
+    public static func STREET_PERFORMER_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - WORK ===
+    public static func DELIVERY_KID_F() -> String { return "Ran deliveries across the district as a kid. "; }
+    public static func DELIVERY_KID_M() -> String { return ""; }
+    public static func SCRAP_COLLECTOR_F() -> String { return "Collected scrap metal to sell for food money. "; }
+    public static func SCRAP_COLLECTOR_M() -> String { return ""; }
+    public static func MECHANIC_APPRENTICE_F() -> String { return "Was apprenticed to a mechanic at a young age. "; }
+    public static func MECHANIC_APPRENTICE_M() -> String { return ""; }
+    public static func ERRAND_RUNNER_F() -> String { return "Ran errands for local fixers before turning twelve. "; }
+    public static func ERRAND_RUNNER_M() -> String { return ""; }
+
+    // === EXPANDED CHILDHOOD - LOSS ===
+    public static func LOST_FRIEND_YOUNG_F() -> String { return "Lost a best friend to violence as a child. "; }
+    public static func LOST_FRIEND_YOUNG_M() -> String { return ""; }
+    public static func HOUSE_BURNED_F() -> String { return "Family home burned down. Lost everything. "; }
+    public static func HOUSE_BURNED_M() -> String { return ""; }
+    public static func PET_KILLED_F() -> String { return "Had a pet killed by neighborhood kids. "; }
+    public static func PET_KILLED_M() -> String { return ""; }
+    public static func SIBLING_MISSING_F() -> String { return "A sibling went missing and was never found. "; }
+    public static func SIBLING_MISSING_M() -> String { return ""; }
+
 }

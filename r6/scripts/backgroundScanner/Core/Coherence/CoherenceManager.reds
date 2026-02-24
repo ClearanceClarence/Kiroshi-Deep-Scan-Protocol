@@ -134,8 +134,8 @@ public class KdspCoherenceManager {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_EMPLOYEE") {
             let roll = RandRange(seed, 1, 100);
             if roll <= 40 { return "CORPORATE"; }
-            if roll <= 60 { return "CLIMBING"; }
-            if roll <= 80 { return "STABLE"; }
+            if roll <= 65 { return "CLIMBING"; }
+            if roll <= 90 { return "STABLE"; }
             return "FALLING";
         }
         
@@ -151,6 +151,15 @@ public class KdspCoherenceManager {
             if roll <= 50 { return "STABLE"; }
             if roll <= 75 { return "CLIMBING"; }
             if roll <= 90 { return "CORPORATE"; }
+            return "FALLING";
+        }
+        
+        if Equals(archetype, "YUPPIE") {
+            let roll = RandRange(seed, 1, 100);
+            if roll <= 40 { return "STABLE"; }
+            if roll <= 65 { return "CLIMBING"; }
+            if roll <= 85 { return "CORPORATE"; }
+            if roll <= 95 { return "STRUGGLING"; }
             return "FALLING";
         }
         

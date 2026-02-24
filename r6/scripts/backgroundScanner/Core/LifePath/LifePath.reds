@@ -30,7 +30,8 @@ public class KdspLifePath {
     private func GetCrowdArchetype(target: wref<NPCPuppet>) -> String {
         let resolvedApperanceName = NameToString(target.GetCurrentAppearanceName());
 
-        if StrContains(resolvedApperanceName, "corporat_ma") || StrContains(resolvedApperanceName, "corpo_ma") {
+        // Manager detection - check for _manager pattern first (catches both genders)
+        if StrContains(resolvedApperanceName, "manager") || StrContains(resolvedApperanceName, "corporat_ma") || StrContains(resolvedApperanceName, "corpo_ma") {
             return "CORPO_MANAGER";
         }
         if StrContains(resolvedApperanceName, "corporat_wa") || StrContains(resolvedApperanceName, "corpo_wa") || StrContains(resolvedApperanceName, "corpo") {

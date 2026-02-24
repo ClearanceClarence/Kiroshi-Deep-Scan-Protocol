@@ -1,4 +1,4 @@
-// Shared Name Generation Utility - MODULAR v1.6.2
+// Shared Name Generation Utility
 // Night City Demographics: American, Hispanic, Japanese, Chinese, Korean, 
 // Slavic, Indian, Middle Eastern, African, Southeast Asian, European, Haitian, African American
 // 100 names per category per gender = 3,900 total names across 13 ethnicities

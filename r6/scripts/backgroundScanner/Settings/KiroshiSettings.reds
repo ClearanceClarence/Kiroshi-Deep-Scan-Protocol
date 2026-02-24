@@ -111,10 +111,101 @@ public class KdspDeepScanSettings {
     public let enablePronounDisplay: Bool = false;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Generation")
+    @runtimeProperty("ModSettings.displayName", "Scanner Glitches")
+    @runtimeProperty("ModSettings.description", "Rare chance that a scan is fully corrupted — showing garbled data, redacted records, or error messages. Simulates hardware malfunctions, NetWatch interference, and scrubbed identities.")
+    public let enableScannerGlitches: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Generation")
+    @runtimeProperty("ModSettings.displayName", "Scanner Glitch Chance")
+    @runtimeProperty("ModSettings.description", "How often scanner glitches occur. 1 = every scan is glitched, 500 = 1 in 500 chance. Default: 200 (0.5%).")
+    @runtimeProperty("ModSettings.step", "1")
+    @runtimeProperty("ModSettings.min", "1")
+    @runtimeProperty("ModSettings.max", "500")
+    public let scannerGlitchChance: Int32 = 200;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
     @runtimeProperty("ModSettings.category", "Developer")
     @runtimeProperty("ModSettings.displayName", "Debug Mode")
     @runtimeProperty("ModSettings.description", "Shows the NPC's TweakDB ID and appearance name in the scanner. Useful for bug reports.")
     public let enableDebugMode: Bool = false;
+
+    // ═══════════════════════════════════════════════════════════
+    // SECTION TOGGLES - Show/hide individual scan sections
+    // ═══════════════════════════════════════════════════════════
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Background")
+    @runtimeProperty("ModSettings.description", "Show the Background section (upbringing, origin story).")
+    public let showBackground: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Early Life")
+    @runtimeProperty("ModSettings.description", "Show the Early Life section (childhood events, formative experiences).")
+    public let showEarlyLife: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Recent Activity")
+    @runtimeProperty("ModSettings.description", "Show the Recent Activity section (current job, recent events).")
+    public let showRecentActivity: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Psych Profile")
+    @runtimeProperty("ModSettings.description", "Show the Psych Profile section (personality traits, mental state).")
+    public let showPsychProfile: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Criminal Record")
+    @runtimeProperty("ModSettings.description", "Show the Criminal Record section (NCPD database, arrests, warrants).")
+    public let showCriminalRecord: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Gang Affiliation")
+    @runtimeProperty("ModSettings.description", "Show the Gang Affiliation section (gang membership details, rank, operations).")
+    public let showGangAffiliation: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Cyberware")
+    @runtimeProperty("ModSettings.description", "Show the Cyberware section (implant count, status, illegal mods).")
+    public let showCyberware: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Financial")
+    @runtimeProperty("ModSettings.description", "Show the Financial section (income, credit rating, NCID).")
+    public let showFinancial: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Medical")
+    @runtimeProperty("ModSettings.description", "Show the Medical section (blood type, conditions, Trauma Team status).")
+    public let showMedical: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Relationships")
+    @runtimeProperty("ModSettings.description", "Show the Relationships section (family, associates, enemies).")
+    public let showRelationships: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "Vehicle Registration")
+    @runtimeProperty("ModSettings.description", "Show the Vehicle Registration section (owned vehicles, license status).")
+    public let showVehicle: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Sections")
+    @runtimeProperty("ModSettings.displayName", "NET Profile")
+    @runtimeProperty("ModSettings.description", "Show the NET Profile section (network activity, darknet presence).")
+    public let showNetProfile: Bool = true;
 }
 
 // Static helper class for accessing settings from anywhere
@@ -170,7 +261,7 @@ public abstract class KdspSettings {
         return maxItems;
     }
 
-    // Narrative Coherence is always enabled as of v1.8.1
+    // Narrative Coherence is always enabled
     // Cross-system data must always be consistent
     public static func CoherenceEnabled() -> Bool {
         return true;
@@ -221,6 +312,22 @@ public abstract class KdspSettings {
         return false;
     }
 
+    public static func ScannerGlitchesEnabled() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().enableScannerGlitches;
+        }
+        return true;
+    }
+
+    public static func GetScannerGlitchChance() -> Int32 {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().scannerGlitchChance;
+        }
+        return 200;
+    }
+
     public static func CompactRelationshipsEnabled() -> Bool {
         let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
         if IsDefined(system) && IsDefined(system.GetSettings()) {
@@ -257,5 +364,105 @@ public abstract class KdspSettings {
         if level == 2 { return 0.0; }
         if level == 3 { return 0.0; }
         return baseGap;
+    }
+
+    // ═══════════════════════════════════════════════════════════
+    // SECTION TOGGLE HELPERS
+    // ═══════════════════════════════════════════════════════════
+
+    public static func ShowBackground() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showBackground;
+        }
+        return true;
+    }
+
+    public static func ShowEarlyLife() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showEarlyLife;
+        }
+        return true;
+    }
+
+    public static func ShowRecentActivity() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showRecentActivity;
+        }
+        return true;
+    }
+
+    public static func ShowPsychProfile() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showPsychProfile;
+        }
+        return true;
+    }
+
+    public static func ShowCriminalRecord() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showCriminalRecord;
+        }
+        return true;
+    }
+
+    public static func ShowGangAffiliation() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showGangAffiliation;
+        }
+        return true;
+    }
+
+    public static func ShowCyberware() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showCyberware;
+        }
+        return true;
+    }
+
+    public static func ShowFinancial() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showFinancial;
+        }
+        return true;
+    }
+
+    public static func ShowMedical() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showMedical;
+        }
+        return true;
+    }
+
+    public static func ShowRelationships() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showRelationships;
+        }
+        return true;
+    }
+
+    public static func ShowVehicle() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showVehicle;
+        }
+        return true;
+    }
+
+    public static func ShowNetProfile() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().showNetProfile;
+        }
+        return true;
     }
 }

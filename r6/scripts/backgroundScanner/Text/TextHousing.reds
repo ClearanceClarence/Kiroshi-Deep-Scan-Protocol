@@ -302,4 +302,50 @@ public abstract class KdspTextHousing {
     public static func LIVED_DOGTOWN_F() -> String { return "Lived in Dogtown. "; }
     public static func LIVED_DOGTOWN_M() -> String { return ""; }
 
+    // === EXPANDED: SPECIFIC LOCATIONS ===
+    public static func LIVED_NORTHSIDE_F() -> String { return "Lived in Northside, Watson. "; }
+    public static func LIVED_NORTHSIDE_M() -> String { return ""; }
+    public static func LIVED_VISTA_DEL_REY_F() -> String { return "Lived in Vista del Rey, Heywood. "; }
+    public static func LIVED_VISTA_DEL_REY_M() -> String { return ""; }
+    public static func LIVED_RANCHO_F() -> String { return "Lived in Rancho Coronado. "; }
+    public static func LIVED_RANCHO_M() -> String { return ""; }
+    public static func LIVED_LITTLE_CHINA_F() -> String { return "Lived in Little China, Watson. "; }
+    public static func LIVED_LITTLE_CHINA_M() -> String { return ""; }
+
+    // === EXPANDED: TEMPORARY / TRANSIENT ===
+    public static func LIVED_SHELTER_F() -> String { return "Stayed in shelters for months. "; }
+    public static func LIVED_SHELTER_M() -> String { return ""; }
+    public static func LIVED_STAIRWELL_F() -> String { return "Slept in megabuilding stairwells. "; }
+    public static func LIVED_STAIRWELL_M() -> String { return ""; }
+    public static func LIVED_LAUNDROMAT_F() -> String { return "Slept in a 24-hour laundromat. "; }
+    public static func LIVED_LAUNDROMAT_M() -> String { return ""; }
+    public static func LIVED_ARCADE_F() -> String { return "Crashed in the back of an arcade. "; }
+    public static func LIVED_ARCADE_M() -> String { return ""; }
+
+    // === EXPANDED: UNUSUAL HOUSING ===
+    public static func LIVED_CONVERTED_BUS_F() -> String { return "Lived in a converted bus. "; }
+    public static func LIVED_CONVERTED_BUS_M() -> String { return ""; }
+    public static func LIVED_COMM_TOWER_F() -> String { return "Squatted in an abandoned comm tower. "; }
+    public static func LIVED_COMM_TOWER_M() -> String { return ""; }
+    public static func LIVED_BILLBOARD_F() -> String { return "Made a shelter behind a massive billboard. "; }
+    public static func LIVED_BILLBOARD_M() -> String { return ""; }
+    public static func LIVED_SERVER_ROOM_F() -> String { return "Lived in a decommissioned server room. "; }
+    public static func LIVED_SERVER_ROOM_M() -> String { return ""; }
+    public static func LIVED_CRANE_F() -> String { return "Squatted in a construction crane cab. "; }
+    public static func LIVED_CRANE_M() -> String { return ""; }
+
+    // === EXPANDED: UPGRADES / MOVES ===
+    public static func LIVED_FIRST_APT_F() -> String { return "Got her first apartment. One room, no windows. "; }
+    public static func LIVED_FIRST_APT_M() -> String { return "Got his first apartment. One room, no windows. "; }
+    public static func LIVED_PENTHOUSE_F() -> String { return "Briefly lived in a penthouse. "; }
+    public static func LIVED_PENTHOUSE_M() -> String { return ""; }
+    public static func LIVED_SHARED_APT_F() -> String { return "Shared an apartment with five others. "; }
+    public static func LIVED_SHARED_APT_M() -> String { return ""; }
+    public static func LIVED_ABOVE_BAR_F() -> String { return "Lived above a bar. Never slept well. "; }
+    public static func LIVED_ABOVE_BAR_M() -> String { return ""; }
+    public static func LIVED_BACK_SHOP_F() -> String { return "Lived in the back of a shop. "; }
+    public static func LIVED_BACK_SHOP_M() -> String { return ""; }
+    public static func LIVED_RIPPER_CLINIC_F() -> String { return "Lived above a ripperdoc clinic. "; }
+    public static func LIVED_RIPPER_CLINIC_M() -> String { return ""; }
+
 }

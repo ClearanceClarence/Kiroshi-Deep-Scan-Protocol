@@ -54,7 +54,7 @@ public class KdspRareNPCManager {
         else if Equals(rareType, "HIDDEN_NETRUNNER") {
             rareData = KdspRareNPCManager.GenerateHiddenNetrunner(seed, rareData);
         }
-        // v1.6 Expanded types
+        // Expanded types
         else if Equals(rareType, "UNDERCOVER_COP") {
             rareData = KdspRareNPCManager.GenerateUndercoverCop(seed, rareData);
         }
@@ -115,7 +115,7 @@ public class KdspRareNPCManager {
         else if Equals(rareType, "NOMAD_EXILE") {
             rareData = KdspRareNPCManager.GenerateNomadExile(seed, rareData);
         }
-        // v1.7 New types
+        // New types
         else if Equals(rareType, "BRAINDANCE_ADDICT") {
             rareData = KdspRareNPCManager.GenerateBraindanceAddict(seed, rareData);
         }
@@ -206,7 +206,7 @@ public class KdspRareNPCManager {
         else if Equals(rareType, "CONTAMINATED_SCOP") {
             rareData = KdspRareNPCManager.GenerateContaminatedScop(seed, rareData);
         }
-        // v1.7 New types (continued)
+        // New types (continued)
         else if Equals(rareType, "CORPO_HEIR_HIDING") {
             rareData = KdspRareNPCManager.GenerateCorpoHeirHiding(seed, rareData);
         }
@@ -316,7 +316,7 @@ public class KdspRareNPCManager {
         if i == 8 { return "CORPO_WHISTLEBLOWER"; }
         if i == 9 { return "HIDDEN_NETRUNNER"; }
         
-        // v1.6 Expanded types (10-29)
+        // Expanded types (10-29)
         if i == 10 { return "UNDERCOVER_COP"; }
         if i == 11 { return "RETIRED_LEGEND"; }
         if i == 12 { return "CLONE_SUBJECT"; }
@@ -338,7 +338,7 @@ public class KdspRareNPCManager {
         if i == 28 { return "DOUBLE_AGENT"; }
         if i == 29 { return "NOMAD_EXILE"; }
 
-        // v1.7 New types (30-59)
+        // New types (30-59)
         if i == 30 { return "BRAINDANCE_ADDICT"; }
         if i == 31 { return "NIGHT_CORP_SUBJECT"; }
         if i == 32 { return "DOLL_CHIP_SLEEPER"; }
@@ -370,7 +370,7 @@ public class KdspRareNPCManager {
         if i == 58 { return "DREAMTECH_VICTIM"; }
         if i == 59 { return "CONTAMINATED_SCOP"; }
 
-        // v1.7 Continued (60-89)
+        // Continued (60-89)
         if i == 60 { return "CORPO_HEIR_HIDING"; }
         if i == 61 { return "FLATLINE_REVIVED"; }
         if i == 62 { return "ILLEGAL_BD_PRODUCER"; }
@@ -755,7 +755,7 @@ public class KdspRareNPCManager {
     }
 
     // ═══════════════════════════════════════════════════════════════════════
-    // v1.6 EXPANDED FLAGGED INDIVIDUAL TYPES
+    // EXPANDED FLAGGED INDIVIDUAL TYPES
     // ═══════════════════════════════════════════════════════════════════════
 
     private static func GenerateUndercoverCop(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
@@ -1459,7 +1459,7 @@ public class KdspRareNPCManager {
     }
 
     // ===================================
-    // v1.7 NEW CLASSIFICATIONS (30 types)
+    // NEW CLASSIFICATIONS (30 types)
     // ===================================
 
     private static func GenerateBraindanceAddict(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
@@ -2261,7 +2261,7 @@ public class KdspRareNPCManager {
     }
 
     // ===================================
-    // v1.7 NEW CLASSIFICATIONS CONTINUED (30 types)
+    // NEW CLASSIFICATIONS CONTINUED (30 types)
     // ===================================
 
     private static func GenerateCorpoHeirHiding(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {

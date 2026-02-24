@@ -49,6 +49,12 @@ public class KdspNetWatchDBReport extends inkCustomController {
     private let m_relationshipsSection: wref<inkCompoundWidget>;
     private let m_relationshipsValue: wref<inkText>;
 
+    private let m_vehicleSection: wref<inkCompoundWidget>;
+    private let m_vehicleValue: wref<inkText>;
+
+    private let m_netProfileSection: wref<inkCompoundWidget>;
+    private let m_netProfileValue: wref<inkText>;
+
     private let m_pronounsSection: wref<inkCompoundWidget>;
     private let m_pronounsValue: wref<inkText>;
 
@@ -129,6 +135,14 @@ public class KdspNetWatchDBReport extends inkCustomController {
         this.m_relationshipsSection = this.CreateDataSection(root, "Relationships", n"relationships",
             new HDRColor(1.0, 0.6, 0.7, 1.0));
         this.m_relationshipsValue = this.m_relationshipsSection.GetWidget(n"relationships_value") as inkText;
+
+        this.m_vehicleSection = this.CreateDataSection(root, "Vehicle Registration", n"vehicle",
+            new HDRColor(0.6, 0.8, 1.0, 1.0));
+        this.m_vehicleValue = this.m_vehicleSection.GetWidget(n"vehicle_value") as inkText;
+
+        this.m_netProfileSection = this.CreateDataSection(root, "NET Profile", n"netprofile",
+            new HDRColor(0.5, 0.9, 1.0, 1.0));
+        this.m_netProfileValue = this.m_netProfileSection.GetWidget(n"netprofile_value") as inkText;
 
         this.m_pronounsSection = this.CreateDataSection(root, "Pronouns", n"pronouns",
             new HDRColor(0.8, 0.6, 1.0, 1.0));
@@ -232,7 +246,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Background
-        if StrLen(this.m_backstoryUI.background) > 0 {
+        if StrLen(this.m_backstoryUI.background) > 0 && KdspSettings.ShowBackground() {
             this.m_backgroundValue.SetText(this.m_backstoryUI.background);
             this.m_backgroundSection.SetVisible(true);
         } else {
@@ -240,7 +254,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Early Life
-        if StrLen(this.m_backstoryUI.earlyLife) > 0 {
+        if StrLen(this.m_backstoryUI.earlyLife) > 0 && KdspSettings.ShowEarlyLife() {
             this.m_earlyLifeValue.SetText(this.m_backstoryUI.earlyLife);
             this.m_earlyLifeSection.SetVisible(true);
         } else {
@@ -248,7 +262,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Recent Activity
-        if StrLen(this.m_backstoryUI.significantEvents) > 0 {
+        if StrLen(this.m_backstoryUI.significantEvents) > 0 && KdspSettings.ShowRecentActivity() {
             this.m_recentValue.SetText(this.m_backstoryUI.significantEvents);
             this.m_recentSection.SetVisible(true);
         } else {
@@ -272,7 +286,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Psych Profile
-        if StrLen(this.m_backstoryUI.threatAssessment) > 0 {
+        if StrLen(this.m_backstoryUI.threatAssessment) > 0 && KdspSettings.ShowPsychProfile() {
             this.m_threatValue.SetText(this.m_backstoryUI.threatAssessment);
             this.m_threatSection.SetVisible(true);
         } else {
@@ -280,7 +294,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Criminal
-        if StrLen(this.m_backstoryUI.criminalRecord) > 0 {
+        if StrLen(this.m_backstoryUI.criminalRecord) > 0 && KdspSettings.ShowCriminalRecord() {
             this.m_criminalValue.SetText(this.m_backstoryUI.criminalRecord);
             this.m_criminalSection.SetVisible(true);
         } else {
@@ -288,7 +302,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Gang
-        if StrLen(this.m_backstoryUI.gangAffiliation) > 0 {
+        if StrLen(this.m_backstoryUI.gangAffiliation) > 0 && KdspSettings.ShowGangAffiliation() {
             this.m_gangValue.SetText(this.m_backstoryUI.gangAffiliation);
             this.m_gangSection.SetVisible(true);
         } else {
@@ -296,7 +310,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Cyberware
-        if StrLen(this.m_backstoryUI.cyberwareStatus) > 0 {
+        if StrLen(this.m_backstoryUI.cyberwareStatus) > 0 && KdspSettings.ShowCyberware() {
             this.m_cyberValue.SetText(this.m_backstoryUI.cyberwareStatus);
             this.m_cyberSection.SetVisible(true);
         } else {
@@ -304,7 +318,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Finance
-        if StrLen(this.m_backstoryUI.financialStatus) > 0 {
+        if StrLen(this.m_backstoryUI.financialStatus) > 0 && KdspSettings.ShowFinancial() {
             this.m_financeValue.SetText(this.m_backstoryUI.financialStatus);
             this.m_financeSection.SetVisible(true);
         } else {
@@ -312,7 +326,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Medical
-        if StrLen(this.m_backstoryUI.medicalStatus) > 0 {
+        if StrLen(this.m_backstoryUI.medicalStatus) > 0 && KdspSettings.ShowMedical() {
             this.m_medicalValue.SetText(this.m_backstoryUI.medicalStatus);
             this.m_medicalSection.SetVisible(true);
         } else {
@@ -320,7 +334,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         };
         
         // Relationships
-        if StrLen(this.m_backstoryUI.relationships) > 0 {
+        if StrLen(this.m_backstoryUI.relationships) > 0 && KdspSettings.ShowRelationships() {
             this.m_relationshipsValue.SetText(this.m_backstoryUI.relationships);
             this.m_relationshipsSection.SetVisible(true);
             
@@ -331,6 +345,38 @@ public class KdspNetWatchDBReport extends inkCustomController {
             };
         } else {
             this.m_relationshipsSection.SetVisible(false);
+        };
+
+        // Vehicle Registration
+        if StrLen(this.m_backstoryUI.vehicleRegistration) > 0 && KdspSettings.ShowVehicle() {
+            this.m_vehicleValue.SetText(this.m_backstoryUI.vehicleRegistration);
+            this.m_vehicleSection.SetVisible(true);
+            // Highlight stolen vehicles
+            if StrContains(this.m_backstoryUI.vehicleRegistration, "STOLEN") {
+                this.m_vehicleValue.SetTintColor(new HDRColor(1.0, 0.4, 0.4, 1.0));
+            } else if StrContains(this.m_backstoryUI.vehicleRegistration, "SUSPENDED") || StrContains(this.m_backstoryUI.vehicleRegistration, "EXPIRED") {
+                this.m_vehicleValue.SetTintColor(new HDRColor(1.0, 0.85, 0.2, 1.0));
+            } else {
+                this.m_vehicleValue.SetTintColor(new HDRColor(0.6, 0.8, 1.0, 1.0));
+            }
+        } else {
+            this.m_vehicleSection.SetVisible(false);
+        };
+
+        // NET Profile
+        if StrLen(this.m_backstoryUI.netProfile) > 0 && KdspSettings.ShowNetProfile() {
+            this.m_netProfileValue.SetText(this.m_backstoryUI.netProfile);
+            this.m_netProfileSection.SetVisible(true);
+            // Highlight flagged activity
+            if StrContains(this.m_backstoryUI.netProfile, "Flagged") || StrContains(this.m_backstoryUI.netProfile, "FLAGGED") {
+                this.m_netProfileValue.SetTintColor(new HDRColor(1.0, 0.7, 0.2, 1.0));
+            } else if StrContains(this.m_backstoryUI.netProfile, "Darknet: ACTIVE") || StrContains(this.m_backstoryUI.netProfile, "Darknet: KNOWN") || StrContains(this.m_backstoryUI.netProfile, "Darknet: SELLER") {
+                this.m_netProfileValue.SetTintColor(new HDRColor(1.0, 0.4, 0.4, 1.0));
+            } else {
+                this.m_netProfileValue.SetTintColor(new HDRColor(0.5, 0.9, 1.0, 1.0));
+            }
+        } else {
+            this.m_netProfileSection.SetVisible(false);
         };
 
         // Pronouns
@@ -368,6 +414,8 @@ public class KdspNetWatchDBReport extends inkCustomController {
         this.UpdateSectionFontSize(this.m_financeSection, n"finance", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_medicalSection, n"medical", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_relationshipsSection, n"relationships", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_vehicleSection, n"vehicle", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_netProfileSection, n"netprofile", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_pronounsSection, n"pronouns", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_debugSection, n"debug", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
     }

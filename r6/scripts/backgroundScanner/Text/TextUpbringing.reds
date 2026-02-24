@@ -390,7 +390,7 @@ public abstract class KdspTextUpbringing {
     public static func LARGE_FAMILY_F() -> String { return "One of many siblings in a large family. "; }
     public static func LARGE_FAMILY_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: MORE PARENTAL SITUATIONS ===
+    // === EXPANDED: MORE PARENTAL SITUATIONS ===
     public static func WORKAHOLIC_PARENTS_F() -> String { return "Parents were workaholics, rarely home. "; }
     public static func WORKAHOLIC_PARENTS_M() -> String { return ""; }
     public static func HELICOPTER_PARENTS_F() -> String { return "Had overprotective helicopter parents. "; }
@@ -412,7 +412,7 @@ public abstract class KdspTextUpbringing {
     public static func ATHEIST_FAMILY_F() -> String { return "Raised in an atheist household. "; }
     public static func ATHEIST_FAMILY_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: SIBLING SITUATIONS ===
+    // === EXPANDED: SIBLING SITUATIONS ===
     public static func SIBLING_RIVALRY_F() -> String { return "Had intense sibling rivalry. "; }
     public static func SIBLING_RIVALRY_M() -> String { return ""; }
     public static func SIBLING_PROTECTOR_F() -> String { return "Protected by an older sibling. "; }
@@ -430,7 +430,7 @@ public abstract class KdspTextUpbringing {
     public static func ESTRANGED_SIBLING_F() -> String { return "Estranged from siblings since childhood. "; }
     public static func ESTRANGED_SIBLING_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: ECONOMIC SITUATIONS ===
+    // === EXPANDED: ECONOMIC SITUATIONS ===
     public static func PAYCHECK_TO_PAYCHECK_F() -> String { return "Family lived paycheck to paycheck. "; }
     public static func PAYCHECK_TO_PAYCHECK_M() -> String { return ""; }
     public static func FOOD_INSECURITY_F() -> String { return "Often went hungry as a child. "; }
@@ -448,7 +448,7 @@ public abstract class KdspTextUpbringing {
     public static func HOMELESS_CHILD_F() -> String { return "Was homeless as a young child. "; }
     public static func HOMELESS_CHILD_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: TRAUMA ===
+    // === EXPANDED: TRAUMA ===
     public static func WITNESSED_VIOLENCE_F() -> String { return "Witnessed domestic violence. "; }
     public static func WITNESSED_VIOLENCE_M() -> String { return ""; }
     public static func FAMILY_MURDER_F() -> String { return "A family member was murdered. "; }
@@ -466,7 +466,7 @@ public abstract class KdspTextUpbringing {
     public static func BULLIED_SEVERE_F() -> String { return "Severely bullied throughout childhood. "; }
     public static func BULLIED_SEVERE_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: POSITIVE CHILDHOOD ===
+    // === EXPANDED: POSITIVE CHILDHOOD ===
     public static func HAPPY_CHILDHOOD_F() -> String { return "Had a relatively happy childhood. "; }
     public static func HAPPY_CHILDHOOD_M() -> String { return ""; }
     public static func LOVING_FAMILY_F() -> String { return "Raised in a loving family. "; }
@@ -483,6 +483,44 @@ public abstract class KdspTextUpbringing {
     public static func TRAVELED_M() -> String { return ""; }
     public static func PRIVILEGED_F() -> String { return "Had a privileged upbringing. "; }
     public static func PRIVILEGED_M() -> String { return ""; }
+
+    // === EXPANDED: NIGHT CITY SPECIFIC ===
+    public static func NC_NATIVE_F() -> String { return "Born and raised in Night City. "; }
+    public static func NC_NATIVE_M() -> String { return ""; }
+    public static func MEGABUILDING_RAISED_F() -> String { return "Grew up entirely inside a megabuilding. "; }
+    public static func MEGABUILDING_RAISED_M() -> String { return ""; }
+    public static func COMBAT_ZONE_RAISED_F() -> String { return "Raised in a combat zone. "; }
+    public static func COMBAT_ZONE_RAISED_M() -> String { return ""; }
+    public static func NOMAD_CAMP_RAISED_F() -> String { return "Raised in a nomad camp in the Badlands. "; }
+    public static func NOMAD_CAMP_RAISED_M() -> String { return ""; }
+    public static func CORPO_ENCLAVE_F() -> String { return "Grew up in a corporate residential enclave. "; }
+    public static func CORPO_ENCLAVE_M() -> String { return ""; }
+    public static func PACIFICA_BORN_F() -> String { return "Born in Pacifica before the collapse. "; }
+    public static func PACIFICA_BORN_M() -> String { return ""; }
+
+    // === EXPANDED: PARENTAL OCCUPATIONS ===
+    public static func PARENT_SCAVENGER_F() -> String { return "Had a parent who scavenged for a living. "; }
+    public static func PARENT_SCAVENGER_M() -> String { return ""; }
+
+    // === EXPANDED: EARLY EXPERIENCES ===
+    public static func FIRST_GUN_YOUNG_F() -> String { return "Was given her first gun at age ten. "; }
+    public static func FIRST_GUN_YOUNG_M() -> String { return "Was given his first gun at age ten. "; }
+    public static func LOCKDOWN_CHILDHOOD_F() -> String { return "Spent much of childhood in lockdown. "; }
+    public static func LOCKDOWN_CHILDHOOD_M() -> String { return ""; }
+    public static func CORPO_DAYCARE_F() -> String { return "Grew up in corporate daycare programs. "; }
+    public static func CORPO_DAYCARE_M() -> String { return ""; }
+    public static func RAISED_ON_KIBBLE_F() -> String { return "Grew up eating nothing but kibble. "; }
+    public static func RAISED_ON_KIBBLE_M() -> String { return ""; }
+    public static func MUSIC_HOUSEHOLD_F() -> String { return "Grew up in a household full of music. "; }
+    public static func MUSIC_HOUSEHOLD_M() -> String { return ""; }
+    public static func VIOLENCE_NORMAL_F() -> String { return "Violence was a normal part of childhood. "; }
+    public static func VIOLENCE_NORMAL_M() -> String { return ""; }
+
+    // === EXPANDED: FAMILY SITUATIONS ===
+    public static func ADOPTED_DIFFERENT_F() -> String { return "Was adopted by a family of different ethnicity. "; }
+    public static func ADOPTED_DIFFERENT_M() -> String { return ""; }
+    public static func MIXED_GANG_FAMILY_F() -> String { return "Family members belonged to different gangs. "; }
+    public static func MIXED_GANG_FAMILY_M() -> String { return ""; }
 
 }
 

@@ -354,7 +354,7 @@ public abstract class KdspTextJobs {
     public static func JOB_SCRAP_DEALER_F() -> String { return "Dealt in scrap and salvage. "; }
     public static func JOB_SCRAP_DEALER_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: TECH JOBS ===
+    // === EXPANDED: TECH JOBS ===
     public static func JOB_TECH_SUPPORT_F() -> String { return "Worked in tech support. "; }
     public static func JOB_TECH_SUPPORT_M() -> String { return ""; }
     public static func JOB_SYSADMIN_F() -> String { return "Worked as a systems administrator. "; }
@@ -364,13 +364,13 @@ public abstract class KdspTextJobs {
     public static func JOB_AV_TECH_F() -> String { return "Worked as an AV technician. "; }
     public static func JOB_AV_TECH_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: CRIMINAL JOBS ===
+    // === EXPANDED: CRIMINAL JOBS ===
     public static func JOB_LOOKOUT_F() -> String { return "Served as a lookout for a crew. "; }
     public static func JOB_LOOKOUT_M() -> String { return ""; }
     public static func JOB_GETAWAY_F() -> String { return "Drove getaway for heists. "; }
     public static func JOB_GETAWAY_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: SERVICE JOBS ===
+    // === EXPANDED: SERVICE JOBS ===
     public static func JOB_DAYCARE_F() -> String { return "Worked at a daycare. "; }
     public static func JOB_DAYCARE_M() -> String { return ""; }
     public static func JOB_ELDER_CARE_F() -> String { return "Cared for the elderly. "; }
@@ -386,7 +386,7 @@ public abstract class KdspTextJobs {
     public static func JOB_MASSEUSE_F() -> String { return "Worked as a masseuse. "; }
     public static func JOB_MASSEUSE_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: TRANSPORT JOBS ===
+    // === EXPANDED: TRANSPORT JOBS ===
     public static func JOB_BUS_DRIVER_F() -> String { return "Drove a city bus. "; }
     public static func JOB_BUS_DRIVER_M() -> String { return ""; }
     public static func JOB_METRO_OP_F() -> String { return "Operated the NCART metro. "; }
@@ -398,7 +398,7 @@ public abstract class KdspTextJobs {
     public static func JOB_FREIGHT_F() -> String { return "Loaded freight for shipping companies. "; }
     public static func JOB_FREIGHT_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: ENTERTAINMENT JOBS ===
+    // === EXPANDED: ENTERTAINMENT JOBS ===
     public static func JOB_DJ_F() -> String { return "Worked as a DJ at clubs. "; }
     public static func JOB_DJ_M() -> String { return ""; }
     public static func JOB_PROMOTER_F() -> String { return "Promoted events and clubs. "; }
@@ -409,6 +409,72 @@ public abstract class KdspTextJobs {
     public static func JOB_STUNT_M() -> String { return ""; }
     public static func JOB_INFLUENCER_F() -> String { return "Tried to make it as an influencer. "; }
     public static func JOB_INFLUENCER_M() -> String { return ""; }
+
+    // === EXPANDED: FOOD / HOSPITALITY ===
+    public static func JOB_LINE_COOK_F() -> String { return "Worked as a line cook at a diner. "; }
+    public static func JOB_LINE_COOK_M() -> String { return ""; }
+    public static func JOB_FOOD_CART_F() -> String { return "Ran a food cart on the street. "; }
+    public static func JOB_FOOD_CART_M() -> String { return ""; }
+    public static func JOB_BARTENDER_F() -> String { return "Bartended at dive bars across Watson. "; }
+    public static func JOB_BARTENDER_M() -> String { return ""; }
+    public static func JOB_VENDING_TECH_F() -> String { return "Serviced vending machines across the city. "; }
+    public static func JOB_VENDING_TECH_M() -> String { return ""; }
+
+    // === EXPANDED: MANUAL LABOR ===
+    public static func JOB_DOCK_WORKER_F() -> String { return "Worked the docks at Night City harbor. "; }
+    public static func JOB_DOCK_WORKER_M() -> String { return ""; }
+    public static func JOB_CONSTRUCTION_F() -> String { return "Worked construction on megabuilding projects. "; }
+    public static func JOB_CONSTRUCTION_M() -> String { return ""; }
+    public static func JOB_DEMOLITION_F() -> String { return "Worked demolition crews. "; }
+    public static func JOB_DEMOLITION_M() -> String { return ""; }
+    public static func JOB_SEWER_WORKER_F() -> String { return "Maintained the sewer systems under Night City. "; }
+    public static func JOB_SEWER_WORKER_M() -> String { return ""; }
+    public static func JOB_POWER_GRID_F() -> String { return "Worked on the city power grid maintenance crew. "; }
+    public static func JOB_POWER_GRID_M() -> String { return ""; }
+
+    // === EXPANDED: UNDERGROUND / ILLEGAL ===
+    public static func JOB_BD_DEALER_F() -> String { return "Dealt braindances on the black market. "; }
+    public static func JOB_BD_DEALER_M() -> String { return ""; }
+    public static func JOB_GUN_RUNNER_F() -> String { return "Smuggled weapons across districts. "; }
+    public static func JOB_GUN_RUNNER_M() -> String { return ""; }
+
+    // === EXPANDED: MEDICAL / SCIENCE ===
+    public static func JOB_LAB_TECH_F() -> String { return "Worked as a laboratory technician. "; }
+    public static func JOB_LAB_TECH_M() -> String { return ""; }
+    public static func JOB_RIPPER_ASST_F() -> String { return "Assisted a ripperdoc with installations. "; }
+    public static func JOB_RIPPER_ASST_M() -> String { return ""; }
+    public static func JOB_PHARMA_REP_F() -> String { return "Sold pharmaceuticals for a corpo. "; }
+    public static func JOB_PHARMA_REP_M() -> String { return ""; }
+
+    // === EXPANDED: VEHICLE / TRANSPORT ===
+    public static func JOB_CAB_DRIVER_F() -> String { return "Drove a cab through Night City traffic. "; }
+    public static func JOB_CAB_DRIVER_M() -> String { return ""; }
+    public static func JOB_COURIER_BIKE_F() -> String { return "Worked as a bike courier. "; }
+    public static func JOB_COURIER_BIKE_M() -> String { return ""; }
+    public static func JOB_TOW_TRUCK_F() -> String { return "Operated a tow truck in the Badlands. "; }
+    public static func JOB_TOW_TRUCK_M() -> String { return ""; }
+    public static func JOB_NCART_WORKER_F() -> String { return "Worked maintenance on the NCART system. "; }
+    public static func JOB_NCART_WORKER_M() -> String { return ""; }
+
+    // === EXPANDED: SECURITY / ENFORCEMENT ===
+    public static func JOB_MALL_COP_F() -> String { return "Worked as mall security. "; }
+    public static func JOB_MALL_COP_M() -> String { return ""; }
+    public static func JOB_NIGHTCLUB_SEC_F() -> String { return "Did nightclub security. "; }
+    public static func JOB_NIGHTCLUB_SEC_M() -> String { return ""; }
+    public static func JOB_CONVOY_GUARD_F() -> String { return "Guarded convoys through the Badlands. "; }
+    public static func JOB_CONVOY_GUARD_M() -> String { return ""; }
+    public static func JOB_REPO_F() -> String { return "Repossessed property for creditors. "; }
+    public static func JOB_REPO_M() -> String { return ""; }
+
+    // === EXPANDED: TECH / SPECIALIST ===
+    public static func JOB_DRONE_TECH_F() -> String { return "Repaired and programmed drones. "; }
+    public static func JOB_DRONE_TECH_M() -> String { return ""; }
+    public static func JOB_NET_ADMIN_F() -> String { return "Worked as a network administrator. "; }
+    public static func JOB_NET_ADMIN_M() -> String { return ""; }
+    public static func JOB_SHARD_WRITER_F() -> String { return "Wrote data shards for distribution. "; }
+    public static func JOB_SHARD_WRITER_M() -> String { return ""; }
+    public static func JOB_ELEVATOR_TECH_F() -> String { return "Maintained elevators in megabuildings. "; }
+    public static func JOB_ELEVATOR_TECH_M() -> String { return ""; }
 
 }
 

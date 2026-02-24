@@ -482,7 +482,7 @@ public abstract class KdspTextAdulthood {
     public static func NEAR_DEATH_ADULT_F() -> String { return "Nearly died as an adult. "; }
     public static func NEAR_DEATH_ADULT_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: CAREER ===
+    // === EXPANDED: CAREER ===
     public static func PROMOTED_F() -> String { return "Got promoted at work. "; }
     public static func PROMOTED_M() -> String { return ""; }
     public static func FIRED_UNFAIRLY_F() -> String { return "Was fired unfairly. "; }
@@ -494,7 +494,7 @@ public abstract class KdspTextAdulthood {
     public static func CAREER_CHANGE_F() -> String { return "Made a major career change. "; }
     public static func CAREER_CHANGE_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: CRIME ===
+    // === EXPANDED: CRIME ===
     public static func FIRST_KILL_F() -> String { return "Committed her first kill. "; }
     public static func FIRST_KILL_M() -> String { return "Committed his first kill. "; }
     public static func HITMAN_JOB_F() -> String { return "Took a job as a hitman. "; }
@@ -508,7 +508,7 @@ public abstract class KdspTextAdulthood {
     public static func WITNESS_PROTECTION_F() -> String { return "Entered witness protection. "; }
     public static func WITNESS_PROTECTION_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: TRAUMA ===
+    // === EXPANDED: TRAUMA ===
     public static func MUGGED_F() -> String { return "Was violently mugged. "; }
     public static func MUGGED_M() -> String { return ""; }
     public static func HOME_INVASION_F() -> String { return "Survived a home invasion. "; }
@@ -518,7 +518,7 @@ public abstract class KdspTextAdulthood {
     public static func BUILDING_COLLAPSE_F() -> String { return "Survived a building collapse. "; }
     public static func BUILDING_COLLAPSE_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: RELATIONSHIPS ===
+    // === EXPANDED: RELATIONSHIPS ===
     public static func GOT_MARRIED_F() -> String { return "Got married. "; }
     public static func GOT_MARRIED_M() -> String { return ""; }
     public static func GOT_DIVORCED_F() -> String { return "Got divorced. "; }
@@ -532,7 +532,7 @@ public abstract class KdspTextAdulthood {
     public static func RECONCILED_F() -> String { return "Reconciled with estranged family. "; }
     public static func RECONCILED_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: HEALTH ===
+    // === EXPANDED: HEALTH ===
     public static func DIAGNOSED_ILLNESS_F() -> String { return "Was diagnosed with a serious illness. "; }
     public static func DIAGNOSED_ILLNESS_M() -> String { return ""; }
     public static func BEAT_ILLNESS_F() -> String { return "Beat a serious illness. "; }
@@ -546,7 +546,7 @@ public abstract class KdspTextAdulthood {
     public static func LOST_LIMB_F() -> String { return "Lost a limb and got a cybernetic replacement. "; }
     public static func LOST_LIMB_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: SUCCESS ===
+    // === EXPANDED: SUCCESS ===
     public static func LOTTERY_WIN_F() -> String { return "Won a small lottery. "; }
     public static func LOTTERY_WIN_M() -> String { return ""; }
     public static func FAMOUS_BRIEFLY_F() -> String { return "Was briefly famous. "; }
@@ -558,7 +558,7 @@ public abstract class KdspTextAdulthood {
     public static func AWARD_F() -> String { return "Won a professional award. "; }
     public static func AWARD_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: MISC ===
+    // === EXPANDED: MISC ===
     public static func WENT_CORPO_F() -> String { return "Went corporate after years on the street. "; }
     public static func WENT_CORPO_M() -> String { return ""; }
     public static func LEFT_CORPO_F() -> String { return "Left the corporate world behind. "; }
@@ -572,7 +572,7 @@ public abstract class KdspTextAdulthood {
     public static func IDENTITY_STOLEN_F() -> String { return "Had identity stolen. "; }
     public static func IDENTITY_STOLEN_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: VIOLENCE ===
+    // === EXPANDED: VIOLENCE ===
     public static func DRIVE_BY_F() -> String { return "Survived a drive-by shooting. "; }
     public static func DRIVE_BY_M() -> String { return ""; }
     public static func GANG_BEATING_F() -> String { return "Received a gang beating. "; }
@@ -580,7 +580,7 @@ public abstract class KdspTextAdulthood {
     public static func CARJACKED_F() -> String { return "Was carjacked at gunpoint. "; }
     public static func CARJACKED_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: WORK DRAMA ===
+    // === EXPANDED: WORK DRAMA ===
     public static func WORKPLACE_AFFAIR_F() -> String { return "Had an affair at work. "; }
     public static func WORKPLACE_AFFAIR_M() -> String { return ""; }
     public static func WORKPLACE_ENEMY_F() -> String { return "Made a bitter enemy at work. "; }
@@ -596,7 +596,7 @@ public abstract class KdspTextAdulthood {
     public static func TRANSFERRED_F() -> String { return "Was transferred against her will. "; }
     public static func TRANSFERRED_M() -> String { return "Was transferred against his will. "; }
 
-    // === v1.6 EXPANDED: PERSONAL GROWTH ===
+    // === EXPANDED: PERSONAL GROWTH ===
     public static func LEARNED_LANGUAGE_F() -> String { return "Learned a new language. "; }
     public static func LEARNED_LANGUAGE_M() -> String { return ""; }
     public static func GOT_DEGREE_F() -> String { return "Earned a degree. "; }
@@ -610,7 +610,7 @@ public abstract class KdspTextAdulthood {
     public static func FITNESS_F() -> String { return "Got serious about fitness. "; }
     public static func FITNESS_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: FAMILY ===
+    // === EXPANDED: FAMILY ===
     public static func LOST_CUSTODY_F() -> String { return "Lost custody of a child. "; }
     public static func LOST_CUSTODY_M() -> String { return ""; }
     public static func MISCARRIAGE_F() -> String { return "Suffered a miscarriage. "; }
@@ -622,7 +622,7 @@ public abstract class KdspTextAdulthood {
     public static func PARENT_DIED_F() -> String { return "Lost a parent. "; }
     public static func PARENT_DIED_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: LEGAL ===
+    // === EXPANDED: LEGAL ===
     public static func SUED_F() -> String { return "Was sued in civil court. "; }
     public static func SUED_M() -> String { return ""; }
     public static func WON_LAWSUIT_F() -> String { return "Won a lawsuit. "; }
@@ -636,7 +636,7 @@ public abstract class KdspTextAdulthood {
     public static func WRONGFUL_ARREST_F() -> String { return "Was wrongfully arrested. "; }
     public static func WRONGFUL_ARREST_M() -> String { return ""; }
 
-    // === v1.6 EXPANDED: UNDERWORLD ===
+    // === EXPANDED: UNDERWORLD ===
     public static func FIRST_FIXER_JOB_F() -> String { return "Completed first job for a fixer. "; }
     public static func FIRST_FIXER_JOB_M() -> String { return ""; }
     public static func DOUBLE_CROSSED_F() -> String { return "Was double-crossed on a job. "; }
@@ -649,6 +649,446 @@ public abstract class KdspTextAdulthood {
     public static func REP_BOOST_M() -> String { return ""; }
     public static func REP_TANK_F() -> String { return "Reputation tanked after a failed job. "; }
     public static func REP_TANK_M() -> String { return ""; }
+
+    // === NET / TECH CULTURE ===
+    public static func HACKED_BY_VDBS_F() -> String { return "Was hacked by the Voodoo Boys. Lost three days of memory. "; }
+    public static func HACKED_BY_VDBS_M() -> String { return ""; }
+    public static func ICE_BREACH_F() -> String { return "Personal ICE was breached. Financial data compromised. "; }
+    public static func ICE_BREACH_M() -> String { return ""; }
+    public static func SOLD_DATA_F() -> String { return "Sold personal data to a corp for quick eddies. "; }
+    public static func SOLD_DATA_M() -> String { return ""; }
+    public static func DEEP_NET_F() -> String { return "Went deep into the Old Net. Came back different. "; }
+    public static func DEEP_NET_M() -> String { return ""; }
+    public static func SHARD_MALWARE_F() -> String { return "Slotted a shard loaded with malware. "; }
+    public static func SHARD_MALWARE_M() -> String { return ""; }
+    public static func DATA_BROKER_F() -> String { return "Works as a data broker on the side. "; }
+    public static func DATA_BROKER_M() -> String { return ""; }
+    public static func DAEMON_ATTACK_F() -> String { return "Survived a daemon attack through a public terminal. "; }
+    public static func DAEMON_ATTACK_M() -> String { return ""; }
+    public static func GHOST_PROFILE_F() -> String { return "Maintains a ghost profile — minimal net footprint. "; }
+    public static func GHOST_PROFILE_M() -> String { return ""; }
+
+    // === CORPO INTRIGUE ===
+    public static func CORPO_SABOTAGE_F() -> String { return "Was the target of corporate sabotage. "; }
+    public static func CORPO_SABOTAGE_M() -> String { return ""; }
+    public static func CORPO_ESPIONAGE_F() -> String { return "Participated in corporate espionage. "; }
+    public static func CORPO_ESPIONAGE_M() -> String { return ""; }
+    public static func CORPO_RELOCATION_F() -> String { return "Was forcibly relocated by her employer. "; }
+    public static func CORPO_RELOCATION_M() -> String { return "Was forcibly relocated by his employer. "; }
+    public static func CORPO_BUYOUT_F() -> String { return "Survived a hostile corporate buyout. "; }
+    public static func CORPO_BUYOUT_M() -> String { return ""; }
+    public static func NDA_VIOLATION_F() -> String { return "Broke an NDA. Legal consequences pending. "; }
+    public static func NDA_VIOLATION_M() -> String { return ""; }
+    public static func CORPO_EXPERIMENT_F() -> String { return "Was unknowingly part of a corporate experiment. "; }
+    public static func CORPO_EXPERIMENT_M() -> String { return ""; }
+    public static func GOLDEN_PARACHUTE_F() -> String { return "Left a corp with a generous severance package. "; }
+    public static func GOLDEN_PARACHUTE_M() -> String { return ""; }
+
+    // === NIGHT CITY SURVIVAL ===
+    public static func ACID_RAIN_F() -> String { return "Suffered chemical burns from acid rain exposure. "; }
+    public static func ACID_RAIN_M() -> String { return ""; }
+    public static func BUILDING_FIRE_F() -> String { return "Lost everything in an apartment building fire. "; }
+    public static func BUILDING_FIRE_M() -> String { return ""; }
+    public static func MEGABUILDING_LOCKDOWN_F() -> String { return "Survived a megabuilding lockdown. "; }
+    public static func MEGABUILDING_LOCKDOWN_M() -> String { return ""; }
+    public static func POWER_GRID_F() -> String { return "Went two weeks without power during a grid failure. "; }
+    public static func POWER_GRID_M() -> String { return ""; }
+    public static func CONTAMINATED_WATER_F() -> String { return "Was poisoned by contaminated water supply. "; }
+    public static func CONTAMINATED_WATER_M() -> String { return ""; }
+    public static func SCAV_TARGET_F() -> String { return "Was targeted by Scavengers for organ harvesting. Escaped. "; }
+    public static func SCAV_TARGET_M() -> String { return ""; }
+    public static func CYBERPSYCHO_ATTACK_F() -> String { return "Caught in the crossfire of a cyberpsycho rampage. "; }
+    public static func CYBERPSYCHO_ATTACK_M() -> String { return ""; }
+    public static func DELAMAIN_CRASH_F() -> String { return "Was in a Delamain cab during a system malfunction. "; }
+    public static func DELAMAIN_CRASH_M() -> String { return ""; }
+    public static func NCART_MUGGED_F() -> String { return "Was mugged on the NCART. "; }
+    public static func NCART_MUGGED_M() -> String { return ""; }
+    public static func STRAY_BULLET_F() -> String { return "Was hit by a stray bullet during a street shootout. "; }
+    public static func STRAY_BULLET_M() -> String { return ""; }
+
+    // === MEDICAL / TRAUMA TEAM ===
+    public static func TT_SAVED_F() -> String { return "Was saved by Trauma Team. Still paying the bill. "; }
+    public static func TT_SAVED_M() -> String { return ""; }
+    public static func TT_DENIED_F() -> String { return "Trauma Team refused service. Coverage had lapsed. "; }
+    public static func TT_DENIED_M() -> String { return ""; }
+    public static func BAD_RIPPER_F() -> String { return "Went to a back-alley ripperdoc. Got an infection. "; }
+    public static func BAD_RIPPER_M() -> String { return ""; }
+    public static func ORGAN_SOLD_F() -> String { return "Sold a kidney to pay off debts. "; }
+    public static func ORGAN_SOLD_M() -> String { return ""; }
+    public static func CLONED_ORGAN_F() -> String { return "Received a cloned organ transplant. "; }
+    public static func CLONED_ORGAN_M() -> String { return ""; }
+    public static func EXPERIMENTAL_DRUG_F() -> String { return "Volunteered for experimental drug trials. "; }
+    public static func EXPERIMENTAL_DRUG_M() -> String { return ""; }
+    public static func MISDIAGNOSED_F() -> String { return "Was misdiagnosed and received wrong treatment. "; }
+    public static func MISDIAGNOSED_M() -> String { return ""; }
+
+    // === BRAINDANCE / MEDIA ===
+    public static func BD_RECORDED_F() -> String { return "Was unknowingly recorded for a braindance. "; }
+    public static func BD_RECORDED_M() -> String { return ""; }
+    public static func XBD_EXPOSURE_F() -> String { return "Was exposed to illegal XBDs. Still affected. "; }
+    public static func XBD_EXPOSURE_M() -> String { return ""; }
+    public static func MEDIA_INTERVIEW_F() -> String { return "Was interviewed by a media crew. Story was twisted. "; }
+    public static func MEDIA_INTERVIEW_M() -> String { return ""; }
+    public static func DEEPFAKE_F() -> String { return "Was the victim of a deepfake scandal. "; }
+    public static func DEEPFAKE_M() -> String { return ""; }
+    public static func PIRATE_RADIO_F() -> String { return "Ran a pirate radio station. "; }
+    public static func PIRATE_RADIO_M() -> String { return ""; }
+
+    // === DISPLACEMENT / MIGRATION ===
+    public static func FLED_PACIFICA_F() -> String { return "Fled Pacifica after the collapse. "; }
+    public static func FLED_PACIFICA_M() -> String { return ""; }
+    public static func CLIMATE_REFUGEE_F() -> String { return "Climate refugee from the Southwest droughts. "; }
+    public static func CLIMATE_REFUGEE_M() -> String { return ""; }
+    public static func CORPO_WAR_REFUGEE_F() -> String { return "Displaced by the Fourth Corporate War. "; }
+    public static func CORPO_WAR_REFUGEE_M() -> String { return ""; }
+    public static func SQUATTER_F() -> String { return "Squatting in an abandoned building. "; }
+    public static func SQUATTER_M() -> String { return ""; }
+    public static func EVICTED_MEGA_F() -> String { return "Was evicted from a megabuilding for unpaid rent. "; }
+    public static func EVICTED_MEGA_M() -> String { return ""; }
+
+    // === VIGILANTE / JUSTICE ===
+    public static func VIGILANTE_F() -> String { return "Took justice into her own hands once. "; }
+    public static func VIGILANTE_M() -> String { return "Took justice into his own hands once. "; }
+    public static func WRONGFUL_NCPD_F() -> String { return "Was beaten by NCPD during a false arrest. "; }
+    public static func WRONGFUL_NCPD_M() -> String { return ""; }
+    public static func BRIBE_NCPD_F() -> String { return "Bribed NCPD to avoid charges. "; }
+    public static func BRIBE_NCPD_M() -> String { return ""; }
+    public static func TURNED_IN_FRIEND_F() -> String { return "Turned in a friend for the bounty. "; }
+    public static func TURNED_IN_FRIEND_M() -> String { return ""; }
+
+    // === RIPPERDOC / CYBERWARE CULTURE ===
+    public static func CHROME_JUNKIE_F() -> String { return "Gets new chrome every month. Can't stop upgrading. "; }
+    public static func CHROME_JUNKIE_M() -> String { return ""; }
+    public static func STRIPPED_CHROME_F() -> String { return "Had chrome forcibly stripped by Scavengers. "; }
+    public static func STRIPPED_CHROME_M() -> String { return ""; }
+    public static func SECONDHAND_CHROME_F() -> String { return "Running secondhand chrome pulled from a corpse. "; }
+    public static func SECONDHAND_CHROME_M() -> String { return ""; }
+    public static func SANDEVISTAN_SIDE_F() -> String { return "Suffering side effects from Sandevistan overuse. "; }
+    public static func SANDEVISTAN_SIDE_M() -> String { return ""; }
+    public static func KIROSHI_GLITCH_F() -> String { return "Kiroshi optics keep glitching. Can't afford a fix. "; }
+    public static func KIROSHI_GLITCH_M() -> String { return ""; }
+
+    // === COMMUNITY / SOCIAL ===
+    public static func BLOCK_PARTY_F() -> String { return "Organized a block party that turned into a brawl. "; }
+    public static func BLOCK_PARTY_M() -> String { return ""; }
+    public static func NEIGHBORHOOD_WATCH_F() -> String { return "Started a neighborhood watch. "; }
+    public static func NEIGHBORHOOD_WATCH_M() -> String { return ""; }
+    public static func FOOD_BANK_F() -> String { return "Volunteers at a food bank. "; }
+    public static func FOOD_BANK_M() -> String { return ""; }
+    public static func STREET_PREACHER_F() -> String { return "Became a street preacher. "; }
+    public static func STREET_PREACHER_M() -> String { return ""; }
+    public static func UNDERGROUND_FIGHT_F() -> String { return "Competed in underground fights. "; }
+    public static func UNDERGROUND_FIGHT_M() -> String { return ""; }
+
+    // === ROMANTIC / PERSONAL ===
+    public static func JOYTOY_RELATIONSHIP_F() -> String { return "Fell in love with a joytoy. "; }
+    public static func JOYTOY_RELATIONSHIP_M() -> String { return ""; }
+    public static func STALKED_F() -> String { return "Was stalked by an ex. "; }
+    public static func STALKED_M() -> String { return ""; }
+    public static func CATFISHED_F() -> String { return "Was catfished through a dating service. "; }
+    public static func CATFISHED_M() -> String { return ""; }
+    public static func PREGNANT_SCARE_F() -> String { return "Had a pregnancy scare that changed everything. "; }
+    public static func PREGNANT_SCARE_M() -> String { return "Partner had a pregnancy scare that changed everything. "; }
+    public static func ELOPED_F() -> String { return "Eloped. Family doesn't know. "; }
+    public static func ELOPED_M() -> String { return ""; }
+
+    // === TRANSPORTATION / VEHICLES ===
+    public static func ROAD_RAGE_F() -> String { return "Was involved in a road rage incident on the highway. "; }
+    public static func ROAD_RAGE_M() -> String { return ""; }
+    public static func STOLEN_CAR_F() -> String { return "Had car stolen. Never recovered. "; }
+    public static func STOLEN_CAR_M() -> String { return ""; }
+    public static func ILLEGAL_RACING_F() -> String { return "Got into illegal street racing. "; }
+    public static func ILLEGAL_RACING_M() -> String { return ""; }
+    public static func SMUGGLER_RUN_F() -> String { return "Did a smuggling run through the Badlands. "; }
+    public static func SMUGGLER_RUN_M() -> String { return ""; }
+
+    // === ECONOMIC DESPERATION ===
+    public static func SOLD_BLOOD_F() -> String { return "Sells blood regularly to make rent. "; }
+    public static func SOLD_BLOOD_M() -> String { return ""; }
+    public static func DUMPSTER_DIVING_F() -> String { return "Survives partly on dumpster diving. "; }
+    public static func DUMPSTER_DIVING_M() -> String { return ""; }
+    public static func PAYDAY_LOAN_F() -> String { return "Trapped in a cycle of payday loans. "; }
+    public static func PAYDAY_LOAN_M() -> String { return ""; }
+    public static func SOLD_POSSESSIONS_F() -> String { return "Sold everything of value to stay afloat. "; }
+    public static func SOLD_POSSESSIONS_M() -> String { return ""; }
+    public static func CORPO_INDENTURED_F() -> String { return "Signed an indentured labor contract with a corp. "; }
+    public static func CORPO_INDENTURED_M() -> String { return ""; }
+
+    // === FIXERS / MERC LIFE ===
+    public static func FIXER_BLACKLIST_F() -> String { return "Was blacklisted by every fixer in Watson. "; }
+    public static func FIXER_BLACKLIST_M() -> String { return ""; }
+    public static func BOTCHED_DELIVERY_F() -> String { return "Botched a delivery run. Package never made it. "; }
+    public static func BOTCHED_DELIVERY_M() -> String { return ""; }
+    public static func MERC_AMBUSH_F() -> String { return "Was set up on a gig. Barely walked away. "; }
+    public static func MERC_AMBUSH_M() -> String { return ""; }
+    public static func SOLD_OUT_CLIENT_F() -> String { return "Sold out a client for double the payout. "; }
+    public static func SOLD_OUT_CLIENT_M() -> String { return ""; }
+    public static func CLEAN_RECORD_F() -> String { return "Has a clean record with fixers. Always delivers. "; }
+    public static func CLEAN_RECORD_M() -> String { return ""; }
+    public static func FIXER_FAVOR_F() -> String { return "Did a favor for a fixer. Has a marker to call in. "; }
+    public static func FIXER_FAVOR_M() -> String { return ""; }
+    public static func CREW_WIPED_F() -> String { return "Entire crew was wiped on a job. Only survivor. "; }
+    public static func CREW_WIPED_M() -> String { return ""; }
+    public static func STOLEN_GOODS_F() -> String { return "Sitting on stolen goods no fence will touch. "; }
+    public static func STOLEN_GOODS_M() -> String { return ""; }
+    public static func DOUBLE_BOOKED_F() -> String { return "Took two gigs at once. Finished neither. "; }
+    public static func DOUBLE_BOOKED_M() -> String { return ""; }
+    public static func MERC_RETIREMENT_F() -> String { return "Tried to retire from merc work. Got pulled back in. "; }
+    public static func MERC_RETIREMENT_M() -> String { return ""; }
+
+    // === ARASAKA / MILITECH / CORP SPECIFIC ===
+    public static func ARASAKA_INTERVIEW_F() -> String { return "Was interviewed by Arasaka counterintelligence. "; }
+    public static func ARASAKA_INTERVIEW_M() -> String { return ""; }
+    public static func MILITECH_CONTRACT_F() -> String { return "Signed a Militech security contractor agreement. "; }
+    public static func MILITECH_CONTRACT_M() -> String { return ""; }
+    public static func BIOTECHNICA_TRIAL_F() -> String { return "Was a test subject in a Biotechnica pharmaceutical trial. "; }
+    public static func BIOTECHNICA_TRIAL_M() -> String { return ""; }
+    public static func KANG_TAO_DEBT_F() -> String { return "Owes a significant debt to Kang Tao. "; }
+    public static func KANG_TAO_DEBT_M() -> String { return ""; }
+    public static func PETROCHEM_LAYOFF_F() -> String { return "Was laid off during Petrochem downsizing. "; }
+    public static func PETROCHEM_LAYOFF_M() -> String { return ""; }
+    public static func ZETATECH_RECALL_F() -> String { return "Had Zetatech implants recalled. Still waiting for replacements. "; }
+    public static func ZETATECH_RECALL_M() -> String { return ""; }
+    public static func ORBITAL_AIR_F() -> String { return "Worked briefly for Orbital Air. Got altitude sickness. "; }
+    public static func ORBITAL_AIR_M() -> String { return ""; }
+    public static func NIGHT_CORP_DREAM_F() -> String { return "Participated in a Night Corp sleep study. Has strange dreams since. "; }
+    public static func NIGHT_CORP_DREAM_M() -> String { return ""; }
+
+    // === DISTRICT-SPECIFIC EVENTS ===
+    public static func HEYWOOD_SHOOTOUT_F() -> String { return "Caught in a shootout in Heywood. "; }
+    public static func HEYWOOD_SHOOTOUT_M() -> String { return ""; }
+    public static func WATSON_LOCKDOWN_F() -> String { return "Was trapped in Watson during a lockdown. "; }
+    public static func WATSON_LOCKDOWN_M() -> String { return ""; }
+    public static func KABUKI_RIPPER_F() -> String { return "Got discount chrome in Kabuki. Regrets it. "; }
+    public static func KABUKI_RIPPER_M() -> String { return ""; }
+    public static func JAPANTOWN_DEBT_F() -> String { return "Racked up a debt at a Japantown parlor. "; }
+    public static func JAPANTOWN_DEBT_M() -> String { return ""; }
+    public static func PACIFICA_SCAV_F() -> String { return "Nearly harvested by Scavs in Pacifica. "; }
+    public static func PACIFICA_SCAV_M() -> String { return ""; }
+    public static func RANCHO_FLOOD_F() -> String { return "Lost belongings to flooding in Rancho Coronado. "; }
+    public static func RANCHO_FLOOD_M() -> String { return ""; }
+    public static func DOGTOWN_HUSTLE_F() -> String { return "Ran a hustle out of Dogtown for a few months. "; }
+    public static func DOGTOWN_HUSTLE_M() -> String { return ""; }
+    public static func CHARTER_HILL_MUGGED_F() -> String { return "Was mugged walking through Charter Hill at night. "; }
+    public static func CHARTER_HILL_MUGGED_M() -> String { return ""; }
+    public static func BADLANDS_BREAKDOWN_F() -> String { return "Car broke down in the Badlands. Walked for hours. "; }
+    public static func BADLANDS_BREAKDOWN_M() -> String { return ""; }
+    public static func CITY_CENTER_BOMBING_F() -> String { return "Was near a bombing in City Center. Still flinches at loud sounds. "; }
+    public static func CITY_CENTER_BOMBING_M() -> String { return ""; }
+
+    // === SUBSTANCE ABUSE / ADDICTION ===
+    public static func GLITTER_ADDICTION_F() -> String { return "Hooked on Glitter. Can't afford to quit. "; }
+    public static func GLITTER_ADDICTION_M() -> String { return ""; }
+    public static func SYNTHCOKE_F() -> String { return "Has a synthcoke habit. "; }
+    public static func SYNTHCOKE_M() -> String { return ""; }
+    public static func BLACK_LACE_F() -> String { return "Tried Black Lace. Blacked out for three days. "; }
+    public static func BLACK_LACE_M() -> String { return ""; }
+    public static func DEALER_F() -> String { return "Deals chems on the corner. "; }
+    public static func DEALER_M() -> String { return ""; }
+    public static func SOBER_SPONSOR_F() -> String { return "Acts as a sobriety sponsor for others. "; }
+    public static func SOBER_SPONSOR_M() -> String { return ""; }
+    public static func RELAPSED_F() -> String { return "Relapsed after two years clean. "; }
+    public static func RELAPSED_M() -> String { return ""; }
+    public static func BOOZE_DEPENDENCE_F() -> String { return "Functional alcoholic. Drinks to cope. "; }
+    public static func BOOZE_DEPENDENCE_M() -> String { return ""; }
+
+    // === MILITARIZED / SECURITY ===
+    public static func NCPD_BRUTALITY_F() -> String { return "Was brutalized during an NCPD sweep. "; }
+    public static func NCPD_BRUTALITY_M() -> String { return ""; }
+    public static func MAXTAC_WITNESS_F() -> String { return "Witnessed MaxTac neutralize a cyberpsycho on her block. "; }
+    public static func MAXTAC_WITNESS_M() -> String { return "Witnessed MaxTac neutralize a cyberpsycho on his block. "; }
+    public static func MILITECH_DRONE_F() -> String { return "Was nearly killed by an errant Militech security drone. "; }
+    public static func MILITECH_DRONE_M() -> String { return ""; }
+    public static func PRIVATE_SECURITY_F() -> String { return "Worked private security for a corpo exec. "; }
+    public static func PRIVATE_SECURITY_M() -> String { return ""; }
+    public static func ARASAKA_DETAINED_F() -> String { return "Was detained by Arasaka security for 72 hours without charges. "; }
+    public static func ARASAKA_DETAINED_M() -> String { return ""; }
+    public static func EVENT_SECURITY_F() -> String { return "Worked event security at Afterlife. "; }
+    public static func EVENT_SECURITY_M() -> String { return ""; }
+
+    // === AFTERLIFE / BARS / NIGHTLIFE ===
+    public static func AFTERLIFE_REGULAR_F() -> String { return "Is a regular at the Afterlife. "; }
+    public static func AFTERLIFE_REGULAR_M() -> String { return ""; }
+    public static func BARFIGHT_F() -> String { return "Broke a jaw in a bar fight. "; }
+    public static func BARFIGHT_M() -> String { return ""; }
+    public static func DRINK_NAMED_F() -> String { return "Had a drink named after her at a dive bar. "; }
+    public static func DRINK_NAMED_M() -> String { return "Had a drink named after him at a dive bar. "; }
+    public static func BANNED_BAR_F() -> String { return "Banned from three different bars. "; }
+    public static func BANNED_BAR_M() -> String { return ""; }
+    public static func UNDERGROUND_PARTY_F() -> String { return "Went to an underground party in an abandoned factory. Never talks about what happened. "; }
+    public static func UNDERGROUND_PARTY_M() -> String { return ""; }
+    public static func NIGHTCLUB_OD_F() -> String { return "Overdosed at a nightclub. Was revived on site. "; }
+    public static func NIGHTCLUB_OD_M() -> String { return ""; }
+
+    // === PETS / ANIMALS ===
+    public static func PET_CAT_F() -> String { return "Keeps a stray cat in her apartment. "; }
+    public static func PET_CAT_M() -> String { return "Keeps a stray cat in his apartment. "; }
+    public static func PET_DOG_F() -> String { return "Owns a dog. Only living thing that trusts her. "; }
+    public static func PET_DOG_M() -> String { return "Owns a dog. Only living thing that trusts him. "; }
+    public static func PET_DIED_F() -> String { return "Lost a pet to a stray bullet. "; }
+    public static func PET_DIED_M() -> String { return ""; }
+    public static func FEEDS_STRAYS_F() -> String { return "Feeds stray animals in the neighborhood. "; }
+    public static func FEEDS_STRAYS_M() -> String { return ""; }
+
+    // === GAMBLING / VICE ===
+    public static func PACHINKO_DEBT_F() -> String { return "Has a crippling pachinko addiction. "; }
+    public static func PACHINKO_DEBT_M() -> String { return ""; }
+    public static func RIGGED_FIGHT_F() -> String { return "Bet on a rigged fight. Lost everything. "; }
+    public static func RIGGED_FIGHT_M() -> String { return ""; }
+    public static func CASINO_BANNED_F() -> String { return "Banned from multiple casinos for cheating. "; }
+    public static func CASINO_BANNED_M() -> String { return ""; }
+    public static func BOOKIE_F() -> String { return "Works as a bookie on the side. "; }
+    public static func BOOKIE_M() -> String { return ""; }
+    public static func POKER_SHARK_F() -> String { return "Cleans out poker games regularly. "; }
+    public static func POKER_SHARK_M() -> String { return ""; }
+
+    // === HOUSING / LIVING CONDITIONS ===
+    public static func COFFIN_MOTEL_F() -> String { return "Lives in a coffin motel. "; }
+    public static func COFFIN_MOTEL_M() -> String { return ""; }
+    public static func ROOFTOP_SQUAT_F() -> String { return "Squats on a rooftop. "; }
+    public static func ROOFTOP_SQUAT_M() -> String { return ""; }
+    public static func ROOMMATE_HELL_F() -> String { return "Has a roommate from hell. "; }
+    public static func ROOMMATE_HELL_M() -> String { return ""; }
+    public static func UPGRADED_APT_F() -> String { return "Moved up to a nicer apartment. "; }
+    public static func UPGRADED_APT_M() -> String { return ""; }
+    public static func LIVES_IN_CAR_F() -> String { return "Lives out of a car. "; }
+    public static func LIVES_IN_CAR_M() -> String { return ""; }
+    public static func NOISE_COMPLAINT_F() -> String { return "Filed 47 noise complaints. None were addressed. "; }
+    public static func NOISE_COMPLAINT_M() -> String { return ""; }
+    public static func APARTMENT_ROBBERY_F() -> String { return "Apartment was cleaned out while at work. "; }
+    public static func APARTMENT_ROBBERY_M() -> String { return ""; }
+
+    // === COMBAT ARENA / SPORTS ===
+    public static func BOXING_AMATEUR_F() -> String { return "Fought amateur boxing matches for cash. "; }
+    public static func BOXING_AMATEUR_M() -> String { return ""; }
+    public static func FIGHT_CLUB_F() -> String { return "Member of an underground fight club. "; }
+    public static func FIGHT_CLUB_M() -> String { return ""; }
+    public static func RACING_CRASH_F() -> String { return "Crashed during an illegal street race. "; }
+    public static func RACING_CRASH_M() -> String { return ""; }
+    public static func COMBAT_TOURNAMENT_F() -> String { return "Entered a combat tournament. Lost in the second round. "; }
+    public static func COMBAT_TOURNAMENT_M() -> String { return ""; }
+    public static func RACING_WIN_F() -> String { return "Won a street race. Still has the car. "; }
+    public static func RACING_WIN_M() -> String { return ""; }
+
+    // === DEATH / LOSS ===
+    public static func FRIEND_OVERDOSE_F() -> String { return "Found a friend dead from an overdose. "; }
+    public static func FRIEND_OVERDOSE_M() -> String { return ""; }
+    public static func NEIGHBOR_KILLED_F() -> String { return "Neighbor was killed. Nobody investigated. "; }
+    public static func NEIGHBOR_KILLED_M() -> String { return ""; }
+    public static func SAW_EXECUTION_F() -> String { return "Witnessed a public execution by a gang. "; }
+    public static func SAW_EXECUTION_M() -> String { return ""; }
+    public static func BODY_FOUND_F() -> String { return "Found a body in the alley behind her building. "; }
+    public static func BODY_FOUND_M() -> String { return "Found a body in the alley behind his building. "; }
+    public static func FUNERAL_DEBT_F() -> String { return "Went into debt paying for a funeral. "; }
+    public static func FUNERAL_DEBT_M() -> String { return ""; }
+    public static func CHOOM_FLATLINED_F() -> String { return "Best choom flatlined on a gig. "; }
+    public static func CHOOM_FLATLINED_M() -> String { return ""; }
+
+    // === FOOD / SURVIVAL ===
+    public static func FOOD_POISONING_F() -> String { return "Got food poisoning from a street vendor. Nearly died. "; }
+    public static func FOOD_POISONING_M() -> String { return ""; }
+    public static func KIBBLE_DIET_F() -> String { return "Has been eating nothing but kibble for months. "; }
+    public static func KIBBLE_DIET_M() -> String { return ""; }
+    public static func REAL_FOOD_F() -> String { return "Tasted real food for the first time. Cried. "; }
+    public static func REAL_FOOD_M() -> String { return ""; }
+    public static func FOOD_STALL_F() -> String { return "Runs a food stall on the side. "; }
+    public static func FOOD_STALL_M() -> String { return ""; }
+
+    // === SCAMS / CON ARTISTRY ===
+    public static func FAKE_CHROME_F() -> String { return "Was sold fake chrome. Paid full price. "; }
+    public static func FAKE_CHROME_M() -> String { return ""; }
+    public static func PYRAMID_SCHEME_F() -> String { return "Got roped into a pyramid scheme. Lost friends and money. "; }
+    public static func PYRAMID_SCHEME_M() -> String { return ""; }
+    public static func ROMANCE_SCAM_F() -> String { return "Was the target of a romance scam. "; }
+    public static func ROMANCE_SCAM_M() -> String { return ""; }
+    public static func FAKE_FIXER_F() -> String { return "Was conned by someone posing as a fixer. "; }
+    public static func FAKE_FIXER_M() -> String { return ""; }
+    public static func SHELL_COMPANY_F() -> String { return "Unknowingly works for a shell company. "; }
+    public static func SHELL_COMPANY_M() -> String { return ""; }
+    public static func IDENTITY_SOLD_F() -> String { return "Someone is using a copy of her identity. "; }
+    public static func IDENTITY_SOLD_M() -> String { return "Someone is using a copy of his identity. "; }
+
+    // === CHILDHOOD ECHOES (Adult Consequences) ===
+    public static func ORPHANAGE_REUNION_F() -> String { return "Tracked down others from the same orphanage. "; }
+    public static func ORPHANAGE_REUNION_M() -> String { return ""; }
+    public static func OLD_BULLY_F() -> String { return "Ran into a childhood bully. It didn't go well. "; }
+    public static func OLD_BULLY_M() -> String { return ""; }
+    public static func INHERITANCE_SCAM_F() -> String { return "Received notice of a fake inheritance. Classic scam. "; }
+    public static func INHERITANCE_SCAM_M() -> String { return ""; }
+    public static func FAMILY_SECRET_F() -> String { return "Discovered a dark family secret. "; }
+    public static func FAMILY_SECRET_M() -> String { return ""; }
+    public static func CHILDHOOD_HOME_DEMOLISHED_F() -> String { return "Childhood home was demolished for a corp development project. "; }
+    public static func CHILDHOOD_HOME_DEMOLISHED_M() -> String { return ""; }
+
+    // === UNEXPECTED WINDFALLS ===
+    public static func FOUND_STASH_F() -> String { return "Found a hidden stash of eddies in a wall during renovation. "; }
+    public static func FOUND_STASH_M() -> String { return ""; }
+    public static func WRONG_ACCOUNT_F() -> String { return "A corp accidentally deposited eddies into her account. Spent it before they noticed. "; }
+    public static func WRONG_ACCOUNT_M() -> String { return "A corp accidentally deposited eddies into his account. Spent it before they noticed. "; }
+    public static func SALVAGE_SCORE_F() -> String { return "Found valuable salvage in a wreck in the Badlands. "; }
+    public static func SALVAGE_SCORE_M() -> String { return ""; }
+    public static func RARE_SHARD_F() -> String { return "Found a rare data shard worth a fortune. "; }
+    public static func RARE_SHARD_M() -> String { return ""; }
+
+    // === BUREAUCRATIC / SYSTEMIC ===
+    public static func NC_ID_REVOKED_F() -> String { return "NC ID was revoked. Essentially a non-person. "; }
+    public static func NC_ID_REVOKED_M() -> String { return ""; }
+    public static func INSURANCE_DENIED_F() -> String { return "Health insurance claim was denied for the third time. "; }
+    public static func INSURANCE_DENIED_M() -> String { return ""; }
+    public static func PERMIT_REVOKED_F() -> String { return "Business permit was revoked without explanation. "; }
+    public static func PERMIT_REVOKED_M() -> String { return ""; }
+    public static func TAX_AUDIT_F() -> String { return "Was audited. Owed more than expected. "; }
+    public static func TAX_AUDIT_M() -> String { return ""; }
+    public static func JURY_DUTY_F() -> String { return "Served on a jury. The defendant disappeared before sentencing. "; }
+    public static func JURY_DUTY_M() -> String { return ""; }
+    public static func WRONG_ADDRESS_RAID_F() -> String { return "NCPD raided the wrong apartment. Hers. "; }
+    public static func WRONG_ADDRESS_RAID_M() -> String { return "NCPD raided the wrong apartment. His. "; }
+
+    // === REVENGE / GRUDGES ===
+    public static func REVENGE_SERVED_F() -> String { return "Got revenge on someone who wronged her years ago. "; }
+    public static func REVENGE_SERVED_M() -> String { return "Got revenge on someone who wronged him years ago. "; }
+    public static func HIT_LIST_F() -> String { return "Is on someone's hit list. Doesn't know whose. "; }
+    public static func HIT_LIST_M() -> String { return ""; }
+    public static func VENDETTA_F() -> String { return "Carrying a vendetta that consumes every waking moment. "; }
+    public static func VENDETTA_M() -> String { return ""; }
+    public static func FORGAVE_ENEMY_F() -> String { return "Forgave an old enemy. Surprised everyone. "; }
+    public static func FORGAVE_ENEMY_M() -> String { return ""; }
+
+    // === CLOSE CALLS / LUCK ===
+    public static func WRONG_PLACE_F() -> String { return "Was at the wrong place at the wrong time. Survived by pure luck. "; }
+    public static func WRONG_PLACE_M() -> String { return ""; }
+    public static func ELEVATOR_FALL_F() -> String { return "Survived an elevator malfunction in a megabuilding. "; }
+    public static func ELEVATOR_FALL_M() -> String { return ""; }
+    public static func MISSED_FLIGHT_F() -> String { return "Missed a flight that crashed. "; }
+    public static func MISSED_FLIGHT_M() -> String { return ""; }
+    public static func STOOD_UP_F() -> String { return "Was stood up for a meeting. The location was bombed an hour later. "; }
+    public static func STOOD_UP_M() -> String { return ""; }
+    public static func LAST_SECOND_F() -> String { return "Left a building seconds before it collapsed. "; }
+    public static func LAST_SECOND_M() -> String { return ""; }
+
+    // === CRAFTSMANSHIP / ARTISAN ===
+    public static func WEAPON_SMITH_F() -> String { return "Builds custom weapons in a garage workshop. "; }
+    public static func WEAPON_SMITH_M() -> String { return ""; }
+    public static func TATTOO_ARTIST_F() -> String { return "Does tattoo work on the side. "; }
+    public static func TATTOO_ARTIST_M() -> String { return ""; }
+    public static func CAR_MECHANIC_F() -> String { return "Restores old cars as a hobby. "; }
+    public static func CAR_MECHANIC_M() -> String { return ""; }
+    public static func SHARD_COLLECTOR_F() -> String { return "Collects rare data shards. "; }
+    public static func SHARD_COLLECTOR_M() -> String { return ""; }
+    public static func BOOTLEG_BD_F() -> String { return "Produces bootleg braindances. "; }
+    public static func BOOTLEG_BD_M() -> String { return ""; }
+
+    // === DEBTS / OBLIGATIONS ===
+    public static func OWES_GANG_F() -> String { return "Owes a dangerous favor to a gang lieutenant. "; }
+    public static func OWES_GANG_M() -> String { return ""; }
+    public static func OWES_RIPPER_F() -> String { return "Owes a ripperdoc for emergency surgery. "; }
+    public static func OWES_RIPPER_M() -> String { return ""; }
+    public static func BLOOD_OATH_F() -> String { return "Bound by a blood oath. Won't say to whom. "; }
+    public static func BLOOD_OATH_M() -> String { return ""; }
+    public static func COLLATERAL_F() -> String { return "Was used as collateral for someone else's debt. "; }
+    public static func COLLATERAL_M() -> String { return ""; }
+    public static func DEBT_COLLECTOR_F() -> String { return "Works as a debt collector. Nobody's favorite person. "; }
+    public static func DEBT_COLLECTOR_M() -> String { return ""; }
 
 }
 

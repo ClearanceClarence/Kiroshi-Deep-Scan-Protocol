@@ -4,22 +4,23 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=1a1a2e" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-1.8.1-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-2.0-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=1a1a2e" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=1a1a2e" alt="License">
 </p>
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  KIROSHI OPTICS v1.8.1 — DEEP SCAN PROTOCOL                                  ║
-║  STATUS: ONLINE ■ DATABASES: 8 CONNECTED ■ CLASSIFIED ACCESS: GRANTED        ║
+║  KIROSHI OPTICS v2.0 — DEEP SCAN PROTOCOL                                    ║
+║  STATUS: ONLINE ■ DATABASES: 10 CONNECTED ■ CLASSIFIED ACCESS: GRANTED       ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
 
 <p align="center">
   Hook your Kiroshi optics into every major database in Night City.<br>
   Scan any NPC — pull criminal records, cyberware registries, financials,<br>
-  medical history, psych profiles, and personal relationships.<br>
+  medical history, psych profiles, vehicle registrations, NET activity,<br>
+  and personal relationships.<br>
   <b>Every NPC is a person. Your Kiroshi proves it.</b>
 </p>
 
@@ -29,13 +30,14 @@
 ┌─── NAVIGATION ───────────────────────────────────────────────────────────────┐
 │                                                                              │
 │  ▸ Overview .................. What this mod does                            │
-│  ▸ Database Access .......... 8 queryable data sources                       │
-│  ▸ Unique NPC Database ...... 216 hand-written character files               │
+│  ▸ Database Access .......... 10 queryable data sources                      │
+│  ▸ Unique NPC Database ...... 225 hand-written character files               │
 │  ▸ Procedural Generation .... Systems that build NPC lives                   │
 │  ▸ Special Classifications .. 90 hidden NPC types                            │
 │  ▸ Relationships ............ Social network generation                      │
 │  ▸ Name Generation .......... 260K+ culturally matched names                 │
 │  ▸ Narrative Coherence ...... Life theme system                              │
+│  ▸ Scanner Glitches ......... Kiroshi malfunction system                     │
 │  ▸ Configuration ............ Mod settings breakdown                         │
 │  ▸ Installation ............. Requirements + setup                           │
 │  ▸ Compatibility ............ Known conflicts                                │
@@ -56,22 +58,22 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 <table>
 <tr>
-<td align="center"><h3>216</h3><sub>UNIQUE NPCs</sub></td>
-<td align="center"><h3>699</h3><sub>LIFE EVENTS</sub></td>
+<td align="center"><h3>225</h3><sub>UNIQUE NPCs</sub></td>
+<td align="center"><h3>1,717</h3><sub>LIFE EVENTS</sub></td>
 <td align="center"><h3>90</h3><sub>CLASSIFICATIONS</sub></td>
 <td align="center"><h3>260K+</h3><sub>NAME COMBOS</sub></td>
 </tr>
 <tr>
 <td align="center"><h3>11</h3><sub>GANG PROFILES</sub></td>
-<td align="center"><h3>13</h3><sub>ETHNICITIES</sub></td>
-<td align="center"><h3>3,900</h3><sub>NAME ENTRIES</sub></td>
-<td align="center"><h3>8</h3><sub>DATA SOURCES</sub></td>
+<td align="center"><h3>300</h3><sub>NET ALIASES</sub></td>
+<td align="center"><h3>200</h3><sub>PERSONAL QUIRKS</sub></td>
+<td align="center"><h3>10</h3><sub>DATA SOURCES</sub></td>
 </tr>
 </table>
 
 <br>
 
-> **`216 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`**
+> **`225 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`**
 
 <br>
 
@@ -104,16 +106,22 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 │  [08]  NCPD PERSONNEL SYSTEM                                                 │
 │        Badge number, rank, unit assignment, service record                   │
 │                                                                              │
+│  [09]  NCDMV VEHICLE REGISTRATION                                            │
+│        Make/model, registration status, license plate, ownership             │
+│                                                                              │
+│  [10]  NET ACTIVITY MONITOR                                                  │
+│        Network alias, browsing activity, darknet presence, flagged access    │
+│                                                                              │
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
-> **Smart Filtering:** Gang members won't show bank records. NCPD officers have sealed criminal files. Children display a protected status message only. Military combat NPCs show vanilla scanner data to prevent crashes.
+> **Smart Filtering:** Gang members won't show bank records. NCPD officers have sealed criminal files. Trauma Team members show military-grade profiles with operational security redactions. Children display a protected status message only. Military combat NPCs show vanilla scanner data to prevent crashes.
 
 <br>
 
 ## █▓▒░ UNIQUE NPC DATABASE
 
-216 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
+225 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
 
 <details>
 <summary><b>▸ ARASAKA CORPORATION</b> — 10 entries</summary>
@@ -190,7 +198,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 **Tyger Claws:** Jotaro Shobo (Lieutenant), Hiromi Sato (Operations)
 
-**Valentinos:** Gustavo Orta (Leadership), Jose Luis (Enforcer), Octavio Ruiz (Associate)
+**Valentinos:** Gustavo Orta (Leadership), Jose Luis (Enforcer), Octavio Ruiz (Associate), Pepe Najarro (El Coyote Cojo bartender), Miguel "Gizmo" Rodriguez (Outpost leader)
 
 **Voodoo Boys:** Brigitte (Maman), Placide (Enforcer)
 
@@ -216,7 +224,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 <details>
 <summary><b>▸ RIPPERDOCS, NCPD, NETWATCH & MEDIA</b> — 18 entries</summary>
 
-**Ripperdocs:** Viktor Vektor (Little China), Fingers (Jig-Jig Street), Charles Bucks (Kabuki), Misty Olszewski (Esoterica)
+**Ripperdocs:** Viktor Vektor (Little China), Fingers (Jig-Jig Street), Charles Bucks (Kabuki), Misty Olszewski (Esoterica), Nina Kraviz (Charter Hill)
 
 **NCPD & Politics:** River Ward (Detective), Jefferson Peralez (Politician), Lucius Rhyne (Mayor — dynamic), Barry (Officer)
 
@@ -259,7 +267,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 </details>
 
 <details>
-<summary><b>▸ PHANTOM LIBERTY — GIGS</b> — 22 entries</summary>
+<summary><b>▸ PHANTOM LIBERTY — GIGS</b> — 23 entries</summary>
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
@@ -272,7 +280,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 | **Dogtown Saints** | Nika Yankovich · Odell Blanco · Anthony Anderson |
 | **Prototype in the Scraper** | Hasan Demir |
 | **Waiting for Dodger** | Bill Mitchel · Charles Wilson · Carl Robinson |
-| **The Man Who Killed Jason Foreman** | Briana Dolson |
+| **The Man Who Killed Jason Foreman** | Briana Dolson · Leon Rinder |
 | **Spy in the Jungle** | Steven Santos · Ana Friedman · Boris Ribakov · Katya Karelina |
 | **Talent Academy** | Baird · Tommie Walker · Fiona Vargas · David Walker |
 | **Heaviest of Hearts** | Michael Maldonado · Georgina Zembinsky |
@@ -285,7 +293,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 <details>
 <summary><b>▸ OTHER NOTABLE CHARACTERS</b> — 5 entries</summary>
 
-Delamain (AI taxi) · Mama Welles (Jackie's mother) · Nibbles (V's cat) · Brendan (Sentient vending machine) · Skippy (Sentient pistol)
+Delamain (AI taxi) · Mama Welles (Jackie's mother) · Cynthia Najarro (Pepe's wife) · Zen Master (Anomalous entity) · Nibbles (V's cat) · Brendan (Sentient vending machine) · Skippy (Sentient pistol)
 
 </details>
 
@@ -314,15 +322,15 @@ Every non-unique NPC gets a full procedural profile built from their entity ID.
 
 ### ░ Life Events
 
-699 unique events build procedural backstories. Each carries gender-specific text, stat modifiers, and lifepath weighting.
+1,717 unique events build procedural backstories. Each carries gender-specific text, stat modifiers, and lifepath weighting.
 
 | Category | Count | Examples |
 |:--|:--|:--|
-| **Upbringing** | ~115 | Family structure, parental jobs, wealth level, orphan status |
-| **Housing** | ~97 | Megabuilding units, combat zone squats, nomad camps |
-| **Childhood** | ~178 | Education, street skills, gang youth, talents, trauma |
-| **Jobs** | ~103 | Criminal careers, merc work, tech, service, corpo |
-| **Adulthood** | ~213 | Relationships, violence, health crises, legal troubles |
+| **Upbringing** | ~470 | Family structure, parental jobs, wealth level, orphan status |
+| **Housing** | ~318 | Megabuilding units, combat zone squats, nomad camps, Dogtown |
+| **Childhood** | ~560 | Education, street skills, gang youth, talents, trauma |
+| **Jobs** | ~414 | Criminal careers, merc work, tech, service, corpo |
+| **Adulthood** | ~478 | Relationships, violence, health crises, legal troubles, fixers |
 
 ### ░ Criminal Records
 
@@ -342,7 +350,15 @@ Total implant count, category breakdown (Neural / Optical / Skeletal / Dermal / 
 
 ### ░ Psychological Profile
 
-Temperament, behavioral flags, violence risk score (0–100), loyalty index, notable traits.
+Temperament, behavioral flags, violence risk score (0–100), loyalty index, notable traits. 200 personal quirks across 7 categories (illicit affairs, phobias, embarrassing habits, conspiracy beliefs, weird legal flags, secret double lives, mundane absurd) surface from surveillance feeds with a 35% chance at medium density.
+
+### ░ Vehicle Registration
+
+Make/model, registration status, license plate, ownership. Color-coded by status: red for stolen, yellow for suspended/expired, blue for clean.
+
+### ░ NET Profile
+
+Network alias (from 300 aliases across 10 style categories), browsing activity, darknet presence, flagged connections. Amber for flagged activity, red for active darknet presence.
 
 ### ░ Gang Profiles
 
@@ -495,7 +511,15 @@ Always active. Every NPC is assigned a life theme that ensures all data tells on
 | **CRIMINAL** | Extensive | Street injuries | Illegal income | Aggression |
 | **CORPORATE** | White collar | Corpo medical | Good credit | Calculated |
 
-> Flags propagate across systems — `SUBSTANCE_ABUSE` generates drug charges in criminal, liver damage in medical, addiction markers in psych, and debt-from-habit in financial. Cross-system checks ensure married NPCs always have a spouse listed, grudge-holders always have enemies, and rejected implants always affect medical records. Everything connects.
+> Flags propagate across systems — `SUBSTANCE_ABUSE` generates drug charges in criminal, liver damage in medical, addiction markers in psych, and debt-from-habit in financial. Cross-system checks ensure married NPCs always have a spouse listed, grudge-holders always have enemies, rejected implants always affect medical records, corpo managers always show their actual corporation, and obese NPCs carry weight-related conditions. Everything connects.
+
+<br>
+
+## █▓▒░ SCANNER GLITCHES
+
+Rare chance that your Kiroshi malfunctions mid-scan. Eight distinct corruption types — hardware failure, database corruption, NetWatch interference, ghost identity, cyberpsychosis warning, classified record, memory overflow, signal jamming — replace the entire scan with garbled data, redacted fields, and error messages.
+
+Default: 1 in 200 chance per scan. Fully configurable (1–500) or toggleable off in settings.
 
 <br>
 
@@ -518,6 +542,14 @@ All settings: **Mod Settings Menu → Kiroshi Deep Scan**
 | Setting | Options | Default |
 |:--|:--|:--|
 | Special NPC Rarity | Common (1:250) / Rare (1:750) / Mythic (1:2000) | Rare |
+| Scanner Glitches | On / Off | On |
+| Scanner Glitch Chance | 1–500 | 200 |
+
+### ░ Sections
+
+| Setting | Default |
+|:--|:--|
+| Background / Early Life / Recent Activity / Psych Profile / Criminal Record / Gang Affiliation / Cyberware / Financial / Medical / Relationships / Vehicle Registration / NET Profile | All On |
 
 ### ░ Content
 
@@ -610,15 +642,33 @@ Keep scanning. Default is 1 in 750. Lower to 1 in 250 (Common) in settings. Ther
 </details>
 
 <details>
-<summary><b>▸ Why don't soldiers / MaxTac / Trauma Team show backstories?</b></summary>
+<summary><b>▸ Why don't soldiers / MaxTac show backstories?</b></summary>
 <br>
-Military combat NPCs display vanilla scanner info to prevent crashes from malformed NPC data during certain missions. Regular corporate employees show full procedural data.
+Military combat NPCs display vanilla scanner info to prevent crashes from malformed NPC data during certain missions. Trauma Team members now have dedicated military-grade profiles. Regular corporate employees show full procedural data.
+</details>
+
+<details>
+<summary><b>▸ What's a scanner glitch?</b></summary>
+<br>
+Rare Kiroshi malfunctions that corrupt the entire scan output. Hardware failures, database errors, NetWatch pulling access, ghost records. Eight different types. Default is 1 in 200 scans. Configurable or toggleable off in settings under Generation.
+</details>
+
+<details>
+<summary><b>▸ What are the personal quirks on the psych profile?</b></summary>
+<br>
+Surveillance data the system flagged but nobody followed up on. Affairs, phobias, conspiracy beliefs, weird legal flags, secret double lives. 200 entries across 7 categories. Shows up at medium data density or higher with a 35% chance.
+</details>
+
+<details>
+<summary><b>▸ Can I hide sections I don't care about?</b></summary>
+<br>
+Yes. 12 individual section toggles under Settings → Sections. Data still generates in the background — toggle back on and content appears immediately without rescanning.
 </details>
 
 <details>
 <summary><b>▸ Does this work with Phantom Liberty?</b></summary>
 <br>
-Full support. 43 unique hand-crafted Dogtown entries including Solomon Reed, Songbird, Kurt Hansen, President Myers, all stadium and Longshore Stacks vendors, No Easy Way Out characters, and 20 gig NPCs.
+Full support. 50+ unique hand-crafted Dogtown entries including Solomon Reed, Songbird, Kurt Hansen, President Myers, all stadium and Longshore Stacks vendors, No Easy Way Out characters, Black Sapphire party attendees, and 23 gig NPCs. Barghest soldiers get militia-specific profiles.
 </details>
 
 <details>
@@ -642,7 +692,7 @@ Trauma Team coverage tier. PLATINUM = full priority. GOLD = fast response. SILVE
 <details>
 <summary><b>▸ Scanner panel too tall / overlaps other mods</b></summary>
 <br>
-Mod Settings → Kiroshi Deep Scan → Display → Compact Mode. Set to Tight, Tighter, or Tightest.
+Mod Settings → Kiroshi Deep Scan → Display → Compact Mode. Set to Tight, Tighter, or Tightest. Also hide individual sections under Settings → Sections.
 </details>
 
 <details>
@@ -739,10 +789,12 @@ r6/scripts/backgroundScanner/
 │   ├── EthnicityDetector.reds             Appearance-based ethnicity
 │   ├── DatabaseSourceManager.reds         Data source attribution
 │   ├── ExpandedBackstoryManager.reds      Extended generation logic
+│   ├── ScannerGlitch.reds                 8 corruption types
 │   ├── CrowdArchetype.reds               NPC archetype classification
 │   ├── CrowdAssociation / Entity / Gender / Trait / Traits / Wealth .reds
 │   ├── ScannerBackstory.reds              Scanner data structure
 │   │
+│   ├── Child/                             Child NPC backstory generator
 │   ├── Names/                             13 ethnicity files × 300 names
 │   ├── Barghest/                          Barghest militia profiles
 │   ├── Coherence/                         Narrative coherence system
@@ -751,13 +803,17 @@ r6/scripts/backgroundScanner/
 │   ├── District/                          District-based generation
 │   ├── Financial/                         Financial profiles + NC ID
 │   ├── Gang/                              11 modular gang profiles
-│   ├── LifePath/                          699 event definitions
+│   ├── LifePath/                          1,717 event definitions
 │   ├── Medical/                           Medical records + blood types
-│   ├── NCPD/                              NCPD personnel files
+│   ├── NCPD/                              NCPD personnel files + profiles
+│   ├── NET/                               NET profiles + 300 aliases
 │   ├── Psych/                             Psychological profiles
+│   ├── Quirks/                            200 personal quirk entries
 │   ├── Rare/                              90 special classifications
 │   ├── Relationships/                     KdspNamePool + social networks
-│   └── Unique/                            216 character entries
+│   ├── TraumaTeam/                        8 TT-specific generators
+│   ├── Unique/                            225 character entries
+│   └── Vehicle/                           Vehicle registration generator
 │
 ├── Overrides/
 │   ├── ScannerNPCBodyGameController.reds  Scanner UI injection
@@ -765,9 +821,9 @@ r6/scripts/backgroundScanner/
 │   └── UI_ScannerModulesDef.reds         UI module definitions
 │
 ├── Settings/
-│   └── KiroshiSettings.reds              Mod Settings integration
+│   └── KiroshiSettings.reds              24 settings, 5 categories
 │
-├── Text/                                  ~3,300 lines of content
+├── Text/                                  ~4,800 lines of content
 │   └── TextAdulthood / Backgrounds / Childhood / Core /
 │       Corpos / Housing / Jobs / Lifepaths / Upbringing .reds
 │
@@ -810,8 +866,8 @@ MIT — See [LICENSE](LICENSE) for details.
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║           KIROSHI DEEP SCAN PROTOCOL v1.8.1                                  ║
-║           DATABASES: 8 ■ UNIQUE NPCs: 216 ■ CLASSIFICATIONS: 90              ║
+║           KIROSHI DEEP SCAN PROTOCOL v2.0                                    ║
+║           DATABASES: 10 ■ UNIQUE NPCs: 225 ■ CLASSIFICATIONS: 90             ║
 ║                                                                              ║
 ║           Every NPC is a person.                                             ║
 ║                                                                              ║

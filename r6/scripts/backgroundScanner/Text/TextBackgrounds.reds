@@ -266,7 +266,7 @@ public abstract class KdspTextBackgrounds {
     public static func STATUS_COMFORTABLE_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
-    // v1.6 EXPANDED: MORE PERSONALITY TRAITS
+    // EXPANDED: MORE PERSONALITY TRAITS
     // ═══════════════════════════════════════════════════════════
     public static func TRAIT_INTROVERTED_F() -> String { return "Prefers to keep to herself. "; }
     public static func TRAIT_INTROVERTED_M() -> String { return "Prefers to keep to himself. "; }
@@ -310,7 +310,7 @@ public abstract class KdspTextBackgrounds {
     public static func TRAIT_APATHETIC_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
-    // v1.6 EXPANDED: MORE SKILLS
+    // EXPANDED: MORE SKILLS
     // ═══════════════════════════════════════════════════════════
     public static func SKILL_NETRUNNER_F() -> String { return "Experienced netrunner. "; }
     public static func SKILL_NETRUNNER_M() -> String { return ""; }
@@ -346,7 +346,7 @@ public abstract class KdspTextBackgrounds {
     public static func SKILL_INTIMIDATION_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
-    // v1.6 EXPANDED: QUIRKS / HABITS
+    // EXPANDED: QUIRKS / HABITS
     // ═══════════════════════════════════════════════════════════
     public static func QUIRK_SMOKER_F() -> String { return "Heavy smoker. "; }
     public static func QUIRK_SMOKER_M() -> String { return ""; }
@@ -380,7 +380,7 @@ public abstract class KdspTextBackgrounds {
     public static func QUIRK_ANIMALS_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
-    // v1.6 EXPANDED: FEARS / PHOBIAS
+    // EXPANDED: FEARS / PHOBIAS
     // ═══════════════════════════════════════════════════════════
     public static func FEAR_HEIGHTS_F() -> String { return "Afraid of heights. "; }
     public static func FEAR_HEIGHTS_M() -> String { return ""; }
@@ -404,7 +404,7 @@ public abstract class KdspTextBackgrounds {
     public static func FEAR_ABANDONMENT_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
-    // v1.6 EXPANDED: SECRETS
+    // EXPANDED: SECRETS
     // ═══════════════════════════════════════════════════════════
     public static func SECRET_PAST_F() -> String { return "Hiding a dark past. "; }
     public static func SECRET_PAST_M() -> String { return ""; }
@@ -428,7 +428,7 @@ public abstract class KdspTextBackgrounds {
     public static func SECRET_SICKNESS_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
-    // v1.6 EXPANDED: LIFESTYLE
+    // EXPANDED: LIFESTYLE
     // ═══════════════════════════════════════════════════════════
     public static func LIFE_MINIMALIST_F() -> String { return "Lives a minimalist lifestyle. "; }
     public static func LIFE_MINIMALIST_M() -> String { return ""; }
@@ -448,7 +448,7 @@ public abstract class KdspTextBackgrounds {
     public static func LIFE_SOCIAL_M() -> String { return ""; }
 
     // ═══════════════════════════════════════════════════════════
-    // v1.6 EXPANDED: BELIEFS
+    // EXPANDED: BELIEFS
     // ═══════════════════════════════════════════════════════════
     public static func BELIEF_RELIGIOUS_F() -> String { return "Deeply religious. "; }
     public static func BELIEF_RELIGIOUS_M() -> String { return ""; }

@@ -83,14 +83,25 @@ public class KdspFinancialProfileManager {
     // Credit score influenced by life theme
     private static func GenerateCreditScoreCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
         let score = KdspFinancialProfileManager.GenerateCreditScore(seed, archetype);
+        let isCorpo = Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE");
+        let isHighStatus = isCorpo || Equals(archetype, "YUPPIE");
         
         if IsDefined(coherence) {
-            if Equals(coherence.lifeTheme, "FALLING") { score -= RandRange(seed + 5, 50, 150); }
-            if Equals(coherence.lifeTheme, "STRUGGLING") { score -= RandRange(seed + 6, 30, 80); }
-            if Equals(coherence.lifeTheme, "CLIMBING") { score += RandRange(seed + 7, 20, 60); }
-            if Equals(coherence.lifeTheme, "STABLE") { score += RandRange(seed + 8, 30, 80); }
+            // High-status archetypes have institutional support - theme penalties are reduced
+            if isHighStatus {
+                if Equals(coherence.lifeTheme, "FALLING") { score -= RandRange(seed + 5, 20, 60); }
+                if Equals(coherence.lifeTheme, "STRUGGLING") { score -= RandRange(seed + 6, 10, 40); }
+                if Equals(coherence.lifeTheme, "CLIMBING") { score += RandRange(seed + 7, 20, 60); }
+                if Equals(coherence.lifeTheme, "STABLE") { score += RandRange(seed + 8, 30, 80); }
+                if coherence.hasSubstanceIssues { score -= RandRange(seed + 10, 15, 40); }
+            } else {
+                if Equals(coherence.lifeTheme, "FALLING") { score -= RandRange(seed + 5, 50, 150); }
+                if Equals(coherence.lifeTheme, "STRUGGLING") { score -= RandRange(seed + 6, 30, 80); }
+                if Equals(coherence.lifeTheme, "CLIMBING") { score += RandRange(seed + 7, 20, 60); }
+                if Equals(coherence.lifeTheme, "STABLE") { score += RandRange(seed + 8, 30, 80); }
+                if coherence.hasSubstanceIssues { score -= RandRange(seed + 10, 30, 80); }
+            }
             if coherence.isInDebt { score -= RandRange(seed + 9, 20, 60); }
-            if coherence.hasSubstanceIssues { score -= RandRange(seed + 10, 30, 80); }
         }
         
         if score < 100 { score = 100; }
@@ -101,10 +112,17 @@ public class KdspFinancialProfileManager {
     // Wealth influenced by life theme
     private static func GenerateWealthCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> Int32 {
         let wealth = KdspFinancialProfileManager.GenerateWealth(seed, archetype);
+        let isHighStatus = Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") || Equals(archetype, "YUPPIE");
         
         if IsDefined(coherence) {
-            if Equals(coherence.lifeTheme, "FALLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.5); }
-            if Equals(coherence.lifeTheme, "STRUGGLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.7); }
+            if isHighStatus {
+                // High-status archetypes - FALLING means losing grip, not poverty
+                if Equals(coherence.lifeTheme, "FALLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.75); }
+                if Equals(coherence.lifeTheme, "STRUGGLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.85); }
+            } else {
+                if Equals(coherence.lifeTheme, "FALLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.5); }
+                if Equals(coherence.lifeTheme, "STRUGGLING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 0.7); }
+            }
             if Equals(coherence.lifeTheme, "CLIMBING") { wealth = Cast<Int32>(Cast<Float>(wealth) * 1.2); }
             if Equals(coherence.lifeTheme, "CORPORATE") { wealth = Cast<Int32>(Cast<Float>(wealth) * 1.4); }
         }
@@ -175,6 +193,40 @@ public class KdspFinancialProfileManager {
             return KdspFinancialProfileManager.GenerateEmploymentStatus(seed, archetype);
         }
 
+        // Corpo archetypes: FALLING means in trouble, not unemployed
+        if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
+            if IsDefined(coherence) && Equals(coherence.lifeTheme, "FALLING") {
+                let statuses: array<String>;
+                ArrayPush(statuses, "Corporate employee (Under Review)");
+                ArrayPush(statuses, "Corporate employee (Performance Plan)");
+                ArrayPush(statuses, "Corporate employee (Probation)");
+                ArrayPush(statuses, "Corporate employee (Demotion Pending)");
+                return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
+            }
+            if IsDefined(coherence) && Equals(coherence.jobHistory, "corpo") { return "Corporate employee"; }
+            return "Corporate employee";
+        }
+
+        // Yuppie archetype: FALLING means struggling professionally, not destitute
+        if Equals(archetype, "YUPPIE") {
+            if IsDefined(coherence) && Equals(coherence.lifeTheme, "FALLING") {
+                let statuses: array<String>;
+                ArrayPush(statuses, "Self-employed (Declining Revenue)");
+                ArrayPush(statuses, "Full-time (Under Review)");
+                ArrayPush(statuses, "Contract work (Between Positions)");
+                ArrayPush(statuses, "Part-time Consulting (Downsized)");
+                return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
+            }
+            if IsDefined(coherence) && Equals(coherence.lifeTheme, "STRUGGLING") {
+                let statuses: array<String>;
+                ArrayPush(statuses, "Self-employed (Overextended)");
+                ArrayPush(statuses, "Full-time (Stagnant)");
+                ArrayPush(statuses, "Full-time (Seeking Better Position)");
+                return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
+            }
+            return KdspFinancialProfileManager.GenerateEmploymentStatus(seed, archetype);
+        }
+
         if IsDefined(coherence) {
             if Equals(coherence.jobHistory, "none") { return "UNEMPLOYED"; }
             if Equals(coherence.jobHistory, "criminal") {
@@ -202,9 +254,51 @@ public class KdspFinancialProfileManager {
 
     // Income level coherent with life theme
     // Poor archetypes always use their own income tables - coherence themes cannot inflate them
+    // Corpo archetypes always use their own income tables - coherence themes cannot deflate them to poverty
     private static func GenerateIncomeLevelCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         // Poor archetypes: always use archetype-specific income, never coherence overrides
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") || Equals(archetype, "LOWLIFE") {
+            return KdspFinancialProfileManager.GenerateIncomeLevel(seed, archetype);
+        }
+
+        // Corpo archetypes: FALLING theme reduces income but keeps it corpo-appropriate
+        if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
+            if IsDefined(coherence) && Equals(coherence.lifeTheme, "FALLING") {
+                if Equals(archetype, "CORPO_MANAGER") {
+                    let levels: array<String>;
+                    ArrayPush(levels, "€$80,000-120,000/year (Demoted)");
+                    ArrayPush(levels, "€$100,000-150,000/year (Under Review)");
+                    ArrayPush(levels, "€$60,000-90,000/year (Performance Plan)");
+                    return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
+                } else {
+                    let levels: array<String>;
+                    ArrayPush(levels, "€$25,000-40,000/year (Demoted)");
+                    ArrayPush(levels, "€$30,000-50,000/year (Under Review)");
+                    ArrayPush(levels, "€$20,000-35,000/year (Probation)");
+                    return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
+                }
+            }
+            return KdspFinancialProfileManager.GenerateIncomeLevel(seed, archetype);
+        }
+
+        // Yuppie archetype: FALLING means financial trouble, not poverty
+        if Equals(archetype, "YUPPIE") {
+            if IsDefined(coherence) {
+                if Equals(coherence.lifeTheme, "FALLING") {
+                    let levels: array<String>;
+                    ArrayPush(levels, "€$50,000-80,000/year (Declining)");
+                    ArrayPush(levels, "€$60,000-90,000/year (Losing Clients)");
+                    ArrayPush(levels, "€$40,000-70,000/year (Bad Investments)");
+                    return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
+                }
+                if Equals(coherence.lifeTheme, "STRUGGLING") {
+                    let levels: array<String>;
+                    ArrayPush(levels, "€$70,000-100,000/year (Overextended)");
+                    ArrayPush(levels, "€$60,000-90,000/year (Debt Servicing)");
+                    ArrayPush(levels, "€$80,000-110,000/year (Living Beyond Means)");
+                    return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
+                }
+            }
             return KdspFinancialProfileManager.GenerateIncomeLevel(seed, archetype);
         }
 

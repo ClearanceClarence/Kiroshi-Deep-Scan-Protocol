@@ -4,6 +4,104 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [2.0]
+
+### Scanner Glitches
+
+- Added scanner glitch system — rare chance that a scan is fully corrupted with garbled data, redacted records, or error messages
+- 8 distinct corruption types: hardware malfunction, database corruption, NetWatch interference, ghost identity, cyberpsychosis warning, classified record, memory overflow, signal jamming
+- Default: 1 in 200 chance per scan, configurable 1–500
+- Added Scanner Glitches toggle under Generation settings (default: On)
+- Added Scanner Glitch Chance slider under Generation settings
+- Fixed glitch field variety — replaced additive seed offsets with prime multiplier offsets across 14 fields to prevent multiple fields displaying identical corruption text
+
+### Trauma Team Profiles
+
+- Trauma Team members no longer receive generic civilian backstories — dedicated military-grade content from 8 generators: background (12 variants), early life (10 variants), recent activity (12 variants), service record, cyberware, financial, medical, threat assessment
+- Criminal Record replaced by TTI Service Record, Cyberware shows military-grade implant profile, Financial shows TTI employee data, Medical shows combat readiness, Psych/Threat shows tactical assessment, Vehicle/NET/Relationships withheld for operational security
+- Removed `trauma_team` from the NPC skip list that was blocking all Trauma Team scans
+- Added `trauma` to shouldGenerate fallback check so Trauma Team members pass through the gate
+
+### Personal Quirks
+
+- Added personal quirk system — 200 surveillance-state data entries across 7 categories appended to Psych Profile: Illicit Affairs (35), Phobias (30), Embarrassing Habits (30), Conspiracy Beliefs (25), Weird Legal Flags (25), Secret Double Lives (25), Mundane Absurd (30)
+- 35% trigger chance at Data Density ≥ 2, 15% chance of a second quirk at Data Density ≥ 3
+
+### Vehicle Registration
+
+- Added Vehicle Registration section — procedurally generated vehicle ownership with make/model, registration status, and license plate
+- Color-coded by status: red for stolen, yellow for suspended/expired, blue for clean
+
+### NET Profile
+
+- Added NET Profile section — network alias, browsing activity, darknet presence, flagged connections
+- Highlighted in amber for flagged activity and red for active darknet presence
+- Expanded NET alias pool from 10 inline entries to 300 aliases across 10 style categories: Hacker Handles (30), Gamer Tags (30), Edgerunner (30), Corpo Leak (30), Street Slang (30), Netrunner (30), Weeb (30), Paranoid (30), Pretentious (30), Number Crunch (30) — many include procedural number suffixes
+
+### Section Toggles
+
+- Added 12 section visibility toggles under new "Sections" settings category (all default: On): Background, Early Life, Recent Activity, Psych Profile, Criminal Record, Gang Affiliation, Cyberware, Financial, Medical, Relationships, Vehicle Registration, NET Profile
+- Toggles gate visibility at the UI level — data still generates normally, toggling back on shows content immediately without rescanning
+
+### Text Content Expansion
+
+- Expanded TextAdulthood from 108 to 478 entries across 37 categories including Fixers/Merc Life, Corp-Specific Events, District-Specific Events, Substance Abuse, Combat Arena/Sports, Scams/Con Artistry, and more
+- Expanded TextChildhood with gang childhood involvement, street survival, identity theft, protection rackets
+- Expanded TextJobs with promoter, actor, stunt performer, influencer, and other Night City occupations
+- Expanded TextHousing with Grand Imperial Mall, Coastview, West Wind Estate, Dogtown, and more
+- Expanded TextUpbringing with new family structure and childhood background entries
+- Expanded TextCorpos with Arasaka Bank, Secure Your Soul, Braindance Inc., Jinguji, MegaBuilding Corp, Night City Housing Authority, Steel Horizon Construction
+- Expanded TextLifepaths with gang-adjacent upbringing entries for Animals, Voodoo Boys, Moxes, Scavengers
+- Wired all new text entries into the lifepath event system with event wrappers, weighted pool entries, and lifepath-specific weighting
+- Fixed 360 missing event wrappers and pool entries that left text content unreachable in-game
+- Fixed 12 cross-module name collisions between text files
+- Removed duplicate function definitions across all text modules
+- Total lifepath events: 1,717 (up from 699)
+
+### Unique NPCs (+9)
+
+- Added Cynthia Najarro (mq040_wife — Pepe's wife, Raymond Chandler Evening quest)
+- Added Shady Ripperdoc (mq040_ripperdoc — former licensed practitioner, license revoked)
+- Added Pepe Najarro (elcoyote_barman — El Coyote Cojo bartender, Kirk Sawyer debt, Valentinos-adjacent)
+- Added Miguel "Gizmo" Rodriguez (mq_hey_rey_06_outpost_miniboss — Valentinos leader, NCPD priority target)
+- Added Nina Kraviz (wbr_hil_ripdoc_01 — Charter Hill ripperdoc, real-world DJ cameo as Bara Nova)
+- Added Zen Master (mq014_master — classification UNKNOWN DATABASE INCONCLUSIVE, every field returns anomalous data)
+- Added Leon Rinder entry with full cyberpsychosis/Regina Jones treatment path (Gig: The Man Who Killed Jason Foreman)
+- Total unique NPC entries: 225
+
+### Bug Fixes
+
+- Fixed Arasaka corpo manager archetype detection — female corpo managers were matching "corpo" before "corpo_ma", classifying them as CORPO_DRONE instead of CORPO_MANAGER
+- Added DetectCorpoAffiliation() — reads corporation name from NPC appearance strings and overrides financial employer and backstory text placeholders so Arasaka employees no longer show random corps
+- Added corpo archetype protection floors for FALLING coherence themes — credit score, wealth, income, and employment no longer drop to poverty levels for employed corporate managers
+- Reduced FALLING theme probability for corpo managers from 20% to 10%
+- Extended corpo financial protections to YUPPIE archetype
+- Added body-type specific medical conditions for obese NPCs (hypertension, diabetes, sleep apnea, cardiovascular strain, joint deterioration)
+- Added body-type specific medical conditions for freak/heavily modified NPCs (implant rejection syndrome, immune compromise, body dysmorphia, nerve damage)
+- Added medical condition deduplication
+- Fixed sex worker / joytoy NPCs not generating scan data — expanded gate to check for "prostitute", "sexworker", and "joytoy"
+- Expanded sex worker detection in BackstoryManager to include "prostitute" and "joytoy" so the coherence block triggers correctly
+- Fixed service NPCs not generating scan data — added "ripperdoc", "service_", "barman", "bartender" appearance checks
+- Fixed minor quest NPCs not generating scan data — added ".mq0" pattern matching
+- Fixed side quest NPCs not generating scan data — added ".sq0" pattern matching
+- Fixed Phantom Liberty story sequence NPCs not generating scan data — added ".sts_" pattern matching
+- Fixed corpo civilian NPCs not generating scan data — added "corporat" appearance check and "corpoman"/"corpowoman" record ID checks
+- Fixed vendor/shopkeeper NPCs not generating scan data — added "vendor" and "foodshop" checks
+- Added robot/android/mech skip — prevents scan attempts on non-human entities
+- Fixed compilation error: SetPsychProfile method does not exist on KdspUniqueNPCBackstory
+- Fixed compilation error: checkRecordLower unresolved reference in corpo civilian gate
+
+### Code Cleanup & Refactoring
+
+- Stripped all historical version references from comments for clean v2.0 base
+- Removed dead HOMELESS_MOD parameter from lifepath event pool functions
+- Refactored BackstoryManager from 2,093 to 1,334 lines (36% reduction) by extracting 7 generator modules: ChildBackstoryGenerator, NCPDProfileGenerator, TraumaTeamGenerator, PersonalQuirkGenerator, VehicleRegistration, NetProfileGenerator, NetAliases
+- Total mod settings: 24
+- Total source files: 86
+
+---
+
+
 ## [1.8.1]
 
 ### Cross-System Coherence Fixes

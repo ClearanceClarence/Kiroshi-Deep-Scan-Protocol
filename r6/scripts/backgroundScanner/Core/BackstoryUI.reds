@@ -22,6 +22,12 @@ public struct KdspBackstoryUI {
   // Relationships
   public let relationships: String;
 
+  // Vehicle Registration
+  public let vehicleRegistration: String;
+
+  // NET Profile
+  public let netProfile: String;
+
   // Pronouns (optional display)
   public let pronouns: String;
 

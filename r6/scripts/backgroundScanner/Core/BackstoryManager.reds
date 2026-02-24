@@ -2,7 +2,7 @@ public class KdspBackstoryManager {
 
     // SEED VERSION - Increment this to regenerate all NPC backstories on next load
     // Change this value when making major content updates
-    // v1.8.1: Incremented for cross-system coherence fixes
+    // Incremented for cross-system coherence fixes
     public static func GetSeedVersion() -> Int32 {
         return 4;
     }
@@ -20,20 +20,21 @@ public class KdspBackstoryManager {
         let appearanceName = NameToString(target.GetCurrentAppearanceName());
         
         // Check if NPC is a child - generate age-appropriate content
-        if KdspBackstoryManager.IsChildNPC(appearanceName) {
-            return KdspBackstoryManager.GenerateChildBackstory(seed, lifePath);
+        if KdspChildBackstoryGenerator.IsChildNPC(appearanceName) {
+            return KdspChildBackstoryGenerator.GenerateChildBackstory(seed, lifePath);
         };
-
-        // Original backstory generation for adults
-        let background = KdspBackstoryManager.GenerateChildhoodHome(seed, lifePath) + KdspBackstoryManager.GenerateUpbringingEvent(seed, lifePath);
-        let earlyLife = KdspBackstoryManager.GenerateChildhoodEvents(seed, lifePath);
-        let significantEvents = KdspBackstoryManager.GenerateFirstJob(seed, lifePath) + KdspBackstoryManager.GenerateAdultEvents(seed, lifePath);
 
         // Get context for expanded systems
         let archetype = lifePath.archetype;
         let gangAffiliation = KdspGangManager.DetectGangAffiliation(appearanceName, "");
+        let corpoAffiliation = KdspBackstoryManager.DetectCorpoAffiliation(appearanceName);
         let wealth = KdspBackstoryManager.GetWealthScore(archetype);
         let age = KdspBackstoryManager.GetAge(seed, archetype);
+
+        // Original backstory generation for adults
+        let background = KdspBackstoryManager.GenerateChildhoodHome(seed, lifePath, corpoAffiliation) + KdspBackstoryManager.GenerateUpbringingEvent(seed, lifePath, corpoAffiliation);
+        let earlyLife = KdspBackstoryManager.GenerateChildhoodEvents(seed, lifePath, corpoAffiliation);
+        let significantEvents = KdspBackstoryManager.GenerateFirstJob(seed, lifePath, corpoAffiliation) + KdspBackstoryManager.GenerateAdultEvents(seed, lifePath, corpoAffiliation);
 
         // Detect ethnicity from appearance and gang affiliation
         let ethnicity = KdspEthnicityDetector.GetEthnicityFromAppearance(appearanceName, gangAffiliation);
@@ -46,6 +47,7 @@ public class KdspBackstoryManager {
         // Barghest uses Prevention archetype but are NOT NCPD - exclude them
         let isBarghest: Bool = Equals(gangAffiliation, "BARGHEST") || StrContains(appearanceName, "barghest") || StrContains(appearanceName, "kurtz");
         let isNCPD: Bool = !isBarghest && (KdspNCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice());
+        let isTraumaTeam: Bool = StrContains(appearanceName, "trauma");
 
         // Narrative Coherence is always active — ensures all data systems tell one consistent story
         let coherence: ref<KdspCoherenceProfile>;
@@ -55,11 +57,15 @@ public class KdspBackstoryManager {
         let criminal = KdspCriminalRecordManager.GenerateCoherent(seed + 1000, archetype, gangAffiliation, coherence);
         let cyberware = KdspCyberwareRegistryManager.GenerateCoherent(seed + 2000, archetype, wealth, coherence);
         let financial = KdspFinancialProfileManager.GenerateCoherent(seed + 3000, archetype, coherence);
+        // Override employer with NPC's actual corp affiliation when detected
+        if NotEquals(corpoAffiliation, "") {
+            financial.employer = corpoAffiliation;
+        }
         let medical = KdspMedicalHistoryManager.GenerateCoherent(seed + 4000, archetype, age, coherence);
         let psych = KdspPsychProfileManager.GenerateCoherent(seed + 5000, archetype, coherence);
 
         // ══════════════════════════════════════════════════════════════
-        // v1.8.1 CROSS-SYSTEM COHERENCE: Rejected Implants → Medical
+        // CROSS-SYSTEM COHERENCE: Rejected Implants → Medical
         // If cyberware registry shows rejected implants, medical records
         // must reflect the condition and health rating must downgrade.
         // A synthetic organ being rejected is a serious medical event.
@@ -102,12 +108,12 @@ public class KdspBackstoryManager {
         }
 
         // ══════════════════════════════════════════════════════════════
-        // v1.8.1 CROSS-SYSTEM COHERENCE: Sex Worker Appearance → Criminal + Medical
+        // CROSS-SYSTEM COHERENCE: Sex Worker Appearance → Criminal + Medical
         // NPCs with "sexworker" in appearance name should have fitting arrests.
         // Poor sex workers additionally have multiple STIs on record.
         // ══════════════════════════════════════════════════════════════
-        let isSexWorker = StrContains(appearanceName, "sexworker");
-        let isPoorSexWorker = StrContains(appearanceName, "sexworker_poor");
+        let isSexWorker = StrContains(appearanceName, "sexworker") || StrContains(appearanceName, "prostitute") || StrContains(appearanceName, "joytoy");
+        let isPoorSexWorker = StrContains(appearanceName, "sexworker_poor") || StrContains(appearanceName, "prostitute_poor");
 
         if isSexWorker {
             // Ensure they have a criminal record
@@ -175,6 +181,166 @@ public class KdspBackstoryManager {
             }
         }
 
+        // ══════════════════════════════════════════════════════════════
+        // CROSS-SYSTEM COHERENCE: Obese Body Type → Medical
+        // NPCs with "obese" in appearance should have weight-related
+        // medical conditions: heart disease, hypertension, diabetes, etc.
+        // ══════════════════════════════════════════════════════════════
+        let isObese = StrContains(appearanceName, "obese") || StrContains(appearanceName, "_fat_");
+
+        if isObese {
+            // Always add a primary weight-related condition
+            let obeseRoll1 = RandRange(seed + 9600, 0, 7);
+            if obeseRoll1 == 0 { ArrayPush(medical.chronicConditions, "Hypertension - Stage 2"); }
+            else if obeseRoll1 == 1 { ArrayPush(medical.chronicConditions, "Type 2 Diabetes - insulin managed"); }
+            else if obeseRoll1 == 2 { ArrayPush(medical.chronicConditions, "Coronary artery disease - stent placed"); }
+            else if obeseRoll1 == 3 { ArrayPush(medical.chronicConditions, "Congestive heart failure - early stage"); }
+            else if obeseRoll1 == 4 { ArrayPush(medical.chronicConditions, "Hypertension - medication resistant"); }
+            else if obeseRoll1 == 5 { ArrayPush(medical.chronicConditions, "Type 2 Diabetes - poorly controlled"); }
+            else if obeseRoll1 == 6 { ArrayPush(medical.chronicConditions, "Atherosclerosis - advanced plaque buildup"); }
+            else { ArrayPush(medical.chronicConditions, "Chronic heart arrhythmia"); }
+
+            // 70% chance of a secondary weight-related condition
+            if RandRange(seed + 9610, 1, 100) <= 70 {
+                let obeseRoll2 = RandRange(seed + 9620, 0, 9);
+                if obeseRoll2 == 0 { ArrayPush(medical.chronicConditions, "Sleep apnea - severe, uses CPAP"); }
+                else if obeseRoll2 == 1 { ArrayPush(medical.chronicConditions, "High cholesterol - statin therapy"); }
+                else if obeseRoll2 == 2 { ArrayPush(medical.chronicConditions, "Fatty liver disease - non-alcoholic"); }
+                else if obeseRoll2 == 3 { ArrayPush(medical.chronicConditions, "Chronic knee pain - weight-related"); }
+                else if obeseRoll2 == 4 { ArrayPush(medical.chronicConditions, "Gout - recurring flare-ups"); }
+                else if obeseRoll2 == 5 { ArrayPush(medical.chronicConditions, "Peripheral edema - lower extremities"); }
+                else if obeseRoll2 == 6 { ArrayPush(medical.chronicConditions, "Elevated blood pressure - pre-hypertensive"); }
+                else if obeseRoll2 == 7 { ArrayPush(medical.chronicConditions, "Gastroesophageal reflux - chronic"); }
+                else if obeseRoll2 == 8 { ArrayPush(medical.chronicConditions, "Plantar fasciitis - bilateral"); }
+                else { ArrayPush(medical.chronicConditions, "Insulin resistance - pre-diabetic"); }
+            }
+
+            // Health is never EXCELLENT for obese NPCs
+            if Equals(medical.healthRating, "EXCELLENT") {
+                medical.healthRating = "FAIR";
+            }
+            if Equals(medical.healthRating, "GOOD") && RandRange(seed + 9630, 1, 100) <= 50 {
+                medical.healthRating = "FAIR";
+            }
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // CROSS-SYSTEM COHERENCE: Freak Body Type → Medical + Psych
+        // NPCs with "freak" in appearance have extreme body mods.
+        // Medical shows extreme chrome complications, psych shows
+        // body mod obsession and identity-related issues.
+        // ══════════════════════════════════════════════════════════════
+        let isFreak = StrContains(appearanceName, "freak");
+
+        if isFreak {
+            // Always add an extreme body mod medical condition
+            let freakMedRoll = RandRange(seed + 9700, 0, 9);
+            if freakMedRoll == 0 { ArrayPush(medical.chronicConditions, "Extreme subdermal implant scarring - chronic inflammation"); }
+            else if freakMedRoll == 1 { ArrayPush(medical.chronicConditions, "Full-body tattoo ink toxicity - liver strain"); }
+            else if freakMedRoll == 2 { ArrayPush(medical.chronicConditions, "Voluntary limb replacement complications - phantom pain"); }
+            else if freakMedRoll == 3 { ArrayPush(medical.chronicConditions, "Experimental hormone therapy - unlicensed"); }
+            else if freakMedRoll == 4 { ArrayPush(medical.chronicConditions, "Subdermal plate infection - recurring"); }
+            else if freakMedRoll == 5 { ArrayPush(medical.chronicConditions, "Nerve splicing side effects - chronic tremors"); }
+            else if freakMedRoll == 6 { ArrayPush(medical.chronicConditions, "Excessive chrome - immune system compromised"); }
+            else if freakMedRoll == 7 { ArrayPush(medical.chronicConditions, "Black-market biosculpting - tissue degradation"); }
+            else if freakMedRoll == 8 { ArrayPush(medical.chronicConditions, "Skeletal restructuring - chronic bone pain"); }
+            else { ArrayPush(medical.chronicConditions, "Sensory mod overload syndrome - migraines"); }
+
+            // 60% chance of a second extreme condition
+            if RandRange(seed + 9710, 1, 100) <= 60 {
+                let freakMedRoll2 = RandRange(seed + 9720, 0, 7);
+                if freakMedRoll2 == 0 { ArrayPush(medical.chronicConditions, "Autoimmune response to foreign materials"); }
+                else if freakMedRoll2 == 1 { ArrayPush(medical.chronicConditions, "Synthetic skin graft rejection - patchy necrosis"); }
+                else if freakMedRoll2 == 2 { ArrayPush(medical.chronicConditions, "Optic nerve damage from cosmetic eye mods"); }
+                else if freakMedRoll2 == 3 { ArrayPush(medical.chronicConditions, "Chronic pain from voluntary bone lengthening"); }
+                else if freakMedRoll2 == 4 { ArrayPush(medical.chronicConditions, "Blood contamination from unlicensed chrome"); }
+                else if freakMedRoll2 == 5 { ArrayPush(medical.chronicConditions, "Organ displacement from torso restructuring"); }
+                else if freakMedRoll2 == 6 { ArrayPush(medical.chronicConditions, "Tooth replacement infection - jawbone erosion"); }
+                else { ArrayPush(medical.chronicConditions, "Dermal pigment implant leakage"); }
+            }
+
+            // Freak-specific psych traits - body mod obsession, identity issues
+            let freakPsychRoll = RandRange(seed + 9730, 0, 7);
+            if freakPsychRoll == 0 { ArrayPush(psych.personalityTraits, "Body modification obsession"); }
+            else if freakPsychRoll == 1 { ArrayPush(psych.personalityTraits, "Identity through chrome"); }
+            else if freakPsychRoll == 2 { ArrayPush(psych.personalityTraits, "Extreme self-expression"); }
+            else if freakPsychRoll == 3 { ArrayPush(psych.personalityTraits, "Rejects baseline humanity"); }
+            else if freakPsychRoll == 4 { ArrayPush(psych.personalityTraits, "Transhumanist ideology"); }
+            else if freakPsychRoll == 5 { ArrayPush(psych.personalityTraits, "Pain tolerance - abnormally high"); }
+            else if freakPsychRoll == 6 { ArrayPush(psych.personalityTraits, "Sensation-seeking behavior"); }
+            else { ArrayPush(psych.personalityTraits, "Body dysmorphia - perpetual modification"); }
+
+            // Elevated cyberpsychosis risk from extreme modding
+            cyberware.cyberpsychosisRisk += RandRange(seed + 9740, 10, 25);
+            if cyberware.cyberpsychosisRisk > 100 { cyberware.cyberpsychosisRisk = 100; }
+            if cyberware.cyberpsychosisRisk >= 80 { cyberware.cyberpsychosisStatus = "CRITICAL - EXTREME MODIFICATION"; }
+            else if cyberware.cyberpsychosisRisk >= 60 { cyberware.cyberpsychosisStatus = "HIGH - BODY MOD INSTABILITY"; }
+            else if cyberware.cyberpsychosisRisk >= 40 { cyberware.cyberpsychosisStatus = "ELEVATED - EXCESSIVE MODIFICATION"; }
+
+            // Increase illegal mod count - freaks often have unlicensed work
+            if cyberware.illegalCount == 0 && RandRange(seed + 9750, 1, 100) <= 60 {
+                cyberware.hasIllegalCyberware = true;
+                cyberware.illegalCount = RandRange(seed + 9751, 1, 3);
+            }
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // CROSS-SYSTEM COHERENCE: Nonbinary Identity → Medical + Psych
+        // NPCs with "nonbinary" in appearance get identity-appropriate
+        // content: gender-affirming treatments, body modification,
+        // and identity-related psych context.
+        // ══════════════════════════════════════════════════════════════
+        let isNonbinary = StrContains(appearanceName, "nonbinary");
+
+        if isNonbinary {
+            // Medical: gender-affirming treatments common in Night City
+            let nbMedRoll = RandRange(seed + 9800, 0, 9);
+            if nbMedRoll == 0 { ArrayPush(medical.chronicConditions, "Hormone replacement therapy - monitored"); }
+            else if nbMedRoll == 1 { ArrayPush(medical.chronicConditions, "Biosculpting recovery - ongoing maintenance"); }
+            else if nbMedRoll == 2 { ArrayPush(medical.chronicConditions, "Gender-affirming cyberware integration - stable"); }
+            else if nbMedRoll == 3 { ArrayPush(medical.chronicConditions, "Hormone implant - quarterly replacement"); }
+            else if nbMedRoll == 4 { ArrayPush(medical.chronicConditions, "Body modification therapy - endocrine monitoring"); }
+            else if nbMedRoll == 5 { ArrayPush(medical.chronicConditions, "Synthetic hormone regulator - implanted"); }
+            else if nbMedRoll == 6 { ArrayPush(medical.chronicConditions, "Vocal cord modification - healed"); }
+            else if nbMedRoll == 7 { ArrayPush(medical.chronicConditions, "Biosculpting suite - full integration"); }
+            else if nbMedRoll == 8 { ArrayPush(medical.chronicConditions, "Gender-neutral hormone baseline - maintained"); }
+            else { ArrayPush(medical.chronicConditions, "Body reconfiguration therapy - complete"); }
+
+            // Psych: identity-related context (not pathologized - just noted)
+            let nbPsychRoll = RandRange(seed + 9810, 0, 7);
+            if nbPsychRoll == 0 { ArrayPush(psych.personalityTraits, "Strong sense of identity"); }
+            else if nbPsychRoll == 1 { ArrayPush(psych.personalityTraits, "Self-defined identity"); }
+            else if nbPsychRoll == 2 { ArrayPush(psych.personalityTraits, "Body autonomy advocate"); }
+            else if nbPsychRoll == 3 { ArrayPush(psych.personalityTraits, "Gender non-conforming - self-assured"); }
+            else if nbPsychRoll == 4 { ArrayPush(psych.personalityTraits, "Post-binary identity"); }
+            else if nbPsychRoll == 5 { ArrayPush(psych.personalityTraits, "Fluid self-expression"); }
+            else if nbPsychRoll == 6 { ArrayPush(psych.personalityTraits, "Transhumanist leanings"); }
+            else { ArrayPush(psych.personalityTraits, "Identity-secure"); }
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // DEDUP: Remove duplicate medical conditions
+        // Multiple systems can inject conditions, sometimes creating
+        // duplicates. Clean up before display.
+        // ══════════════════════════════════════════════════════════════
+        let dedupConditions: array<String>;
+        let dci = 0;
+        while dci < ArraySize(medical.chronicConditions) {
+            let isDup = false;
+            let dcj = 0;
+            while dcj < ArraySize(dedupConditions) {
+                if Equals(medical.chronicConditions[dci], dedupConditions[dcj]) {
+                    isDup = true;
+                }
+                dcj += 1;
+            }
+            if !isDup {
+                ArrayPush(dedupConditions, medical.chronicConditions[dci]);
+            }
+            dci += 1;
+        }
+        medical.chronicConditions = dedupConditions;
+
         // Build KdspBackstoryUI
         let backstoryUI: KdspBackstoryUI;
         
@@ -186,14 +352,22 @@ public class KdspBackstoryManager {
         
         // NCPD officers get cop-specific backstory, not civilian backstory
         if isNCPD {
-            backstoryUI.background = KdspBackstoryManager.GenerateNCPDBackground(seed, lifePath);
+            backstoryUI.background = KdspNCPDProfileGenerator.GenerateNCPDBackground(seed, lifePath);
             // Early life only on medium/high density
             if density >= 2 {
-                backstoryUI.earlyLife = KdspBackstoryManager.GenerateNCPDEarlyLife(seed, lifePath);
+                backstoryUI.earlyLife = KdspNCPDProfileGenerator.GenerateNCPDEarlyLife(seed, lifePath);
             } else {
                 backstoryUI.earlyLife = "";
             };
-            backstoryUI.significantEvents = KdspBackstoryManager.GenerateNCPDRecentActivity(seed, lifePath);
+            backstoryUI.significantEvents = KdspNCPDProfileGenerator.GenerateNCPDRecentActivity(seed, lifePath);
+        } else if isTraumaTeam {
+            backstoryUI.background = KdspTraumaTeamGenerator.GenerateTTBackground(seed);
+            if density >= 2 {
+                backstoryUI.earlyLife = KdspTraumaTeamGenerator.GenerateTTEarlyLife(seed);
+            } else {
+                backstoryUI.earlyLife = "";
+            };
+            backstoryUI.significantEvents = KdspTraumaTeamGenerator.GenerateTTRecentActivity(seed);
         } else if isBarghest {
             // Barghest get militia-style backgrounds
             let barghestData = KdspBarghestProfileManager.Generate(seed + 8000, appearanceName, lifePath.gender, ethnicity);
@@ -233,7 +407,10 @@ public class KdspBackstoryManager {
         };
 
         // Criminal Record Section - skip for NCPD, Barghest, and gang members (they have their own records)
-        if criminal.hasRecord && !isNCPD && !isBarghest && !isGangMember {
+        // Trauma Team gets a service record instead
+        if isTraumaTeam {
+            backstoryUI.criminalRecord = KdspTraumaTeamGenerator.GenerateTTServiceRecord(seed + 4000);
+        } else if criminal.hasRecord && !isNCPD && !isBarghest && !isGangMember {
             backstoryUI.criminalRecord = "Status: " + criminal.status;
             // Show arrests on medium/high density
             if density >= 2 && ArraySize(criminal.arrests) > 0 {
@@ -253,8 +430,10 @@ public class KdspBackstoryManager {
             backstoryUI.criminalRecord = "";
         };
 
-        // Cyberware Registry Section - skip for gang members, only on medium/high density
-        if density >= 2 && Equals(gangAffiliation, "NONE") && cyberware.totalImplants > 0 {
+        // Cyberware Registry Section - TT gets military-grade profile
+        if isTraumaTeam {
+            backstoryUI.cyberwareStatus = KdspTraumaTeamGenerator.GenerateTTCyberware(seed + 4100);
+        } else if density >= 2 && Equals(gangAffiliation, "NONE") && cyberware.totalImplants > 0 {
             backstoryUI.cyberwareStatus = "Implants: " + IntToString(cyberware.totalImplants) + " | Status: " + cyberware.cyberpsychosisStatus;
             if cyberware.cyberpsychosisRisk >= 60 {
                 backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | PSYCHOSIS RISK: " + IntToString(cyberware.cyberpsychosisRisk) + "%";
@@ -277,22 +456,27 @@ public class KdspBackstoryManager {
             backstoryUI.cyberwareStatus = "";
         };
 
-        // Financial Status Section - skip for gang members and NCPD, only on medium/high density
-        if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
+        // Financial Status Section - TT gets employee data, skip for gang/NCPD
+        if isTraumaTeam {
+            backstoryUI.financialStatus = KdspTraumaTeamGenerator.GenerateTTFinancial(seed + 4200);
+        } else if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
             backstoryUI.financialStatus = "ID: " + financial.ncID + " | Credit Rating: " + financial.creditTier + " | Income: " + financial.incomeLevel;
             if financial.hasDebt {
                 backstoryUI.financialStatus = backstoryUI.financialStatus + " | DEBT: " + financial.debtStatus;
             };
-            // Corp info on high density only
-            if density >= 3 && financial.corporateAsset {
+            // Always show Corp for corpo archetypes, otherwise high density + corporateAsset
+            let isCorpoArchetype = Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE");
+            if isCorpoArchetype || (density >= 3 && financial.corporateAsset) {
                 backstoryUI.financialStatus = backstoryUI.financialStatus + " | Corp: " + financial.employer;
             };
         } else {
             backstoryUI.financialStatus = "";
         };
 
-        // Medical History Section - skip for gang members and NCPD, only on medium/high density
-        if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
+        // Medical Status Section - TT gets combat medical readiness
+        if isTraumaTeam {
+            backstoryUI.medicalStatus = KdspTraumaTeamGenerator.GenerateTTMedical(seed + 4300);
+        } else if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
             // Blood type always shown first
             backstoryUI.medicalStatus = "Blood: " + medical.bloodType;
             
@@ -359,7 +543,7 @@ public class KdspBackstoryManager {
                     backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Marks: " + gangData.distinguishingMarks[0];
                 };
             };
-        } else if !isNCPD {
+        } else if !isNCPD && !isTraumaTeam {
             let temperament = KdspPsychProfileManager.GetTemperament(psych.stabilityScore, psych.threatLevel);
             let disposition = KdspPsychProfileManager.GetDisposition(seed + 5500, archetype);
             
@@ -380,6 +564,21 @@ public class KdspBackstoryManager {
                     backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | Grudge-holder";
                 };
             };
+            // Personal data leak - surveillance state quirks (35% on medium+)
+            if density >= 2 {
+                let quirkRoll = RandRange(seed + 5600, 1, 100);
+                if quirkRoll <= 35 {
+                    let quirk = KdspPersonalQuirkGenerator.GeneratePersonalQuirk(seed + 5601, archetype);
+                    backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | " + quirk;
+                    // 15% chance of a second quirk on high density
+                    if density >= 3 && RandRange(seed + 5602, 1, 100) <= 15 {
+                        let quirk2 = KdspPersonalQuirkGenerator.GeneratePersonalQuirk(seed + 5701, archetype);
+                        backstoryUI.threatAssessment = backstoryUI.threatAssessment + " | " + quirk2;
+                    };
+                };
+            };
+        } else if isTraumaTeam {
+            backstoryUI.threatAssessment = KdspTraumaTeamGenerator.GenerateTTThreatAssessment(seed + 4400);
         } else {
             backstoryUI.threatAssessment = "";
         };
@@ -430,7 +629,7 @@ public class KdspBackstoryManager {
         };
 
         // Rare NPC Flag - skip for NCPD, Barghest, and gang members, show on all density levels (it's rare enough)
-        if !isNCPD && !isBarghest && !isGangMember && KdspRareNPCManager.ShouldBeRareNPC(seed + 9999) {
+        if !isNCPD && !isBarghest && !isGangMember && !isTraumaTeam && KdspRareNPCManager.ShouldBeRareNPC(seed + 9999) {
             let rareData = KdspRareNPCManager.Generate(seed + 10000, archetype);
             backstoryUI.rareFlag = rareData.displayFlag + " - " + rareData.rareType;
         } else {
@@ -521,14 +720,13 @@ public class KdspBackstoryManager {
             backstoryUI.ncpdOfficer = "";
         };
 
-        // Relationships - skip for NCPD, Barghest, and gang members, only on medium/high density
-        if density >= 2 && !isNCPD && !isBarghest && !isGangMember {
+        if density >= 2 && !isNCPD && !isBarghest && !isGangMember && !isTraumaTeam {
             // Get NPC's last name so family members share it
             let npcLastName = KdspBackstoryManager.ExtractLastName(target);
             let relations = KdspRelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
 
             // ══════════════════════════════════════════════════════════════
-            // v1.8.1 CROSS-SYSTEM COHERENCE: Marriage → Relationships
+            // CROSS-SYSTEM COHERENCE: Marriage → Relationships
             // If significant events mention marriage, relationship status
             // must say "Married" and a spouse must exist in family list.
             // ══════════════════════════════════════════════════════════════
@@ -564,7 +762,7 @@ public class KdspBackstoryManager {
             }
 
             // ══════════════════════════════════════════════════════════════
-            // v1.8.1 CROSS-SYSTEM COHERENCE: Grudge Holder → Enemies
+            // CROSS-SYSTEM COHERENCE: Grudge Holder → Enemies
             // If psych profile flags vendetta/grudge-holder, the NPC must
             // have at least one enemy. A grudge holder with zero enemies
             // is an obvious contradiction.
@@ -588,7 +786,7 @@ public class KdspBackstoryManager {
             }
 
             // ══════════════════════════════════════════════════════════════
-            // v1.8.1 CROSS-SYSTEM COHERENCE: Sex Worker → Known Clients
+            // CROSS-SYSTEM COHERENCE: Sex Worker → Known Clients
             // Sex workers should have a small list of known clients in
             // their associates. These are NCPD-flagged repeat clients.
             // ══════════════════════════════════════════════════════════════
@@ -749,6 +947,90 @@ public class KdspBackstoryManager {
             backstoryUI.relationships = "";
         };
 
+        // ══════════════════════════════════════════════════════════════
+        // VEHICLE REGISTRATION: Not everyone owns a vehicle.
+        // Higher chance for corpos, nomads, yuppies. Lower for homeless,
+        // junkies, gangers. Only on high density. ~30-60% chance.
+        // ══════════════════════════════════════════════════════════════
+        if density >= 3 && !isNCPD && !isBarghest && !isGangMember && !isTraumaTeam {
+            let vehicleChance = 30; // base 30%
+            if Equals(archetype, "CORPO_MANAGER") { vehicleChance = 85; }
+            else if Equals(archetype, "CORPO_DRONE") { vehicleChance = 70; }
+            else if Equals(archetype, "YUPPIE") { vehicleChance = 75; }
+            else if Equals(archetype, "NOMAD") { vehicleChance = 90; }
+            else if Equals(archetype, "CIVVIE") { vehicleChance = 40; }
+            else if Equals(archetype, "HOMELESS") { vehicleChance = 5; }
+            else if Equals(archetype, "JUNKIE") { vehicleChance = 10; }
+            else if Equals(archetype, "GANGER") { vehicleChance = 25; }
+
+            let vehicleRoll = RandRange(seed + 16001, 1, 100);
+            if vehicleRoll <= vehicleChance {
+                backstoryUI.vehicleRegistration = KdspVehicleRegistration.GenerateVehicleRegistration(seed + 16111, archetype, financial.ncID);
+            } else {
+                backstoryUI.vehicleRegistration = "";
+            }
+        } else {
+            backstoryUI.vehicleRegistration = "";
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // NET PROFILE: Digital footprint. Not everyone has one.
+        // Corpos and yuppies have strong presence. Homeless and elderly
+        // less so. Gangers may have darknet activity. ~25-70% chance.
+        // Only on high density.
+        // ══════════════════════════════════════════════════════════════
+        if density >= 3 && !isNCPD && !isBarghest && !isTraumaTeam {
+            let netChance = 35; // base 35%
+            if Equals(archetype, "CORPO_MANAGER") { netChance = 80; }
+            else if Equals(archetype, "CORPO_DRONE") { netChance = 70; }
+            else if Equals(archetype, "YUPPIE") { netChance = 75; }
+            else if Equals(archetype, "CIVVIE") { netChance = 45; }
+            else if Equals(archetype, "NOMAD") { netChance = 20; }
+            else if Equals(archetype, "HOMELESS") { netChance = 8; }
+            else if Equals(archetype, "JUNKIE") { netChance = 15; }
+            else if Equals(archetype, "GANGER") { netChance = 40; }
+
+            let netRoll = RandRange(seed + 17001, 1, 100);
+            if netRoll <= netChance {
+                backstoryUI.netProfile = KdspNetProfileGenerator.GenerateNetProfile(seed + 17111, archetype, gangAffiliation);
+            } else {
+                backstoryUI.netProfile = "";
+            }
+        } else {
+            backstoryUI.netProfile = "";
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // SCANNER GLITCH: Rare chance of total data corruption
+        // Simulates Kiroshi optics malfunction, corrupted NCPD database
+        // pull, or NetWatch interference. Chance controlled by settings.
+        // ══════════════════════════════════════════════════════════════
+        if KdspSettings.ScannerGlitchesEnabled() {
+            let glitchChance = KdspSettings.GetScannerGlitchChance();
+            if glitchChance > 0 && RandRange(seed + 77777, 1, glitchChance) == 1 {
+                let glitched = KdspScannerGlitch.CorruptScan(seed, backstoryUI);
+                backstoryUI.ncID = glitched.ncID;
+                backstoryUI.background = glitched.background;
+                backstoryUI.earlyLife = glitched.earlyLife;
+                backstoryUI.significantEvents = glitched.significantEvents;
+                backstoryUI.threatAssessment = glitched.threatAssessment;
+                backstoryUI.criminalRecord = glitched.criminalRecord;
+                backstoryUI.cyberwareStatus = glitched.cyberwareStatus;
+                backstoryUI.financialStatus = glitched.financialStatus;
+                backstoryUI.medicalStatus = glitched.medicalStatus;
+                backstoryUI.relationships = glitched.relationships;
+                backstoryUI.gangAffiliation = glitched.gangAffiliation;
+                backstoryUI.vehicleRegistration = glitched.vehicleRegistration;
+                backstoryUI.netProfile = glitched.netProfile;
+                backstoryUI.rareFlag = glitched.rareFlag;
+                backstoryUI.ncpdOfficer = glitched.ncpdOfficer;
+                backstoryUI.pronouns = glitched.pronouns;
+                backstoryUI.isUnique = glitched.isUnique;
+                backstoryUI.uniqueClassification = glitched.uniqueClassification;
+                backstoryUI.debugInfo = glitched.debugInfo;
+            }
+        }
+
         return backstoryUI;
     }
 
@@ -776,43 +1058,43 @@ public class KdspBackstoryManager {
         return RandRange(seed + 8888, 20, 55);
     }
 
-    private static func GenerateUpbringingEvent(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
-        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedUpbringingEvents, lifePath.possibleEvents.m_cdfWeightedUpbringingEvents);
+    private static func GenerateUpbringingEvent(seed: Int32, lifePath: ref<KdspLifePath>, corpoAffiliation: String) -> String {
+        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedUpbringingEvents, lifePath.possibleEvents.m_cdfWeightedUpbringingEvents, corpoAffiliation);
     }
 
-    public static func GenerateChildhoodHome(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
-        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedHomeEvents, lifePath.possibleEvents.m_cdfWeightedHomeEvents);
+    public static func GenerateChildhoodHome(seed: Int32, lifePath: ref<KdspLifePath>, corpoAffiliation: String) -> String {
+        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedHomeEvents, lifePath.possibleEvents.m_cdfWeightedHomeEvents, corpoAffiliation);
     }
 
-    private static func GenerateChildhoodEvents(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
+    private static func GenerateChildhoodEvents(seed: Int32, lifePath: ref<KdspLifePath>, corpoAffiliation: String) -> String {
         let childhoodEvents: String;
         let eventsCount: Int32 = RandRange(seed + 21620, 1, 2);
 
         let i = 0;
         while i < eventsCount {
-            childhoodEvents += KdspBackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedChildhoodEvents, lifePath.possibleEvents.m_cdfWeightedChildhoodEvents);
+            childhoodEvents += KdspBackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedChildhoodEvents, lifePath.possibleEvents.m_cdfWeightedChildhoodEvents, corpoAffiliation);
             i += 1;
         }  
         return childhoodEvents;
     }
 
-    private static func GenerateFirstJob(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
-        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedJobEvents, lifePath.possibleEvents.m_cdfWeightedJobEvents);
+    private static func GenerateFirstJob(seed: Int32, lifePath: ref<KdspLifePath>, corpoAffiliation: String) -> String {
+        return KdspBackstoryManager.GenerateEvent(seed, lifePath, lifePath.possibleEvents.m_weightedJobEvents, lifePath.possibleEvents.m_cdfWeightedJobEvents, corpoAffiliation);
     }
 
-    private static func GenerateAdultEvents(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
+    private static func GenerateAdultEvents(seed: Int32, lifePath: ref<KdspLifePath>, corpoAffiliation: String) -> String {
         let adultEvents: String;
         let eventsCount: Int32 = RandRange(seed + 21620, 1, 2);
 
         let i = 0;
         while i < eventsCount {
-            adultEvents += KdspBackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedAdultEvents, lifePath.possibleEvents.m_cdfWeightedAdultEvents);
+            adultEvents += KdspBackstoryManager.GenerateEvent(seed + (i * 199), lifePath, lifePath.possibleEvents.m_weightedAdultEvents, lifePath.possibleEvents.m_cdfWeightedAdultEvents, corpoAffiliation);
             i += 1;
         }  
         return adultEvents;
     }
 
-    private static func GenerateEvent(seed: Int32, lifePath: ref<KdspLifePath>, arr: array<ref<KdspLifePathEvent>>, cdf: array<Int32>) -> String {
+    private static func GenerateEvent(seed: Int32, lifePath: ref<KdspLifePath>, arr: array<ref<KdspLifePathEvent>>, cdf: array<Int32>, corpoAffiliation: String) -> String {
         let cdfSize = ArraySize(cdf);
         let totalWeight = cdf[cdfSize - 1];
         let val = RandRange(seed, 0, totalWeight);
@@ -820,13 +1102,17 @@ public class KdspBackstoryManager {
 
         let event = arr[eventIndex];
         let eventText = event.GetText(lifePath.gender);
-        return KdspBackstoryManager.FillReplacements(seed, eventText);
+        return KdspBackstoryManager.FillReplacements(seed, eventText, corpoAffiliation);
     }
 
-    private static func FillReplacements(seed: Int32, text: String) -> String {
+    private static func FillReplacements(seed: Int32, text: String, corpoAffiliation: String) -> String {
         let ret = text;
         if(StrContains(ret, "%corp%")) {
-            ret = ReplaceFirst(ret, "%corp%", KdspBackstoryManager.GetRandomCorpo(seed));
+            if NotEquals(corpoAffiliation, "") {
+                ret = ReplaceFirst(ret, "%corp%", corpoAffiliation);
+            } else {
+                ret = ReplaceFirst(ret, "%corp%", KdspBackstoryManager.GetRandomCorpo(seed));
+            }
         };
         if(StrContains(ret, "%eddies%")) {
             ret = ReplaceFirst(ret, "%eddies%", IntToString(RandRange(seed, 100, 10000)));
@@ -852,6 +1138,24 @@ public class KdspBackstoryManager {
         return i;
     }
 
+
+    // Detect NPC's corporate affiliation from appearance name
+    private static func DetectCorpoAffiliation(appearanceName: String) -> String {
+        let lower = StrLower(appearanceName);
+        if StrContains(lower, "arasaka") { return "Arasaka Corporation"; }
+        if StrContains(lower, "militech") { return "Militech"; }
+        if StrContains(lower, "kang_tao") || StrContains(lower, "kangtao") { return "Kang Tao"; }
+        if StrContains(lower, "biotechnica") { return "Biotechnica"; }
+        if StrContains(lower, "zetatech") { return "Zetatech"; }
+        if StrContains(lower, "petrochem") { return "Petrochem"; }
+        if StrContains(lower, "kiroshi") { return "Kiroshi Opticals"; }
+        if StrContains(lower, "trauma_team") || StrContains(lower, "traumateam") { return "Trauma Team International"; }
+        if StrContains(lower, "netwatch") { return "NetWatch"; }
+        if StrContains(lower, "orbital") { return "Orbital Air"; }
+        if StrContains(lower, "sovoil") { return "SovOil"; }
+        if StrContains(lower, "dynalar") { return "Dynalar Technologies"; }
+        return "";
+    }
 
     private static func GetRandomCorpo(seed: Int32) -> String {
         let corpos: array<String>;
@@ -894,6 +1198,37 @@ public class KdspBackstoryManager {
         ArrayPush(corpos, KdspTextCorpos.FUJIWARA());
         ArrayPush(corpos, KdspTextCorpos.INFOCOMP());
         ArrayPush(corpos, KdspTextCorpos.BAKENEKO());
+        // Food & Agriculture
+        ArrayPush(corpos, KdspTextCorpos.NOURISH_CORP());
+        ArrayPush(corpos, KdspTextCorpos.ALL_FOODS());
+        ArrayPush(corpos, KdspTextCorpos.SYNTHESIS_AGRICULTURE());
+        // Pharmaceuticals
+        ArrayPush(corpos, KdspTextCorpos.RAVEN_MICROCYBERNETICS());
+        ArrayPush(corpos, KdspTextCorpos.BIODYNAMIK());
+        ArrayPush(corpos, KdspTextCorpos.MEDTECH_PHARMA());
+        // PMC / Security
+        ArrayPush(corpos, KdspTextCorpos.LAZARUS_MILITARY());
+        ArrayPush(corpos, KdspTextCorpos.IRON_GUARD_SEC());
+        ArrayPush(corpos, KdspTextCorpos.BLACKWALL_SECURITIES());
+        // Media & Comms
+        ArrayPush(corpos, KdspTextCorpos.WNS());
+        ArrayPush(corpos, KdspTextCorpos.EXCELSIOR());
+        ArrayPush(corpos, KdspTextCorpos.NEON_ARCADE_MEDIA());
+        // Transportation
+        ArrayPush(corpos, KdspTextCorpos.DELAMAIN());
+        ArrayPush(corpos, KdspTextCorpos.HERRERA());
+        ArrayPush(corpos, KdspTextCorpos.ARCHER());
+        ArrayPush(corpos, KdspTextCorpos.MAKIGAI());
+        ArrayPush(corpos, KdspTextCorpos.RAYFIELD());
+        // Utilities
+        ArrayPush(corpos, KdspTextCorpos.NC_POWER());
+        ArrayPush(corpos, KdspTextCorpos.HYDRO_NC());
+        ArrayPush(corpos, KdspTextCorpos.DATAVAULT());
+        // Cybernetics
+        ArrayPush(corpos, KdspTextCorpos.TSUNAMI_DEFENSE());
+        ArrayPush(corpos, KdspTextCorpos.ARASAKA_CYBERNETICS());
+        ArrayPush(corpos, KdspTextCorpos.BUDGET_ARMS());
+        ArrayPush(corpos, KdspTextCorpos.NOKOTA());
 
         let corpoVal = RandRange(seed + 41948, 0, ArraySize(corpos)-1);
 
@@ -903,114 +1238,6 @@ public class KdspBackstoryManager {
     // ========== CHILD NPC DETECTION & HANDLING ==========
 
     // Detect if NPC is a child based on appearance name patterns
-    private static func IsChildNPC(appearanceName: String) -> Bool {
-        let lowerName = StrLower(appearanceName);
-        
-        // Common child appearance indicators in CP2077
-        // Be specific to avoid false positives on young adults
-        if StrContains(lowerName, "child") { return true; };
-        if StrContains(lowerName, "_kid_") { return true; };
-        if StrContains(lowerName, "_kid") && !StrContains(lowerName, "street_kid") { return true; };
-        if StrContains(lowerName, "kid_") && !StrContains(lowerName, "street_kid") { return true; };
-        if StrContains(lowerName, "_boy_") { return true; };
-        if StrContains(lowerName, "_girl_") { return true; };
-        if StrContains(lowerName, "juvenile") { return true; };
-        if StrContains(lowerName, "urchin") { return true; };
-        
-        // Removed: "young_", "_young" - too broad, matches young adults
-        // Removed: "teen" - could match "canteen", "fourteen", adult young NPCs
-        // Removed: "minor" - could match "miner", other words
-        // Removed: "street_kid" - this is a lifepath, not age indicator
-        
-        return false;
-    }
-
-    // Generate age-appropriate backstory for child NPCs
-    private static func GenerateChildBackstory(seed: Int32, lifePath: ref<KdspLifePath>) -> KdspBackstoryUI {
-        let backstoryUI: KdspBackstoryUI;
-        
-        // === BACKGROUND (School/Living Situation) ===
-        let backgrounds: array<String>;
-        ArrayPush(backgrounds, "Currently enrolled in public school. ");
-        ArrayPush(backgrounds, "Attends a corporate-sponsored academy. ");
-        ArrayPush(backgrounds, "Homeschooled via braindance tutorials. ");
-        ArrayPush(backgrounds, "Student at a megatower community school. ");
-        ArrayPush(backgrounds, "Enrolled in Night City Youth Program. ");
-        ArrayPush(backgrounds, "Attends school in Pacifica district. ");
-        ArrayPush(backgrounds, "Student at Watson Community School. ");
-        ArrayPush(backgrounds, "Enrolled in Heywood Public Education. ");
-        ArrayPush(backgrounds, "Attending Westbrook Junior Academy. ");
-        ArrayPush(backgrounds, "Home-tutored by family. ");
-        
-        let bgIndex = RandRange(seed, 0, ArraySize(backgrounds) - 1);
-        backstoryUI.background = backgrounds[bgIndex];
-        
-        // === EARLY LIFE (Family/Daily Life) ===
-        let earlyLifeEvents: array<String>;
-        ArrayPush(earlyLifeEvents, "Lives with family in a megatower apartment. ");
-        ArrayPush(earlyLifeEvents, "Enjoys playing with neighborhood friends. ");
-        ArrayPush(earlyLifeEvents, "Spends free time on braindance games. ");
-        ArrayPush(earlyLifeEvents, "Has a pet cyber-cat. ");
-        ArrayPush(earlyLifeEvents, "Takes the NCART to school daily. ");
-        ArrayPush(earlyLifeEvents, "Collects vintage tech toys. ");
-        ArrayPush(earlyLifeEvents, "Member of a junior sports league. ");
-        ArrayPush(earlyLifeEvents, "Learning to code at school. ");
-        ArrayPush(earlyLifeEvents, "Helps at family's small business. ");
-        ArrayPush(earlyLifeEvents, "Lives with extended family. ");
-        ArrayPush(earlyLifeEvents, "Often seen at local food vendors. ");
-        ArrayPush(earlyLifeEvents, "Regularly visits the local arcade. ");
-        ArrayPush(earlyLifeEvents, "Member of school's tech club. ");
-        ArrayPush(earlyLifeEvents, "Takes care of younger siblings. ");
-        
-        let elIndex = RandRange(seed + 100, 0, ArraySize(earlyLifeEvents) - 1);
-        backstoryUI.earlyLife = earlyLifeEvents[elIndex];
-        
-        // === SIGNIFICANT EVENTS (Recent Activities) ===
-        let events: array<String>;
-        ArrayPush(events, "Recently started a new school year. ");
-        ArrayPush(events, "Won a school science fair competition. ");
-        ArrayPush(events, "Made the junior hoopball team. ");
-        ArrayPush(events, "Got a new braindance gaming rig. ");
-        ArrayPush(events, "Family recently moved to a new district. ");
-        ArrayPush(events, "Started learning martial arts. ");
-        ArrayPush(events, "Joined the school robotics club. ");
-        ArrayPush(events, "Participated in Youth of Night City program. ");
-        ArrayPush(events, "Recently celebrated a birthday. ");
-        ArrayPush(events, "Started a new hobby. ");
-        ArrayPush(events, "Made a new best friend. ");
-        ArrayPush(events, "Adopted a stray animal. ");
-        
-        let evIndex = RandRange(seed + 200, 0, ArraySize(events) - 1);
-        backstoryUI.significantEvents = events[evIndex];
-        
-        // === RESTRICTED DATA FOR MINORS ===
-        // Children have limited/protected records in adult databases
-        backstoryUI.criminalRecord = "";  // No criminal record for minors
-        backstoryUI.cyberwareStatus = "MINOR - Registry data restricted";
-        backstoryUI.financialStatus = "DEPENDENT - No independent credit history";
-        backstoryUI.medicalStatus = "Pediatric records sealed | Status: Protected";
-        backstoryUI.threatAssessment = "Level: NONE (0/100) | Classification: MINOR - Protected";
-        backstoryUI.gangAffiliation = "";  // No gang data for minors
-        backstoryUI.rareFlag = "";
-        backstoryUI.ncpdOfficer = "";
-        
-        // Family relationships for minors
-        let familyTypes: array<String>;
-        ArrayPush(familyTypes, "Lives with parents");
-        ArrayPush(familyTypes, "Lives with mother");
-        ArrayPush(familyTypes, "Lives with father");
-        ArrayPush(familyTypes, "Lives with grandparents");
-        ArrayPush(familyTypes, "Lives with guardian");
-        ArrayPush(familyTypes, "Lives with extended family");
-        ArrayPush(familyTypes, "In foster care system");
-        ArrayPush(familyTypes, "Lives in group home");
-        
-        let famIndex = RandRange(seed + 300, 0, ArraySize(familyTypes) - 1);
-        backstoryUI.relationships = familyTypes[famIndex] + " | Status: MINOR - Data Protected";
-        
-        return backstoryUI;
-    }
-
     private static func FindBodyModImplant(cyberware: ref<KdspCyberwareRegistryData>) -> String {
         let i: Int32 = 0;
         while i < ArraySize(cyberware.implants) {
@@ -1058,59 +1285,6 @@ public class KdspBackstoryManager {
     }
 
     // NCPD-specific backstory generation
-    private static func GenerateNCPDBackground(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
-        let backgrounds: array<String>;
-        ArrayPush(backgrounds, "Academy graduate. Family has history of NCPD service.");
-        ArrayPush(backgrounds, "Former corporate security, recruited by NCPD.");
-        ArrayPush(backgrounds, "Military background. Joined NCPD after discharge.");
-        ArrayPush(backgrounds, "Grew up in Watson. Joined the force to make a difference.");
-        ArrayPush(backgrounds, "Academy top percentile. Fast-tracked through training.");
-        ArrayPush(backgrounds, "Second-generation NCPD. Father was decorated officer.");
-        ArrayPush(backgrounds, "Street kid turned cop. Knows the underworld firsthand.");
-        ArrayPush(backgrounds, "Former Trauma Team. Transitioned to law enforcement.");
-        ArrayPush(backgrounds, "Recruited from private security sector.");
-        ArrayPush(backgrounds, "Came up through NCPD cadet program.");
-        ArrayPush(backgrounds, "Ex-military police. Extensive combat training.");
-        ArrayPush(backgrounds, "Academy scholarship recipient. Night City native.");
-        
-        return backgrounds[RandRange(seed + 100, 0, ArraySize(backgrounds) - 1)];
-    }
-
-    private static func GenerateNCPDEarlyLife(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
-        let events: array<String>;
-        ArrayPush(events, "Completed standard patrol rotation. No incidents.");
-        ArrayPush(events, "Early commendation for bravery during gang shootout.");
-        ArrayPush(events, "Transferred between precincts twice. Standard career progression.");
-        ArrayPush(events, "Partnered with veteran officer for field training.");
-        ArrayPush(events, "Completed advanced tactical training certification.");
-        ArrayPush(events, "Assigned to high-crime district early in career.");
-        ArrayPush(events, "Received marksmanship award during academy.");
-        ArrayPush(events, "First year on the job was during the unification riots.");
-        ArrayPush(events, "Volunteered for overtime shifts in Pacifica.");
-        ArrayPush(events, "Completed crisis negotiation training.");
-        
-        return events[RandRange(seed + 200, 0, ArraySize(events) - 1)];
-    }
-
-    private static func GenerateNCPDRecentActivity(seed: Int32, lifePath: ref<KdspLifePath>) -> String {
-        let activities: array<String>;
-        ArrayPush(activities, "Currently on standard patrol rotation. Performance satisfactory.");
-        ArrayPush(activities, "Recently involved in successful gang operation. Commendation pending.");
-        ArrayPush(activities, "Under consideration for promotion. Evaluation scheduled.");
-        ArrayPush(activities, "Transferred to new precinct last month. Adjusting to new assignment.");
-        ArrayPush(activities, "Completed mandatory recertification. All scores passing.");
-        ArrayPush(activities, "Recently returned from administrative leave. Full duty status.");
-        ArrayPush(activities, "Assigned to joint task force operation. Details classified.");
-        ArrayPush(activities, "Requested transfer to specialized unit. Application pending.");
-        ArrayPush(activities, "Partner recently retired. New partner assignment pending.");
-        ArrayPush(activities, "Completed community outreach assignment. Returning to patrol.");
-        ArrayPush(activities, "On light duty following minor injury. Expected full recovery.");
-        ArrayPush(activities, "Recently passed sergeant examination. Awaiting promotion slot.");
-        
-        return activities[RandRange(seed + 300, 0, ArraySize(activities) - 1)];
-    }
-
-    // Extract last name from NPC's display name for family relationship consistency
     private static func ExtractLastName(target: wref<NPCPuppet>) -> String {
         let record = target.GetRecord();
         if !IsDefined(record) {

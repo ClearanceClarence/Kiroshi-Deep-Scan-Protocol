@@ -43,7 +43,6 @@ public class KdspLifePathPossibilities {
         let nomadMod: Int32;
         let junkieMod: Int32;
         let gangerMod: Int32;
-        let homelessMod: Int32;
 
         if Equals(archetype, "CORPO_MANAGER") {
             positiveOutcomeWeight = 100;
@@ -98,16 +97,16 @@ public class KdspLifePathPossibilities {
         this.m_weightedUpbringingEvents = UpbringingEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod);
         this.m_cdfWeightedUpbringingEvents = CDF(this.m_weightedUpbringingEvents);
 
-        this.m_weightedHomeEvents = HomeEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod, homelessMod);
+        this.m_weightedHomeEvents = HomeEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod);
         this.m_cdfWeightedHomeEvents= CDF(this.m_weightedHomeEvents);
 
-        this.m_weightedChildhoodEvents = ChildhoodEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod, homelessMod);
+        this.m_weightedChildhoodEvents = ChildhoodEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod);
         this.m_cdfWeightedChildhoodEvents= CDF(this.m_weightedChildhoodEvents);
 
-        this.m_weightedJobEvents = JobEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod, homelessMod);
+        this.m_weightedJobEvents = JobEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod);
         this.m_cdfWeightedJobEvents= CDF(this.m_weightedJobEvents);
 
-        this.m_weightedAdultEvents = AdultEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod, homelessMod);
+        this.m_weightedAdultEvents = AdultEvents(positiveOutcomeWeight, neutralOutcomeWeight, negativeOutcomeWeight, corpoMod, nomadMod, junkieMod, gangerMod);
         this.m_cdfWeightedAdultEvents = CDF(this.m_weightedAdultEvents);
     }
 }

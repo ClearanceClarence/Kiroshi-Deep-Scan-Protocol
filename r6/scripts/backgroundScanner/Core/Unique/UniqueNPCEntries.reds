@@ -1,4 +1,4 @@
-// Kiroshi Deep Scan Protocol - Unique NPC Entries v1.5
+// Kiroshi Deep Scan Protocol - Unique NPC Entries
 
 public abstract class KdspQuestProgressHelper {
     public static func IsFactSet(factName: CName) -> Bool {
@@ -54,6 +54,7 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "finger") && !StrContains(id, "fingerprint") && !StrContains(id, "fingernail") && (StrContains(id, "ripperdoc") || StrContains(id, "doc") || StrContains(id, "clinic") || StrContains(id, "fingers")) { return KdspUniqueNPCEntries.Fingers(); }
         if StrContains(id, "misty") && !StrContains(id, "mistyped") && !StrContains(id, "misty_fog") && (StrContains(id, "olszewski") || StrContains(id, "esoterica") || StrContains(id, "shop")) { return KdspUniqueNPCEntries.MistyOlszewski(); }
         if StrContains(id, "lucy") && StrContains(id, "thackery") { return KdspUniqueNPCEntries.LucyThackery(); }
+        if StrContains(id, "nina_kraviz") || (StrContains(id, "wbr_hil_ripdoc") && !StrContains(id, "uncle")) { return KdspUniqueNPCEntries.NinaKraviz(); }
         // MOX / CLOUDS
         if StrContains(id, "judy") { return KdspUniqueNPCEntries.JudyAlvarez(); }
         if StrContains(id, "evelyn") { return KdspUniqueNPCEntries.EvelynParker(); }
@@ -83,12 +84,18 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "nibbles") { return KdspUniqueNPCEntries.Nibbles(); }
         if StrContains(id, "delamain") { return KdspUniqueNPCEntries.Delamain(); }
         if StrContains(id, "mama") && StrContains(id, "welles") { return KdspUniqueNPCEntries.MamaWelles(); }
+        if StrContains(id, "mq040_wife") || (StrContains(id, "cynthia") && StrContains(id, "najarro")) { return KdspUniqueNPCEntries.CynthiaNajarro(); }
+        if StrContains(id, "elcoyote_barman") || StrContains(id, "pepe_najarro") || (StrContains(id, "pepe") && StrContains(id, "najarro")) { return KdspUniqueNPCEntries.PepeNajarro(); }
+        if StrContains(id, "mq040_ripperdoc") || StrContains(id, "mq040__black_market_ripperdoc") { return KdspUniqueNPCEntries.ShadyRipperdocMQ040(); }
+        if StrContains(id, "mq014_master") || StrContains(id, "zen_master") { return KdspUniqueNPCEntries.ZenMaster(); }
+        if StrContains(id, "elcoyote_barman") || (StrContains(id, "pepe") && StrContains(id, "najarro")) { return KdspUniqueNPCEntries.PepeNajarro(); }
         // TYGER CLAWS
         if StrContains(id, "jotaro") || StrContains(id, "shobo") { return KdspUniqueNPCEntries.JotaroShobo(); }
         if StrContains(id, "hiromi") && StrContains(id, "sato") { return KdspUniqueNPCEntries.HiromiSato(); }
         // VALENTINOS
         if (StrContains(id, "gustavo") || (StrContains(id, "orta") && StrContains(id, "valentino"))) && !StrContains(id, "escort") && !StrContains(id, "transport") && !StrContains(id, "porta") && !StrContains(id, "morta") && !StrContains(id, "corta") && !StrContains(id, "forta") { return KdspUniqueNPCEntries.GustavoOrta(); }
         if StrContains(id, "jose") && StrContains(id, "luis") { return KdspUniqueNPCEntries.JoseLuis(); }
+        if StrContains(id, "miguel_rodrigez") || StrContains(id, "mq_hey_rey_06_outpost_miniboss") { return KdspUniqueNPCEntries.MiguelRodriguez(); }
         // ANIMALS
         if StrContains(id, "sasquatch") { return KdspUniqueNPCEntries.Sasquatch(); }
         // WRAITHS
@@ -900,6 +907,65 @@ public abstract class KdspUniqueNPCEntries {
             .SetNotes("Heart of Heywood. Do not threaten. Even Valentinos protect her.");
     }
 
+    public static func CynthiaNajarro() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("mq040_wife").SetClassification("CIVILIAN - HEYWOOD RESIDENT")
+            .SetBackground("Cynthia Najarro. Office worker employed at a firm on Skyline Street East, The Glen. Born and raised in Heywood. Married 10 years.")
+            .SetEarlyLife("Grew up in The Glen district. Attended local public schools. No higher education on file. Entered the workforce early to support family.")
+            .SetSignificantEvents("Steady employment record spanning multiple years. No notable incidents. Recently working extended hours according to employer records.")
+            .SetAffiliation("Civilian | Employed: Skyline Street East (The Glen)")
+            .SetCriminalRecord("Status: CLEAN | No arrests | No warrants | NCPD: NO FILE")
+            .SetCyberwareStatus("Implants: 2 | Status: LOW - STABLE | Standard optics and subdermal link")
+            .SetFinancialStatus("Credit: FAIR | Income: Dual-household, strained | Outstanding debts flagged under spouse's name | Household finances below district average")
+            .SetMedicalStatus("Blood: B RhD+ | Health: GOOD | Records unremarkable | Trauma Team: NONE")
+            .SetThreatAssessment("NONE (0/100) | Standard civilian profile | No known affiliations")
+            .SetRelationships("Pepe Najarro (Husband, bartender at El Coyote Cojo) | One son | Extended family in Heywood")
+            .SetNotes("Spouse works double shifts at El Coyote Cojo. Household under financial pressure from outstanding loan shark debt. Unremarkable citizen profile. No further investigation warranted.");
+    }
+
+    public static func PepeNajarro() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("elcoyote_barman").SetClassification("CIVILIAN - HEYWOOD RESIDENT")
+            .SetBackground("Pepe Najarro. Bartender at El Coyote Cojo, The Glen, Heywood. Works double shifts to support family. Known and trusted by local community.")
+            .SetEarlyLife("Heywood native. No formal education beyond secondary. Learned the trade working bars across The Glen. Hired at El Coyote Cojo and became a fixture of the establishment.")
+            .SetSignificantEvents("Took on significant personal debt to loan shark Kirk Sawyer to cover family expenses. Works overtime to service the debt. Stable employment record at El Coyote Cojo spanning several years.")
+            .SetAffiliation("Civilian | El Coyote Cojo (Bartender)")
+            .SetCriminalRecord("Status: CLEAN | No arrests | No warrants | NCPD: NO FILE")
+            .SetFinancialStatus("Credit: POOR | Income: Service industry, below average | DEBT: Outstanding loan (Kirk Sawyer, unlicensed lender) | Payment plan: irregular")
+            .SetMedicalStatus("Blood: O RhD+ | Health: FAIR | Chronic fatigue noted (overwork) | Trauma Team: NONE")
+            .SetThreatAssessment("NONE (0/100) | Standard civilian | No combat training")
+            .SetRelationships("Cynthia Najarro (Wife, 10 years) | One son | Mama Welles (Employer) | Kirk Sawyer (Creditor)")
+            .SetNotes("Respected by locals. Valentinos leave him alone out of respect for Mama Welles and the bar. Under financial strain but keeps his head down. Good listener - hears a lot of things people probably shouldn't say to their bartender.");
+    }
+
+    public static func ShadyRipperdocMQ040() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("mq040_ripperdoc").SetClassification("UNLICENSED MEDICAL - BLACK MARKET")
+            .SetBackground("Former licensed ripperdoc. Medical license revoked following a patient death during a routine implant procedure. Official cause: surgical complication. Family of the deceased pursued civil and criminal action.")
+            .SetEarlyLife("Completed medical training at Night City Institute of Technology. Interned at a legitimate clinic in Heywood. Earned full ripperdoc certification. Early career was unremarkable - steady patient roster, no complaints on file.")
+            .SetSignificantEvents("Patient death during implant surgery led to license revocation. Civil suit filed by victim's family - settled out of court but family continued public campaign. Criminal negligence charge: DISMISSED due to insufficient evidence. Forced out of legitimate practice. Now operates unlicensed from concealed locations.")
+            .SetAffiliation("Independent | Unlicensed | No corporate or gang ties on record")
+            .SetCriminalRecord("Criminal negligence (DISMISSED) | Practicing medicine without license (ACTIVE WARRANT - LOW PRIORITY) | NCPD: LOW PRIORITY - VICE/MEDICAL")
+            .SetCyberwareStatus("Implants: 3 | Status: MODERATE | Surgical-grade optics, precision hand stabilizers, medical diagnostic suite")
+            .SetFinancialStatus("Income: Cash only, untraceable | No registered accounts | Operates below tax threshold | Clients pay premium for discretion")
+            .SetMedicalStatus("Blood: A RhD+ | Health: FAIR | Stress markers elevated | Mild hand tremor noted in last known checkup | Trauma Team: NONE")
+            .SetThreatAssessment("LOW (15/100) | Non-combatant | Medical training only | Flight risk if confronted")
+            .SetRelationships("Former colleagues severed ties | Client list: UNKNOWN - no records kept | Victim's family: ongoing harassment campaign")
+            .SetNotes("Skilled practitioner forced underground by one incident. Takes clients who need work done without questions or records. Moves locations periodically to avoid the victim's family and NCPD medical compliance sweeps. Not considered dangerous.");
+    }
+
+    public static func PepeNajarro() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("elcoyote_barman").SetClassification("CIVILIAN - SERVICE WORKER")
+            .SetBackground("Pepe Najarro. Bartender at El Coyote Cojo, The Glen, Heywood. Long-term employee. Works double shifts regularly. Known face in the local community.")
+            .SetEarlyLife("Grew up in Heywood. No higher education on file. Entered service industry early. Worked various bar and restaurant jobs across The Glen before settling at El Coyote Cojo.")
+            .SetSignificantEvents("Steady employment at El Coyote Cojo for multiple years. No gaps in work record. Known to take every available shift. Quietly respected by regulars and local Valentinos alike.")
+            .SetAffiliation("El Coyote Cojo | Bartender | Valentinos-adjacent (community, not member)")
+            .SetCriminalRecord("Status: CLEAN | No arrests | No warrants | NCPD: NO FILE")
+            .SetCyberwareStatus("Implants: 1 | Status: LOW - STABLE | Basic optics only")
+            .SetFinancialStatus("Credit: POOR | Income: Service wage + tips | Outstanding debt to Kirk Sawyer (private lender - HIGH INTEREST) | Household finances strained")
+            .SetMedicalStatus("Blood: O RhD+ | Health: FAIR | Chronic fatigue noted | Lower back strain (occupational) | Trauma Team: NONE")
+            .SetThreatAssessment("NONE (0/100) | Non-combatant | Community figure | No known enemies")
+            .SetRelationships("Cynthia Najarro (Wife) | One son | Mama Welles (Employer) | Heywood community")
+            .SetNotes("Hard-working family man under significant financial strain. Owes money to local loan shark Kirk Sawyer. Takes every shift offered. Well-liked by patrons and community. Not a Valentino but operates in their territory without issue - sign of local respect.");
+    }
+
     // === SPECIAL / ANIMALS ===
     public static func Nibbles() -> ref<KdspUniqueNPCBackstory> {
         return KdspUniqueNPCBackstory.Create("nibbles").SetClassification("FELINE - DOMESTIC")
@@ -928,6 +994,21 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     // VALENTINOS - note: detailed entry for Gustavo Orta in Notable Residents section
+
+    public static func MiguelRodriguez() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("mq_hey_rey_06_outpost_miniboss").SetClassification("VALENTINOS - LEADERSHIP")
+            .SetBackground("Miguel Rodriguez, alias 'Gizmo'. Valentinos lieutenant operating out of Mercado Sonora, Vista del Rey. Former licensed ripperdoc. Lost license after a patient died on the table - family pursued legal action and won.")
+            .SetEarlyLife("Grew up in Vista del Rey. Trained as a ripperdoc. Ran a small clinic in Heywood before the incident. After losing his medical license, debts mounted and the Valentinos offered a way out.")
+            .SetSignificantEvents("Forced into black market ripperdoc work under Valentinos protection. Expanded into smuggling and trafficking logistics. NCPD dispatch flagged for organized crime activity at Mercado Sonora. Coordinates human trafficking operations using modified vehicles.")
+            .SetAffiliation("Valentinos | Vista del Rey | Mercado Sonora operations")
+            .SetCriminalRecord("NCPD PRIORITY TARGET | Second-degree murder | Drug trafficking | Human smuggling | Suspected human trafficking | Unlicensed medical practice | Organized crime")
+            .SetCyberwareStatus("Implants: 4 | Status: MODERATE | Combat-grade optics, reinforced subdermal | Note: Maintains ripperdoc-grade surgical tools")
+            .SetFinancialStatus("Income: Criminal enterprise | Former medical debts (defaulted) | Multiple front businesses | Controls Mercado Sonora rackets")
+            .SetMedicalStatus("Former medical professional | Ripperdoc license: REVOKED | Malpractice record: 1 fatality | Operates unlicensed from Mercado Sonora")
+            .SetThreatAssessment("EXTREME | Valentinos leadership | Armed and dangerous | Gang security detail | NCPD bounty active")
+            .SetRelationships("Alan Navarez (Associate, logistics) | Ines Jimenez (Associate, transport) | Valentinos inner circle | Victim's family (ongoing legal/personal vendetta)")
+            .SetNotes("WARNING: Active NCPD contract for neutralization. Former ripperdoc turned gang operative after malpractice destroyed career. Family of deceased patient reportedly still pursuing him - may be factor in Valentinos protection arrangement. Armed escort at all times.");
+    }
 
     // MAELSTROM - Additional
     public static func Brick() -> ref<KdspUniqueNPCBackstory> {
@@ -2184,6 +2265,21 @@ public abstract class KdspUniqueNPCEntries {
             .SetThreatAssessment("NONE | Medical professional | Non-combatant | Value in ripperdoc skills");
     }
 
+    public static func NinaKraviz() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("wbr_hil_ripdoc_01").SetClassification("RIPPERDOC - LICENSED")
+            .SetBackground("Nina Kraviz. Licensed ripperdoc operating from Kraviz's Clinic, Charter Hill, Westbrook. Soviet-born. Internationally experienced - previously ran clinics in Irkutsk, Leningrad, Vienna, and Glasgow before relocating to Night City.")
+            .SetEarlyLife("Trained in the Soviet Union. Former dental background before transitioning to cybersurgery. Earned full ripperdoc certification through extensive practical experience across multiple cities and countries.")
+            .SetSignificantEvents("Pattern of short-term clinic residencies across Europe and Asia. Relocates when 'bored' - her word. Current Night City clinic is operated from her uncle's premises in Charter Hill. Describes Night City as 'wonderful' - fascinated by the constant demand for medical services.")
+            .SetAffiliation("Independent | Kraviz's Clinic, Charter Hill, Westbrook")
+            .SetCriminalRecord("Status: CLEAN | Fully licensed | No complaints on file | NCPD: NO FILE")
+            .SetCyberwareStatus("Implants: 4 | Status: MODERATE | Surgical-grade optics, precision hand stabilizers, dental-to-cyber adapted toolset")
+            .SetFinancialStatus("Income: Ripperdoc services (Charter Hill rates) | Clinic leased from uncle | Westbrook clientele - above average income bracket")
+            .SetMedicalStatus("Blood: A RhD- | Health: GOOD | No conditions on file | Trauma Team: SILVER")
+            .SetThreatAssessment("NONE (0/100) | Medical professional | Non-combatant | Valued community asset")
+            .SetRelationships("Uncle (Clinic owner, previous ripperdoc at this location) | Charter Hill client roster | No known gang affiliations")
+            .SetNotes("Well-traveled, restless personality. Moves on when a city stops being interesting. Currently content in Night City - finds the violence-driven demand for medical services 'fascinating.' Skilled practitioner with an unusual dental background. Blunt manner - speaks her mind regardless of patient feelings.");
+    }
+
     public static func JotaroShobo() -> ref<KdspUniqueNPCBackstory> {
         return KdspUniqueNPCBackstory.Create("jotaro_shobo").SetClassification("TYGER CLAWS - HIGH RANKING")
             .SetBackground("Jotaro Shobo (正法承太郎). High-ranking Tyger Claws member, owner of Ho-Oh club in Kabuki. Known as 'The Devil of Kabuki' for his side business - producing the most violent XBDs imaginable. At least seventeen confirmed murders, mostly joytoys who disappeared without anyone looking for them.")
@@ -2667,5 +2763,22 @@ public abstract class KdspUniqueNPCEntries {
             .SetRelationships("Crimson Harvest (Former cell — defecting) | Biotechnica (Primary target — also hunting her) | Mr. Hands (Fixer — contracted V to assist) | Four siblings (Family — Indiana)")
             .SetNotes("Brilliant chemist | True believer turned disillusioned | Sabotaging Biotechnica felt like alleviating her family's pain — until reality caught up | Biotechnica agents actively pursuing her in Dogtown")
             .SetThreatAssessment("MODERATE | Chemistry expertise makes her dangerous in theory | Not a direct combatant | Multiple hostile parties tracking her location");
+    }
+
+    // --- ZEN MASTER (mq014 quest chain: Imagine / Stairway to Heaven / Poem of the Atoms / Meetings Along the Edge) ---
+
+    public static func ZenMaster() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("mq014_zen_master").SetClassification("UNKNOWN - DATABASE INCONCLUSIVE")
+            .SetBackground("No verified identity on file. Subject appears across multiple NCPD surveillance zones in sequence — Reconciliation Park (Corpo Plaza), Japantown shrine district, North Oak roundabout, Jackson Plains overlook — with no recorded transit between locations. Offers unlicensed braindance meditation sessions themed around classical elements. No commercial registration. No fixed address. No known employer. NCPD has received four separate civilian reports describing the same individual in four districts within 48 hours. All reports filed independently.")
+            .SetEarlyLife("NO DATA AVAILABLE. Immigration records return no match. NUSA citizen registry returns no match. Night City municipal database returns no match. Corporate employment databases return no match. Subject's accent, mannerisms, and philosophical references suggest extensive monastic training — tradition and origin unconfirmed. Facial recognition cross-reference produces zero hits across all available databases. This is statistically anomalous.")
+            .SetSignificantEvents("Distributes unlicensed braindances focused on elemental meditation (Earth, Water, Fire, Air). BDs have been flagged for analysis — content is non-harmful, non-addictive, and contains no embedded malware or subliminal encoding. Braindance technicians describe the recordings as 'technically impossible' — the sensory fidelity exceeds known consumer-grade wreath hardware capabilities. Subject has been observed quoting lyrics from the band Samurai intermixed with Buddhist and Sufi philosophical texts. Disappears from location after each encounter — no departure recorded on any surveillance feed.")
+            .SetAffiliation("NONE IDENTIFIED | No gang ties | No corporate affiliation | No political connections | No registered religious organization")
+            .SetCriminalRecord("NO RECORD | Unlicensed braindance distribution (report filed, investigation stalled — cannot locate subject for questioning) | Four civilian reports (wellness checks — subject found in good health each time, then absent on follow-up) | NCPD classification: NON-PRIORITY CURIOSITY")
+            .SetCyberwareStatus("SCAN INCONCLUSIVE | External scan detects no implants, no cyberware signature, no neural interface | This would make subject one of approximately 0.3% of Night City residents with zero chrome | Internal scan unable to penetrate — reason unknown")
+            .SetFinancialStatus("NO FINANCIAL FOOTPRINT | No bank accounts | No registered eddies transactions | No credit history | Accepts voluntary payment for BD sessions (0-610 eddies) — funds not deposited into any tracked account")
+            .SetMedicalStatus("NO MEDICAL RECORDS | No Trauma Team coverage | No clinic visits on file | Visual assessment: excellent physical condition for estimated age range (50-70?) | Age estimation inconsistent between encounters")
+            .SetRelationships("NONE ON FILE | Subject appears to operate entirely alone | No known associates | No known residence shared with others | Surveillance note: subject has been observed engaging with individuals experiencing psychological distress or existential crisis — selection criteria for these interactions is unknown")
+            .SetNotes("PSYCH ASSESSMENT IMPOSSIBLE | Subject demonstrates no markers for any known psychological condition | Exhibits profound calm inconsistent with Night City baseline stress indicators | Speech patterns suggest high intelligence and extensive philosophical education | Does not register on standard threat matrices | Consulting psychologist note: 'This individual is either the most well-adjusted person in Night City, or our tools are not equipped to measure what we are looking at.' | Multiple officers have noted a 'strange sensation' when near the subject — not threat, not fear, described variously as 'peace,' 'stillness,' and 'the feeling of being seen.' One officer requested reassignment after the encounter, citing 'personal reasons.' Another enrolled in a meditation course. | NCPD Dispatch has informally flagged this file as 'Do Not Pursue — Not Worth The Paperwork.'")
+            .SetThreatAssessment("CANNOT BE DETERMINED | Subject has never demonstrated hostile behavior | No weapons detected | No cyberware detected | However: subject's ability to appear and disappear without surveillance detection represents a security anomaly that has been escalated to NetWatch twice | NetWatch response both times: 'Not our problem.' | Recommended classification: OBSERVE ONLY");
     }
 }
