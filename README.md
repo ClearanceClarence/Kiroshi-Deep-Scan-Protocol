@@ -4,14 +4,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=1a1a2e" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-2.0-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-2.1-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=1a1a2e" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=1a1a2e" alt="License">
 </p>
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  KIROSHI OPTICS v2.0 — DEEP SCAN PROTOCOL                                    ║
+║  KIROSHI OPTICS v2.1 — DEEP SCAN PROTOCOL                                    ║
 ║  STATUS: ONLINE ■ DATABASES: 10 CONNECTED ■ CLASSIFIED ACCESS: GRANTED       ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
@@ -38,6 +38,7 @@
 │  ▸ Name Generation .......... 260K+ culturally matched names                 │
 │  ▸ Narrative Coherence ...... Life theme system                              │
 │  ▸ Scanner Glitches ......... Kiroshi malfunction system                     │
+│  ▸ Translation ............. Community localization guide                    │
 │  ▸ Configuration ............ Mod settings breakdown                         │
 │  ▸ Installation ............. Requirements + setup                           │
 │  ▸ Compatibility ............ Known conflicts                                │
@@ -523,6 +524,16 @@ Default: 1 in 200 chance per scan. Fully configurable (1–500) or toggleable of
 
 <br>
 
+## █▓▒░ TRANSLATION
+
+Want to translate Kiroshi Deep Scan into your language? Download the [Translation Guide](TRANSLATION_GUIDE.MD), extract it, and open in your browser.
+
+The guide covers every file in the mod with real code examples, showing exactly which strings to translate and which to leave alone. Includes placeholder token reference, custom gender token instructions for languages with verb conjugation (Russian, Polish, German, etc.), difficulty ratings per file, decision flowchart, and common mistakes.
+
+Translations are published as separate standalone mods on Nexus. No permission needed — just credit the original page. If you publish one, drop a comment and it'll be linked here.
+
+<br>
+
 ## █▓▒░ CONFIGURATION
 
 All settings: **Mod Settings Menu → Kiroshi Deep Scan**
@@ -823,7 +834,7 @@ r6/scripts/backgroundScanner/
 ├── Settings/
 │   └── KiroshiSettings.reds              24 settings, 5 categories
 │
-├── Text/                                  ~4,800 lines of content
+├── Text/                                  ~2,100 lines of content
 │   └── TextAdulthood / Backgrounds / Childhood / Core /
 │       Corpos / Housing / Jobs / Lifepaths / Upbringing .reds
 │
@@ -866,7 +877,7 @@ MIT — See [LICENSE](LICENSE) for details.
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║           KIROSHI DEEP SCAN PROTOCOL v2.0                                    ║
+║           KIROSHI DEEP SCAN PROTOCOL v2.1                                    ║
 ║           DATABASES: 10 ■ UNIQUE NPCs: 225 ■ CLASSIFICATIONS: 90             ║
 ║                                                                              ║
 ║           Every NPC is a person.                                             ║

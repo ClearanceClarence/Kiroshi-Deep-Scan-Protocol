@@ -4,6 +4,32 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [2.1]
+
+### Gender Deduplication
+
+- Removed 1,619 duplicate _M() text functions across 7 text files
+- Renamed 1,618 _F() functions to gender-neutral base names (LOST_JOB_F → LOST_JOB)
+- Introduced pronoun placeholder system: %he%, %his%, %him%, %hers%, %himself%, %waiter% (+ capitalized variants)
+- Added gender parameter to FillReplacements() for runtime pronoun resolution
+- Added single-argument LPE() overload for gender-neutral text entries
+- Fixed VTGRN_LAB using _F() for both male and female variants
+- Fixed duplicate LIVED_6TH_ST entry in TextHousing
+- Removed 1,930 lines of code (33,882 → 31,952 total .reds lines)
+
+### Translation Support
+
+- Added TRANSLATION_GUIDE.html for community translators
+- File-by-file breakdown with real code examples from the codebase
+- Documents all placeholder tokens and gender handling
+- Instructions for adding custom language tokens (verb conjugation, grammatical case)
+- Decision flowchart for identifying translatable vs code-only strings
+- Difficulty ratings and common mistakes with consequences
+- Translations published as separate standalone mods — no permission needed
+
+---
+
+
 ## [2.0]
 
 ### Scanner Glitches
