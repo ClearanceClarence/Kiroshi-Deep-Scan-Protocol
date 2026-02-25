@@ -526,7 +526,7 @@ Default: 1 in 200 chance per scan. Fully configurable (1–500) or toggleable of
 
 ## █▓▒░ TRANSLATION
 
-Want to translate Kiroshi Deep Scan into your language? Download the [Translation Guide](TRANSLATION_GUIDE.MD), extract it, and open in your browser.
+Want to translate Kiroshi Deep Scan into your language? Download the [Translation Guide](TRANSLATION_GUIDE.md), extract it, and open in your browser.
 
 The guide covers every file in the mod with real code examples, showing exactly which strings to translate and which to leave alone. Includes placeholder token reference, custom gender token instructions for languages with verb conjugation (Russian, Polish, German, etc.), difficulty ratings per file, decision flowchart, and common mistakes.
 
