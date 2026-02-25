@@ -1102,10 +1102,10 @@ public class KdspBackstoryManager {
 
         let event = arr[eventIndex];
         let eventText = event.GetText(lifePath.gender);
-        return KdspBackstoryManager.FillReplacements(seed, eventText, corpoAffiliation);
+        return KdspBackstoryManager.FillReplacements(seed, eventText, corpoAffiliation, lifePath.gender);
     }
 
-    private static func FillReplacements(seed: Int32, text: String, corpoAffiliation: String) -> String {
+    private static func FillReplacements(seed: Int32, text: String, corpoAffiliation: String, gender: String) -> String {
         let ret = text;
         if(StrContains(ret, "%corp%")) {
             if NotEquals(corpoAffiliation, "") {
@@ -1125,6 +1125,32 @@ public class KdspBackstoryManager {
         };
         if(StrContains(ret, "%young_age%")) {
             ret = ReplaceFirst(ret, "%young_age%", IntToString(RandRange(seed, 10, 16)));
+        };
+        // Gender pronoun replacements
+        if Equals(gender, "female") {
+            if(StrContains(ret, "%He%")) { ret = ReplaceFirst(ret, "%He%", "She"); };
+            if(StrContains(ret, "%he%")) { ret = ReplaceFirst(ret, "%he%", "she"); };
+            if(StrContains(ret, "%His%")) { ret = ReplaceFirst(ret, "%His%", "Her"); };
+            if(StrContains(ret, "%his%")) { ret = ReplaceFirst(ret, "%his%", "her"); };
+            if(StrContains(ret, "%him%")) { ret = ReplaceFirst(ret, "%him%", "her"); };
+            if(StrContains(ret, "%Him%")) { ret = ReplaceFirst(ret, "%Him%", "Her"); };
+            if(StrContains(ret, "%hers%")) { ret = ReplaceFirst(ret, "%hers%", "hers"); };
+            if(StrContains(ret, "%Hers%")) { ret = ReplaceFirst(ret, "%Hers%", "Hers"); };
+            if(StrContains(ret, "%himself%")) { ret = ReplaceFirst(ret, "%himself%", "herself"); };
+            if(StrContains(ret, "%Himself%")) { ret = ReplaceFirst(ret, "%Himself%", "Herself"); };
+            if(StrContains(ret, "%waiter%")) { ret = ReplaceFirst(ret, "%waiter%", "waitress"); };
+        } else {
+            if(StrContains(ret, "%He%")) { ret = ReplaceFirst(ret, "%He%", "He"); };
+            if(StrContains(ret, "%he%")) { ret = ReplaceFirst(ret, "%he%", "he"); };
+            if(StrContains(ret, "%His%")) { ret = ReplaceFirst(ret, "%His%", "His"); };
+            if(StrContains(ret, "%his%")) { ret = ReplaceFirst(ret, "%his%", "his"); };
+            if(StrContains(ret, "%him%")) { ret = ReplaceFirst(ret, "%him%", "him"); };
+            if(StrContains(ret, "%Him%")) { ret = ReplaceFirst(ret, "%Him%", "Him"); };
+            if(StrContains(ret, "%hers%")) { ret = ReplaceFirst(ret, "%hers%", "his"); };
+            if(StrContains(ret, "%Hers%")) { ret = ReplaceFirst(ret, "%Hers%", "His"); };
+            if(StrContains(ret, "%himself%")) { ret = ReplaceFirst(ret, "%himself%", "himself"); };
+            if(StrContains(ret, "%Himself%")) { ret = ReplaceFirst(ret, "%Himself%", "Himself"); };
+            if(StrContains(ret, "%waiter%")) { ret = ReplaceFirst(ret, "%waiter%", "waiter"); };
         };
         return ret;
     }

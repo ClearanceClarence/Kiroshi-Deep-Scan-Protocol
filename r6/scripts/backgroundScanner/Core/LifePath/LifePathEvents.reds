@@ -1,1531 +1,1531 @@
 public class KdspCrowdScannerEvents {
 
     // Upbringing
-    public static func LVG_MOT_FAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LVG_MOT_FAT_F(), KdspTextUpbringing.LVG_MOT_FAT_M()).SetWealthMod(10).SetIntMod(10).SetCoolMod(10); }
-    public static func ADPT_LVG_HOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADPT_LVG_HOM_F(), KdspTextUpbringing.ADPT_LVG_HOM_M()).SetIntMod(10).SetWealthMod(10).SetCoolMod(5); }
-    public static func LVG_GPRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LVG_GPRNTS_F(), KdspTextUpbringing.LVG_GPRNTS_M()).SetIntMod(10).SetWealthMod(15).SetCoolMod(5); }
-    public static func LVG_RLTIVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LVG_RLTIVS_F(), KdspTextUpbringing.LVG_RLTIVS_M()).SetIntMod(10).SetWealthMod(5); }
-    public static func TGT_NOMAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TGT_NOMAD_F(), KdspTextUpbringing.TGT_NOMAD_M()).SetBodyMod(10).SetTechMod(20); }
-    public static func TGT_MGTOWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TGT_MGTOWR_F(), KdspTextUpbringing.TGT_MGTOWR_M()).SetReflexMod(10).SetBodyMod(10); }
-    public static func ADPT_CRP_BRD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADPT_CRP_BRD_F(), KdspTextUpbringing.ADPT_CRP_BRD_M()).SetIntMod(20).SetWealthMod(20).SetCoolMod(20); }
-    public static func UNCR_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNCR_PRNTS_F(), KdspTextUpbringing.UNCR_PRNTS_M()).SetIntMod(5).SetWealthMod(10); }
-    public static func ORD_HOME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ORD_HOME_F(), KdspTextUpbringing.ORD_HOME_M()).SetIntMod(5).SetWealthMod(5); }
-    public static func HLCPT_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HLCPT_PRNTS_F(), KdspTextUpbringing.HLCPT_PRNTS_M()).SetIntMod(15).SetWealthMod(10); }
-    public static func RGH_NOMAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RGH_NOMAD_F(), KdspTextUpbringing.RGH_NOMAD_M()).SetBodyMod(20).SetTechMod(10); }
-    public static func UNWLNG_GPRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNWLNG_GPRNTS_F(), KdspTextUpbringing.UNWLNG_GPRNTS_M()).SetIntMod(5).SetWealthMod(15); }
-    public static func UNWLNG_RLTIVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNWLNG_RLTIVS_F(), KdspTextUpbringing.UNWLNG_RLTIVS_M()).SetIntMod(5).SetWealthMod(5); }
-    public static func MDCRE_FOSTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MDCRE_FOSTER_F(), KdspTextUpbringing.MDCRE_FOSTER_M()).SetIntMod(5).SetReflexMod(5); }
-    public static func MDCRE_ORPHN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MDCRE_ORPHN_F(), KdspTextUpbringing.MDCRE_ORPHN_M()).SetIntMod(5).SetReflexMod(5).SetBodyMod(5); }
-    public static func SNGL_MOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SNGL_MOT_F(), KdspTextUpbringing.SNGL_MOT_M()).SetReflexMod(5).SetWealthMod(5); }
-    public static func SNGL_FAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SNGL_FAT_F(), KdspTextUpbringing.SNGL_FAT_M()).SetBodyMod(5).SetWealthMod(5); }
-    public static func BD_HD_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BD_HD_PRNTS_F(), KdspTextUpbringing.BD_HD_PRNTS_M()).SetTechMod(10).SetWealthMod(5); }
-    public static func STRTS_NOPRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STRTS_NOPRNTS_F(), KdspTextUpbringing.STRTS_NOPRNTS_M()).SetReflexMod(10); }
-    public static func SLD_BY_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SLD_BY_PRNTS_F(), KdspTextUpbringing.SLD_BY_PRNTS_M()).SetReflexMod(5); }
-    public static func TRD_FOR_CHEM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRD_FOR_CHEM_F(), KdspTextUpbringing.TRD_FOR_CHEM_M()).SetBodyMod(5); }
-    public static func PRNTS_CRSH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PRNTS_CRSH_F(), KdspTextUpbringing.PRNTS_CRSH_M()).SetCoolMod(5); }
-    public static func MOT_ANSA() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_ANSA_F(), KdspTextUpbringing.MOT_ANSA_M()).SetBodyMod(5).SetWealthMod(5); }
-    public static func FAT_ANSA() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_ANSA_F(), KdspTextUpbringing.FAT_ANSA_M()).SetReflexMod(5).SetWealthMod(5); }
-    public static func ABSV_FOSTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ABSV_FOSTER_F(), KdspTextUpbringing.ABSV_FOSTER_M()).SetBodyMod(5); }
-    public static func TRB_ORPHN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRB_ORPHN_F(), KdspTextUpbringing.TRB_ORPHN_M()).SetReflexMod(5); }
-    public static func ABON_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ABON_CHILD_F(), KdspTextUpbringing.ABON_CHILD_M()); }
-    public static func VLNT_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.VLNT_MGTWR_F(), KdspTextUpbringing.VLNT_MGTWR_M()).SetReflexMod(5).SetCoolMod(5); }
-    public static func GRP_SCAVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GRP_SCAVS_F(), KdspTextUpbringing.GRP_SCAVS_M()).SetTechMod(5); }
-    public static func VTGRN_LAB() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.VTGRN_LAB_F(), KdspTextUpbringing.VTGRN_LAB_F()).SetBodyMod(20).SetReflexMod(20); }
-    public static func RAISED_BY_AI() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAISED_BY_AI_F(), KdspTextUpbringing.RAISED_BY_AI_M()).SetIntMod(20).SetTechMod(20); }
-    public static func GENE_ALTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GENE_ALTER_F(), KdspTextUpbringing.GENE_ALTER_M()).SetBodyMod(20).SetCoolMod(20); }
-    public static func CONGT_DEFECT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CONGT_DEFECT_F(), KdspTextUpbringing.CONGT_DEFECT_M()); }
-    public static func CORPO_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_DEBT_F(), KdspTextUpbringing.CORPO_DEBT_M()); }
-    public static func FAM_KLD_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAM_KLD_NCPD_F(), KdspTextUpbringing.FAM_KLD_NCPD_M()); }
-    public static func PAT_GNG_WRFR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAT_GNG_WRFR_F(), KdspTextUpbringing.PAT_GNG_WRFR_M()); }
-    public static func PAT_AVRG_CTZN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAT_AVRG_CTZN_F(), KdspTextUpbringing.PAT_AVRG_CTZN_M()); }
-    public static func PAT_WLTH_CTZN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAT_WLTH_CTZN_F(), KdspTextUpbringing.PAT_WLTH_CTZN_M()); }
-    public static func MOT_UNID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_UNID_F(), KdspTextUpbringing.MOT_UNID_M()); }
-    public static func FAT_UNID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_UNID_F(), KdspTextUpbringing.FAT_UNID_M()); }
-    public static func MOT_KLD_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_KLD_NCPD_F(), KdspTextUpbringing.MOT_KLD_NCPD_M()); }
-    public static func FAT_KLD_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_KLD_NCPD_F(), KdspTextUpbringing.FAT_KLD_NCPD_M()); }
-    public static func MOT_KLD_MXTC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_KLD_MXTC_F(), KdspTextUpbringing.MOT_KLD_MXTC_M()); }
-    public static func FAT_KLD_MXTC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_KLD_MXTC_F(), KdspTextUpbringing.FAT_KLD_MXTC_M()); }
-    public static func MOT_POW() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_POW_F(), KdspTextUpbringing.MOT_POW_M()); }
-    public static func FAT_POW() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_POW_F(), KdspTextUpbringing.FAT_POW_M()); }
-    public static func MOT_INCR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_INCR_F(), KdspTextUpbringing.MOT_INCR_M()); }
-    public static func FAT_INCR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_INCR_F(), KdspTextUpbringing.FAT_INCR_M()); }
-    public static func MOT_DIE_NAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_DIE_NAT_F(), KdspTextUpbringing.MOT_DIE_NAT_M()); }
-    public static func FAT_DIE_NAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_DIE_NAT_F(), KdspTextUpbringing.FAT_DIE_NAT_M()); }
-    public static func MOT_WRK_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_WRK_CRP_F(), KdspTextUpbringing.MOT_WRK_CRP_M()); }
-    public static func FAT_WRK_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_WRK_CRP_F(), KdspTextUpbringing.FAT_WRK_CRP_M()); }
-    public static func MOT_MRD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_MRD_CRP_F(), KdspTextUpbringing.MOT_MRD_CRP_M()); }
-    public static func FAT_MRD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_MRD_CRP_F(), KdspTextUpbringing.FAT_MRD_CRP_M()); }
-    public static func MOT_KLD_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_KLD_WAR_F(), KdspTextUpbringing.MOT_KLD_WAR_M()); }
-    public static func FAT_KLD_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_KLD_WAR_F(), KdspTextUpbringing.FAT_KLD_WAR_M()); }
-    public static func MOT_DIED_ACC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_DIED_ACC_F(), KdspTextUpbringing.MOT_DIED_ACC_M()); }
-    public static func FAT_DIED_ACC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_DIED_ACC_F(), KdspTextUpbringing.FAT_DIED_ACC_M()); }
-    public static func MOT_HIDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_HIDING_F(), KdspTextUpbringing.MOT_HIDING_M()); }
-    public static func FAT_HIDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_HIDING_F(), KdspTextUpbringing.FAT_HIDING_M()); }
-    public static func MOT_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_MISSING_F(), KdspTextUpbringing.MOT_MISSING_M()); }
-    public static func FAT_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_MISSING_F(), KdspTextUpbringing.FAT_MISSING_M()); }
+    public static func LVG_MOT_FAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LVG_MOT_FAT()).SetWealthMod(10).SetIntMod(10).SetCoolMod(10); }
+    public static func ADPT_LVG_HOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADPT_LVG_HOM()).SetIntMod(10).SetWealthMod(10).SetCoolMod(5); }
+    public static func LVG_GPRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LVG_GPRNTS()).SetIntMod(10).SetWealthMod(15).SetCoolMod(5); }
+    public static func LVG_RLTIVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LVG_RLTIVS()).SetIntMod(10).SetWealthMod(5); }
+    public static func TGT_NOMAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TGT_NOMAD()).SetBodyMod(10).SetTechMod(20); }
+    public static func TGT_MGTOWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TGT_MGTOWR()).SetReflexMod(10).SetBodyMod(10); }
+    public static func ADPT_CRP_BRD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADPT_CRP_BRD()).SetIntMod(20).SetWealthMod(20).SetCoolMod(20); }
+    public static func UNCR_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNCR_PRNTS()).SetIntMod(5).SetWealthMod(10); }
+    public static func ORD_HOME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ORD_HOME()).SetIntMod(5).SetWealthMod(5); }
+    public static func HLCPT_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HLCPT_PRNTS()).SetIntMod(15).SetWealthMod(10); }
+    public static func RGH_NOMAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RGH_NOMAD()).SetBodyMod(20).SetTechMod(10); }
+    public static func UNWLNG_GPRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNWLNG_GPRNTS()).SetIntMod(5).SetWealthMod(15); }
+    public static func UNWLNG_RLTIVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNWLNG_RLTIVS()).SetIntMod(5).SetWealthMod(5); }
+    public static func MDCRE_FOSTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MDCRE_FOSTER()).SetIntMod(5).SetReflexMod(5); }
+    public static func MDCRE_ORPHN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MDCRE_ORPHN()).SetIntMod(5).SetReflexMod(5).SetBodyMod(5); }
+    public static func SNGL_MOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SNGL_MOT()).SetReflexMod(5).SetWealthMod(5); }
+    public static func SNGL_FAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SNGL_FAT()).SetBodyMod(5).SetWealthMod(5); }
+    public static func BD_HD_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BD_HD_PRNTS()).SetTechMod(10).SetWealthMod(5); }
+    public static func STRTS_NOPRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STRTS_NOPRNTS()).SetReflexMod(10); }
+    public static func SLD_BY_PRNTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SLD_BY_PRNTS()).SetReflexMod(5); }
+    public static func TRD_FOR_CHEM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRD_FOR_CHEM()).SetBodyMod(5); }
+    public static func PRNTS_CRSH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PRNTS_CRSH()).SetCoolMod(5); }
+    public static func MOT_ANSA() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_ANSA()).SetBodyMod(5).SetWealthMod(5); }
+    public static func FAT_ANSA() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_ANSA()).SetReflexMod(5).SetWealthMod(5); }
+    public static func ABSV_FOSTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ABSV_FOSTER()).SetBodyMod(5); }
+    public static func TRB_ORPHN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRB_ORPHN()).SetReflexMod(5); }
+    public static func ABON_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ABON_CHILD()); }
+    public static func VLNT_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.VLNT_MGTWR()).SetReflexMod(5).SetCoolMod(5); }
+    public static func GRP_SCAVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GRP_SCAVS()).SetTechMod(5); }
+    public static func VTGRN_LAB() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.VTGRN_LAB()).SetBodyMod(20).SetReflexMod(20); }
+    public static func RAISED_BY_AI() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAISED_BY_AI()).SetIntMod(20).SetTechMod(20); }
+    public static func GENE_ALTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GENE_ALTER()).SetBodyMod(20).SetCoolMod(20); }
+    public static func CONGT_DEFECT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CONGT_DEFECT()); }
+    public static func CORPO_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_DEBT()); }
+    public static func FAM_KLD_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAM_KLD_NCPD()); }
+    public static func PAT_GNG_WRFR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAT_GNG_WRFR()); }
+    public static func PAT_AVRG_CTZN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAT_AVRG_CTZN()); }
+    public static func PAT_WLTH_CTZN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAT_WLTH_CTZN()); }
+    public static func MOT_UNID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_UNID()); }
+    public static func FAT_UNID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_UNID()); }
+    public static func MOT_KLD_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_KLD_NCPD()); }
+    public static func FAT_KLD_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_KLD_NCPD()); }
+    public static func MOT_KLD_MXTC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_KLD_MXTC()); }
+    public static func FAT_KLD_MXTC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_KLD_MXTC()); }
+    public static func MOT_POW() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_POW()); }
+    public static func FAT_POW() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_POW()); }
+    public static func MOT_INCR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_INCR()); }
+    public static func FAT_INCR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_INCR()); }
+    public static func MOT_DIE_NAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_DIE_NAT()); }
+    public static func FAT_DIE_NAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_DIE_NAT()); }
+    public static func MOT_WRK_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_WRK_CRP()); }
+    public static func FAT_WRK_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_WRK_CRP()); }
+    public static func MOT_MRD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_MRD_CRP()); }
+    public static func FAT_MRD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_MRD_CRP()); }
+    public static func MOT_KLD_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_KLD_WAR()); }
+    public static func FAT_KLD_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_KLD_WAR()); }
+    public static func MOT_DIED_ACC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_DIED_ACC()); }
+    public static func FAT_DIED_ACC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_DIED_ACC()); }
+    public static func MOT_HIDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_HIDING()); }
+    public static func FAT_HIDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_HIDING()); }
+    public static func MOT_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MOT_MISSING()); }
+    public static func FAT_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAT_MISSING()); }
 
     // Upbringing - Expanded
-    public static func PARENT_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_FIXER_F(), KdspTextUpbringing.PARENT_FIXER_M()); }
-    public static func PARENT_MERC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_MERC_F(), KdspTextUpbringing.PARENT_MERC_M()); }
-    public static func PARENT_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_RIPPER_F(), KdspTextUpbringing.PARENT_RIPPER_M()); }
-    public static func PARENT_NETRUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_NETRUNNER_F(), KdspTextUpbringing.PARENT_NETRUNNER_M()); }
-    public static func PARENT_CYBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_CYBER_F(), KdspTextUpbringing.PARENT_CYBER_M()); }
-    public static func PARENT_SOULKILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_SOULKILL_F(), KdspTextUpbringing.PARENT_SOULKILL_M()); }
+    public static func PARENT_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_FIXER()); }
+    public static func PARENT_MERC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_MERC()); }
+    public static func PARENT_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_RIPPER()); }
+    public static func PARENT_NETRUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_NETRUNNER()); }
+    public static func PARENT_CYBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_CYBER()); }
+    public static func PARENT_SOULKILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_SOULKILL()); }
     // Expanded Upbringing - Family Structure
-    public static func ONLY_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ONLY_CHILD_F(), KdspTextUpbringing.ONLY_CHILD_M()); }
-    public static func MANY_SIBLINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MANY_SIBLINGS_F(), KdspTextUpbringing.MANY_SIBLINGS_M()); }
-    public static func TWIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TWIN_F(), KdspTextUpbringing.TWIN_M()); }
-    public static func TRIPLET() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRIPLET_F(), KdspTextUpbringing.TRIPLET_M()); }
-    public static func OLDEST_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.OLDEST_SIBLING_F(), KdspTextUpbringing.OLDEST_SIBLING_M()); }
-    public static func MIDDLE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MIDDLE_CHILD_F(), KdspTextUpbringing.MIDDLE_CHILD_M()); }
-    public static func YOUNGEST_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.YOUNGEST_SIBLING_F(), KdspTextUpbringing.YOUNGEST_SIBLING_M()); }
-    public static func STEP_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STEP_FAMILY_F(), KdspTextUpbringing.STEP_FAMILY_M()); }
-    public static func BLENDED_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BLENDED_FAM_F(), KdspTextUpbringing.BLENDED_FAM_M()); }
-    public static func ADOPTED_LATE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADOPTED_LATE_F(), KdspTextUpbringing.ADOPTED_LATE_M()); }
-    public static func PARENT_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_NCPD_F(), KdspTextUpbringing.PARENT_NCPD_M()); }
-    public static func PARENT_TEACHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_TEACHER_F(), KdspTextUpbringing.PARENT_TEACHER_M()); }
-    public static func PARENT_DOCTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_DOCTOR_F(), KdspTextUpbringing.PARENT_DOCTOR_M()); }
-    public static func PARENT_JOYTOY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_JOYTOY_F(), KdspTextUpbringing.PARENT_JOYTOY_M()); }
-    public static func PARENT_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_DEALER_F(), KdspTextUpbringing.PARENT_DEALER_M()); }
-    public static func PARENT_MILITARY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_MILITARY_F(), KdspTextUpbringing.PARENT_MILITARY_M()); }
-    public static func PARENT_GANG_LEADER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_GANG_LEADER_F(), KdspTextUpbringing.PARENT_GANG_LEADER_M()); }
+    public static func ONLY_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ONLY_CHILD()); }
+    public static func MANY_SIBLINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MANY_SIBLINGS()); }
+    public static func TWIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TWIN()); }
+    public static func TRIPLET() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRIPLET()); }
+    public static func OLDEST_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.OLDEST_SIBLING()); }
+    public static func MIDDLE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MIDDLE_CHILD()); }
+    public static func YOUNGEST_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.YOUNGEST_SIBLING()); }
+    public static func STEP_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STEP_FAMILY()); }
+    public static func BLENDED_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BLENDED_FAM()); }
+    public static func ADOPTED_LATE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADOPTED_LATE()); }
+    public static func PARENT_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_NCPD()); }
+    public static func PARENT_TEACHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_TEACHER()); }
+    public static func PARENT_DOCTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_DOCTOR()); }
+    public static func PARENT_JOYTOY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_JOYTOY()); }
+    public static func PARENT_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_DEALER()); }
+    public static func PARENT_MILITARY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_MILITARY()); }
+    public static func PARENT_GANG_LEADER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_GANG_LEADER()); }
     // Expanded Upbringing - Parental Trauma
-    public static func PARENT_SUICIDE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_SUICIDE_F(), KdspTextUpbringing.PARENT_SUICIDE_M()); }
-    public static func PARENT_OVERDOSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_OVERDOSE_F(), KdspTextUpbringing.PARENT_OVERDOSE_M()); }
-    public static func PARENT_ABUSER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_ABUSER_F(), KdspTextUpbringing.PARENT_ABUSER_M()); }
-    public static func WITNESSED_PARENT_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WITNESSED_PARENT_DEATH_F(), KdspTextUpbringing.WITNESSED_PARENT_DEATH_M()); }
-    public static func SIBLING_DEATH_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_DEATH_CHILD_F(), KdspTextUpbringing.SIBLING_DEATH_CHILD_M()); }
-    public static func HOME_INVASION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HOME_INVASION_F(), KdspTextUpbringing.HOME_INVASION_M()); }
-    public static func KIDNAPPED_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.KIDNAPPED_CHILD_F(), KdspTextUpbringing.KIDNAPPED_CHILD_M()); }
-    public static func FIRE_SURVIVOR_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FIRE_SURVIVOR_CHILD_F(), KdspTextUpbringing.FIRE_SURVIVOR_CHILD_M()); }
+    public static func PARENT_SUICIDE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_SUICIDE()); }
+    public static func PARENT_OVERDOSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_OVERDOSE()); }
+    public static func PARENT_ABUSER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_ABUSER()); }
+    public static func WITNESSED_PARENT_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WITNESSED_PARENT_DEATH()); }
+    public static func SIBLING_DEATH_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_DEATH_CHILD()); }
+    public static func HOME_INVASION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HOME_INVASION()); }
+    public static func KIDNAPPED_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.KIDNAPPED_CHILD()); }
+    public static func FIRE_SURVIVOR_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FIRE_SURVIVOR_CHILD()); }
     // Expanded Upbringing - Wealth/Status
-    public static func BORN_RICH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_RICH_F(), KdspTextUpbringing.BORN_RICH_M()).SetWealthMod(30); }
-    public static func BORN_POOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_POOR_F(), KdspTextUpbringing.BORN_POOR_M()).SetWealthMod(-20); }
-    public static func LOST_WEALTH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOST_WEALTH_F(), KdspTextUpbringing.LOST_WEALTH_M()); }
-    public static func TRUST_FUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRUST_FUND_F(), KdspTextUpbringing.TRUST_FUND_M()).SetWealthMod(25); }
-    public static func BORN_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_DEBT_F(), KdspTextUpbringing.BORN_DEBT_M()).SetWealthMod(-15); }
-    public static func FAMILY_BUSINESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_BUSINESS_F(), KdspTextUpbringing.FAMILY_BUSINESS_M()).SetWealthMod(10); }
-    public static func FAMILY_CRIME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_CRIME_F(), KdspTextUpbringing.FAMILY_CRIME_M()).SetCoolMod(10); }
+    public static func BORN_RICH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_RICH()).SetWealthMod(30); }
+    public static func BORN_POOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_POOR()).SetWealthMod(-20); }
+    public static func LOST_WEALTH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOST_WEALTH()); }
+    public static func TRUST_FUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRUST_FUND()).SetWealthMod(25); }
+    public static func BORN_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_DEBT()).SetWealthMod(-15); }
+    public static func FAMILY_BUSINESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_BUSINESS()).SetWealthMod(10); }
+    public static func FAMILY_CRIME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_CRIME()).SetCoolMod(10); }
     // Expanded Upbringing - Special Origins
-    public static func LAB_BORN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LAB_BORN_F(), KdspTextUpbringing.LAB_BORN_M()); }
-    public static func TEST_TUBE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TEST_TUBE_F(), KdspTextUpbringing.TEST_TUBE_M()); }
-    public static func CLONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CLONE_F(), KdspTextUpbringing.CLONE_M()); }
-    public static func BORN_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_CULT_F(), KdspTextUpbringing.BORN_CULT_M()); }
-    public static func RAISED_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAISED_CULT_F(), KdspTextUpbringing.RAISED_CULT_M()); }
-    public static func ESCAPED_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ESCAPED_CULT_F(), KdspTextUpbringing.ESCAPED_CULT_M()); }
-    public static func COMMUNE_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMMUNE_RAISED_F(), KdspTextUpbringing.COMMUNE_RAISED_M()); }
-    public static func REFUGEE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.REFUGEE_CHILD_F(), KdspTextUpbringing.REFUGEE_CHILD_M()); }
-    public static func IMMIGRANT_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.IMMIGRANT_CHILD_F(), KdspTextUpbringing.IMMIGRANT_CHILD_M()); }
+    public static func LAB_BORN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LAB_BORN()); }
+    public static func TEST_TUBE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TEST_TUBE()); }
+    public static func CLONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CLONE()); }
+    public static func BORN_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BORN_CULT()); }
+    public static func RAISED_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAISED_CULT()); }
+    public static func ESCAPED_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ESCAPED_CULT()); }
+    public static func COMMUNE_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMMUNE_RAISED()); }
+    public static func REFUGEE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.REFUGEE_CHILD()); }
+    public static func IMMIGRANT_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.IMMIGRANT_CHILD()); }
     // Expanded Upbringing - Family Dynamics
-    public static func CHILD_PRODIGY_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHILD_PRODIGY_FAM_F(), KdspTextUpbringing.CHILD_PRODIGY_FAM_M()).SetIntMod(20); }
-    public static func BLACK_SHEEP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BLACK_SHEEP_F(), KdspTextUpbringing.BLACK_SHEEP_M()); }
-    public static func GOLDEN_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GOLDEN_CHILD_F(), KdspTextUpbringing.GOLDEN_CHILD_M()).SetCoolMod(10); }
-    public static func UNWANTED_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNWANTED_CHILD_F(), KdspTextUpbringing.UNWANTED_CHILD_M()); }
-    public static func FAMILY_SECRET() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_SECRET_F(), KdspTextUpbringing.FAMILY_SECRET_M()); }
+    public static func CHILD_PRODIGY_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHILD_PRODIGY_FAM()).SetIntMod(20); }
+    public static func BLACK_SHEEP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BLACK_SHEEP()); }
+    public static func GOLDEN_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GOLDEN_CHILD()).SetCoolMod(10); }
+    public static func UNWANTED_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNWANTED_CHILD()); }
+    public static func FAMILY_SECRET() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_SECRET()); }
 
     // Expanded Upbringing - NC Specific
-    public static func NC_NATIVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NC_NATIVE_F(), KdspTextUpbringing.NC_NATIVE_M()); }
-    public static func MEGABUILDING_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGABUILDING_RAISED_F(), KdspTextUpbringing.MEGABUILDING_RAISED_M()); }
-    public static func COMBAT_ZONE_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMBAT_ZONE_RAISED_F(), KdspTextUpbringing.COMBAT_ZONE_RAISED_M()).SetReflexMod(10); }
-    public static func NOMAD_CAMP_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NOMAD_CAMP_RAISED_F(), KdspTextUpbringing.NOMAD_CAMP_RAISED_M()).SetBodyMod(5).SetTechMod(5); }
-    public static func CORPO_ENCLAVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_ENCLAVE_F(), KdspTextUpbringing.CORPO_ENCLAVE_M()).SetWealthMod(15).SetIntMod(5); }
-    public static func PACIFICA_BORN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PACIFICA_BORN_F(), KdspTextUpbringing.PACIFICA_BORN_M()); }
-    public static func PARENT_SCAVENGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_SCAVENGER_F(), KdspTextUpbringing.PARENT_SCAVENGER_M()); }
+    public static func NC_NATIVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NC_NATIVE()); }
+    public static func MEGABUILDING_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGABUILDING_RAISED()); }
+    public static func COMBAT_ZONE_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMBAT_ZONE_RAISED()).SetReflexMod(10); }
+    public static func NOMAD_CAMP_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NOMAD_CAMP_RAISED()).SetBodyMod(5).SetTechMod(5); }
+    public static func CORPO_ENCLAVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_ENCLAVE()).SetWealthMod(15).SetIntMod(5); }
+    public static func PACIFICA_BORN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PACIFICA_BORN()); }
+    public static func PARENT_SCAVENGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PARENT_SCAVENGER()); }
     // Expanded Upbringing - Early Experiences
-    public static func FIRST_GUN_YOUNG() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FIRST_GUN_YOUNG_F(), KdspTextUpbringing.FIRST_GUN_YOUNG_M()).SetReflexMod(5); }
-    public static func LOCKDOWN_CHILDHOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOCKDOWN_CHILDHOOD_F(), KdspTextUpbringing.LOCKDOWN_CHILDHOOD_M()); }
-    public static func CORPO_DAYCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_DAYCARE_F(), KdspTextUpbringing.CORPO_DAYCARE_M()).SetIntMod(5); }
-    public static func RAISED_ON_KIBBLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAISED_ON_KIBBLE_F(), KdspTextUpbringing.RAISED_ON_KIBBLE_M()); }
-    public static func MUSIC_HOUSEHOLD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MUSIC_HOUSEHOLD_F(), KdspTextUpbringing.MUSIC_HOUSEHOLD_M()).SetCoolMod(5); }
-    public static func VIOLENCE_NORMAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.VIOLENCE_NORMAL_F(), KdspTextUpbringing.VIOLENCE_NORMAL_M()); }
+    public static func FIRST_GUN_YOUNG() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FIRST_GUN_YOUNG()).SetReflexMod(5); }
+    public static func LOCKDOWN_CHILDHOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOCKDOWN_CHILDHOOD()); }
+    public static func CORPO_DAYCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_DAYCARE()).SetIntMod(5); }
+    public static func RAISED_ON_KIBBLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAISED_ON_KIBBLE()); }
+    public static func MUSIC_HOUSEHOLD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MUSIC_HOUSEHOLD()).SetCoolMod(5); }
+    public static func VIOLENCE_NORMAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.VIOLENCE_NORMAL()); }
     // Expanded Upbringing - Family Situations
-    public static func LARGE_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LARGE_FAMILY_F(), KdspTextUpbringing.LARGE_FAMILY_M()); }
-    public static func ADOPTED_DIFFERENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADOPTED_DIFFERENT_F(), KdspTextUpbringing.ADOPTED_DIFFERENT_M()); }
-    public static func MIXED_GANG_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MIXED_GANG_FAMILY_F(), KdspTextUpbringing.MIXED_GANG_FAMILY_M()); }
-    public static func ABUSIVE_HOME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ABUSIVE_HOME_F(), KdspTextUpbringing.ABUSIVE_HOME_M()); }
-    public static func ACCEL_GROWTH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ACCEL_GROWTH_F(), KdspTextUpbringing.ACCEL_GROWTH_M()); }
-    public static func ADDICTED_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADDICTED_PARENTS_F(), KdspTextUpbringing.ADDICTED_PARENTS_M()); }
-    public static func AFRICAN_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.AFRICAN_CULTURE_F(), KdspTextUpbringing.AFRICAN_CULTURE_M()); }
-    public static func ALDECALDOS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ALDECALDOS_F(), KdspTextUpbringing.ALDECALDOS_M()); }
-    public static func ARASAKA_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ARASAKA_FAM_F(), KdspTextUpbringing.ARASAKA_FAM_M()); }
-    public static func ATHEIST_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ATHEIST_FAMILY_F(), KdspTextUpbringing.ATHEIST_FAMILY_M()); }
-    public static func BAKKERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BAKKERS_F(), KdspTextUpbringing.BAKKERS_M()); }
-    public static func BANKRUPTCY_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BANKRUPTCY_FAM_F(), KdspTextUpbringing.BANKRUPTCY_FAM_M()); }
-    public static func BOAT_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BOAT_CHILD_F(), KdspTextUpbringing.BOAT_CHILD_M()); }
-    public static func BULLIED_SEVERE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BULLIED_SEVERE_F(), KdspTextUpbringing.BULLIED_SEVERE_M()); }
-    public static func BUNKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BUNKER_F(), KdspTextUpbringing.BUNKER_M()); }
-    public static func CARNIVAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CARNIVAL_F(), KdspTextUpbringing.CARNIVAL_M()); }
-    public static func CHEM_ADDICT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHEM_ADDICT_F(), KdspTextUpbringing.CHEM_ADDICT_M()); }
-    public static func UPB_CHILD_SOLDIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHILD_SOLDIER_F(), KdspTextUpbringing.CHILD_SOLDIER_M()); }
-    public static func CHINESE_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHINESE_CULTURE_F(), KdspTextUpbringing.CHINESE_CULTURE_M()); }
-    public static func CLONE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CLONE_CHILD_F(), KdspTextUpbringing.CLONE_CHILD_M()); }
-    public static func COMBAT_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMBAT_ZONE_F(), KdspTextUpbringing.COMBAT_ZONE_M()); }
-    public static func COMMUNE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMMUNE_F(), KdspTextUpbringing.COMMUNE_M()); }
-    public static func CORPO_BOARDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_BOARDING_F(), KdspTextUpbringing.CORPO_BOARDING_M()); }
-    public static func CORPO_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_CHILD_F(), KdspTextUpbringing.CORPO_CHILD_M()); }
-    public static func CORPO_DYNASTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_DYNASTY_F(), KdspTextUpbringing.CORPO_DYNASTY_M()); }
-    public static func CORPO_HOUSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_HOUSING_F(), KdspTextUpbringing.CORPO_HOUSING_M()); }
-    public static func CRIMINAL_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CRIMINAL_PARENTS_F(), KdspTextUpbringing.CRIMINAL_PARENTS_M()); }
-    public static func CULT_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CULT_RAISED_F(), KdspTextUpbringing.CULT_RAISED_M()); }
-    public static func CYBORG_BABY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CYBORG_BABY_F(), KdspTextUpbringing.CYBORG_BABY_M()); }
-    public static func DISABLED_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.DISABLED_PARENT_F(), KdspTextUpbringing.DISABLED_PARENT_M()); }
-    public static func ESTRANGED_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ESTRANGED_SIBLING_F(), KdspTextUpbringing.ESTRANGED_SIBLING_M()); }
-    public static func EVICTED_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EVICTED_CHILD_F(), KdspTextUpbringing.EVICTED_CHILD_M()); }
-    public static func EXEC_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EXEC_CHILD_F(), KdspTextUpbringing.EXEC_CHILD_M()); }
-    public static func EXPERIMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EXPERIMENT_F(), KdspTextUpbringing.EXPERIMENT_M()); }
-    public static func EXTENDED_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EXTENDED_FAM_F(), KdspTextUpbringing.EXTENDED_FAM_M()); }
-    public static func FAMILY_ACCIDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_ACCIDENT_F(), KdspTextUpbringing.FAMILY_ACCIDENT_M()); }
-    public static func FAMILY_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_MURDER_F(), KdspTextUpbringing.FAMILY_MURDER_M()); }
-    public static func FAMOUS_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMOUS_PARENT_F(), KdspTextUpbringing.FAMOUS_PARENT_M()); }
-    public static func FOOD_INSECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FOOD_INSECURITY_F(), KdspTextUpbringing.FOOD_INSECURITY_M()); }
-    public static func GANG_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GANG_FAM_F(), KdspTextUpbringing.GANG_FAM_M()); }
-    public static func GLEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GLEN_F(), KdspTextUpbringing.GLEN_M()); }
-    public static func GOOD_EDUCATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GOOD_EDUCATION_F(), KdspTextUpbringing.GOOD_EDUCATION_M()); }
-    public static func HALF_SIBLINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HALF_SIBLINGS_F(), KdspTextUpbringing.HALF_SIBLINGS_M()); }
-    public static func HAPPY_CHILDHOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HAPPY_CHILDHOOD_F(), KdspTextUpbringing.HAPPY_CHILDHOOD_M()); }
-    public static func HELICOPTER_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HELICOPTER_PARENTS_F(), KdspTextUpbringing.HELICOPTER_PARENTS_M()); }
-    public static func HEYWOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HEYWOOD_F(), KdspTextUpbringing.HEYWOOD_M()); }
-    public static func HOMELESS_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HOMELESS_CHILD_F(), KdspTextUpbringing.HOMELESS_CHILD_M()); }
-    public static func HOSPITAL_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HOSPITAL_CHILD_F(), KdspTextUpbringing.HOSPITAL_CHILD_M()); }
-    public static func HUMAN_TRAFFICKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HUMAN_TRAFFICKING_F(), KdspTextUpbringing.HUMAN_TRAFFICKING_M()); }
-    public static func IMMIGRANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.IMMIGRANT_F(), KdspTextUpbringing.IMMIGRANT_M()); }
-    public static func INDUSTRIAL_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.INDUSTRIAL_ZONE_F(), KdspTextUpbringing.INDUSTRIAL_ZONE_M()); }
-    public static func INHERITANCE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.INHERITANCE_CHILD_F(), KdspTextUpbringing.INHERITANCE_CHILD_M()); }
-    public static func JAPANESE_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.JAPANESE_CULTURE_F(), KdspTextUpbringing.JAPANESE_CULTURE_M()); }
-    public static func JODES() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.JODES_F(), KdspTextUpbringing.JODES_M()); }
-    public static func KIDNAPPED_RANSOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.KIDNAPPED_RANSOM_F(), KdspTextUpbringing.KIDNAPPED_RANSOM_M()); }
-    public static func LATCHKEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LATCHKEY_F(), KdspTextUpbringing.LATCHKEY_M()); }
-    public static func LATINO_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LATINO_CULTURE_F(), KdspTextUpbringing.LATINO_CULTURE_M()); }
-    public static func LOTTERY_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOTTERY_FAMILY_F(), KdspTextUpbringing.LOTTERY_FAMILY_M()); }
-    public static func LOVING_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOVING_FAMILY_F(), KdspTextUpbringing.LOVING_FAMILY_M()); }
-    public static func MEGATOWER_HIGH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGATOWER_HIGH_F(), KdspTextUpbringing.MEGATOWER_HIGH_M()); }
-    public static func MEGATOWER_MID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGATOWER_MID_F(), KdspTextUpbringing.MEGATOWER_MID_M()); }
-    public static func MEGATOWER_POOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGATOWER_POOR_F(), KdspTextUpbringing.MEGATOWER_POOR_M()); }
-    public static func UPB_MILITARY_BRAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MILITARY_BRAT_F(), KdspTextUpbringing.MILITARY_BRAT_M()); }
-    public static func MILITARY_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MILITARY_FAMILY_F(), KdspTextUpbringing.MILITARY_FAMILY_M()); }
-    public static func MILITECH_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MILITECH_FAM_F(), KdspTextUpbringing.MILITECH_FAM_M()); }
-    public static func MIXED_HERITAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MIXED_HERITAGE_F(), KdspTextUpbringing.MIXED_HERITAGE_M()); }
-    public static func NANNY_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NANNY_RAISED_F(), KdspTextUpbringing.NANNY_RAISED_M()); }
-    public static func NATURAL_DISASTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NATURAL_DISASTER_F(), KdspTextUpbringing.NATURAL_DISASTER_M()); }
-    public static func NEGLECTFUL_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NEGLECTFUL_PARENTS_F(), KdspTextUpbringing.NEGLECTFUL_PARENTS_M()); }
-    public static func NOMAD_CONVOY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NOMAD_CONVOY_F(), KdspTextUpbringing.NOMAD_CONVOY_M()); }
-    public static func OLDER_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.OLDER_SIBLING_F(), KdspTextUpbringing.OLDER_SIBLING_M()); }
-    public static func OPPORTUNITIES() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.OPPORTUNITIES_F(), KdspTextUpbringing.OPPORTUNITIES_M()); }
-    public static func PACIFICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PACIFICA_F(), KdspTextUpbringing.PACIFICA_M()); }
-    public static func PAYCHECK_TO_PAYCHECK() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAYCHECK_TO_PAYCHECK_F(), KdspTextUpbringing.PAYCHECK_TO_PAYCHECK_M()); }
-    public static func PERFORMER_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PERFORMER_FAMILY_F(), KdspTextUpbringing.PERFORMER_FAMILY_M()); }
-    public static func POLYAMORY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.POLYAMORY_F(), KdspTextUpbringing.POLYAMORY_M()); }
-    public static func PRIVILEGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PRIVILEGED_F(), KdspTextUpbringing.PRIVILEGED_M()); }
-    public static func RAFFEN_SHIV() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAFFEN_SHIV_F(), KdspTextUpbringing.RAFFEN_SHIV_M()); }
-    public static func RELIGIOUS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RELIGIOUS_F(), KdspTextUpbringing.RELIGIOUS_M()); }
-    public static func RELIGIOUS_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RELIGIOUS_FAMILY_F(), KdspTextUpbringing.RELIGIOUS_FAMILY_M()); }
-    public static func SHARED_CUSTODY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SHARED_CUSTODY_F(), KdspTextUpbringing.SHARED_CUSTODY_M()); }
-    public static func SIBLING_CRIMINAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_CRIMINAL_F(), KdspTextUpbringing.SIBLING_CRIMINAL_M()); }
-    public static func SIBLING_DEATH_UP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_DEATH_UP_F(), KdspTextUpbringing.SIBLING_DEATH_UP_M()); }
-    public static func SIBLING_DISAPPEARED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_DISAPPEARED_F(), KdspTextUpbringing.SIBLING_DISAPPEARED_M()); }
-    public static func SIBLING_PROTECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_PROTECTED_F(), KdspTextUpbringing.SIBLING_PROTECTED_M()); }
-    public static func SIBLING_PROTECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_PROTECTOR_F(), KdspTextUpbringing.SIBLING_PROTECTOR_M()); }
-    public static func SIBLING_RIVALRY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_RIVALRY_F(), KdspTextUpbringing.SIBLING_RIVALRY_M()); }
-    public static func SLAVIC_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SLAVIC_CULTURE_F(), KdspTextUpbringing.SLAVIC_CULTURE_M()); }
-    public static func SNAKE_NATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SNAKE_NATION_F(), KdspTextUpbringing.SNAKE_NATION_M()); }
-    public static func STABLE_HOME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STABLE_HOME_F(), KdspTextUpbringing.STABLE_HOME_M()); }
-    public static func STABLE_MIDDLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STABLE_MIDDLE_F(), KdspTextUpbringing.STABLE_MIDDLE_M()); }
-    public static func SUPPORTIVE_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SUPPORTIVE_PARENTS_F(), KdspTextUpbringing.SUPPORTIVE_PARENTS_M()); }
-    public static func SURROGATE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SURROGATE_F(), KdspTextUpbringing.SURROGATE_M()); }
-    public static func TRAFFICKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRAFFICKING_F(), KdspTextUpbringing.TRAFFICKING_M()); }
-    public static func TRAVELED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRAVELED_F(), KdspTextUpbringing.TRAVELED_M()); }
-    public static func TWO_DADS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TWO_DADS_F(), KdspTextUpbringing.TWO_DADS_M()); }
-    public static func TWO_MOMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TWO_MOMS_F(), KdspTextUpbringing.TWO_MOMS_M()); }
-    public static func UNDERGROUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNDERGROUND_F(), KdspTextUpbringing.UNDERGROUND_M()); }
-    public static func UNKNOWN_FATHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNKNOWN_FATHER_F(), KdspTextUpbringing.UNKNOWN_FATHER_M()); }
-    public static func UNKNOWN_MOTHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNKNOWN_MOTHER_F(), KdspTextUpbringing.UNKNOWN_MOTHER_M()); }
-    public static func WAR_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WAR_CHILD_F(), KdspTextUpbringing.WAR_CHILD_M()); }
-    public static func WATSON_POOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WATSON_POOR_F(), KdspTextUpbringing.WATSON_POOR_M()); }
-    public static func WELFARE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WELFARE_KID_F(), KdspTextUpbringing.WELFARE_KID_M()); }
-    public static func WITNESSED_VIOLENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WITNESSED_VIOLENCE_F(), KdspTextUpbringing.WITNESSED_VIOLENCE_M()); }
-    public static func UPB_WITNESS_PROTECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WITNESS_PROTECTION_F(), KdspTextUpbringing.WITNESS_PROTECTION_M()); }
-    public static func WORKAHOLIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WORKAHOLIC_F(), KdspTextUpbringing.WORKAHOLIC_M()); }
-    public static func WORKAHOLIC_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WORKAHOLIC_PARENTS_F(), KdspTextUpbringing.WORKAHOLIC_PARENTS_M()); }
-    public static func WRAITH_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WRAITH_CHILD_F(), KdspTextUpbringing.WRAITH_CHILD_M()); }
-    public static func LIVED_ALLEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ALLEY_F(), KdspTextHousing.LIVED_ALLEY_M()); }
-    public static func LIVED_DMPSTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DMPSTR_F(), KdspTextHousing.LIVED_DMPSTR_M()); }
-    public static func LIVED_DRNPIPE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DRNPIPE_F(), KdspTextHousing.LIVED_DRNPIPE_M()); }
-    public static func LIVED_GUTTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GUTTR_F(), KdspTextHousing.LIVED_GUTTR_M()); }
-    public static func LIVED_SEWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SEWER_F(), KdspTextHousing.LIVED_SEWER_M()); }
-    public static func LIVED_ABN_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABN_CAR_F(), KdspTextHousing.LIVED_ABN_CAR_M()); }
-    public static func LIVED_VAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VAN_F(), KdspTextHousing.LIVED_VAN_M()); }
-    public static func LIVED_BOX() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BOX_F(), KdspTextHousing.LIVED_BOX_M()); }
-    public static func LIVED_COMBAT_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COMBAT_ZONE_F(), KdspTextHousing.LIVED_COMBAT_ZONE_M()); }
-    public static func LIVED_TENT_FRWY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TENT_FRWY_F(), KdspTextHousing.LIVED_TENT_FRWY_M()); }
-    public static func LIVED_UDR_BRIDGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_UDR_BRIDGE_F(), KdspTextHousing.LIVED_UDR_BRIDGE_M()); }
-    public static func LIVED_CHEM_DEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHEM_DEN_F(), KdspTextHousing.LIVED_CHEM_DEN_M()); }
-    public static func LIVED_TENT_WASTES() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TENT_WASTES_F(), KdspTextHousing.LIVED_TENT_WASTES_M()); }
-    public static func LIVED_APT_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_APT_MGTWR_F(), KdspTextHousing.LIVED_APT_MGTWR_M()); }
-    public static func LIVED_JNTR_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JNTR_MGTWR_F(), KdspTextHousing.LIVED_JNTR_MGTWR_M()); }
-    public static func LIVED_SHED_INDSTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHED_INDSTR_F(), KdspTextHousing.LIVED_SHED_INDSTR_M()); }
-    public static func LIVED_SHANTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHANTY_F(), KdspTextHousing.LIVED_SHANTY_M()); }
-    public static func LIVED_CRAP_TWNHME() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRAP_TWNHME_F(), KdspTextHousing.LIVED_CRAP_TWNHME_M()); }
-    public static func LIVED_RANCHO_HOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RANCHO_HOUSE_F(), KdspTextHousing.LIVED_RANCHO_HOUSE_M()); }
-    public static func LIVED_SMLL_TOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SMLL_TOWN_F(), KdspTextHousing.LIVED_SMLL_TOWN_M()); }
-    public static func LIVED_DECAY_HOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DECAY_HOOD_F(), KdspTextHousing.LIVED_DECAY_HOOD_M()); }
-    public static func LIVED_CRM_HOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRM_HOOD_F(), KdspTextHousing.LIVED_CRM_HOOD_M()); }
-    public static func LIVED_ABV_LAUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABV_LAUND_F(), KdspTextHousing.LIVED_ABV_LAUND_M()); }
-    public static func LIVED_ABV_BAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABV_BAR_F(), KdspTextHousing.LIVED_ABV_BAR_M()); }
-    public static func LIVED_MHOME_FRWY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MHOME_FRWY_F(), KdspTextHousing.LIVED_MHOME_FRWY_M()); }
-    public static func LIVED_LUDDITE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LUDDITE_F(), KdspTextHousing.LIVED_LUDDITE_M()); }
-    public static func LIVED_NOMAD_PACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NOMAD_PACK_F(), KdspTextHousing.LIVED_NOMAD_PACK_M()); }
-    public static func LIVED_GNG_BANDIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GNG_BANDIT_F(), KdspTextHousing.LIVED_GNG_BANDIT_M()); }
-    public static func LIVED_EUROPE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_EUROPE_F(), KdspTextHousing.LIVED_EUROPE_M()); }
-    public static func LIVED_LXR_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LXR_MGTWR_F(), KdspTextHousing.LIVED_LXR_MGTWR_M()); }
-    public static func LIVED_CRP_SBRB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_SBRB_F(), KdspTextHousing.LIVED_CRP_SBRB_M()); }
-    public static func LIVED_CRP_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_ZONE_F(), KdspTextHousing.LIVED_CRP_ZONE_M()); }
-    public static func LIVED_CRP_RSRCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_RSRCH_F(), KdspTextHousing.LIVED_CRP_RSRCH_M()); }
-    public static func LIVED_CRP_FARM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_FARM_F(), KdspTextHousing.LIVED_CRP_FARM_M()); }
-    public static func LIVED_CRP_PNTHSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_PNTHSE_F(), KdspTextHousing.LIVED_CRP_PNTHSE_M()); }
-    public static func LIVED_LXR_PNTHSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LXR_PNTHSE_F(), KdspTextHousing.LIVED_LXR_PNTHSE_M()); }
-    public static func LIVED_MNSION() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MNSION_F(), KdspTextHousing.LIVED_MNSION_M()); }
-    public static func LIVED_NICE_TWNHME() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NICE_TWNHME_F(), KdspTextHousing.LIVED_NICE_TWNHME_M()); }
-    public static func LIVED_RDS_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RDS_CAR_F(), KdspTextHousing.LIVED_RDS_CAR_M()); }
-    public static func LIVED_RSRCH_FCLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RSRCH_FCLY_F(), KdspTextHousing.LIVED_RSRCH_FCLY_M()); }
-    public static func LIVED_GTD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GTD_CRP_F(), KdspTextHousing.LIVED_GTD_CRP_M()); }
-    public static func LIVED_VILLAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VILLAGE_F(), KdspTextHousing.LIVED_VILLAGE_M()); }
-    public static func LIVED_SHACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHACK_F(), KdspTextHousing.LIVED_SHACK_M()); }
+    public static func LARGE_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LARGE_FAMILY()); }
+    public static func ADOPTED_DIFFERENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADOPTED_DIFFERENT()); }
+    public static func MIXED_GANG_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MIXED_GANG_FAMILY()); }
+    public static func ABUSIVE_HOME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ABUSIVE_HOME()); }
+    public static func ACCEL_GROWTH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ACCEL_GROWTH()); }
+    public static func ADDICTED_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ADDICTED_PARENTS()); }
+    public static func AFRICAN_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.AFRICAN_CULTURE()); }
+    public static func ALDECALDOS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ALDECALDOS()); }
+    public static func ARASAKA_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ARASAKA_FAM()); }
+    public static func ATHEIST_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ATHEIST_FAMILY()); }
+    public static func BAKKERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BAKKERS()); }
+    public static func BANKRUPTCY_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BANKRUPTCY_FAM()); }
+    public static func BOAT_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BOAT_CHILD()); }
+    public static func BULLIED_SEVERE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BULLIED_SEVERE()); }
+    public static func BUNKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.BUNKER()); }
+    public static func CARNIVAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CARNIVAL()); }
+    public static func CHEM_ADDICT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHEM_ADDICT()); }
+    public static func UPB_CHILD_SOLDIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHILD_SOLDIER()); }
+    public static func CHINESE_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CHINESE_CULTURE()); }
+    public static func CLONE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CLONE_CHILD()); }
+    public static func COMBAT_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMBAT_ZONE()); }
+    public static func COMMUNE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.COMMUNE()); }
+    public static func CORPO_BOARDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_BOARDING()); }
+    public static func CORPO_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_CHILD()); }
+    public static func CORPO_DYNASTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_DYNASTY()); }
+    public static func CORPO_HOUSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CORPO_HOUSING()); }
+    public static func CRIMINAL_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CRIMINAL_PARENTS()); }
+    public static func CULT_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CULT_RAISED()); }
+    public static func CYBORG_BABY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.CYBORG_BABY()); }
+    public static func DISABLED_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.DISABLED_PARENT()); }
+    public static func ESTRANGED_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.ESTRANGED_SIBLING()); }
+    public static func EVICTED_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EVICTED_CHILD()); }
+    public static func EXEC_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EXEC_CHILD()); }
+    public static func EXPERIMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EXPERIMENT()); }
+    public static func EXTENDED_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.EXTENDED_FAM()); }
+    public static func FAMILY_ACCIDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_ACCIDENT()); }
+    public static func FAMILY_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMILY_MURDER()); }
+    public static func FAMOUS_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FAMOUS_PARENT()); }
+    public static func FOOD_INSECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.FOOD_INSECURITY()); }
+    public static func GANG_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GANG_FAM()); }
+    public static func GLEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GLEN()); }
+    public static func GOOD_EDUCATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.GOOD_EDUCATION()); }
+    public static func HALF_SIBLINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HALF_SIBLINGS()); }
+    public static func HAPPY_CHILDHOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HAPPY_CHILDHOOD()); }
+    public static func HELICOPTER_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HELICOPTER_PARENTS()); }
+    public static func HEYWOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HEYWOOD()); }
+    public static func HOMELESS_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HOMELESS_CHILD()); }
+    public static func HOSPITAL_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HOSPITAL_CHILD()); }
+    public static func HUMAN_TRAFFICKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.HUMAN_TRAFFICKING()); }
+    public static func IMMIGRANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.IMMIGRANT()); }
+    public static func INDUSTRIAL_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.INDUSTRIAL_ZONE()); }
+    public static func INHERITANCE_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.INHERITANCE_CHILD()); }
+    public static func JAPANESE_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.JAPANESE_CULTURE()); }
+    public static func JODES() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.JODES()); }
+    public static func KIDNAPPED_RANSOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.KIDNAPPED_RANSOM()); }
+    public static func LATCHKEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LATCHKEY()); }
+    public static func LATINO_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LATINO_CULTURE()); }
+    public static func LOTTERY_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOTTERY_FAMILY()); }
+    public static func LOVING_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.LOVING_FAMILY()); }
+    public static func MEGATOWER_HIGH() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGATOWER_HIGH()); }
+    public static func MEGATOWER_MID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGATOWER_MID()); }
+    public static func MEGATOWER_POOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MEGATOWER_POOR()); }
+    public static func UPB_MILITARY_BRAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MILITARY_BRAT()); }
+    public static func MILITARY_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MILITARY_FAMILY()); }
+    public static func MILITECH_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MILITECH_FAM()); }
+    public static func MIXED_HERITAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.MIXED_HERITAGE()); }
+    public static func NANNY_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NANNY_RAISED()); }
+    public static func NATURAL_DISASTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NATURAL_DISASTER()); }
+    public static func NEGLECTFUL_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NEGLECTFUL_PARENTS()); }
+    public static func NOMAD_CONVOY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.NOMAD_CONVOY()); }
+    public static func OLDER_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.OLDER_SIBLING()); }
+    public static func OPPORTUNITIES() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.OPPORTUNITIES()); }
+    public static func PACIFICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PACIFICA()); }
+    public static func PAYCHECK_TO_PAYCHECK() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PAYCHECK_TO_PAYCHECK()); }
+    public static func PERFORMER_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PERFORMER_FAMILY()); }
+    public static func POLYAMORY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.POLYAMORY()); }
+    public static func PRIVILEGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.PRIVILEGED()); }
+    public static func RAFFEN_SHIV() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RAFFEN_SHIV()); }
+    public static func RELIGIOUS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RELIGIOUS()); }
+    public static func RELIGIOUS_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.RELIGIOUS_FAMILY()); }
+    public static func SHARED_CUSTODY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SHARED_CUSTODY()); }
+    public static func SIBLING_CRIMINAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_CRIMINAL()); }
+    public static func SIBLING_DEATH_UP() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_DEATH_UP()); }
+    public static func SIBLING_DISAPPEARED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_DISAPPEARED()); }
+    public static func SIBLING_PROTECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_PROTECTED()); }
+    public static func SIBLING_PROTECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_PROTECTOR()); }
+    public static func SIBLING_RIVALRY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SIBLING_RIVALRY()); }
+    public static func SLAVIC_CULTURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SLAVIC_CULTURE()); }
+    public static func SNAKE_NATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SNAKE_NATION()); }
+    public static func STABLE_HOME() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STABLE_HOME()); }
+    public static func STABLE_MIDDLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.STABLE_MIDDLE()); }
+    public static func SUPPORTIVE_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SUPPORTIVE_PARENTS()); }
+    public static func SURROGATE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.SURROGATE()); }
+    public static func TRAFFICKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRAFFICKING()); }
+    public static func TRAVELED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TRAVELED()); }
+    public static func TWO_DADS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TWO_DADS()); }
+    public static func TWO_MOMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.TWO_MOMS()); }
+    public static func UNDERGROUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNDERGROUND()); }
+    public static func UNKNOWN_FATHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNKNOWN_FATHER()); }
+    public static func UNKNOWN_MOTHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UNKNOWN_MOTHER()); }
+    public static func WAR_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WAR_CHILD()); }
+    public static func WATSON_POOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WATSON_POOR()); }
+    public static func WELFARE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WELFARE_KID()); }
+    public static func WITNESSED_VIOLENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WITNESSED_VIOLENCE()); }
+    public static func UPB_WITNESS_PROTECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WITNESS_PROTECTION()); }
+    public static func WORKAHOLIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WORKAHOLIC()); }
+    public static func WORKAHOLIC_PARENTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WORKAHOLIC_PARENTS()); }
+    public static func WRAITH_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.WRAITH_CHILD()); }
+    public static func LIVED_ALLEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ALLEY()); }
+    public static func LIVED_DMPSTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DMPSTR()); }
+    public static func LIVED_DRNPIPE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DRNPIPE()); }
+    public static func LIVED_GUTTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GUTTR()); }
+    public static func LIVED_SEWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SEWER()); }
+    public static func LIVED_ABN_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABN_CAR()); }
+    public static func LIVED_VAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VAN()); }
+    public static func LIVED_BOX() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BOX()); }
+    public static func LIVED_COMBAT_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COMBAT_ZONE()); }
+    public static func LIVED_TENT_FRWY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TENT_FRWY()); }
+    public static func LIVED_UDR_BRIDGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_UDR_BRIDGE()); }
+    public static func LIVED_CHEM_DEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHEM_DEN()); }
+    public static func LIVED_TENT_WASTES() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TENT_WASTES()); }
+    public static func LIVED_APT_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_APT_MGTWR()); }
+    public static func LIVED_JNTR_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JNTR_MGTWR()); }
+    public static func LIVED_SHED_INDSTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHED_INDSTR()); }
+    public static func LIVED_SHANTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHANTY()); }
+    public static func LIVED_CRAP_TWNHME() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRAP_TWNHME()); }
+    public static func LIVED_RANCHO_HOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RANCHO_HOUSE()); }
+    public static func LIVED_SMLL_TOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SMLL_TOWN()); }
+    public static func LIVED_DECAY_HOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DECAY_HOOD()); }
+    public static func LIVED_CRM_HOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRM_HOOD()); }
+    public static func LIVED_ABV_LAUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABV_LAUND()); }
+    public static func LIVED_ABV_BAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABV_BAR()); }
+    public static func LIVED_MHOME_FRWY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MHOME_FRWY()); }
+    public static func LIVED_LUDDITE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LUDDITE()); }
+    public static func LIVED_NOMAD_PACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NOMAD_PACK()); }
+    public static func LIVED_GNG_BANDIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GNG_BANDIT()); }
+    public static func LIVED_EUROPE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_EUROPE()); }
+    public static func LIVED_LXR_MGTWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LXR_MGTWR()); }
+    public static func LIVED_CRP_SBRB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_SBRB()); }
+    public static func LIVED_CRP_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_ZONE()); }
+    public static func LIVED_CRP_RSRCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_RSRCH()); }
+    public static func LIVED_CRP_FARM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_FARM()); }
+    public static func LIVED_CRP_PNTHSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRP_PNTHSE()); }
+    public static func LIVED_LXR_PNTHSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LXR_PNTHSE()); }
+    public static func LIVED_MNSION() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MNSION()); }
+    public static func LIVED_NICE_TWNHME() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NICE_TWNHME()); }
+    public static func LIVED_RDS_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RDS_CAR()); }
+    public static func LIVED_RSRCH_FCLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RSRCH_FCLY()); }
+    public static func LIVED_GTD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GTD_CRP()); }
+    public static func LIVED_VILLAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VILLAGE()); }
+    public static func LIVED_SHACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHACK()); }
 
     // Housing - Expanded: Nomad Living
-    public static func LIVED_RV() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RV_F(), KdspTextHousing.LIVED_RV_M()); }
-    public static func LIVED_CONVOY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONVOY_F(), KdspTextHousing.LIVED_CONVOY_M()); }
-    public static func LIVED_MOBILE_BASE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MOBILE_BASE_F(), KdspTextHousing.LIVED_MOBILE_BASE_M()); }
-    public static func LIVED_BASILISK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BASILISK_F(), KdspTextHousing.LIVED_BASILISK_M()); }
-    public static func LIVED_TRUCK_STOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TRUCK_STOP_F(), KdspTextHousing.LIVED_TRUCK_STOP_M()); }
-    public static func LIVED_REST_STOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_REST_STOP_F(), KdspTextHousing.LIVED_REST_STOP_M()); }
-    public static func LIVED_OILFIELD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_OILFIELD_F(), KdspTextHousing.LIVED_OILFIELD_M()); }
-    public static func LIVED_SOLAR_FARM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SOLAR_FARM_F(), KdspTextHousing.LIVED_SOLAR_FARM_M()); }
-    public static func LIVED_WIND_FARM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WIND_FARM_F(), KdspTextHousing.LIVED_WIND_FARM_M()); }
-    public static func LIVED_BORDER_TOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BORDER_TOWN_F(), KdspTextHousing.LIVED_BORDER_TOWN_M()); }
+    public static func LIVED_RV() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RV()); }
+    public static func LIVED_CONVOY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONVOY()); }
+    public static func LIVED_MOBILE_BASE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MOBILE_BASE()); }
+    public static func LIVED_BASILISK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BASILISK()); }
+    public static func LIVED_TRUCK_STOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TRUCK_STOP()); }
+    public static func LIVED_REST_STOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_REST_STOP()); }
+    public static func LIVED_OILFIELD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_OILFIELD()); }
+    public static func LIVED_SOLAR_FARM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SOLAR_FARM()); }
+    public static func LIVED_WIND_FARM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WIND_FARM()); }
+    public static func LIVED_BORDER_TOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BORDER_TOWN()); }
     // Housing - Expanded: Underground
-    public static func LIVED_METRO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_METRO_F(), KdspTextHousing.LIVED_METRO_M()); }
-    public static func LIVED_BUNKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BUNKER_F(), KdspTextHousing.LIVED_BUNKER_M()); }
-    public static func LIVED_BASEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BASEMENT_F(), KdspTextHousing.LIVED_BASEMENT_M()); }
-    public static func LIVED_UTILITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_UTILITY_F(), KdspTextHousing.LIVED_UTILITY_M()); }
-    public static func LIVED_PARKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PARKING_F(), KdspTextHousing.LIVED_PARKING_M()); }
-    public static func LIVED_CATACOMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CATACOMB_F(), KdspTextHousing.LIVED_CATACOMB_M()); }
+    public static func LIVED_METRO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_METRO()); }
+    public static func LIVED_BUNKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BUNKER()); }
+    public static func LIVED_BASEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BASEMENT()); }
+    public static func LIVED_UTILITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_UTILITY()); }
+    public static func LIVED_PARKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PARKING()); }
+    public static func LIVED_CATACOMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CATACOMB()); }
     // Housing - Expanded: Dangerous Areas
-    public static func LIVED_GANG_TURF() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GANG_TURF_F(), KdspTextHousing.LIVED_GANG_TURF_M()); }
-    public static func LIVED_WAR_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WAR_ZONE_F(), KdspTextHousing.LIVED_WAR_ZONE_M()); }
-    public static func LIVED_RED_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RED_ZONE_F(), KdspTextHousing.LIVED_RED_ZONE_M()); }
-    public static func LIVED_CHEM_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHEM_ZONE_F(), KdspTextHousing.LIVED_CHEM_ZONE_M()); }
-    public static func LIVED_RADIATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RADIATION_F(), KdspTextHousing.LIVED_RADIATION_M()); }
-    public static func LIVED_SCAV_TERR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SCAV_TERR_F(), KdspTextHousing.LIVED_SCAV_TERR_M()); }
-    public static func LIVED_MAELSTROM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MAELSTROM_F(), KdspTextHousing.LIVED_MAELSTROM_M()); }
-    public static func LIVED_TYGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TYGER_F(), KdspTextHousing.LIVED_TYGER_M()); }
-    public static func LIVED_VALENTINO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VALENTINO_F(), KdspTextHousing.LIVED_VALENTINO_M()); }
-    public static func LIVED_6TH_ST() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_6TH_ST_F(), KdspTextHousing.LIVED_6TH_ST_M()); }
-    public static func LIVED_ANIMALS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ANIMALS_F(), KdspTextHousing.LIVED_ANIMALS_M()); }
-    public static func LIVED_VOODOO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VOODOO_F(), KdspTextHousing.LIVED_VOODOO_M()); }
+    public static func LIVED_GANG_TURF() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GANG_TURF()); }
+    public static func LIVED_WAR_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WAR_ZONE()); }
+    public static func LIVED_RED_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RED_ZONE()); }
+    public static func LIVED_CHEM_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHEM_ZONE()); }
+    public static func LIVED_RADIATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RADIATION()); }
+    public static func LIVED_SCAV_TERR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SCAV_TERR()); }
+    public static func LIVED_MAELSTROM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MAELSTROM()); }
+    public static func LIVED_TYGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TYGER()); }
+    public static func LIVED_VALENTINO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VALENTINO()); }
+    public static func LIVED_6TH_ST() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_6TH_ST()); }
+    public static func LIVED_ANIMALS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ANIMALS()); }
+    public static func LIVED_VOODOO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VOODOO()); }
     // Housing - Expanded: Institutional
-    public static func LIVED_HOSPITAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HOSPITAL_F(), KdspTextHousing.LIVED_HOSPITAL_M()); }
-    public static func LIVED_PSYCH_WARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PSYCH_WARD_F(), KdspTextHousing.LIVED_PSYCH_WARD_M()); }
-    public static func LIVED_REHAB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_REHAB_F(), KdspTextHousing.LIVED_REHAB_M()); }
-    public static func LIVED_JUVENILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JUVENILE_F(), KdspTextHousing.LIVED_JUVENILE_M()); }
-    public static func LIVED_PRISON() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PRISON_F(), KdspTextHousing.LIVED_PRISON_M()); }
-    public static func LIVED_HALFWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HALFWAY_F(), KdspTextHousing.LIVED_HALFWAY_M()); }
-    public static func LIVED_MILITARY_BASE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MILITARY_BASE_F(), KdspTextHousing.LIVED_MILITARY_BASE_M()); }
-    public static func LIVED_BARRACKS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BARRACKS_F(), KdspTextHousing.LIVED_BARRACKS_M()); }
+    public static func LIVED_HOSPITAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HOSPITAL()); }
+    public static func LIVED_PSYCH_WARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PSYCH_WARD()); }
+    public static func LIVED_REHAB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_REHAB()); }
+    public static func LIVED_JUVENILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JUVENILE()); }
+    public static func LIVED_PRISON() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PRISON()); }
+    public static func LIVED_HALFWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HALFWAY()); }
+    public static func LIVED_MILITARY_BASE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MILITARY_BASE()); }
+    public static func LIVED_BARRACKS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BARRACKS()); }
     // Housing - Expanded: Unconventional
-    public static func LIVED_BOAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BOAT_F(), KdspTextHousing.LIVED_BOAT_M()); }
-    public static func LIVED_HOUSEBOAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HOUSEBOAT_F(), KdspTextHousing.LIVED_HOUSEBOAT_M()); }
-    public static func LIVED_ROOFTOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ROOFTOP_F(), KdspTextHousing.LIVED_ROOFTOP_M()); }
-    public static func LIVED_CONSTRUCTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONSTRUCTION_F(), KdspTextHousing.LIVED_CONSTRUCTION_M()); }
-    public static func LIVED_WAREHOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WAREHOUSE_F(), KdspTextHousing.LIVED_WAREHOUSE_M()); }
-    public static func LIVED_FACTORY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_FACTORY_F(), KdspTextHousing.LIVED_FACTORY_M()); }
-    public static func LIVED_OFFICE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_OFFICE_F(), KdspTextHousing.LIVED_OFFICE_M()); }
-    public static func LIVED_MALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MALL_F(), KdspTextHousing.LIVED_MALL_M()); }
-    public static func LIVED_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SCHOOL_F(), KdspTextHousing.LIVED_SCHOOL_M()); }
-    public static func LIVED_CHURCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHURCH_F(), KdspTextHousing.LIVED_CHURCH_M()); }
-    public static func LIVED_STADIUM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STADIUM_F(), KdspTextHousing.LIVED_STADIUM_M()); }
-    public static func LIVED_AMUSEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_AMUSEMENT_F(), KdspTextHousing.LIVED_AMUSEMENT_M()); }
-    public static func LIVED_STORAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STORAGE_F(), KdspTextHousing.LIVED_STORAGE_M()); }
-    public static func LIVED_CONTAINER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONTAINER_F(), KdspTextHousing.LIVED_CONTAINER_M()); }
-    public static func LIVED_MOTEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MOTEL_F(), KdspTextHousing.LIVED_MOTEL_M()); }
-    public static func LIVED_NO_TELL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NO_TELL_F(), KdspTextHousing.LIVED_NO_TELL_M()); }
-    public static func LIVED_COFFIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COFFIN_F(), KdspTextHousing.LIVED_COFFIN_M()); }
+    public static func LIVED_BOAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BOAT()); }
+    public static func LIVED_HOUSEBOAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HOUSEBOAT()); }
+    public static func LIVED_ROOFTOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ROOFTOP()); }
+    public static func LIVED_CONSTRUCTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONSTRUCTION()); }
+    public static func LIVED_WAREHOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WAREHOUSE()); }
+    public static func LIVED_FACTORY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_FACTORY()); }
+    public static func LIVED_OFFICE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_OFFICE()); }
+    public static func LIVED_MALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MALL()); }
+    public static func LIVED_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SCHOOL()); }
+    public static func LIVED_CHURCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHURCH()); }
+    public static func LIVED_STADIUM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STADIUM()); }
+    public static func LIVED_AMUSEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_AMUSEMENT()); }
+    public static func LIVED_STORAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STORAGE()); }
+    public static func LIVED_CONTAINER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONTAINER()); }
+    public static func LIVED_MOTEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MOTEL()); }
+    public static func LIVED_NO_TELL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NO_TELL()); }
+    public static func LIVED_COFFIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COFFIN()); }
 
     // Expanded Housing - Specific Locations
-    public static func LIVED_ARROYO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ARROYO_F(), KdspTextHousing.LIVED_ARROYO_M()); }
-    public static func LIVED_NORTHSIDE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NORTHSIDE_F(), KdspTextHousing.LIVED_NORTHSIDE_M()); }
-    public static func LIVED_VISTA_DEL_REY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VISTA_DEL_REY_F(), KdspTextHousing.LIVED_VISTA_DEL_REY_M()); }
-    public static func LIVED_WELLSPRINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WELLSPRINGS_F(), KdspTextHousing.LIVED_WELLSPRINGS_M()); }
-    public static func LIVED_GLEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GLEN_F(), KdspTextHousing.LIVED_GLEN_M()); }
-    public static func LIVED_RANCHO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RANCHO_F(), KdspTextHousing.LIVED_RANCHO_M()); }
-    public static func LIVED_LITTLE_CHINA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LITTLE_CHINA_F(), KdspTextHousing.LIVED_LITTLE_CHINA_M()); }
-    public static func LIVED_CORPO_PLAZA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CORPO_PLAZA_F(), KdspTextHousing.LIVED_CORPO_PLAZA_M()).SetWealthMod(20); }
+    public static func LIVED_ARROYO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ARROYO()); }
+    public static func LIVED_NORTHSIDE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NORTHSIDE()); }
+    public static func LIVED_VISTA_DEL_REY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VISTA_DEL_REY()); }
+    public static func LIVED_WELLSPRINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WELLSPRINGS()); }
+    public static func LIVED_GLEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GLEN()); }
+    public static func LIVED_RANCHO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RANCHO()); }
+    public static func LIVED_LITTLE_CHINA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LITTLE_CHINA()); }
+    public static func LIVED_CORPO_PLAZA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CORPO_PLAZA()).SetWealthMod(20); }
     // Expanded Housing - Temporary
-    public static func LIVED_SHELTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHELTER_F(), KdspTextHousing.LIVED_SHELTER_M()); }
-    public static func LIVED_STAIRWELL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STAIRWELL_F(), KdspTextHousing.LIVED_STAIRWELL_M()); }
-    public static func LIVED_LAUNDROMAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LAUNDROMAT_F(), KdspTextHousing.LIVED_LAUNDROMAT_M()); }
-    public static func LIVED_ARCADE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ARCADE_F(), KdspTextHousing.LIVED_ARCADE_M()); }
+    public static func LIVED_SHELTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHELTER()); }
+    public static func LIVED_STAIRWELL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STAIRWELL()); }
+    public static func LIVED_LAUNDROMAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LAUNDROMAT()); }
+    public static func LIVED_ARCADE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ARCADE()); }
     // Expanded Housing - Unusual
-    public static func LIVED_CONVERTED_BUS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONVERTED_BUS_F(), KdspTextHousing.LIVED_CONVERTED_BUS_M()); }
-    public static func LIVED_COMM_TOWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COMM_TOWER_F(), KdspTextHousing.LIVED_COMM_TOWER_M()); }
-    public static func LIVED_BILLBOARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BILLBOARD_F(), KdspTextHousing.LIVED_BILLBOARD_M()); }
-    public static func LIVED_SERVER_ROOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SERVER_ROOM_F(), KdspTextHousing.LIVED_SERVER_ROOM_M()); }
-    public static func LIVED_CRANE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRANE_F(), KdspTextHousing.LIVED_CRANE_M()); }
+    public static func LIVED_CONVERTED_BUS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONVERTED_BUS()); }
+    public static func LIVED_COMM_TOWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COMM_TOWER()); }
+    public static func LIVED_BILLBOARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BILLBOARD()); }
+    public static func LIVED_SERVER_ROOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SERVER_ROOM()); }
+    public static func LIVED_CRANE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRANE()); }
     // Expanded Housing - Upgrades/Moves
-    public static func LIVED_FIRST_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_FIRST_APT_F(), KdspTextHousing.LIVED_FIRST_APT_M()); }
-    public static func LIVED_PENTHOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PENTHOUSE_F(), KdspTextHousing.LIVED_PENTHOUSE_M()).SetWealthMod(20); }
-    public static func LIVED_SHARED_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHARED_APT_F(), KdspTextHousing.LIVED_SHARED_APT_M()); }
-    public static func LIVED_ABOVE_BAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABOVE_BAR_F(), KdspTextHousing.LIVED_ABOVE_BAR_M()); }
-    public static func LIVED_BACK_SHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BACK_SHOP_F(), KdspTextHousing.LIVED_BACK_SHOP_M()); }
-    public static func LIVED_RIPPER_CLINIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RIPPER_CLINIC_F(), KdspTextHousing.LIVED_RIPPER_CLINIC_M()); }
-    public static func LIVED_ARASAKA_TWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ARASAKA_TWR_F(), KdspTextHousing.LIVED_ARASAKA_TWR_M()); }
-    public static func LIVED_ATLANTA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ATLANTA_F(), KdspTextHousing.LIVED_ATLANTA_M()); }
-    public static func LIVED_BERLIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BERLIN_F(), KdspTextHousing.LIVED_BERLIN_M()); }
-    public static func LIVED_BIOTECH_FLATS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BIOTECH_FLATS_F(), KdspTextHousing.LIVED_BIOTECH_FLATS_M()); }
-    public static func LIVED_CHARTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHARTER_F(), KdspTextHousing.LIVED_CHARTER_M()); }
-    public static func LIVED_COASTVIEW() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COASTVIEW_F(), KdspTextHousing.LIVED_COASTVIEW_M()); }
-    public static func LIVED_CONSTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONSTR_F(), KdspTextHousing.LIVED_CONSTR_M()); }
-    public static func LIVED_CRYSTAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRYSTAL_F(), KdspTextHousing.LIVED_CRYSTAL_M()); }
-    public static func LIVED_CUBE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CUBE_F(), KdspTextHousing.LIVED_CUBE_M()); }
-    public static func LIVED_DOGTOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DOGTOWN_F(), KdspTextHousing.LIVED_DOGTOWN_M()); }
-    public static func LIVED_GATED() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GATED_F(), KdspTextHousing.LIVED_GATED_M()); }
-    public static func LIVED_GIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GIM_F(), KdspTextHousing.LIVED_GIM_M()); }
-    public static func LIVED_H10() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_H10_F(), KdspTextHousing.LIVED_H10_M()); }
-    public static func LIVED_H4() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_H4_F(), KdspTextHousing.LIVED_H4_M()); }
-    public static func LIVED_HEYWOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HEYWOOD_F(), KdspTextHousing.LIVED_HEYWOOD_M()); }
-    public static func LIVED_HONG_KONG() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HONG_KONG_F(), KdspTextHousing.LIVED_HONG_KONG_M()); }
-    public static func LIVED_JACKSON() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JACKSON_F(), KdspTextHousing.LIVED_JACKSON_M()); }
-    public static func LIVED_JAPANTOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JAPANTOWN_F(), KdspTextHousing.LIVED_JAPANTOWN_M()); }
-    public static func LIVED_KABUKI() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_KABUKI_F(), KdspTextHousing.LIVED_KABUKI_M()); }
-    public static func LIVED_KONPEKI() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_KONPEKI_F(), KdspTextHousing.LIVED_KONPEKI_M()); }
-    public static func LIVED_LA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LA_F(), KdspTextHousing.LIVED_LA_M()); }
-    public static func LIVED_LONDON() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LONDON_F(), KdspTextHousing.LIVED_LONDON_M()); }
-    public static func LIVED_MEXICO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MEXICO_F(), KdspTextHousing.LIVED_MEXICO_M()); }
-    public static func LIVED_MOBILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MOBILE_F(), KdspTextHousing.LIVED_MOBILE_M()); }
-    public static func LIVED_MULTI_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MULTI_FAM_F(), KdspTextHousing.LIVED_MULTI_FAM_M()); }
-    public static func LIVED_NOMAD_CAMP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NOMAD_CAMP_F(), KdspTextHousing.LIVED_NOMAD_CAMP_M()); }
-    public static func LIVED_NORTH_OAK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NORTH_OAK_F(), KdspTextHousing.LIVED_NORTH_OAK_M()); }
-    public static func LIVED_ORBITAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ORBITAL_F(), KdspTextHousing.LIVED_ORBITAL_M()); }
-    public static func LIVED_PACIFICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PACIFICA_F(), KdspTextHousing.LIVED_PACIFICA_M()); }
-    public static func LIVED_ROCKY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ROCKY_F(), KdspTextHousing.LIVED_ROCKY_M()); }
-    public static func LIVED_SANTO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SANTO_F(), KdspTextHousing.LIVED_SANTO_M()); }
-    public static func LIVED_SAO_PAULO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SAO_PAULO_F(), KdspTextHousing.LIVED_SAO_PAULO_M()); }
-    public static func LIVED_SCAV() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SCAV_F(), KdspTextHousing.LIVED_SCAV_M()); }
-    public static func LIVED_SMUGGLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SMUGGLER_F(), KdspTextHousing.LIVED_SMUGGLER_M()); }
-    public static func LIVED_TOKYO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TOKYO_F(), KdspTextHousing.LIVED_TOKYO_M()); }
-    public static func LIVED_VDB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VDB_F(), KdspTextHousing.LIVED_VDB_M()); }
-    public static func LIVED_VISTA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VISTA_F(), KdspTextHousing.LIVED_VISTA_M()); }
-    public static func LIVED_WESTBROOK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WESTBROOK_F(), KdspTextHousing.LIVED_WESTBROOK_M()); }
-    public static func LIVED_WEST_WIND() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WEST_WIND_F(), KdspTextHousing.LIVED_WEST_WIND_M()); }
+    public static func LIVED_FIRST_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_FIRST_APT()); }
+    public static func LIVED_PENTHOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PENTHOUSE()).SetWealthMod(20); }
+    public static func LIVED_SHARED_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SHARED_APT()); }
+    public static func LIVED_ABOVE_BAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABOVE_BAR()); }
+    public static func LIVED_BACK_SHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BACK_SHOP()); }
+    public static func LIVED_RIPPER_CLINIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_RIPPER_CLINIC()); }
+    public static func LIVED_ARASAKA_TWR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ARASAKA_TWR()); }
+    public static func LIVED_ATLANTA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ATLANTA()); }
+    public static func LIVED_BERLIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BERLIN()); }
+    public static func LIVED_BIOTECH_FLATS() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BIOTECH_FLATS()); }
+    public static func LIVED_CHARTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHARTER()); }
+    public static func LIVED_COASTVIEW() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COASTVIEW()); }
+    public static func LIVED_CONSTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CONSTR()); }
+    public static func LIVED_CRYSTAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CRYSTAL()); }
+    public static func LIVED_CUBE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CUBE()); }
+    public static func LIVED_DOGTOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DOGTOWN()); }
+    public static func LIVED_GATED() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GATED()); }
+    public static func LIVED_GIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GIM()); }
+    public static func LIVED_H10() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_H10()); }
+    public static func LIVED_H4() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_H4()); }
+    public static func LIVED_HEYWOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HEYWOOD()); }
+    public static func LIVED_HONG_KONG() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_HONG_KONG()); }
+    public static func LIVED_JACKSON() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JACKSON()); }
+    public static func LIVED_JAPANTOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JAPANTOWN()); }
+    public static func LIVED_KABUKI() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_KABUKI()); }
+    public static func LIVED_KONPEKI() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_KONPEKI()); }
+    public static func LIVED_LA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LA()); }
+    public static func LIVED_LONDON() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LONDON()); }
+    public static func LIVED_MEXICO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MEXICO()); }
+    public static func LIVED_MOBILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MOBILE()); }
+    public static func LIVED_MULTI_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MULTI_FAM()); }
+    public static func LIVED_NOMAD_CAMP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NOMAD_CAMP()); }
+    public static func LIVED_NORTH_OAK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NORTH_OAK()); }
+    public static func LIVED_ORBITAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ORBITAL()); }
+    public static func LIVED_PACIFICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PACIFICA()); }
+    public static func LIVED_ROCKY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ROCKY()); }
+    public static func LIVED_SANTO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SANTO()); }
+    public static func LIVED_SAO_PAULO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SAO_PAULO()); }
+    public static func LIVED_SCAV() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SCAV()); }
+    public static func LIVED_SMUGGLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SMUGGLER()); }
+    public static func LIVED_TOKYO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_TOKYO()); }
+    public static func LIVED_VDB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VDB()); }
+    public static func LIVED_VISTA() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_VISTA()); }
+    public static func LIVED_WESTBROOK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WESTBROOK()); }
+    public static func LIVED_WEST_WIND() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WEST_WIND()); }
 
     // Childhood
-    public static func JOINED_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JOINED_GANG_F(), KdspTextChildhood.JOINED_GANG_M()); }
-    public static func RAN_AWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAN_AWAY_F(), KdspTextChildhood.RAN_AWAY_M()); }
-    public static func KIDNPPD_SCAVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.KIDNPPD_SCAVS_F(), KdspTextChildhood.KIDNPPD_SCAVS_M()); }
-    public static func USNG_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.USNG_CHEMS_F(), KdspTextChildhood.USNG_CHEMS_M()); }
-    public static func BULLIED_RLNTLSLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BULLIED_RLNTLSLY_F(), KdspTextChildhood.BULLIED_RLNTLSLY_M()); }
-    public static func STOLE_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STOLE_CAR_F(), KdspTextChildhood.STOLE_CAR_M()); }
-    public static func SELLING_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SELLING_CHEMS_F(), KdspTextChildhood.SELLING_CHEMS_M()); }
-    public static func JOINED_BAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JOINED_BAND_F(), KdspTextChildhood.JOINED_BAND_M()); }
-    public static func AVERAGE_ATHLETE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.AVERAGE_ATHLETE_F(), KdspTextChildhood.AVERAGE_ATHLETE_M()); }
-    public static func BAD_ATHLETE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BAD_ATHLETE_F(), KdspTextChildhood.BAD_ATHLETE_M()); }
-    public static func GOOD_ATHLETE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GOOD_ATHLETE_F(), KdspTextChildhood.GOOD_ATHLETE_M()); }
-    public static func SPNT_TIME_NET() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPNT_TIME_NET_F(), KdspTextChildhood.SPNT_TIME_NET_M()); }
-    public static func TINKER_ELTRNICS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TINKER_ELTRNICS_F(), KdspTextChildhood.TINKER_ELTRNICS_M()); }
-    public static func RADICALIZED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RADICALIZED_F(), KdspTextChildhood.RADICALIZED_M()); }
-    public static func INTRST_IN_GUNS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_IN_GUNS_F(), KdspTextChildhood.INTRST_IN_GUNS_M()); }
-    public static func INTRST_IN_SWORDS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_IN_SWORDS_F(), KdspTextChildhood.INTRST_IN_SWORDS_M()); }
-    public static func INTRST_IN_CYBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_IN_CYBER_F(), KdspTextChildhood.INTRST_IN_CYBER_M()); }
-    public static func ANTI_CORPO_FRM() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ANTI_CORPO_FRM_F(), KdspTextChildhood.ANTI_CORPO_FRM_M()); }
-    public static func HACK_SM_DB() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_SM_DB_F(), KdspTextChildhood.HACK_SM_DB_M()); }
-    public static func HACK_LG_DB() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_LG_DB_F(), KdspTextChildhood.HACK_LG_DB_M()); }
-    public static func HACK_ICONIC_CORPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_ICONIC_CORPO_F(), KdspTextChildhood.HACK_ICONIC_CORPO_M()); }
-    public static func READ_CLASSIC_LIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.READ_CLASSIC_LIT_F(), KdspTextChildhood.READ_CLASSIC_LIT_M()); }
-    public static func READ_NGHTY_MAG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.READ_NGHTY_MAG_F(), KdspTextChildhood.READ_NGHTY_MAG_M()); }
-    public static func READ_PULP_SCI() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.READ_PULP_SCI_F(), KdspTextChildhood.READ_PULP_SCI_M()); }
-    public static func SCROLLING_BD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCROLLING_BD_F(), KdspTextChildhood.SCROLLING_BD_M()); }
-    public static func WATCH_BD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WATCH_BD_F(), KdspTextChildhood.WATCH_BD_M()); }
-    public static func MANDARIN_LSSN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MANDARIN_LSSN_F(), KdspTextChildhood.MANDARIN_LSSN_M()); }
-    public static func SPANISH_LSSN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPANISH_LSSN_F(), KdspTextChildhood.SPANISH_LSSN_M()); }
-    public static func CHILD_PRODIGY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_PRODIGY_F(), KdspTextChildhood.CHILD_PRODIGY_M()); }
-    public static func PLAY_GUITAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PLAY_GUITAR_F(), KdspTextChildhood.PLAY_GUITAR_M()); }
-    public static func PLAY_VIOLIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PLAY_VIOLIN_F(), KdspTextChildhood.PLAY_VIOLIN_M()); }
-    public static func CHILD_SPY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_SPY_F(), KdspTextChildhood.CHILD_SPY_M()); }
-    public static func NET_RUN_IMPLANTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NET_RUN_IMPLANTS_F(), KdspTextChildhood.NET_RUN_IMPLANTS_M()); }
-    public static func FIRST_CW() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_CW_F(), KdspTextChildhood.FIRST_CW_M()); }
-    public static func CYBERDECK_INST() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CYBERDECK_INST_F(), KdspTextChildhood.CYBERDECK_INST_M()); }
-    public static func TINKER_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TINKER_CAR_F(), KdspTextChildhood.TINKER_CAR_M()); }
-    public static func TALENT_ART() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TALENT_ART_F(), KdspTextChildhood.TALENT_ART_M()); }
-    public static func PICK_POCKETS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PICK_POCKETS_F(), KdspTextChildhood.PICK_POCKETS_M()); }
-    public static func SOLD_CIG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SOLD_CIG_F(), KdspTextChildhood.SOLD_CIG_M()); }
-    public static func SPACE_CMP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPACE_CMP_F(), KdspTextChildhood.SPACE_CMP_M()); }
-    public static func FIXER_COURIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIXER_COURIER_F(), KdspTextChildhood.FIXER_COURIER_M()); }
-    public static func CHILD_ADV() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_ADV_F(), KdspTextChildhood.CHILD_ADV_M()); }
-    public static func INTRST_BOTANY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_BOTANY_F(), KdspTextChildhood.INTRST_BOTANY_M()); }
-    public static func HMEBRW_BEER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HMEBRW_BEER_F(), KdspTextChildhood.HMEBRW_BEER_M()); }
-    public static func SYNTH_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SYNTH_CHEMS_F(), KdspTextChildhood.SYNTH_CHEMS_M()); }
-    public static func CHEM_MULE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHEM_MULE_F(), KdspTextChildhood.CHEM_MULE_M()); }
-    public static func WORK_SWTSHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WORK_SWTSHOP_F(), KdspTextChildhood.WORK_SWTSHOP_M()); }
-    public static func WORK_FRMHAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WORK_FRMHAND_F(), KdspTextChildhood.WORK_FRMHAND_M()); }
-    public static func EXPLR_SEWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXPLR_SEWER_F(), KdspTextChildhood.EXPLR_SEWER_M()); }
-    public static func BRK_CORPO_SYSTEM() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BRK_CORPO_SYSTEM_F(), KdspTextChildhood.BRK_CORPO_SYSTEM_M()); }
-    public static func RBLD_SCRP_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RBLD_SCRP_CAR_F(), KdspTextChildhood.RBLD_SCRP_CAR_M()); }
-    public static func SCVG_STRP_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCVG_STRP_CAR_F(), KdspTextChildhood.SCVG_STRP_CAR_M()); }
-    public static func PLAY_MUS_INST() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PLAY_MUS_INST_F(), KdspTextChildhood.PLAY_MUS_INST_M()); }
-    public static func VNDL_PUB_PRPTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.VNDL_PUB_PRPTY_F(), KdspTextChildhood.VNDL_PUB_PRPTY_M()); }
-    public static func CDG_HKS_NET() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CDG_HKS_NET_F(), KdspTextChildhood.CDG_HKS_NET_M()); }
-    public static func HACK_CRP_STL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_CRP_STL_F(), KdspTextChildhood.HACK_CRP_STL_M()); }
-    public static func SPENT_NO_SUPV() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPENT_NO_SUPV_F(), KdspTextChildhood.SPENT_NO_SUPV_M()); }
+    public static func JOINED_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JOINED_GANG()); }
+    public static func RAN_AWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAN_AWAY()); }
+    public static func KIDNPPD_SCAVS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.KIDNPPD_SCAVS()); }
+    public static func USNG_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.USNG_CHEMS()); }
+    public static func BULLIED_RLNTLSLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BULLIED_RLNTLSLY()); }
+    public static func STOLE_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STOLE_CAR()); }
+    public static func SELLING_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SELLING_CHEMS()); }
+    public static func JOINED_BAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JOINED_BAND()); }
+    public static func AVERAGE_ATHLETE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.AVERAGE_ATHLETE()); }
+    public static func BAD_ATHLETE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BAD_ATHLETE()); }
+    public static func GOOD_ATHLETE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GOOD_ATHLETE()); }
+    public static func SPNT_TIME_NET() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPNT_TIME_NET()); }
+    public static func TINKER_ELTRNICS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TINKER_ELTRNICS()); }
+    public static func RADICALIZED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RADICALIZED()); }
+    public static func INTRST_IN_GUNS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_IN_GUNS()); }
+    public static func INTRST_IN_SWORDS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_IN_SWORDS()); }
+    public static func INTRST_IN_CYBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_IN_CYBER()); }
+    public static func ANTI_CORPO_FRM() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ANTI_CORPO_FRM()); }
+    public static func HACK_SM_DB() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_SM_DB()); }
+    public static func HACK_LG_DB() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_LG_DB()); }
+    public static func HACK_ICONIC_CORPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_ICONIC_CORPO()); }
+    public static func READ_CLASSIC_LIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.READ_CLASSIC_LIT()); }
+    public static func READ_NGHTY_MAG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.READ_NGHTY_MAG()); }
+    public static func READ_PULP_SCI() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.READ_PULP_SCI()); }
+    public static func SCROLLING_BD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCROLLING_BD()); }
+    public static func WATCH_BD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WATCH_BD()); }
+    public static func MANDARIN_LSSN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MANDARIN_LSSN()); }
+    public static func SPANISH_LSSN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPANISH_LSSN()); }
+    public static func CHILD_PRODIGY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_PRODIGY()); }
+    public static func PLAY_GUITAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PLAY_GUITAR()); }
+    public static func PLAY_VIOLIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PLAY_VIOLIN()); }
+    public static func CHILD_SPY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_SPY()); }
+    public static func NET_RUN_IMPLANTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NET_RUN_IMPLANTS()); }
+    public static func FIRST_CW() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_CW()); }
+    public static func CYBERDECK_INST() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CYBERDECK_INST()); }
+    public static func TINKER_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TINKER_CAR()); }
+    public static func TALENT_ART() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TALENT_ART()); }
+    public static func PICK_POCKETS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PICK_POCKETS()); }
+    public static func SOLD_CIG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SOLD_CIG()); }
+    public static func SPACE_CMP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPACE_CMP()); }
+    public static func FIXER_COURIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIXER_COURIER()); }
+    public static func CHILD_ADV() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_ADV()); }
+    public static func INTRST_BOTANY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INTRST_BOTANY()); }
+    public static func HMEBRW_BEER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HMEBRW_BEER()); }
+    public static func SYNTH_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SYNTH_CHEMS()); }
+    public static func CHEM_MULE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHEM_MULE()); }
+    public static func WORK_SWTSHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WORK_SWTSHOP()); }
+    public static func WORK_FRMHAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WORK_FRMHAND()); }
+    public static func EXPLR_SEWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXPLR_SEWER()); }
+    public static func BRK_CORPO_SYSTEM() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BRK_CORPO_SYSTEM()); }
+    public static func RBLD_SCRP_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RBLD_SCRP_CAR()); }
+    public static func SCVG_STRP_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCVG_STRP_CAR()); }
+    public static func PLAY_MUS_INST() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PLAY_MUS_INST()); }
+    public static func VNDL_PUB_PRPTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.VNDL_PUB_PRPTY()); }
+    public static func CDG_HKS_NET() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CDG_HKS_NET()); }
+    public static func HACK_CRP_STL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HACK_CRP_STL()); }
+    public static func SPENT_NO_SUPV() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPENT_NO_SUPV()); }
 
     // Childhood - Expanded: Education
-    public static func DROPOUT_EARLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DROPOUT_EARLY_F(), KdspTextChildhood.DROPOUT_EARLY_M()); }
-    public static func EXPELLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXPELLED_F(), KdspTextChildhood.EXPELLED_M()); }
-    public static func TOP_STUDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TOP_STUDENT_F(), KdspTextChildhood.TOP_STUDENT_M()).SetIntMod(15); }
-    public static func NO_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NO_SCHOOL_F(), KdspTextChildhood.NO_SCHOOL_M()); }
-    public static func CORPO_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_SCHOOL_F(), KdspTextChildhood.CORPO_SCHOOL_M()).SetIntMod(10).SetWealthMod(10); }
-    public static func STREET_EDUCATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_EDUCATION_F(), KdspTextChildhood.STREET_EDUCATION_M()).SetCoolMod(10); }
-    public static func TRADE_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TRADE_SCHOOL_F(), KdspTextChildhood.TRADE_SCHOOL_M()).SetTechMod(15); }
-    public static func SCHOLARSHIP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCHOLARSHIP_F(), KdspTextChildhood.SCHOLARSHIP_M()).SetIntMod(15); }
-    public static func CHEATED_EXAMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHEATED_EXAMS_F(), KdspTextChildhood.CHEATED_EXAMS_M()); }
-    public static func TUTORED_OTHERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUTORED_OTHERS_F(), KdspTextChildhood.TUTORED_OTHERS_M()).SetIntMod(10); }
+    public static func DROPOUT_EARLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DROPOUT_EARLY()); }
+    public static func EXPELLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXPELLED()); }
+    public static func TOP_STUDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TOP_STUDENT()).SetIntMod(15); }
+    public static func NO_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NO_SCHOOL()); }
+    public static func CORPO_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_SCHOOL()).SetIntMod(10).SetWealthMod(10); }
+    public static func STREET_EDUCATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_EDUCATION()).SetCoolMod(10); }
+    public static func TRADE_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TRADE_SCHOOL()).SetTechMod(15); }
+    public static func SCHOLARSHIP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCHOLARSHIP()).SetIntMod(15); }
+    public static func CHEATED_EXAMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHEATED_EXAMS()); }
+    public static func TUTORED_OTHERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUTORED_OTHERS()).SetIntMod(10); }
     // Childhood - Expanded: Street Life
-    public static func LOOKOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOOKOUT_F(), KdspTextChildhood.LOOKOUT_M()); }
-    public static func MESSENGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MESSENGER_F(), KdspTextChildhood.MESSENGER_M()); }
-    public static func HOMELESS_TEEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOMELESS_TEEN_F(), KdspTextChildhood.HOMELESS_TEEN_M()); }
-    public static func SHELTER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHELTER_KID_F(), KdspTextChildhood.SHELTER_KID_M()); }
-    public static func STREET_FIGHTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_FIGHTING_F(), KdspTextChildhood.STREET_FIGHTING_M()).SetBodyMod(10); }
-    public static func HUSTLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HUSTLER_F(), KdspTextChildhood.HUSTLER_M()).SetCoolMod(10); }
-    public static func PANHANDLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PANHANDLER_F(), KdspTextChildhood.PANHANDLER_M()); }
-    public static func DUMPSTER_DIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DUMPSTER_DIVER_F(), KdspTextChildhood.DUMPSTER_DIVER_M()); }
-    public static func STRAY_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STRAY_COLLECTOR_F(), KdspTextChildhood.STRAY_COLLECTOR_M()); }
-    public static func SQUATTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SQUATTER_F(), KdspTextChildhood.SQUATTER_M()); }
+    public static func LOOKOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOOKOUT()); }
+    public static func MESSENGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MESSENGER()); }
+    public static func HOMELESS_TEEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOMELESS_TEEN()); }
+    public static func SHELTER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHELTER_KID()); }
+    public static func STREET_FIGHTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_FIGHTING()).SetBodyMod(10); }
+    public static func HUSTLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HUSTLER()).SetCoolMod(10); }
+    public static func PANHANDLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PANHANDLER()); }
+    public static func DUMPSTER_DIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DUMPSTER_DIVER()); }
+    public static func STRAY_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STRAY_COLLECTOR()); }
+    public static func SQUATTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SQUATTER()); }
     // Childhood - Expanded: Gang Involvement
-    public static func GANG_MASCOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_MASCOT_F(), KdspTextChildhood.GANG_MASCOT_M()); }
-    public static func INITIATION_WITNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INITIATION_WITNESS_F(), KdspTextChildhood.INITIATION_WITNESS_M()); }
-    public static func GANG_PROTECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_PROTECTED_F(), KdspTextChildhood.GANG_PROTECTED_M()); }
-    public static func JUMPED_IN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JUMPED_IN_F(), KdspTextChildhood.JUMPED_IN_M()); }
-    public static func BLOOD_IN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BLOOD_IN_F(), KdspTextChildhood.BLOOD_IN_M()); }
-    public static func GANG_LEGACY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_LEGACY_F(), KdspTextChildhood.GANG_LEGACY_M()); }
-    public static func REFUSED_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.REFUSED_GANG_F(), KdspTextChildhood.REFUSED_GANG_M()); }
-    public static func GANG_INFORMANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_INFORMANT_F(), KdspTextChildhood.GANG_INFORMANT_M()); }
+    public static func GANG_MASCOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_MASCOT()); }
+    public static func INITIATION_WITNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.INITIATION_WITNESS()); }
+    public static func GANG_PROTECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_PROTECTED()); }
+    public static func JUMPED_IN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JUMPED_IN()); }
+    public static func BLOOD_IN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BLOOD_IN()); }
+    public static func GANG_LEGACY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_LEGACY()); }
+    public static func REFUSED_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.REFUSED_GANG()); }
+    public static func GANG_INFORMANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_INFORMANT()); }
     // Childhood - Expanded: Trauma
-    public static func WITNESSED_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WITNESSED_MURDER_F(), KdspTextChildhood.WITNESSED_MURDER_M()); }
-    public static func ABUSE_VICTIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ABUSE_VICTIM_F(), KdspTextChildhood.ABUSE_VICTIM_M()); }
-    public static func NEGLECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NEGLECTED_F(), KdspTextChildhood.NEGLECTED_M()); }
-    public static func SHOOTING_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHOOTING_SURVIVOR_F(), KdspTextChildhood.SHOOTING_SURVIVOR_M()); }
-    public static func FIRE_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRE_SURVIVOR_F(), KdspTextChildhood.FIRE_SURVIVOR_M()); }
-    public static func BOMBING_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOMBING_SURVIVOR_F(), KdspTextChildhood.BOMBING_SURVIVOR_M()); }
-    public static func TRAFFICKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TRAFFICKED_F(), KdspTextChildhood.TRAFFICKED_M()); }
-    public static func ESCAPED_TRAFFICKERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ESCAPED_TRAFFICKERS_F(), KdspTextChildhood.ESCAPED_TRAFFICKERS_M()); }
-    public static func CHILD_SOLDIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_SOLDIER_F(), KdspTextChildhood.CHILD_SOLDIER_M()).SetBodyMod(15).SetReflexMod(15); }
-    public static func PARENT_MURDERED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_MURDERED_F(), KdspTextChildhood.PARENT_MURDERED_M()); }
-    public static func SIBLING_KILLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SIBLING_KILLED_F(), KdspTextChildhood.SIBLING_KILLED_M()); }
+    public static func WITNESSED_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WITNESSED_MURDER()); }
+    public static func ABUSE_VICTIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ABUSE_VICTIM()); }
+    public static func NEGLECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NEGLECTED()); }
+    public static func SHOOTING_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHOOTING_SURVIVOR()); }
+    public static func FIRE_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRE_SURVIVOR()); }
+    public static func BOMBING_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOMBING_SURVIVOR()); }
+    public static func TRAFFICKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TRAFFICKED()); }
+    public static func ESCAPED_TRAFFICKERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ESCAPED_TRAFFICKERS()); }
+    public static func CHILD_SOLDIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_SOLDIER()).SetBodyMod(15).SetReflexMod(15); }
+    public static func PARENT_MURDERED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_MURDERED()); }
+    public static func SIBLING_KILLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SIBLING_KILLED()); }
     // Childhood - Expanded: Skills/Talents
-    public static func NATURAL_FIGHTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NATURAL_FIGHTER_F(), KdspTextChildhood.NATURAL_FIGHTER_M()).SetBodyMod(15); }
-    public static func TECH_SAVANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TECH_SAVANT_F(), KdspTextChildhood.TECH_SAVANT_M()).SetTechMod(20); }
-    public static func QUICK_LEARNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.QUICK_LEARNER_F(), KdspTextChildhood.QUICK_LEARNER_M()).SetIntMod(15); }
-    public static func PHOTOGRAPHIC_MEMORY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PHOTOGRAPHIC_MEMORY_F(), KdspTextChildhood.PHOTOGRAPHIC_MEMORY_M()).SetIntMod(20); }
-    public static func LOCKPICKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOCKPICKING_F(), KdspTextChildhood.LOCKPICKING_M()).SetTechMod(10); }
-    public static func MECHANIC_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MECHANIC_KID_F(), KdspTextChildhood.MECHANIC_KID_M()).SetTechMod(15); }
-    public static func COOKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COOKING_F(), KdspTextChildhood.COOKING_M()); }
-    public static func FIRST_AID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_AID_F(), KdspTextChildhood.FIRST_AID_M()).SetTechMod(10); }
-    public static func DRIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DRIVING_F(), KdspTextChildhood.DRIVING_M()).SetReflexMod(10); }
-    public static func SHOOTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHOOTING_F(), KdspTextChildhood.SHOOTING_M()).SetReflexMod(15); }
-    public static func MARTIAL_ARTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MARTIAL_ARTS_F(), KdspTextChildhood.MARTIAL_ARTS_M()).SetBodyMod(10).SetReflexMod(10); }
-    public static func SWIMMING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SWIMMING_F(), KdspTextChildhood.SWIMMING_M()).SetBodyMod(10); }
-    public static func CLIMBING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CLIMBING_F(), KdspTextChildhood.CLIMBING_M()).SetBodyMod(10); }
+    public static func NATURAL_FIGHTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NATURAL_FIGHTER()).SetBodyMod(15); }
+    public static func TECH_SAVANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TECH_SAVANT()).SetTechMod(20); }
+    public static func QUICK_LEARNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.QUICK_LEARNER()).SetIntMod(15); }
+    public static func PHOTOGRAPHIC_MEMORY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PHOTOGRAPHIC_MEMORY()).SetIntMod(20); }
+    public static func LOCKPICKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOCKPICKING()).SetTechMod(10); }
+    public static func MECHANIC_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MECHANIC_KID()).SetTechMod(15); }
+    public static func COOKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COOKING()); }
+    public static func FIRST_AID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_AID()).SetTechMod(10); }
+    public static func DRIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DRIVING()).SetReflexMod(10); }
+    public static func SHOOTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHOOTING()).SetReflexMod(15); }
+    public static func MARTIAL_ARTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MARTIAL_ARTS()).SetBodyMod(10).SetReflexMod(10); }
+    public static func SWIMMING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SWIMMING()).SetBodyMod(10); }
+    public static func CLIMBING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CLIMBING()).SetBodyMod(10); }
     // Childhood - Expanded: Misc
-    public static func FIRST_LOVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_LOVE_F(), KdspTextChildhood.FIRST_LOVE_M()); }
-    public static func HEARTBROKEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HEARTBROKEN_F(), KdspTextChildhood.HEARTBROKEN_M()); }
-    public static func RELIGIOUS_AWK() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RELIGIOUS_AWK_F(), KdspTextChildhood.RELIGIOUS_AWK_M()); }
-    public static func LOST_FAITH_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOST_FAITH_CHILD_F(), KdspTextChildhood.LOST_FAITH_CHILD_M()); }
-    public static func NEAR_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NEAR_DEATH_F(), KdspTextChildhood.NEAR_DEATH_M()); }
-    public static func SAVED_LIFE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SAVED_LIFE_F(), KdspTextChildhood.SAVED_LIFE_M()); }
-    public static func MENTORED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MENTORED_F(), KdspTextChildhood.MENTORED_M()).SetCoolMod(10); }
-    public static func REVENGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.REVENGE_F(), KdspTextChildhood.REVENGE_M()); }
-    public static func PET_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PET_DEATH_F(), KdspTextChildhood.PET_DEATH_M()); }
-    public static func IMAGINARY_FRIEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.IMAGINARY_FRIEND_F(), KdspTextChildhood.IMAGINARY_FRIEND_M()); }
-    public static func NIGHT_TERRORS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NIGHT_TERRORS_F(), KdspTextChildhood.NIGHT_TERRORS_M()); }
-    public static func BED_WETTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BED_WETTING_F(), KdspTextChildhood.BED_WETTING_M()); }
-    public static func RUNAWAY_ATTEMPT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RUNAWAY_ATTEMPT_F(), KdspTextChildhood.RUNAWAY_ATTEMPT_M()); }
-    public static func HOSPITALIZED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOSPITALIZED_F(), KdspTextChildhood.HOSPITALIZED_M()); }
-    public static func CHRONIC_ILLNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHRONIC_ILLNESS_F(), KdspTextChildhood.CHRONIC_ILLNESS_M()); }
-    public static func DISABILITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DISABILITY_F(), KdspTextChildhood.DISABILITY_M()); }
-    public static func ACCIDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ACCIDENT_F(), KdspTextChildhood.ACCIDENT_M()); }
-    public static func EARLY_PUBERTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EARLY_PUBERTY_F(), KdspTextChildhood.EARLY_PUBERTY_M()); }
-    public static func LATE_BLOOMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LATE_BLOOMER_F(), KdspTextChildhood.LATE_BLOOMER_M()); }
-    public static func NETRUNNER_MENTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NETRUNNER_MENTOR_F(), KdspTextChildhood.NETRUNNER_MENTOR_M()).SetIntMod(15); }
-    public static func BLACK_ICE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BLACK_ICE_F(), KdspTextChildhood.BLACK_ICE_M()); }
-    public static func BOTCHED_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOTCHED_CHROME_F(), KdspTextChildhood.BOTCHED_CHROME_M()); }
-    public static func MIL_GRADE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MIL_GRADE_F(), KdspTextChildhood.MIL_GRADE_M()).SetBodyMod(15).SetReflexMod(15); }
-    public static func CYBERPSYCHO_WIT_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CYBERPSYCHO_WIT_CHILD_F(), KdspTextChildhood.CYBERPSYCHO_WIT_CHILD_M()); }
+    public static func FIRST_LOVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_LOVE()); }
+    public static func HEARTBROKEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HEARTBROKEN()); }
+    public static func RELIGIOUS_AWK() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RELIGIOUS_AWK()); }
+    public static func LOST_FAITH_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOST_FAITH_CHILD()); }
+    public static func NEAR_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NEAR_DEATH()); }
+    public static func SAVED_LIFE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SAVED_LIFE()); }
+    public static func MENTORED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MENTORED()).SetCoolMod(10); }
+    public static func REVENGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.REVENGE()); }
+    public static func PET_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PET_DEATH()); }
+    public static func IMAGINARY_FRIEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.IMAGINARY_FRIEND()); }
+    public static func NIGHT_TERRORS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NIGHT_TERRORS()); }
+    public static func BED_WETTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BED_WETTING()); }
+    public static func RUNAWAY_ATTEMPT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RUNAWAY_ATTEMPT()); }
+    public static func HOSPITALIZED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOSPITALIZED()); }
+    public static func CHRONIC_ILLNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHRONIC_ILLNESS()); }
+    public static func DISABILITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DISABILITY()); }
+    public static func ACCIDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ACCIDENT()); }
+    public static func EARLY_PUBERTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EARLY_PUBERTY()); }
+    public static func LATE_BLOOMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LATE_BLOOMER()); }
+    public static func NETRUNNER_MENTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NETRUNNER_MENTOR()).SetIntMod(15); }
+    public static func BLACK_ICE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BLACK_ICE()); }
+    public static func BOTCHED_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOTCHED_CHROME()); }
+    public static func MIL_GRADE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MIL_GRADE()).SetBodyMod(15).SetReflexMod(15); }
+    public static func CYBERPSYCHO_WIT_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CYBERPSYCHO_WIT_CHILD()); }
 
     // Childhood - Expanded: Street Life
-    public static func STREET_RAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_RAT_F(), KdspTextChildhood.STREET_RAT_M()).SetCoolMod(10); }
-    public static func SEWER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SEWER_KID_F(), KdspTextChildhood.SEWER_KID_M()); }
-    public static func ROOF_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ROOF_RUNNER_F(), KdspTextChildhood.ROOF_RUNNER_M()).SetReflexMod(10); }
-    public static func TUNNEL_DWELLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUNNEL_DWELLER_F(), KdspTextChildhood.TUNNEL_DWELLER_M()); }
-    public static func SQUATTER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SQUATTER_KID_F(), KdspTextChildhood.SQUATTER_KID_M()); }
-    public static func BRIDGE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BRIDGE_KID_F(), KdspTextChildhood.BRIDGE_KID_M()); }
-    public static func CARGO_STOWAWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CARGO_STOWAWAY_F(), KdspTextChildhood.CARGO_STOWAWAY_M()); }
+    public static func STREET_RAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_RAT()).SetCoolMod(10); }
+    public static func SEWER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SEWER_KID()); }
+    public static func ROOF_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ROOF_RUNNER()).SetReflexMod(10); }
+    public static func TUNNEL_DWELLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUNNEL_DWELLER()); }
+    public static func SQUATTER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SQUATTER_KID()); }
+    public static func BRIDGE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BRIDGE_KID()); }
+    public static func CARGO_STOWAWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CARGO_STOWAWAY()); }
 
     // Childhood - Expanded: Crime
-    public static func WINDOW_BREAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WINDOW_BREAKER_F(), KdspTextChildhood.WINDOW_BREAKER_M()); }
-    public static func DISTRACTION_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DISTRACTION_KID_F(), KdspTextChildhood.DISTRACTION_KID_M()); }
-    public static func SHOPLIFTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHOPLIFTER_F(), KdspTextChildhood.SHOPLIFTER_M()); }
-    public static func CREDIT_CHIP_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CREDIT_CHIP_THIEF_F(), KdspTextChildhood.CREDIT_CHIP_THIEF_M()); }
-    public static func WIRE_TAP_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WIRE_TAP_KID_F(), KdspTextChildhood.WIRE_TAP_KID_M()).SetTechMod(10); }
-    public static func CAR_BREAK_INS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CAR_BREAK_INS_F(), KdspTextChildhood.CAR_BREAK_INS_M()); }
-    public static func EXTORTION_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXTORTION_RUNNER_F(), KdspTextChildhood.EXTORTION_RUNNER_M()); }
-    public static func BODY_FINDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BODY_FINDER_F(), KdspTextChildhood.BODY_FINDER_M()); }
+    public static func WINDOW_BREAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WINDOW_BREAKER()); }
+    public static func DISTRACTION_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DISTRACTION_KID()); }
+    public static func SHOPLIFTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SHOPLIFTER()); }
+    public static func CREDIT_CHIP_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CREDIT_CHIP_THIEF()); }
+    public static func WIRE_TAP_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WIRE_TAP_KID()).SetTechMod(10); }
+    public static func CAR_BREAK_INS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CAR_BREAK_INS()); }
+    public static func EXTORTION_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXTORTION_RUNNER()); }
+    public static func BODY_FINDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BODY_FINDER()); }
 
     // Childhood - Expanded: Trauma
-    public static func BOMB_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOMB_SURVIVOR_F(), KdspTextChildhood.BOMB_SURVIVOR_M()); }
-    public static func FLOOD_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FLOOD_SURVIVOR_F(), KdspTextChildhood.FLOOD_SURVIVOR_M()); }
-    public static func COLLAPSED_MEGABUILDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COLLAPSED_MEGABUILDING_F(), KdspTextChildhood.COLLAPSED_MEGABUILDING_M()); }
-    public static func TOXIC_EXPOSURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TOXIC_EXPOSURE_F(), KdspTextChildhood.TOXIC_EXPOSURE_M()); }
-    public static func RADIATION_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RADIATION_KID_F(), KdspTextChildhood.RADIATION_KID_M()); }
-    public static func FOOD_POISONING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FOOD_POISONING_F(), KdspTextChildhood.FOOD_POISONING_M()); }
-    public static func DOG_ATTACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DOG_ATTACK_F(), KdspTextChildhood.DOG_ATTACK_M()); }
+    public static func BOMB_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOMB_SURVIVOR()); }
+    public static func FLOOD_SURVIVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FLOOD_SURVIVOR()); }
+    public static func COLLAPSED_MEGABUILDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COLLAPSED_MEGABUILDING()); }
+    public static func TOXIC_EXPOSURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TOXIC_EXPOSURE()); }
+    public static func RADIATION_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RADIATION_KID()); }
+    public static func FOOD_POISONING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FOOD_POISONING()); }
+    public static func DOG_ATTACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DOG_ATTACK()); }
 
     // Childhood - Expanded: Positive
-    public static func SCHOLARSHIP_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCHOLARSHIP_KID_F(), KdspTextChildhood.SCHOLARSHIP_KID_M()).SetIntMod(15).SetWealthMod(10); }
-    public static func SAVED_BY_STRANGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SAVED_BY_STRANGER_F(), KdspTextChildhood.SAVED_BY_STRANGER_M()); }
-    public static func ADOPTED_WEALTHY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ADOPTED_WEALTHY_F(), KdspTextChildhood.ADOPTED_WEALTHY_M()).SetWealthMod(25); }
-    public static func TALENT_DISCOVERED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TALENT_DISCOVERED_F(), KdspTextChildhood.TALENT_DISCOVERED_M()).SetCoolMod(10); }
-    public static func CONTEST_WINNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CONTEST_WINNER_F(), KdspTextChildhood.CONTEST_WINNER_M()); }
-    public static func CHILD_STAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_STAR_F(), KdspTextChildhood.CHILD_STAR_M()).SetCoolMod(15); }
-    public static func SPORTS_PRODIGY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPORTS_PRODIGY_F(), KdspTextChildhood.SPORTS_PRODIGY_M()).SetBodyMod(15).SetReflexMod(10); }
-    public static func ACADEMIC_STAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ACADEMIC_STAR_F(), KdspTextChildhood.ACADEMIC_STAR_M()).SetIntMod(20); }
+    public static func SCHOLARSHIP_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCHOLARSHIP_KID()).SetIntMod(15).SetWealthMod(10); }
+    public static func SAVED_BY_STRANGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SAVED_BY_STRANGER()); }
+    public static func ADOPTED_WEALTHY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ADOPTED_WEALTHY()).SetWealthMod(25); }
+    public static func TALENT_DISCOVERED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TALENT_DISCOVERED()).SetCoolMod(10); }
+    public static func CONTEST_WINNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CONTEST_WINNER()); }
+    public static func CHILD_STAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHILD_STAR()).SetCoolMod(15); }
+    public static func SPORTS_PRODIGY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SPORTS_PRODIGY()).SetBodyMod(15).SetReflexMod(10); }
+    public static func ACADEMIC_STAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ACADEMIC_STAR()).SetIntMod(20); }
 
     // Childhood - Expanded: Neutral
-    public static func MOVED_OFTEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MOVED_OFTEN_F(), KdspTextChildhood.MOVED_OFTEN_M()); }
-    public static func MILITARY_BRAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MILITARY_BRAT_F(), KdspTextChildhood.MILITARY_BRAT_M()).SetBodyMod(5); }
-    public static func CORPO_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_KID_F(), KdspTextChildhood.CORPO_KID_M()).SetWealthMod(10); }
-    public static func RAISED_BY_UNCLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_UNCLE_F(), KdspTextChildhood.RAISED_BY_UNCLE_M()); }
-    public static func RAISED_BY_AUNT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_AUNT_F(), KdspTextChildhood.RAISED_BY_AUNT_M()); }
-    public static func COMMUNE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COMMUNE_KID_F(), KdspTextChildhood.COMMUNE_KID_M()); }
-    public static func IMMIGRANT_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.IMMIGRANT_KID_F(), KdspTextChildhood.IMMIGRANT_KID_M()); }
-    public static func REFUGEE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.REFUGEE_KID_F(), KdspTextChildhood.REFUGEE_KID_M()); }
+    public static func MOVED_OFTEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MOVED_OFTEN()); }
+    public static func MILITARY_BRAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MILITARY_BRAT()).SetBodyMod(5); }
+    public static func CORPO_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_KID()).SetWealthMod(10); }
+    public static func RAISED_BY_UNCLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_UNCLE()); }
+    public static func RAISED_BY_AUNT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_AUNT()); }
+    public static func COMMUNE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COMMUNE_KID()); }
+    public static func IMMIGRANT_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.IMMIGRANT_KID()); }
+    public static func REFUGEE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.REFUGEE_KID()); }
 
     // Childhood - Expanded: Skills
-    public static func COOKING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COOKING_KID_F(), KdspTextChildhood.COOKING_KID_M()); }
-    public static func SEWING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SEWING_KID_F(), KdspTextChildhood.SEWING_KID_M()).SetTechMod(5); }
-    public static func HUNTING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HUNTING_KID_F(), KdspTextChildhood.HUNTING_KID_M()).SetBodyMod(10).SetReflexMod(10); }
-    public static func FISHING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FISHING_KID_F(), KdspTextChildhood.FISHING_KID_M()); }
-    public static func CODING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CODING_KID_F(), KdspTextChildhood.CODING_KID_M()).SetIntMod(15).SetTechMod(10); }
-    public static func ARTIST_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ARTIST_KID_F(), KdspTextChildhood.ARTIST_KID_M()).SetCoolMod(10); }
-    public static func DANCER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DANCER_KID_F(), KdspTextChildhood.DANCER_KID_M()).SetReflexMod(10).SetCoolMod(10); }
+    public static func COOKING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.COOKING_KID()); }
+    public static func SEWING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SEWING_KID()).SetTechMod(5); }
+    public static func HUNTING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HUNTING_KID()).SetBodyMod(10).SetReflexMod(10); }
+    public static func FISHING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FISHING_KID()); }
+    public static func CODING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CODING_KID()).SetIntMod(15).SetTechMod(10); }
+    public static func ARTIST_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ARTIST_KID()).SetCoolMod(10); }
+    public static func DANCER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DANCER_KID()).SetReflexMod(10).SetCoolMod(10); }
 
     // Expanded Childhood - Survival
-    public static func DUMPSTER_MEALS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DUMPSTER_MEALS_F(), KdspTextChildhood.DUMPSTER_MEALS_M()); }
-    public static func SLEPT_SHIFTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SLEPT_SHIFTS_F(), KdspTextChildhood.SLEPT_SHIFTS_M()); }
-    public static func RAIN_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAIN_COLLECTOR_F(), KdspTextChildhood.RAIN_COLLECTOR_M()); }
-    public static func TUNNEL_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUNNEL_RUNNER_F(), KdspTextChildhood.TUNNEL_RUNNER_M()); }
-    public static func ROOFTOP_SLEEPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ROOFTOP_SLEEPER_F(), KdspTextChildhood.ROOFTOP_SLEEPER_M()); }
-    public static func HOSPITAL_SQUATTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOSPITAL_SQUATTER_F(), KdspTextChildhood.HOSPITAL_SQUATTER_M()); }
+    public static func DUMPSTER_MEALS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DUMPSTER_MEALS()); }
+    public static func SLEPT_SHIFTS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SLEPT_SHIFTS()); }
+    public static func RAIN_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAIN_COLLECTOR()); }
+    public static func TUNNEL_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUNNEL_RUNNER()); }
+    public static func ROOFTOP_SLEEPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ROOFTOP_SLEEPER()); }
+    public static func HOSPITAL_SQUATTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOSPITAL_SQUATTER()); }
     // Expanded Childhood - Family
-    public static func RAISED_BY_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_SIBLING_F(), KdspTextChildhood.RAISED_BY_SIBLING_M()); }
-    public static func PARENT_IN_PRISON() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_IN_PRISON_F(), KdspTextChildhood.PARENT_IN_PRISON_M()); }
-    public static func PARENT_DISAPPEARED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_DISAPPEARED_F(), KdspTextChildhood.PARENT_DISAPPEARED_M()); }
-    public static func RAISED_BY_GANG_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_GANG_F(), KdspTextChildhood.RAISED_BY_GANG_M()); }
-    public static func CARETAKER_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CARETAKER_CHILD_F(), KdspTextChildhood.CARETAKER_CHILD_M()); }
-    public static func FAMILY_SPLIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FAMILY_SPLIT_F(), KdspTextChildhood.FAMILY_SPLIT_M()); }
-    public static func ABANDONED_HOSPITAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ABANDONED_HOSPITAL_F(), KdspTextChildhood.ABANDONED_HOSPITAL_M()); }
+    public static func RAISED_BY_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_SIBLING()); }
+    public static func PARENT_IN_PRISON() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_IN_PRISON()); }
+    public static func PARENT_DISAPPEARED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_DISAPPEARED()); }
+    public static func RAISED_BY_GANG_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RAISED_BY_GANG()); }
+    public static func CARETAKER_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CARETAKER_CHILD()); }
+    public static func FAMILY_SPLIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FAMILY_SPLIT()); }
+    public static func ABANDONED_HOSPITAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ABANDONED_HOSPITAL()); }
     // Expanded Childhood - NC Specific
-    public static func KABUKI_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.KABUKI_KID_F(), KdspTextChildhood.KABUKI_KID_M()); }
-    public static func HEYWOOD_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HEYWOOD_KID_F(), KdspTextChildhood.HEYWOOD_KID_M()); }
-    public static func PACIFICA_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PACIFICA_KID_F(), KdspTextChildhood.PACIFICA_KID_M()); }
-    public static func MEGABUILDING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MEGABUILDING_KID_F(), KdspTextChildhood.MEGABUILDING_KID_M()); }
-    public static func BADLANDS_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BADLANDS_KID_F(), KdspTextChildhood.BADLANDS_KID_M()); }
-    public static func CHARTER_HILL_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHARTER_HILL_KID_F(), KdspTextChildhood.CHARTER_HILL_KID_M()); }
-    public static func DOGTOWN_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DOGTOWN_KID_F(), KdspTextChildhood.DOGTOWN_KID_M()); }
-    public static func WATSON_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WATSON_KID_F(), KdspTextChildhood.WATSON_KID_M()); }
+    public static func KABUKI_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.KABUKI_KID()); }
+    public static func HEYWOOD_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HEYWOOD_KID()); }
+    public static func PACIFICA_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PACIFICA_KID()); }
+    public static func MEGABUILDING_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MEGABUILDING_KID()); }
+    public static func BADLANDS_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BADLANDS_KID()); }
+    public static func CHARTER_HILL_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHARTER_HILL_KID()); }
+    public static func DOGTOWN_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DOGTOWN_KID()); }
+    public static func WATSON_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WATSON_KID()); }
     // Expanded Childhood - Cyberware
-    public static func FIRST_CHROME_YOUNG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_CHROME_YOUNG_F(), KdspTextChildhood.FIRST_CHROME_YOUNG_M()); }
-    public static func CHROME_ENVY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHROME_ENVY_F(), KdspTextChildhood.CHROME_ENVY_M()); }
-    public static func RIPPER_ASSISTANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RIPPER_ASSISTANT_F(), KdspTextChildhood.RIPPER_ASSISTANT_M()).SetTechMod(5); }
-    public static func STOLEN_OPTICS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STOLEN_OPTICS_F(), KdspTextChildhood.STOLEN_OPTICS_M()); }
+    public static func FIRST_CHROME_YOUNG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_CHROME_YOUNG()); }
+    public static func CHROME_ENVY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHROME_ENVY()); }
+    public static func RIPPER_ASSISTANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.RIPPER_ASSISTANT()).SetTechMod(5); }
+    public static func STOLEN_OPTICS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STOLEN_OPTICS()); }
     // Expanded Childhood - Education
-    public static func STREET_EDUCATED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_EDUCATED_F(), KdspTextChildhood.STREET_EDUCATED_M()); }
-    public static func TUTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUTOR_F(), KdspTextChildhood.TUTOR_M()).SetIntMod(10); }
-    public static func LIBRARY_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LIBRARY_KID_F(), KdspTextChildhood.LIBRARY_KID_M()).SetIntMod(10); }
-    public static func TEACHER_MENTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TEACHER_MENTOR_F(), KdspTextChildhood.TEACHER_MENTOR_M()).SetIntMod(5); }
+    public static func STREET_EDUCATED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_EDUCATED()); }
+    public static func TUTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TUTOR()).SetIntMod(10); }
+    public static func LIBRARY_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LIBRARY_KID()).SetIntMod(10); }
+    public static func TEACHER_MENTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TEACHER_MENTOR()).SetIntMod(5); }
     // Expanded Childhood - Social
-    public static func LONER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LONER_KID_F(), KdspTextChildhood.LONER_KID_M()); }
-    public static func POPULAR_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.POPULAR_KID_F(), KdspTextChildhood.POPULAR_KID_M()).SetCoolMod(5); }
-    public static func BULLY_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BULLY_F(), KdspTextChildhood.BULLY_M()); }
-    public static func PEACEMAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PEACEMAKER_F(), KdspTextChildhood.PEACEMAKER_M()).SetCoolMod(5); }
-    public static func STREET_PERFORMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_PERFORMER_F(), KdspTextChildhood.STREET_PERFORMER_M()).SetCoolMod(5); }
+    public static func LONER_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LONER_KID()); }
+    public static func POPULAR_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.POPULAR_KID()).SetCoolMod(5); }
+    public static func BULLY_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BULLY()); }
+    public static func PEACEMAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PEACEMAKER()).SetCoolMod(5); }
+    public static func STREET_PERFORMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_PERFORMER()).SetCoolMod(5); }
     // Expanded Childhood - Work
-    public static func FACTORY_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FACTORY_CHILD_F(), KdspTextChildhood.FACTORY_CHILD_M()); }
-    public static func DELIVERY_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DELIVERY_KID_F(), KdspTextChildhood.DELIVERY_KID_M()); }
-    public static func SCRAP_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCRAP_COLLECTOR_F(), KdspTextChildhood.SCRAP_COLLECTOR_M()); }
-    public static func MECHANIC_APPRENTICE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MECHANIC_APPRENTICE_F(), KdspTextChildhood.MECHANIC_APPRENTICE_M()).SetTechMod(10); }
-    public static func ERRAND_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ERRAND_RUNNER_F(), KdspTextChildhood.ERRAND_RUNNER_M()); }
+    public static func FACTORY_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FACTORY_CHILD()); }
+    public static func DELIVERY_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DELIVERY_KID()); }
+    public static func SCRAP_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCRAP_COLLECTOR()); }
+    public static func MECHANIC_APPRENTICE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MECHANIC_APPRENTICE()).SetTechMod(10); }
+    public static func ERRAND_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ERRAND_RUNNER()); }
     // Expanded Childhood - Loss
-    public static func LOST_FRIEND_YOUNG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOST_FRIEND_YOUNG_F(), KdspTextChildhood.LOST_FRIEND_YOUNG_M()); }
-    public static func HOUSE_BURNED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOUSE_BURNED_F(), KdspTextChildhood.HOUSE_BURNED_M()); }
-    public static func PET_KILLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PET_KILLED_F(), KdspTextChildhood.PET_KILLED_M()); }
-    public static func SIBLING_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SIBLING_MISSING_F(), KdspTextChildhood.SIBLING_MISSING_M()); }
-    public static func ARCADE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ARCADE_KID_F(), KdspTextChildhood.ARCADE_KID_M()); }
-    public static func BD_EDITOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BD_EDITOR_F(), KdspTextChildhood.BD_EDITOR_M()); }
-    public static func BEGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BEGGED_F(), KdspTextChildhood.BEGGED_M()); }
-    public static func BOOSTED_CARS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOOSTED_CARS_F(), KdspTextChildhood.BOOSTED_CARS_M()); }
-    public static func BOXING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOXING_F(), KdspTextChildhood.BOXING_M()); }
-    public static func BREAK_IN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BREAK_IN_F(), KdspTextChildhood.BREAK_IN_M()); }
-    public static func CHILD_BUILDING_COLLAPSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BUILDING_COLLAPSE_F(), KdspTextChildhood.BUILDING_COLLAPSE_M()); }
-    public static func BUILT_DECK() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BUILT_DECK_F(), KdspTextChildhood.BUILT_DECK_M()); }
-    public static func CAMP_COUNSELOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CAMP_COUNSELOR_F(), KdspTextChildhood.CAMP_COUNSELOR_M()); }
-    public static func CHURCH_COMMUNITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHURCH_COMMUNITY_F(), KdspTextChildhood.CHURCH_COMMUNITY_M()); }
-    public static func CORPO_TEST() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_TEST_F(), KdspTextChildhood.CORPO_TEST_M()); }
-    public static func CORPO_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_WAR_F(), KdspTextChildhood.CORPO_WAR_M()); }
-    public static func CYBERPSYCHO_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CYBERPSYCHO_PARENT_F(), KdspTextChildhood.CYBERPSYCHO_PARENT_M()); }
-    public static func DISTRACTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DISTRACTION_F(), KdspTextChildhood.DISTRACTION_M()); }
-    public static func DRONE_HOBBY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DRONE_HOBBY_F(), KdspTextChildhood.DRONE_HOBBY_M()); }
-    public static func CHILD_DROPPED_OUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DROPPED_OUT_F(), KdspTextChildhood.DROPPED_OUT_M()); }
-    public static func CHILD_DUMPSTER_DIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DUMPSTER_DIVING_F(), KdspTextChildhood.DUMPSTER_DIVING_M()); }
-    public static func EXPLOITED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXPLOITED_F(), KdspTextChildhood.EXPLOITED_M()); }
-    public static func FENCE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FENCE_KID_F(), KdspTextChildhood.FENCE_KID_M()); }
-    public static func FIRST_KILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_KILL_F(), KdspTextChildhood.FIRST_KILL_M()); }
-    public static func FOOD_SHORTAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FOOD_SHORTAGE_F(), KdspTextChildhood.FOOD_SHORTAGE_M()); }
-    public static func GAMING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GAMING_F(), KdspTextChildhood.GAMING_M()); }
-    public static func GANG_INIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_INIT_F(), KdspTextChildhood.GANG_INIT_M()); }
-    public static func GRAFFITI() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GRAFFITI_F(), KdspTextChildhood.GRAFFITI_M()); }
-    public static func HOMELESS_CAMP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOMELESS_CAMP_F(), KdspTextChildhood.HOMELESS_CAMP_M()); }
-    public static func IDENTITY_THEFT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.IDENTITY_THEFT_F(), KdspTextChildhood.IDENTITY_THEFT_M()); }
-    public static func JAPANESE_LSSN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JAPANESE_LSSN_F(), KdspTextChildhood.JAPANESE_LSSN_M()); }
-    public static func JUVIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JUVIE_F(), KdspTextChildhood.JUVIE_M()); }
-    public static func LOST_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOST_SIBLING_F(), KdspTextChildhood.LOST_SIBLING_M()); }
-    public static func MAXTAC_RAID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MAXTAC_RAID_F(), KdspTextChildhood.MAXTAC_RAID_M()); }
-    public static func MENTOR_FIGURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MENTOR_FIGURE_F(), KdspTextChildhood.MENTOR_FIGURE_M()); }
-    public static func METRO_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.METRO_KID_F(), KdspTextChildhood.METRO_KID_M()); }
-    public static func MSG_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MSG_RUNNER_F(), KdspTextChildhood.MSG_RUNNER_M()); }
-    public static func NEARLY_FLAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NEARLY_FLAT_F(), KdspTextChildhood.NEARLY_FLAT_M()); }
-    public static func PARENT_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_MURDER_F(), KdspTextChildhood.PARENT_MURDER_M()); }
-    public static func PARKOUR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARKOUR_F(), KdspTextChildhood.PARKOUR_M()); }
-    public static func PET_COMPANION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PET_COMPANION_F(), KdspTextChildhood.PET_COMPANION_M()); }
-    public static func CHILD_PIRATE_RADIO() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PIRATE_RADIO_F(), KdspTextChildhood.PIRATE_RADIO_M()); }
-    public static func PROTECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PROTECTION_F(), KdspTextChildhood.PROTECTION_M()); }
-    public static func QUARANTINE_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.QUARANTINE_ZONE_F(), KdspTextChildhood.QUARANTINE_ZONE_M()); }
-    public static func ROBOT_BUILDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ROBOT_BUILDER_F(), KdspTextChildhood.ROBOT_BUILDER_M()); }
-    public static func SCAV_SCOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCAV_SCOUT_F(), KdspTextChildhood.SCAV_SCOUT_M()); }
-    public static func SCRAP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCRAP_F(), KdspTextChildhood.SCRAP_M()); }
-    public static func SCRIPT_KIDDIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCRIPT_KIDDIE_F(), KdspTextChildhood.SCRIPT_KIDDIE_M()); }
-    public static func SELF_TAUGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SELF_TAUGHT_F(), KdspTextChildhood.SELF_TAUGHT_M()); }
-    public static func SEWER_LIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SEWER_LIVING_F(), KdspTextChildhood.SEWER_LIVING_M()); }
-    public static func CHILD_SIBLING_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SIBLING_DEATH_F(), KdspTextChildhood.SIBLING_DEATH_M()); }
-    public static func SICK_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SICK_PARENT_F(), KdspTextChildhood.SICK_PARENT_M()); }
-    public static func SQUAT_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SQUAT_KID_F(), KdspTextChildhood.SQUAT_KID_M()); }
-    public static func STREET_FIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_FIGHT_F(), KdspTextChildhood.STREET_FIGHT_M()); }
-    public static func STREET_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_GANG_F(), KdspTextChildhood.STREET_GANG_M()); }
-    public static func STREET_PERF() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_PERF_F(), KdspTextChildhood.STREET_PERF_M()); }
-    public static func STREET_RACE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_RACE_F(), KdspTextChildhood.STREET_RACE_M()); }
-    public static func STREET_SMART() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_SMART_F(), KdspTextChildhood.STREET_SMART_M()); }
-    public static func SURVIVED_SHOOTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SURVIVED_SHOOTING_F(), KdspTextChildhood.SURVIVED_SHOOTING_M()); }
-    public static func TECH_RESALE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TECH_RESALE_F(), KdspTextChildhood.TECH_RESALE_M()); }
-    public static func URBAN_EXPLR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.URBAN_EXPLR_F(), KdspTextChildhood.URBAN_EXPLR_M()); }
-    public static func WITNESS_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WITNESS_MURDER_F(), KdspTextChildhood.WITNESS_MURDER_M()); }
-    public static func YOUTH_CENTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.YOUTH_CENTER_F(), KdspTextChildhood.YOUTH_CENTER_M()); }
+    public static func LOST_FRIEND_YOUNG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOST_FRIEND_YOUNG()); }
+    public static func HOUSE_BURNED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOUSE_BURNED()); }
+    public static func PET_KILLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PET_KILLED()); }
+    public static func SIBLING_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SIBLING_MISSING()); }
+    public static func ARCADE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ARCADE_KID()); }
+    public static func BD_EDITOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BD_EDITOR()); }
+    public static func BEGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BEGGED()); }
+    public static func BOOSTED_CARS() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOOSTED_CARS()); }
+    public static func BOXING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BOXING()); }
+    public static func BREAK_IN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BREAK_IN()); }
+    public static func CHILD_BUILDING_COLLAPSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BUILDING_COLLAPSE()); }
+    public static func BUILT_DECK() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.BUILT_DECK()); }
+    public static func CAMP_COUNSELOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CAMP_COUNSELOR()); }
+    public static func CHURCH_COMMUNITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CHURCH_COMMUNITY()); }
+    public static func CORPO_TEST() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_TEST()); }
+    public static func CORPO_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CORPO_WAR()); }
+    public static func CYBERPSYCHO_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.CYBERPSYCHO_PARENT()); }
+    public static func DISTRACTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DISTRACTION()); }
+    public static func DRONE_HOBBY() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DRONE_HOBBY()); }
+    public static func CHILD_DROPPED_OUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DROPPED_OUT()); }
+    public static func CHILD_DUMPSTER_DIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.DUMPSTER_DIVING()); }
+    public static func EXPLOITED() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.EXPLOITED()); }
+    public static func FENCE_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FENCE_KID()); }
+    public static func FIRST_KILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FIRST_KILL()); }
+    public static func FOOD_SHORTAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.FOOD_SHORTAGE()); }
+    public static func GAMING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GAMING()); }
+    public static func GANG_INIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GANG_INIT()); }
+    public static func GRAFFITI() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.GRAFFITI()); }
+    public static func HOMELESS_CAMP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.HOMELESS_CAMP()); }
+    public static func IDENTITY_THEFT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.IDENTITY_THEFT()); }
+    public static func JAPANESE_LSSN() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JAPANESE_LSSN()); }
+    public static func JUVIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.JUVIE()); }
+    public static func LOST_SIBLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.LOST_SIBLING()); }
+    public static func MAXTAC_RAID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MAXTAC_RAID()); }
+    public static func MENTOR_FIGURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MENTOR_FIGURE()); }
+    public static func METRO_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.METRO_KID()); }
+    public static func MSG_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.MSG_RUNNER()); }
+    public static func NEARLY_FLAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.NEARLY_FLAT()); }
+    public static func PARENT_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARENT_MURDER()); }
+    public static func PARKOUR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PARKOUR()); }
+    public static func PET_COMPANION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PET_COMPANION()); }
+    public static func CHILD_PIRATE_RADIO() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PIRATE_RADIO()); }
+    public static func PROTECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.PROTECTION()); }
+    public static func QUARANTINE_ZONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.QUARANTINE_ZONE()); }
+    public static func ROBOT_BUILDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.ROBOT_BUILDER()); }
+    public static func SCAV_SCOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCAV_SCOUT()); }
+    public static func SCRAP() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCRAP()); }
+    public static func SCRIPT_KIDDIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SCRIPT_KIDDIE()); }
+    public static func SELF_TAUGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SELF_TAUGHT()); }
+    public static func SEWER_LIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SEWER_LIVING()); }
+    public static func CHILD_SIBLING_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SIBLING_DEATH()); }
+    public static func SICK_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SICK_PARENT()); }
+    public static func SQUAT_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SQUAT_KID()); }
+    public static func STREET_FIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_FIGHT()); }
+    public static func STREET_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_GANG()); }
+    public static func STREET_PERF() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_PERF()); }
+    public static func STREET_RACE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_RACE()); }
+    public static func STREET_SMART() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.STREET_SMART()); }
+    public static func SURVIVED_SHOOTING() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.SURVIVED_SHOOTING()); }
+    public static func TECH_RESALE() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.TECH_RESALE()); }
+    public static func URBAN_EXPLR() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.URBAN_EXPLR()); }
+    public static func WITNESS_MURDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.WITNESS_MURDER()); }
+    public static func YOUTH_CENTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextChildhood.YOUTH_CENTER()); }
 
     // First Job
-    public static func JOB_LOCAL_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LOCAL_FIXER_F(), KdspTextJobs.JOB_LOCAL_FIXER_M()); }
-    public static func JOB_WAGE_BODEGA() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGE_BODEGA_F(), KdspTextJobs.JOB_WAGE_BODEGA_M()); }
-    public static func JOB_WAGE_DEPT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGE_DEPT_F(), KdspTextJobs.JOB_WAGE_DEPT_M()); }
-    public static func JOB_BOUNCER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOUNCER_F(), KdspTextJobs.JOB_BOUNCER_M()); }
-    public static func JOB_HOMELESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HOMELESS_F(), KdspTextJobs.JOB_HOMELESS_M()); }
-    public static func JOB_WAGE_GAS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGE_GAS_F(), KdspTextJobs.JOB_WAGE_GAS_M()); }
-    public static func JOB_ROB_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ROB_APT_F(), KdspTextJobs.JOB_ROB_APT_M()); }
-    public static func JOB_JOYTOY_CHEAP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOYTOY_CHEAP_F(), KdspTextJobs.JOB_JOYTOY_CHEAP_M()); }
-    public static func JOB_JOYTOY_EXP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOYTOY_EXP_F(), KdspTextJobs.JOB_JOYTOY_EXP_M()); }
-    public static func JOB_SECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SECURITY_F(), KdspTextJobs.JOB_SECURITY_M()); }
-    public static func JOB_RECEPTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RECEPTION_F(), KdspTextJobs.JOB_RECEPTION_M()); }
-    public static func JOB_DESK_JOCKEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DESK_JOCKEY_F(), KdspTextJobs.JOB_DESK_JOCKEY_M()); }
-    public static func JOB_WAGESLAVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGESLAVE_F(), KdspTextJobs.JOB_WAGESLAVE_M()); }
-    public static func JOB_CORPO_MANAGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_MANAGER_F(), KdspTextJobs.JOB_CORPO_MANAGER_M()); }
-    public static func JOB_CORPO_EXEC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_EXEC_F(), KdspTextJobs.JOB_CORPO_EXEC_M()); }
-    public static func JOB_DAY_LABOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DAY_LABOR_F(), KdspTextJobs.JOB_DAY_LABOR_M()); }
-    public static func JOB_FOOD_VNDR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FOOD_VNDR_F(), KdspTextJobs.JOB_FOOD_VNDR_M()); }
-    public static func JOB_SEX_TRADER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SEX_TRADER_F(), KdspTextJobs.JOB_SEX_TRADER_M()); }
-    public static func JOB_JOYTOY_BURAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOYTOY_BURAN_F(), KdspTextJobs.JOB_JOYTOY_BURAN_M()); }
-    public static func JOB_KIDNAP_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_KIDNAP_CRP_F(), KdspTextJobs.JOB_KIDNAP_CRP_M()); }
-    public static func JOB_DRUG_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRUG_CRP_F(), KdspTextJobs.JOB_DRUG_CRP_M()); }
-    public static func JOB_SPORT_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SPORT_CRP_F(), KdspTextJobs.JOB_SPORT_CRP_M()); }
-    public static func JOB_SWORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SWORD_F(), KdspTextJobs.JOB_SWORD_M()); }
-    public static func JOB_GUNS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GUNS_F(), KdspTextJobs.JOB_GUNS_M()); }
-    public static func JOB_DELIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DELIVER_F(), KdspTextJobs.JOB_DELIVER_M()); }
-    public static func JOB_SPY_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SPY_CRP_F(), KdspTextJobs.JOB_SPY_CRP_M()); }
-    public static func JOB_TEACHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TEACHER_F(), KdspTextJobs.JOB_TEACHER_M()); }
-    public static func JOB_DOC_ASSIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DOC_ASSIST_F(), KdspTextJobs.JOB_DOC_ASSIST_M()); }
-    public static func JOB_BARTEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BARTEND_F(), KdspTextJobs.JOB_BARTEND_M()); }
-    public static func JOB_BOOTLEGGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOOTLEGGER_F(), KdspTextJobs.JOB_BOOTLEGGER_M()); }
-    public static func JOB_DRUG_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRUG_RUNNER_F(), KdspTextJobs.JOB_DRUG_RUNNER_M()); }
-    public static func JOB_ARMS_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ARMS_DEALER_F(), KdspTextJobs.JOB_ARMS_DEALER_M()); }
-    public static func JOB_SWEAT_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SWEAT_CRP_F(), KdspTextJobs.JOB_SWEAT_CRP_M()); }
-    public static func JOB_CYBER_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CYBER_CRP_F(), KdspTextJobs.JOB_CYBER_CRP_M()); }
-    public static func JOB_MAG_STAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MAG_STAND_F(), KdspTextJobs.JOB_MAG_STAND_M()); }
-    public static func JOB_BD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_CRP_F(), KdspTextJobs.JOB_BD_CRP_M()); }
+    public static func JOB_LOCAL_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LOCAL_FIXER()); }
+    public static func JOB_WAGE_BODEGA() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGE_BODEGA()); }
+    public static func JOB_WAGE_DEPT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGE_DEPT()); }
+    public static func JOB_BOUNCER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOUNCER()); }
+    public static func JOB_HOMELESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HOMELESS()); }
+    public static func JOB_WAGE_GAS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGE_GAS()); }
+    public static func JOB_ROB_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ROB_APT()); }
+    public static func JOB_JOYTOY_CHEAP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOYTOY_CHEAP()); }
+    public static func JOB_JOYTOY_EXP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOYTOY_EXP()); }
+    public static func JOB_SECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SECURITY()); }
+    public static func JOB_RECEPTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RECEPTION()); }
+    public static func JOB_DESK_JOCKEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DESK_JOCKEY()); }
+    public static func JOB_WAGESLAVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAGESLAVE()); }
+    public static func JOB_CORPO_MANAGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_MANAGER()); }
+    public static func JOB_CORPO_EXEC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_EXEC()); }
+    public static func JOB_DAY_LABOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DAY_LABOR()); }
+    public static func JOB_FOOD_VNDR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FOOD_VNDR()); }
+    public static func JOB_SEX_TRADER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SEX_TRADER()); }
+    public static func JOB_JOYTOY_BURAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOYTOY_BURAN()); }
+    public static func JOB_KIDNAP_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_KIDNAP_CRP()); }
+    public static func JOB_DRUG_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRUG_CRP()); }
+    public static func JOB_SPORT_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SPORT_CRP()); }
+    public static func JOB_SWORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SWORD()); }
+    public static func JOB_GUNS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GUNS()); }
+    public static func JOB_DELIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DELIVER()); }
+    public static func JOB_SPY_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SPY_CRP()); }
+    public static func JOB_TEACHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TEACHER()); }
+    public static func JOB_DOC_ASSIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DOC_ASSIST()); }
+    public static func JOB_BARTEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BARTEND()); }
+    public static func JOB_BOOTLEGGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOOTLEGGER()); }
+    public static func JOB_DRUG_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRUG_RUNNER()); }
+    public static func JOB_ARMS_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ARMS_DEALER()); }
+    public static func JOB_SWEAT_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SWEAT_CRP()); }
+    public static func JOB_CYBER_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CYBER_CRP()); }
+    public static func JOB_MAG_STAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MAG_STAND()); }
+    public static func JOB_BD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_CRP()); }
 
     // Jobs - Expanded: Criminal Jobs
-    public static func JOB_HITMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HITMAN_F(), KdspTextJobs.JOB_HITMAN_M()).SetReflexMod(15).SetCoolMod(10); }
-    public static func JOB_ENFORCER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ENFORCER_F(), KdspTextJobs.JOB_ENFORCER_M()).SetBodyMod(15); }
-    public static func JOB_FENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FENCE_F(), KdspTextJobs.JOB_FENCE_M()).SetCoolMod(10); }
-    public static func JOB_ORGAN_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ORGAN_RUNNER_F(), KdspTextJobs.JOB_ORGAN_RUNNER_M()); }
+    public static func JOB_HITMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HITMAN()).SetReflexMod(15).SetCoolMod(10); }
+    public static func JOB_ENFORCER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ENFORCER()).SetBodyMod(15); }
+    public static func JOB_FENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FENCE()).SetCoolMod(10); }
+    public static func JOB_ORGAN_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ORGAN_RUNNER()); }
     // Jobs - Expanded: Merc/Combat
-    public static func JOB_SOLO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SOLO_F(), KdspTextJobs.JOB_SOLO_M()).SetReflexMod(15).SetBodyMod(10); }
-    public static func JOB_MERC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MERC_F(), KdspTextJobs.JOB_MERC_M()).SetReflexMod(10).SetCoolMod(10); }
+    public static func JOB_SOLO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SOLO()).SetReflexMod(15).SetBodyMod(10); }
+    public static func JOB_MERC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MERC()).SetReflexMod(10).SetCoolMod(10); }
     // Jobs - Expanded: Tech Jobs
-    public static func JOB_NETRUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NETRUNNER_F(), KdspTextJobs.JOB_NETRUNNER_M()).SetIntMod(20); }
+    public static func JOB_NETRUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NETRUNNER()).SetIntMod(20); }
     // Jobs - Expanded: Service Jobs
-    public static func JOB_CLEANER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CLEANER_F(), KdspTextJobs.JOB_CLEANER_M()); }
-    public static func JOB_HOTEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HOTEL_F(), KdspTextJobs.JOB_HOTEL_M()); }
-    public static func JOB_DELAMAIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DELAMAIN_F(), KdspTextJobs.JOB_DELAMAIN_M()); }
+    public static func JOB_CLEANER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CLEANER()); }
+    public static func JOB_HOTEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HOTEL()); }
+    public static func JOB_DELAMAIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DELAMAIN()); }
     // Jobs - Expanded: Corpo Jobs
-    public static func JOB_ACCOUNTANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ACCOUNTANT_F(), KdspTextJobs.JOB_ACCOUNTANT_M()).SetIntMod(10).SetWealthMod(10); }
-    public static func JOB_HR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HR_F(), KdspTextJobs.JOB_HR_M()).SetCoolMod(10); }
-    public static func JOB_PR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PR_F(), KdspTextJobs.JOB_PR_M()).SetCoolMod(15); }
-    public static func JOB_ANALYST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ANALYST_F(), KdspTextJobs.JOB_ANALYST_M()).SetIntMod(15); }
+    public static func JOB_ACCOUNTANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ACCOUNTANT()).SetIntMod(10).SetWealthMod(10); }
+    public static func JOB_HR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HR()).SetCoolMod(10); }
+    public static func JOB_PR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PR()).SetCoolMod(15); }
+    public static func JOB_ANALYST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ANALYST()).SetIntMod(15); }
     // Expanded Jobs - Criminal
-    public static func JOB_ASSASSIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ASSASSIN_F(), KdspTextJobs.JOB_ASSASSIN_M()).SetReflexMod(15).SetCoolMod(15); }
-    public static func JOB_EXTORTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_EXTORTION_F(), KdspTextJobs.JOB_EXTORTION_M()).SetCoolMod(10); }
-    public static func JOB_KIDNAPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_KIDNAPPER_F(), KdspTextJobs.JOB_KIDNAPPER_M()); }
-    public static func JOB_CAR_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CAR_THIEF_F(), KdspTextJobs.JOB_CAR_THIEF_M()).SetTechMod(10); }
-    public static func JOB_BURGLAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BURGLAR_F(), KdspTextJobs.JOB_BURGLAR_M()).SetReflexMod(10); }
-    public static func JOB_PICKPOCKET() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PICKPOCKET_F(), KdspTextJobs.JOB_PICKPOCKET_M()).SetReflexMod(10); }
-    public static func JOB_SCAM_ARTIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SCAM_ARTIST_F(), KdspTextJobs.JOB_SCAM_ARTIST_M()).SetCoolMod(15); }
-    public static func JOB_IDENTITY_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_IDENTITY_THIEF_F(), KdspTextJobs.JOB_IDENTITY_THIEF_M()).SetIntMod(10); }
-    public static func JOB_COUNTERFEITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COUNTERFEITER_F(), KdspTextJobs.JOB_COUNTERFEITER_M()).SetTechMod(15); }
-    public static func JOB_LOAN_SHARK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LOAN_SHARK_F(), KdspTextJobs.JOB_LOAN_SHARK_M()).SetCoolMod(10); }
-    public static func JOB_BOOKIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOOKIE_F(), KdspTextJobs.JOB_BOOKIE_M()).SetIntMod(10); }
-    public static func JOB_CHOP_SHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CHOP_SHOP_F(), KdspTextJobs.JOB_CHOP_SHOP_M()).SetTechMod(15); }
+    public static func JOB_ASSASSIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ASSASSIN()).SetReflexMod(15).SetCoolMod(15); }
+    public static func JOB_EXTORTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_EXTORTION()).SetCoolMod(10); }
+    public static func JOB_KIDNAPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_KIDNAPPER()); }
+    public static func JOB_CAR_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CAR_THIEF()).SetTechMod(10); }
+    public static func JOB_BURGLAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BURGLAR()).SetReflexMod(10); }
+    public static func JOB_PICKPOCKET() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PICKPOCKET()).SetReflexMod(10); }
+    public static func JOB_SCAM_ARTIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SCAM_ARTIST()).SetCoolMod(15); }
+    public static func JOB_IDENTITY_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_IDENTITY_THIEF()).SetIntMod(10); }
+    public static func JOB_COUNTERFEITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COUNTERFEITER()).SetTechMod(15); }
+    public static func JOB_LOAN_SHARK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LOAN_SHARK()).SetCoolMod(10); }
+    public static func JOB_BOOKIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOOKIE()).SetIntMod(10); }
+    public static func JOB_CHOP_SHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CHOP_SHOP()).SetTechMod(15); }
     // Expanded Jobs - Merc/Combat
-    public static func JOB_EXTRACTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_EXTRACTION_F(), KdspTextJobs.JOB_EXTRACTION_M()).SetReflexMod(10).SetCoolMod(10); }
-    public static func JOB_WHEELMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WHEELMAN_F(), KdspTextJobs.JOB_WHEELMAN_M()).SetReflexMod(15); }
-    public static func JOB_COMBAT_MEDIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COMBAT_MEDIC_F(), KdspTextJobs.JOB_COMBAT_MEDIC_M()).SetTechMod(15); }
-    public static func JOB_SNIPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SNIPER_F(), KdspTextJobs.JOB_SNIPER_M()).SetReflexMod(20); }
-    public static func JOB_DEMOLITIONS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DEMOLITIONS_F(), KdspTextJobs.JOB_DEMOLITIONS_M()).SetTechMod(15); }
-    public static func JOB_INFILTRATOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INFILTRATOR_F(), KdspTextJobs.JOB_INFILTRATOR_M()).SetReflexMod(10).SetCoolMod(15); }
-    public static func JOB_WEAPONS_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WEAPONS_DEALER_F(), KdspTextJobs.JOB_WEAPONS_DEALER_M()).SetCoolMod(10); }
+    public static func JOB_EXTRACTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_EXTRACTION()).SetReflexMod(10).SetCoolMod(10); }
+    public static func JOB_WHEELMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WHEELMAN()).SetReflexMod(15); }
+    public static func JOB_COMBAT_MEDIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COMBAT_MEDIC()).SetTechMod(15); }
+    public static func JOB_SNIPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SNIPER()).SetReflexMod(20); }
+    public static func JOB_DEMOLITIONS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DEMOLITIONS()).SetTechMod(15); }
+    public static func JOB_INFILTRATOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INFILTRATOR()).SetReflexMod(10).SetCoolMod(15); }
+    public static func JOB_WEAPONS_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WEAPONS_DEALER()).SetCoolMod(10); }
     // Expanded Jobs - Tech
-    public static func JOB_HACKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HACKER_F(), KdspTextJobs.JOB_HACKER_M()).SetIntMod(15); }
-    public static func JOB_DAEMON_CODER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DAEMON_CODER_F(), KdspTextJobs.JOB_DAEMON_CODER_M()).SetIntMod(15); }
-    public static func JOB_ICE_BREAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ICE_BREAKER_F(), KdspTextJobs.JOB_ICE_BREAKER_M()).SetIntMod(15); }
-    public static func JOB_DATA_MINER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DATA_MINER_F(), KdspTextJobs.JOB_DATA_MINER_M()).SetIntMod(10); }
-    public static func JOB_SYSTEM_ADMIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SYSTEM_ADMIN_F(), KdspTextJobs.JOB_SYSTEM_ADMIN_M()).SetIntMod(10); }
-    public static func JOB_ROBOTICS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ROBOTICS_F(), KdspTextJobs.JOB_ROBOTICS_M()).SetTechMod(15); }
-    public static func JOB_AI_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_AI_TECH_F(), KdspTextJobs.JOB_AI_TECH_M()).SetIntMod(15); }
-    public static func JOB_CYBERWARE_DEV() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CYBERWARE_DEV_F(), KdspTextJobs.JOB_CYBERWARE_DEV_M()).SetTechMod(20); }
+    public static func JOB_HACKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HACKER()).SetIntMod(15); }
+    public static func JOB_DAEMON_CODER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DAEMON_CODER()).SetIntMod(15); }
+    public static func JOB_ICE_BREAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ICE_BREAKER()).SetIntMod(15); }
+    public static func JOB_DATA_MINER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DATA_MINER()).SetIntMod(10); }
+    public static func JOB_SYSTEM_ADMIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SYSTEM_ADMIN()).SetIntMod(10); }
+    public static func JOB_ROBOTICS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ROBOTICS()).SetTechMod(15); }
+    public static func JOB_AI_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_AI_TECH()).SetIntMod(15); }
+    public static func JOB_CYBERWARE_DEV() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CYBERWARE_DEV()).SetTechMod(20); }
     // Expanded Jobs - Service
-    public static func JOB_COOK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COOK_F(), KdspTextJobs.JOB_COOK_M()); }
-    public static func JOB_WAITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAITER_F(), KdspTextJobs.JOB_WAITER_M()); }
-    public static func JOB_TAXI() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TAXI_F(), KdspTextJobs.JOB_TAXI_M()); }
-    public static func JOB_COURIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COURIER_F(), KdspTextJobs.JOB_COURIER_M()); }
-    public static func JOB_MESSENGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MESSENGER_F(), KdspTextJobs.JOB_MESSENGER_M()); }
-    public static func JOB_VALET() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VALET_F(), KdspTextJobs.JOB_VALET_M()); }
-    public static func JOB_BOUNCER_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOUNCER_CLUB_F(), KdspTextJobs.JOB_BOUNCER_CLUB_M()).SetBodyMod(10); }
-    public static func JOB_DOORMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DOORMAN_F(), KdspTextJobs.JOB_DOORMAN_M()); }
+    public static func JOB_COOK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COOK()); }
+    public static func JOB_WAITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAITER()); }
+    public static func JOB_TAXI() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TAXI()); }
+    public static func JOB_COURIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COURIER()); }
+    public static func JOB_MESSENGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MESSENGER()); }
+    public static func JOB_VALET() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VALET()); }
+    public static func JOB_BOUNCER_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BOUNCER_CLUB()).SetBodyMod(10); }
+    public static func JOB_DOORMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DOORMAN()); }
     // Expanded Jobs - Corpo
-    public static func JOB_LAWYER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LAWYER_F(), KdspTextJobs.JOB_LAWYER_M()).SetIntMod(15).SetWealthMod(15); }
-    public static func JOB_MARKETING() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MARKETING_F(), KdspTextJobs.JOB_MARKETING_M()).SetCoolMod(10); }
-    public static func JOB_CONSULTANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CONSULTANT_F(), KdspTextJobs.JOB_CONSULTANT_M()).SetIntMod(10).SetCoolMod(10); }
-    public static func JOB_RECRUITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RECRUITER_F(), KdspTextJobs.JOB_RECRUITER_M()).SetCoolMod(10); }
-    public static func JOB_TRAINER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TRAINER_F(), KdspTextJobs.JOB_TRAINER_M()); }
+    public static func JOB_LAWYER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LAWYER()).SetIntMod(15).SetWealthMod(15); }
+    public static func JOB_MARKETING() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MARKETING()).SetCoolMod(10); }
+    public static func JOB_CONSULTANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CONSULTANT()).SetIntMod(10).SetCoolMod(10); }
+    public static func JOB_RECRUITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RECRUITER()).SetCoolMod(10); }
+    public static func JOB_TRAINER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TRAINER()); }
     // Expanded Jobs - Misc
-    public static func JOB_STREET_VENDOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_STREET_VENDOR_F(), KdspTextJobs.JOB_STREET_VENDOR_M()); }
-    public static func JOB_LANDLORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LANDLORD_F(), KdspTextJobs.JOB_LANDLORD_M()).SetWealthMod(10); }
-    public static func JOB_PAWNSHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PAWNSHOP_F(), KdspTextJobs.JOB_PAWNSHOP_M()); }
-    public static func JOB_LAUNDRY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LAUNDRY_F(), KdspTextJobs.JOB_LAUNDRY_M()); }
-    public static func JOB_GYM() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GYM_F(), KdspTextJobs.JOB_GYM_M()).SetBodyMod(10); }
-    public static func JOB_TRAINER_PERSONAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TRAINER_PERSONAL_F(), KdspTextJobs.JOB_TRAINER_PERSONAL_M()).SetBodyMod(10); }
-    public static func JOB_FIGHTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FIGHTER_F(), KdspTextJobs.JOB_FIGHTER_M()).SetBodyMod(20); }
-    public static func JOB_TATTOO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TATTOO_F(), KdspTextJobs.JOB_TATTOO_M()).SetTechMod(10); }
-    public static func JOB_HAIRDRESSER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HAIRDRESSER_F(), KdspTextJobs.JOB_HAIRDRESSER_M()); }
-    public static func JOB_MORTICIAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MORTICIAN_F(), KdspTextJobs.JOB_MORTICIAN_M()); }
-    public static func JOB_WASTE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WASTE_F(), KdspTextJobs.JOB_WASTE_M()); }
-    public static func JOB_RECYCLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RECYCLER_F(), KdspTextJobs.JOB_RECYCLER_M()); }
-    public static func JOB_SCRAP_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SCRAP_DEALER_F(), KdspTextJobs.JOB_SCRAP_DEALER_M()).SetTechMod(10); }
+    public static func JOB_STREET_VENDOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_STREET_VENDOR()); }
+    public static func JOB_LANDLORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LANDLORD()).SetWealthMod(10); }
+    public static func JOB_PAWNSHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PAWNSHOP()); }
+    public static func JOB_LAUNDRY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LAUNDRY()); }
+    public static func JOB_GYM() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GYM()).SetBodyMod(10); }
+    public static func JOB_TRAINER_PERSONAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TRAINER_PERSONAL()).SetBodyMod(10); }
+    public static func JOB_FIGHTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FIGHTER()).SetBodyMod(20); }
+    public static func JOB_TATTOO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TATTOO()).SetTechMod(10); }
+    public static func JOB_HAIRDRESSER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HAIRDRESSER()); }
+    public static func JOB_MORTICIAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MORTICIAN()); }
+    public static func JOB_WASTE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WASTE()); }
+    public static func JOB_RECYCLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RECYCLER()); }
+    public static func JOB_SCRAP_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SCRAP_DEALER()).SetTechMod(10); }
 
     // Expanded Jobs - Food/Hospitality
-    public static func JOB_LINE_COOK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LINE_COOK_F(), KdspTextJobs.JOB_LINE_COOK_M()); }
-    public static func JOB_FOOD_CART() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FOOD_CART_F(), KdspTextJobs.JOB_FOOD_CART_M()); }
-    public static func JOB_BARTENDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BARTENDER_F(), KdspTextJobs.JOB_BARTENDER_M()); }
-    public static func JOB_VENDING_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VENDING_TECH_F(), KdspTextJobs.JOB_VENDING_TECH_M()).SetTechMod(5); }
+    public static func JOB_LINE_COOK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LINE_COOK()); }
+    public static func JOB_FOOD_CART() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FOOD_CART()); }
+    public static func JOB_BARTENDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BARTENDER()); }
+    public static func JOB_VENDING_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VENDING_TECH()).SetTechMod(5); }
     // Expanded Jobs - Manual Labor
-    public static func JOB_DOCK_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DOCK_WORKER_F(), KdspTextJobs.JOB_DOCK_WORKER_M()).SetBodyMod(10); }
-    public static func JOB_CONSTRUCTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CONSTRUCTION_F(), KdspTextJobs.JOB_CONSTRUCTION_M()).SetBodyMod(10); }
-    public static func JOB_DEMOLITION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DEMOLITION_F(), KdspTextJobs.JOB_DEMOLITION_M()).SetBodyMod(10); }
-    public static func JOB_SEWER_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SEWER_WORKER_F(), KdspTextJobs.JOB_SEWER_WORKER_M()); }
-    public static func JOB_POWER_GRID() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_POWER_GRID_F(), KdspTextJobs.JOB_POWER_GRID_M()).SetTechMod(10); }
+    public static func JOB_DOCK_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DOCK_WORKER()).SetBodyMod(10); }
+    public static func JOB_CONSTRUCTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CONSTRUCTION()).SetBodyMod(10); }
+    public static func JOB_DEMOLITION() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DEMOLITION()).SetBodyMod(10); }
+    public static func JOB_SEWER_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SEWER_WORKER()); }
+    public static func JOB_POWER_GRID() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_POWER_GRID()).SetTechMod(10); }
     // Expanded Jobs - Underground
-    public static func JOB_BD_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_DEALER_F(), KdspTextJobs.JOB_BD_DEALER_M()); }
-    public static func JOB_GUN_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GUN_RUNNER_F(), KdspTextJobs.JOB_GUN_RUNNER_M()); }
-    public static func JOB_LOOKOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LOOKOUT_F(), KdspTextJobs.JOB_LOOKOUT_M()); }
+    public static func JOB_BD_DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_DEALER()); }
+    public static func JOB_GUN_RUNNER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GUN_RUNNER()); }
+    public static func JOB_LOOKOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LOOKOUT()); }
     // Expanded Jobs - Medical
-    public static func JOB_EMT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_EMT_F(), KdspTextJobs.JOB_EMT_M()); }
-    public static func JOB_NURSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NURSE_F(), KdspTextJobs.JOB_NURSE_M()); }
-    public static func JOB_LAB_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LAB_TECH_F(), KdspTextJobs.JOB_LAB_TECH_M()).SetTechMod(10).SetIntMod(5); }
-    public static func JOB_RIPPER_ASST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RIPPER_ASST_F(), KdspTextJobs.JOB_RIPPER_ASST_M()).SetTechMod(10); }
-    public static func JOB_PHARMA_REP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PHARMA_REP_F(), KdspTextJobs.JOB_PHARMA_REP_M()).SetCoolMod(5); }
+    public static func JOB_EMT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_EMT()); }
+    public static func JOB_NURSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NURSE()); }
+    public static func JOB_LAB_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LAB_TECH()).SetTechMod(10).SetIntMod(5); }
+    public static func JOB_RIPPER_ASST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RIPPER_ASST()).SetTechMod(10); }
+    public static func JOB_PHARMA_REP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PHARMA_REP()).SetCoolMod(5); }
     // Expanded Jobs - Transport
-    public static func JOB_CAB_DRIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CAB_DRIVER_F(), KdspTextJobs.JOB_CAB_DRIVER_M()); }
-    public static func JOB_COURIER_BIKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COURIER_BIKE_F(), KdspTextJobs.JOB_COURIER_BIKE_M()).SetReflexMod(5); }
-    public static func JOB_TOW_TRUCK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TOW_TRUCK_F(), KdspTextJobs.JOB_TOW_TRUCK_M()); }
-    public static func JOB_NCART_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NCART_WORKER_F(), KdspTextJobs.JOB_NCART_WORKER_M()).SetTechMod(5); }
+    public static func JOB_CAB_DRIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CAB_DRIVER()); }
+    public static func JOB_COURIER_BIKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COURIER_BIKE()).SetReflexMod(5); }
+    public static func JOB_TOW_TRUCK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TOW_TRUCK()); }
+    public static func JOB_NCART_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NCART_WORKER()).SetTechMod(5); }
     // Expanded Jobs - Security
-    public static func JOB_MALL_COP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MALL_COP_F(), KdspTextJobs.JOB_MALL_COP_M()); }
-    public static func JOB_NIGHTCLUB_SEC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NIGHTCLUB_SEC_F(), KdspTextJobs.JOB_NIGHTCLUB_SEC_M()).SetBodyMod(5); }
-    public static func JOB_CONVOY_GUARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CONVOY_GUARD_F(), KdspTextJobs.JOB_CONVOY_GUARD_M()).SetBodyMod(5).SetReflexMod(5); }
-    public static func JOB_REPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_REPO_F(), KdspTextJobs.JOB_REPO_M()); }
+    public static func JOB_MALL_COP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MALL_COP()); }
+    public static func JOB_NIGHTCLUB_SEC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NIGHTCLUB_SEC()).SetBodyMod(5); }
+    public static func JOB_CONVOY_GUARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CONVOY_GUARD()).SetBodyMod(5).SetReflexMod(5); }
+    public static func JOB_REPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_REPO()); }
     // Expanded Jobs - Tech
-    public static func JOB_DRONE_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRONE_TECH_F(), KdspTextJobs.JOB_DRONE_TECH_M()).SetTechMod(15); }
-    public static func JOB_NET_ADMIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NET_ADMIN_F(), KdspTextJobs.JOB_NET_ADMIN_M()).SetIntMod(10); }
-    public static func JOB_SHARD_WRITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SHARD_WRITER_F(), KdspTextJobs.JOB_SHARD_WRITER_M()).SetIntMod(5); }
-    public static func JOB_ELEVATOR_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ELEVATOR_TECH_F(), KdspTextJobs.JOB_ELEVATOR_TECH_M()).SetTechMod(10); }
-    public static func JOB_ACTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ACTOR_F(), KdspTextJobs.JOB_ACTOR_M()); }
-    public static func JOB_AV_MECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_AV_MECH_F(), KdspTextJobs.JOB_AV_MECH_M()); }
-    public static func JOB_AV_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_AV_TECH_F(), KdspTextJobs.JOB_AV_TECH_M()); }
-    public static func JOB_BD_EDITOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_EDITOR_F(), KdspTextJobs.JOB_BD_EDITOR_M()); }
-    public static func JOB_BD_PERF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_PERF_F(), KdspTextJobs.JOB_BD_PERF_M()); }
-    public static func JOB_BLACK_CLINIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BLACK_CLINIC_F(), KdspTextJobs.JOB_BLACK_CLINIC_M()); }
-    public static func JOB_BODYGUARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BODYGUARD_F(), KdspTextJobs.JOB_BODYGUARD_M()); }
-    public static func JOB_BORDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BORDER_F(), KdspTextJobs.JOB_BORDER_M()); }
-    public static func JOB_BUS_DRIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BUS_DRIVER_F(), KdspTextJobs.JOB_BUS_DRIVER_M()); }
-    public static func JOB_CALL_CENTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CALL_CENTER_F(), KdspTextJobs.JOB_CALL_CENTER_M()); }
-    public static func JOB_CARGO_PILOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CARGO_PILOT_F(), KdspTextJobs.JOB_CARGO_PILOT_M()); }
-    public static func JOB_CARJACKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CARJACKER_F(), KdspTextJobs.JOB_CARJACKER_M()); }
-    public static func JOB_CFO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CFO_F(), KdspTextJobs.JOB_CFO_M()); }
-    public static func JOB_CLOUDS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CLOUDS_F(), KdspTextJobs.JOB_CLOUDS_M()); }
-    public static func JOB_CORPO_SEC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_SEC_F(), KdspTextJobs.JOB_CORPO_SEC_M()); }
-    public static func JOB_COUNSELOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COUNSELOR_F(), KdspTextJobs.JOB_COUNSELOR_M()); }
-    public static func JOB_CYBERTECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CYBERTECH_F(), KdspTextJobs.JOB_CYBERTECH_M()); }
-    public static func JOB_DATA_ENTRY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DATA_ENTRY_F(), KdspTextJobs.JOB_DATA_ENTRY_M()); }
-    public static func JOB_DATA_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DATA_THIEF_F(), KdspTextJobs.JOB_DATA_THIEF_M()); }
-    public static func JOB_DAYCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DAYCARE_F(), KdspTextJobs.JOB_DAYCARE_M()); }
-    public static func JOB_DIRECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DIRECTOR_F(), KdspTextJobs.JOB_DIRECTOR_M()); }
-    public static func JOB_DJ() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DJ_F(), KdspTextJobs.JOB_DJ_M()); }
-    public static func JOB_DRONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRONE_F(), KdspTextJobs.JOB_DRONE_M()); }
-    public static func JOB_DRONE_OP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRONE_OP_F(), KdspTextJobs.JOB_DRONE_OP_M()); }
-    public static func JOB_ELDER_CARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ELDER_CARE_F(), KdspTextJobs.JOB_ELDER_CARE_M()); }
-    public static func JOB_ELECTRICIAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ELECTRICIAN_F(), KdspTextJobs.JOB_ELECTRICIAN_M()); }
-    public static func JOB_ENGINEER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ENGINEER_F(), KdspTextJobs.JOB_ENGINEER_M()); }
-    public static func JOB_ESCORT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ESCORT_F(), KdspTextJobs.JOB_ESCORT_M()); }
-    public static func JOB_FAST_FOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FAST_FOOD_F(), KdspTextJobs.JOB_FAST_FOOD_M()); }
-    public static func JOB_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FIXER_F(), KdspTextJobs.JOB_FIXER_M()); }
-    public static func JOB_FREIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FREIGHT_F(), KdspTextJobs.JOB_FREIGHT_M()); }
-    public static func JOB_GETAWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GETAWAY_F(), KdspTextJobs.JOB_GETAWAY_M()); }
-    public static func JOB_HARBOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HARBOR_F(), KdspTextJobs.JOB_HARBOR_M()); }
-    public static func JOB_HOUSE_CLEANER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HOUSE_CLEANER_F(), KdspTextJobs.JOB_HOUSE_CLEANER_M()); }
-    public static func JOB_INFLUENCER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INFLUENCER_F(), KdspTextJobs.JOB_INFLUENCER_M()); }
-    public static func JOB_INFO_BROKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INFO_BROKER_F(), KdspTextJobs.JOB_INFO_BROKER_M()); }
-    public static func JOB_INTERN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INTERN_F(), KdspTextJobs.JOB_INTERN_M()); }
-    public static func JOB_JANITOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JANITOR_F(), KdspTextJobs.JOB_JANITOR_M()); }
-    public static func JOB_JOURNALIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOURNALIST_F(), KdspTextJobs.JOB_JOURNALIST_M()); }
-    public static func JOB_LEGAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LEGAL_F(), KdspTextJobs.JOB_LEGAL_M()); }
-    public static func JOB_MAILROOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MAILROOM_F(), KdspTextJobs.JOB_MAILROOM_M()); }
-    public static func JOB_MASSEUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MASSEUSE_F(), KdspTextJobs.JOB_MASSEUSE_M()); }
-    public static func JOB_MAXTAC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MAXTAC_F(), KdspTextJobs.JOB_MAXTAC_M()); }
-    public static func JOB_MECHANIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MECHANIC_F(), KdspTextJobs.JOB_MECHANIC_M()); }
-    public static func JOB_METRO_OP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_METRO_OP_F(), KdspTextJobs.JOB_METRO_OP_M()); }
-    public static func JOB_MIDDLEMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MIDDLEMAN_F(), KdspTextJobs.JOB_MIDDLEMAN_M()); }
-    public static func JOB_MILITARY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MILITARY_F(), KdspTextJobs.JOB_MILITARY_M()); }
-    public static func JOB_MODEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MODEL_F(), KdspTextJobs.JOB_MODEL_M()); }
-    public static func JOB_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NCPD_F(), KdspTextJobs.JOB_NCPD_M()); }
-    public static func JOB_NETRUNNER_CORP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NETRUNNER_CORP_F(), KdspTextJobs.JOB_NETRUNNER_CORP_M()); }
-    public static func JOB_PET_SITTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PET_SITTER_F(), KdspTextJobs.JOB_PET_SITTER_M()); }
-    public static func JOB_PHOTOG() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PHOTOG_F(), KdspTextJobs.JOB_PHOTOG_M()); }
-    public static func JOB_PMC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PMC_F(), KdspTextJobs.JOB_PMC_M()); }
-    public static func JOB_POOL_CLEANER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_POOL_CLEANER_F(), KdspTextJobs.JOB_POOL_CLEANER_M()); }
-    public static func JOB_PROGRAMMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PROGRAMMER_F(), KdspTextJobs.JOB_PROGRAMMER_M()); }
-    public static func JOB_PROMOTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PROMOTER_F(), KdspTextJobs.JOB_PROMOTER_M()); }
-    public static func JOB_PSYCHIATRIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PSYCHIATRIST_F(), KdspTextJobs.JOB_PSYCHIATRIST_M()); }
-    public static func JOB_RADIO_DJ() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RADIO_DJ_F(), KdspTextJobs.JOB_RADIO_DJ_M()); }
-    public static func JOB_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RIPPER_F(), KdspTextJobs.JOB_RIPPER_M()); }
-    public static func JOB_ROCKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ROCKER_F(), KdspTextJobs.JOB_ROCKER_M()); }
-    public static func JOB_SCIENTIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SCIENTIST_F(), KdspTextJobs.JOB_SCIENTIST_M()); }
-    public static func JOB_SMUGGLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SMUGGLER_F(), KdspTextJobs.JOB_SMUGGLER_M()); }
-    public static func JOB_SOCIAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SOCIAL_F(), KdspTextJobs.JOB_SOCIAL_M()); }
-    public static func JOB_STREAMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_STREAMER_F(), KdspTextJobs.JOB_STREAMER_M()); }
-    public static func JOB_STUNT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_STUNT_F(), KdspTextJobs.JOB_STUNT_M()); }
-    public static func JOB_SURGEON() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SURGEON_F(), KdspTextJobs.JOB_SURGEON_M()); }
-    public static func JOB_SYSADMIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SYSADMIN_F(), KdspTextJobs.JOB_SYSADMIN_M()); }
-    public static func JOB_TECHIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TECHIE_F(), KdspTextJobs.JOB_TECHIE_M()); }
-    public static func JOB_TECH_SUPPORT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TECH_SUPPORT_F(), KdspTextJobs.JOB_TECH_SUPPORT_M()); }
-    public static func JOB_TRAUMA() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TRAUMA_F(), KdspTextJobs.JOB_TRAUMA_M()); }
-    public static func JOB_TUTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TUTOR_F(), KdspTextJobs.JOB_TUTOR_M()); }
-    public static func JOB_VENDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VENDING_F(), KdspTextJobs.JOB_VENDING_M()); }
-    public static func JOB_VP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VP_F(), KdspTextJobs.JOB_VP_M()); }
-    public static func JOB_WAITRESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAITRESS_F(), KdspTextJobs.JOB_WAITRESS_M()); }
-    public static func JOB_WAREHOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAREHOUSE_F(), KdspTextJobs.JOB_WAREHOUSE_M()); }
+    public static func JOB_DRONE_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRONE_TECH()).SetTechMod(15); }
+    public static func JOB_NET_ADMIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NET_ADMIN()).SetIntMod(10); }
+    public static func JOB_SHARD_WRITER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SHARD_WRITER()).SetIntMod(5); }
+    public static func JOB_ELEVATOR_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ELEVATOR_TECH()).SetTechMod(10); }
+    public static func JOB_ACTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ACTOR()); }
+    public static func JOB_AV_MECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_AV_MECH()); }
+    public static func JOB_AV_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_AV_TECH()); }
+    public static func JOB_BD_EDITOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_EDITOR()); }
+    public static func JOB_BD_PERF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_PERF()); }
+    public static func JOB_BLACK_CLINIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BLACK_CLINIC()); }
+    public static func JOB_BODYGUARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BODYGUARD()); }
+    public static func JOB_BORDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BORDER()); }
+    public static func JOB_BUS_DRIVER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BUS_DRIVER()); }
+    public static func JOB_CALL_CENTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CALL_CENTER()); }
+    public static func JOB_CARGO_PILOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CARGO_PILOT()); }
+    public static func JOB_CARJACKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CARJACKER()); }
+    public static func JOB_CFO() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CFO()); }
+    public static func JOB_CLOUDS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CLOUDS()); }
+    public static func JOB_CORPO_SEC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_SEC()); }
+    public static func JOB_COUNSELOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_COUNSELOR()); }
+    public static func JOB_CYBERTECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CYBERTECH()); }
+    public static func JOB_DATA_ENTRY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DATA_ENTRY()); }
+    public static func JOB_DATA_THIEF() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DATA_THIEF()); }
+    public static func JOB_DAYCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DAYCARE()); }
+    public static func JOB_DIRECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DIRECTOR()); }
+    public static func JOB_DJ() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DJ()); }
+    public static func JOB_DRONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRONE()); }
+    public static func JOB_DRONE_OP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRONE_OP()); }
+    public static func JOB_ELDER_CARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ELDER_CARE()); }
+    public static func JOB_ELECTRICIAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ELECTRICIAN()); }
+    public static func JOB_ENGINEER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ENGINEER()); }
+    public static func JOB_ESCORT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ESCORT()); }
+    public static func JOB_FAST_FOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FAST_FOOD()); }
+    public static func JOB_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FIXER()); }
+    public static func JOB_FREIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FREIGHT()); }
+    public static func JOB_GETAWAY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_GETAWAY()); }
+    public static func JOB_HARBOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HARBOR()); }
+    public static func JOB_HOUSE_CLEANER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HOUSE_CLEANER()); }
+    public static func JOB_INFLUENCER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INFLUENCER()); }
+    public static func JOB_INFO_BROKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INFO_BROKER()); }
+    public static func JOB_INTERN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_INTERN()); }
+    public static func JOB_JANITOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JANITOR()); }
+    public static func JOB_JOURNALIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_JOURNALIST()); }
+    public static func JOB_LEGAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_LEGAL()); }
+    public static func JOB_MAILROOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MAILROOM()); }
+    public static func JOB_MASSEUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MASSEUSE()); }
+    public static func JOB_MAXTAC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MAXTAC()); }
+    public static func JOB_MECHANIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MECHANIC()); }
+    public static func JOB_METRO_OP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_METRO_OP()); }
+    public static func JOB_MIDDLEMAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MIDDLEMAN()); }
+    public static func JOB_MILITARY() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MILITARY()); }
+    public static func JOB_MODEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MODEL()); }
+    public static func JOB_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NCPD()); }
+    public static func JOB_NETRUNNER_CORP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NETRUNNER_CORP()); }
+    public static func JOB_PET_SITTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PET_SITTER()); }
+    public static func JOB_PHOTOG() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PHOTOG()); }
+    public static func JOB_PMC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PMC()); }
+    public static func JOB_POOL_CLEANER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_POOL_CLEANER()); }
+    public static func JOB_PROGRAMMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PROGRAMMER()); }
+    public static func JOB_PROMOTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PROMOTER()); }
+    public static func JOB_PSYCHIATRIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PSYCHIATRIST()); }
+    public static func JOB_RADIO_DJ() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RADIO_DJ()); }
+    public static func JOB_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RIPPER()); }
+    public static func JOB_ROCKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ROCKER()); }
+    public static func JOB_SCIENTIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SCIENTIST()); }
+    public static func JOB_SMUGGLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SMUGGLER()); }
+    public static func JOB_SOCIAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SOCIAL()); }
+    public static func JOB_STREAMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_STREAMER()); }
+    public static func JOB_STUNT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_STUNT()); }
+    public static func JOB_SURGEON() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SURGEON()); }
+    public static func JOB_SYSADMIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SYSADMIN()); }
+    public static func JOB_TECHIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TECHIE()); }
+    public static func JOB_TECH_SUPPORT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TECH_SUPPORT()); }
+    public static func JOB_TRAUMA() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TRAUMA()); }
+    public static func JOB_TUTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TUTOR()); }
+    public static func JOB_VENDING() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VENDING()); }
+    public static func JOB_VP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VP()); }
+    public static func JOB_WAITRESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAITRESS()); }
+    public static func JOB_WAREHOUSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WAREHOUSE()); }
 
     // Adulthood
-    public static func LOST_GAMBLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_GAMBLE_F(), KdspTextAdulthood.LOST_GAMBLE_M()); }
-    public static func INST_NEW_AUG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INST_NEW_AUG_F(), KdspTextAdulthood.INST_NEW_AUG_M()); }
-    public static func RADIO_JOCKEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RADIO_JOCKEY_F(), KdspTextAdulthood.RADIO_JOCKEY_M()); }
-    public static func CAR_ACCIDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAR_ACCIDENT_F(), KdspTextAdulthood.CAR_ACCIDENT_M()); }
-    public static func BCME_CHEMHEAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BCME_CHEMHEAD_F(), KdspTextAdulthood.BCME_CHEMHEAD_M()); }
-    public static func IMPRISONED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.IMPRISONED_F(), KdspTextAdulthood.IMPRISONED_M()); }
-    public static func STOLE_EQP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOLE_EQP_F(), KdspTextAdulthood.STOLE_EQP_M()); }
-    public static func ROB_BODEGA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROB_BODEGA_F(), KdspTextAdulthood.ROB_BODEGA_M()); }
-    public static func JOIN_NEW_BAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOIN_NEW_BAND_F(), KdspTextAdulthood.JOIN_NEW_BAND_M()); }
-    public static func COMPLETED_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMPLETED_JOB_F(), KdspTextAdulthood.COMPLETED_JOB_M()); }
-    public static func RUN_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RUN_CHEMS_F(), KdspTextAdulthood.RUN_CHEMS_M()); }
-    public static func WON_LOTTERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WON_LOTTERY_F(), KdspTextAdulthood.WON_LOTTERY_M()); }
-    public static func BOUGHT_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_CAR_F(), KdspTextAdulthood.BOUGHT_CAR_M()); }
-    public static func NEW_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEW_APT_F(), KdspTextAdulthood.NEW_APT_M()); }
-    public static func BOUGHT_GUN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_GUN_F(), KdspTextAdulthood.BOUGHT_GUN_M()); }
-    public static func BOUGHT_SWORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_SWORD_F(), KdspTextAdulthood.BOUGHT_SWORD_M()); }
-    public static func JOINED_RIOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_RIOT_F(), KdspTextAdulthood.JOINED_RIOT_M()); }
-    public static func KILLED_CHOOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KILLED_CHOOM_F(), KdspTextAdulthood.KILLED_CHOOM_M()); }
-    public static func LOST_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_JOB_F(), KdspTextAdulthood.LOST_JOB_M()); }
-    public static func INDUSTRIAL_ACC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INDUSTRIAL_ACC_F(), KdspTextAdulthood.INDUSTRIAL_ACC_M()); }
-    public static func CODED_BOTNETS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CODED_BOTNETS_F(), KdspTextAdulthood.CODED_BOTNETS_M()); }
-    public static func ROB_VENDOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROB_VENDOR_F(), KdspTextAdulthood.ROB_VENDOR_M()); }
-    public static func TOB_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TOB_CONSUMER_F(), KdspTextAdulthood.TOB_CONSUMER_M()); }
-    public static func AL_BEV_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AL_BEV_CONSUMER_F(), KdspTextAdulthood.AL_BEV_CONSUMER_M()); }
-    public static func WATER_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WATER_CONSUMER_F(), KdspTextAdulthood.WATER_CONSUMER_M()); }
-    public static func JOYTOY_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOYTOY_CONSUMER_F(), KdspTextAdulthood.JOYTOY_CONSUMER_M()); }
-    public static func BD_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BD_CONSUMER_F(), KdspTextAdulthood.BD_CONSUMER_M()); }
-    public static func BD_ADDICT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BD_ADDICT_F(), KdspTextAdulthood.BD_ADDICT_M()); }
-    public static func RELIC_ASPIRANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RELIC_ASPIRANT_F(), KdspTextAdulthood.RELIC_ASPIRANT_M()); }
-    public static func BOUGHT_SHARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_SHARD_F(), KdspTextAdulthood.BOUGHT_SHARD_M()); }
-    public static func BOUGHT_CYBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_CYBER_F(), KdspTextAdulthood.BOUGHT_CYBER_M()); }
-    public static func TWO_AM_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TWO_AM_CLUB_F(), KdspTextAdulthood.TWO_AM_CLUB_M()); }
-    public static func ROBOT_DEST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROBOT_DEST_F(), KdspTextAdulthood.ROBOT_DEST_M()); }
-    public static func CANCEL_TTI() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CANCEL_TTI_F(), KdspTextAdulthood.CANCEL_TTI_M()); }
-    public static func FILED_FRD_INS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FILED_FRD_INS_F(), KdspTextAdulthood.FILED_FRD_INS_M()); }
-    public static func ASST_SZD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ASST_SZD_CRP_F(), KdspTextAdulthood.ASST_SZD_CRP_M()); }
-    public static func CHRG_BK_DBTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHRG_BK_DBTR_F(), KdspTextAdulthood.CHRG_BK_DBTR_M()); }
-    public static func CHRG_MED_DBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHRG_MED_DBT_F(), KdspTextAdulthood.CHRG_MED_DBT_M()); }
-    public static func INDEBT_CRP_INDVL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INDEBT_CRP_INDVL_F(), KdspTextAdulthood.INDEBT_CRP_INDVL_M()); }
-    public static func CRP_LBLTY_DFDT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CRP_LBLTY_DFDT_F(), KdspTextAdulthood.CRP_LBLTY_DFDT_M()); }
-    public static func CRP_POL_VIO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CRP_POL_VIO_F(), KdspTextAdulthood.CRP_POL_VIO_M()); }
-    public static func HAB_CRP_DBTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HAB_CRP_DBTR_F(), KdspTextAdulthood.HAB_CRP_DBTR_M()); }
-    public static func ARMED_DANGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARMED_DANGER_F(), KdspTextAdulthood.ARMED_DANGER_M()); }
-    public static func FLSLY_ACC_MRDR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FLSLY_ACC_MRDR_F(), KdspTextAdulthood.FLSLY_ACC_MRDR_M()); }
-    public static func FREE_CRP_MRDR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FREE_CRP_MRDR_F(), KdspTextAdulthood.FREE_CRP_MRDR_M()); }
-    public static func VAC_AFRICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VAC_AFRICA_F(), KdspTextAdulthood.VAC_AFRICA_M()); }
-    public static func JUMP_TRAFFIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JUMP_TRAFFIC_F(), KdspTextAdulthood.JUMP_TRAFFIC_M()); }
-    public static func BUILD_BOMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUILD_BOMB_F(), KdspTextAdulthood.BUILD_BOMB_M()); }
-    public static func EMAIL_GOV() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EMAIL_GOV_F(), KdspTextAdulthood.EMAIL_GOV_M()); }
-    public static func FREE_TTI() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FREE_TTI_F(), KdspTextAdulthood.FREE_TTI_M()); }
+    public static func LOST_GAMBLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_GAMBLE()); }
+    public static func INST_NEW_AUG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INST_NEW_AUG()); }
+    public static func RADIO_JOCKEY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RADIO_JOCKEY()); }
+    public static func CAR_ACCIDENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAR_ACCIDENT()); }
+    public static func BCME_CHEMHEAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BCME_CHEMHEAD()); }
+    public static func IMPRISONED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.IMPRISONED()); }
+    public static func STOLE_EQP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOLE_EQP()); }
+    public static func ROB_BODEGA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROB_BODEGA()); }
+    public static func JOIN_NEW_BAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOIN_NEW_BAND()); }
+    public static func COMPLETED_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMPLETED_JOB()); }
+    public static func RUN_CHEMS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RUN_CHEMS()); }
+    public static func WON_LOTTERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WON_LOTTERY()); }
+    public static func BOUGHT_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_CAR()); }
+    public static func NEW_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEW_APT()); }
+    public static func BOUGHT_GUN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_GUN()); }
+    public static func BOUGHT_SWORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_SWORD()); }
+    public static func JOINED_RIOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_RIOT()); }
+    public static func KILLED_CHOOM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KILLED_CHOOM()); }
+    public static func LOST_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_JOB()); }
+    public static func INDUSTRIAL_ACC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INDUSTRIAL_ACC()); }
+    public static func CODED_BOTNETS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CODED_BOTNETS()); }
+    public static func ROB_VENDOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROB_VENDOR()); }
+    public static func TOB_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TOB_CONSUMER()); }
+    public static func AL_BEV_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AL_BEV_CONSUMER()); }
+    public static func WATER_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WATER_CONSUMER()); }
+    public static func JOYTOY_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOYTOY_CONSUMER()); }
+    public static func BD_CONSUMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BD_CONSUMER()); }
+    public static func BD_ADDICT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BD_ADDICT()); }
+    public static func RELIC_ASPIRANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RELIC_ASPIRANT()); }
+    public static func BOUGHT_SHARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_SHARD()); }
+    public static func BOUGHT_CYBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUGHT_CYBER()); }
+    public static func TWO_AM_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TWO_AM_CLUB()); }
+    public static func ROBOT_DEST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROBOT_DEST()); }
+    public static func CANCEL_TTI() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CANCEL_TTI()); }
+    public static func FILED_FRD_INS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FILED_FRD_INS()); }
+    public static func ASST_SZD_CRP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ASST_SZD_CRP()); }
+    public static func CHRG_BK_DBTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHRG_BK_DBTR()); }
+    public static func CHRG_MED_DBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHRG_MED_DBT()); }
+    public static func INDEBT_CRP_INDVL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INDEBT_CRP_INDVL()); }
+    public static func CRP_LBLTY_DFDT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CRP_LBLTY_DFDT()); }
+    public static func CRP_POL_VIO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CRP_POL_VIO()); }
+    public static func HAB_CRP_DBTR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HAB_CRP_DBTR()); }
+    public static func ARMED_DANGER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARMED_DANGER()); }
+    public static func FLSLY_ACC_MRDR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FLSLY_ACC_MRDR()); }
+    public static func FREE_CRP_MRDR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FREE_CRP_MRDR()); }
+    public static func VAC_AFRICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VAC_AFRICA()); }
+    public static func JUMP_TRAFFIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JUMP_TRAFFIC()); }
+    public static func BUILD_BOMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUILD_BOMB()); }
+    public static func EMAIL_GOV() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EMAIL_GOV()); }
+    public static func FREE_TTI() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FREE_TTI()); }
 
     // Adulthood - Expanded: Career/Work
-    public static func FREELANCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FREELANCE_F(), KdspTextAdulthood.FREELANCE_M()); }
-    public static func CORPO_FIRED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_FIRED_F(), KdspTextAdulthood.CORPO_FIRED_M()); }
-    public static func CORPO_BURNOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_BURNOUT_F(), KdspTextAdulthood.CORPO_BURNOUT_M()); }
-    public static func SECOND_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SECOND_JOB_F(), KdspTextAdulthood.SECOND_JOB_M()); }
-    public static func THIRD_SHIFT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.THIRD_SHIFT_F(), KdspTextAdulthood.THIRD_SHIFT_M()); }
-    public static func GIG_ECONOMY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GIG_ECONOMY_F(), KdspTextAdulthood.GIG_ECONOMY_M()); }
-    public static func SCAB_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAB_WORKER_F(), KdspTextAdulthood.SCAB_WORKER_M()); }
-    public static func CORPO_LADDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_LADDER_F(), KdspTextAdulthood.CORPO_LADDER_M()).SetCoolMod(10); }
-    public static func DEMOTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEMOTED_F(), KdspTextAdulthood.DEMOTED_M()); }
-    public static func FIXER_REP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIXER_REP_F(), KdspTextAdulthood.FIXER_REP_M()).SetCoolMod(10); }
-    public static func SOLO_WORK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLO_WORK_F(), KdspTextAdulthood.SOLO_WORK_M()); }
-    public static func NETRUNNER_GIG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NETRUNNER_GIG_F(), KdspTextAdulthood.NETRUNNER_GIG_M()).SetIntMod(10); }
-    public static func TECHIE_REP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TECHIE_REP_F(), KdspTextAdulthood.TECHIE_REP_M()).SetTechMod(10); }
-    public static func MERC_CONTRACT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MERC_CONTRACT_F(), KdspTextAdulthood.MERC_CONTRACT_M()).SetWealthMod(10); }
-    public static func BOTCHED_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOTCHED_JOB_F(), KdspTextAdulthood.BOTCHED_JOB_M()); }
+    public static func FREELANCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FREELANCE()); }
+    public static func CORPO_FIRED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_FIRED()); }
+    public static func CORPO_BURNOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_BURNOUT()); }
+    public static func SECOND_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SECOND_JOB()); }
+    public static func THIRD_SHIFT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.THIRD_SHIFT()); }
+    public static func GIG_ECONOMY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GIG_ECONOMY()); }
+    public static func SCAB_WORKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAB_WORKER()); }
+    public static func CORPO_LADDER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_LADDER()).SetCoolMod(10); }
+    public static func DEMOTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEMOTED()); }
+    public static func FIXER_REP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIXER_REP()).SetCoolMod(10); }
+    public static func SOLO_WORK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLO_WORK()); }
+    public static func NETRUNNER_GIG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NETRUNNER_GIG()).SetIntMod(10); }
+    public static func TECHIE_REP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TECHIE_REP()).SetTechMod(10); }
+    public static func MERC_CONTRACT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MERC_CONTRACT()).SetWealthMod(10); }
+    public static func BOTCHED_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOTCHED_JOB()); }
     // Adulthood - Expanded: Financial
-    public static func LOAN_SHARK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOAN_SHARK_F(), KdspTextAdulthood.LOAN_SHARK_M()); }
-    public static func PAID_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAID_DEBT_F(), KdspTextAdulthood.PAID_DEBT_M()); }
-    public static func SCAMMED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAMMED_F(), KdspTextAdulthood.SCAMMED_M()).SetWealthMod(-15); }
-    public static func SCAMMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAMMER_F(), KdspTextAdulthood.SCAMMER_M()).SetCoolMod(10); }
-    public static func UNDERGROUND_CASINO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNDERGROUND_CASINO_F(), KdspTextAdulthood.UNDERGROUND_CASINO_M()); }
-    public static func BIG_SCORE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BIG_SCORE_F(), KdspTextAdulthood.BIG_SCORE_M()).SetWealthMod(20); }
-    public static func LOST_SCORE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_SCORE_F(), KdspTextAdulthood.LOST_SCORE_M()); }
-    public static func STOCK_CRASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOCK_CRASH_F(), KdspTextAdulthood.STOCK_CRASH_M()).SetWealthMod(-20); }
-    public static func INSURANCE_FRAUD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INSURANCE_FRAUD_F(), KdspTextAdulthood.INSURANCE_FRAUD_M()); }
-    public static func TAX_EVASION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TAX_EVASION_F(), KdspTextAdulthood.TAX_EVASION_M()); }
-    public static func WIRE_TRANSFER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WIRE_TRANSFER_F(), KdspTextAdulthood.WIRE_TRANSFER_M()).SetWealthMod(10); }
-    public static func MONEY_LAUNDERING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MONEY_LAUNDERING_F(), KdspTextAdulthood.MONEY_LAUNDERING_M()); }
+    public static func LOAN_SHARK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOAN_SHARK()); }
+    public static func PAID_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAID_DEBT()); }
+    public static func SCAMMED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAMMED()).SetWealthMod(-15); }
+    public static func SCAMMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAMMER()).SetCoolMod(10); }
+    public static func UNDERGROUND_CASINO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNDERGROUND_CASINO()); }
+    public static func BIG_SCORE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BIG_SCORE()).SetWealthMod(20); }
+    public static func LOST_SCORE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_SCORE()); }
+    public static func STOCK_CRASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOCK_CRASH()).SetWealthMod(-20); }
+    public static func INSURANCE_FRAUD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INSURANCE_FRAUD()); }
+    public static func TAX_EVASION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TAX_EVASION()); }
+    public static func WIRE_TRANSFER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WIRE_TRANSFER()).SetWealthMod(10); }
+    public static func MONEY_LAUNDERING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MONEY_LAUNDERING()); }
     // Adulthood - Expanded: Criminal
-    public static func HEIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEIST_F(), KdspTextAdulthood.HEIST_M()).SetCoolMod(10); }
-    public static func SMUGGLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SMUGGLING_F(), KdspTextAdulthood.SMUGGLING_M()); }
-    public static func BLACKMAIL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACKMAIL_F(), KdspTextAdulthood.BLACKMAIL_M()).SetCoolMod(10); }
-    public static func BLACKMAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACKMAILED_F(), KdspTextAdulthood.BLACKMAILED_M()); }
-    public static func FENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FENCE_F(), KdspTextAdulthood.FENCE_M()); }
-    public static func CARJACKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CARJACKING_F(), KdspTextAdulthood.CARJACKING_M()); }
-    public static func KIDNAPPING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIDNAPPING_F(), KdspTextAdulthood.KIDNAPPING_M()); }
-    public static func KIDNAPPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIDNAPPED_F(), KdspTextAdulthood.KIDNAPPED_M()); }
-    public static func ARSON() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARSON_F(), KdspTextAdulthood.ARSON_M()); }
-    public static func CONTRACT_KILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CONTRACT_KILL_F(), KdspTextAdulthood.CONTRACT_KILL_M()).SetCoolMod(10); }
-    public static func WITNESS_KILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WITNESS_KILL_F(), KdspTextAdulthood.WITNESS_KILL_M()); }
-    public static func EVIDENCE_TAMPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVIDENCE_TAMPER_F(), KdspTextAdulthood.EVIDENCE_TAMPER_M()); }
-    public static func BRIBED_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRIBED_NCPD_F(), KdspTextAdulthood.BRIBED_NCPD_M()); }
-    public static func FRAMED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FRAMED_F(), KdspTextAdulthood.FRAMED_M()); }
-    public static func PRISON_BREAK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PRISON_BREAK_F(), KdspTextAdulthood.PRISON_BREAK_M()); }
-    public static func PAROLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAROLE_F(), KdspTextAdulthood.PAROLE_M()); }
-    public static func PAROLE_VIOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAROLE_VIOL_F(), KdspTextAdulthood.PAROLE_VIOL_M()); }
+    public static func HEIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEIST()).SetCoolMod(10); }
+    public static func SMUGGLING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SMUGGLING()); }
+    public static func BLACKMAIL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACKMAIL()).SetCoolMod(10); }
+    public static func BLACKMAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACKMAILED()); }
+    public static func FENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FENCE()); }
+    public static func CARJACKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CARJACKING()); }
+    public static func KIDNAPPING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIDNAPPING()); }
+    public static func KIDNAPPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIDNAPPED()); }
+    public static func ARSON() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARSON()); }
+    public static func CONTRACT_KILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CONTRACT_KILL()).SetCoolMod(10); }
+    public static func WITNESS_KILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WITNESS_KILL()); }
+    public static func EVIDENCE_TAMPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVIDENCE_TAMPER()); }
+    public static func BRIBED_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRIBED_NCPD()); }
+    public static func FRAMED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FRAMED()); }
+    public static func PRISON_BREAK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PRISON_BREAK()); }
+    public static func PAROLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAROLE()); }
+    public static func PAROLE_VIOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAROLE_VIOL()); }
     // Adulthood - Expanded: Relationships
-    public static func MARRIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MARRIED_F(), KdspTextAdulthood.MARRIED_M()); }
-    public static func DIVORCED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DIVORCED_F(), KdspTextAdulthood.DIVORCED_M()); }
-    public static func AFFAIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AFFAIR_F(), KdspTextAdulthood.AFFAIR_M()); }
-    public static func AFFAIR_VICTIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AFFAIR_VICTIM_F(), KdspTextAdulthood.AFFAIR_VICTIM_M()); }
-    public static func HAD_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HAD_CHILD_F(), KdspTextAdulthood.HAD_CHILD_M()); }
-    public static func LOST_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_CHILD_F(), KdspTextAdulthood.LOST_CHILD_M()); }
-    public static func CHILD_TAKEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHILD_TAKEN_F(), KdspTextAdulthood.CHILD_TAKEN_M()); }
-    public static func ORPHANED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORPHANED_F(), KdspTextAdulthood.ORPHANED_M()); }
-    public static func SIBLING_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SIBLING_DEATH_F(), KdspTextAdulthood.SIBLING_DEATH_M()); }
-    public static func REUNITED_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REUNITED_FAM_F(), KdspTextAdulthood.REUNITED_FAM_M()); }
-    public static func DISOWNED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DISOWNED_F(), KdspTextAdulthood.DISOWNED_M()); }
-    public static func BEST_FRIEND_DEAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BEST_FRIEND_DEAD_F(), KdspTextAdulthood.BEST_FRIEND_DEAD_M()); }
-    public static func BETRAYED_FRIEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BETRAYED_FRIEND_F(), KdspTextAdulthood.BETRAYED_FRIEND_M()); }
-    public static func BETRAYED_SOMEONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BETRAYED_SOMEONE_F(), KdspTextAdulthood.BETRAYED_SOMEONE_M()); }
-    public static func ROMANTIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROMANTIC_F(), KdspTextAdulthood.ROMANTIC_M()); }
+    public static func MARRIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MARRIED()); }
+    public static func DIVORCED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DIVORCED()); }
+    public static func AFFAIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AFFAIR()); }
+    public static func AFFAIR_VICTIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AFFAIR_VICTIM()); }
+    public static func HAD_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HAD_CHILD()); }
+    public static func LOST_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_CHILD()); }
+    public static func CHILD_TAKEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHILD_TAKEN()); }
+    public static func ORPHANED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORPHANED()); }
+    public static func SIBLING_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SIBLING_DEATH()); }
+    public static func REUNITED_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REUNITED_FAM()); }
+    public static func DISOWNED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DISOWNED()); }
+    public static func BEST_FRIEND_DEAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BEST_FRIEND_DEAD()); }
+    public static func BETRAYED_FRIEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BETRAYED_FRIEND()); }
+    public static func BETRAYED_SOMEONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BETRAYED_SOMEONE()); }
+    public static func ROMANTIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROMANTIC()); }
     // Adulthood - Expanded: Cyberware/Tech
-    public static func CHROME_ADDICTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHROME_ADDICTION_F(), KdspTextAdulthood.CHROME_ADDICTION_M()); }
-    public static func CYBER_REJECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBER_REJECTION_F(), KdspTextAdulthood.CYBER_REJECTION_M()); }
-    public static func BLACK_MARKET_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACK_MARKET_CHROME_F(), KdspTextAdulthood.BLACK_MARKET_CHROME_M()); }
-    public static func CYBERWARE_HACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERWARE_HACK_F(), KdspTextAdulthood.CYBERWARE_HACK_M()); }
-    public static func MALFUNC_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MALFUNC_CHROME_F(), KdspTextAdulthood.MALFUNC_CHROME_M()); }
-    public static func CHEAP_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHEAP_RIPPER_F(), KdspTextAdulthood.CHEAP_RIPPER_M()); }
-    public static func PREMIUM_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PREMIUM_CHROME_F(), KdspTextAdulthood.PREMIUM_CHROME_M()).SetWealthMod(10); }
-    public static func CYBERPSYCHO_SCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERPSYCHO_SCARE_F(), KdspTextAdulthood.CYBERPSYCHO_SCARE_M()); }
-    public static func LIMB_REPLACEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LIMB_REPLACEMENT_F(), KdspTextAdulthood.LIMB_REPLACEMENT_M()); }
-    public static func EYE_REPLACEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EYE_REPLACEMENT_F(), KdspTextAdulthood.EYE_REPLACEMENT_M()); }
-    public static func NEURAL_DAMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEURAL_DAMAGE_F(), KdspTextAdulthood.NEURAL_DAMAGE_M()); }
-    public static func BRAINDANCE_DAMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRAINDANCE_DAMAGE_F(), KdspTextAdulthood.BRAINDANCE_DAMAGE_M()); }
+    public static func CHROME_ADDICTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHROME_ADDICTION()); }
+    public static func CYBER_REJECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBER_REJECTION()); }
+    public static func BLACK_MARKET_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACK_MARKET_CHROME()); }
+    public static func CYBERWARE_HACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERWARE_HACK()); }
+    public static func MALFUNC_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MALFUNC_CHROME()); }
+    public static func CHEAP_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHEAP_RIPPER()); }
+    public static func PREMIUM_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PREMIUM_CHROME()).SetWealthMod(10); }
+    public static func CYBERPSYCHO_SCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERPSYCHO_SCARE()); }
+    public static func LIMB_REPLACEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LIMB_REPLACEMENT()); }
+    public static func EYE_REPLACEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EYE_REPLACEMENT()); }
+    public static func NEURAL_DAMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEURAL_DAMAGE()); }
+    public static func BRAINDANCE_DAMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRAINDANCE_DAMAGE()); }
     // Adulthood - Expanded: Gang Related
-    public static func LEFT_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_GANG_F(), KdspTextAdulthood.LEFT_GANG_M()); }
-    public static func GANG_INITIATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_INITIATION_F(), KdspTextAdulthood.GANG_INITIATION_M()); }
-    public static func GANG_PROMOTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_PROMOTION_F(), KdspTextAdulthood.GANG_PROMOTION_M()); }
-    public static func GANG_EXILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_EXILE_F(), KdspTextAdulthood.GANG_EXILE_M()); }
-    public static func TURF_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TURF_WAR_F(), KdspTextAdulthood.TURF_WAR_M()); }
-    public static func GANG_TATTOO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_TATTOO_F(), KdspTextAdulthood.GANG_TATTOO_M()); }
-    public static func GANG_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_DEBT_F(), KdspTextAdulthood.GANG_DEBT_M()); }
-    public static func PROTECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROTECTED_F(), KdspTextAdulthood.PROTECTED_M()); }
-    public static func PROTECTION_RACKET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROTECTION_RACKET_F(), KdspTextAdulthood.PROTECTION_RACKET_M()); }
+    public static func LEFT_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_GANG()); }
+    public static func GANG_INITIATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_INITIATION()); }
+    public static func GANG_PROMOTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_PROMOTION()); }
+    public static func GANG_EXILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_EXILE()); }
+    public static func TURF_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TURF_WAR()); }
+    public static func GANG_TATTOO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_TATTOO()); }
+    public static func GANG_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_DEBT()); }
+    public static func PROTECTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROTECTED()); }
+    public static func PROTECTION_RACKET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROTECTION_RACKET()); }
     // Adulthood - Expanded: Violence/Trauma
-    public static func TORTURE_VICTIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TORTURE_VICTIM_F(), KdspTextAdulthood.TORTURE_VICTIM_M()); }
-    public static func TORTURE_PERPETRATOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TORTURE_PERPETRATOR_F(), KdspTextAdulthood.TORTURE_PERPETRATOR_M()); }
-    public static func AMBUSHED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AMBUSHED_F(), KdspTextAdulthood.AMBUSHED_M()); }
-    public static func CAR_BOMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAR_BOMB_F(), KdspTextAdulthood.CAR_BOMB_M()); }
-    public static func HOSTAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOSTAGE_F(), KdspTextAdulthood.HOSTAGE_M()); }
-    public static func HOSTAGE_TAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOSTAGE_TAKER_F(), KdspTextAdulthood.HOSTAGE_TAKER_M()); }
-    public static func COMBAT_VET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMBAT_VET_F(), KdspTextAdulthood.COMBAT_VET_M()).SetBodyMod(10).SetReflexMod(10); }
-    public static func PTSD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PTSD_F(), KdspTextAdulthood.PTSD_M()); }
-    public static func EXPLOSION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EXPLOSION_F(), KdspTextAdulthood.EXPLOSION_M()); }
-    public static func CHEMICAL_EXP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHEMICAL_EXP_F(), KdspTextAdulthood.CHEMICAL_EXP_M()); }
-    public static func RADIATION_EXP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RADIATION_EXP_F(), KdspTextAdulthood.RADIATION_EXP_M()); }
+    public static func TORTURE_VICTIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TORTURE_VICTIM()); }
+    public static func TORTURE_PERPETRATOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TORTURE_PERPETRATOR()); }
+    public static func AMBUSHED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AMBUSHED()); }
+    public static func CAR_BOMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAR_BOMB()); }
+    public static func HOSTAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOSTAGE()); }
+    public static func HOSTAGE_TAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOSTAGE_TAKER()); }
+    public static func COMBAT_VET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMBAT_VET()).SetBodyMod(10).SetReflexMod(10); }
+    public static func PTSD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PTSD()); }
+    public static func EXPLOSION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EXPLOSION()); }
+    public static func CHEMICAL_EXP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHEMICAL_EXP()); }
+    public static func RADIATION_EXP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RADIATION_EXP()); }
     // Adulthood - Expanded: Misc Life Events
-    public static func FLATLINED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FLATLINED_F(), KdspTextAdulthood.FLATLINED_M()); }
-    public static func COMA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMA_F(), KdspTextAdulthood.COMA_M()); }
-    public static func HOMELESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOMELESS_F(), KdspTextAdulthood.HOMELESS_M()); }
-    public static func REFUGEE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REFUGEE_F(), KdspTextAdulthood.REFUGEE_M()); }
-    public static func ILLEGAL_IMMIGRANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ILLEGAL_IMMIGRANT_F(), KdspTextAdulthood.ILLEGAL_IMMIGRANT_M()); }
-    public static func DEPORTATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEPORTATION_F(), KdspTextAdulthood.DEPORTATION_M()); }
-    public static func CITIZENSHIP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CITIZENSHIP_F(), KdspTextAdulthood.CITIZENSHIP_M()); }
-    public static func FAMOUS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAMOUS_F(), KdspTextAdulthood.FAMOUS_M()).SetCoolMod(10); }
-    public static func VIRAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VIRAL_F(), KdspTextAdulthood.VIRAL_M()); }
-    public static func SCANDAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCANDAL_F(), KdspTextAdulthood.SCANDAL_M()); }
-    public static func MEDIA_TARGET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEDIA_TARGET_F(), KdspTextAdulthood.MEDIA_TARGET_M()); }
-    public static func EDUCATED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EDUCATED_F(), KdspTextAdulthood.EDUCATED_M()).SetIntMod(15); }
-    public static func DROPPED_OUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DROPPED_OUT_F(), KdspTextAdulthood.DROPPED_OUT_M()); }
-    public static func MENTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MENTOR_F(), KdspTextAdulthood.MENTOR_M()); }
-    public static func CLUB_REGULAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLUB_REGULAR_F(), KdspTextAdulthood.CLUB_REGULAR_M()).SetCoolMod(10); }
-    public static func LIZZIE_REGULAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LIZZIE_REGULAR_F(), KdspTextAdulthood.LIZZIE_REGULAR_M()); }
-    public static func TOTENTANZ() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TOTENTANZ_F(), KdspTextAdulthood.TOTENTANZ_M()); }
-    public static func EMBERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EMBERS_F(), KdspTextAdulthood.EMBERS_M()).SetWealthMod(15).SetCoolMod(15); }
-    public static func CYBERPSYCHO_WIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERPSYCHO_WIT_F(), KdspTextAdulthood.CYBERPSYCHO_WIT_M()); }
-    public static func SURVIVED_MAXTAC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SURVIVED_MAXTAC_F(), KdspTextAdulthood.SURVIVED_MAXTAC_M()); }
+    public static func FLATLINED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FLATLINED()); }
+    public static func COMA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMA()); }
+    public static func HOMELESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOMELESS()); }
+    public static func REFUGEE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REFUGEE()); }
+    public static func ILLEGAL_IMMIGRANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ILLEGAL_IMMIGRANT()); }
+    public static func DEPORTATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEPORTATION()); }
+    public static func CITIZENSHIP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CITIZENSHIP()); }
+    public static func FAMOUS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAMOUS()).SetCoolMod(10); }
+    public static func VIRAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VIRAL()); }
+    public static func SCANDAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCANDAL()); }
+    public static func MEDIA_TARGET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEDIA_TARGET()); }
+    public static func EDUCATED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EDUCATED()).SetIntMod(15); }
+    public static func DROPPED_OUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DROPPED_OUT()); }
+    public static func MENTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MENTOR()); }
+    public static func CLUB_REGULAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLUB_REGULAR()).SetCoolMod(10); }
+    public static func LIZZIE_REGULAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LIZZIE_REGULAR()); }
+    public static func TOTENTANZ() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TOTENTANZ()); }
+    public static func EMBERS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EMBERS()).SetWealthMod(15).SetCoolMod(15); }
+    public static func CYBERPSYCHO_WIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERPSYCHO_WIT()); }
+    public static func SURVIVED_MAXTAC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SURVIVED_MAXTAC()); }
     // Expanded Adulthood - Relationships
-    public static func HEARTBROKEN_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEARTBROKEN_ADULT_F(), KdspTextAdulthood.HEARTBROKEN_ADULT_M()); }
+    public static func HEARTBROKEN_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEARTBROKEN_ADULT()); }
     // Expanded Adulthood - Gang
-    public static func JOINED_GANG_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_GANG_ADULT_F(), KdspTextAdulthood.JOINED_GANG_ADULT_M()); }
+    public static func JOINED_GANG_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_GANG_ADULT()); }
     // Expanded Adulthood - Mentorship
-    public static func MENTORED_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MENTORED_ADULT_F(), KdspTextAdulthood.MENTORED_ADULT_M()); }
+    public static func MENTORED_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MENTORED_ADULT()); }
     // Expanded Adulthood - Near-Death
-    public static func NEAR_DEATH_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEAR_DEATH_ADULT_F(), KdspTextAdulthood.NEAR_DEATH_ADULT_M()); }
+    public static func NEAR_DEATH_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEAR_DEATH_ADULT()); }
 
     // Expanded Adulthood - Career
-    public static func PROMOTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROMOTED_F(), KdspTextAdulthood.PROMOTED_M()).SetWealthMod(10); }
-    public static func FIRED_UNFAIRLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRED_UNFAIRLY_F(), KdspTextAdulthood.FIRED_UNFAIRLY_M()); }
-    public static func STARTED_BUSINESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STARTED_BUSINESS_F(), KdspTextAdulthood.STARTED_BUSINESS_M()); }
-    public static func BUSINESS_FAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUSINESS_FAILED_F(), KdspTextAdulthood.BUSINESS_FAILED_M()); }
-    public static func CAREER_CHANGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAREER_CHANGE_F(), KdspTextAdulthood.CAREER_CHANGE_M()); }
-    public static func WHISTLEBLOWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WHISTLEBLOWER_F(), KdspTextAdulthood.WHISTLEBLOWER_M()); }
-    public static func BLACKLISTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACKLISTED_F(), KdspTextAdulthood.BLACKLISTED_M()); }
+    public static func PROMOTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROMOTED()).SetWealthMod(10); }
+    public static func FIRED_UNFAIRLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRED_UNFAIRLY()); }
+    public static func STARTED_BUSINESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STARTED_BUSINESS()); }
+    public static func BUSINESS_FAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUSINESS_FAILED()); }
+    public static func CAREER_CHANGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAREER_CHANGE()); }
+    public static func WHISTLEBLOWER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WHISTLEBLOWER()); }
+    public static func BLACKLISTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACKLISTED()); }
 
     // Expanded Adulthood - Crime
-    public static func FIRST_KILL_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRST_KILL_F(), KdspTextAdulthood.FIRST_KILL_M()); }
-    public static func HITMAN_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HITMAN_JOB_F(), KdspTextAdulthood.HITMAN_JOB_M()); }
-    public static func HEIST_SUCCESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEIST_SUCCESS_F(), KdspTextAdulthood.HEIST_SUCCESS_M()).SetWealthMod(15); }
-    public static func HEIST_FAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEIST_FAILED_F(), KdspTextAdulthood.HEIST_FAILED_M()); }
-    public static func INFORMANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INFORMANT_F(), KdspTextAdulthood.INFORMANT_M()); }
-    public static func WITNESS_PROTECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WITNESS_PROTECTION_F(), KdspTextAdulthood.WITNESS_PROTECTION_M()); }
+    public static func FIRST_KILL_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRST_KILL()); }
+    public static func HITMAN_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HITMAN_JOB()); }
+    public static func HEIST_SUCCESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEIST_SUCCESS()).SetWealthMod(15); }
+    public static func HEIST_FAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEIST_FAILED()); }
+    public static func INFORMANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INFORMANT()); }
+    public static func WITNESS_PROTECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WITNESS_PROTECTION()); }
 
     // Expanded Adulthood - Trauma
-    public static func MUGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MUGGED_F(), KdspTextAdulthood.MUGGED_M()); }
-    public static func HOME_INVASION_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOME_INVASION_F(), KdspTextAdulthood.HOME_INVASION_M()); }
-    public static func TORTURED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TORTURED_F(), KdspTextAdulthood.TORTURED_M()); }
-    public static func BUILDING_COLLAPSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUILDING_COLLAPSE_F(), KdspTextAdulthood.BUILDING_COLLAPSE_M()); }
+    public static func MUGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MUGGED()); }
+    public static func HOME_INVASION_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOME_INVASION()); }
+    public static func TORTURED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TORTURED()); }
+    public static func BUILDING_COLLAPSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUILDING_COLLAPSE()); }
 
     // Expanded Adulthood - Relationships
-    public static func GOT_MARRIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOT_MARRIED_F(), KdspTextAdulthood.GOT_MARRIED_M()); }
-    public static func GOT_DIVORCED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOT_DIVORCED_F(), KdspTextAdulthood.GOT_DIVORCED_M()); }
-    public static func SPOUSE_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SPOUSE_DIED_F(), KdspTextAdulthood.SPOUSE_DIED_M()); }
-    public static func CHILD_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHILD_DIED_F(), KdspTextAdulthood.CHILD_DIED_M()); }
-    public static func CAUGHT_CHEATING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAUGHT_CHEATING_F(), KdspTextAdulthood.CAUGHT_CHEATING_M()); }
-    public static func RECONCILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RECONCILED_F(), KdspTextAdulthood.RECONCILED_M()); }
+    public static func GOT_MARRIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOT_MARRIED()); }
+    public static func GOT_DIVORCED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOT_DIVORCED()); }
+    public static func SPOUSE_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SPOUSE_DIED()); }
+    public static func CHILD_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHILD_DIED()); }
+    public static func CAUGHT_CHEATING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAUGHT_CHEATING()); }
+    public static func RECONCILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RECONCILED()); }
 
     // Expanded Adulthood - Health
-    public static func DIAGNOSED_ILLNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DIAGNOSED_ILLNESS_F(), KdspTextAdulthood.DIAGNOSED_ILLNESS_M()); }
-    public static func BEAT_ILLNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BEAT_ILLNESS_F(), KdspTextAdulthood.BEAT_ILLNESS_M()); }
-    public static func CYBERWARE_REJECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERWARE_REJECTION_F(), KdspTextAdulthood.CYBERWARE_REJECTION_M()); }
-    public static func ORGAN_REPLACEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORGAN_REPLACEMENT_F(), KdspTextAdulthood.ORGAN_REPLACEMENT_M()); }
-    public static func BRAIN_DAMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRAIN_DAMAGE_F(), KdspTextAdulthood.BRAIN_DAMAGE_M()); }
-    public static func LOST_LIMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_LIMB_F(), KdspTextAdulthood.LOST_LIMB_M()); }
+    public static func DIAGNOSED_ILLNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DIAGNOSED_ILLNESS()); }
+    public static func BEAT_ILLNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BEAT_ILLNESS()); }
+    public static func CYBERWARE_REJECTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERWARE_REJECTION()); }
+    public static func ORGAN_REPLACEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORGAN_REPLACEMENT()); }
+    public static func BRAIN_DAMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRAIN_DAMAGE()); }
+    public static func LOST_LIMB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_LIMB()); }
 
     // Expanded Adulthood - Success
-    public static func LOTTERY_WIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOTTERY_WIN_F(), KdspTextAdulthood.LOTTERY_WIN_M()).SetWealthMod(20); }
-    public static func INHERITANCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INHERITANCE_F(), KdspTextAdulthood.INHERITANCE_M()).SetWealthMod(15); }
-    public static func FAMOUS_BRIEFLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAMOUS_BRIEFLY_F(), KdspTextAdulthood.FAMOUS_BRIEFLY_M()).SetCoolMod(10); }
-    public static func VIRAL_MOMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VIRAL_MOMENT_F(), KdspTextAdulthood.VIRAL_MOMENT_M()); }
-    public static func SAVED_SOMEONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SAVED_SOMEONE_F(), KdspTextAdulthood.SAVED_SOMEONE_M()); }
-    public static func AWARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AWARD_F(), KdspTextAdulthood.AWARD_M()).SetCoolMod(5); }
+    public static func LOTTERY_WIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOTTERY_WIN()).SetWealthMod(20); }
+    public static func INHERITANCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INHERITANCE()).SetWealthMod(15); }
+    public static func FAMOUS_BRIEFLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAMOUS_BRIEFLY()).SetCoolMod(10); }
+    public static func VIRAL_MOMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VIRAL_MOMENT()); }
+    public static func SAVED_SOMEONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SAVED_SOMEONE()); }
+    public static func AWARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AWARD()).SetCoolMod(5); }
 
     // Expanded Adulthood - Misc
-    public static func WENT_CORPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WENT_CORPO_F(), KdspTextAdulthood.WENT_CORPO_M()).SetWealthMod(10); }
-    public static func LEFT_CORPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_CORPO_F(), KdspTextAdulthood.LEFT_CORPO_M()); }
-    public static func MOVED_DISTRICT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MOVED_DISTRICT_F(), KdspTextAdulthood.MOVED_DISTRICT_M()); }
-    public static func EVICTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVICTED_F(), KdspTextAdulthood.EVICTED_M()); }
-    public static func HOMELESS_PERIOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOMELESS_PERIOD_F(), KdspTextAdulthood.HOMELESS_PERIOD_M()); }
-    public static func DEBT_CRISIS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEBT_CRISIS_F(), KdspTextAdulthood.DEBT_CRISIS_M()); }
-    public static func IDENTITY_STOLEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.IDENTITY_STOLEN_F(), KdspTextAdulthood.IDENTITY_STOLEN_M()); }
-    public static func BETRAYED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BETRAYED_F(), KdspTextAdulthood.BETRAYED_M()); }
+    public static func WENT_CORPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WENT_CORPO()).SetWealthMod(10); }
+    public static func LEFT_CORPO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_CORPO()); }
+    public static func MOVED_DISTRICT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MOVED_DISTRICT()); }
+    public static func EVICTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVICTED()); }
+    public static func HOMELESS_PERIOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HOMELESS_PERIOD()); }
+    public static func DEBT_CRISIS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEBT_CRISIS()); }
+    public static func IDENTITY_STOLEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.IDENTITY_STOLEN()); }
+    public static func BETRAYED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BETRAYED()); }
 
     // Net / Tech Culture
-    public static func HACKED_BY_VDBS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HACKED_BY_VDBS_F(), KdspTextAdulthood.HACKED_BY_VDBS_M()); }
-    public static func ICE_BREACH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ICE_BREACH_F(), KdspTextAdulthood.ICE_BREACH_M()); }
-    public static func SOLD_DATA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_DATA_F(), KdspTextAdulthood.SOLD_DATA_M()); }
-    public static func DEEP_NET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEEP_NET_F(), KdspTextAdulthood.DEEP_NET_M()); }
-    public static func SHARD_MALWARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHARD_MALWARE_F(), KdspTextAdulthood.SHARD_MALWARE_M()); }
-    public static func DATA_BROKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DATA_BROKER_F(), KdspTextAdulthood.DATA_BROKER_M()); }
-    public static func DAEMON_ATTACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DAEMON_ATTACK_F(), KdspTextAdulthood.DAEMON_ATTACK_M()); }
-    public static func GHOST_PROFILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GHOST_PROFILE_F(), KdspTextAdulthood.GHOST_PROFILE_M()); }
+    public static func HACKED_BY_VDBS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HACKED_BY_VDBS()); }
+    public static func ICE_BREACH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ICE_BREACH()); }
+    public static func SOLD_DATA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_DATA()); }
+    public static func DEEP_NET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEEP_NET()); }
+    public static func SHARD_MALWARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHARD_MALWARE()); }
+    public static func DATA_BROKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DATA_BROKER()); }
+    public static func DAEMON_ATTACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DAEMON_ATTACK()); }
+    public static func GHOST_PROFILE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GHOST_PROFILE()); }
 
     // Corpo Intrigue
-    public static func CORPO_SABOTAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_SABOTAGE_F(), KdspTextAdulthood.CORPO_SABOTAGE_M()); }
-    public static func CORPO_ESPIONAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_ESPIONAGE_F(), KdspTextAdulthood.CORPO_ESPIONAGE_M()); }
-    public static func CORPO_RELOCATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_RELOCATION_F(), KdspTextAdulthood.CORPO_RELOCATION_M()); }
-    public static func CORPO_BUYOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_BUYOUT_F(), KdspTextAdulthood.CORPO_BUYOUT_M()); }
-    public static func NDA_VIOLATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NDA_VIOLATION_F(), KdspTextAdulthood.NDA_VIOLATION_M()); }
-    public static func CORPO_EXPERIMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_EXPERIMENT_F(), KdspTextAdulthood.CORPO_EXPERIMENT_M()); }
-    public static func GOLDEN_PARACHUTE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOLDEN_PARACHUTE_F(), KdspTextAdulthood.GOLDEN_PARACHUTE_M()).SetWealthMod(15); }
+    public static func CORPO_SABOTAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_SABOTAGE()); }
+    public static func CORPO_ESPIONAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_ESPIONAGE()); }
+    public static func CORPO_RELOCATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_RELOCATION()); }
+    public static func CORPO_BUYOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_BUYOUT()); }
+    public static func NDA_VIOLATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NDA_VIOLATION()); }
+    public static func CORPO_EXPERIMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_EXPERIMENT()); }
+    public static func GOLDEN_PARACHUTE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOLDEN_PARACHUTE()).SetWealthMod(15); }
 
     // Night City Survival
-    public static func ACID_RAIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ACID_RAIN_F(), KdspTextAdulthood.ACID_RAIN_M()); }
-    public static func BUILDING_FIRE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUILDING_FIRE_F(), KdspTextAdulthood.BUILDING_FIRE_M()); }
-    public static func MEGABUILDING_LOCKDOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEGABUILDING_LOCKDOWN_F(), KdspTextAdulthood.MEGABUILDING_LOCKDOWN_M()); }
-    public static func POWER_GRID() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.POWER_GRID_F(), KdspTextAdulthood.POWER_GRID_M()); }
-    public static func CONTAMINATED_WATER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CONTAMINATED_WATER_F(), KdspTextAdulthood.CONTAMINATED_WATER_M()); }
-    public static func SCAV_TARGET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAV_TARGET_F(), KdspTextAdulthood.SCAV_TARGET_M()); }
-    public static func CYBERPSYCHO_ATTACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERPSYCHO_ATTACK_F(), KdspTextAdulthood.CYBERPSYCHO_ATTACK_M()); }
-    public static func DELAMAIN_CRASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DELAMAIN_CRASH_F(), KdspTextAdulthood.DELAMAIN_CRASH_M()); }
-    public static func NCART_MUGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NCART_MUGGED_F(), KdspTextAdulthood.NCART_MUGGED_M()); }
-    public static func STRAY_BULLET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STRAY_BULLET_F(), KdspTextAdulthood.STRAY_BULLET_M()); }
+    public static func ACID_RAIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ACID_RAIN()); }
+    public static func BUILDING_FIRE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BUILDING_FIRE()); }
+    public static func MEGABUILDING_LOCKDOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEGABUILDING_LOCKDOWN()); }
+    public static func POWER_GRID() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.POWER_GRID()); }
+    public static func CONTAMINATED_WATER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CONTAMINATED_WATER()); }
+    public static func SCAV_TARGET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCAV_TARGET()); }
+    public static func CYBERPSYCHO_ATTACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CYBERPSYCHO_ATTACK()); }
+    public static func DELAMAIN_CRASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DELAMAIN_CRASH()); }
+    public static func NCART_MUGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NCART_MUGGED()); }
+    public static func STRAY_BULLET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STRAY_BULLET()); }
 
     // Medical / Trauma Team
-    public static func TT_SAVED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TT_SAVED_F(), KdspTextAdulthood.TT_SAVED_M()); }
-    public static func TT_DENIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TT_DENIED_F(), KdspTextAdulthood.TT_DENIED_M()); }
-    public static func BAD_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BAD_RIPPER_F(), KdspTextAdulthood.BAD_RIPPER_M()); }
-    public static func ORGAN_SOLD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORGAN_SOLD_F(), KdspTextAdulthood.ORGAN_SOLD_M()); }
-    public static func CLONED_ORGAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLONED_ORGAN_F(), KdspTextAdulthood.CLONED_ORGAN_M()); }
-    public static func EXPERIMENTAL_DRUG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EXPERIMENTAL_DRUG_F(), KdspTextAdulthood.EXPERIMENTAL_DRUG_M()); }
-    public static func MISDIAGNOSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MISDIAGNOSED_F(), KdspTextAdulthood.MISDIAGNOSED_M()); }
+    public static func TT_SAVED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TT_SAVED()); }
+    public static func TT_DENIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TT_DENIED()); }
+    public static func BAD_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BAD_RIPPER()); }
+    public static func ORGAN_SOLD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORGAN_SOLD()); }
+    public static func CLONED_ORGAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLONED_ORGAN()); }
+    public static func EXPERIMENTAL_DRUG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EXPERIMENTAL_DRUG()); }
+    public static func MISDIAGNOSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MISDIAGNOSED()); }
 
     // Braindance / Media
-    public static func BD_RECORDED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BD_RECORDED_F(), KdspTextAdulthood.BD_RECORDED_M()); }
-    public static func XBD_EXPOSURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.XBD_EXPOSURE_F(), KdspTextAdulthood.XBD_EXPOSURE_M()); }
-    public static func MEDIA_INTERVIEW() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEDIA_INTERVIEW_F(), KdspTextAdulthood.MEDIA_INTERVIEW_M()); }
-    public static func DEEPFAKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEEPFAKE_F(), KdspTextAdulthood.DEEPFAKE_M()); }
-    public static func PIRATE_RADIO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PIRATE_RADIO_F(), KdspTextAdulthood.PIRATE_RADIO_M()); }
+    public static func BD_RECORDED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BD_RECORDED()); }
+    public static func XBD_EXPOSURE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.XBD_EXPOSURE()); }
+    public static func MEDIA_INTERVIEW() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEDIA_INTERVIEW()); }
+    public static func DEEPFAKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEEPFAKE()); }
+    public static func PIRATE_RADIO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PIRATE_RADIO()); }
 
     // Displacement / Migration
-    public static func FLED_PACIFICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FLED_PACIFICA_F(), KdspTextAdulthood.FLED_PACIFICA_M()); }
-    public static func CLIMATE_REFUGEE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLIMATE_REFUGEE_F(), KdspTextAdulthood.CLIMATE_REFUGEE_M()); }
-    public static func CORPO_WAR_REFUGEE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_WAR_REFUGEE_F(), KdspTextAdulthood.CORPO_WAR_REFUGEE_M()); }
-    public static func SQUATTER_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SQUATTER_F(), KdspTextAdulthood.SQUATTER_M()); }
-    public static func EVICTED_MEGA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVICTED_MEGA_F(), KdspTextAdulthood.EVICTED_MEGA_M()); }
+    public static func FLED_PACIFICA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FLED_PACIFICA()); }
+    public static func CLIMATE_REFUGEE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLIMATE_REFUGEE()); }
+    public static func CORPO_WAR_REFUGEE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_WAR_REFUGEE()); }
+    public static func SQUATTER_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SQUATTER()); }
+    public static func EVICTED_MEGA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVICTED_MEGA()); }
 
     // Vigilante / Justice
-    public static func VIGILANTE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VIGILANTE_F(), KdspTextAdulthood.VIGILANTE_M()); }
-    public static func WRONGFUL_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONGFUL_NCPD_F(), KdspTextAdulthood.WRONGFUL_NCPD_M()); }
-    public static func BRIBE_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRIBE_NCPD_F(), KdspTextAdulthood.BRIBE_NCPD_M()); }
-    public static func TURNED_IN_FRIEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TURNED_IN_FRIEND_F(), KdspTextAdulthood.TURNED_IN_FRIEND_M()); }
+    public static func VIGILANTE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VIGILANTE()); }
+    public static func WRONGFUL_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONGFUL_NCPD()); }
+    public static func BRIBE_NCPD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BRIBE_NCPD()); }
+    public static func TURNED_IN_FRIEND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TURNED_IN_FRIEND()); }
 
     // Ripperdoc / Cyberware Culture
-    public static func CHROME_JUNKIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHROME_JUNKIE_F(), KdspTextAdulthood.CHROME_JUNKIE_M()); }
-    public static func STRIPPED_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STRIPPED_CHROME_F(), KdspTextAdulthood.STRIPPED_CHROME_M()); }
-    public static func SECONDHAND_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SECONDHAND_CHROME_F(), KdspTextAdulthood.SECONDHAND_CHROME_M()); }
-    public static func SANDEVISTAN_SIDE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SANDEVISTAN_SIDE_F(), KdspTextAdulthood.SANDEVISTAN_SIDE_M()); }
-    public static func KIROSHI_GLITCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIROSHI_GLITCH_F(), KdspTextAdulthood.KIROSHI_GLITCH_M()); }
+    public static func CHROME_JUNKIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHROME_JUNKIE()); }
+    public static func STRIPPED_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STRIPPED_CHROME()); }
+    public static func SECONDHAND_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SECONDHAND_CHROME()); }
+    public static func SANDEVISTAN_SIDE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SANDEVISTAN_SIDE()); }
+    public static func KIROSHI_GLITCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIROSHI_GLITCH()); }
 
     // Community / Social
-    public static func BLOCK_PARTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLOCK_PARTY_F(), KdspTextAdulthood.BLOCK_PARTY_M()); }
-    public static func NEIGHBORHOOD_WATCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEIGHBORHOOD_WATCH_F(), KdspTextAdulthood.NEIGHBORHOOD_WATCH_M()); }
-    public static func FOOD_BANK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOOD_BANK_F(), KdspTextAdulthood.FOOD_BANK_M()); }
-    public static func STREET_PREACHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STREET_PREACHER_F(), KdspTextAdulthood.STREET_PREACHER_M()); }
-    public static func UNDERGROUND_FIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNDERGROUND_FIGHT_F(), KdspTextAdulthood.UNDERGROUND_FIGHT_M()); }
+    public static func BLOCK_PARTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLOCK_PARTY()); }
+    public static func NEIGHBORHOOD_WATCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEIGHBORHOOD_WATCH()); }
+    public static func FOOD_BANK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOOD_BANK()); }
+    public static func STREET_PREACHER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STREET_PREACHER()); }
+    public static func UNDERGROUND_FIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNDERGROUND_FIGHT()); }
 
     // Romantic / Personal
-    public static func JOYTOY_RELATIONSHIP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOYTOY_RELATIONSHIP_F(), KdspTextAdulthood.JOYTOY_RELATIONSHIP_M()); }
-    public static func STALKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STALKED_F(), KdspTextAdulthood.STALKED_M()); }
-    public static func CATFISHED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CATFISHED_F(), KdspTextAdulthood.CATFISHED_M()); }
-    public static func PREGNANT_SCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PREGNANT_SCARE_F(), KdspTextAdulthood.PREGNANT_SCARE_M()); }
-    public static func ELOPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ELOPED_F(), KdspTextAdulthood.ELOPED_M()); }
+    public static func JOYTOY_RELATIONSHIP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOYTOY_RELATIONSHIP()); }
+    public static func STALKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STALKED()); }
+    public static func CATFISHED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CATFISHED()); }
+    public static func PREGNANT_SCARE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PREGNANT_SCARE()); }
+    public static func ELOPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ELOPED()); }
 
     // Transportation / Vehicles
-    public static func ROAD_RAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROAD_RAGE_F(), KdspTextAdulthood.ROAD_RAGE_M()); }
-    public static func STOLEN_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOLEN_CAR_F(), KdspTextAdulthood.STOLEN_CAR_M()); }
-    public static func ILLEGAL_RACING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ILLEGAL_RACING_F(), KdspTextAdulthood.ILLEGAL_RACING_M()); }
-    public static func SMUGGLER_RUN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SMUGGLER_RUN_F(), KdspTextAdulthood.SMUGGLER_RUN_M()); }
+    public static func ROAD_RAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROAD_RAGE()); }
+    public static func STOLEN_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOLEN_CAR()); }
+    public static func ILLEGAL_RACING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ILLEGAL_RACING()); }
+    public static func SMUGGLER_RUN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SMUGGLER_RUN()); }
 
     // Economic Desperation
-    public static func SOLD_BLOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_BLOOD_F(), KdspTextAdulthood.SOLD_BLOOD_M()); }
-    public static func DUMPSTER_DIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DUMPSTER_DIVING_F(), KdspTextAdulthood.DUMPSTER_DIVING_M()); }
-    public static func PAYDAY_LOAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAYDAY_LOAN_F(), KdspTextAdulthood.PAYDAY_LOAN_M()); }
-    public static func SOLD_POSSESSIONS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_POSSESSIONS_F(), KdspTextAdulthood.SOLD_POSSESSIONS_M()); }
-    public static func CORPO_INDENTURED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_INDENTURED_F(), KdspTextAdulthood.CORPO_INDENTURED_M()); }
+    public static func SOLD_BLOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_BLOOD()); }
+    public static func DUMPSTER_DIVING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DUMPSTER_DIVING()); }
+    public static func PAYDAY_LOAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PAYDAY_LOAN()); }
+    public static func SOLD_POSSESSIONS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_POSSESSIONS()); }
+    public static func CORPO_INDENTURED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPO_INDENTURED()); }
 
     // Fixers / Merc Life
-    public static func FIXER_BLACKLIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIXER_BLACKLIST_F(), KdspTextAdulthood.FIXER_BLACKLIST_M()); }
-    public static func BOTCHED_DELIVERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOTCHED_DELIVERY_F(), KdspTextAdulthood.BOTCHED_DELIVERY_M()); }
-    public static func MERC_AMBUSH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MERC_AMBUSH_F(), KdspTextAdulthood.MERC_AMBUSH_M()); }
-    public static func SOLD_OUT_CLIENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_OUT_CLIENT_F(), KdspTextAdulthood.SOLD_OUT_CLIENT_M()); }
-    public static func CLEAN_RECORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLEAN_RECORD_F(), KdspTextAdulthood.CLEAN_RECORD_M()).SetCoolMod(5); }
-    public static func FIXER_FAVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIXER_FAVOR_F(), KdspTextAdulthood.FIXER_FAVOR_M()); }
-    public static func CREW_WIPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CREW_WIPED_F(), KdspTextAdulthood.CREW_WIPED_M()); }
-    public static func STOLEN_GOODS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOLEN_GOODS_F(), KdspTextAdulthood.STOLEN_GOODS_M()); }
-    public static func DOUBLE_BOOKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DOUBLE_BOOKED_F(), KdspTextAdulthood.DOUBLE_BOOKED_M()); }
-    public static func MERC_RETIREMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MERC_RETIREMENT_F(), KdspTextAdulthood.MERC_RETIREMENT_M()); }
+    public static func FIXER_BLACKLIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIXER_BLACKLIST()); }
+    public static func BOTCHED_DELIVERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOTCHED_DELIVERY()); }
+    public static func MERC_AMBUSH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MERC_AMBUSH()); }
+    public static func SOLD_OUT_CLIENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOLD_OUT_CLIENT()); }
+    public static func CLEAN_RECORD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLEAN_RECORD()).SetCoolMod(5); }
+    public static func FIXER_FAVOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIXER_FAVOR()); }
+    public static func CREW_WIPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CREW_WIPED()); }
+    public static func STOLEN_GOODS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOLEN_GOODS()); }
+    public static func DOUBLE_BOOKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DOUBLE_BOOKED()); }
+    public static func MERC_RETIREMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MERC_RETIREMENT()); }
 
     // Corp Specific
-    public static func ARASAKA_INTERVIEW() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARASAKA_INTERVIEW_F(), KdspTextAdulthood.ARASAKA_INTERVIEW_M()); }
-    public static func MILITECH_CONTRACT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MILITECH_CONTRACT_F(), KdspTextAdulthood.MILITECH_CONTRACT_M()); }
-    public static func BIOTECHNICA_TRIAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BIOTECHNICA_TRIAL_F(), KdspTextAdulthood.BIOTECHNICA_TRIAL_M()); }
-    public static func KANG_TAO_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KANG_TAO_DEBT_F(), KdspTextAdulthood.KANG_TAO_DEBT_M()); }
-    public static func PETROCHEM_LAYOFF() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PETROCHEM_LAYOFF_F(), KdspTextAdulthood.PETROCHEM_LAYOFF_M()); }
-    public static func ZETATECH_RECALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ZETATECH_RECALL_F(), KdspTextAdulthood.ZETATECH_RECALL_M()); }
-    public static func ORBITAL_AIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORBITAL_AIR_F(), KdspTextAdulthood.ORBITAL_AIR_M()); }
-    public static func NIGHT_CORP_DREAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NIGHT_CORP_DREAM_F(), KdspTextAdulthood.NIGHT_CORP_DREAM_M()); }
+    public static func ARASAKA_INTERVIEW() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARASAKA_INTERVIEW()); }
+    public static func MILITECH_CONTRACT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MILITECH_CONTRACT()); }
+    public static func BIOTECHNICA_TRIAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BIOTECHNICA_TRIAL()); }
+    public static func KANG_TAO_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KANG_TAO_DEBT()); }
+    public static func PETROCHEM_LAYOFF() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PETROCHEM_LAYOFF()); }
+    public static func ZETATECH_RECALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ZETATECH_RECALL()); }
+    public static func ORBITAL_AIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORBITAL_AIR()); }
+    public static func NIGHT_CORP_DREAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NIGHT_CORP_DREAM()); }
 
     // District-Specific
-    public static func HEYWOOD_SHOOTOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEYWOOD_SHOOTOUT_F(), KdspTextAdulthood.HEYWOOD_SHOOTOUT_M()); }
-    public static func WATSON_LOCKDOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WATSON_LOCKDOWN_F(), KdspTextAdulthood.WATSON_LOCKDOWN_M()); }
-    public static func KABUKI_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KABUKI_RIPPER_F(), KdspTextAdulthood.KABUKI_RIPPER_M()); }
-    public static func JAPANTOWN_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JAPANTOWN_DEBT_F(), KdspTextAdulthood.JAPANTOWN_DEBT_M()); }
-    public static func PACIFICA_SCAV() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PACIFICA_SCAV_F(), KdspTextAdulthood.PACIFICA_SCAV_M()); }
-    public static func RANCHO_FLOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RANCHO_FLOOD_F(), KdspTextAdulthood.RANCHO_FLOOD_M()); }
-    public static func DOGTOWN_HUSTLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DOGTOWN_HUSTLE_F(), KdspTextAdulthood.DOGTOWN_HUSTLE_M()); }
-    public static func CHARTER_HILL_MUGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHARTER_HILL_MUGGED_F(), KdspTextAdulthood.CHARTER_HILL_MUGGED_M()); }
-    public static func BADLANDS_BREAKDOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BADLANDS_BREAKDOWN_F(), KdspTextAdulthood.BADLANDS_BREAKDOWN_M()); }
-    public static func CITY_CENTER_BOMBING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CITY_CENTER_BOMBING_F(), KdspTextAdulthood.CITY_CENTER_BOMBING_M()); }
+    public static func HEYWOOD_SHOOTOUT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEYWOOD_SHOOTOUT()); }
+    public static func WATSON_LOCKDOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WATSON_LOCKDOWN()); }
+    public static func KABUKI_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KABUKI_RIPPER()); }
+    public static func JAPANTOWN_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JAPANTOWN_DEBT()); }
+    public static func PACIFICA_SCAV() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PACIFICA_SCAV()); }
+    public static func RANCHO_FLOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RANCHO_FLOOD()); }
+    public static func DOGTOWN_HUSTLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DOGTOWN_HUSTLE()); }
+    public static func CHARTER_HILL_MUGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHARTER_HILL_MUGGED()); }
+    public static func BADLANDS_BREAKDOWN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BADLANDS_BREAKDOWN()); }
+    public static func CITY_CENTER_BOMBING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CITY_CENTER_BOMBING()); }
 
     // Substance Abuse
-    public static func GLITTER_ADDICTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GLITTER_ADDICTION_F(), KdspTextAdulthood.GLITTER_ADDICTION_M()); }
-    public static func SYNTHCOKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SYNTHCOKE_F(), KdspTextAdulthood.SYNTHCOKE_M()); }
-    public static func BLACK_LACE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACK_LACE_F(), KdspTextAdulthood.BLACK_LACE_M()); }
-    public static func DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEALER_F(), KdspTextAdulthood.DEALER_M()); }
-    public static func SOBER_SPONSOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOBER_SPONSOR_F(), KdspTextAdulthood.SOBER_SPONSOR_M()); }
-    public static func RELAPSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RELAPSED_F(), KdspTextAdulthood.RELAPSED_M()); }
-    public static func BOOZE_DEPENDENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOZE_DEPENDENCE_F(), KdspTextAdulthood.BOOZE_DEPENDENCE_M()); }
+    public static func GLITTER_ADDICTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GLITTER_ADDICTION()); }
+    public static func SYNTHCOKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SYNTHCOKE()); }
+    public static func BLACK_LACE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLACK_LACE()); }
+    public static func DEALER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEALER()); }
+    public static func SOBER_SPONSOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOBER_SPONSOR()); }
+    public static func RELAPSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RELAPSED()); }
+    public static func BOOZE_DEPENDENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOZE_DEPENDENCE()); }
 
     // Militarized / Security
-    public static func NCPD_BRUTALITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NCPD_BRUTALITY_F(), KdspTextAdulthood.NCPD_BRUTALITY_M()); }
-    public static func MAXTAC_WITNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MAXTAC_WITNESS_F(), KdspTextAdulthood.MAXTAC_WITNESS_M()); }
-    public static func MILITECH_DRONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MILITECH_DRONE_F(), KdspTextAdulthood.MILITECH_DRONE_M()); }
-    public static func PRIVATE_SECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PRIVATE_SECURITY_F(), KdspTextAdulthood.PRIVATE_SECURITY_M()); }
-    public static func ARASAKA_DETAINED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARASAKA_DETAINED_F(), KdspTextAdulthood.ARASAKA_DETAINED_M()); }
-    public static func EVENT_SECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVENT_SECURITY_F(), KdspTextAdulthood.EVENT_SECURITY_M()); }
+    public static func NCPD_BRUTALITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NCPD_BRUTALITY()); }
+    public static func MAXTAC_WITNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MAXTAC_WITNESS()); }
+    public static func MILITECH_DRONE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MILITECH_DRONE()); }
+    public static func PRIVATE_SECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PRIVATE_SECURITY()); }
+    public static func ARASAKA_DETAINED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARASAKA_DETAINED()); }
+    public static func EVENT_SECURITY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.EVENT_SECURITY()); }
 
     // Nightlife
-    public static func AFTERLIFE_REGULAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AFTERLIFE_REGULAR_F(), KdspTextAdulthood.AFTERLIFE_REGULAR_M()).SetCoolMod(5); }
-    public static func BARFIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BARFIGHT_F(), KdspTextAdulthood.BARFIGHT_M()); }
-    public static func DRINK_NAMED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DRINK_NAMED_F(), KdspTextAdulthood.DRINK_NAMED_M()).SetCoolMod(10); }
-    public static func BANNED_BAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BANNED_BAR_F(), KdspTextAdulthood.BANNED_BAR_M()); }
-    public static func UNDERGROUND_PARTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNDERGROUND_PARTY_F(), KdspTextAdulthood.UNDERGROUND_PARTY_M()); }
-    public static func NIGHTCLUB_OD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NIGHTCLUB_OD_F(), KdspTextAdulthood.NIGHTCLUB_OD_M()); }
+    public static func AFTERLIFE_REGULAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.AFTERLIFE_REGULAR()).SetCoolMod(5); }
+    public static func BARFIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BARFIGHT()); }
+    public static func DRINK_NAMED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DRINK_NAMED()).SetCoolMod(10); }
+    public static func BANNED_BAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BANNED_BAR()); }
+    public static func UNDERGROUND_PARTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNDERGROUND_PARTY()); }
+    public static func NIGHTCLUB_OD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NIGHTCLUB_OD()); }
 
     // Pets
-    public static func PET_CAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PET_CAT_F(), KdspTextAdulthood.PET_CAT_M()); }
-    public static func PET_DOG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PET_DOG_F(), KdspTextAdulthood.PET_DOG_M()); }
-    public static func PET_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PET_DIED_F(), KdspTextAdulthood.PET_DIED_M()); }
-    public static func FEEDS_STRAYS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FEEDS_STRAYS_F(), KdspTextAdulthood.FEEDS_STRAYS_M()); }
+    public static func PET_CAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PET_CAT()); }
+    public static func PET_DOG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PET_DOG()); }
+    public static func PET_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PET_DIED()); }
+    public static func FEEDS_STRAYS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FEEDS_STRAYS()); }
 
     // Gambling
-    public static func PACHINKO_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PACHINKO_DEBT_F(), KdspTextAdulthood.PACHINKO_DEBT_M()); }
-    public static func RIGGED_FIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RIGGED_FIGHT_F(), KdspTextAdulthood.RIGGED_FIGHT_M()); }
-    public static func CASINO_BANNED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CASINO_BANNED_F(), KdspTextAdulthood.CASINO_BANNED_M()); }
-    public static func BOOKIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOKIE_F(), KdspTextAdulthood.BOOKIE_M()); }
-    public static func POKER_SHARK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.POKER_SHARK_F(), KdspTextAdulthood.POKER_SHARK_M()); }
+    public static func PACHINKO_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PACHINKO_DEBT()); }
+    public static func RIGGED_FIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RIGGED_FIGHT()); }
+    public static func CASINO_BANNED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CASINO_BANNED()); }
+    public static func BOOKIE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOKIE()); }
+    public static func POKER_SHARK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.POKER_SHARK()); }
 
     // Housing
-    public static func COFFIN_MOTEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COFFIN_MOTEL_F(), KdspTextAdulthood.COFFIN_MOTEL_M()); }
-    public static func ROOFTOP_SQUAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROOFTOP_SQUAT_F(), KdspTextAdulthood.ROOFTOP_SQUAT_M()); }
-    public static func ROOMMATE_HELL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROOMMATE_HELL_F(), KdspTextAdulthood.ROOMMATE_HELL_M()); }
-    public static func UPGRADED_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UPGRADED_APT_F(), KdspTextAdulthood.UPGRADED_APT_M()).SetWealthMod(5); }
-    public static func LIVES_IN_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LIVES_IN_CAR_F(), KdspTextAdulthood.LIVES_IN_CAR_M()); }
-    public static func NOISE_COMPLAINT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NOISE_COMPLAINT_F(), KdspTextAdulthood.NOISE_COMPLAINT_M()); }
-    public static func APARTMENT_ROBBERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.APARTMENT_ROBBERY_F(), KdspTextAdulthood.APARTMENT_ROBBERY_M()); }
+    public static func COFFIN_MOTEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COFFIN_MOTEL()); }
+    public static func ROOFTOP_SQUAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROOFTOP_SQUAT()); }
+    public static func ROOMMATE_HELL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROOMMATE_HELL()); }
+    public static func UPGRADED_APT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UPGRADED_APT()).SetWealthMod(5); }
+    public static func LIVES_IN_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LIVES_IN_CAR()); }
+    public static func NOISE_COMPLAINT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NOISE_COMPLAINT()); }
+    public static func APARTMENT_ROBBERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.APARTMENT_ROBBERY()); }
 
     // Combat / Sports
-    public static func BOXING_AMATEUR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOXING_AMATEUR_F(), KdspTextAdulthood.BOXING_AMATEUR_M()).SetBodyMod(5); }
-    public static func FIGHT_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIGHT_CLUB_F(), KdspTextAdulthood.FIGHT_CLUB_M()).SetBodyMod(5); }
-    public static func RACING_CRASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RACING_CRASH_F(), KdspTextAdulthood.RACING_CRASH_M()); }
-    public static func COMBAT_TOURNAMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMBAT_TOURNAMENT_F(), KdspTextAdulthood.COMBAT_TOURNAMENT_M()); }
-    public static func RACING_WIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RACING_WIN_F(), KdspTextAdulthood.RACING_WIN_M()).SetCoolMod(5); }
+    public static func BOXING_AMATEUR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOXING_AMATEUR()).SetBodyMod(5); }
+    public static func FIGHT_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIGHT_CLUB()).SetBodyMod(5); }
+    public static func RACING_CRASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RACING_CRASH()); }
+    public static func COMBAT_TOURNAMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COMBAT_TOURNAMENT()); }
+    public static func RACING_WIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RACING_WIN()).SetCoolMod(5); }
 
     // Death / Loss
-    public static func FRIEND_OVERDOSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FRIEND_OVERDOSE_F(), KdspTextAdulthood.FRIEND_OVERDOSE_M()); }
-    public static func NEIGHBOR_KILLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEIGHBOR_KILLED_F(), KdspTextAdulthood.NEIGHBOR_KILLED_M()); }
-    public static func SAW_EXECUTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SAW_EXECUTION_F(), KdspTextAdulthood.SAW_EXECUTION_M()); }
-    public static func BODY_FOUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BODY_FOUND_F(), KdspTextAdulthood.BODY_FOUND_M()); }
-    public static func FUNERAL_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FUNERAL_DEBT_F(), KdspTextAdulthood.FUNERAL_DEBT_M()); }
-    public static func CHOOM_FLATLINED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHOOM_FLATLINED_F(), KdspTextAdulthood.CHOOM_FLATLINED_M()); }
+    public static func FRIEND_OVERDOSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FRIEND_OVERDOSE()); }
+    public static func NEIGHBOR_KILLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEIGHBOR_KILLED()); }
+    public static func SAW_EXECUTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SAW_EXECUTION()); }
+    public static func BODY_FOUND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BODY_FOUND()); }
+    public static func FUNERAL_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FUNERAL_DEBT()); }
+    public static func CHOOM_FLATLINED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHOOM_FLATLINED()); }
 
     // Food / Survival
-    public static func FOOD_POISONING_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOOD_POISONING_F(), KdspTextAdulthood.FOOD_POISONING_M()); }
-    public static func KIBBLE_DIET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIBBLE_DIET_F(), KdspTextAdulthood.KIBBLE_DIET_M()); }
-    public static func REAL_FOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REAL_FOOD_F(), KdspTextAdulthood.REAL_FOOD_M()); }
-    public static func FOOD_STALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOOD_STALL_F(), KdspTextAdulthood.FOOD_STALL_M()); }
+    public static func FOOD_POISONING_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOOD_POISONING()); }
+    public static func KIBBLE_DIET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KIBBLE_DIET()); }
+    public static func REAL_FOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REAL_FOOD()); }
+    public static func FOOD_STALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOOD_STALL()); }
 
     // Scams / Cons
-    public static func FAKE_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAKE_CHROME_F(), KdspTextAdulthood.FAKE_CHROME_M()); }
-    public static func PYRAMID_SCHEME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PYRAMID_SCHEME_F(), KdspTextAdulthood.PYRAMID_SCHEME_M()); }
-    public static func ROMANCE_SCAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROMANCE_SCAM_F(), KdspTextAdulthood.ROMANCE_SCAM_M()); }
-    public static func FAKE_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAKE_FIXER_F(), KdspTextAdulthood.FAKE_FIXER_M()); }
-    public static func SHELL_COMPANY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHELL_COMPANY_F(), KdspTextAdulthood.SHELL_COMPANY_M()); }
-    public static func IDENTITY_SOLD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.IDENTITY_SOLD_F(), KdspTextAdulthood.IDENTITY_SOLD_M()); }
+    public static func FAKE_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAKE_CHROME()); }
+    public static func PYRAMID_SCHEME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PYRAMID_SCHEME()); }
+    public static func ROMANCE_SCAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ROMANCE_SCAM()); }
+    public static func FAKE_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAKE_FIXER()); }
+    public static func SHELL_COMPANY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHELL_COMPANY()); }
+    public static func IDENTITY_SOLD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.IDENTITY_SOLD()); }
 
     // Childhood Echoes
-    public static func ORPHANAGE_REUNION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORPHANAGE_REUNION_F(), KdspTextAdulthood.ORPHANAGE_REUNION_M()); }
-    public static func OLD_BULLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OLD_BULLY_F(), KdspTextAdulthood.OLD_BULLY_M()); }
-    public static func INHERITANCE_SCAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INHERITANCE_SCAM_F(), KdspTextAdulthood.INHERITANCE_SCAM_M()); }
-    public static func FAMILY_SECRET_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAMILY_SECRET_F(), KdspTextAdulthood.FAMILY_SECRET_M()); }
-    public static func CHILDHOOD_HOME_DEMOLISHED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHILDHOOD_HOME_DEMOLISHED_F(), KdspTextAdulthood.CHILDHOOD_HOME_DEMOLISHED_M()); }
+    public static func ORPHANAGE_REUNION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ORPHANAGE_REUNION()); }
+    public static func OLD_BULLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OLD_BULLY()); }
+    public static func INHERITANCE_SCAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INHERITANCE_SCAM()); }
+    public static func FAMILY_SECRET_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FAMILY_SECRET()); }
+    public static func CHILDHOOD_HOME_DEMOLISHED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHILDHOOD_HOME_DEMOLISHED()); }
 
     // Windfalls
-    public static func FOUND_STASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOUND_STASH_F(), KdspTextAdulthood.FOUND_STASH_M()).SetWealthMod(10); }
-    public static func WRONG_ACCOUNT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONG_ACCOUNT_F(), KdspTextAdulthood.WRONG_ACCOUNT_M()).SetWealthMod(5); }
-    public static func SALVAGE_SCORE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SALVAGE_SCORE_F(), KdspTextAdulthood.SALVAGE_SCORE_M()).SetWealthMod(10); }
-    public static func RARE_SHARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RARE_SHARD_F(), KdspTextAdulthood.RARE_SHARD_M()).SetWealthMod(15); }
+    public static func FOUND_STASH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOUND_STASH()).SetWealthMod(10); }
+    public static func WRONG_ACCOUNT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONG_ACCOUNT()).SetWealthMod(5); }
+    public static func SALVAGE_SCORE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SALVAGE_SCORE()).SetWealthMod(10); }
+    public static func RARE_SHARD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RARE_SHARD()).SetWealthMod(15); }
 
     // Bureaucratic
-    public static func NC_ID_REVOKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NC_ID_REVOKED_F(), KdspTextAdulthood.NC_ID_REVOKED_M()); }
-    public static func INSURANCE_DENIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INSURANCE_DENIED_F(), KdspTextAdulthood.INSURANCE_DENIED_M()); }
-    public static func PERMIT_REVOKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PERMIT_REVOKED_F(), KdspTextAdulthood.PERMIT_REVOKED_M()); }
-    public static func TAX_AUDIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TAX_AUDIT_F(), KdspTextAdulthood.TAX_AUDIT_M()); }
-    public static func JURY_DUTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JURY_DUTY_F(), KdspTextAdulthood.JURY_DUTY_M()); }
-    public static func WRONG_ADDRESS_RAID() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONG_ADDRESS_RAID_F(), KdspTextAdulthood.WRONG_ADDRESS_RAID_M()); }
+    public static func NC_ID_REVOKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NC_ID_REVOKED()); }
+    public static func INSURANCE_DENIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.INSURANCE_DENIED()); }
+    public static func PERMIT_REVOKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PERMIT_REVOKED()); }
+    public static func TAX_AUDIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TAX_AUDIT()); }
+    public static func JURY_DUTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JURY_DUTY()); }
+    public static func WRONG_ADDRESS_RAID() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONG_ADDRESS_RAID()); }
 
     // Revenge / Grudges
-    public static func REVENGE_SERVED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REVENGE_SERVED_F(), KdspTextAdulthood.REVENGE_SERVED_M()); }
-    public static func HIT_LIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HIT_LIST_F(), KdspTextAdulthood.HIT_LIST_M()); }
-    public static func VENDETTA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VENDETTA_F(), KdspTextAdulthood.VENDETTA_M()); }
-    public static func FORGAVE_ENEMY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FORGAVE_ENEMY_F(), KdspTextAdulthood.FORGAVE_ENEMY_M()); }
+    public static func REVENGE_SERVED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REVENGE_SERVED()); }
+    public static func HIT_LIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HIT_LIST()); }
+    public static func VENDETTA() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.VENDETTA()); }
+    public static func FORGAVE_ENEMY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FORGAVE_ENEMY()); }
 
     // Close Calls
-    public static func WRONG_PLACE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONG_PLACE_F(), KdspTextAdulthood.WRONG_PLACE_M()); }
-    public static func ELEVATOR_FALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ELEVATOR_FALL_F(), KdspTextAdulthood.ELEVATOR_FALL_M()); }
-    public static func MISSED_FLIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MISSED_FLIGHT_F(), KdspTextAdulthood.MISSED_FLIGHT_M()); }
-    public static func STOOD_UP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOOD_UP_F(), KdspTextAdulthood.STOOD_UP_M()); }
-    public static func LAST_SECOND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LAST_SECOND_F(), KdspTextAdulthood.LAST_SECOND_M()); }
+    public static func WRONG_PLACE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONG_PLACE()); }
+    public static func ELEVATOR_FALL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ELEVATOR_FALL()); }
+    public static func MISSED_FLIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MISSED_FLIGHT()); }
+    public static func STOOD_UP() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STOOD_UP()); }
+    public static func LAST_SECOND() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LAST_SECOND()); }
 
     // Craftsmanship
-    public static func WEAPON_SMITH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WEAPON_SMITH_F(), KdspTextAdulthood.WEAPON_SMITH_M()).SetTechMod(10); }
-    public static func TATTOO_ARTIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TATTOO_ARTIST_F(), KdspTextAdulthood.TATTOO_ARTIST_M()); }
-    public static func CAR_MECHANIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAR_MECHANIC_F(), KdspTextAdulthood.CAR_MECHANIC_M()).SetTechMod(5); }
-    public static func SHARD_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHARD_COLLECTOR_F(), KdspTextAdulthood.SHARD_COLLECTOR_M()); }
-    public static func BOOTLEG_BD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOTLEG_BD_F(), KdspTextAdulthood.BOOTLEG_BD_M()).SetTechMod(5); }
+    public static func WEAPON_SMITH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WEAPON_SMITH()).SetTechMod(10); }
+    public static func TATTOO_ARTIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TATTOO_ARTIST()); }
+    public static func CAR_MECHANIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CAR_MECHANIC()).SetTechMod(5); }
+    public static func SHARD_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHARD_COLLECTOR()); }
+    public static func BOOTLEG_BD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOTLEG_BD()).SetTechMod(5); }
 
     // Debts / Obligations
-    public static func OWES_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OWES_GANG_F(), KdspTextAdulthood.OWES_GANG_M()); }
-    public static func OWES_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OWES_RIPPER_F(), KdspTextAdulthood.OWES_RIPPER_M()); }
-    public static func BLOOD_OATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLOOD_OATH_F(), KdspTextAdulthood.BLOOD_OATH_M()); }
-    public static func COLLATERAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COLLATERAL_F(), KdspTextAdulthood.COLLATERAL_M()); }
-    public static func DEBT_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEBT_COLLECTOR_F(), KdspTextAdulthood.DEBT_COLLECTOR_M()); }
-    public static func ACTIVISM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ACTIVISM_F(), KdspTextAdulthood.ACTIVISM_M()); }
-    public static func ALBUM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ALBUM_F(), KdspTextAdulthood.ALBUM_M()); }
-    public static func ARRESTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARRESTED_F(), KdspTextAdulthood.ARRESTED_M()); }
-    public static func BAND_BROKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BAND_BROKE_F(), KdspTextAdulthood.BAND_BROKE_M()); }
-    public static func BECAME_NOMAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BECAME_NOMAD_F(), KdspTextAdulthood.BECAME_NOMAD_M()); }
-    public static func BIZ_FAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BIZ_FAILED_F(), KdspTextAdulthood.BIZ_FAILED_M()); }
-    public static func BOOTLEG_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOTLEG_CHROME_F(), KdspTextAdulthood.BOOTLEG_CHROME_M()); }
-    public static func BOUNTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUNTY_F(), KdspTextAdulthood.BOUNTY_M()); }
-    public static func BURNED_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BURNED_FIXER_F(), KdspTextAdulthood.BURNED_FIXER_M()); }
-    public static func CARETAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CARETAKER_F(), KdspTextAdulthood.CARETAKER_M()); }
-    public static func CARJACKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CARJACKED_F(), KdspTextAdulthood.CARJACKED_M()); }
-    public static func CHARGES_DROPPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHARGES_DROPPED_F(), KdspTextAdulthood.CHARGES_DROPPED_M()); }
-    public static func CHROME_REJECT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHROME_REJECT_F(), KdspTextAdulthood.CHROME_REJECT_M()); }
-    public static func CHRONIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHRONIC_F(), KdspTextAdulthood.CHRONIC_M()); }
-    public static func CLEAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLEAN_F(), KdspTextAdulthood.CLEAN_M()); }
-    public static func CORPORATE_PURGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPORATE_PURGE_F(), KdspTextAdulthood.CORPORATE_PURGE_M()); }
-    public static func CRYPTO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CRYPTO_F(), KdspTextAdulthood.CRYPTO_M()); }
-    public static func CUT_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CUT_FAM_F(), KdspTextAdulthood.CUT_FAM_M()); }
-    public static func DEMOTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEMOTION_F(), KdspTextAdulthood.DEMOTION_M()); }
-    public static func DOUBLE_CROSSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DOUBLE_CROSSED_F(), KdspTextAdulthood.DOUBLE_CROSSED_M()); }
-    public static func DRIVE_BY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DRIVE_BY_F(), KdspTextAdulthood.DRIVE_BY_M()); }
-    public static func ESTRANGED_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ESTRANGED_FAMILY_F(), KdspTextAdulthood.ESTRANGED_FAMILY_M()); }
-    public static func FIRED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRED_F(), KdspTextAdulthood.FIRED_M()); }
-    public static func FIRST_FIXER_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRST_FIXER_JOB_F(), KdspTextAdulthood.FIRST_FIXER_JOB_M()); }
-    public static func FITNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FITNESS_F(), KdspTextAdulthood.FITNESS_M()); }
-    public static func FOUND_FAITH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOUND_FAITH_F(), KdspTextAdulthood.FOUND_FAITH_M()); }
-    public static func GANG_BEATING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_BEATING_F(), KdspTextAdulthood.GANG_BEATING_M()); }
-    public static func GANG_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_WAR_F(), KdspTextAdulthood.GANG_WAR_M()); }
-    public static func GOT_DEGREE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOT_DEGREE_F(), KdspTextAdulthood.GOT_DEGREE_M()); }
-    public static func GYM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GYM_F(), KdspTextAdulthood.GYM_M()); }
-    public static func ADULT_HEARTBROKEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEARTBROKEN_F(), KdspTextAdulthood.HEARTBROKEN_M()); }
-    public static func ID_CHANGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ID_CHANGE_F(), KdspTextAdulthood.ID_CHANGE_M()); }
-    public static func JOINED_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_CULT_F(), KdspTextAdulthood.JOINED_CULT_M()); }
-    public static func ADULT_JOINED_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_GANG_F(), KdspTextAdulthood.JOINED_GANG_M()); }
-    public static func KILLED_DEFENSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KILLED_DEFENSE_F(), KdspTextAdulthood.KILLED_DEFENSE_M()); }
-    public static func LAYOFF() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LAYOFF_F(), KdspTextAdulthood.LAYOFF_M()); }
-    public static func LEARNED_LANGUAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEARNED_LANGUAGE_F(), KdspTextAdulthood.LEARNED_LANGUAGE_M()); }
-    public static func LEFT_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_CULT_F(), KdspTextAdulthood.LEFT_CULT_M()); }
-    public static func LEFT_DEAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_DEAD_F(), KdspTextAdulthood.LEFT_DEAD_M()); }
-    public static func LEFT_NC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_NC_F(), KdspTextAdulthood.LEFT_NC_M()); }
-    public static func LEFT_NOMADS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_NOMADS_F(), KdspTextAdulthood.LEFT_NOMADS_M()); }
-    public static func LOST_CUSTODY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_CUSTODY_F(), KdspTextAdulthood.LOST_CUSTODY_M()); }
-    public static func LOST_FAITH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_FAITH_F(), KdspTextAdulthood.LOST_FAITH_M()); }
-    public static func LOST_LAWSUIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_LAWSUIT_F(), KdspTextAdulthood.LOST_LAWSUIT_M()); }
-    public static func LOST_SAVINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_SAVINGS_F(), KdspTextAdulthood.LOST_SAVINGS_M()); }
-    public static func MEMORY_LOSS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEMORY_LOSS_F(), KdspTextAdulthood.MEMORY_LOSS_M()); }
-    public static func ADULT_MENTORED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MENTORED_F(), KdspTextAdulthood.MENTORED_M()); }
-    public static func MISCARRIAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MISCARRIAGE_F(), KdspTextAdulthood.MISCARRIAGE_M()); }
-    public static func MOVED_NC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MOVED_NC_F(), KdspTextAdulthood.MOVED_NC_M()); }
-    public static func ADULT_NEAR_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEAR_DEATH_F(), KdspTextAdulthood.NEAR_DEATH_M()); }
-    public static func NEW_SKILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEW_SKILL_F(), KdspTextAdulthood.NEW_SKILL_M()); }
-    public static func OVERDOSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OVERDOSED_F(), KdspTextAdulthood.OVERDOSED_M()); }
-    public static func PARENT_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PARENT_DIED_F(), KdspTextAdulthood.PARENT_DIED_M()); }
-    public static func PARTNER_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PARTNER_DIED_F(), KdspTextAdulthood.PARTNER_DIED_M()); }
-    public static func PILGRIMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PILGRIMAGE_F(), KdspTextAdulthood.PILGRIMAGE_M()); }
-    public static func POLITICAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.POLITICAL_F(), KdspTextAdulthood.POLITICAL_M()); }
-    public static func PROBATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROBATION_F(), KdspTextAdulthood.PROBATION_M()); }
-    public static func PROMOTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROMOTION_F(), KdspTextAdulthood.PROMOTION_M()); }
-    public static func QUIT_DRAMATICALLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.QUIT_DRAMATICALLY_F(), KdspTextAdulthood.QUIT_DRAMATICALLY_M()); }
-    public static func RECONNECT_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RECONNECT_FAM_F(), KdspTextAdulthood.RECONNECT_FAM_M()); }
-    public static func REHAB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REHAB_F(), KdspTextAdulthood.REHAB_M()); }
-    public static func REPO_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REPO_CAR_F(), KdspTextAdulthood.REPO_CAR_M()); }
-    public static func REP_BOOST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REP_BOOST_F(), KdspTextAdulthood.REP_BOOST_M()); }
-    public static func REP_TANK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REP_TANK_F(), KdspTextAdulthood.REP_TANK_M()); }
-    public static func SCORED_BIG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCORED_BIG_F(), KdspTextAdulthood.SCORED_BIG_M()); }
-    public static func SHOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHOT_F(), KdspTextAdulthood.SHOT_M()); }
-    public static func SOBRIETY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOBRIETY_F(), KdspTextAdulthood.SOBRIETY_M()); }
-    public static func STABBED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STABBED_F(), KdspTextAdulthood.STABBED_M()); }
-    public static func STARTED_BIZ() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STARTED_BIZ_F(), KdspTextAdulthood.STARTED_BIZ_M()); }
-    public static func STRIKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STRIKE_F(), KdspTextAdulthood.STRIKE_M()); }
-    public static func SUED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SUED_F(), KdspTextAdulthood.SUED_M()); }
-    public static func SURGERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SURGERY_F(), KdspTextAdulthood.SURGERY_M()); }
-    public static func SURVIVED_ATK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SURVIVED_ATK_F(), KdspTextAdulthood.SURVIVED_ATK_M()); }
-    public static func THERAPY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.THERAPY_F(), KdspTextAdulthood.THERAPY_M()); }
-    public static func TRANSFERRED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TRANSFERRED_F(), KdspTextAdulthood.TRANSFERRED_M()); }
-    public static func UNION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNION_F(), KdspTextAdulthood.UNION_M()); }
-    public static func WENT_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WENT_MISSING_F(), KdspTextAdulthood.WENT_MISSING_M()); }
-    public static func WITNESS_PROT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WITNESS_PROT_F(), KdspTextAdulthood.WITNESS_PROT_M()); }
-    public static func WON_LAWSUIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WON_LAWSUIT_F(), KdspTextAdulthood.WON_LAWSUIT_M()); }
-    public static func WORKPLACE_AFFAIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WORKPLACE_AFFAIR_F(), KdspTextAdulthood.WORKPLACE_AFFAIR_M()); }
-    public static func WORKPLACE_ENEMY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WORKPLACE_ENEMY_F(), KdspTextAdulthood.WORKPLACE_ENEMY_M()); }
-    public static func WRONGFUL_ARREST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONGFUL_ARREST_F(), KdspTextAdulthood.WRONGFUL_ARREST_M()); }
+    public static func OWES_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OWES_GANG()); }
+    public static func OWES_RIPPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OWES_RIPPER()); }
+    public static func BLOOD_OATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BLOOD_OATH()); }
+    public static func COLLATERAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.COLLATERAL()); }
+    public static func DEBT_COLLECTOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEBT_COLLECTOR()); }
+    public static func ACTIVISM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ACTIVISM()); }
+    public static func ALBUM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ALBUM()); }
+    public static func ARRESTED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ARRESTED()); }
+    public static func BAND_BROKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BAND_BROKE()); }
+    public static func BECAME_NOMAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BECAME_NOMAD()); }
+    public static func BIZ_FAILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BIZ_FAILED()); }
+    public static func BOOTLEG_CHROME() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOOTLEG_CHROME()); }
+    public static func BOUNTY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BOUNTY()); }
+    public static func BURNED_FIXER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.BURNED_FIXER()); }
+    public static func CARETAKER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CARETAKER()); }
+    public static func CARJACKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CARJACKED()); }
+    public static func CHARGES_DROPPED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHARGES_DROPPED()); }
+    public static func CHROME_REJECT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHROME_REJECT()); }
+    public static func CHRONIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CHRONIC()); }
+    public static func CLEAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CLEAN()); }
+    public static func CORPORATE_PURGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CORPORATE_PURGE()); }
+    public static func CRYPTO() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CRYPTO()); }
+    public static func CUT_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.CUT_FAM()); }
+    public static func DEMOTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DEMOTION()); }
+    public static func DOUBLE_CROSSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DOUBLE_CROSSED()); }
+    public static func DRIVE_BY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.DRIVE_BY()); }
+    public static func ESTRANGED_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ESTRANGED_FAMILY()); }
+    public static func FIRED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRED()); }
+    public static func FIRST_FIXER_JOB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FIRST_FIXER_JOB()); }
+    public static func FITNESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FITNESS()); }
+    public static func FOUND_FAITH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.FOUND_FAITH()); }
+    public static func GANG_BEATING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_BEATING()); }
+    public static func GANG_WAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GANG_WAR()); }
+    public static func GOT_DEGREE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GOT_DEGREE()); }
+    public static func GYM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.GYM()); }
+    public static func ADULT_HEARTBROKEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.HEARTBROKEN()); }
+    public static func ID_CHANGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ID_CHANGE()); }
+    public static func JOINED_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_CULT()); }
+    public static func ADULT_JOINED_GANG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.JOINED_GANG()); }
+    public static func KILLED_DEFENSE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.KILLED_DEFENSE()); }
+    public static func LAYOFF() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LAYOFF()); }
+    public static func LEARNED_LANGUAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEARNED_LANGUAGE()); }
+    public static func LEFT_CULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_CULT()); }
+    public static func LEFT_DEAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_DEAD()); }
+    public static func LEFT_NC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_NC()); }
+    public static func LEFT_NOMADS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LEFT_NOMADS()); }
+    public static func LOST_CUSTODY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_CUSTODY()); }
+    public static func LOST_FAITH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_FAITH()); }
+    public static func LOST_LAWSUIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_LAWSUIT()); }
+    public static func LOST_SAVINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.LOST_SAVINGS()); }
+    public static func MEMORY_LOSS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MEMORY_LOSS()); }
+    public static func ADULT_MENTORED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MENTORED()); }
+    public static func MISCARRIAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MISCARRIAGE()); }
+    public static func MOVED_NC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.MOVED_NC()); }
+    public static func ADULT_NEAR_DEATH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEAR_DEATH()); }
+    public static func NEW_SKILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.NEW_SKILL()); }
+    public static func OVERDOSED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.OVERDOSED()); }
+    public static func PARENT_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PARENT_DIED()); }
+    public static func PARTNER_DIED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PARTNER_DIED()); }
+    public static func PILGRIMAGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PILGRIMAGE()); }
+    public static func POLITICAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.POLITICAL()); }
+    public static func PROBATION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROBATION()); }
+    public static func PROMOTION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.PROMOTION()); }
+    public static func QUIT_DRAMATICALLY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.QUIT_DRAMATICALLY()); }
+    public static func RECONNECT_FAM() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.RECONNECT_FAM()); }
+    public static func REHAB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REHAB()); }
+    public static func REPO_CAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REPO_CAR()); }
+    public static func REP_BOOST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REP_BOOST()); }
+    public static func REP_TANK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.REP_TANK()); }
+    public static func SCORED_BIG() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SCORED_BIG()); }
+    public static func SHOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SHOT()); }
+    public static func SOBRIETY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SOBRIETY()); }
+    public static func STABBED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STABBED()); }
+    public static func STARTED_BIZ() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STARTED_BIZ()); }
+    public static func STRIKE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.STRIKE()); }
+    public static func SUED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SUED()); }
+    public static func SURGERY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SURGERY()); }
+    public static func SURVIVED_ATK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.SURVIVED_ATK()); }
+    public static func THERAPY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.THERAPY()); }
+    public static func TRANSFERRED() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.TRANSFERRED()); }
+    public static func UNION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.UNION()); }
+    public static func WENT_MISSING() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WENT_MISSING()); }
+    public static func WITNESS_PROT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WITNESS_PROT()); }
+    public static func WON_LAWSUIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WON_LAWSUIT()); }
+    public static func WORKPLACE_AFFAIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WORKPLACE_AFFAIR()); }
+    public static func WORKPLACE_ENEMY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WORKPLACE_ENEMY()); }
+    public static func WRONGFUL_ARREST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONGFUL_ARREST()); }
 }
 
 public static func UpbringingEvents(

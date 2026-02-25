@@ -72,3 +72,11 @@ public static func LPE(femaleVariant: String, maleVariant: String) -> ref<KdspLi
     event.maleVariant = maleVariant;
     return event;
 }
+
+// Create a new KdspLifePathEvent with a single gender-neutral text (uses %he%, %his%, etc. placeholders).
+public static func LPE(text: String) -> ref<KdspLifePathEvent> {
+    let event = new KdspLifePathEvent();
+    event.femaleVariant = text;
+    event.maleVariant = "";
+    return event;
+}
