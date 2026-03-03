@@ -49,6 +49,10 @@ public class KdspBackstoryManager {
         let isNCPD: Bool = !isBarghest && (KdspNCPDNameGenerator.IsNCPD(appearanceName) || target.IsPrevention() || target.IsCharacterPolice());
         let isTraumaTeam: Bool = StrContains(appearanceName, "trauma");
 
+        // Detect fake/corrupt police — record ID contains "fake_police"
+        let recordIdStr = TDBID.ToStringDEBUG(target.GetRecord().GetID());
+        let isFakeCop: Bool = StrContains(StrLower(recordIdStr), "fake_police");
+
         // Narrative Coherence is always active — ensures all data systems tell one consistent story
         let coherence: ref<KdspCoherenceProfile>;
         coherence = KdspCoherenceManager.Generate(seed + 500, archetype, age, gangAffiliation);
@@ -586,7 +590,25 @@ public class KdspBackstoryManager {
         // Gang Affiliation Section - use detailed profiles (no rank - game shows that as NPC name)
         if isGangMember {
             let gangData = KdspGangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
-            backstoryUI.gangAffiliation = gangData.gangName + " | " + gangData.role + " | " + IntToString(gangData.yearsActive) + " yrs active";
+
+            // Generate gang member name if the NPC has a generic display name
+            let gangRealName: String = target.GetTweakDBFullDisplayName(true);
+            let gangNameData = KdspGangNameGenerator.Generate(seed + 7500, gangAffiliation, lifePath.gender, ethnicity);
+            let gangDisplayName: String = "";
+
+            if KdspGangNameGenerator.IsGenericGangName(gangRealName) {
+                // Generic name — use generated name with optional alias
+                gangDisplayName = KdspGangNameGenerator.GetDisplayName(gangNameData);
+            } else {
+                // Real name from the game — keep it, but still check for alias
+                if gangNameData.hasAlias {
+                    gangDisplayName = "\"" + gangNameData.alias + "\" " + gangRealName;
+                } else {
+                    gangDisplayName = gangRealName;
+                }
+            }
+
+            backstoryUI.gangAffiliation = gangData.gangName + " | " + gangDisplayName + " | " + gangData.role + " | " + IntToString(gangData.yearsActive) + " yrs active";
             
             // Extra details on medium/high density
             if density >= 2 {
@@ -1029,6 +1051,65 @@ public class KdspBackstoryManager {
                 backstoryUI.uniqueClassification = glitched.uniqueClassification;
                 backstoryUI.debugInfo = glitched.debugInfo;
             }
+        }
+
+        // ══════════════════════════════════════════════════════════════
+        // FAKE COP OVERRIDE — NPC with "fake_police" in TweakDB record
+        // These are criminals impersonating NCPD officers. Override the
+        // clean NCPD profile with corruption flags and criminal data.
+        // ══════════════════════════════════════════════════════════════
+        if isFakeCop {
+            let fakeRoll = RandRange(seed + 9500, 0, 5);
+            if fakeRoll == 0 {
+                backstoryUI.background = "⊘ FLAGGED: Badge credentials do not match NCPD central registry. Suspected impersonation of law enforcement.";
+            } else if fakeRoll == 1 {
+                backstoryUI.background = "⊘ FLAGGED: Officer ID returns INVALID on NCPD verification. Criminal record found under alternate identity.";
+            } else if fakeRoll == 2 {
+                backstoryUI.background = "⊘ FLAGGED: NCPD Internal Affairs alert. Badge number registered to deceased officer. Identity theft suspected.";
+            } else if fakeRoll == 3 {
+                backstoryUI.background = "⊘ FLAGGED: Uniform and equipment traced to black market sale. No academy graduation record on file.";
+            } else if fakeRoll == 4 {
+                backstoryUI.background = "⊘ FLAGGED: Cross-referencing biometrics with NCPD personnel database — ZERO MATCH. This individual is not NCPD.";
+            } else {
+                backstoryUI.background = "⊘ FLAGGED: Credentials forged. Badge serial reported stolen 3 months ago. Armed and operating under false authority.";
+            };
+
+            let fakeEarly = RandRange(seed + 9510, 0, 4);
+            if fakeEarly == 0 {
+                backstoryUI.earlyLife = "Prior arrests for fraud, impersonation, and identity theft. Known associate of fixers operating in Watson and Santo Domingo.";
+            } else if fakeEarly == 1 {
+                backstoryUI.earlyLife = "Former security contractor. Dismissed for misconduct. Multiple identity fraud convictions on record.";
+            } else if fakeEarly == 2 {
+                backstoryUI.earlyLife = "No legitimate law enforcement background. Street-level criminal with access to stolen NCPD equipment.";
+            } else {
+                backstoryUI.earlyLife = "Washed out of NCPD academy. Failed psych evaluation. Obtained badge and uniform through black market contacts.";
+            };
+
+            let fakeRecent = RandRange(seed + 9520, 0, 4);
+            if fakeRecent == 0 {
+                backstoryUI.significantEvents = "Currently operating as fake officer. Suspected involvement in shakedowns, illegal searches, and evidence planting.";
+            } else if fakeRecent == 1 {
+                backstoryUI.significantEvents = "Using stolen credentials to conduct unauthorized stops. Multiple civilian complaints filed against badge number.";
+            } else if fakeRecent == 2 {
+                backstoryUI.significantEvents = "Suspected of running protection racket under NCPD cover. Internal Affairs has open investigation.";
+            } else {
+                backstoryUI.significantEvents = "Operating in gang territory with forged credentials. Possibly collecting intel for a fixer or running extortion.";
+            };
+
+            // Override the NCPD personnel file with corruption flag
+            backstoryUI.ncpdOfficer = "⊘ CREDENTIALS INVALID | Badge: STOLEN/FORGED | NCPD Central Registry: NO MATCH | Status: IMPERSONATING OFFICER";
+
+            // Fake cops SHOULD have a criminal record (normal NCPD skips this)
+            let fakeCrimRoll = RandRange(seed + 9530, 0, 4);
+            if fakeCrimRoll == 0 {
+                backstoryUI.criminalRecord = "Status: WANTED | Impersonation of law enforcement, Armed fraud, Identity theft";
+            } else if fakeCrimRoll == 1 {
+                backstoryUI.criminalRecord = "Status: ACTIVE WARRANTS | Stolen NCPD property, Extortion, Assault under color of authority";
+            } else if fakeCrimRoll == 2 {
+                backstoryUI.criminalRecord = "Status: FELONY RECORD | Prior: Identity fraud (2x), Possession of stolen NCPD equipment, Armed robbery";
+            } else {
+                backstoryUI.criminalRecord = "Status: REPEAT OFFENDER | Impersonating an officer (3 prior), Larceny, Carrying stolen firearm";
+            };
         }
 
         return backstoryUI;

@@ -1,4 +1,4 @@
-# Kiroshi Deep Scan Protocol — Translation Guide v2.1
+# Kiroshi Deep Scan Protocol — Translation Guide v2.2
 
 > **You are creating a standalone version of the mod for your language.**
 > You will publish it as a separate mod on Nexus Mods. It does not need to support English.
@@ -175,6 +175,71 @@ if Equals(medical.healthRating, "EXCELLENT") || Equals(medical.healthRating, "GO
 //                               CODE IDENTIFIERS — NEVER TOUCH
 ```
 
+**REAL EXAMPLE — BackstoryManager.reds: Fake Police (v2.2):**
+```swift
+// ✅ TRANSLATE — these override the NCPD profile for fake cops
+backstoryUI.background = "⊘ FLAGGED: Badge credentials do not match NCPD central registry. Suspected impersonation of law enforcement.";
+backstoryUI.ncpdOfficer = "⊘ CREDENTIALS INVALID | Badge: STOLEN/FORGED | NCPD Central Registry: NO MATCH | Status: IMPERSONATING OFFICER";
+backstoryUI.criminalRecord = "Status: WANTED | Impersonation of law enforcement, Armed fraud, Identity theft";
+//                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+//                            TRANSLATE ALL OF THESE (keep the ⊘ symbol — it's a visual warning marker)
+
+// ❌ DO NOT TRANSLATE — detection logic
+let isFakeCop: Bool = StrContains(StrLower(recordIdStr), "fake_police");
+//                                                        ^^^^^^^^^^^
+//                                                        GAME DATA — NEVER TOUCH
+```
+
+**REAL EXAMPLE — GangNameGenerator.reds (v2.2):**
+```swift
+// ⚠️ TRANSLATION JUDGMENT CALL — street aliases
+// These are gang nicknames. Some are culturally specific.
+// You have THREE valid approaches:
+
+// 1. KEEP AS-IS — street names often cross languages
+if roll == 1 { return "Oni"; }          // Japanese — already a loanword
+if roll == 0 { return "El Santo"; }     // Spanish — sounds right for Valentinos
+if roll == 0 { return "Glitch"; }       // English — tech slang is universal
+
+// 2. TRANSLATE THE MEANING — if your audience would lose the flavor
+if roll == 4 { return "Muerte"; }       // "Death" — translate if readers won't know
+if roll == 2 { return "Hammer"; }       // Generic enough to translate
+
+// 3. REPLACE WITH LOCAL EQUIVALENT — if you have better street slang
+if roll == 7 { return "Brass"; }        // Military slang — use your language's version
+
+// ❌ DO NOT TRANSLATE — generic name detection strings (CRITICAL)
+if Equals(displayName, "Tyger Claws") { return true; }
+if Equals(displayName, "Maelstrom") { return true; }
+//                      ^^^^^^^^^^^
+//  These match the GAME'S localized gang names.
+//  If your game language shows "Тайгер Клоуз" instead of
+//  "Tyger Claws", you MUST update these to match YOUR game's names,
+//  or the name generator will never trigger.
+```
+
+> **⚠️ CRITICAL — IsGenericGangName():** This function checks NPC display names against the game's gang labels to detect generic NPCs. If your game language localizes gang names (e.g. "Valentinos" → "Валентинос"), you MUST update these comparison strings to match the localized game names. This is the one place where detection strings depend on your game's language.
+
+**REAL EXAMPLE — NCPDProfileGenerator.reds (rewritten in v2.2):**
+```swift
+// ✅ TRANSLATE — all strings in these 6 functions:
+//   GetOrigin(), GetPathToNCPD(),
+//   GetEarlyCareerEvent(), GetCareerDetail(),
+//   GetCurrentSituation(), GetDevelopingElement()
+// 200 entries total. All are simple return strings.
+
+if roll == 0 { return "Watson native. Father was NCPD — killed during a routine traffic stop in Kabuki."; }
+if roll == 1 { return "Corporate brat. Family lost everything when Biotechnica restructured."; }
+
+// These are combined into two-part backstories at runtime:
+// Background = GetOrigin() + " " + GetPathToNCPD()
+// Early Life  = GetEarlyCareerEvent() + " " + GetCareerDetail()
+// Recent      = GetCurrentSituation() + " " + GetDevelopingElement()
+// Each half must work as a standalone sentence fragment.
+```
+
+> **TIP:** Night City location names (Watson, Kabuki, Heywood, Pacifica, Japantown, etc.) are proper nouns — keep them as-is. Organization names (NCPD, Militech, Arasaka, MaxTac, Trauma Team) should also stay in English as they appear in-game.
+
 > **⚠️ KEY INSIGHT:** The same word can appear as both a code identifier AND a display value. `"EXCELLENT"` might be compared in one place (`Equals(x, "EXCELLENT")`) and returned in another (`return "EXCELLENT"`). Only translate the `return` version if both exist. When in doubt: if changing this string would break a comparison somewhere else, don't change it. Search the file for the string first.
 
 
@@ -219,12 +284,13 @@ if r == 7 { return "██████████"; }          // Keep as-is (r
 | Barghest/BarghestProfileManager.reds | Barghest profiles | Medium |
 | Child/ChildBackstoryGenerator.reds | Child NPC text | Easy |
 | District/CrowdDistrictManager.reds | District descriptions | Medium |
-| BackstoryManager.reds | Core backstory text | ⚠️ Hard — lots of mixed code |
+| BackstoryManager.reds | Core backstory text + fake police overrides (v2.2) | ⚠️ Hard — lots of mixed code |
 | ScannerGlitch.reds | Glitch/corruption | Optional — flavor text |
 | Rare/RareNPCManager.reds | Rare NPC encounters | Easy — mostly display text |
-| NCPD/NCPDProfileGenerator.reds | NCPD reports | Medium |
+| NCPD/NCPDProfileGenerator.reds | NCPD officer backstories — 200 entries across 6 pools (rewritten in v2.2) | Medium |
 | NCPD/NCPDNameGenerator.reds | Badge names | Easy |
 | Vehicle/VehicleRegistration.reds | Vehicle data | Medium |
+| Gang/GangNameGenerator.reds | 320 gang street aliases + generic name detection (v2.2) | Easy* |
 
 
 ---
@@ -232,7 +298,7 @@ if r == 7 { return "██████████"; }          // Keep as-is (r
 
 ### ✅ TRANSLATE — Unique NPCs (Core/Unique/UniqueNPCEntries.reds)
 
-225 hand-written NPCs. This is the largest single file (~1,900 strings). Translate the narrative text only.
+229 hand-written NPCs. This is the largest single file (~2,000 strings). Translate the narrative text only.
 
 **REAL EXAMPLE — Takemura:**
 ```swift
@@ -615,7 +681,10 @@ Is it a function/class/variable name?
 
 - [ ] Text/*.reds — All 1,721 entries translated
 - [ ] Generator files — Display strings translated, code identifiers untouched
-- [ ] UniqueNPCEntries.reds — 225 NPC backstories translated
+- [ ] UniqueNPCEntries.reds — 229 NPC backstories translated
+- [ ] NCPDProfileGenerator.reds — 200 entries across 6 pools translated (each half must work as standalone sentence)
+- [ ] GangNameGenerator.reds — Alias translation decisions made (keep/translate/replace), IsGenericGangName() updated for localized gang names
+- [ ] BackstoryManager.reds — Fake police override strings translated (⊘ symbol preserved)
 - [ ] Settings — displayName and description values translated
 - [ ] UI files — Loading text, section headers, footer translated
 - [ ] Custom gender tokens added (if your language needs them)

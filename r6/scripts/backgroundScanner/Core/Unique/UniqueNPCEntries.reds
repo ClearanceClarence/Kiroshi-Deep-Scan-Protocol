@@ -38,6 +38,7 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "dakota") { return KdspUniqueNPCEntries.DakotaSmith(); }
         if StrContains(id, "dino") && !StrContains(id, "dinosaur") && (StrContains(id, "dinovic") || StrContains(id, "fixer")) { return KdspUniqueNPCEntries.DinoDinovic(); }
         if StrContains(id, "hands") && (StrContains(id, "mr") || StrContains(id, "mister") || StrContains(id, "fixer")) && !StrContains(id, "handsome") && !StrContains(id, "handshake") { return KdspUniqueNPCEntries.MrHands(); }
+        if (StrContains(id, "muamar") || StrContains(id, "capitan")) && StrContains(id, "driver") { return KdspUniqueNPCEntries.Mickey(); }
         if (StrContains(id, "capitan") || StrContains(id, "muamar")) && !StrContains(id, "driver") { return KdspUniqueNPCEntries.ElCapitan(); }
         // MERCS / AFTERLIFE
         if StrContains(id, "jackie") && !StrContains(id, "jacket") { return KdspUniqueNPCEntries.JackieWelles(); }
@@ -88,6 +89,9 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "elcoyote_barman") || StrContains(id, "pepe_najarro") || (StrContains(id, "pepe") && StrContains(id, "najarro")) { return KdspUniqueNPCEntries.PepeNajarro(); }
         if StrContains(id, "mq040_ripperdoc") || StrContains(id, "mq040__black_market_ripperdoc") { return KdspUniqueNPCEntries.ShadyRipperdocMQ040(); }
         if StrContains(id, "mq014_master") || StrContains(id, "zen_master") { return KdspUniqueNPCEntries.ZenMaster(); }
+        if StrContains(id, "mq025_twin_01") { return KdspUniqueNPCEntries.CertoEsquerdo(); }
+        if StrContains(id, "mq025_twin_02") { return KdspUniqueNPCEntries.EsquerdoCerto(); }
+        if StrContains(id, "corpo_friend") || (StrContains(id, "q000") && StrContains(id, "frank")) { return KdspUniqueNPCEntries.FrankNostra(); }
         if StrContains(id, "elcoyote_barman") || (StrContains(id, "pepe") && StrContains(id, "najarro")) { return KdspUniqueNPCEntries.PepeNajarro(); }
         // TYGER CLAWS
         if StrContains(id, "jotaro") || StrContains(id, "shobo") { return KdspUniqueNPCEntries.JotaroShobo(); }
@@ -527,6 +531,19 @@ public abstract class KdspUniqueNPCEntries {
             .SetNotes("Professional. Specializes in vehicle-related contracts.");
     }
 
+    public static func Mickey() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("mickey").SetClassification("FIXER ASSOCIATE")
+            .SetBackground("Personal driver and courier for Muamar 'El Capitan' Reyes. Handles vehicle deliveries and drop-off logistics across Santo Domingo.")
+            .SetEarlyLife("Street kid background. Ran errands for local fixers before El Capitan recruited him full-time.")
+            .SetSignificantEvents("Promoted from courier to personal driver after proving reliable under fire. Armed escort clearance.")
+            .SetAffiliation("El Capitan (Employer) | Independent")
+            .SetCriminalRecord("NCPD: Minor traffic violations | No outstanding warrants")
+            .SetCyberwareStatus("Kiroshi Optics (Standard) | Reflex Booster")
+            .SetFinancialStatus("Steady income | Fixer payroll")
+            .SetThreatAssessment("LOW-MODERATE (35/100) | Armed, combat-trained")
+            .SetNotes("Trusted associate. Handles sensitive deliveries. Loyal to El Capitan.");
+    }
+
     // === MERCS / AFTERLIFE ===
     public static func JackieWelles() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsHeistCompleted() {
@@ -949,6 +966,52 @@ public abstract class KdspUniqueNPCEntries {
             .SetThreatAssessment("LOW (15/100) | Non-combatant | Medical training only | Flight risk if confronted")
             .SetRelationships("Former colleagues severed ties | Client list: UNKNOWN - no records kept | Victim's family: ongoing harassment campaign")
             .SetNotes("Skilled practitioner forced underground by one incident. Takes clients who need work done without questions or records. Moves locations periodically to avoid the victim's family and NCPD medical compliance sweeps. Not considered dangerous.");
+    }
+
+    // --- BEAT ON THE BRAT: KABUKI TWINS (mq025) ---
+    public static func CertoEsquerdo() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("mq025_twin_01").SetClassification("UNDERGROUND FIGHTER")
+            .SetBackground("Certo Esquerdo. Twin brother of Esquerdo Certo. Underground prizefighter operating in Kabuki. Portuguese immigrant background. Name translates to 'Right Left' — fighting stance designation used since childhood.")
+            .SetEarlyLife("Raised in Kabuki alongside twin brother. Began fighting in underground circuits as teenagers. Trained in Brazilian martial arts and street brawling. Inseparable from his brother — always fight as a unit.")
+            .SetSignificantEvents("Active participant in Beat on the Brat circuit. Known for tag-team fighting style with twin brother. Multiple underground tournament wins. Reputation for fighting dirty when separated.")
+            .SetAffiliation("Independent | Beat on the Brat circuit | Kabuki underground fight scene")
+            .SetCriminalRecord("Status: WANTED | Battery, Grievous Bodily Harm, Battery of a Corporate Rep., Attempted Murder, Kidnapping of a Corporate Rep.")
+            .SetCyberwareStatus("Implants: 2 | Gorilla Arms (Modified) | Reinforced skeleton | Status: STABLE")
+            .SetFinancialStatus("Income: Fight purses + side bets | Cash economy | No registered employment")
+            .SetMedicalStatus("Blood: B RhD+ | Multiple healed fractures | Scar tissue buildup on knuckles and forearms | Health: FAIR | Trauma Team: NONE")
+            .SetThreatAssessment("HIGH (70/100) | Melee specialist | Always operates with twin brother — treat as two-person threat")
+            .SetRelationships("Esquerdo Certo (Twin brother, fight partner) | Kabuki fight promoters | Underground betting circles")
+            .SetNotes("Never seen without his twin. The pair fight as a coordinated unit — engaging one means engaging both. Portuguese street fighting tradition. Dangerous in close quarters.");
+    }
+
+    public static func EsquerdoCerto() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("mq025_twin_02").SetClassification("UNDERGROUND FIGHTER")
+            .SetBackground("Esquerdo Certo. Twin brother of Certo Esquerdo. Underground prizefighter operating in Kabuki. Portuguese immigrant background. Name translates to 'Left Right' — fighting stance designation used since childhood.")
+            .SetEarlyLife("Raised in Kabuki alongside twin brother. Began fighting in underground circuits as teenagers. More technical fighter than his brother — favors grappling and joint locks over raw power.")
+            .SetSignificantEvents("Active participant in Beat on the Brat circuit. Considered the strategist of the pair. Sets up openings for his brother's power strikes. Multiple underground tournament wins.")
+            .SetAffiliation("Independent | Beat on the Brat circuit | Kabuki underground fight scene")
+            .SetCriminalRecord("Status: WANTED | Unlawful Confinement, Racketeering and Extortion, Multiple Homicide, Hostage Taking")
+            .SetCyberwareStatus("Implants: 1 | Reflex Booster | Reinforced tendons | Status: STABLE")
+            .SetFinancialStatus("Income: Fight purses + side bets | Cash economy | No registered employment")
+            .SetMedicalStatus("Blood: B RhD+ | Chronic joint inflammation | Cauliflower ear (bilateral) | Health: FAIR | Trauma Team: NONE")
+            .SetThreatAssessment("HIGH (70/100) | Melee specialist | Always operates with twin brother — treat as two-person threat")
+            .SetRelationships("Certo Esquerdo (Twin brother, fight partner) | Kabuki fight promoters | Underground betting circles")
+            .SetNotes("The tactical half of the twin pair. More patient, waits for openings. Handles the business side — negotiates fight terms, manages bets. Equally dangerous as his brother but in a different way.");
+    }
+
+    public static func FrankNostra() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("corpo_friend").SetClassification("ARASAKA - COUNTERINTELLIGENCE")
+            .SetBackground("Frank Nostra. Arasaka counterintelligence division, Night City branch. Long-term corporate operative. Close personal friend and drinking buddy of V during V's Arasaka tenure.")
+            .SetEarlyLife("Corporate upbringing. Family connections to Arasaka through multiple generations. Fast-tracked through corporate training programs. Known for building loyal personal networks within the company.")
+            .SetSignificantEvents("Survived multiple rounds of Arasaka internal purges by maintaining useful connections on all sides. Witnessed V's termination from Arasaka firsthand. Remained in good standing with the corporation after V's departure.")
+            .SetAffiliation("Arasaka Corporation | Counterintelligence Division | Night City Operations")
+            .SetCriminalRecord("Status: CLASSIFIED — ARASAKA CORPORATE SEAL | All records suppressed under corporate diplomatic immunity")
+            .SetCyberwareStatus("Implants: 4 | Corporate-grade Kiroshi Optics, neural link, encrypted comm suite, subdermal armor | Status: MONITORED — Arasaka maintenance schedule")
+            .SetFinancialStatus("Credit: EXCEPTIONAL | Income: €$250,000-500,000/year | Arasaka executive benefits package | Corp-provided housing in Charter Hill")
+            .SetMedicalStatus("Blood: A RhD+ | Health: GOOD | Stress markers elevated but within corporate norms | Trauma Team: GOLD")
+            .SetThreatAssessment("MODERATE (45/100) | Corporate combat training | Armed (concealed carry permit — Arasaka issued) | Protected asset")
+            .SetRelationships("V (Former colleague, close friend) | Arasaka corporate network | Night City bar circuit regulars")
+            .SetNotes("Corporate survivor. Knows how to read the room and pick the winning side. Genuine loyalty to V predates and outlasts corporate politics. One of the few people in Arasaka who treated V as a friend, not an asset.");
     }
 
     public static func PepeNajarro() -> ref<KdspUniqueNPCBackstory> {

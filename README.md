@@ -4,14 +4,14 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=1a1a2e" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-2.1-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-2.2-5ef6e1?style=for-the-badge&labelColor=1a1a2e" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=1a1a2e" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=1a1a2e" alt="License">
 </p>
 
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║  KIROSHI OPTICS v2.1 — DEEP SCAN PROTOCOL                                    ║
+║  KIROSHI OPTICS v2.2 — DEEP SCAN PROTOCOL                                    ║
 ║  STATUS: ONLINE ■ DATABASES: 10 CONNECTED ■ CLASSIFIED ACCESS: GRANTED       ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 ```
@@ -31,14 +31,14 @@
 │                                                                              │
 │  ▸ Overview .................. What this mod does                            │
 │  ▸ Database Access .......... 10 queryable data sources                      │
-│  ▸ Unique NPC Database ...... 225 hand-written character files               │
+│  ▸ Unique NPC Database ...... 229 hand-written character files               │
 │  ▸ Procedural Generation .... Systems that build NPC lives                   │
 │  ▸ Special Classifications .. 90 hidden NPC types                            │
 │  ▸ Relationships ............ Social network generation                      │
 │  ▸ Name Generation .......... 260K+ culturally matched names                 │
 │  ▸ Narrative Coherence ...... Life theme system                              │
 │  ▸ Scanner Glitches ......... Kiroshi malfunction system                     │
-│  ▸ Translation ............. Community localization guide                    │
+│  ▸ Translation .............. Community localization guide                   │
 │  ▸ Configuration ............ Mod settings breakdown                         │
 │  ▸ Installation ............. Requirements + setup                           │
 │  ▸ Compatibility ............ Known conflicts                                │
@@ -59,7 +59,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 <table>
 <tr>
-<td align="center"><h3>225</h3><sub>UNIQUE NPCs</sub></td>
+<td align="center"><h3>229</h3><sub>UNIQUE NPCs</sub></td>
 <td align="center"><h3>1,717</h3><sub>LIFE EVENTS</sub></td>
 <td align="center"><h3>90</h3><sub>CLASSIFICATIONS</sub></td>
 <td align="center"><h3>260K+</h3><sub>NAME COMBOS</sub></td>
@@ -74,7 +74,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 <br>
 
-> **`225 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`**
+> **`229 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`**
 
 <br>
 
@@ -122,7 +122,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 ## █▓▒░ UNIQUE NPC DATABASE
 
-225 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
+229 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
 
 <details>
 <summary><b>▸ ARASAKA CORPORATION</b> — 10 entries</summary>
@@ -823,7 +823,7 @@ r6/scripts/backgroundScanner/
 │   ├── Rare/                              90 special classifications
 │   ├── Relationships/                     KdspNamePool + social networks
 │   ├── TraumaTeam/                        8 TT-specific generators
-│   ├── Unique/                            225 character entries
+│   ├── Unique/                            229 character entries
 │   └── Vehicle/                           Vehicle registration generator
 │
 ├── Overrides/
@@ -877,8 +877,8 @@ MIT — See [LICENSE](LICENSE) for details.
 ```
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                                                              ║
-║           KIROSHI DEEP SCAN PROTOCOL v2.1                                    ║
-║           DATABASES: 10 ■ UNIQUE NPCs: 225 ■ CLASSIFICATIONS: 90             ║
+║           KIROSHI DEEP SCAN PROTOCOL v2.2                                    ║
+║           DATABASES: 10 ■ UNIQUE NPCs: 229 ■ CLASSIFICATIONS: 90             ║
 ║                                                                              ║
 ║           Every NPC is a person.                                             ║
 ║                                                                              ║

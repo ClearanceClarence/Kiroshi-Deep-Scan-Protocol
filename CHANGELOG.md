@@ -4,10 +4,46 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [2.2]
+
+### Gang Member Names
+- Added GangNameGenerator — generic gang NPCs now receive procedurally generated names from ethnicity-appropriate pools
+- Gang-specific ethnicity routing: Tyger Claws pull from Japanese/Chinese/Korean pools, Valentinos from Hispanic, Voodoo Boys from Haitian, Maelstrom from Slavic/European, 6th Street from American, etc.
+- 65% chance of a street alias drawn from 320 gang-flavored aliases across 10 gangs + generic fallback
+- Tyger Claws: Oni, Kitsune, Ronin, Kage... | Valentinos: El Santo, Lobo, Diablo, Corazón... | Maelstrom: Glitch, Voltex, Flatline, Chrome... | Animals: Bull, Rhino, Hammer, Tank... | 6th Street: Gunner, Sarge, Hawk, Maverick... | Voodoo Boys: Baron, Mambo, Loa, Legba... | Moxes: Glitter, Nails, Riot, Velvet... | Scavengers: Butcher, Reaper, Carrion, Vulture... | Wraiths: Dust, Roadkill, Phantom, Gasoline... | Aldecaldos: Dusty, Compass, Blacktop, Mesa...
+- Display format: "Kitsune" Kenji Tanaka or Maria Vasquez (no alias)
+- NPCs with real game names keep them; alias still added if rolled
+
+### NCPD Profile Overhaul
+- Completely rewrote NCPD officer backstory generation from 34 single-line entries to 170 two-part entries
+- Background = Origin (40 variants) × Path to NCPD (25 variants) = 1,000 combinations
+- Early Life = Career Event (40 variants) × Career Detail (25 variants) = 1,000 combinations
+- Recent Activity = Current Situation (40 variants) × Developing Element (30 variants) = 1,200 combinations
+- Content includes: partner deaths, IA investigations, corruption, undercover work, Cyberpsycho PTSD, bribery attempts, substance issues, gang threats, career politics, personal struggles
+- Total unique NCPD profiles: ~1.2 billion combinations
+
+### Fake Police Detection
+- NPCs with "fake_police" in their TweakDB record ID are now identified as impersonators
+- Background overridden with ⊘ FLAGGED credential alerts (6 variants)
+- NCPD Personnel File replaced with ⊘ CREDENTIALS INVALID | Badge: STOLEN/FORGED | NO MATCH
+- Criminal record added (normal NCPD skips this): impersonation, identity theft, stolen equipment
+- Early Life and Recent Activity replaced with fraud/corruption content
+
+### Unique NPCs (+4)
+- Added Mickey (mq025 — El Capitan's driver/courier, Fixer Associate classification)
+- Added Certo Esquerdo (mq025_twin_01 — Beat on the Brat twin, underground fighter)
+- Added Esquerdo Certo (mq025_twin_02 — Beat on the Brat twin, underground fighter)
+- Added Frank Nostra (q000 corpo_friend — V's Arasaka buddy, Counterintelligence)
+- Twins cross-reference each other in Relationships with coordinated threat assessments
+- Criminal records match in-game bounty charges
+- Total unique NPC entries: 229
+
+---
+
+
 ## [2.1]
 
-### Gender Deduplication
-
+### Code Cleanup
 - Removed 1,619 duplicate _M() text functions across 7 text files
 - Renamed 1,618 _F() functions to gender-neutral base names (LOST_JOB_F → LOST_JOB)
 - Introduced pronoun placeholder system: %he%, %his%, %him%, %hers%, %himself%, %waiter% (+ capitalized variants)
@@ -18,7 +54,6 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 - Removed 1,930 lines of code (33,882 → 31,952 total .reds lines)
 
 ### Translation Support
-
 - Added TRANSLATION_GUIDE.html for community translators
 - File-by-file breakdown with real code examples from the codebase
 - Documents all placeholder tokens and gender handling
