@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiroshi Deep Scan Protocol — v2.2</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --cyan: #5ef6e1;
+    --cyan-dim: #2a7a70;
+    --cyan-glow: rgba(94,246,225,0.08);
+    --gold: #ffd700;
+    --gold-dim: rgba(255,215,0,0.12);
+    --red: #ff4757;
+    --red-dim: rgba(255,71,87,0.12);
+    --green: #2ed573;
+    --green-dim: rgba(46,213,115,0.12);
+    --blue: #3da4e0;
+    --bg: #0a0e14;
+    --bg-card: #0f1923;
+    --bg-code: #0c1219;
+    --bg-elevated: #111d2b;
+    --border: #1a2a3a;
+    --border-light: #243444;
+    --text: #c8d6e5;
+    --text-dim: #6b7d8e;
+    --text-bright: #f0f4f8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 50px 80px;
+}
+
+/* ═══════════════════════════════════════════
+   HERO HEADER
+   ═══════════════════════════════════════════ */
+
+.hero-wrapper {
+    background: linear-gradient(180deg, #0d1520 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 50px 0 40px;
+    margin-bottom: 40px;
+}
+.hero-wrapper .page {
+    padding-bottom: 0;
+}
+
+.hero-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    color: var(--text-dim);
+}
+.hero-top .kanji {
+    color: var(--red);
+    font-size: 14px;
+}
+.hero-top .line {
+    width: 40px;
+    height: 1px;
+    background: var(--text-dim);
+}
+
+.hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 52px;
+    line-height: 1.0;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.hero h1 .word-deep { color: var(--cyan); }
+.hero h1 .word-scan { color: var(--gold); }
+.hero h1 .word-protocol { color: var(--text-bright); }
+
+.hero-bars {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.hero-bars span {
+    height: 3px;
+    border-radius: 1px;
+}
+.hero-bars .bar-red { background: var(--red); width: 120px; }
+.hero-bars .bar-cyan { background: var(--cyan); width: 80px; }
+.hero-bars .bar-gold { background: var(--gold); width: 60px; }
+
+.hero-meta {
+    display: flex;
+    gap: 40px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+.hero-meta .version { color: var(--gold); }
+.hero-meta span { color: var(--text-dim); }
+
+.hero-tagline {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.hero-tagline .tag-en { color: var(--cyan); }
+.hero-tagline .dot { color: var(--green); font-size: 18px; }
+.hero-tagline .tag-status { color: var(--green); font-size: 12px; }
+.hero-tagline .tag-jp { color: var(--red); opacity: 0.6; font-size: 13px; }
+
+.hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    margin-top: 40px;
+    border-top: 1px solid var(--border);
+    padding-top: 30px;
+}
+.stat {
+    text-align: left;
+}
+.stat .number {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--cyan);
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.stat .number .suffix {
+    font-size: 22px;
+    color: var(--cyan-dim);
+}
+.stat .label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+
+/* ═══════════════════════════════════════════
+   SECTION HEADINGS
+   ═══════════════════════════════════════════ */
+
+h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 56px;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+}
+
+h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text-bright);
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+
+h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--gold);
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+p { margin-bottom: 12px; }
+
+/* ═══════════════════════════════════════════
+   CODE
+   ═══════════════════════════════════════════ */
+
+code {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--cyan);
+}
+
+pre {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan-dim);
+    padding: 16px 20px;
+    margin: 14px 0 18px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+}
+pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* ═══════════════════════════════════════════
+   TABLES
+   ═══════════════════════════════════════════ */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 14px;
+}
+th {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: var(--cyan);
+    background: var(--bg-code);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--cyan-dim);
+}
+td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+tr:hover td { background: rgba(94,246,225,0.03); }
+
+/* ═══════════════════════════════════════════
+   CALLOUTS
+   ═══════════════════════════════════════════ */
+
+.callout {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-dim);
+    padding: 12px 18px;
+    margin: 16px 0;
+    border-radius: 0 4px 4px 0;
+}
+.callout.info {
+    border-left-color: var(--cyan);
+    background: var(--cyan-glow);
+}
+.callout.danger {
+    border-left-color: var(--red);
+    background: var(--red-dim);
+}
+.callout.success {
+    border-left-color: var(--green);
+    background: var(--green-dim);
+}
+.callout strong { color: var(--text-bright); }
+.callout .tag {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+.callout .tag { color: var(--gold); }
+.callout.info .tag { color: var(--cyan); }
+.callout.danger .tag { color: var(--red); }
+.callout.success .tag { color: var(--green); }
+
+/* ═══════════════════════════════════════════
+   DATABASE PANEL
+   ═══════════════════════════════════════════ */
+
+.db-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin: 16px 0 20px;
+}
+.db-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+    transition: border-color 0.2s;
+}
+.db-item:hover {
+    border-color: var(--cyan-dim);
+}
+.db-item .db-num {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan-dim);
+    margin-bottom: 4px;
+}
+.db-item .db-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-bright);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+.db-item .db-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════
+   COLLAPSIBLE SECTIONS
+   ═══════════════════════════════════════════ */
+
+details {
+    margin: 8px 0;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+summary {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-bright);
+    padding: 10px 16px;
+    cursor: pointer;
+    background: var(--bg-card);
+    border-bottom: 1px solid transparent;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.15s;
+}
+summary::-webkit-details-marker { display: none; }
+summary::before {
+    content: '▸';
+    color: var(--cyan);
+    font-size: 14px;
+    transition: transform 0.2s;
+}
+details[open] summary::before {
+    transform: rotate(90deg);
+}
+details[open] summary {
+    border-bottom-color: var(--border);
+    background: var(--bg-elevated);
+}
+summary:hover { background: var(--bg-elevated); }
+summary .count {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: var(--cyan-dim);
+    margin-left: auto;
+}
+details .content {
+    padding: 14px 16px;
+}
+details table {
+    margin: 0;
+}
+details table td, details table th {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+/* ═══════════════════════════════════════════
+   CLASSIFICATION GRID
+   ═══════════════════════════════════════════ */
+
+.class-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin: 12px 0;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+}
+.class-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 12px;
+    background: var(--bg-card);
+    border-radius: 3px;
+    border: 1px solid var(--border);
+}
+.class-row .name { color: var(--text); }
+.class-row .num { color: var(--cyan-dim); }
+
+/* ═══════════════════════════════════════════
+   SETTINGS TABLE
+   ═══════════════════════════════════════════ */
+
+.settings-group {
+    margin-bottom: 24px;
+}
+.settings-group h4 {
+    margin-bottom: 10px;
+}
+
+/* ═══════════════════════════════════════════
+   BADGES
+   ═══════════════════════════════════════════ */
+
+.badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    vertical-align: middle;
+}
+.badge.cyan { background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(94,246,225,0.3); }
+.badge.gold { background: var(--gold-dim); color: var(--gold); border: 1px solid rgba(255,215,0,0.3); }
+.badge.red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(255,71,87,0.3); }
+.badge.green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(46,213,115,0.3); }
+
+/* ═══════════════════════════════════════════
+   COHERENCE TABLE
+   ═══════════════════════════════════════════ */
+
+.coherence-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin: 14px 0;
+}
+.coherence-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 14px 16px;
+}
+.coherence-card .theme-name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+.coherence-card .theme-desc {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.5;
+}
+.theme-stable .theme-name { color: var(--green); }
+.theme-struggling .theme-name { color: var(--gold); }
+.theme-climbing .theme-name { color: var(--cyan); }
+.theme-falling .theme-name { color: var(--red); }
+.theme-criminal .theme-name { color: #ff6b6b; }
+.theme-corporate .theme-name { color: var(--blue); }
+
+/* ═══════════════════════════════════════════
+   FOOTER BAR
+   ═══════════════════════════════════════════ */
+
+.footer-bar {
+    margin-top: 60px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ═══════════════════════════════════════════
+   LINKS & MISC
+   ═══════════════════════════════════════════ */
+
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+strong { color: var(--text-bright); }
+hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+.mono { font-family: 'Share Tech Mono', monospace; }
+.dim { color: var(--text-dim); }
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 8px 0;
+}
+.tag-list code {
+    font-size: 12px;
+}
+
+/* Nav */
+.nav-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    columns: 2;
+    column-gap: 30px;
+}
+.nav-box a {
+    display: block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    padding: 4px 0;
+    color: var(--text);
+    transition: color 0.15s;
+}
+.nav-box a:hover {
+    color: var(--cyan);
+    text-decoration: none;
+}
+.nav-box a .nav-dot {
+    color: var(--cyan-dim);
+    margin-right: 6px;
+}
+
+/* Bottom footer strip */
+.bottom-footer {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    padding: 14px 0;
+    margin-top: 50px;
+}
+.bottom-footer .page {
+    padding-bottom: 0;
+    display: flex;
+    gap: 30px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    flex-wrap: wrap;
+}
+.bottom-footer .hl-red { color: var(--red); }
+.bottom-footer .hl-gold { color: var(--gold); }
+.bottom-footer .hl-cyan { color: var(--cyan); }
+
+/* Print */
+@media print {
+    body { background: #fff; color: #111; font-size: 12px; }
+    .hero-wrapper { background: none; }
+    .hero h1 .word-deep, .hero h1 .word-scan, .hero h1 .word-protocol { color: #111; }
+    h2 { color: #333; border-bottom-color: #ccc; }
+    pre { background: #f5f5f5; border-color: #ddd; }
+    code { background: #f0f0f0; color: #333; }
+    .db-item, .coherence-card, details, .callout { background: #fafafa; }
+    th { background: #eee; color: #333; }
+    td { border-bottom-color: #ddd; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     HERO
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="hero-wrapper">
+<div class="page">
+<div class="hero">
+
+<div class="hero-top">
+    <span class="kanji">霧越光学</span>
+    <span class="line"></span>
+    <span>K I R O S H I &nbsp; O P T I C S</span>
+</div>
+
+<h1>
+    <span class="word-deep">Deep </span>
+    <span class="word-scan">Scan </span>
+    <span class="word-protocol">Protocol</span>
+</h1>
+
+<div class="hero-bars">
+    <span class="bar-red"></span>
+    <span class="bar-cyan"></span>
+    <span class="bar-gold"></span>
+</div>
+
+<div class="hero-meta">
+    <span class="version">Version 2.2</span>
+    <span>Scanner Overhaul</span>
+    <span>Procedural Backstories</span>
+</div>
+
+<div class="hero-tagline">
+    <span class="tag-en">E V E R Y &nbsp; S E C R E T . &nbsp; R E V E A L E D .</span>
+    <span><span class="dot">●</span> <span class="tag-status">CONNECTED</span></span>
+    <span class="tag-jp">すべての秘密を明らかに</span>
+</div>
+
+<div class="hero-stats">
+    <div class="stat">
+        <div class="number">229</div>
+        <div class="label">Unique NPCs</div>
+    </div>
+    <div class="stat">
+        <div class="number">1901</div>
+        <div class="label">Life Events</div>
+    </div>
+    <div class="stat">
+        <div class="number">90</div>
+        <div class="label">Classifications</div>
+    </div>
+    <div class="stat">
+        <div class="number">280<span class="suffix">K+</span></div>
+        <div class="label">Unique Names</div>
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     CONTENT
+     ═══════════════════════════════════════════════════════════════════ -->
+
+<div class="page">
+
+<!-- OVERVIEW -->
+<h2>Overview</h2>
+
+<p>Deep Scan Protocol hooks your Kiroshi optics into every major database in Night City. Scan any civilian and pull their NCPD criminal records, cyberware registry, bank records, medical history, psychological profile, and personal relationships. Scan gang members for affiliation intel and procedurally generated names. Scan NCPD officers for detailed personnel files. Scan named characters for hand-written, lore-accurate classified dossiers.</p>
+
+<p>All data is <strong>deterministically generated</strong> from each NPC's entity ID — the same NPC always produces identical results across sessions. No two citizens share a profile.</p>
+
+<div class="callout info">
+<div class="tag">Coverage</div>
+<strong>229 unique NPCs</strong> · <strong>Total coverage: Base Game + Phantom Liberty</strong> · <strong>87 source files</strong>
+</div>
+
+<!-- NAV -->
+<div class="nav-box">
+<a href="#databases"><span class="nav-dot">▸</span>Database Access — 10 queryable sources</a>
+<a href="#unique"><span class="nav-dot">▸</span>Unique NPC Database — 229 entries</a>
+<a href="#procedural"><span class="nav-dot">▸</span>Procedural Generation</a>
+<a href="#classifications"><span class="nav-dot">▸</span>Special Classifications — 90 types</a>
+<a href="#relationships"><span class="nav-dot">▸</span>Relationships</a>
+<a href="#names"><span class="nav-dot">▸</span>Name Generation — 280K+ names</a>
+<a href="#coherence"><span class="nav-dot">▸</span>Narrative Coherence</a>
+<a href="#glitches"><span class="nav-dot">▸</span>Scanner Glitches</a>
+<a href="#translation"><span class="nav-dot">▸</span>Translation</a>
+<a href="#config"><span class="nav-dot">▸</span>Configuration</a>
+<a href="#install"><span class="nav-dot">▸</span>Installation</a>
+<a href="#compat"><span class="nav-dot">▸</span>Compatibility</a>
+<a href="#faq"><span class="nav-dot">▸</span>FAQ</a>
+<a href="#bugs"><span class="nav-dot">▸</span>Bug Reports</a>
+<a href="#arch"><span class="nav-dot">▸</span>Technical Architecture</a>
+<a href="#credits"><span class="nav-dot">▸</span>Credits</a>
+</div>
+
+<hr>
+
+<!-- DATABASE ACCESS -->
+<h2 id="databases">Database Access</h2>
+
+<div class="db-grid">
+<div class="db-item">
+    <div class="db-num">[01]</div>
+    <div class="db-name">NCPD Criminal Database</div>
+    <div class="db-desc">Arrests, charges, convictions, warrant status, threat classification</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[02]</div>
+    <div class="db-name">NC Financial Registry</div>
+    <div class="db-desc">Credit rating, NC ID, income, debt, employment, assets</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[03]</div>
+    <div class="db-name">Trauma Team Records</div>
+    <div class="db-desc">Coverage tier, response priority, payment status, medical file</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[04]</div>
+    <div class="db-name">NetWatch Psychological Index</div>
+    <div class="db-desc">Temperament, behavioral flags, violence risk, loyalty markers</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[05]</div>
+    <div class="db-name">Cyberware Registration System</div>
+    <div class="db-desc">Implant inventory, psychosis risk, illegal modifications</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[06]</div>
+    <div class="db-name">Social Network Analysis</div>
+    <div class="db-desc">Family, associates, enemies, professional contacts</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[07]</div>
+    <div class="db-name">Gang Intelligence Division</div>
+    <div class="db-desc">Affiliation, rank, territory, loyalty assessment</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[08]</div>
+    <div class="db-name">NCPD Personnel System</div>
+    <div class="db-desc">Badge number, rank, unit assignment, service record</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[09]</div>
+    <div class="db-name">NCDMV Vehicle Registration</div>
+    <div class="db-desc">Make/model, registration status, license plate, ownership</div>
+</div>
+<div class="db-item">
+    <div class="db-num">[10]</div>
+    <div class="db-name">NET Activity Monitor</div>
+    <div class="db-desc">Network alias, browsing activity, darknet presence, flagged access</div>
+</div>
+</div>
+
+<div class="callout info">
+<div class="tag">Smart Filtering</div>
+Gang members won't show bank records. NCPD officers have sealed criminal files. Trauma Team members show military-grade profiles with operational security redactions. Children display protected status only. Military combat NPCs show vanilla scanner data to prevent crashes. Fake police are detected and flagged as impersonators.
+</div>
+
+<hr>
+
+<!-- UNIQUE NPC DATABASE -->
+<h2 id="unique">Unique NPC Database</h2>
+
+<p>229 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.</p>
+
+<details>
+<summary>Arasaka Corporation <span class="count">10 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Classification</th><th>Notes</th></tr>
+<tr><td>Saburo Arasaka</td><td>ARASAKA - EMPEROR</td><td>Dynamic state after The Heist</td></tr>
+<tr><td>Yorinobu Arasaka</td><td>ARASAKA - HEIR</td><td>Patricide flagged post-Heist</td></tr>
+<tr><td>Hanako Arasaka</td><td>ARASAKA - PRINCESS</td><td>Protected diplomatic status</td></tr>
+<tr><td>Goro Takemura</td><td>ARASAKA - DISAVOWED</td><td>State changes on quest progress</td></tr>
+<tr><td>Sandayu Oda</td><td>ARASAKA - PERSONAL SECURITY</td><td>Hanako's protection detail</td></tr>
+<tr><td>Adam Smasher</td><td>ARASAKA - MILITARY ASSET</td><td>Full cyborg combat platform</td></tr>
+<tr><td>Anders Hellman</td><td>ARASAKA - RESEARCH</td><td>Relic program lead</td></tr>
+<tr><td>Graham Mayfield</td><td>ARASAKA - SECURITY</td><td>Corporate operative</td></tr>
+<tr><td>Hanako Bodyguards</td><td>ARASAKA - PERSONAL SECURITY</td><td>Elite protection detail</td></tr>
+<tr><td>Arasaka Security</td><td>ARASAKA - SECURITY</td><td>Standard operatives</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Militech <span class="count">3 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Classification</th></tr>
+<tr><td>Meredith Stout</td><td>MILITECH - COUNTERINTELLIGENCE</td></tr>
+<tr><td>Weldon Holt</td><td>MILITECH - EXECUTIVE</td></tr>
+<tr><td>Militech Commander</td><td>MILITECH - FIELD OPERATIONS</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Fixers <span class="count">10 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Territory</th><th>Notes</th></tr>
+<tr><td>Rogue Amendiares</td><td>Afterlife</td><td>Legend. Queen of the Afterlife</td></tr>
+<tr><td>Dexter DeShawn</td><td>Watson</td><td>High-profile jobs. Dynamic state</td></tr>
+<tr><td>Wakako Okada</td><td>Westbrook</td><td>Information broker</td></tr>
+<tr><td>Regina Jones</td><td>Watson</td><td>NCPD connections</td></tr>
+<tr><td>Sebastian "Padre" Ibarra</td><td>Heywood</td><td>Valentinos ties</td></tr>
+<tr><td>Dakota Smith</td><td>Badlands</td><td>Nomad specialist</td></tr>
+<tr><td>Dino Dinovic</td><td>Santo Domingo</td><td>Industrial work</td></tr>
+<tr><td>Mr. Hands</td><td>Pacifica / Dogtown</td><td>Phantom Liberty content</td></tr>
+<tr><td>El Capitan</td><td>Santo Domingo</td><td>Vehicle specialist</td></tr>
+<tr><td>Mickey</td><td>Santo Domingo</td><td>El Capitan's driver/courier</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Afterlife &amp; Legends <span class="count">8 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Classification</th><th>Notes</th></tr>
+<tr><td>Jackie Welles</td><td>MERC - PARTNER</td><td>Dynamic state after The Heist</td></tr>
+<tr><td>T-Bug</td><td>MERC - NETRUNNER</td><td>Dynamic state</td></tr>
+<tr><td>Johnny Silverhand</td><td>ENGRAM - TERRORIST</td><td>Rockerboy legend</td></tr>
+<tr><td>Kerry Eurodyne</td><td>CIVILIAN - CELEBRITY</td><td>Samurai guitarist</td></tr>
+<tr><td>Alt Cunningham</td><td>NETRUNNER - BEYOND BLACKWALL</td><td>First Soulkiller victim</td></tr>
+<tr><td>Claire Russell</td><td>CIVILIAN - BARTENDER</td><td>Afterlife bartender, racer</td></tr>
+<tr><td>Crispin Weyland</td><td>MERC - AFTERLIFE</td><td>Known as Squama</td></tr>
+<tr><td>Nix</td><td>NETRUNNER - AFTERLIFE</td><td>Resident paranoid netrunner</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Gang Leadership <span class="count">14 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Gang</th><th>Characters</th></tr>
+<tr><td>Maelstrom</td><td>Royce (Leader), Dum Dum (Lieutenant), Brick (Former — imprisoned)</td></tr>
+<tr><td>Tyger Claws</td><td>Jotaro Shobo (Lieutenant), Hiromi Sato (Operations)</td></tr>
+<tr><td>Valentinos</td><td>Gustavo Orta, Jose Luis, Octavio Ruiz, Pepe Najarro, Miguel "Gizmo" Rodriguez</td></tr>
+<tr><td>Voodoo Boys</td><td>Brigitte (Maman), Placide (Enforcer)</td></tr>
+<tr><td>Animals</td><td>Sasquatch (Leader)</td></tr>
+<tr><td>Wraiths</td><td>Nash (Leader)</td></tr>
+<tr><td>Scavengers</td><td>Anton Kolos (Cell leader)</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Mox, Clouds &amp; Aldecaldos <span class="count">7 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Classification</th><th>Notes</th></tr>
+<tr><td>Judy Alvarez</td><td>TECHNICIAN - MOX</td><td>BD editor, Evelyn's friend</td></tr>
+<tr><td>Evelyn Parker</td><td>CIVILIAN - DOLL</td><td>Dynamic state based on quest</td></tr>
+<tr><td>Maiko Maeda</td><td>CLOUDS - MANAGEMENT</td><td>Ambitious, corp connections</td></tr>
+<tr><td>Woodman</td><td>CLOUDS - SECURITY</td><td>Tyger Claws enforcer</td></tr>
+<tr><td>Panam Palmer</td><td>ALDECALDO - DRIVER</td><td>Expert driver</td></tr>
+<tr><td>Saul Bright</td><td>ALDECALDO - LEADER</td><td>Clan leader</td></tr>
+<tr><td>Mitch Anderson</td><td>ALDECALDO - MECHANIC</td><td>Scorpion's friend</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Ripperdocs, NCPD, NetWatch &amp; Media <span class="count">18 entries</span></summary>
+<div class="content">
+<h4>Ripperdocs</h4>
+<p>Viktor Vektor (Little China) · Fingers (Jig-Jig Street) · Charles Bucks (Kabuki) · Misty Olszewski (Esoterica) · Nina Kraviz (Charter Hill)</p>
+<h4>NCPD &amp; Politics</h4>
+<p>River Ward (Detective) · Jefferson Peralez (Politician) · Lucius Rhyne (Mayor — dynamic) · Barry (Officer)</p>
+<h4>NetWatch</h4>
+<p>Bryce Mosley (Pacifica operations)</p>
+<h4>Media</h4>
+<p>Lizzy Wizzy · Blue Moon · Ozob Bozo · Joshua Stephenson · Gillean Jordan · Max Jones · Cassius Ryder</p>
+<h4>Vendors</h4>
+<p>Wilson (2nd Amendment) · Coach Fred (Boxing)</p>
+</div>
+</details>
+
+<details>
+<summary>Beat on the Brat <span class="count">2 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Classification</th><th>Notes</th></tr>
+<tr><td>Certo Esquerdo</td><td>UNDERGROUND FIGHTER</td><td>Twin. Brazilian martial arts. Cross-references brother.</td></tr>
+<tr><td>Esquerdo Certo</td><td>UNDERGROUND FIGHTER</td><td>Twin. Coordinated threat assessment.</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Phantom Liberty — Main Cast <span class="count">5 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Classification</th><th>Notes</th></tr>
+<tr><td>Solomon Reed</td><td>FIA - DEEP COVER</td><td>Legendary sleeper agent</td></tr>
+<tr><td>Songbird (So Mi)</td><td>FIA - NETRUNNER</td><td>Blackwall-damaged, Relic bearer</td></tr>
+<tr><td>Kurt Hansen</td><td>BARGHEST - LEADER</td><td>PMC warlord, controls Dogtown</td></tr>
+<tr><td>Rosalind Myers</td><td>NUSA - PRESIDENT</td><td>Former Militech CEO</td></tr>
+<tr><td>Alena "Alex" Xenakis</td><td>FIA - DEEP COVER OPERATIVE</td><td>The Moth bar cover</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Phantom Liberty — Dogtown NPCs <span class="count">16 entries</span></summary>
+<div class="content">
+<h4>Longshore Stacks</h4>
+<p>Leon Watson (Weapons) · Costin Lahovary (Ripperdoc) · Ronald "Typhoon" Malone (Junk) · Susanna Mack (Ex-Trauma Team)</p>
+<h4>EBM Petrochem Stadium</h4>
+<p>Sophia Dupont · David Walker · Herold Lowe · Sammy Taylor · Saki Seo · Eron Acedo · Marcin Iwiński (Easter egg) · Michał Kiciński (Easter egg)</p>
+<h4>No Easy Way Out</h4>
+<p>Angelica Whelan · Damir Kovac · Aaron Waines · William Correy</p>
+</div>
+</details>
+
+<details>
+<summary>Phantom Liberty — Gigs <span class="count">23 entries</span></summary>
+<div class="content">
+<table>
+<tr><th>Gig</th><th>Characters</th></tr>
+<tr><td>Dogtown Saints</td><td>Nika Yankovich · Odell Blanco · Anthony Anderson</td></tr>
+<tr><td>Prototype in the Scraper</td><td>Hasan Demir</td></tr>
+<tr><td>Waiting for Dodger</td><td>Bill Mitchel · Charles Wilson · Carl Robinson</td></tr>
+<tr><td>The Man Who Killed Jason Foreman</td><td>Briana Dolson · Leon Rinder</td></tr>
+<tr><td>Spy in the Jungle</td><td>Steven Santos · Ana Friedman · Boris Ribakov · Katya Karelina</td></tr>
+<tr><td>Talent Academy</td><td>Baird · Tommie Walker · Fiona Vargas · David Walker</td></tr>
+<tr><td>Heaviest of Hearts</td><td>Michael Maldonado · Georgina Zembinsky</td></tr>
+<tr><td>Roads to Redemption</td><td>Nele Springer</td></tr>
+<tr><td>Treating Symptoms</td><td>Alan Noël</td></tr>
+<tr><td>Other</td><td>Kyle Araujo</td></tr>
+</table>
+</div>
+</details>
+
+<details>
+<summary>Black Sapphire Party <span class="count">12 entries</span></summary>
+<div class="content">
+<p>Jago Szabó · Chester Bennett · Charles Graham · Jun Azegami · Marcus Ichida · Ruth Dzeng · Ziggy Q · Arif Iqbal · Josh Kavorkin · Reverend Colver · Aurore Cassel · Aymeric Cassel</p>
+</div>
+</details>
+
+<details>
+<summary>Other Notable Characters <span class="count">8 entries</span></summary>
+<div class="content">
+<p>Delamain (AI taxi) · Mama Welles (Jackie's mother) · Cynthia Najarro (Pepe's wife) · Zen Master (Anomalous entity) · Nibbles (V's cat) · Brendan (Sentient vending machine) · Skippy (Sentient pistol) · Frank Nostra (V's Arasaka corpo friend)</p>
+</div>
+</details>
+
+<details>
+<summary>Dynamic Quest States</summary>
+<div class="content">
+<table>
+<tr><th>Character</th><th>Trigger</th><th>Change</th></tr>
+<tr><td>Takemura</td><td>The Heist</td><td>Disavowed status, manhunt data</td></tr>
+<tr><td>Jackie Welles</td><td>The Heist</td><td>Entry reflects fate</td></tr>
+<tr><td>T-Bug</td><td>The Heist</td><td>Status updated</td></tr>
+<tr><td>Evelyn Parker</td><td>Automatic Love</td><td>Reflects storyline</td></tr>
+<tr><td>Dexter DeShawn</td><td>The Heist</td><td>Dynamic state</td></tr>
+<tr><td>Saburo Arasaka</td><td>The Heist</td><td>Death recorded</td></tr>
+<tr><td>Lucius Rhyne</td><td>Dream On</td><td>Status changes</td></tr>
+</table>
+</div>
+</details>
+
+<hr>
+
+<!-- PROCEDURAL GENERATION -->
+<h2 id="procedural">Procedural Generation</h2>
+
+<p>Every non-unique NPC gets a full procedural profile built from their entity ID.</p>
+
+<h3>Life Events</h3>
+<p>1,901 unique events build procedural backstories. Each carries gender-specific text, stat modifiers, and lifepath weighting.</p>
+
+<table>
+<tr><th>Category</th><th>Count</th><th>Examples</th></tr>
+<tr><td>Upbringing</td><td>~470</td><td>Family structure, parental jobs, wealth level, orphan status</td></tr>
+<tr><td>Housing</td><td>~318</td><td>Megabuilding units, combat zone squats, nomad camps, Dogtown</td></tr>
+<tr><td>Childhood</td><td>~560</td><td>Education, street skills, gang youth, talents, trauma</td></tr>
+<tr><td>Jobs</td><td>~414</td><td>Criminal careers, merc work, tech, service, corpo</td></tr>
+<tr><td>Adulthood</td><td>~478</td><td>Relationships, violence, health crises, legal troubles, fixers</td></tr>
+</table>
+
+<h3>NCPD Officer Profiles <span class="badge gold">v2.2</span></h3>
+<p>Two-part combinatorial backstories for every officer. Origin × career path, defining event × career detail, current situation × developing element. Corruption, partner deaths, IA investigations, undercover work, Cyberpsycho PTSD, bribery, substance issues, gang threats. ~1.2 billion unique profiles.</p>
+
+<h3>Gang Member Names <span class="badge gold">v2.2</span></h3>
+<p>Generic gang NPCs receive procedurally generated names from ethnicity-appropriate pools. 320 gang-flavored street aliases — "Kitsune" for Tyger Claws, "El Santo" for Valentinos, "Flatline" for Maelstrom, "Bull" for Animals. 65% alias chance. NPCs with real game names keep them.</p>
+
+<h3>Criminal Records</h3>
+<p>Status (Clean → Most Wanted), specific charges with dates, convictions, warrant status, NCPD classification, and corporate security alerts.</p>
+
+<h3>Financial Profile</h3>
+<p>NC ID number (NC######), credit score + tier, estimated wealth, debt (amount, holder, status), property/residence, employment, income, recent purchases, tax status, Trauma Team coverage, bank affiliation.</p>
+
+<h3>Medical History</h3>
+<p>Blood type with RhD notation (e.g. A RhD+, O RhD−), chronic conditions, injury history, cyberware complications, substance issues, mental health flags. Trauma Team coverage tier on summary line.</p>
+
+<h3>Cyberware Registry</h3>
+<p>Total implant count, category breakdown (Neural / Optical / Skeletal / Dermal / Circulatory), psychosis risk percentage, illegal modifications, registry compliance.</p>
+
+<h3>Psychological Profile</h3>
+<p>Temperament, behavioral flags, violence risk score (0–100), loyalty index, notable traits. 200 personal quirks across 7 categories surface from surveillance feeds with a 35% chance at medium density.</p>
+
+<h3>Vehicle Registration</h3>
+<p>Make/model, registration status, license plate, ownership. Color-coded: red for stolen, yellow for suspended/expired, blue for clean.</p>
+
+<h3>NET Profile</h3>
+<p>Network alias (from 300 aliases across 10 style categories), browsing activity, darknet presence, flagged connections.</p>
+
+<h3>Gang Profiles</h3>
+<p>11 complete gang profile systems (all 10 NC gangs + Barghest). Gang-specific ranks, specializations, territories, loyalty systems, 12+ unique backstories each.</p>
+
+<hr>
+
+<!-- SPECIAL CLASSIFICATIONS -->
+<h2 id="classifications">Special Classifications</h2>
+
+<p>90 hidden NPC types. Configurable odds (default 1 in 750). Citizens look completely normal until scanned.</p>
+
+<div class="class-grid">
+<div class="class-row"><span class="name">Intelligence</span><span class="num">10 types</span></div>
+<div class="class-row"><span class="name">Corporate</span><span class="num">9 types</span></div>
+<div class="class-row"><span class="name">High-Value Targets</span><span class="num">9 types</span></div>
+<div class="class-row"><span class="name">Medical &amp; Biological</span><span class="num">13 types</span></div>
+<div class="class-row"><span class="name">Neural &amp; Cyberware</span><span class="num">9 types</span></div>
+<div class="class-row"><span class="name">AI &amp; Digital</span><span class="num">10 types</span></div>
+<div class="class-row"><span class="name">Covert Programs</span><span class="num">5 types</span></div>
+<div class="class-row"><span class="name">Underground</span><span class="num">6 types</span></div>
+<div class="class-row"><span class="name">Outcasts &amp; Survivors</span><span class="num">10 types</span></div>
+<div class="class-row"><span class="name">Identity &amp; Anomalous</span><span class="num">9 types</span></div>
+</div>
+
+<details>
+<summary>Intelligence Assets <span class="count">10 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>SLEEPER_AGENT</code> <code>DOUBLE_AGENT</code> <code>UNDERCOVER_COP</code> <code>GANG_INFILTRATOR</code> <code>FIXER_ASSET</code> <code>DATA_COURIER</code> <code>NCPD_INFORMANT</code> <code>DRAGON_COURIER</code> <code>DARK_NET_LEGEND</code> <code>SMUGGLER_TUNNEL_OPERATOR</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>Corporate <span class="count">9 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>CORPO_WHISTLEBLOWER</code> <code>CORPO_DEFECTOR</code> <code>CORPO_HEIR_HIDING</code> <code>CORPO_ASSET_FROZEN</code> <code>CORPO_INTERN_TRAPPED</code> <code>CORPO_DEBT_SLAVE</code> <code>INDENTURED_CORPO</code> <code>BLACKMAIL_VICTIM</code> <code>PROXY_VOTER</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>High-Value Targets <span class="count">9 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>WITNESS_PROTECTION</code> <code>WITNESS</code> <code>HUNTED</code> <code>MAXTAC_TARGET</code> <code>ACTIVE_BOUNTY</code> <code>REAPER_CONTRACT</code> <code>DEBT_COLLECTION</code> <code>ORGAN_MARKED</code> <code>MISSING_PERSON</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>Medical &amp; Biological <span class="count">13 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>PRE_CYBERPSYCHO</code> <code>CYBERPSYCHO_RECOVERED</code> <code>CLONE_SUBJECT</code> <code>EXPERIMENTAL_SUBJECT</code> <code>ENGRAM_CANDIDATE</code> <code>RELIC_COMPATIBLE</code> <code>TRAUMA_TEAM_MARKED</code> <code>IMMUNE_ANOMALY</code> <code>GENETIC_CHIMERA</code> <code>BIOPLAGUE_CARRIER</code> <code>RADIATION_EXPOSURE</code> <code>FLATLINE_REVIVED</code> <code>CONTAMINATED_SCOP</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>Neural &amp; Cyberware <span class="count">9 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>NEURAL_DIVERGENT</code> <code>UNREGISTERED_CHROME</code> <code>INFECTED_FIRMWARE</code> <code>IMPLANT_BOMB</code> <code>DOLL_CHIP_SLEEPER</code> <code>MEMORY_WIPED</code> <code>SIGNAL_CARRIER</code> <code>BLACK_ICE_SURVIVOR</code> <code>BRAINDANCE_ADDICT</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>AI &amp; Digital <span class="count">10 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>AI_CONTACT</code> <code>AI_PUPPET</code> <code>BLACKWALL_TOUCHED</code> <code>DELAMAIN_GLITCH</code> <code>GHOST_IN_MACHINE</code> <code>PERSONALITY_FRAGMENT</code> <code>SOUL_SPLIT</code> <code>SOULKILLER_SURVIVOR</code> <code>ARASAKA_ENGRAM_ECHO</code> <code>TECHNO_NECRO</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>Covert Programs <span class="count">5 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>NIGHT_CORP_SUBJECT</code> <code>PERALEZ_PROTOCOL</code> <code>DREAMTECH_VICTIM</code> <code>SYNTHETIC_SLEEPER</code> <code>DEEP_FAKE_IDENTITY</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>Underground <span class="count">6 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>HIDDEN_NETRUNNER</code> <code>RETIRED_LEGEND</code> <code>LEGACY_CHARACTER</code> <code>ILLEGAL_BD_PRODUCER</code> <code>WETWORK_RETIRED</code> <code>MAXTAC_WASHOUT</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>Outcasts &amp; Survivors <span class="count">10 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>GHOST</code> <code>MILITARY_AWOL</code> <code>NOMAD_EXILE</code> <code>CULT_ESCAPEE</code> <code>COMBAT_ZONE_SURVIVOR</code> <code>GHOST_TOWN_SURVIVOR</code> <code>FERAL_ZONE_BORN</code> <code>CHILD_SOLDIER_GROWN</code> <code>CARGO_STOWAWAY</code> <code>SCOP_FARMER_REFUGEE</code>
+</div>
+</div>
+</details>
+
+<details>
+<summary>Identity &amp; Anomalous <span class="count">9 types</span></summary>
+<div class="content">
+<div class="tag-list">
+<code>IDENTITY_STOLEN</code> <code>BURIED_PAST</code> <code>ILLEGAL_PROCREATION</code> <code>CHRONO_DISPLACED</code> <code>ORBITAL_RETURNEE</code> <code>POLITICAL_DISSIDENT</code> <code>PRECOG_SUBJECT</code> <code>TIME_ANOMALY</code> <code>ARASAKA_BLOODLINE</code>
+</div>
+</div>
+</details>
+
+<hr>
+
+<!-- RELATIONSHIPS -->
+<h2 id="relationships">Relationships</h2>
+
+<p>Every NPC gets a procedurally generated social network. Family members share the NPC's actual surname — scan "Arina Lukina" and her grandfather becomes "Hector Lukina." Spouses share the name 80% of the time.</p>
+
+<table>
+<tr><th>Type</th><th>Count</th><th>Details</th></tr>
+<tr><td>Family</td><td>0–5 members</td><td>Blood relatives share actual NPC surname</td></tr>
+<tr><td>Associates</td><td>1–8 contacts</td><td>Friends, coworkers, relationship context</td></tr>
+<tr><td>Enemies</td><td>0–3 hostiles</td><td>Named with reason, threat level, faction</td></tr>
+<tr><td>Professional</td><td>0–3 contacts</td><td>Fixers, ripperdocs, dealers</td></tr>
+</table>
+
+<hr>
+
+<!-- NAME GENERATION -->
+<h2 id="names">Name Generation</h2>
+
+<p>280,000+ unique full names across 13 culturally appropriate ethnic groups matched to NPC appearance. Zero array allocation at runtime — fully index-based for stack safety. Plus 320 gang-specific street aliases.</p>
+
+<table>
+<tr><th>Group</th><th>Ethnicities</th><th>Per Ethnicity</th></tr>
+<tr><td>Americas</td><td>American · African American · Hispanic</td><td>100M + 100F + 100L</td></tr>
+<tr><td>East Asia</td><td>Japanese · Chinese · Korean</td><td>100M + 100F + 100L</td></tr>
+<tr><td>Central</td><td>Slavic · Indian · Middle Eastern</td><td>100M + 100F + 100L</td></tr>
+<tr><td>Other</td><td>African · Haitian · Southeast Asian · European</td><td>100M + 100F + 100L</td></tr>
+</table>
+
+<hr>
+
+<!-- NARRATIVE COHERENCE -->
+<h2 id="coherence">Narrative Coherence</h2>
+
+<p>Always active. Every NPC is assigned a life theme that ensures all data tells one consistent story.</p>
+
+<div class="coherence-grid">
+<div class="coherence-card theme-stable">
+    <div class="theme-name">Stable</div>
+    <div class="theme-desc">Good credit, clean record, steady employment, healthy</div>
+</div>
+<div class="coherence-card theme-struggling">
+    <div class="theme-name">Struggling</div>
+    <div class="theme-desc">Mounting debt, stress conditions, petty crimes, chronic pain</div>
+</div>
+<div class="coherence-card theme-climbing">
+    <div class="theme-name">Climbing</div>
+    <div class="theme-desc">Career advancement, improving finances, new implants</div>
+</div>
+<div class="coherence-card theme-falling">
+    <div class="theme-name">Falling</div>
+    <div class="theme-desc">Worsening health, legal troubles, accumulating debt, isolation</div>
+</div>
+<div class="coherence-card theme-criminal">
+    <div class="theme-name">Criminal</div>
+    <div class="theme-desc">Gang ties, extensive record, illegal income, combat injuries</div>
+</div>
+<div class="coherence-card theme-corporate">
+    <div class="theme-name">Corporate</div>
+    <div class="theme-desc">Clean records, good credit, corpo medical, platinum Trauma Team</div>
+</div>
+</div>
+
+<div class="callout info">
+<div class="tag">Cross-System Checks</div>
+Flags propagate across systems — <code>SUBSTANCE_ABUSE</code> generates drug charges in criminal, liver damage in medical, addiction markers in psych, and debt-from-habit in financial. Married NPCs always have a spouse listed. Grudge-holders always have enemies. Rejected implants always affect medical records. Corpo managers always show their actual corporation. Obese NPCs carry weight-related conditions. Everything connects.
+</div>
+
+<hr>
+
+<!-- SCANNER GLITCHES -->
+<h2 id="glitches">Scanner Glitches</h2>
+
+<p>Rare chance that your Kiroshi malfunctions mid-scan. Eight distinct corruption types — hardware failure, database corruption, NetWatch interference, ghost identity, cyberpsychosis warning, classified record, memory overflow, signal jamming — replace the entire scan with garbled data, redacted fields, and error messages.</p>
+
+<p>Default: 1 in 200 chance per scan. Fully configurable (1–500) or toggleable off in settings.</p>
+
+<hr>
+
+<!-- TRANSLATION -->
+<h2 id="translation">Translation</h2>
+
+<p>Want to translate Kiroshi Deep Scan into your language? Download the <a href="TRANSLATION_GUIDE.html">Translation Guide</a>, extract it, and open in your browser.</p>
+
+<p>The guide covers every file in the mod with real code examples, showing exactly which strings to translate and which to leave alone. Includes placeholder token reference, custom gender token instructions for languages with verb conjugation (Russian, Polish, German, etc.), difficulty ratings per file, decision flowchart, and common mistakes.</p>
+
+<p>Translations are published as separate standalone mods on Nexus. No permission needed — just credit the original page.</p>
+
+<hr>
+
+<!-- CONFIGURATION -->
+<h2 id="config">Configuration</h2>
+
+<p>All settings: <strong>Mod Settings Menu → Kiroshi Deep Scan</strong></p>
+
+<div class="settings-group">
+<h4>Display</h4>
+<table>
+<tr><th>Setting</th><th>Range</th><th>Default</th></tr>
+<tr><td>Data Density</td><td>Low / Medium / High</td><td>High</td></tr>
+<tr><td>Header Font Size</td><td>14–28</td><td>20</td></tr>
+<tr><td>Text Font Size</td><td>18–34</td><td>26</td></tr>
+<tr><td>Compact Mode</td><td>Off / Tight / Tighter / Tightest</td><td>Off</td></tr>
+<tr><td>Compact Relationships</td><td>On / Off</td><td>On</td></tr>
+</table>
+</div>
+
+<div class="settings-group">
+<h4>Generation</h4>
+<table>
+<tr><th>Setting</th><th>Options</th><th>Default</th></tr>
+<tr><td>Special NPC Rarity</td><td>Common (1:250) / Rare (1:750) / Mythic (1:2000)</td><td>Rare</td></tr>
+<tr><td>Scanner Glitches</td><td>On / Off</td><td>On</td></tr>
+<tr><td>Scanner Glitch Chance</td><td>1–500</td><td>200</td></tr>
+</table>
+</div>
+
+<div class="settings-group">
+<h4>Sections</h4>
+<p>12 individual toggles — Background, Early Life, Recent Activity, Psych Profile, Criminal Record, Gang Affiliation, Cyberware, Financial, Medical, Relationships, Vehicle Registration, NET Profile. All default: On.</p>
+</div>
+
+<div class="settings-group">
+<h4>Content</h4>
+<table>
+<tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+<tr><td>Diverse Relationships</td><td>Off</td><td>Same-sex partnerships, polyamory, chosen family</td></tr>
+<tr><td>Body Modification Records</td><td>Off</td><td>Gender-affirming cyberware in medical records</td></tr>
+<tr><td>Pronouns</td><td>Off</td><td>Pronoun display in scan data</td></tr>
+</table>
+</div>
+
+<div class="settings-group">
+<h4>Developer</h4>
+<table>
+<tr><th>Setting</th><th>Default</th><th>Description</th></tr>
+<tr><td>Debug Mode</td><td>Off</td><td>Shows TweakDB ID + appearance name in scanner</td></tr>
+</table>
+</div>
+
+<hr>
+
+<!-- INSTALLATION -->
+<h2 id="install">Installation</h2>
+
+<h3>Requirements</h3>
+<table>
+<tr><th>Dependency</th><th>Purpose</th></tr>
+<tr><td><a href="https://github.com/jac3km4/redscript">redscript</a></td><td>Script compilation</td></tr>
+<tr><td><a href="https://github.com/psiberx/cp2077-codeware">Codeware</a></td><td>UI framework</td></tr>
+<tr><td><a href="https://github.com/jackhumbert/mod_settings">Mod Settings Menu</a></td><td>Settings interface</td></tr>
+</table>
+
+<h3>Install</h3>
+<p><strong>Via Mod Manager:</strong> Click "Mod Manager Download" on Nexus. Done.</p>
+<p><strong>Manual:</strong> Extract to game directory, merge when prompted:</p>
+<pre><code>Cyberpunk 2077/r6/scripts/backgroundScanner/</code></pre>
+
+<h3>Verify</h3>
+<p>Check for compilation errors in:</p>
+<pre><code>Cyberpunk 2077/r6/logs/redscript_rCURRENT.log</code></pre>
+
+<hr>
+
+<!-- COMPATIBILITY -->
+<h2 id="compat">Compatibility</h2>
+
+<div class="callout danger">
+<div class="tag">Incompatible</div>
+<a href="https://www.nexusmods.com/cyberpunk2077/mods/13470">Kiroshi Opticals - Crowd Scanner Expansion</a> — Duplicate scanner hooks<br>
+<a href="https://www.nexusmods.com/cyberpunk2077/mods/23664">Kiroshi Opticals NetWatch Crowd Scanner</a> — Same functionality<br>
+<a href="https://www.nexusmods.com/cyberpunk2077/mods/2217">Lifepath Bonuses and Gang-Corp Traits</a> — Scanner override conflicts
+</div>
+
+<div class="callout success">
+<div class="tag">Compatible</div>
+Phantom Liberty (full support) · All gameplay mods not touching the scanner · Visual/graphics mods · UI mods that don't modify the scanner panel
+</div>
+
+<p>Remove any existing Kiroshi scanner mods before installing. This mod is a standalone replacement.</p>
+
+<hr>
+
+<!-- FAQ -->
+<h2 id="faq">FAQ</h2>
+
+<details>
+<summary>Nothing appears for certain NPCs (corporate employees, monks, vendors)</summary>
+<div class="content">
+The mod generates data for NPCs flagged as crowd, gang, or NCPD. Some types aren't classified as "crowd" by the game engine. Named characters with unique entries always display regardless.
+</div>
+</details>
+
+<details>
+<summary>Why does an NPC show "HIGH PRIORITY TARGET" when the game shows nothing?</summary>
+<div class="content">
+Deep Scan accesses databases beyond NCPD public records — NetWatch surveillance, corporate security, black market bounty boards, immigration systems. V's Kiroshi sees what NCPD either doesn't have, hasn't made public, or has been paid to suppress.
+</div>
+</details>
+
+<details>
+<summary>Family members share the NPC's last name — intentional?</summary>
+<div class="content">
+Yes. Blood relatives extract the scanned NPC's actual displayed surname. Scan "Arina Lukina" and her grandfather becomes "Hector Lukina." Spouses share the name 80% of the time.
+</div>
+</details>
+
+<details>
+<summary>How do I find Special Classification NPCs?</summary>
+<div class="content">
+Keep scanning. Default is 1 in 750. Lower to 1 in 250 (Common) in settings. There are 90 types to discover.
+</div>
+</details>
+
+<details>
+<summary>Why don't soldiers / MaxTac show backstories?</summary>
+<div class="content">
+Military combat NPCs display vanilla scanner info to prevent crashes from malformed NPC data during certain missions. Trauma Team members now have dedicated military-grade profiles. Regular corporate employees show full procedural data.
+</div>
+</details>
+
+<details>
+<summary>What's a scanner glitch?</summary>
+<div class="content">
+Rare Kiroshi malfunctions that corrupt the entire scan output. Hardware failures, database errors, NetWatch pulling access, ghost records. Eight different types. Default is 1 in 200 scans. Configurable or toggleable off in settings under Generation.
+</div>
+</details>
+
+<details>
+<summary>What are the personal quirks on the psych profile?</summary>
+<div class="content">
+Surveillance data the system flagged but nobody followed up on. Affairs, phobias, conspiracy beliefs, weird legal flags, secret double lives. 200 entries across 7 categories. Shows up at medium data density or higher with a 35% chance.
+</div>
+</details>
+
+<details>
+<summary>Can I hide sections I don't care about?</summary>
+<div class="content">
+Yes. 12 individual section toggles under Settings → Sections. Data still generates in the background — toggle back on and content appears immediately without rescanning.
+</div>
+</details>
+
+<details>
+<summary>Does this work with Phantom Liberty?</summary>
+<div class="content">
+Full support. 50+ unique hand-crafted Dogtown entries including Solomon Reed, Songbird, Kurt Hansen, President Myers, all stadium and Longshore Stacks vendors, No Easy Way Out characters, Black Sapphire party attendees, and 23 gig NPCs. Barghest soldiers get militia-specific profiles.
+</div>
+</details>
+
+<details>
+<summary>How does Narrative Coherence work?</summary>
+<div class="content">
+Every NPC is assigned a life theme (Stable, Struggling, Criminal, etc.) and all data systems reference it. A "Falling" NPC has declining credit, substance issues, recent termination, lapsed Trauma Team coverage, and growing debt — not random disconnected data. This is always active.
+</div>
+</details>
+
+<details>
+<summary>What's the NC ID number?</summary>
+<div class="content">
+A Night City citizen registration number (NC######) in financial records. Homeless NPCs show UNREGISTERED or REVOKED. Nomads show CLAN ID ONLY.
+</div>
+</details>
+
+<details>
+<summary>What does TT: SILVER mean on the medical line?</summary>
+<div class="content">
+Trauma Team coverage tier. PLATINUM = full priority. GOLD = fast response. SILVER = standard. NONE = no coverage. Select "Trauma Team" as database source for the full file.
+</div>
+</details>
+
+<details>
+<summary>Scanner panel too tall / overlaps other mods</summary>
+<div class="content">
+Mod Settings → Kiroshi Deep Scan → Display → Compact Mode. Set to Tight, Tighter, or Tightest. Also hide individual sections under Settings → Sections.
+</div>
+</details>
+
+<details>
+<summary>Why does a gang member have a name now?</summary>
+<div class="content">
+New in v2.2 — generic gang NPCs receive procedurally generated names from culturally appropriate name pools, with a 65% chance of a gang-flavored street alias. Named gang NPCs from the game keep their real names.
+</div>
+</details>
+
+<details>
+<summary>Why does a Beat Cop have such a detailed backstory?</summary>
+<div class="content">
+NCPD profiles were completely overhauled in v2.2. Officers now get two-part combinatorial backstories — origin story + career path, defining event + career detail, current assignment + developing situation. ~1.2 billion unique profiles covering corruption, partner deaths, IA investigations, and the everyday grind of policing Night City.
+</div>
+</details>
+
+<details>
+<summary>Nibbles has a database entry?</summary>
+<div class="content">
+Yes. No more cats with drug trafficking charges.
+</div>
+</details>
+
+<hr>
+
+<!-- BUG REPORTS -->
+<h2 id="bugs">Bug Reports</h2>
+
+<h3>Compilation Errors</h3>
+<p>Include your redscript log:</p>
+<pre><code>Cyberpunk 2077/r6/logs/redscript_rCURRENT.log</code></pre>
+
+<h3>Crash When Scanning Specific NPC</h3>
+<p>Look at the NPC in CET console and run:</p>
+<pre><code>print(Game.GetTargetingSystem():GetLookAtObject(GetPlayer(), false, false):GetRecord():GetID())</code></pre>
+
+<h3>NPC Not Detected Correctly</h3>
+<pre><code>print(Game.GetTargetingSystem():GetLookAtObject(GetPlayer(), false, false):GetCurrentAppearanceName())</code></pre>
+<p>Or enable <strong>Debug Mode</strong> in Mod Settings → Developer, scan the NPC, and screenshot.</p>
+
+<hr>
+
+<!-- TECHNICAL ARCHITECTURE -->
+<h2 id="arch">Technical Architecture</h2>
+
+<details>
+<summary>Namespace &amp; Determinism</summary>
+<div class="content">
+<p>All classes use the <code>Kdsp</code> prefix. Every NPC generates identical data across sessions via entity ID hashing:</p>
+<pre><code>let entityIDHash: Int32 = Cast(EntityID.GetHash(target.GetEntityID()));
+let seed = RandRange(entityIDHash, 0, 2147483647);
+
+let criminalSeed = seed + 1000;
+let medicalSeed = seed + 2000;
+let financialSeed = seed + 3000;</code></pre>
+<p>Name generation is fully index-based — no array allocation at runtime — to prevent stack overflow.</p>
+</div>
+</details>
+
+<details>
+<summary>NPC Detection</summary>
+<div class="content">
+<pre><code>// Gang detection via appearance patterns
+if StrContains(appearanceName, "tyger") { gang = "TYGER_CLAWS"; }
+if StrContains(appearanceName, "maelstrom") { gang = "MAELSTROM"; }
+
+// NCPD detection
+let isNCPD = target.IsPrevention() ||
+             target.IsCharacterPolice() ||
+             StrContains(appearanceName, "ncpd");
+
+// Fake police detection
+let isFakeCop = StrContains(StrLower(recordIdStr), "fake_police");
+
+// Unique NPC detection via TweakDB
+if StrContains(recordId, "takemura") { return KdspUniqueNPCEntries.Takemura(); }</code></pre>
+</div>
+</details>
+
+<details>
+<summary>Project Structure <span class="count">87 source files</span></summary>
+<div class="content">
+<pre><code>r6/scripts/backgroundScanner/
+│
+├── Core/
+│   ├── BackstoryManager.reds              Main generation orchestrator
+│   ├── BackstoryUI.reds                   UI data structures
+│   ├── BackstoryUIExpanded.reds           Extended UI structures
+│   ├── NameGenerator.reds                 Ethnicity routing + 120 aliases
+│   ├── EthnicityDetector.reds             Appearance-based ethnicity
+│   ├── DatabaseSourceManager.reds         Data source attribution
+│   ├── ExpandedBackstoryManager.reds      Extended generation logic
+│   ├── ScannerGlitch.reds                 8 corruption types
+│   ├── CrowdArchetype.reds               NPC archetype classification
+│   │
+│   ├── Child/                             Child NPC backstory generator
+│   ├── Names/                             13 ethnicity files × 300 names
+│   ├── Barghest/                          Barghest militia profiles
+│   ├── Coherence/                         Narrative coherence system
+│   ├── Criminal/                          Criminal record generation
+│   ├── Cyberware/                         Cyberware registry
+│   ├── District/                          District-based generation
+│   ├── Financial/                         Financial profiles + NC ID
+│   ├── Gang/                              11 gang profiles + name generator
+│   ├── LifePath/                          1,901 event definitions
+│   ├── Medical/                           Medical records + blood types
+│   ├── NCPD/                              Personnel files + 200 profile entries
+│   ├── NET/                               NET profiles + 300 aliases
+│   ├── Psych/                             Psychological profiles
+│   ├── Quirks/                            200 personal quirk entries
+│   ├── Rare/                              90 special classifications
+│   ├── Relationships/                     Social networks
+│   ├── TraumaTeam/                        8 TT-specific generators
+│   ├── Unique/                            229 character entries
+│   └── Vehicle/                           Vehicle registration generator
+│
+├── Overrides/                             Scanner UI injection
+├── Settings/                              24 settings, 5 categories
+├── Text/                                  ~2,100 lines of content
+├── UI/                                    Scanner UI controller
+└── Util/                                  Array, Random, String utilities</code></pre>
+</div>
+</details>
+
+<hr>
+
+<!-- CREDITS -->
+<h2 id="credits">Credits</h2>
+
+<table>
+<tr><td><strong>Reki72</strong></td><td>Original <a href="https://www.nexusmods.com/cyberpunk2077/mods/1654">Kiroshi Crowd Scanner</a></td></tr>
+<tr><td><strong>psiberx</strong></td><td>Codeware framework</td></tr>
+<tr><td><strong>jackhumbert</strong></td><td>Mod Settings Menu</td></tr>
+<tr><td><strong>NPC Nameplates</strong></td><td>TweakDB reference documentation</td></tr>
+</table>
+
+<hr>
+
+<p style="text-align: center; margin-top: 12px;">MIT License — See <a href="LICENSE">LICENSE</a> for details. Open source on <a href="https://github.com/ClearanceClarence/Kiroshi-Deep-Scan-Protocol">GitHub</a>.</p>
+
+</div>
+
+<!-- BOTTOM FOOTER -->
+<div class="bottom-footer">
+<div class="page">
+    <span><span class="hl-red">Phantom Liberty</span> FULL_SUPPORT</span>
+    <span><span class="hl-gold">Narrative</span> COHERENCE SYSTEM</span>
+    <span><span class="hl-cyan">Databases</span> NCPD · MEDICAL · FINANCIAL · NET · VEHICLE · TT · GANG · PSYCH</span>
+</div>
+</div>
+
+<div style="padding: 20px 0; text-align: center; font-family: 'Share Tech Mono', monospace; font-size: 12px; color: #3a4a5a;">
+    KIROSHI DEEP SCAN PROTOCOL v2.2 // DATABASES: 10 ■ UNIQUE NPCs: 229 ■ CLASSIFICATIONS: 90 // Every NPC is a person.
+</div>
+
+</body>
+</html>
