@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="80" viewBox="0 0 840 80">
+  <rect width="840" height="80" fill="#0f1923" rx="4" stroke="#1a2a3a" stroke-width="1"/>
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="840" height="2" fill="#5ef6e1" rx="1" opacity="0.4"/>
+  <line x1="210" y1="16" x2="210" y2="64" stroke="#1a2a3a" stroke-width="1"/><line x1="420" y1="16" x2="420" y2="64" stroke="#1a2a3a" stroke-width="1"/><line x1="630" y1="16" x2="630" y2="64" stroke="#1a2a3a" stroke-width="1"/>
+  
+  <text x="105" y="38" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="400" fill="#5ef6e1" text-anchor="middle">229</text>
+  <text x="105" y="58" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#4a5a6a" text-anchor="middle" letter-spacing="2">UNIQUE NPCS</text>
+  <text x="315" y="38" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="400" fill="#5ef6e1" text-anchor="middle">1,901</text>
+  <text x="315" y="58" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#4a5a6a" text-anchor="middle" letter-spacing="2">LIFE EVENTS</text>
+  <text x="525" y="38" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="400" fill="#5ef6e1" text-anchor="middle">90</text>
+  <text x="525" y="58" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#4a5a6a" text-anchor="middle" letter-spacing="2">CLASSIFICATIONS</text>
+  <text x="735" y="38" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="400" fill="#5ef6e1" text-anchor="middle">280K+</text>
+  <text x="735" y="58" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#4a5a6a" text-anchor="middle" letter-spacing="2">UNIQUE NAMES</text>
+</svg>
