@@ -1,4 +1,4 @@
-# Kiroshi Deep Scan Protocol — Translation Guide v2.2
+# Kiroshi Deep Scan Protocol — Translation Guide v2.3
 
 > **You are creating a standalone version of the mod for your language.**
 > You will publish it as a separate mod on Nexus Mods. It does not need to support English.
@@ -264,6 +264,57 @@ if r == 6 { return "RECORD_EXPUNGED"; }     // Translate if you want, keep Engli
 if r == 7 { return "██████████"; }          // Keep as-is (redacted blocks)
 ```
 
+**REAL EXAMPLE — Connections/KdspCommunityPool.reds (v2.3):**
+```swift
+// ✅ TRANSLATE — these are community relationship contexts
+// Player sees these when the Phantom or Full connection mode injects
+// a community member into an NPC's relationship list.
+if roll == 0  { return "Neighbor — same floor"; }
+if roll == 4  { return "Regular at same bar"; }
+if roll == 16 { return "Drinking buddy"; }
+if roll == 28 { return "Childhood friend — grew up on same block"; }
+if roll == 38 { return "Flagged in same NCPD sweep"; }
+// 40 contexts total — all are display strings.
+
+// ❌ DO NOT TRANSLATE — district detection strings
+if StrContains(d, "watson")     { return 70001; }
+if StrContains(d, "westbrook")  { return 70002; }
+//                  ^^^^^^^^^^
+//                  GAME DATA — district names from CrowdDistrictManager
+//                  Must match what DetectDistrictFromAppearance() returns.
+//                  If your game language localizes district names AND
+//                  the detector returns localized names, update these too.
+```
+
+**REAL EXAMPLE — Connections/KdspConnectionDetector.reds (v2.3):**
+```swift
+// ✅ TRANSLATE — these are the Network Analysis alert strings
+// The ⊕ symbol is intentional UI styling — preserve it
+let alert: String = "⊕ CROSS-REFERENCE: Subject matches contact listed by previously scanned NPC";
+alert += "\n  Prior scan: " + priorHit;
+alert += "\n  Confidence: HIGH — exact name match";
+
+let alert: String = "⊕ SHARED CONTACTS — " + IntToString(...) + " overlap(s) with prior scans";
+
+// ✅ TRANSLATE — section header (preserve the ─── decorative dashes)
+let out: String = "───── NETWORK ANALYSIS ─────\n";
+
+// ✅ TRANSLATE — 20 injection contexts (similar to community contexts)
+if roll == 0  { return "Seen together recently"; }
+if roll == 6  { return "Tagged in same NCPD report"; }
+if roll == 15 { return "DNA found at same crime scene"; }
+
+// ❌ DO NOT TRANSLATE — connection strength enum values
+result.connectionStrength = "DIRECT";
+result.connectionStrength = "LINKED";
+result.connectionStrength = "PERIPHERAL";
+result.connectionStrength = "NONE";
+//                          ^^^^^^^^
+// These are checked in Equals() — code identifiers, not display strings.
+```
+
+> **TIP — Connection System:** The Tracker file (KdspConnectionTracker.reds) has zero display strings — it's pure data plumbing. The CommunityPool has ~40 strings (mostly relationship contexts). The Detector has ~30 strings split between alert headers and injection contexts. All three are optional content — they only appear when the player enables NPC Connections in settings.
+
 
 **Full list of generator files to translate:**
 
@@ -291,6 +342,9 @@ if r == 7 { return "██████████"; }          // Keep as-is (r
 | NCPD/NCPDNameGenerator.reds | Badge names | Easy |
 | Vehicle/VehicleRegistration.reds | Vehicle data | Medium |
 | Gang/GangNameGenerator.reds | 320 gang street aliases + generic name detection (v2.2) | Easy* |
+| Connections/KdspConnectionTracker.reds | Cross-NPC scan tracking (v2.3) | None — no display strings |
+| Connections/KdspCommunityPool.reds | District community contexts — 40 relationship phrases (v2.3) | Easy |
+| Connections/KdspConnectionDetector.reds | Network analysis alerts + 20 injection contexts (v2.3) | Medium |
 
 
 ---
@@ -298,7 +352,7 @@ if r == 7 { return "██████████"; }          // Keep as-is (r
 
 ### ✅ TRANSLATE — Unique NPCs (Core/Unique/UniqueNPCEntries.reds)
 
-229 hand-written NPCs. This is the largest single file (~2,000 strings). Translate the narrative text only.
+230 hand-written NPCs. This is the largest single file (~2,000 strings). Translate the narrative text only.
 
 **REAL EXAMPLE — Takemura:**
 ```swift
@@ -681,10 +735,12 @@ Is it a function/class/variable name?
 
 - [ ] Text/*.reds — All 1,721 entries translated
 - [ ] Generator files — Display strings translated, code identifiers untouched
-- [ ] UniqueNPCEntries.reds — 229 NPC backstories translated
+- [ ] UniqueNPCEntries.reds — 230 NPC backstories translated
 - [ ] NCPDProfileGenerator.reds — 200 entries across 6 pools translated (each half must work as standalone sentence)
 - [ ] GangNameGenerator.reds — Alias translation decisions made (keep/translate/replace), IsGenericGangName() updated for localized gang names
 - [ ] BackstoryManager.reds — Fake police override strings translated (⊘ symbol preserved)
+- [ ] Connections/KdspCommunityPool.reds — 40 community contexts translated (district names left as-is)
+- [ ] Connections/KdspConnectionDetector.reds — Network Analysis alerts + 20 injection contexts translated (⊕ symbol preserved, connectionStrength enums untouched)
 - [ ] Settings — displayName and description values translated
 - [ ] UI files — Loading text, section headers, footer translated
 - [ ] Custom gender tokens added (if your language needs them)

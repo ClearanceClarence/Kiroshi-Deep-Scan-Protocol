@@ -49,6 +49,9 @@ public class KdspNetWatchDBReport extends inkCustomController {
     private let m_relationshipsSection: wref<inkCompoundWidget>;
     private let m_relationshipsValue: wref<inkText>;
 
+    private let m_networkAnalysisSection: wref<inkCompoundWidget>;
+    private let m_networkAnalysisValue: wref<inkText>;
+
     private let m_vehicleSection: wref<inkCompoundWidget>;
     private let m_vehicleValue: wref<inkText>;
 
@@ -135,6 +138,10 @@ public class KdspNetWatchDBReport extends inkCustomController {
         this.m_relationshipsSection = this.CreateDataSection(root, "Relationships", n"relationships",
             new HDRColor(1.0, 0.6, 0.7, 1.0));
         this.m_relationshipsValue = this.m_relationshipsSection.GetWidget(n"relationships_value") as inkText;
+
+        this.m_networkAnalysisSection = this.CreateDataSection(root, "Network Analysis", n"networkanalysis",
+            new HDRColor(0.37, 0.96, 0.88, 1.0));
+        this.m_networkAnalysisValue = this.m_networkAnalysisSection.GetWidget(n"networkanalysis_value") as inkText;
 
         this.m_vehicleSection = this.CreateDataSection(root, "Vehicle Registration", n"vehicle",
             new HDRColor(0.6, 0.8, 1.0, 1.0));
@@ -347,6 +354,20 @@ public class KdspNetWatchDBReport extends inkCustomController {
             this.m_relationshipsSection.SetVisible(false);
         };
 
+        // Network Analysis (Connection System v2.3)
+        if StrLen(this.m_backstoryUI.networkAnalysis) > 0 && KdspSettings.GetConnectionMode() > 0 {
+            this.m_networkAnalysisValue.SetText(this.m_backstoryUI.networkAnalysis);
+            this.m_networkAnalysisSection.SetVisible(true);
+            // Cyan tint for connection alerts, brighter for direct cross-references
+            if StrContains(this.m_backstoryUI.networkAnalysis, "CROSS-REFERENCE") {
+                this.m_networkAnalysisValue.SetTintColor(new HDRColor(0.37, 0.96, 0.88, 1.0));
+            } else {
+                this.m_networkAnalysisValue.SetTintColor(new HDRColor(0.25, 0.70, 0.65, 1.0));
+            };
+        } else {
+            this.m_networkAnalysisSection.SetVisible(false);
+        };
+
         // Vehicle Registration
         if StrLen(this.m_backstoryUI.vehicleRegistration) > 0 && KdspSettings.ShowVehicle() {
             this.m_vehicleValue.SetText(this.m_backstoryUI.vehicleRegistration);
@@ -414,6 +435,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
         this.UpdateSectionFontSize(this.m_financeSection, n"finance", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_medicalSection, n"medical", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_relationshipsSection, n"relationships", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
+        this.UpdateSectionFontSize(this.m_networkAnalysisSection, n"networkanalysis", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_vehicleSection, n"vehicle", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_netProfileSection, n"netprofile", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));
         this.UpdateSectionFontSize(this.m_pronounsSection, n"pronouns", headerSize, textSize, KdspSettings.GetSectionMargin(12.0), KdspSettings.GetHeaderValueGap(3.0));

@@ -31,7 +31,8 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "meredith") { return KdspUniqueNPCEntries.MeredithStout(); }
         if StrContains(id, "weldon") && StrContains(id, "holt") { return KdspUniqueNPCEntries.WeldonHolt(); }
         // FIXERS
-        if (StrContains(id, "dex") && !StrContains(id, "index") && !StrContains(id, "dext") && !StrContains(id, "codex") && !StrContains(id, "latex")) || StrContains(id, "deshawn") { return KdspUniqueNPCEntries.DexterDeShawn(); }
+        if StrContains(id, "bodyguard_dex") { return KdspUniqueNPCEntries.Oleg(); }
+        if (StrContains(id, "dex") && !StrContains(id, "index") && !StrContains(id, "dext") && !StrContains(id, "codex") && !StrContains(id, "latex") && !StrContains(id, "bodyguard")) || StrContains(id, "deshawn") { return KdspUniqueNPCEntries.DexterDeShawn(id); }
         if StrContains(id, "wakako") { return KdspUniqueNPCEntries.WakakoOkada(); }
         if StrContains(id, "regina") && StrContains(id, "jones") { return KdspUniqueNPCEntries.ReginaJones(); }
         if StrContains(id, "padre") && !StrContains(id, "compadre") { return KdspUniqueNPCEntries.Padre(); }
@@ -120,7 +121,7 @@ public abstract class KdspUniqueNPCEntries {
         if StrContains(id, "cassius") && StrContains(id, "ryder") { return KdspUniqueNPCEntries.CassiusRyder(); }
         if StrContains(id, "octavio") && StrContains(id, "ruiz") { return KdspUniqueNPCEntries.OctavioRuiz(); }
         // VENDORS
-        if StrContains(id, "wilson") && (StrContains(id, "2nd") || StrContains(id, "second") || StrContains(id, "gun") || StrContains(id, "weapon") || StrContains(id, "amendment")) { return KdspUniqueNPCEntries.Wilson(); }
+        if StrContains(id, "wilson") && !StrContains(id, "charles") && !StrContains(id, "sts_ep1") && (StrContains(id, "default") || StrContains(id, "2nd") || StrContains(id, "second") || StrContains(id, "gun") || StrContains(id, "weapon") || StrContains(id, "amendment")) { return KdspUniqueNPCEntries.Wilson(); }
         if StrContains(id, "coach") && StrContains(id, "fred") { return KdspUniqueNPCEntries.CoachFred(); }
         // BARTENDERS
         if StrContains(id, "nix") && !StrContains(id, "phoenix") && !StrContains(id, "nixie") && (StrContains(id, "afterlife") || StrContains(id, "netrunner") || StrContains(id, "bartender")) { return KdspUniqueNPCEntries.Nix(); }
@@ -461,18 +462,65 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     // === FIXERS ===
-    public static func DexterDeShawn() -> ref<KdspUniqueNPCBackstory> {
-        if KdspQuestProgressHelper.IsHeistCompleted() {
-            return KdspUniqueNPCBackstory.Create("dex").SetClassification("FIXER - DECEASED")
-                .SetSignificantEvents("DECEASED. Body in Night City landfill. Connected to Konpeki Plaza.")
-                .SetNotes("Death connected to heist gone wrong.");
+    public static func Oleg() -> ref<KdspUniqueNPCBackstory> {
+        return KdspUniqueNPCBackstory.Create("bodyguard_dex_default").SetClassification("FIXER SECURITY — PERSONAL BODYGUARD")
+            .SetBackground("Eastern European origin. Former private military contractor — discharged under unclear circumstances. Arrived in Night City 2074. Connected with DeShawn's operation through underground boxing circles in Kabuki.")
+            .SetEarlyLife("Served as close protection detail for multiple fixers before DeShawn. Reputation for absolute loyalty and zero tolerance for disrespect toward his principal. Known to have eliminated at least three threats to DeShawn without authorization or hesitation.")
+            .SetSignificantEvents("Permanently attached to Dexter DeShawn's detail since 2075. Present during all major negotiations. Suspected in the disappearance of two mercs who tried to renegotiate terms with DeShawn after job completion.")
+            .SetAffiliation("Dexter DeShawn (Personal Security) | Status: ACTIVE")
+            .SetCriminalRecord("NCPD File: SUSPECTED — Multiple assault charges dismissed. Witnesses recanted or disappeared. No convictions on record. Known to carry concealed military-grade hardware.")
+            .SetCyberwareStatus("Reinforced Subdermal Armor | Gorilla Arms (Military Spec) | Kerenzikov | Biomonitor")
+            .SetFinancialStatus("Paid through DeShawn's accounts — no independent financial trail. Estimated compensation: well above market rate for close protection.")
+            .SetMedicalStatus("Peak physical conditioning. Multiple healed fractures consistent with close-quarters combat. Blood type: O RhD+. No Trauma Team coverage — handles own medical needs.")
+            .SetThreatAssessment("HIGH (78/100) | Close-quarters specialist. Do not approach DeShawn without accounting for this asset. Always armed. Will not negotiate.")
+            .SetRelationships("Dexter DeShawn (Principal — absolute loyalty) | Underground boxing contacts — Kabuki")
+            .SetNotes("Silent professional. Rarely speaks. If Oleg is talking to you, something has already gone wrong. DeShawn trusts him completely — one of very few people who does.");
+    }
+
+    public static func DexterDeShawn(id: String) -> ref<KdspUniqueNPCBackstory> {
+        // Post-Heist: Beaten state
+        if StrContains(id, "dex_beaten") {
+            return KdspUniqueNPCBackstory.Create("dex_dex_beaten").SetClassification("FIXER — DISGRACED / STATUS: COMPROMISED")
+                .SetBackground("Tyrell 'Dexter' DeShawn. Watson-based fixer. Returned to Night City after two years in exile following a series of botched operations. Attempted high-profile Konpeki Plaza heist to reestablish reputation. Operation failed catastrophically.")
+                .SetEarlyLife("Rose through Night City's fixer ranks in the early '70s. Known for ambitious jobs, flashy lifestyle, and ruthless pragmatism. Disappeared from Night City circa 2075 — rumored to have fled debts, enemies, or both. Returned 2077 seeking one last big score.")
+                .SetSignificantEvents("KONPEKI PLAZA INCIDENT: Contracted V and Jackie Welles for Relic extraction. Operation resulted in the death of Saburo Arasaka. DeShawn panicked, attempted to eliminate V to cut loose ends. Currently in physical distress — situation deteriorating.")
+                .SetAffiliation("Independent Fixer | Status: BURNED — no allies remaining")
+                .SetCriminalRecord("NCPD File: EXTENSIVE — Conspiracy, contract fraud, accessory to corporate espionage. New flag: SUSPECTED ACCESSORY TO HOMICIDE — Konpeki Plaza incident. Multiple warrants pending.")
+                .SetCyberwareStatus("Gold-plated dermal implants (cosmetic) | Kiroshi Optics | Neural link — standard fixer suite")
+                .SetFinancialStatus("Accounts flagged. Assets likely frozen or seized. Previous estimated net worth: €$2-5M. Current status: DEPLETED.")
+                .SetMedicalStatus("Current condition: PHYSICAL TRAUMA — visible injuries. Stress indicators critical. No Trauma Team response — coverage likely lapsed or revoked.")
+                .SetThreatAssessment("LOW (15/100) | Formerly MODERATE. Currently compromised. No remaining security detail. Oleg's status unknown. Desperate and unpredictable.")
+                .SetRelationships("V (Former contractor — hostile) | Jackie Welles (Deceased — Konpeki) | T-Bug (Deceased — Konpeki) | Oleg (Bodyguard — status unknown) | Evelyn Parker (Client — status unknown)")
+                .SetNotes("DeShawn's operation has collapsed. All assets burned. All allies dead or missing. A fixer with no network is just a man with enemies.");
         }
-        return KdspUniqueNPCBackstory.Create("dex").SetClassification("FIXER")
-            .SetBackground("Night City fixer. Returned after 2 years absence. Known for big scores and ego.")
-            .SetSignificantEvents("Recently returned. Setting up major operation.")
-            .SetCyberwareStatus("Gold-plated cyberarm (signature)")
-            .SetThreatAssessment("MODERATE (45/100) | Dangerous connections")
-            .SetNotes("CAUTION: Known to cut loose ends. Always has exit strategy.");
+        // Post-Heist: Shot/dead state
+        if StrContains(id, "dex_shot") {
+            return KdspUniqueNPCBackstory.Create("dex_dex_shot").SetClassification("FIXER — DECEASED")
+                .SetBackground("Tyrell 'Dexter' DeShawn. Watson-based fixer. Orchestrated the Konpeki Plaza heist that resulted in the death of Saburo Arasaka. Attempted to eliminate contractor V to sever connection to the job. Failed.")
+                .SetEarlyLife("Rose through Night City's fixer ranks in the early '70s. Known for ambitious jobs, flashy lifestyle, and ruthless pragmatism. Left Night City circa 2075. Returned 2077 for one last job. It was.")
+                .SetSignificantEvents("KONPEKI PLAZA INCIDENT: Hired V and Jackie Welles. Job went catastrophically wrong. DeShawn shot V in the head and dumped the body at a landfill. V survived. DeShawn did not survive what came next.")
+                .SetAffiliation("Independent Fixer | Status: DECEASED")
+                .SetCriminalRecord("NCPD File: CLOSED — Subject deceased. Outstanding warrants: voided. Conspiracy, contract fraud, accessory to corporate espionage, attempted murder.")
+                .SetCyberwareStatus("Gold-plated dermal implants (cosmetic) | All systems: OFFLINE")
+                .SetFinancialStatus("Estate status: UNCLAIMED. No next of kin on file. Assets: seized or scattered.")
+                .SetMedicalStatus("Status: DECEASED. Cause of death: gunshot wound. Body recovered at No-Tell Motel, Watson.")
+                .SetThreatAssessment("NONE (0/100) | Deceased.")
+                .SetRelationships("V (Former contractor — killed him) | Jackie Welles (Deceased) | T-Bug (Deceased) | Oleg (Bodyguard — whereabouts unknown) | Evelyn Parker (Client — whereabouts unknown)")
+                .SetNotes("Came back to Night City for the score that would put him on top. Got exactly what Night City gives everyone who reaches too high.");
+        }
+        // Default: Pre-Heist
+        return KdspUniqueNPCBackstory.Create("dex_default").SetClassification("FIXER — HIGH PROFILE")
+            .SetBackground("Tyrell 'Dexter' DeShawn. Watson-based fixer. Recently returned to Night City after a two-year absence. Reputation precedes him — known for high-stakes jobs, meticulous planning, and a preference for expendable contractors. Gold-plated everything.")
+            .SetEarlyLife("Rose through Night City's fixer ranks in the early '70s. Ran some of the biggest operations Watson had ever seen. Disappeared circa 2075 — rumors range from debt to a botched corpo job to simply cashing out. Returned 2077 with something to prove.")
+            .SetSignificantEvents("Currently planning a major operation. Recruiting fresh talent. Operating out of the No-Tell Motel in Watson. Reconnecting with old contacts, calling in favors.")
+            .SetAffiliation("Independent Fixer | Territory: Watson | Status: ACTIVE — rebuilding network")
+            .SetCriminalRecord("NCPD File: KNOWN FIXER — Suspected conspiracy, contract fraud, accessory to numerous felonies. No direct convictions — always insulated by layers of contractors. Classified: UNTOUCHABLE (insufficient evidence).")
+            .SetCyberwareStatus("Gold-plated dermal implants (cosmetic, custom) | Kiroshi Optics | Neural link — high-end fixer suite. Style over substance.")
+            .SetFinancialStatus("Estimated net worth: €$2-5M. Multiple shell accounts. Income: commission-based — 30-40% of contractor payouts. Lifestyle: extravagant. Trauma Team coverage: GOLD.")
+            .SetMedicalStatus("Overweight. Sedentary lifestyle offset by premium medical care. Chronic stress indicators. Blood type: AB RhD+. Trauma Team GOLD — response priority 2.")
+            .SetThreatAssessment("MODERATE (45/100) | Not personally dangerous. Threat is organizational — extensive contacts, disposable assets, zero loyalty to contractors. Protected by Oleg (bodyguard, HIGH threat).")
+            .SetRelationships("Oleg (Personal bodyguard — absolute loyalty) | Afterlife contacts (rebuilding) | Evelyn Parker (New client) | Multiple merc contractors (expendable)")
+            .SetNotes("DeShawn treats people like tools — useful until they aren't. The gold on his chrome is real. The loyalty isn't. If a job goes wrong, Dex will cut you loose before the bullet casings hit the ground.");
     }
 
     public static func WakakoOkada() -> ref<KdspUniqueNPCBackstory> {
@@ -1192,12 +1240,18 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func Wilson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("wilson").SetClassification("WEAPONS DEALER - LICENSED")
-            .SetBackground("Licensed weapons dealer. 2nd Amendment shop in Megabuilding H10. V's primary arms supplier.")
-            .SetEarlyLife("Former military. Opened shop after discharge. Known for quality merchandise and fair deals.")
-            .SetAffiliation("Independent | Megabuilding H10")
-            .SetCriminalRecord("CLEAN | Licensed dealer")
-            .SetThreatAssessment("MODERATE | Armed at all times | Combat training | Weapons access");
+        return KdspUniqueNPCBackstory.Create("wilson_default").SetClassification("WEAPONS DEALER — LICENSED FRANCHISE HOLDER")
+            .SetBackground("Robert Wilson. Holds 2nd Amendment franchise rights — secured the licensing for Megabuilding H10's storefront in 2050. Self-taught weapons technician with a perfectionist streak. Shop located on the main floor below V's apartment, accessible via the gym corridor.")
+            .SetEarlyLife("Background unclear — no military service on record despite reputation for handling military-grade hardware. Built reputation in Watson's Little China district over two decades. Known among local youth as 'mean' — chased Leo Noone and other Megabuilding kids out of the shop more than once.")
+            .SetSignificantEvents("Refuses to sell any weapon that hasn't passed through his own hands first — slows turnover but maintains quality reputation. Gifted an iconic Constitutional Arms Unity pistol ('Dying Night') to V on entry to the merc business. Hosts what he calls 'shooting classes' — described by attendees as more drill instructor than customer enticement.")
+            .SetAffiliation("2nd Amendment Franchise (Budget Arms parent) | Independent operator | Megabuilding H10, Little China, Watson")
+            .SetCriminalRecord("CLEAN | All Federal firearms licensing current. Inventory subject to standard NCPD audits — passes every time. No ATF-equivalent flags. Suspected of off-books custom modifications but never charged.")
+            .SetCyberwareStatus("Minimal — Kiroshi Optics (basic), neural interface, hand-tuned reflex booster. Surprisingly low chrome for someone in his line of work — claims it interferes with feel of the trigger.")
+            .SetFinancialStatus("Estimated revenue: €$80K-150K/year. Margin razor-thin due to insistence on personal QC of every unit sold. Constant complaints about waning business documented in supplier correspondence. Trauma Team coverage: SILVER.")
+            .SetMedicalStatus("Aging but healthy. Hearing damage consistent with decades of unprotected range time. Carpal tunnel from precision gunsmithing. Blood type: A RhD+. No substance issues.")
+            .SetThreatAssessment("MODERATE (50/100) | Armed at all times — minimum sidearm + concealed backup | Decades of trigger time | Will defend the shop. Not aggressive but extremely competent. The shop has cameras and the cameras have backups.")
+            .SetRelationships("Local Megabuilding H10 residents (long-term clientele) | Budget Arms corporate (franchise relationship — strained) | Various NCPD officers (regulatory contact) | V (recurring customer, gifted Dying Night)")
+            .SetNotes("Old-school weapons culture — believes a gun should fit the hand it's in. Will refuse a sale if he thinks the buyer doesn't know what they're doing. Will also throw in modifications free for buyers who do. The 'meanness' kids talk about is selectivity, not malice — he doesn't sell to teenagers and he doesn't pretend otherwise.");
     }
 
     // US CRACKS / KERRY'S BAND

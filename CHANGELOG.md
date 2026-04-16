@@ -4,6 +4,33 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [2.3]
+
+- Added NPC Connections setting: Off / Phantom / Tracked / Full
+- Phantom mode: deterministic district community pools inject shared names into relationships, no state tracking
+- Community pools: 15 names per district, 10 per sub-district, ~40% injection chance per scan
+- District ethnicity mix is lore-accurate per neighborhood (Watson East Asian, Heywood Hispanic, Pacifica Haitian, etc.)
+- 40 community relationship contexts from neighbor proximity to NCPD sweep flags
+- Tracked mode: ScriptableSystem stores up to 150 scans per session for cross-referencing
+- Detection check 1: was this NPC named as a contact by someone already scanned?
+- Detection check 2: do any of this NPC's relationships match previously scanned NPCs?
+- Detection check 3: 15% chance to inject a previously scanned NPC into new relationships
+- Injection prefers same district or gang affiliation
+- Full mode: phantom + tracked active simultaneously
+- New scanner section: Network Analysis between Relationships and Vehicle Registration
+- Cyan tint for direct cross-references, dimmer cyan for peripheral connections
+- Compact mode shows one-line alerts, full mode shows detailed analysis block
+- Added Oleg (bodyguard_dex_default) — Dex's personal bodyguard, PMC background, 78/100 threat
+- Rewrote Dex with three-state detection: dex_default, dex_dex_beaten, dex_dex_shot
+- Dex pre-Heist state expanded to full 12-field profile
+- All three Dex states cross-reference Oleg in relationships
+- Fixed Wilson (wilson_default) detection — keyword pattern didn't match actual record ID
+- Expanded Wilson from 6 fields to 12 with lore-accurate details (franchise holder, Dying Night, H10)
+- Added Charles Wilson (sts_ep1) exclusion to prevent detection collision
+- Total unique NPC entries: 230
+
+---
+
 ## [2.2]
 
 ### Gang Member Names
@@ -38,8 +65,16 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 - Criminal records match in-game bounty charges
 - Total unique NPC entries: 229
 
----
+### Translation Support
+- Added TRANSLATION_GUIDE.html for community translators
+- File-by-file breakdown with real code examples from the codebase
+- Documents all placeholder tokens and gender handling
+- Instructions for adding custom language tokens (verb conjugation, grammatical case)
+- Decision flowchart for identifying translatable vs code-only strings
+- Difficulty ratings and common mistakes with consequences
+- Translations published as separate standalone mods — no permission needed
 
+---
 
 ## [2.1]
 
@@ -52,15 +87,6 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 - Fixed VTGRN_LAB using _F() for both male and female variants
 - Fixed duplicate LIVED_6TH_ST entry in TextHousing
 - Removed 1,930 lines of code (33,882 → 31,952 total .reds lines)
-
-### Translation Support
-- Added TRANSLATION_GUIDE.html for community translators
-- File-by-file breakdown with real code examples from the codebase
-- Documents all placeholder tokens and gender handling
-- Instructions for adding custom language tokens (verb conjugation, grammatical case)
-- Decision flowchart for identifying translatable vs code-only strings
-- Difficulty ratings and common mistakes with consequences
-- Translations published as separate standalone mods — no permission needed
 
 ---
 

@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=0a0e14" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-2.2-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-2.3-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=0a0e14" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=0a0e14" alt="License">
 </p>
@@ -33,13 +33,14 @@
 │                                                                              │
 │  ▸ Overview .................. What this mod does                            │
 │  ▸ Database Access .......... 10 queryable data sources                      │
-│  ▸ Unique NPC Database ...... 229 hand-written character files               │
+│  ▸ Unique NPC Database ...... 230 hand-written character files               │
 │  ▸ Procedural Generation .... Systems that build NPC lives                   │
 │  ▸ Special Classifications .. 90 hidden NPC types                            │
 │  ▸ Relationships ............ Social network generation                      │
 │  ▸ Name Generation .......... 280K+ culturally matched names                 │
 │  ▸ Narrative Coherence ...... Life theme system                              │
 │  ▸ Scanner Glitches ......... Kiroshi malfunction system                     │
+│  ▸ NPC Connections .......... Cross-NPC cross-referencing                    │
 │  ▸ Translation .............. Community localization guide                   │
 │  ▸ Configuration ............ Mod settings breakdown                         │
 │  ▸ Installation ............. Requirements + setup                           │
@@ -59,7 +60,7 @@ Deep Scan Protocol hooks your Kiroshi optics into every major database in Night 
 
 All data is **deterministically generated** from each NPC's entity ID — the same NPC always produces identical results across sessions. No two citizens share a profile.
 
-> **`229 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`87 SOURCE FILES`**
+> **`230 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`90 SOURCE FILES`**
 
 <br>
 
@@ -107,7 +108,7 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 
 <img src="/branding/section_unique.svg" alt="Unique NPC Database" width="100%">
 
-229 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
+230 named characters have hand-written, lore-accurate backstories that completely override procedural generation. Custom classifications, detailed backgrounds, threat assessments, and dynamic quest states that update as you play.
 
 <details>
 <summary><b>▸ ARASAKA CORPORATION</b> — 10 entries</summary>
@@ -145,12 +146,13 @@ All data is **deterministically generated** from each NPC's entity ID — the sa
 </details>
 
 <details>
-<summary><b>▸ FIXERS</b> — 10 entries</summary>
+<summary><b>▸ FIXERS</b> — 11 entries</summary>
 
 | Character | Territory | Notes |
 |:--|:--|:--|
 | Rogue Amendiares | Afterlife | Legend. Queen of the Afterlife |
-| Dexter DeShawn | Watson | High-profile jobs. Dynamic state |
+| Dexter DeShawn | Watson | Three-state: pre-Heist / beaten / deceased |
+| Oleg | Watson | Dex's personal bodyguard. PMC background. |
 | Wakako Okada | Westbrook | Information broker |
 | Regina Jones | Watson | NCPD connections |
 | Sebastian "Padre" Ibarra | Heywood | Valentinos ties |
@@ -539,9 +541,23 @@ Default: 1 in 200 chance per scan. Fully configurable (1–500) or toggleable of
 
 <br>
 
+<img src="/branding/section_connections.svg" alt="NPC Connections" width="100%">
+
+Cross-NPC connection system with four modes: **Off**, **Phantom**, **Tracked**, **Full**.
+
+**Phantom** — Deterministic neighborhood fabric. NPCs in the same district pull relationship names from a shared community pool (15 names per district, 10 per sub-district). Scan five people in Watson and you'll start seeing "Dmitri Volkov" in different NPCs' contact lists. No tracking, no alerts — the player just notices. Night City stops feeling random.
+
+**Tracked** — ScriptableSystem stores up to 150 scans per session. Three detection checks fire on every new scan: (1) was this NPC named as a contact by someone you already scanned? (2) do any of this NPC's relationships match previously scanned NPCs? (3) 15% chance a previously scanned NPC is injected as a new relationship. Cross-references trigger a `⊕ CROSS-REFERENCE` alert in the Network Analysis section.
+
+**Full** — Both systems active. Phantom provides the ambient neighborhood fabric while Tracked fires the explicit alerts. The "holy shit" mode.
+
+> **Network Analysis** appears between Relationships and Vehicle Registration. Cyan tint for direct cross-references, dimmer for peripheral connections. Respects Compact Mode.
+
+<br>
+
 <img src="/branding/section_translation.svg" alt="Translation" width="100%">
 
-Want to translate Kiroshi Deep Scan into your language? Download the [Translation Guide](TRANSLATION_GUIDE.md), extract it, and open in your browser.
+Want to translate Kiroshi Deep Scan into your language? Download the [Translation Guide](TRANSLATION_GUIDE.html), extract it, and open in your browser.
 
 The guide covers every file in the mod with real code examples, showing exactly which strings to translate and which to leave alone. Includes placeholder token reference, custom gender token instructions for languages with verb conjugation (Russian, Polish, German, etc.), difficulty ratings per file, decision flowchart, and common mistakes.
 
@@ -570,6 +586,7 @@ All settings: **Mod Settings Menu → Kiroshi Deep Scan**
 | Special NPC Rarity | Common (1:250) / Rare (1:750) / Mythic (1:2000) | Rare |
 | Scanner Glitches | On / Off | On |
 | Scanner Glitch Chance | 1–500 | 200 |
+| NPC Connections | Off / Phantom / Tracked / Full | Off |
 
 ### ░ Sections
 
@@ -739,6 +756,24 @@ NCPD profiles were completely overhauled in v2.2. Officers now get two-part comb
 Yes. No more cats with drug trafficking charges.
 </details>
 
+<details>
+<summary><b>▸ What's the NPC Connections system?</b></summary>
+<br>
+New in v2.3. Phantom mode seeds shared names into relationship lists for NPCs in the same district — scan enough people in Watson and you'll start recognizing community members. Tracked mode cross-references your scan history so previously scanned NPCs can appear in new scans' relationships. Full mode runs both. Default: Off.
+</details>
+
+<details>
+<summary><b>▸ Why did a previously scanned NPC show up in someone else's relationships?</b></summary>
+<br>
+That's the Tracked connection system. After 3+ scans, there's a 15% chance per new scan that a previously scanned NPC gets injected as a relationship contact — marked with ⊕ PREVIOUSLY SCANNED. It prefers NPCs from the same district or gang. The cross-reference alerts tell you who knows who.
+</details>
+
+<details>
+<summary><b>▸ What's the difference between Phantom and Tracked connections?</b></summary>
+<br>
+Phantom is pure illusion — deterministic name pools mean NPCs in the same neighborhood independently generate the same contacts, but no alerts fire. You notice patterns yourself. Tracked actually remembers who you've scanned and fires ⊕ CROSS-REFERENCE alerts when it finds real matches. Full combines both.
+</details>
+
 <br>
 
 <img src="/branding/section_bugs.svg" alt="Bug Reports" width="100%">
@@ -816,7 +851,7 @@ if StrContains(recordId, "takemura") { return KdspUniqueNPCEntries.Takemura(); }
 </details>
 
 <details>
-<summary><b>▸ PROJECT STRUCTURE</b> — 87 source files</summary>
+<summary><b>▸ PROJECT STRUCTURE</b> — 90 source files</summary>
 <br>
 
 ```
@@ -839,6 +874,7 @@ r6/scripts/backgroundScanner/
 │   ├── Names/                             13 ethnicity files × 300 names
 │   ├── Barghest/                          Barghest militia profiles
 │   ├── Coherence/                         Narrative coherence system
+│   ├── Connections/                       Cross-NPC connection system (v2.3)
 │   ├── Criminal/                          Criminal record generation
 │   ├── Cyberware/                         Cyberware registry
 │   ├── District/                          District-based generation
@@ -853,7 +889,7 @@ r6/scripts/backgroundScanner/
 │   ├── Rare/                              90 special classifications
 │   ├── Relationships/                     KdspNamePool + social networks
 │   ├── TraumaTeam/                        8 TT-specific generators
-│   ├── Unique/                            229 character entries
+│   ├── Unique/                            230 character entries
 │   └── Vehicle/                           Vehicle registration generator
 │
 ├── Overrides/

@@ -748,6 +748,26 @@ public class KdspBackstoryManager {
             let relations = KdspRelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
 
             // ══════════════════════════════════════════════════════════════
+            // CONNECTION SYSTEM: Phantom Community Pool Injection (v2.3)
+            // If Phantom or Full mode, ~40% chance one associate comes from
+            // a deterministic district pool. NPCs in the same area will
+            // independently generate overlapping names.
+            // ══════════════════════════════════════════════════════════════
+            let connectionMode: Int32 = KdspSettings.GetConnectionMode();
+            let usePhantom: Bool = connectionMode == 1 || connectionMode == 3;
+            let npcDistrict: String = KdspCrowdDistrictManager.DetectDistrictFromAppearance(appearanceName);
+
+            if usePhantom && ArraySize(relations.knownAssociates) > 0 {
+                let communityResult: array<String> = KdspCommunityPool.TryInject(npcDistrict, entityIDHash, seed + 8500);
+                if ArraySize(communityResult) == 2 {
+                    // Replace first associate with community member
+                    relations.knownAssociates[0].name = communityResult[0];
+                    relations.knownAssociates[0].relationship = communityResult[1];
+                    relations.knownAssociates[0].isAlias = false;
+                };
+            };
+
+            // ══════════════════════════════════════════════════════════════
             // CROSS-SYSTEM COHERENCE: Marriage → Relationships
             // If significant events mention marriage, relationship status
             // must say "Married" and a spouse must exist in family list.
@@ -964,6 +984,50 @@ public class KdspBackstoryManager {
             // Social network size - full mode, high density only
             if !compactRel && density >= 3 {
                 backstoryUI.relationships = backstoryUI.relationships + " | Network: " + relations.socialNetworkSize;
+            };
+
+            // ══════════════════════════════════════════════════════════════
+            // CONNECTION SYSTEM: Cross-NPC Detection Pipeline (v2.3)
+            // Runs after all relationship UI is built. Detects overlaps
+            // with previously scanned NPCs and produces alert text.
+            // ══════════════════════════════════════════════════════════════
+            if connectionMode > 0 {
+                // Get NPC's generated display name for cross-referencing
+                let npcFullName: String = target.GetTweakDBFullDisplayName(true);
+                if Equals(npcFullName, "") || StrLen(npcFullName) < 3 {
+                    npcFullName = KdspNameGenerator.GenerateFullNameByEthnicity(seed + 8600, lifePath.gender, ethnicity);
+                };
+
+                let connResult: ref<KdspConnectionResult> = KdspConnectionDetector.Detect(
+                    GetGameInstance(),
+                    entityIDHash,
+                    npcFullName,
+                    gangAffiliation,
+                    npcDistrict,
+                    archetype,
+                    relations,
+                    connectionMode,
+                    seed + 9500
+                );
+
+                // Append alert to UI
+                if ArraySize(connResult.alerts) > 0 {
+                    let compactLevel: Int32 = KdspSettings.GetCompactLevel();
+                    if compactLevel >= 2 {
+                        backstoryUI.networkAnalysis = KdspConnectionDetector.FormatShort(connResult);
+                    } else {
+                        backstoryUI.networkAnalysis = KdspConnectionDetector.FormatAlerts(connResult);
+                    };
+                } else {
+                    backstoryUI.networkAnalysis = "";
+                };
+
+                // Inject previously scanned NPC as relationship
+                if connResult.hasInjectedRel {
+                    backstoryUI.relationships = backstoryUI.relationships + " | " + connResult.injectedRelName + " (" + connResult.injectedRelContext + ")";
+                };
+            } else {
+                backstoryUI.networkAnalysis = "";
             };
         } else {
             backstoryUI.relationships = "";

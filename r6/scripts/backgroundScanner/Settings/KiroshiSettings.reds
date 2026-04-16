@@ -206,6 +206,19 @@ public class KdspDeepScanSettings {
     @runtimeProperty("ModSettings.displayName", "NET Profile")
     @runtimeProperty("ModSettings.description", "Show the NET Profile section (network activity, darknet presence).")
     public let showNetProfile: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Generation")
+    @runtimeProperty("ModSettings.displayName", "NPC Connections")
+    @runtimeProperty("ModSettings.description", "Cross-reference scanned NPCs. Off: disabled. Phantom: neighborhood fabric — NPCs in same area share contacts (no tracking). Tracked: real scan history with cross-referencing. Full: both systems active.")
+    @runtimeProperty("ModSettings.displayValues.Off", "Off")
+    @runtimeProperty("ModSettings.displayValues.Phantom", "Phantom")
+    @runtimeProperty("ModSettings.displayValues.Tracked", "Tracked")
+    @runtimeProperty("ModSettings.displayValues.Full", "Full")
+    @runtimeProperty("ModSettings.step", "1")
+    @runtimeProperty("ModSettings.min", "0")
+    @runtimeProperty("ModSettings.max", "3")
+    public let connectionMode: Int32 = 0;
 }
 
 // Static helper class for accessing settings from anywhere
@@ -464,5 +477,14 @@ public abstract class KdspSettings {
             return system.GetSettings().showNetProfile;
         }
         return true;
+    }
+
+    // 0=Off, 1=Phantom, 2=Tracked, 3=Full
+    public static func GetConnectionMode() -> Int32 {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().connectionMode;
+        }
+        return 0;
     }
 }
