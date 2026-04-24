@@ -4,6 +4,19 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [2.3.1]
+
+- Trimmed Wilson entry from 12 fields to 7 — was overflowing the scanner panel
+- Fixed q112 (Automatic Love) quest break — Arasaka Industrial Park guard needs vanilla scanner for eavesdrop progression, mod was overriding his scanner output
+- Added KdspQuestScannerExclusions system — quest-critical NPCs now bypass the mod entirely and get vanilla scanner behavior
+- Fixed q110 (Both Sides, Now) spoiler — Brigitte and Placide entries were exposing names, affiliations, and ranks during the BD section before the player is supposed to know them
+- Brigitte and Placide now show scanner glitch entries before q110 completion — counter-surveillance jamming, blocked facial recognition, scrambled neural signatures
+- After q110 completes, full unique entries appear as normal
+- Added IsBothSidesNowDone() quest progress check (q110_done fact)
+- Updated scanner footer text from v2.0 to v2.3.1
+
+---
+
 ## [2.3]
 
 - Added NPC Connections setting: Off / Phantom / Tracked / Full

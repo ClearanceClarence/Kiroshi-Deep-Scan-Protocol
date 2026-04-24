@@ -12,6 +12,7 @@ public abstract class KdspQuestProgressHelper {
     public static func IsRhyneDead() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"sq026_done"); }
     public static func IsFoughtTheLawDone() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"sq012_done"); }
     public static func IsDreamOnDone() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"sq006_done"); }
+    public static func IsBothSidesNowDone() -> Bool { return KdspQuestProgressHelper.IsFactSet(n"q110_done"); }
 }
 
 public abstract class KdspUniqueNPCEntries {
@@ -810,6 +811,14 @@ public abstract class KdspUniqueNPCEntries {
 
     // === VOODOO BOYS ===
     public static func Brigitte() -> ref<KdspUniqueNPCBackstory> {
+        // Before q110 (Both Sides, Now): scanner glitch hides identity
+        if !KdspQuestProgressHelper.IsBothSidesNowDone() {
+            return KdspUniqueNPCBackstory.Create("brigitte").SetClassification("██████ — ████████")
+                .SetBackground("ERR_IDENT_MASK :: Kiroshi unable to resolve identity. Target running active counter-surveillance. Facial recognition: BLOCKED. Neural signature: SCRAMBLED. This person does not want to be seen.")
+                .SetSignificantEvents("DATA_CORRUPT :: ▓▓▓▓ netrunner interference detected ▓▓▓▓ :: Kiroshi firmware exception at 0x4E54 :: Deep scan returned null — target may be running military-grade ICE")
+                .SetThreatAssessment("UNKNOWN | ⊘ SCANNER COMPROMISED — target is actively interfering with your optics. Proceed with extreme caution.")
+                .SetNotes("Your Kiroshi is being jammed. Whoever this is, they have the hardware to burn your optics from across the room. That alone tells you enough.");
+        }
         return KdspUniqueNPCBackstory.Create("brigitte").SetClassification("VOODOO BOYS - LEADER")
             .SetBackground("Maman Brigitte. VDB leader. Master netrunner. Obsessed with breaching Blackwall.")
             .SetAffiliation("Voodoo Boys | Leader")
@@ -820,6 +829,13 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func Placide() -> ref<KdspUniqueNPCBackstory> {
+        // Before q110 (Both Sides, Now): scanner glitch hides rank/affiliation
+        if !KdspQuestProgressHelper.IsBothSidesNowDone() {
+            return KdspUniqueNPCBackstory.Create("placide").SetClassification("██████ — ████████")
+                .SetBackground("ERR_IDENT_PARTIAL :: Name resolution failed. Kiroshi returned fragmented data — possible counter-intrusion suite active. Subject appears to have local authority. Affiliation: MASKED.")
+                .SetThreatAssessment("HIGH | ⊘ SCANNER DEGRADED — target's cyberware is pushing back against your scan. Physical profile suggests heavy augmentation and combat readiness.")
+                .SetNotes("Can't get a clean read. Whatever this person is running, it's shutting your Kiroshi down hard. The fact that they're doing it casually is the threat assessment.");
+        }
         return KdspUniqueNPCBackstory.Create("placide").SetClassification("VOODOO BOYS - LIEUTENANT")
             .SetBackground("VDB lieutenant. Enforcer. Handles external contacts. Hostile to outsiders.")
             .SetCyberwareStatus("Combat netrunner suite | Physical augmentation")
@@ -1241,17 +1257,13 @@ public abstract class KdspUniqueNPCEntries {
 
     public static func Wilson() -> ref<KdspUniqueNPCBackstory> {
         return KdspUniqueNPCBackstory.Create("wilson_default").SetClassification("WEAPONS DEALER — LICENSED FRANCHISE HOLDER")
-            .SetBackground("Robert Wilson. Holds 2nd Amendment franchise rights — secured the licensing for Megabuilding H10's storefront in 2050. Self-taught weapons technician with a perfectionist streak. Shop located on the main floor below V's apartment, accessible via the gym corridor.")
-            .SetEarlyLife("Background unclear — no military service on record despite reputation for handling military-grade hardware. Built reputation in Watson's Little China district over two decades. Known among local youth as 'mean' — chased Leo Noone and other Megabuilding kids out of the shop more than once.")
-            .SetSignificantEvents("Refuses to sell any weapon that hasn't passed through his own hands first — slows turnover but maintains quality reputation. Gifted an iconic Constitutional Arms Unity pistol ('Dying Night') to V on entry to the merc business. Hosts what he calls 'shooting classes' — described by attendees as more drill instructor than customer enticement.")
-            .SetAffiliation("2nd Amendment Franchise (Budget Arms parent) | Independent operator | Megabuilding H10, Little China, Watson")
-            .SetCriminalRecord("CLEAN | All Federal firearms licensing current. Inventory subject to standard NCPD audits — passes every time. No ATF-equivalent flags. Suspected of off-books custom modifications but never charged.")
-            .SetCyberwareStatus("Minimal — Kiroshi Optics (basic), neural interface, hand-tuned reflex booster. Surprisingly low chrome for someone in his line of work — claims it interferes with feel of the trigger.")
-            .SetFinancialStatus("Estimated revenue: €$80K-150K/year. Margin razor-thin due to insistence on personal QC of every unit sold. Constant complaints about waning business documented in supplier correspondence. Trauma Team coverage: SILVER.")
-            .SetMedicalStatus("Aging but healthy. Hearing damage consistent with decades of unprotected range time. Carpal tunnel from precision gunsmithing. Blood type: A RhD+. No substance issues.")
-            .SetThreatAssessment("MODERATE (50/100) | Armed at all times — minimum sidearm + concealed backup | Decades of trigger time | Will defend the shop. Not aggressive but extremely competent. The shop has cameras and the cameras have backups.")
-            .SetRelationships("Local Megabuilding H10 residents (long-term clientele) | Budget Arms corporate (franchise relationship — strained) | Various NCPD officers (regulatory contact) | V (recurring customer, gifted Dying Night)")
-            .SetNotes("Old-school weapons culture — believes a gun should fit the hand it's in. Will refuse a sale if he thinks the buyer doesn't know what they're doing. Will also throw in modifications free for buyers who do. The 'meanness' kids talk about is selectivity, not malice — he doesn't sell to teenagers and he doesn't pretend otherwise.");
+            .SetBackground("Robert Wilson. 2nd Amendment franchise holder since 2050. Megabuilding H10, Little China. Self-taught gunsmith. Won't sell anything he hasn't personally inspected.")
+            .SetEarlyLife("No military service on record. Two decades in Watson. Known as 'mean' by Megabuilding kids — chased Leo Noone out of the shop more than once.")
+            .SetSignificantEvents("Gifted V an iconic Constitutional Arms Unity ('Dying Night'). Runs 'shooting classes' — more drill instructor than sales pitch.")
+            .SetAffiliation("2nd Amendment Franchise (Budget Arms) | Megabuilding H10, Watson")
+            .SetCriminalRecord("CLEAN | Firearms licensing current. Passes all NCPD audits. Suspected off-books modifications — never charged.")
+            .SetThreatAssessment("MODERATE (50/100) | Armed at all times | Decades of trigger time | Will defend the shop")
+            .SetNotes("Believes a gun should fit the hand it's in. Will refuse a sale. Will also throw in free mods for buyers who know their hardware.");
     }
 
     // US CRACKS / KERRY'S BAND

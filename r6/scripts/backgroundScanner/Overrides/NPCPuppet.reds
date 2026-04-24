@@ -14,6 +14,13 @@ public const func CompileScannerChunks() -> Bool {
         return wrappedMethod();
     }
 
+    // Quest-critical NPCs that need the vanilla scanner for mission progression.
+    // These NPCs have scanner interactions (eavesdrop, quest data) that break
+    // if we override their scanner output. Skip them entirely.
+    if KdspQuestScannerExclusions.ShouldUseVanillaScanner(this) {
+        return wrappedMethod();
+    }
+
     // First check: Is this a unique/named NPC with a hand-crafted backstory?
     if KdspUniqueNPCManager.IsUniqueNPC(this) {
         let uniqueBackstory = KdspUniqueNPCManager.GetBackstory(this);

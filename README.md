@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=0a0e14" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-2.3-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-2.3.1-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=0a0e14" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=0a0e14" alt="License">
 </p>
