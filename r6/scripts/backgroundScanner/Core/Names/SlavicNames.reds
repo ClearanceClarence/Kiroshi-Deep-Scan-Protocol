@@ -2,7 +2,7 @@
 public abstract class KdspSlavicNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 148);
         if i == 0 { return "Viktor"; }
         if i == 1 { return "Dmitri"; }
         if i == 2 { return "Alexei"; }
@@ -103,11 +103,59 @@ public abstract class KdspSlavicNames {
         if i == 97 { return "Jacek"; }
         if i == 98 { return "Karol"; }
         if i == 99 { return "Marcin"; }
+        if i == 100 { return "Aleksandr"; }
+        if i == 101 { return "Casimir"; }
+        if i == 102 { return "Fyodor"; }
+        if i == 103 { return "Gennady"; }
+        if i == 104 { return "Havel"; }
+        if i == 105 { return "Jaroslav"; }
+        if i == 106 { return "Milos"; }
+        if i == 107 { return "Timofey"; }
+        if i == 108 { return "Ulyan"; }
+        if i == 109 { return "Dusan"; }
+        if i == 110 { return "Miroslav"; }
+        if i == 111 { return "Ondrej"; }
+        if i == 112 { return "Rostislav"; }
+        if i == 113 { return "Svyatoslav"; }
+        if i == 114 { return "Vaclav"; }
+        if i == 115 { return "Wladyslaw"; }
+        if i == 116 { return "Yevgeny"; }
+        if i == 117 { return "Zdenek"; }
+        if i == 118 { return "Dobromir"; }
+        if i == 119 { return "Vsevolod"; }
+        if i == 120 { return "Mstislav"; }
+        if i == 121 { return "Ratibor"; }
+        if i == 122 { return "Sviatopolk"; }
+        if i == 123 { return "Dobroslav"; }
+        if i == 124 { return "Ludomir"; }
+        if i == 125 { return "Przemyslaw"; }
+        if i == 126 { return "Wieslaw"; }
+        if i == 127 { return "Zbyszek"; }
+        if i == 128 { return "Bohumil"; }
+        if i == 129 { return "Ctibor"; }
+        if i == 130 { return "Drahomir"; }
+        if i == 131 { return "Jaromir"; }
+        if i == 132 { return "Kazimierz"; }
+        if i == 133 { return "Lubomir"; }
+        if i == 134 { return "Mieczyslaw"; }
+        if i == 135 { return "Nikifor"; }
+        if i == 136 { return "Oldrich"; }
+        if i == 137 { return "Premysl"; }
+        if i == 138 { return "Tichomir"; }
+        if i == 139 { return "Velimir"; }
+        if i == 140 { return "Wladimir"; }
+        if i == 141 { return "Zelimir"; }
+        if i == 142 { return "Bozidar"; }
+        if i == 143 { return "Chvalimir"; }
+        if i == 144 { return "Dalibor"; }
+        if i == 145 { return "Gniewomir"; }
+        if i == 146 { return "Krzesimir"; }
+        if i == 147 { return "Milivoj"; }
         return "Viktor";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 146);
         if i == 0 { return "Natasha"; }
         if i == 1 { return "Tatiana"; }
         if i == 2 { return "Olga"; }
@@ -208,11 +256,57 @@ public abstract class KdspSlavicNames {
         if i == 97 { return "Bogumila"; }
         if i == 98 { return "Dagmara"; }
         if i == 99 { return "Elzbieta"; }
+        if i == 100 { return "Ceslava"; }
+        if i == 101 { return "Faina"; }
+        if i == 102 { return "Ludmila"; }
+        if i == 103 { return "Raisa"; }
+        if i == 104 { return "Uliana"; }
+        if i == 105 { return "Vasilisa"; }
+        if i == 106 { return "Bogdana"; }
+        if i == 107 { return "Darya"; }
+        if i == 108 { return "Feodora"; }
+        if i == 109 { return "Inessa"; }
+        if i == 110 { return "Jolanta"; }
+        if i == 111 { return "Milena"; }
+        if i == 112 { return "Natalya"; }
+        if i == 113 { return "Praskovya"; }
+        if i == 114 { return "Stanislava"; }
+        if i == 115 { return "Zlata"; }
+        if i == 116 { return "Bronislava"; }
+        if i == 117 { return "Dominika"; }
+        if i == 118 { return "Evgenia"; }
+        if i == 119 { return "Halyna"; }
+        if i == 120 { return "Wioletta"; }
+        if i == 121 { return "Dobrawa"; }
+        if i == 122 { return "Eufemia"; }
+        if i == 123 { return "Grzymislawa"; }
+        if i == 124 { return "Jaroslava"; }
+        if i == 125 { return "Kazimiera"; }
+        if i == 126 { return "Ludmilla"; }
+        if i == 127 { return "Mieczyslawa"; }
+        if i == 128 { return "Nikola"; }
+        if i == 129 { return "Przemyslawa"; }
+        if i == 130 { return "Radmila"; }
+        if i == 131 { return "Slavena"; }
+        if i == 132 { return "Tekla"; }
+        if i == 133 { return "Vlasta"; }
+        if i == 134 { return "Wladyslawa"; }
+        if i == 135 { return "Zdenka"; }
+        if i == 136 { return "Bozhena"; }
+        if i == 137 { return "Miloslava"; }
+        if i == 138 { return "Drahoslava"; }
+        if i == 139 { return "Kvetoslava"; }
+        if i == 140 { return "Libuse"; }
+        if i == 141 { return "Ruzena"; }
+        if i == 142 { return "Stanimira"; }
+        if i == 143 { return "Vratislava"; }
+        if i == 144 { return "Zora"; }
+        if i == 145 { return "Zivka"; }
         return "Natasha";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Volkov"; }
         if i == 1 { return "Ivanov"; }
         if i == 2 { return "Petrov"; }
@@ -313,6 +407,56 @@ public abstract class KdspSlavicNames {
         if i == 97 { return "Leszczynski"; }
         if i == 98 { return "Wroblewski"; }
         if i == 99 { return "Urbaniak"; }
+        if i == 100 { return "Antonov"; }
+        if i == 101 { return "Bielski"; }
+        if i == 102 { return "Dombrowski"; }
+        if i == 103 { return "Golubev"; }
+        if i == 104 { return "Horvat"; }
+        if i == 105 { return "Ivanenko"; }
+        if i == 106 { return "Nowicki"; }
+        if i == 107 { return "Pavlenko"; }
+        if i == 108 { return "Romanov"; }
+        if i == 109 { return "Tkachenko"; }
+        if i == 110 { return "Ulanov"; }
+        if i == 111 { return "Yakovlev"; }
+        if i == 112 { return "Andreyev"; }
+        if i == 113 { return "Bondarenko"; }
+        if i == 114 { return "Chernov"; }
+        if i == 115 { return "Filipov"; }
+        if i == 116 { return "Hrabal"; }
+        if i == 117 { return "Ilyin"; }
+        if i == 118 { return "Jelinek"; }
+        if i == 119 { return "Kovac"; }
+        if i == 120 { return "Lisowski"; }
+        if i == 121 { return "Medvedev"; }
+        if i == 122 { return "Novak"; }
+        if i == 123 { return "Rybak"; }
+        if i == 124 { return "Titov"; }
+        if i == 125 { return "Urban"; }
+        if i == 126 { return "Wojcik"; }
+        if i == 127 { return "Belov"; }
+        if i == 128 { return "Cerny"; }
+        if i == 129 { return "Dvorak"; }
+        if i == 130 { return "Frolov"; }
+        if i == 131 { return "Gavrilov"; }
+        if i == 132 { return "Vishnevsky"; }
+        if i == 133 { return "Baranowski"; }
+        if i == 134 { return "Dzhugashvili"; }
+        if i == 135 { return "Fedoseev"; }
+        if i == 136 { return "Hlinka"; }
+        if i == 137 { return "Ignatiev"; }
+        if i == 138 { return "Makarenko"; }
+        if i == 139 { return "Nemcova"; }
+        if i == 140 { return "Okhotnik"; }
+        if i == 141 { return "Pilsudski"; }
+        if i == 142 { return "Ruzicka"; }
+        if i == 143 { return "Tarasenko"; }
+        if i == 144 { return "Udovenko"; }
+        if i == 145 { return "Vondracek"; }
+        if i == 146 { return "Wawrzyniak"; }
+        if i == 147 { return "Yaroshenko"; }
+        if i == 148 { return "Zborowski"; }
+        if i == 149 { return "Bartosz"; }
         return "Volkov";
     }
 }

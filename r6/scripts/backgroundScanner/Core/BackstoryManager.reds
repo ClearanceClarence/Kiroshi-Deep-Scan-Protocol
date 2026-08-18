@@ -2,9 +2,9 @@ public class KdspBackstoryManager {
 
     // SEED VERSION - Increment this to regenerate all NPC backstories on next load
     // Change this value when making major content updates
-    // Incremented for cross-system coherence fixes
+    // Incremented when generation changes enough that old scans should regenerate
     public static func GetSeedVersion() -> Int32 {
-        return 4;
+        return 5;
     }
 
     public static func GenerateBackstoryUI(target: wref<NPCPuppet>) -> KdspBackstoryUI {
@@ -430,6 +430,20 @@ public class KdspBackstoryManager {
             if density >= 2 {
                 backstoryUI.criminalRecord = backstoryUI.criminalRecord + " | NCPD: " + criminal.ncpdClassification;
             };
+            // BOLO / alert notices — lookout flags independent of warrant status
+            let boloLine: String = KdspBoloGenerator.Generate(seed + 4700, archetype);
+            if NotEquals(boloLine, "") {
+                backstoryUI.criminalRecord = boloLine + "\n" + backstoryUI.criminalRecord;
+            };
+        } else if !isNCPD && !isBarghest && !isGangMember && !isTraumaTeam {
+            // Clean-record civilians can still carry a BOLO — being looked
+            // for doesn't require a rap sheet
+            let boloLine: String = KdspBoloGenerator.Generate(seed + 4700, archetype);
+            if NotEquals(boloLine, "") {
+                backstoryUI.criminalRecord = boloLine + "\nStatus: NO CRIMINAL RECORD";
+            } else {
+                backstoryUI.criminalRecord = "";
+            };
         } else {
             backstoryUI.criminalRecord = "";
         };
@@ -748,7 +762,7 @@ public class KdspBackstoryManager {
             let relations = KdspRelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
 
             // ══════════════════════════════════════════════════════════════
-            // CONNECTION SYSTEM: Phantom Community Pool Injection (v2.3)
+            // CONNECTION SYSTEM: Phantom Community Pool Injection
             // If Phantom or Full mode, ~40% chance one associate comes from
             // a deterministic district pool. NPCs in the same area will
             // independently generate overlapping names.
@@ -987,7 +1001,7 @@ public class KdspBackstoryManager {
             };
 
             // ══════════════════════════════════════════════════════════════
-            // CONNECTION SYSTEM: Cross-NPC Detection Pipeline (v2.3)
+            // CONNECTION SYSTEM: Cross-NPC Detection Pipeline
             // Runs after all relationship UI is built. Detects overlaps
             // with previously scanned NPCs and produces alert text.
             // ══════════════════════════════════════════════════════════════
@@ -1252,6 +1266,10 @@ public class KdspBackstoryManager {
 
     private static func FillReplacements(seed: Int32, text: String, corpoAffiliation: String, gender: String) -> String {
         let ret = text;
+        // Skip token replacement entirely for strings with no tokens
+        if !StrContains(ret, "%") {
+            return ret;
+        };
         if(StrContains(ret, "%corp%")) {
             if NotEquals(corpoAffiliation, "") {
                 ret = ReplaceFirst(ret, "%corp%", corpoAffiliation);
@@ -1300,13 +1318,21 @@ public class KdspBackstoryManager {
         return ret;
     }
 
+    // Binary search over the CDF. Returns the first index where
+    // val <= cdf[index], clamped in-bounds.
     private static func getCorrespondingIndex(arr: array<Int32>, val: Int32) -> Int32 {
-        let acc = 0;
-        let i = 0;
-        while val > arr[i] {
-            i += 1;
+        let lo = 0;
+        let hi = ArraySize(arr) - 1;
+        if hi < 0 { return 0; }
+        while lo < hi {
+            let mid = (lo + hi) / 2;
+            if val > arr[mid] {
+                lo = mid + 1;
+            } else {
+                hi = mid;
+            }
         }
-        return i;
+        return lo;
     }
 
 

@@ -176,4 +176,44 @@ public abstract class KdspTextHousing {
     public static func LIVED_ABOVE_BAR() -> String { return "Lived above a bar. Never slept well. "; }
     public static func LIVED_BACK_SHOP() -> String { return "Lived in the back of a shop. "; }
     public static func LIVED_RIPPER_CLINIC() -> String { return "Lived above a ripperdoc clinic. "; }
+
+    public static func LIVED_MEGA_H4() -> String { return "Lived in Megabuilding H4. Twelve years on the same floor. "; }
+    public static func LIVED_MEGA_H2() -> String { return "Lived in Megabuilding H2 before the water reclamation failed. "; }
+    public static func LIVED_CAPSULE() -> String { return "Rented a capsule pod in Kabuki. 2 square meters, shared bathroom, no windows. "; }
+    public static func LIVED_STACKED() -> String { return "Lived in a stacked container block in Rancho Coronado. "; }
+    public static func LIVED_MARINA_BOAT() -> String { return "Lived on a boat in the marina. Engine hasn't run since '71. "; }
+    public static func LIVED_ROOFTOP_SHACK() -> String { return "Built a shack on a Watson rooftop. Landlord never found out. "; }
+    public static func LIVED_OLD_METRO() -> String { return "Squatted in a decommissioned NCART station with a dozen others. "; }
+    public static func LIVED_CORPO_RUIN() -> String { return "Squatted in a bankrupt corpo's abandoned office tower. Still had power on floor 12. "; }
+    public static func LIVED_MOTEL_MONTH() -> String { return "Lived month-to-month in a Santo Domingo motel. Paid in cash. "; }
+    public static func LIVED_LANDFILL_EDGE() -> String { return "Lived at the edge of the landfill. The smell stopped registering after a year. "; }
+    public static func LIVED_BADLANDS_TRAILER() -> String { return "Lived in a trailer in the Badlands. Solar rig and a water condenser. "; }
+    public static func LIVED_CLAN_CONVOY() -> String { return "Grew up moving with a nomad convoy. Home was wherever the engines stopped. "; }
+    public static func LIVED_ABOVE_SHOP() -> String { return "Lived above the family shop. Commute was a staircase. "; }
+    public static func LIVED_SRO_NORTHSIDE() -> String { return "Lived in a single-room occupancy in Northside. Shared kitchen, no questions. "; }
+    public static func LIVED_JAPANTOWN_MICRO() -> String { return "Rented a Japantown micro-apartment. Bed folds into the wall, desk folds out of it. "; }
+    public static func LIVED_CHARTER_HILL() -> String { return "Lived in Charter Hill back when the family had corpo money. "; }
+    public static func LIVED_BASEMENT_SUB() -> String { return "Sublet a basement unit with no egress and one outlet. Landlord called it cozy. "; }
+    public static func LIVED_GLEN_WALKUP() -> String { return "Lived in a fourth-floor walkup in The Glen. Elevator's been broken since before the move-in. "; }
+    public static func EVICTED_MEGACORP() -> String { return "Evicted when a megacorp bought the block for redevelopment that never happened. "; }
+    public static func EVICTED_RENT_ALGO() -> String { return "Evicted by an automated rent adjustment. Never spoke to a human about it. "; }
+    public static func HOUSE_FIRE_ARSON() -> String { return "Lost the apartment to a fire. Insurance called it arson. Never charged anyone. "; }
+    public static func BUILDING_CONDEMNED() -> String { return "Building was condemned mid-lease. Got 72 hours to clear out. "; }
+    public static func INHERITED_UNIT() -> String { return "Inherited a unit from a grandmother. First stable address in years. "; }
+    public static func RENT_CONTROLLED() -> String { return "Landed a rent-controlled unit through a housing lottery. Defends it like territory. "; }
+    public static func ROOMMATE_SEVEN() -> String { return "Shared a two-bedroom with seven people. Slept in shifts. "; }
+    public static func LIVED_PACIFICA_HOTEL() -> String { return "Lived in a half-finished Pacifica resort hotel. Ocean view, no running water. "; }
+    public static func LIVED_DOGTOWN_BLOCK() -> String { return "Lived in a Dogtown block controlled by Barghest. Rent paid in favors. "; }
+    public static func LIVED_ARROYO_INDUSTRIAL() -> String { return "Lived in an Arroyo industrial conversion. Forklift noise at 5 AM, every day. "; }
+    public static func LIVED_COASTVIEW_WALKUP() -> String { return "Lived in a Coastview walkup with a view of the combat zone. "; }
+    public static func SLEPT_WORKPLACE() -> String { return "Slept at the workplace for a year to save rent. Boss never knew. "; }
+    public static func LIVED_STORAGE_UNIT() -> String { return "Lived in a climate-controlled storage unit. Better insulated than most apartments. "; }
+    public static func HOME_FLOODED() -> String { return "Ground-floor unit flooded three times in one rainy season. Kept living there. "; }
+    public static func LIVED_NEAR_POWERPLANT() -> String { return "Lived next to the power plant. The hum gets into your teeth. "; }
+    public static func LIVED_WITH_GRANDPARENTS_ADULT() -> String { return "Moved back in with grandparents at 30. Nobody talks about it. "; }
+    public static func HOUSING_COOP() -> String { return "Joined a housing cooperative. Meetings are hell but the rent is honest. "; }
+    public static func LIVED_MAELSTROM_EDGE() -> String { return "Lived two blocks from Maelstrom territory. Learned which streets change at night. "; }
+    public static func APARTMENT_BUGGED() -> String { return "Found surveillance devices in the apartment. Moved out the same week. Never learned who. "; }
+    public static func LIVED_LUXURY_SUBLET() -> String { return "Illegally sublet a luxury apartment from a corpo on foreign assignment for two years. "; }
+    public static func BUILDING_GANG_TAX() -> String { return "Building charged a 'security fee' collected by the local gang. Cheaper than insurance. "; }
 }

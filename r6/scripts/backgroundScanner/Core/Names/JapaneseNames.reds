@@ -2,7 +2,7 @@
 public abstract class KdspJapaneseNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Hiroshi"; }
         if i == 1 { return "Takeshi"; }
         if i == 2 { return "Kenji"; }
@@ -103,11 +103,61 @@ public abstract class KdspJapaneseNames {
         if i == 97 { return "Arata"; }
         if i == 98 { return "Daigo"; }
         if i == 99 { return "Fumihiro"; }
+        if i == 100 { return "Akihiko"; }
+        if i == 101 { return "Chikara"; }
+        if i == 102 { return "Hachiro"; }
+        if i == 103 { return "Isao"; }
+        if i == 104 { return "Katsuo"; }
+        if i == 105 { return "Kiyoshi"; }
+        if i == 106 { return "Masaru"; }
+        if i == 107 { return "Ryoichi"; }
+        if i == 108 { return "Shigeru"; }
+        if i == 109 { return "Umeji"; }
+        if i == 110 { return "Yasuhiro"; }
+        if i == 111 { return "Zenjiro"; }
+        if i == 112 { return "Chojiro"; }
+        if i == 113 { return "Eisuke"; }
+        if i == 114 { return "Fujio"; }
+        if i == 115 { return "Hideaki"; }
+        if i == 116 { return "Kohei"; }
+        if i == 117 { return "Reiji"; }
+        if i == 118 { return "Satoru"; }
+        if i == 119 { return "Yoshinori"; }
+        if i == 120 { return "Akinori"; }
+        if i == 121 { return "Chuichi"; }
+        if i == 122 { return "Etsuo"; }
+        if i == 123 { return "Fuminori"; }
+        if i == 124 { return "Gengo"; }
+        if i == 125 { return "Hirofumi"; }
+        if i == 126 { return "Issei"; }
+        if i == 127 { return "Junpei"; }
+        if i == 128 { return "Katsuhiro"; }
+        if i == 129 { return "Kiichi"; }
+        if i == 130 { return "Masaaki"; }
+        if i == 131 { return "Norio"; }
+        if i == 132 { return "Shohei"; }
+        if i == 133 { return "Shigenori"; }
+        if i == 134 { return "Tomohiro"; }
+        if i == 135 { return "Umetaro"; }
+        if i == 136 { return "Yasutaka"; }
+        if i == 137 { return "Zenkichi"; }
+        if i == 138 { return "Arihiro"; }
+        if i == 139 { return "Chikashi"; }
+        if i == 140 { return "Eijiro"; }
+        if i == 141 { return "Fumitaka"; }
+        if i == 142 { return "Gonbei"; }
+        if i == 143 { return "Hidetoshi"; }
+        if i == 144 { return "Ikuo"; }
+        if i == 145 { return "Junzo"; }
+        if i == 146 { return "Katsutoshi"; }
+        if i == 147 { return "Kiyotaka"; }
+        if i == 148 { return "Masanobu"; }
+        if i == 149 { return "Norihiko"; }
         return "Kenji";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 148);
         if i == 0 { return "Yuki"; }
         if i == 1 { return "Sakura"; }
         if i == 2 { return "Hana"; }
@@ -208,11 +258,59 @@ public abstract class KdspJapaneseNames {
         if i == 97 { return "Luna"; }
         if i == 98 { return "Tsuki"; }
         if i == 99 { return "Yume"; }
+        if i == 100 { return "Akemi"; }
+        if i == 101 { return "Hanako"; }
+        if i == 102 { return "Kimiko"; }
+        if i == 103 { return "Machiko"; }
+        if i == 104 { return "Natsuki"; }
+        if i == 105 { return "Umeko"; }
+        if i == 106 { return "Ayame"; }
+        if i == 107 { return "Chinatsu"; }
+        if i == 108 { return "Eriko"; }
+        if i == 109 { return "Fuyuko"; }
+        if i == 110 { return "Harumi"; }
+        if i == 111 { return "Ikuko"; }
+        if i == 112 { return "Kanako"; }
+        if i == 113 { return "Kiyomi"; }
+        if i == 114 { return "Nobuko"; }
+        if i == 115 { return "Rieko"; }
+        if i == 116 { return "Satomi"; }
+        if i == 117 { return "Tomoe"; }
+        if i == 118 { return "Yoshie"; }
+        if i == 119 { return "Asami"; }
+        if i == 120 { return "Chieko"; }
+        if i == 121 { return "Etsuko"; }
+        if i == 122 { return "Fusae"; }
+        if i == 123 { return "Hatsue"; }
+        if i == 124 { return "Itsuko"; }
+        if i == 125 { return "Katsuko"; }
+        if i == 126 { return "Kumiko"; }
+        if i == 127 { return "Masae"; }
+        if i == 128 { return "Ryoko"; }
+        if i == 129 { return "Toshiko"; }
+        if i == 130 { return "Yayoi"; }
+        if i == 131 { return "Yuriko"; }
+        if i == 132 { return "Ayano"; }
+        if i == 133 { return "Ayaka-Rin"; }
+        if i == 134 { return "Chisato"; }
+        if i == 135 { return "Emiri"; }
+        if i == 136 { return "Fujiko"; }
+        if i == 137 { return "Hatsumi"; }
+        if i == 138 { return "Ikumi"; }
+        if i == 139 { return "Kaname"; }
+        if i == 140 { return "Mayumi"; }
+        if i == 141 { return "Rinko"; }
+        if i == 142 { return "Sakiko"; }
+        if i == 143 { return "Tamiko"; }
+        if i == 144 { return "Utako"; }
+        if i == 145 { return "Yasue"; }
+        if i == 146 { return "Yumiko-Rei"; }
+        if i == 147 { return "Azusa"; }
         return "Sakura";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Tanaka"; }
         if i == 1 { return "Yamamoto"; }
         if i == 2 { return "Watanabe"; }
@@ -313,6 +411,56 @@ public abstract class KdspJapaneseNames {
         if i == 97 { return "Honda"; }
         if i == 98 { return "Katayama"; }
         if i == 99 { return "Tsuchiya"; }
+        if i == 100 { return "Akiyama"; }
+        if i == 101 { return "Kanda"; }
+        if i == 102 { return "Kubota"; }
+        if i == 103 { return "Taguchi"; }
+        if i == 104 { return "Doi"; }
+        if i == 105 { return "Kawaguchi"; }
+        if i == 106 { return "Kudo"; }
+        if i == 107 { return "Yokoyama"; }
+        if i == 108 { return "Ebina"; }
+        if i == 109 { return "Furukawa"; }
+        if i == 110 { return "Kurokawa"; }
+        if i == 111 { return "Ohashi"; }
+        if i == 112 { return "Ono"; }
+        if i == 113 { return "Asano"; }
+        if i == 114 { return "Eguchi"; }
+        if i == 115 { return "Fujimoto"; }
+        if i == 116 { return "Amamiya"; }
+        if i == 117 { return "Chikafuji"; }
+        if i == 118 { return "Ezakiya"; }
+        if i == 119 { return "Fukuzawa"; }
+        if i == 120 { return "Gushiken"; }
+        if i == 121 { return "Hattori"; }
+        if i == 122 { return "Ichimura"; }
+        if i == 123 { return "Kagawa"; }
+        if i == 124 { return "Kuroshima"; }
+        if i == 125 { return "Matsubara"; }
+        if i == 126 { return "Nishioka"; }
+        if i == 127 { return "Oyamada"; }
+        if i == 128 { return "Shirakawa"; }
+        if i == 129 { return "Takeshita"; }
+        if i == 130 { return "Umewaka"; }
+        if i == 131 { return "Yanagida"; }
+        if i == 132 { return "Aihara"; }
+        if i == 133 { return "Ebisawa"; }
+        if i == 134 { return "Funakoshi"; }
+        if i == 135 { return "Hamasaki"; }
+        if i == 136 { return "Iwatani"; }
+        if i == 137 { return "Kajiwara"; }
+        if i == 138 { return "Kusakabe"; }
+        if i == 139 { return "Mizushima"; }
+        if i == 140 { return "Nakazawa"; }
+        if i == 141 { return "Okabayashi"; }
+        if i == 142 { return "Sekiguchi"; }
+        if i == 143 { return "Tsukamoto"; }
+        if i == 144 { return "Uehara"; }
+        if i == 145 { return "Yamanaka"; }
+        if i == 146 { return "Aizawa"; }
+        if i == 147 { return "Enomoto"; }
+        if i == 148 { return "Furuhashi"; }
+        if i == 149 { return "Higashiyama"; }
         return "Tanaka";
     }
 }

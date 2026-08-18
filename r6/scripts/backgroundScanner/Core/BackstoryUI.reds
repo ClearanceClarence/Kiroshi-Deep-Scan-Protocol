@@ -22,7 +22,7 @@ public struct KdspBackstoryUI {
   // Relationships
   public let relationships: String;
 
-  // Network Analysis (Connection System v2.3)
+  // Network Analysis (Connection System)
   public let networkAnalysis: String;
 
   // Vehicle Registration

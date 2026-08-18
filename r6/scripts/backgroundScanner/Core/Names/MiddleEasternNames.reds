@@ -2,7 +2,7 @@
 public abstract class KdspMiddleEasternNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 145);
         if i == 0 { return "Mohammed"; }
         if i == 1 { return "Ahmed"; }
         if i == 2 { return "Ali"; }
@@ -103,11 +103,56 @@ public abstract class KdspMiddleEasternNames {
         if i == 97 { return "Talal"; }
         if i == 98 { return "Youssef"; }
         if i == 99 { return "Zain"; }
+        if i == 100 { return "Adnan"; }
+        if i == 101 { return "Bashir"; }
+        if i == 102 { return "Dawoud"; }
+        if i == 103 { return "Faris"; }
+        if i == 104 { return "Imad"; }
+        if i == 105 { return "Khalil"; }
+        if i == 106 { return "Luqman"; }
+        if i == 107 { return "Diyar"; }
+        if i == 108 { return "Fadi"; }
+        if i == 109 { return "Ihsan"; }
+        if i == 110 { return "Jibril"; }
+        if i == 111 { return "Mansour"; }
+        if i == 112 { return "Saeed"; }
+        if i == 113 { return "Wasim"; }
+        if i == 114 { return "Yousef"; }
+        if i == 115 { return "Zaki"; }
+        if i == 116 { return "Amjad"; }
+        if i == 117 { return "Burhan"; }
+        if i == 118 { return "Dhia"; }
+        if i == 119 { return "Fawzi"; }
+        if i == 120 { return "Ghaith"; }
+        if i == 121 { return "Muhannad"; }
+        if i == 122 { return "Suhail"; }
+        if i == 123 { return "Thamer"; }
+        if i == 124 { return "Waleed"; }
+        if i == 125 { return "Yahya"; }
+        if i == 126 { return "Anas"; }
+        if i == 127 { return "Basil"; }
+        if i == 128 { return "Dhafer"; }
+        if i == 129 { return "Eyad"; }
+        if i == 130 { return "Fahad"; }
+        if i == 131 { return "Ghanim"; }
+        if i == 132 { return "Iyad"; }
+        if i == 133 { return "Jassim"; }
+        if i == 134 { return "Khaldoun"; }
+        if i == 135 { return "Louay"; }
+        if i == 136 { return "Mazen"; }
+        if i == 137 { return "Nawaf"; }
+        if i == 138 { return "Obaid"; }
+        if i == 139 { return "Ramez"; }
+        if i == 140 { return "Sultan"; }
+        if i == 141 { return "Turki"; }
+        if i == 142 { return "Usman"; }
+        if i == 143 { return "Wissam"; }
+        if i == 144 { return "Yamen"; }
         return "Mohammed";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 138);
         if i == 0 { return "Fatima"; }
         if i == 1 { return "Aisha"; }
         if i == 2 { return "Layla"; }
@@ -208,11 +253,49 @@ public abstract class KdspMiddleEasternNames {
         if i == 97 { return "Arwa"; }
         if i == 98 { return "Badriya"; }
         if i == 99 { return "Feryal"; }
+        if i == 100 { return "Aaliyah"; }
+        if i == 101 { return "Hanan"; }
+        if i == 102 { return "Maha"; }
+        if i == 103 { return "Ola"; }
+        if i == 104 { return "Thana"; }
+        if i == 105 { return "Umaima"; }
+        if i == 106 { return "Nour"; }
+        if i == 107 { return "Ohood"; }
+        if i == 108 { return "Rahaf"; }
+        if i == 109 { return "Tala"; }
+        if i == 110 { return "Uns"; }
+        if i == 111 { return "Bayan"; }
+        if i == 112 { return "Dua"; }
+        if i == 113 { return "Esraa"; }
+        if i == 114 { return "Hala"; }
+        if i == 115 { return "Shaymaa"; }
+        if i == 116 { return "Roqaya"; }
+        if i == 117 { return "Ibtisam"; }
+        if i == 118 { return "Sanaa"; }
+        if i == 119 { return "Suhair"; }
+        if i == 120 { return "Nisreen"; }
+        if i == 121 { return "Riham"; }
+        if i == 122 { return "Alaa"; }
+        if i == 123 { return "Doaa"; }
+        if i == 124 { return "Marwa"; }
+        if i == 125 { return "Heba"; }
+        if i == 126 { return "Shahd"; }
+        if i == 127 { return "Rula"; }
+        if i == 128 { return "Nada"; }
+        if i == 129 { return "Sireen"; }
+        if i == 130 { return "Taghreed"; }
+        if i == 131 { return "Wijdan"; }
+        if i == 132 { return "Amal"; }
+        if i == 133 { return "Fidaa"; }
+        if i == 134 { return "Ghusoon"; }
+        if i == 135 { return "Hadeel"; }
+        if i == 136 { return "Jinan"; }
+        if i == 137 { return "Kifah"; }
         return "Fatima";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 133);
         if i == 0 { return "Al-Hassan"; }
         if i == 1 { return "Al-Rashid"; }
         if i == 2 { return "Al-Mansour"; }
@@ -313,6 +396,39 @@ public abstract class KdspMiddleEasternNames {
         if i == 97 { return "Zahran"; }
         if i == 98 { return "Bakri"; }
         if i == 99 { return "Hariri"; }
+        if i == 100 { return "Abadi"; }
+        if i == 101 { return "Elamin"; }
+        if i == 102 { return "Fakhoury"; }
+        if i == 103 { return "Habib"; }
+        if i == 104 { return "Maalouf"; }
+        if i == 105 { return "Nassar"; }
+        if i == 106 { return "Rahal"; }
+        if i == 107 { return "Tahan"; }
+        if i == 108 { return "Wehbe"; }
+        if i == 109 { return "Yacoub"; }
+        if i == 110 { return "Zayat"; }
+        if i == 111 { return "Antoun"; }
+        if i == 112 { return "Bitar"; }
+        if i == 113 { return "Doumani"; }
+        if i == 114 { return "Elhassan"; }
+        if i == 115 { return "Farhat"; }
+        if i == 116 { return "Ghattas"; }
+        if i == 117 { return "Kanaan"; }
+        if i == 118 { return "Mansour"; }
+        if i == 119 { return "Naber"; }
+        if i == 120 { return "Obeid"; }
+        if i == 121 { return "Rustom"; }
+        if i == 122 { return "Salloum"; }
+        if i == 123 { return "Tannous"; }
+        if i == 124 { return "Younes"; }
+        if i == 125 { return "Zoghbi"; }
+        if i == 126 { return "Assaf"; }
+        if i == 127 { return "Boulos"; }
+        if i == 128 { return "Elkhoury"; }
+        if i == 129 { return "Fares"; }
+        if i == 130 { return "Gerges"; }
+        if i == 131 { return "Itani"; }
+        if i == 132 { return "Jubran"; }
         return "Al-Hassan";
     }
 }

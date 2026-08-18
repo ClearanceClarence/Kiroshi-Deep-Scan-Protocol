@@ -2,7 +2,7 @@
 public abstract class KdspHaitianNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Jean"; }
         if i == 1 { return "Pierre"; }
         if i == 2 { return "Jacques"; }
@@ -103,11 +103,61 @@ public abstract class KdspHaitianNames {
         if i == 97 { return "Gervais"; }
         if i == 98 { return "Hyppolite"; }
         if i == 99 { return "Innocent"; }
+        if i == 100 { return "Jean-Baptiste"; }
+        if i == 101 { return "Wilner"; }
+        if i == 102 { return "Ghislain"; }
+        if i == 103 { return "Herold"; }
+        if i == 104 { return "Kervens"; }
+        if i == 105 { return "Luckner"; }
+        if i == 106 { return "Makenson"; }
+        if i == 107 { return "Nerlande"; }
+        if i == 108 { return "Odelin"; }
+        if i == 109 { return "Pierrot"; }
+        if i == 110 { return "Renel"; }
+        if i == 111 { return "Ti-Jean"; }
+        if i == 112 { return "Venel"; }
+        if i == 113 { return "Wesley"; }
+        if i == 114 { return "Berthony"; }
+        if i == 115 { return "Clervil"; }
+        if i == 116 { return "Duckens"; }
+        if i == 117 { return "Fritznel"; }
+        if i == 118 { return "Guerson"; }
+        if i == 119 { return "Herby"; }
+        if i == 120 { return "Islande"; }
+        if i == 121 { return "Jameson"; }
+        if i == 122 { return "Kenley"; }
+        if i == 123 { return "Michelet"; }
+        if i == 124 { return "Nesly"; }
+        if i == 125 { return "Olriche"; }
+        if i == 126 { return "Peterson"; }
+        if i == 127 { return "Ricardo"; }
+        if i == 128 { return "Stanley"; }
+        if i == 129 { return "Thelusma"; }
+        if i == 130 { return "Uriel"; }
+        if i == 131 { return "Vilaire"; }
+        if i == 132 { return "Watson"; }
+        if i == 133 { return "Yverose"; }
+        if i == 134 { return "Belony"; }
+        if i == 135 { return "Charlot"; }
+        if i == 136 { return "Dukens"; }
+        if i == 137 { return "Evens"; }
+        if i == 138 { return "Jocelyn"; }
+        if i == 139 { return "Kesner"; }
+        if i == 140 { return "Lesly"; }
+        if i == 141 { return "Maxo"; }
+        if i == 142 { return "Nixon"; }
+        if i == 143 { return "Obed"; }
+        if i == 144 { return "Pradel"; }
+        if i == 145 { return "Robenson"; }
+        if i == 146 { return "Sonson"; }
+        if i == 147 { return "Ti-Roro"; }
+        if i == 148 { return "Wilguens"; }
+        if i == 149 { return "Yvenson"; }
         return "Jean";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Marie"; }
         if i == 1 { return "Madeleine"; }
         if i == 2 { return "Simone"; }
@@ -208,11 +258,61 @@ public abstract class KdspHaitianNames {
         if i == 97 { return "Sherline"; }
         if i == 98 { return "Tulie"; }
         if i == 99 { return "Venise"; }
+        if i == 100 { return "Marie-Ange"; }
+        if i == 101 { return "Darline"; }
+        if i == 102 { return "Esperancia"; }
+        if i == 103 { return "Herlande"; }
+        if i == 104 { return "Islande"; }
+        if i == 105 { return "Jesula"; }
+        if i == 106 { return "Kettelie"; }
+        if i == 107 { return "Lovelie"; }
+        if i == 108 { return "Nadege"; }
+        if i == 109 { return "Ophelia"; }
+        if i == 110 { return "Rosemene"; }
+        if i == 111 { return "Tamara"; }
+        if i == 112 { return "Vierge"; }
+        if i == 113 { return "Wisline"; }
+        if i == 114 { return "Altagrace"; }
+        if i == 115 { return "Clorinde"; }
+        if i == 116 { return "Elifaite"; }
+        if i == 117 { return "Francine"; }
+        if i == 118 { return "Gerty"; }
+        if i == 119 { return "Immacula"; }
+        if i == 120 { return "Ketsia"; }
+        if i == 121 { return "Magdala"; }
+        if i == 122 { return "Naomie"; }
+        if i == 123 { return "Roseline"; }
+        if i == 124 { return "Tirzah"; }
+        if i == 125 { return "Wendie"; }
+        if i == 126 { return "Yanique"; }
+        if i == 127 { return "Adeline"; }
+        if i == 128 { return "Carline"; }
+        if i == 129 { return "Mirlene"; }
+        if i == 130 { return "Naphtalie"; }
+        if i == 131 { return "Ostania"; }
+        if i == 132 { return "Phanya"; }
+        if i == 133 { return "Rosemitha"; }
+        if i == 134 { return "Sherlie"; }
+        if i == 135 { return "Tania-Rose"; }
+        if i == 136 { return "Vania"; }
+        if i == 137 { return "Youseline"; }
+        if i == 138 { return "Adlyne"; }
+        if i == 139 { return "Bethsaida"; }
+        if i == 140 { return "Clautide"; }
+        if i == 141 { return "Dieunette"; }
+        if i == 142 { return "Elmithe"; }
+        if i == 143 { return "Fabiana"; }
+        if i == 144 { return "Guettie"; }
+        if i == 145 { return "Herline"; }
+        if i == 146 { return "Ionie"; }
+        if i == 147 { return "Jesumene"; }
+        if i == 148 { return "Ketleine"; }
+        if i == 149 { return "Lourdemie"; }
         return "Marie";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Jean-Baptiste"; }
         if i == 1 { return "Desrosiers"; }
         if i == 2 { return "Pierre-Louis"; }
@@ -313,6 +413,56 @@ public abstract class KdspHaitianNames {
         if i == 97 { return "Pierre"; }
         if i == 98 { return "Raymond"; }
         if i == 99 { return "Simon"; }
+        if i == 100 { return "Baptiste"; }
+        if i == 101 { return "Charlemagne"; }
+        if i == 102 { return "Metellus"; }
+        if i == 103 { return "Noel"; }
+        if i == 104 { return "Occilien"; }
+        if i == 105 { return "Petit-Frere"; }
+        if i == 106 { return "Telemaque"; }
+        if i == 107 { return "Belizaire"; }
+        if i == 108 { return "Casseus"; }
+        if i == 109 { return "Delva"; }
+        if i == 110 { return "Estime"; }
+        if i == 111 { return "Fleurant"; }
+        if i == 112 { return "Germain"; }
+        if i == 113 { return "Isidor"; }
+        if i == 114 { return "Michaud"; }
+        if i == 115 { return "Narcisse"; }
+        if i == 116 { return "Oriol"; }
+        if i == 117 { return "Pascal"; }
+        if i == 118 { return "Registre"; }
+        if i == 119 { return "Severe"; }
+        if i == 120 { return "Théodore"; }
+        if i == 121 { return "Valcin"; }
+        if i == 122 { return "Wagnac"; }
+        if i == 123 { return "Yves"; }
+        if i == 124 { return "Achille"; }
+        if i == 125 { return "Bonhomme"; }
+        if i == 126 { return "Dorsainvil"; }
+        if i == 127 { return "Exantus"; }
+        if i == 128 { return "Faustin"; }
+        if i == 129 { return "Hilaire"; }
+        if i == 130 { return "Delatour"; }
+        if i == 131 { return "Estiverne"; }
+        if i == 132 { return "Fenelon"; }
+        if i == 133 { return "Guirand"; }
+        if i == 134 { return "Jean-Gilles"; }
+        if i == 135 { return "Lamothe"; }
+        if i == 136 { return "Milfort"; }
+        if i == 137 { return "Occeus"; }
+        if i == 138 { return "Previlon"; }
+        if i == 139 { return "Similien"; }
+        if i == 140 { return "Toussaint-Louis"; }
+        if i == 141 { return "Verella"; }
+        if i == 142 { return "Zephir"; }
+        if i == 143 { return "Almonor"; }
+        if i == 144 { return "Beauplan"; }
+        if i == 145 { return "Clerveaux"; }
+        if i == 146 { return "Desir"; }
+        if i == 147 { return "Emile"; }
+        if i == 148 { return "Filsaime"; }
+        if i == 149 { return "Gustave"; }
         return "Jean-Baptiste";
     }
 }

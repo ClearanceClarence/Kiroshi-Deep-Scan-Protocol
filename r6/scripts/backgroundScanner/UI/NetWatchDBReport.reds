@@ -303,6 +303,13 @@ public class KdspNetWatchDBReport extends inkCustomController {
         // Criminal
         if StrLen(this.m_backstoryUI.criminalRecord) > 0 && KdspSettings.ShowCriminalRecord() {
             this.m_criminalValue.SetText(this.m_backstoryUI.criminalRecord);
+            // BOLO notice or active warrant gets urgent red, routine records
+            // keep the section default
+            if StrContains(this.m_backstoryUI.criminalRecord, "BOLO:") || StrContains(this.m_backstoryUI.criminalRecord, "ALERT:") || StrContains(this.m_backstoryUI.criminalRecord, "NOTICE:") || StrContains(this.m_backstoryUI.criminalRecord, "WARRANT: ACTIVE") {
+                this.m_criminalValue.SetTintColor(new HDRColor(1.0, 0.22, 0.28, 1.0));
+            } else {
+                this.m_criminalValue.SetTintColor(new HDRColor(1.0, 0.4, 0.4, 1.0));
+            };
             this.m_criminalSection.SetVisible(true);
         } else {
             this.m_criminalSection.SetVisible(false);
@@ -354,7 +361,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
             this.m_relationshipsSection.SetVisible(false);
         };
 
-        // Network Analysis (Connection System v2.3)
+        // Network Analysis (Connection System)
         if StrLen(this.m_backstoryUI.networkAnalysis) > 0 && KdspSettings.GetConnectionMode() > 0 {
             this.m_networkAnalysisValue.SetText(this.m_backstoryUI.networkAnalysis);
             this.m_networkAnalysisSection.SetVisible(true);

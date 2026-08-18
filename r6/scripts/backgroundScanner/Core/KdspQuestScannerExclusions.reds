@@ -16,20 +16,21 @@
 
 public abstract class KdspQuestScannerExclusions {
 
-    public static func ShouldUseVanillaScanner(target: wref<NPCPuppet>) -> Bool {
-        let recordId: String = TDBID.ToStringDEBUG(target.GetRecordID());
-        let recordLower: String = StrLower(recordId);
-
+    // Takes precomputed identity strings from CompileScannerChunks
+    public static func ShouldUseVanillaScannerPrecomputed(recordLower: String, appearance: String) -> Bool {
         // ── q112: Automatic Love — Arasaka Industrial Park Guard ──────
         // Guard at the side entrance. Player must scan him to eavesdrop
         // on his conversation for quest progression.
-        if StrContains(recordLower, "corpo__arasaka_ma_guard") {
-            let appearance: String = NameToString(target.GetCurrentAppearanceName());
-            if StrContains(appearance, "guard__lvl2_02") {
-                return true;
-            };
+        if StrContains(recordLower, "corpo__arasaka_ma_guard") && StrContains(appearance, "guard__lvl2_02") {
+            return true;
         };
 
         return false;
+    }
+
+    public static func ShouldUseVanillaScanner(target: wref<NPCPuppet>) -> Bool {
+        let recordLower: String = StrLower(TDBID.ToStringDEBUG(target.GetRecordID()));
+        let appearance: String = NameToString(target.GetCurrentAppearanceName());
+        return KdspQuestScannerExclusions.ShouldUseVanillaScannerPrecomputed(recordLower, appearance);
     }
 }

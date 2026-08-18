@@ -2,7 +2,7 @@
 public abstract class KdspIndianNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 146);
         if i == 0 { return "Raj"; }
         if i == 1 { return "Vikram"; }
         if i == 2 { return "Arjun"; }
@@ -103,11 +103,57 @@ public abstract class KdspIndianNames {
         if i == 97 { return "Pranav"; }
         if i == 98 { return "Sameer"; }
         if i == 99 { return "Vinay"; }
+        if i == 100 { return "Aarav"; }
+        if i == 101 { return "Bhavin"; }
+        if i == 102 { return "Devansh"; }
+        if i == 103 { return "Eshan"; }
+        if i == 104 { return "Harsh"; }
+        if i == 105 { return "Jayant"; }
+        if i == 106 { return "Kartik"; }
+        if i == 107 { return "Lakshya"; }
+        if i == 108 { return "Nikhil"; }
+        if i == 109 { return "Omkar"; }
+        if i == 110 { return "Rishabh"; }
+        if i == 111 { return "Siddharth"; }
+        if i == 112 { return "Utkarsh"; }
+        if i == 113 { return "Vihaan"; }
+        if i == 114 { return "Yashwant"; }
+        if i == 115 { return "Abhinav"; }
+        if i == 116 { return "Inder"; }
+        if i == 117 { return "Kunal"; }
+        if i == 118 { return "Ojas"; }
+        if i == 119 { return "Parth"; }
+        if i == 120 { return "Bhaskar"; }
+        if i == 121 { return "Chandan"; }
+        if i == 122 { return "Kailash"; }
+        if i == 123 { return "Shreyas"; }
+        if i == 124 { return "Ritvik"; }
+        if i == 125 { return "Nakul"; }
+        if i == 126 { return "Mahesh"; }
+        if i == 127 { return "Ishwar"; }
+        if i == 128 { return "Sanjiv"; }
+        if i == 129 { return "Rudra"; }
+        if i == 130 { return "Alok"; }
+        if i == 131 { return "Devdutt"; }
+        if i == 132 { return "Hriday"; }
+        if i == 133 { return "Indrajit"; }
+        if i == 134 { return "Jagannath"; }
+        if i == 135 { return "Keshav"; }
+        if i == 136 { return "Narayan"; }
+        if i == 137 { return "Omprakash"; }
+        if i == 138 { return "Prabhakar"; }
+        if i == 139 { return "Raghunath"; }
+        if i == 140 { return "Shankar"; }
+        if i == 141 { return "Trilok"; }
+        if i == 142 { return "Vasant"; }
+        if i == 143 { return "Yashpal"; }
+        if i == 144 { return "Achyut"; }
+        if i == 145 { return "Balram"; }
         return "Raj";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 147);
         if i == 0 { return "Priya"; }
         if i == 1 { return "Anjali"; }
         if i == 2 { return "Deepika"; }
@@ -208,11 +254,58 @@ public abstract class KdspIndianNames {
         if i == 97 { return "Roshni"; }
         if i == 98 { return "Shalini"; }
         if i == 99 { return "Vani"; }
+        if i == 100 { return "Aanya"; }
+        if i == 101 { return "Kavya"; }
+        if i == 102 { return "Lavanya"; }
+        if i == 103 { return "Ojasvi"; }
+        if i == 104 { return "Rachna"; }
+        if i == 105 { return "Sanya"; }
+        if i == 106 { return "Urvashi"; }
+        if i == 107 { return "Vandana"; }
+        if i == 108 { return "Bhumika"; }
+        if i == 109 { return "Charu"; }
+        if i == 110 { return "Hansika"; }
+        if i == 111 { return "Juhi"; }
+        if i == 112 { return "Madhuri"; }
+        if i == 113 { return "Trisha"; }
+        if i == 114 { return "Yashoda"; }
+        if i == 115 { return "Bela"; }
+        if i == 116 { return "Ganga"; }
+        if i == 117 { return "Hemlata"; }
+        if i == 118 { return "Ila"; }
+        if i == 119 { return "Shraddha"; }
+        if i == 120 { return "Ritika"; }
+        if i == 121 { return "Nayanthara"; }
+        if i == 122 { return "Mahima"; }
+        if i == 123 { return "Ishani"; }
+        if i == 124 { return "Sanchita"; }
+        if i == 125 { return "Rukmini"; }
+        if i == 126 { return "Alpana"; }
+        if i == 127 { return "Damayanti"; }
+        if i == 128 { return "Gayatri"; }
+        if i == 129 { return "Hemangi"; }
+        if i == 130 { return "Indrani"; }
+        if i == 131 { return "Jayashree"; }
+        if i == 132 { return "Kalindi"; }
+        if i == 133 { return "Malati"; }
+        if i == 134 { return "Nalini"; }
+        if i == 135 { return "Oormila"; }
+        if i == 136 { return "Radhika"; }
+        if i == 137 { return "Sharmila"; }
+        if i == 138 { return "Tanuja"; }
+        if i == 139 { return "Vasudha"; }
+        if i == 140 { return "Yamuna"; }
+        if i == 141 { return "Aparna"; }
+        if i == 142 { return "Bhagyashree"; }
+        if i == 143 { return "Chandrika"; }
+        if i == 144 { return "Deepali"; }
+        if i == 145 { return "Gitanjali"; }
+        if i == 146 { return "Haripriya"; }
         return "Priya";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 130);
         if i == 0 { return "Sharma"; }
         if i == 1 { return "Patel"; }
         if i == 2 { return "Singh"; }
@@ -313,6 +406,36 @@ public abstract class KdspIndianNames {
         if i == 97 { return "Datta"; }
         if i == 98 { return "Khatri"; }
         if i == 99 { return "Murthy"; }
+        if i == 100 { return "Bhatnagar"; }
+        if i == 101 { return "Chaturvedi"; }
+        if i == 102 { return "Dwivedi"; }
+        if i == 103 { return "Gokhale"; }
+        if i == 104 { return "Iyengar"; }
+        if i == 105 { return "Jindal"; }
+        if i == 106 { return "Lokhande"; }
+        if i == 107 { return "Nadkarni"; }
+        if i == 108 { return "Rastogi"; }
+        if i == 109 { return "Zaveri"; }
+        if i == 110 { return "Ahluwalia"; }
+        if i == 111 { return "Chandran"; }
+        if i == 112 { return "Gaikwad"; }
+        if i == 113 { return "Hooda"; }
+        if i == 114 { return "Israni"; }
+        if i == 115 { return "Kapadia"; }
+        if i == 116 { return "Lamba"; }
+        if i == 117 { return "Nanda"; }
+        if i == 118 { return "Ojha"; }
+        if i == 119 { return "Raghavan"; }
+        if i == 120 { return "Sachdeva"; }
+        if i == 121 { return "Tandon"; }
+        if i == 122 { return "Unnikrishnan"; }
+        if i == 123 { return "Wagle"; }
+        if i == 124 { return "Yohannan"; }
+        if i == 125 { return "Ambekar"; }
+        if i == 126 { return "Chugh"; }
+        if i == 127 { return "Gill"; }
+        if i == 128 { return "Handa"; }
+        if i == 129 { return "Inamdar"; }
         return "Sharma";
     }
 }

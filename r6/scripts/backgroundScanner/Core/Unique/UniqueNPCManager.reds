@@ -3,30 +3,35 @@
 
 public abstract class KdspUniqueNPCManager {
 
-    // Check if an NPC is a unique/named character we have data for
-    public static func IsUniqueNPC(target: wref<NPCPuppet>) -> Bool {
+    // Resolves the entry once across all three identifier types
+    // (record ID → display name → appearance name).
+    // Returns null if this isn't a unique NPC.
+    public static func TryGetBackstory(target: wref<NPCPuppet>) -> ref<KdspUniqueNPCBackstory> {
+        // 1. Record ID
         let recordId = KdspUniqueNPCManager.GetCharacterRecordId(target);
-        if KdspUniqueNPCManager.HasEntry(recordId) {
-            // Check quest requirements for specific NPCs
+        let entry = KdspUniqueNPCEntries.GetEntry(recordId);
+        if IsDefined(entry) {
             if !KdspUniqueNPCManager.MeetsQuestRequirements(target, recordId) {
-                return false;
+                return null;
             }
-            return true;
+            return entry;
         }
-        // Fallback: check by display name
+        // 2. Display name
         let displayName = KdspUniqueNPCManager.GetDisplayName(target);
-        if KdspUniqueNPCManager.HasEntry(displayName) {
+        entry = KdspUniqueNPCEntries.GetEntry(displayName);
+        if IsDefined(entry) {
             if !KdspUniqueNPCManager.MeetsQuestRequirements(target, displayName) {
-                return false;
+                return null;
             }
-            return true;
+            return entry;
         }
-        // Fallback: check by appearance name
+        // 3. Appearance name
         let appearanceName = KdspUniqueNPCManager.GetAppearanceName(target);
-        if KdspUniqueNPCManager.HasEntry(appearanceName) {
-            return true;
-        }
-        return false;
+        return KdspUniqueNPCEntries.GetEntry(appearanceName);
+    }
+
+    public static func IsUniqueNPC(target: wref<NPCPuppet>) -> Bool {
+        return IsDefined(KdspUniqueNPCManager.TryGetBackstory(target));
     }
 
     // Check if quest requirements are met for certain NPCs
@@ -89,22 +94,8 @@ public abstract class KdspUniqueNPCManager {
         return IsDefined(KdspUniqueNPCEntries.GetEntry(recordId));
     }
 
-    // Get the backstory for a unique NPC
     public static func GetBackstory(target: wref<NPCPuppet>) -> ref<KdspUniqueNPCBackstory> {
-        let recordId = KdspUniqueNPCManager.GetCharacterRecordId(target);
-        let entry = KdspUniqueNPCEntries.GetEntry(recordId);
-        if IsDefined(entry) {
-            return entry;
-        }
-        // Fallback: try by display name
-        let displayName = KdspUniqueNPCManager.GetDisplayName(target);
-        entry = KdspUniqueNPCEntries.GetEntry(displayName);
-        if IsDefined(entry) {
-            return entry;
-        }
-        // Fallback: try by appearance name
-        let appearanceName = KdspUniqueNPCManager.GetAppearanceName(target);
-        return KdspUniqueNPCEntries.GetEntry(appearanceName);
+        return KdspUniqueNPCManager.TryGetBackstory(target);
     }
 
     // Get the NPC's current appearance name

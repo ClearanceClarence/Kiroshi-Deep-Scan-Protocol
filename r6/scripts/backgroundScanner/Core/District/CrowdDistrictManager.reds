@@ -2,12 +2,50 @@
 public class KdspCrowdDistrictManager {
 
     public static func GetCurrentDistrict(position: Vector4) -> String {
-        // This would ideally use game's district detection
-        // For now, we'll use a simplified approach based on coordinates
-        // In practice, you'd hook into the game's district system
-        
-        // Placeholder - returns random district weighted by common areas
-        return "WATSON";
+        // Approximate district bounding regions in world space, checked in
+        // priority order. Anything outside the city grid is BADLANDS.
+        let x: Float = position.X;
+        let y: Float = position.Y;
+
+        // Pacifica / Dogtown — far southwest
+        if x < -800.0 && y < -1400.0 {
+            if x > -1900.0 && y < -2400.0 {
+                return "DOGTOWN";
+            };
+            return "PACIFICA";
+        };
+
+        // City Center — western central
+        if x < -250.0 && x > -2000.0 && y > -1100.0 && y < 900.0 {
+            return "CITY_CENTER";
+        };
+
+        // Heywood — south central
+        if x > -1100.0 && x < 900.0 && y < 0.0 && y > -2400.0 {
+            return "HEYWOOD";
+        };
+
+        // Santo Domingo — southeast
+        if x > 700.0 && y < -400.0 {
+            return "SANTO_DOMINGO";
+        };
+
+        // Westbrook — east (Japantown, Charter Hill, North Oak)
+        if x > 400.0 && y > -500.0 && y < 3200.0 {
+            return "WESTBROOK";
+        };
+
+        // Watson — north
+        if y > 700.0 && x > -1700.0 && x < 1300.0 {
+            return "WATSON";
+        };
+
+        // Inside rough city bounds but unmatched — generic
+        if x > -2600.0 && x < 3600.0 && y > -4600.0 && y < 4600.0 {
+            return "UNKNOWN";
+        };
+
+        return "BADLANDS";
     }
 
     public static func DetectDistrictFromAppearance(appearanceName: String) -> String {

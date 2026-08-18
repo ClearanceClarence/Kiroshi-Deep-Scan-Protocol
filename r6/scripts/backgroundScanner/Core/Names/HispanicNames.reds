@@ -2,7 +2,7 @@
 public abstract class KdspHispanicNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Miguel"; }
         if i == 1 { return "Carlos"; }
         if i == 2 { return "Jose"; }
@@ -103,11 +103,61 @@ public abstract class KdspHispanicNames {
         if i == 97 { return "Bruno"; }
         if i == 98 { return "Claudio"; }
         if i == 99 { return "Domingo"; }
+        if i == 100 { return "Bautista"; }
+        if i == 101 { return "Cristobal"; }
+        if i == 102 { return "Damaso"; }
+        if i == 103 { return "Efrain"; }
+        if i == 104 { return "Fulgencio"; }
+        if i == 105 { return "Heriberto"; }
+        if i == 106 { return "Isidro"; }
+        if i == 107 { return "Maximiliano"; }
+        if i == 108 { return "Porfirio"; }
+        if i == 109 { return "Ubaldo"; }
+        if i == 110 { return "Ximeno"; }
+        if i == 111 { return "Yandel"; }
+        if i == 112 { return "Anibal"; }
+        if i == 113 { return "Bernardo"; }
+        if i == 114 { return "Casimiro"; }
+        if i == 115 { return "Delfino"; }
+        if i == 116 { return "Emiliano"; }
+        if i == 117 { return "Fausto"; }
+        if i == 118 { return "Hilario"; }
+        if i == 119 { return "Jacinto"; }
+        if i == 120 { return "Lazaro"; }
+        if i == 121 { return "Marcelino"; }
+        if i == 122 { return "Nicanor"; }
+        if i == 123 { return "Osvaldo"; }
+        if i == 124 { return "Placido"; }
+        if i == 125 { return "Refugio"; }
+        if i == 126 { return "Tiburcio"; }
+        if i == 127 { return "Venancio"; }
+        if i == 128 { return "Wenceslao"; }
+        if i == 129 { return "Yago"; }
+        if i == 130 { return "Zenon"; }
+        if i == 131 { return "Aurelio"; }
+        if i == 132 { return "Baltazar"; }
+        if i == 133 { return "Cipriano"; }
+        if i == 134 { return "Anacleto"; }
+        if i == 135 { return "Bienvenido"; }
+        if i == 136 { return "Crisanto"; }
+        if i == 137 { return "Demetrio"; }
+        if i == 138 { return "Epifanio"; }
+        if i == 139 { return "Froilan"; }
+        if i == 140 { return "Gumersindo"; }
+        if i == 141 { return "Herminio"; }
+        if i == 142 { return "Indalecio"; }
+        if i == 143 { return "Justiniano"; }
+        if i == 144 { return "Leocadio"; }
+        if i == 145 { return "Melquiades"; }
+        if i == 146 { return "Natividad"; }
+        if i == 147 { return "Obdulio"; }
+        if i == 148 { return "Pantaleon"; }
+        if i == 149 { return "Ruperto"; }
         return "Carlos";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Maria"; }
         if i == 1 { return "Sofia"; }
         if i == 2 { return "Isabella"; }
@@ -208,11 +258,61 @@ public abstract class KdspHispanicNames {
         if i == 97 { return "Zoila"; }
         if i == 98 { return "Angelica"; }
         if i == 99 { return "Barbara"; }
+        if i == 100 { return "Florencia"; }
+        if i == 101 { return "Herminia"; }
+        if i == 102 { return "Itzel"; }
+        if i == 103 { return "Natividad"; }
+        if i == 104 { return "Refugio"; }
+        if i == 105 { return "Bonifacia"; }
+        if i == 106 { return "Candelaria"; }
+        if i == 107 { return "Delfina"; }
+        if i == 108 { return "Encarnacion"; }
+        if i == 109 { return "Felicitas"; }
+        if i == 110 { return "Genoveva"; }
+        if i == 111 { return "Hortencia"; }
+        if i == 112 { return "Imelda"; }
+        if i == 113 { return "Jacinta"; }
+        if i == 114 { return "Mercedes"; }
+        if i == 115 { return "Nieves"; }
+        if i == 116 { return "Otilia"; }
+        if i == 117 { return "Petra"; }
+        if i == 118 { return "Remedios"; }
+        if i == 119 { return "Socorro"; }
+        if i == 120 { return "Teodora"; }
+        if i == 121 { return "Urbana"; }
+        if i == 122 { return "Victorina"; }
+        if i == 123 { return "Wilma"; }
+        if i == 124 { return "Xochitl"; }
+        if i == 125 { return "Zenaida"; }
+        if i == 126 { return "Araceli"; }
+        if i == 127 { return "Bernarda"; }
+        if i == 128 { return "Auxiliadora"; }
+        if i == 129 { return "Bienvenida"; }
+        if i == 130 { return "Clementina"; }
+        if i == 131 { return "Domitila"; }
+        if i == 132 { return "Escolastica"; }
+        if i == 133 { return "Filomena"; }
+        if i == 134 { return "Gregoria"; }
+        if i == 135 { return "Higinia"; }
+        if i == 136 { return "Inocencia"; }
+        if i == 137 { return "Justina"; }
+        if i == 138 { return "Leonarda"; }
+        if i == 139 { return "Maximina"; }
+        if i == 140 { return "Natalia-Sol"; }
+        if i == 141 { return "Obdulia"; }
+        if i == 142 { return "Prudencia"; }
+        if i == 143 { return "Rufina"; }
+        if i == 144 { return "Salustiana"; }
+        if i == 145 { return "Toribia"; }
+        if i == 146 { return "Ubalda"; }
+        if i == 147 { return "Victoriana"; }
+        if i == 148 { return "Wilfreda"; }
+        if i == 149 { return "Ynes"; }
         return "Maria";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Garcia"; }
         if i == 1 { return "Rodriguez"; }
         if i == 2 { return "Martinez"; }
@@ -313,6 +413,56 @@ public abstract class KdspHispanicNames {
         if i == 97 { return "Solis"; }
         if i == 98 { return "Suarez"; }
         if i == 99 { return "Valencia"; }
+        if i == 100 { return "Albarran"; }
+        if i == 101 { return "Bermudez"; }
+        if i == 102 { return "Delgadillo"; }
+        if i == 103 { return "Escamilla"; }
+        if i == 104 { return "Galindo"; }
+        if i == 105 { return "Jaramillo"; }
+        if i == 106 { return "Lozano"; }
+        if i == 107 { return "Montemayor"; }
+        if i == 108 { return "Narvaez"; }
+        if i == 109 { return "Olivares"; }
+        if i == 110 { return "Palacios"; }
+        if i == 111 { return "Quintanilla"; }
+        if i == 112 { return "Renteria"; }
+        if i == 113 { return "Saldana"; }
+        if i == 114 { return "Trevino"; }
+        if i == 115 { return "Urbina"; }
+        if i == 116 { return "Valenzuela"; }
+        if i == 117 { return "Ybarra"; }
+        if i == 118 { return "Zambrano"; }
+        if i == 119 { return "Arreola"; }
+        if i == 120 { return "Barajas"; }
+        if i == 121 { return "Davila"; }
+        if i == 122 { return "Elizondo"; }
+        if i == 123 { return "Holguin"; }
+        if i == 124 { return "Iniguez"; }
+        if i == 125 { return "Jaquez"; }
+        if i == 126 { return "Leija"; }
+        if i == 127 { return "Najera"; }
+        if i == 128 { return "Ontiveros"; }
+        if i == 129 { return "Pantoja"; }
+        if i == 130 { return "Quiroz"; }
+        if i == 131 { return "Rosales"; }
+        if i == 132 { return "Saucedo"; }
+        if i == 133 { return "Tafoya"; }
+        if i == 134 { return "Urias"; }
+        if i == 135 { return "Villagomez"; }
+        if i == 136 { return "Yanez"; }
+        if i == 137 { return "Zepeda"; }
+        if i == 138 { return "Almanza"; }
+        if i == 139 { return "Bustamante"; }
+        if i == 140 { return "Carbajal"; }
+        if i == 141 { return "DeLaCruz"; }
+        if i == 142 { return "Abrego"; }
+        if i == 143 { return "Bracamontes"; }
+        if i == 144 { return "Cervantes-Ruiz"; }
+        if i == 145 { return "DeLosSantos"; }
+        if i == 146 { return "Echevarria"; }
+        if i == 147 { return "Frescas"; }
+        if i == 148 { return "Grijalva"; }
+        if i == 149 { return "Hinojosa"; }
         return "Garcia";
     }
 }

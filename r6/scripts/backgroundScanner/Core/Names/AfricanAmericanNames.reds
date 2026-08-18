@@ -2,7 +2,7 @@
 public abstract class KdspAfricanAmericanNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 148);
         if i == 0 { return "Darius"; }
         if i == 1 { return "Jamal"; }
         if i == 2 { return "DeShawn"; }
@@ -103,11 +103,59 @@ public abstract class KdspAfricanAmericanNames {
         if i == 97 { return "Devin"; }
         if i == 98 { return "Braxton"; }
         if i == 99 { return "Jayson"; }
+        if i == 100 { return "Deshawn"; }
+        if i == 101 { return "Everett"; }
+        if i == 102 { return "Franklin"; }
+        if i == 103 { return "Gerard"; }
+        if i == 104 { return "Maurice"; }
+        if i == 105 { return "Nathaniel"; }
+        if i == 106 { return "Prentice"; }
+        if i == 107 { return "Sterling"; }
+        if i == 108 { return "Tremaine"; }
+        if i == 109 { return "Vaughn"; }
+        if i == 110 { return "Warrick"; }
+        if i == 111 { return "Zeke"; }
+        if i == 112 { return "Cornell"; }
+        if i == 113 { return "Fenton"; }
+        if i == 114 { return "Grady"; }
+        if i == 115 { return "Hollis"; }
+        if i == 116 { return "Ivory"; }
+        if i == 117 { return "Lorenzo"; }
+        if i == 118 { return "Montel"; }
+        if i == 119 { return "Nigel"; }
+        if i == 120 { return "Orlando"; }
+        if i == 121 { return "Percival"; }
+        if i == 122 { return "Solomon"; }
+        if i == 123 { return "Tobias"; }
+        if i == 124 { return "Ulysses"; }
+        if i == 125 { return "Daquan"; }
+        if i == 126 { return "Ezell"; }
+        if i == 127 { return "Furman"; }
+        if i == 128 { return "Gervon"; }
+        if i == 129 { return "Hosea"; }
+        if i == 130 { return "Izell"; }
+        if i == 131 { return "Keon"; }
+        if i == 132 { return "Ladarius"; }
+        if i == 133 { return "Marquez"; }
+        if i == 134 { return "Nakia"; }
+        if i == 135 { return "Octavius"; }
+        if i == 136 { return "Pernell"; }
+        if i == 137 { return "Quandre"; }
+        if i == 138 { return "Semaj"; }
+        if i == 139 { return "Undra"; }
+        if i == 140 { return "Vontae"; }
+        if i == 141 { return "Willis"; }
+        if i == 142 { return "Yancy"; }
+        if i == 143 { return "Zavier"; }
+        if i == 144 { return "Ackeem"; }
+        if i == 145 { return "Braylon"; }
+        if i == 146 { return "Cortez"; }
+        if i == 147 { return "Deion"; }
         return "Marcus";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 145);
         if i == 0 { return "Aaliyah"; }
         if i == 1 { return "Imani"; }
         if i == 2 { return "Shaniqua"; }
@@ -208,11 +256,56 @@ public abstract class KdspAfricanAmericanNames {
         if i == 97 { return "Patrice"; }
         if i == 98 { return "Regina"; }
         if i == 99 { return "Simone"; }
+        if i == 100 { return "Fatima"; }
+        if i == 101 { return "Kenya"; }
+        if i == 102 { return "Queenie"; }
+        if i == 103 { return "Rochelle"; }
+        if i == 104 { return "Valencia"; }
+        if i == 105 { return "Breanna"; }
+        if i == 106 { return "Chantel"; }
+        if i == 107 { return "Genesis"; }
+        if i == 108 { return "Harmony"; }
+        if i == 109 { return "Mya"; }
+        if i == 110 { return "Nevaeh"; }
+        if i == 111 { return "Ophelia"; }
+        if i == 112 { return "Tierra"; }
+        if i == 113 { return "Angelique"; }
+        if i == 114 { return "Camille"; }
+        if i == 115 { return "Lakeisha"; }
+        if i == 116 { return "Ayanna"; }
+        if i == 117 { return "Zendaya"; }
+        if i == 118 { return "Tiana"; }
+        if i == 119 { return "Amber-Rose"; }
+        if i == 120 { return "Danisha"; }
+        if i == 121 { return "Ebonique"; }
+        if i == 122 { return "Kenisha"; }
+        if i == 123 { return "Laquita"; }
+        if i == 124 { return "Makayla"; }
+        if i == 125 { return "Niesha"; }
+        if i == 126 { return "Ronisha"; }
+        if i == 127 { return "Shantay"; }
+        if i == 128 { return "Taleah"; }
+        if i == 129 { return "Undrea"; }
+        if i == 130 { return "Venita"; }
+        if i == 131 { return "Waneta"; }
+        if i == 132 { return "Yendi"; }
+        if i == 133 { return "Zakiya"; }
+        if i == 134 { return "Aleesha"; }
+        if i == 135 { return "Brielle"; }
+        if i == 136 { return "Chandra"; }
+        if i == 137 { return "Dionne"; }
+        if i == 138 { return "Evette"; }
+        if i == 139 { return "Franchesca"; }
+        if i == 140 { return "Ghana"; }
+        if i == 141 { return "Honesty"; }
+        if i == 142 { return "Ivory"; }
+        if i == 143 { return "Jonelle"; }
+        if i == 144 { return "Kalinda"; }
         return "Aaliyah";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 149);
         if i == 0 { return "Washington"; }
         if i == 1 { return "Jefferson"; }
         if i == 2 { return "Jackson"; }
@@ -313,6 +406,55 @@ public abstract class KdspAfricanAmericanNames {
         if i == 97 { return "Porter"; }
         if i == 98 { return "Hunter"; }
         if i == 99 { return "Hicks"; }
+        if i == 100 { return "Abernathy"; }
+        if i == 101 { return "Bledsoe"; }
+        if i == 102 { return "Culpepper"; }
+        if i == 103 { return "Dandridge"; }
+        if i == 104 { return "Eldridge"; }
+        if i == 105 { return "Fontaine"; }
+        if i == 106 { return "Gadsden"; }
+        if i == 107 { return "Hargrove"; }
+        if i == 108 { return "Isley"; }
+        if i == 109 { return "Kirkland"; }
+        if i == 110 { return "Lattimore"; }
+        if i == 111 { return "Mosley"; }
+        if i == 112 { return "Newsome"; }
+        if i == 113 { return "Overstreet"; }
+        if i == 114 { return "Pettway"; }
+        if i == 115 { return "Quarles"; }
+        if i == 116 { return "Rucker"; }
+        if i == 117 { return "Satterfield"; }
+        if i == 118 { return "Tillman"; }
+        if i == 119 { return "Upshaw"; }
+        if i == 120 { return "Venable"; }
+        if i == 121 { return "Whitaker"; }
+        if i == 122 { return "Yarbrough"; }
+        if i == 123 { return "Zeigler"; }
+        if i == 124 { return "Ashworth"; }
+        if i == 125 { return "Broadnax"; }
+        if i == 126 { return "Cofield"; }
+        if i == 127 { return "Dortch"; }
+        if i == 128 { return "Ellerbe"; }
+        if i == 129 { return "Fairley"; }
+        if i == 130 { return "Goolsby"; }
+        if i == 131 { return "Hairston"; }
+        if i == 132 { return "Ivery"; }
+        if i == 133 { return "Jeffries"; }
+        if i == 134 { return "Kinsey"; }
+        if i == 135 { return "Leverette"; }
+        if i == 136 { return "Manigault"; }
+        if i == 137 { return "Norwood"; }
+        if i == 138 { return "Oglesby"; }
+        if i == 139 { return "Pinckney"; }
+        if i == 140 { return "Ravenell"; }
+        if i == 141 { return "Singletary"; }
+        if i == 142 { return "Threadgill"; }
+        if i == 143 { return "Utsey"; }
+        if i == 144 { return "Vereen"; }
+        if i == 145 { return "Witherspoon"; }
+        if i == 146 { return "Youngblood"; }
+        if i == 147 { return "Alston"; }
+        if i == 148 { return "Bostic"; }
         return "Williams";
     }
 }

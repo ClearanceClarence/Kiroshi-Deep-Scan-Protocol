@@ -82,12 +82,12 @@ public abstract class KdspTextUpbringing {
     public static func PARENT_NETRUNNER() -> String { return "Parent was a legendary netrunner. "; }
     public static func PARENT_RIPPER() -> String { return "Parent was a respected ripperdoc. "; }
     public static func PRNTS_CRSH() -> String { return "Parents died in a car crash. "; }
-    public static func MOT_ANSA() -> String { return "Mother has amnesia and doesn't remember %him%. "; }
-    public static func FAT_ANSA() -> String { return "Father has amnesia and doesn't remember %him%. "; }
+    public static func MOT_ANSA() -> String { return "Mother disappeared during the '70 food riots. Never found. "; }
+    public static func FAT_ANSA() -> String { return "Father got flatlined in a corpo crossfire. Wrong place, wrong time. "; }
     public static func FAM_KLD_NCPD() -> String { return "Parents and extended family killed by NCPD. "; }
     public static func PAT_GNG_WRFR() -> String { return "Parents killed in gang warfare. "; }
-    public static func MOT_UNID() -> String { return "Mother unidentified. "; }
-    public static func FAT_UNID() -> String { return "Father unidentified. "; }
+    public static func MOT_UNID() -> String { return "Mother's identity sealed by corporate NDA. "; }
+    public static func FAT_UNID() -> String { return "Father listed as classified in birth records. "; }
     public static func MOT_KLD_NCPD() -> String { return "Mother killed by NCPD. "; }
     public static func FAT_KLD_NCPD() -> String { return "Father killed by NCPD. "; }
     public static func MOT_KLD_MXTC() -> String { return "Mother killed by Max-Tac. "; }
@@ -192,8 +192,8 @@ public abstract class KdspTextUpbringing {
     // === EXPANDED: FAMILY STRUCTURE ===
     public static func POLYAMORY() -> String { return "Raised in a polyamorous family unit. "; }
     public static func SURROGATE() -> String { return "Born via surrogacy to wealthy parents. "; }
-    public static func UNKNOWN_FATHER() -> String { return "Never knew who %his% father was. "; }
-    public static func UNKNOWN_MOTHER() -> String { return "Never knew who %his% mother was. "; }
+    public static func UNKNOWN_FATHER() -> String { return "Father skipped town before %he% was born. "; }
+    public static func UNKNOWN_MOTHER() -> String { return "Mother left %him% with relatives and never came back. "; }
     public static func LARGE_FAMILY() -> String { return "One of many siblings in a large family. "; }
     // === EXPANDED: MORE PARENTAL SITUATIONS ===
     public static func WORKAHOLIC_PARENTS() -> String { return "Parents were workaholics, rarely home. "; }
@@ -261,5 +261,26 @@ public abstract class KdspTextUpbringing {
     // === EXPANDED: FAMILY SITUATIONS ===
     public static func ADOPTED_DIFFERENT() -> String { return "Was adopted by a family of different ethnicity. "; }
     public static func MIXED_GANG_FAMILY() -> String { return "Family members belonged to different gangs. "; }
+
+    public static func UPB_SCHOOL_ROOF() -> String { return "Went to a school with a hole in the roof. Class moved with the rain. "; }
+    public static func UPB_CORPO_SCHOLARSHIP_KID() -> String { return "Attended a corpo academy on scholarship. Never let anyone forget where %he% was from. "; }
+    public static func UPB_STREET_VENDOR_KID() -> String { return "Helped at the family food stall from age %young_age%. Can still julienne blindfolded. "; }
+    public static func UPB_ARCADE_RAISED() -> String { return "Practically raised in a Kabuki arcade. High scores still stand on two machines. "; }
+    public static func UPB_OLDEST_OF_SIX() -> String { return "Oldest of six. Learned to cook, budget, and forge signatures by twelve. "; }
+    public static func UPB_YOUNGEST_SPOILED() -> String { return "Youngest of five. The others still call %him% the baby at family dinners. "; }
+    public static func UPB_LIBRARY_KID() -> String { return "Spent every afternoon at the public library until it closed for good in %year%. "; }
+    public static func UPB_CHURCH_CHOIR() -> String { return "Sang in a storefront church choir. Still hums the harmonies at work. "; }
+    public static func UPB_MECHANIC_SHADOW() -> String { return "Shadowed the block's mechanic every weekend. First word was allegedly 'torque'. "; }
+    public static func UPB_TRANSLATOR_CHILD() -> String { return "Translated for the whole family from age %young_age%. Bills, doctors, landlords. "; }
+    public static func UPB_ROOFTOP_GANG_KIDS() -> String { return "Ran with the building's rooftop kids. Every water tower in Watson has their tags. "; }
+    public static func UPB_PAPER_ROUTE_2060() -> String { return "Delivered screamsheets by bike at dawn. Knew the district's rhythms before school age ended. "; }
+    public static func UPB_SIBLING_RIVALRY_GOOD() -> String { return "Lifelong competition with a twin. Grades, races, jobs. Still tied, per both of them. "; }
+    public static func UPB_GRANDMOTHER_STORIES() -> String { return "Grandmother's stories about pre-unification America were better than any BD. "; }
+    public static func UPB_FIRST_JOB_TWELVE() -> String { return "First paying job at twelve, sweeping a barbershop. Still stops by. "; }
+    public static func UPB_BLOCK_PARTY_FAMILY() -> String { return "The block threw festivals four times a year. The whole street was family. "; }
+    public static func UPB_SCRAP_PICKING() -> String { return "Picked scrap with cousins after school. Learned metal prices before multiplication. "; }
+    public static func UPB_STOOP_CHESS() -> String { return "Learned chess from the old men on the stoop. They never once let %him% win. "; }
+    public static func UPB_SCHOOL_SHUT_MIDYEAR() -> String { return "School shut down mid-year when the operator corp folded. Half the class never re-enrolled. "; }
+    public static func UPB_NEIGHBOR_RAISED() -> String { return "Raised as much by the floor's neighbors as by anyone. Six apartments, one childhood. "; }
 }
 

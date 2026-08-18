@@ -2,7 +2,7 @@
 public abstract class KdspAmericanNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "James"; }
         if i == 1 { return "Robert"; }
         if i == 2 { return "Michael"; }
@@ -103,11 +103,61 @@ public abstract class KdspAmericanNames {
         if i == 97 { return "Vincent"; }
         if i == 98 { return "Marcus"; }
         if i == 99 { return "Travis"; }
+        if i == 100 { return "Wade"; }
+        if i == 101 { return "Dalton"; }
+        if i == 102 { return "Reid"; }
+        if i == 103 { return "Trent"; }
+        if i == 104 { return "Clay"; }
+        if i == 105 { return "Wyatt"; }
+        if i == 106 { return "Levi"; }
+        if i == 107 { return "Carter"; }
+        if i == 108 { return "Cooper"; }
+        if i == 109 { return "Parker"; }
+        if i == 110 { return "Sawyer"; }
+        if i == 111 { return "Tanner"; }
+        if i == 112 { return "Weston"; }
+        if i == 113 { return "Beau"; }
+        if i == 114 { return "Dean"; }
+        if i == 115 { return "Finn"; }
+        if i == 116 { return "Gage"; }
+        if i == 117 { return "Heath"; }
+        if i == 118 { return "Jace"; }
+        if i == 119 { return "Knox"; }
+        if i == 120 { return "Lane"; }
+        if i == 121 { return "Nash"; }
+        if i == 122 { return "Reed"; }
+        if i == 123 { return "Seth"; }
+        if i == 124 { return "Vance"; }
+        if i == 125 { return "Zane"; }
+        if i == 126 { return "Brock"; }
+        if i == 127 { return "Chad"; }
+        if i == 128 { return "Holden"; }
+        if i == 129 { return "Jared"; }
+        if i == 130 { return "Kyle"; }
+        if i == 131 { return "Lance"; }
+        if i == 132 { return "Micah"; }
+        if i == 133 { return "Nolan"; }
+        if i == 134 { return "Preston"; }
+        if i == 135 { return "Quinn"; }
+        if i == 136 { return "Ross"; }
+        if i == 137 { return "Ridge"; }
+        if i == 138 { return "Stetson"; }
+        if i == 139 { return "Crew"; }
+        if i == 140 { return "Boone"; }
+        if i == 141 { return "Maverick"; }
+        if i == 142 { return "Denver"; }
+        if i == 143 { return "Austin-Lee"; }
+        if i == 144 { return "Colt"; }
+        if i == 145 { return "Duke"; }
+        if i == 146 { return "Gunner"; }
+        if i == 147 { return "Hawk"; }
+        if i == 148 { return "Jett"; }
+        if i == 149 { return "King"; }
         return "John";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Mary"; }
         if i == 1 { return "Patricia"; }
         if i == 2 { return "Jennifer"; }
@@ -208,11 +258,61 @@ public abstract class KdspAmericanNames {
         if i == 97 { return "Alexis"; }
         if i == 98 { return "Lori"; }
         if i == 99 { return "Chloe"; }
+        if i == 100 { return "Paige"; }
+        if i == 101 { return "Sierra"; }
+        if i == 102 { return "Autumn"; }
+        if i == 103 { return "Brooke"; }
+        if i == 104 { return "Dakota"; }
+        if i == 105 { return "Skylar"; }
+        if i == 106 { return "Savannah"; }
+        if i == 107 { return "Cheyenne"; }
+        if i == 108 { return "Harmony"; }
+        if i == 109 { return "Willow"; }
+        if i == 110 { return "Aspen"; }
+        if i == 111 { return "Brynn"; }
+        if i == 112 { return "Cassidy"; }
+        if i == 113 { return "Delaney"; }
+        if i == 114 { return "Everly"; }
+        if i == 115 { return "Faith"; }
+        if i == 116 { return "Gracie"; }
+        if i == 117 { return "Harper"; }
+        if i == 118 { return "Ivy"; }
+        if i == 119 { return "Jade"; }
+        if i == 120 { return "Kinsley"; }
+        if i == 121 { return "Laurel"; }
+        if i == 122 { return "Mckenna"; }
+        if i == 123 { return "Nova"; }
+        if i == 124 { return "Oakley"; }
+        if i == 125 { return "Piper"; }
+        if i == 126 { return "Quinn"; }
+        if i == 127 { return "Raelynn"; }
+        if i == 128 { return "Sage"; }
+        if i == 129 { return "Tatum"; }
+        if i == 130 { return "Vivian"; }
+        if i == 131 { return "Wren"; }
+        if i == 132 { return "Adalyn"; }
+        if i == 133 { return "Blair"; }
+        if i == 134 { return "Callie"; }
+        if i == 135 { return "Demi"; }
+        if i == 136 { return "Emery"; }
+        if i == 137 { return "Finley"; }
+        if i == 138 { return "Georgia"; }
+        if i == 139 { return "Hadley"; }
+        if i == 140 { return "Iris"; }
+        if i == 141 { return "Journey"; }
+        if i == 142 { return "Kendall"; }
+        if i == 143 { return "Landry"; }
+        if i == 144 { return "Marlee"; }
+        if i == 145 { return "Nadia"; }
+        if i == 146 { return "Oaklyn"; }
+        if i == 147 { return "Presley"; }
+        if i == 148 { return "Reagan"; }
+        if i == 149 { return "Sloane"; }
         return "Emily";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Smith"; }
         if i == 1 { return "Johnson"; }
         if i == 2 { return "Williams"; }
@@ -313,6 +413,56 @@ public abstract class KdspAmericanNames {
         if i == 97 { return "Cole"; }
         if i == 98 { return "Hayes"; }
         if i == 99 { return "Bryant"; }
+        if i == 100 { return "Barrett"; }
+        if i == 101 { return "Calloway"; }
+        if i == 102 { return "Dawson"; }
+        if i == 103 { return "Ellison"; }
+        if i == 104 { return "Fleming"; }
+        if i == 105 { return "Gentry"; }
+        if i == 106 { return "Holloway"; }
+        if i == 107 { return "Irwin"; }
+        if i == 108 { return "Jarvis"; }
+        if i == 109 { return "Kendrick"; }
+        if i == 110 { return "Lockhart"; }
+        if i == 111 { return "Mercer"; }
+        if i == 112 { return "Nolan"; }
+        if i == 113 { return "Osborne"; }
+        if i == 114 { return "Prescott"; }
+        if i == 115 { return "Quimby"; }
+        if i == 116 { return "Rhodes"; }
+        if i == 117 { return "Sheldon"; }
+        if i == 118 { return "Thorne"; }
+        if i == 119 { return "Underwood"; }
+        if i == 120 { return "Vance"; }
+        if i == 121 { return "Whitfield"; }
+        if i == 122 { return "Yates"; }
+        if i == 123 { return "Ashford"; }
+        if i == 124 { return "Bowman"; }
+        if i == 125 { return "Crandall"; }
+        if i == 126 { return "Dunbar"; }
+        if i == 127 { return "Emerson"; }
+        if i == 128 { return "Fairchild"; }
+        if i == 129 { return "Goodwin"; }
+        if i == 130 { return "Hartley"; }
+        if i == 131 { return "Ingram"; }
+        if i == 132 { return "Jennings"; }
+        if i == 133 { return "Kirkland"; }
+        if i == 134 { return "Langford"; }
+        if i == 135 { return "Mabry"; }
+        if i == 136 { return "Newsome"; }
+        if i == 137 { return "Oakley"; }
+        if i == 138 { return "Pemberton"; }
+        if i == 139 { return "Ramsey"; }
+        if i == 140 { return "Sinclair"; }
+        if i == 141 { return "Talbot"; }
+        if i == 142 { return "Upton"; }
+        if i == 143 { return "Vickers"; }
+        if i == 144 { return "Wainwright"; }
+        if i == 145 { return "Youngblood"; }
+        if i == 146 { return "Ziegler"; }
+        if i == 147 { return "Beckett"; }
+        if i == 148 { return "Colby"; }
+        if i == 149 { return "Draper"; }
         return "Stone";
     }
 }

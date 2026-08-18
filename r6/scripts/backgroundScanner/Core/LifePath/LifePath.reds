@@ -13,8 +13,15 @@ public class KdspLifePath {
 		let self: ref<KdspLifePath> = new KdspLifePath();
         self.gender = self.GetGender(target);
         self.archetype = self.GetCrowdArchetype(target);
-        self.possibleEvents = new KdspLifePathPossibilities();
-        self.possibleEvents.Initialize(self.archetype);
+        // Event pools are cached per archetype — see KdspEventPoolCache
+        let cache = KdspEventPoolCache.GetInstance(target.GetGame());
+        if IsDefined(cache) {
+            self.possibleEvents = cache.GetPool(self.archetype);
+        } else {
+            // Fallback if system isn't up yet (shouldn't happen in normal play)
+            self.possibleEvents = new KdspLifePathPossibilities();
+            self.possibleEvents.Initialize(self.archetype);
+        }
 		return self;
 	}
 

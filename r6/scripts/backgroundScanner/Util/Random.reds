@@ -23,9 +23,9 @@ public static func CDF(weightedEvents: array<ref<KdspLifePathEvent>>) -> array<I
     let i = 0;
     let cumulativeWeights: array<Int32>;
     let prev = 0;
-    while i < ArraySize(weightedEvents) - 1 {
-        ArrayPush(cumulativeWeights, prev + weightedEvents[i].weight);
+    while i < ArraySize(weightedEvents) {
         prev = prev + weightedEvents[i].weight;
+        ArrayPush(cumulativeWeights, prev);
         i += 1;
     }
     return cumulativeWeights;

@@ -1,13 +1,6 @@
-// ============================================================================
-//  KdspConnectionDetector.reds
-//  Kiroshi Deep Scan Protocol v2.3 — Connection Detection & Alert System
-//
-//  Ties ConnectionTracker (real) and CommunityPool (phantom) together.
-//  Called from BackstoryManager after relationship generation completes.
-//  Produces alert text for the scanner UI.
-//
-//  connectionMode setting: 0=Off, 1=Phantom, 2=Tracked, 3=Full
-// ============================================================================
+// Kiroshi Deep Scan Protocol - Connection Detector
+// Runs cross-reference checks after relationship generation and produces
+// the Network Analysis alert text. connectionMode: 0=Off 1=Phantom 2=Tracked 3=Full
 
 public class KdspConnectionResult {
     public let alerts:              array<String>;

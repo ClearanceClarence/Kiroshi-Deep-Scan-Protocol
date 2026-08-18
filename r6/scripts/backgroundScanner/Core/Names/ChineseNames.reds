@@ -2,7 +2,7 @@
 public abstract class KdspChineseNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Wei"; }
         if i == 1 { return "Chen"; }
         if i == 2 { return "Jun"; }
@@ -103,11 +103,61 @@ public abstract class KdspChineseNames {
         if i == 97 { return "Jiu"; }
         if i == 98 { return "Kong"; }
         if i == 99 { return "Lei"; }
+        if i == 100 { return "Rong"; }
+        if i == 101 { return "Yong"; }
+        if i == 102 { return "Chao"; }
+        if i == 103 { return "De"; }
+        if i == 104 { return "Meng"; }
+        if i == 105 { return "Cong"; }
+        if i == 106 { return "Fa"; }
+        if i == 107 { return "Zhirong"; }
+        if i == 108 { return "Weimin"; }
+        if i == 109 { return "Jianguo"; }
+        if i == 110 { return "Xiaolong"; }
+        if i == 111 { return "Tengfei"; }
+        if i == 112 { return "Yuhang"; }
+        if i == 113 { return "Zichen"; }
+        if i == 114 { return "Haoran"; }
+        if i == 115 { return "Junjie"; }
+        if i == 116 { return "Mingze"; }
+        if i == 117 { return "Yichen"; }
+        if i == 118 { return "Ruoxi"; }
+        if i == 119 { return "Zihao"; }
+        if i == 120 { return "Chengxi"; }
+        if i == 121 { return "Boyang"; }
+        if i == 122 { return "Tianyu"; }
+        if i == 123 { return "Shaoqing"; }
+        if i == 124 { return "Xuefeng"; }
+        if i == 125 { return "Guanting"; }
+        if i == 126 { return "Zhiyuan"; }
+        if i == 127 { return "Wenbo"; }
+        if i == 128 { return "Jingyu"; }
+        if i == 129 { return "Haodong"; }
+        if i == 130 { return "Yanlin"; }
+        if i == 131 { return "Qixuan"; }
+        if i == 132 { return "Shixin"; }
+        if i == 133 { return "Lianjie"; }
+        if i == 134 { return "Dongmei"; }
+        if i == 135 { return "Zhengyang"; }
+        if i == 136 { return "Kaiwen"; }
+        if i == 137 { return "Xingchen"; }
+        if i == 138 { return "Renshu"; }
+        if i == 139 { return "Yifan"; }
+        if i == 140 { return "Zeyu"; }
+        if i == 141 { return "Chuanli"; }
+        if i == 142 { return "Bingwen"; }
+        if i == 143 { return "Tingfeng"; }
+        if i == 144 { return "Xiaojian"; }
+        if i == 145 { return "Guozhi"; }
+        if i == 146 { return "Zhenhua"; }
+        if i == 147 { return "Weisheng"; }
+        if i == 148 { return "Jinhai"; }
+        if i == 149 { return "Honghui"; }
         return "Wei";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Mei"; }
         if i == 1 { return "Ling"; }
         if i == 2 { return "Xiu"; }
@@ -208,11 +258,61 @@ public abstract class KdspChineseNames {
         if i == 97 { return "Nan"; }
         if i == 98 { return "Song"; }
         if i == 99 { return "Yuan"; }
+        if i == 100 { return "E"; }
+        if i == 101 { return "Jia"; }
+        if i == 102 { return "Rou"; }
+        if i == 103 { return "Ah"; }
+        if i == 104 { return "Ju"; }
+        if i == 105 { return "Su"; }
+        if i == 106 { return "Zhao"; }
+        if i == 107 { return "Xiaowei"; }
+        if i == 108 { return "Yating"; }
+        if i == 109 { return "Zhenzhen"; }
+        if i == 110 { return "Meiling"; }
+        if i == 111 { return "Qiuyue"; }
+        if i == 112 { return "Xinyi"; }
+        if i == 113 { return "Ruolan"; }
+        if i == 114 { return "Jingyi"; }
+        if i == 115 { return "Haiyan"; }
+        if i == 116 { return "Yumeng"; }
+        if i == 117 { return "Zixin"; }
+        if i == 118 { return "Chunhua"; }
+        if i == 119 { return "Baozhen"; }
+        if i == 120 { return "Tingting"; }
+        if i == 121 { return "Shufen"; }
+        if i == 122 { return "Xuelian"; }
+        if i == 123 { return "Guiying"; }
+        if i == 124 { return "Zhilan"; }
+        if i == 125 { return "Wenxin"; }
+        if i == 126 { return "Jiaxin"; }
+        if i == 127 { return "Huifang"; }
+        if i == 128 { return "Yanmei"; }
+        if i == 129 { return "Qianqian"; }
+        if i == 130 { return "Shurong"; }
+        if i == 131 { return "Lihua"; }
+        if i == 132 { return "Dongxue"; }
+        if i == 133 { return "Zhiruo"; }
+        if i == 134 { return "Kexin"; }
+        if i == 135 { return "Xingyu"; }
+        if i == 136 { return "Renxiang"; }
+        if i == 137 { return "Yiran"; }
+        if i == 138 { return "Zelin"; }
+        if i == 139 { return "Chunyan"; }
+        if i == 140 { return "Binglan"; }
+        if i == 141 { return "Tianxin"; }
+        if i == 142 { return "Xiaohong"; }
+        if i == 143 { return "Guifen"; }
+        if i == 144 { return "Zhenni"; }
+        if i == 145 { return "Weiwei"; }
+        if i == 146 { return "Jinfeng"; }
+        if i == 147 { return "Hongxia"; }
+        if i == 148 { return "Yaling"; }
+        if i == 149 { return "Quanxiu"; }
         return "Mei";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Wang"; }
         if i == 1 { return "Li"; }
         if i == 2 { return "Zhang"; }
@@ -313,6 +413,56 @@ public abstract class KdspChineseNames {
         if i == 97 { return "Tong"; }
         if i == 98 { return "Hua"; }
         if i == 99 { return "Bi"; }
+        if i == 100 { return "Chu"; }
+        if i == 101 { return "You"; }
+        if i == 102 { return "Tao"; }
+        if i == 103 { return "Qi"; }
+        if i == 104 { return "Zou"; }
+        if i == 105 { return "Shui"; }
+        if i == 106 { return "Dou"; }
+        if i == 107 { return "Yun"; }
+        if i == 108 { return "Ge"; }
+        if i == 109 { return "Xi"; }
+        if i == 110 { return "Lang"; }
+        if i == 111 { return "Miao"; }
+        if i == 112 { return "Bao"; }
+        if i == 113 { return "Ouyang"; }
+        if i == 114 { return "Shangguan"; }
+        if i == 115 { return "Situ"; }
+        if i == 116 { return "Zhuge"; }
+        if i == 117 { return "Xiahou"; }
+        if i == 118 { return "Huangfu"; }
+        if i == 119 { return "Gongsun"; }
+        if i == 120 { return "Murong"; }
+        if i == 121 { return "Duanmu"; }
+        if i == 122 { return "Baili"; }
+        if i == 123 { return "Dongfang"; }
+        if i == 124 { return "Ximen"; }
+        if i == 125 { return "Nangong"; }
+        if i == 126 { return "Puyang"; }
+        if i == 127 { return "Zhongli"; }
+        if i == 128 { return "Yuchi"; }
+        if i == 129 { return "Changsun"; }
+        if i == 130 { return "Sikong"; }
+        if i == 131 { return "Shentu"; }
+        if i == 132 { return "Helian"; }
+        if i == 133 { return "Yuwen"; }
+        if i == 134 { return "Tuoba"; }
+        if i == 135 { return "Wanyan"; }
+        if i == 136 { return "Yelu"; }
+        if i == 137 { return "Xianyu"; }
+        if i == 138 { return "Zhangsun"; }
+        if i == 139 { return "Chunyu"; }
+        if i == 140 { return "Taishi"; }
+        if i == 141 { return "Gongye"; }
+        if i == 142 { return "Leng"; }
+        if i == 143 { return "Nie"; }
+        if i == 144 { return "Kuang"; }
+        if i == 145 { return "Lou"; }
+        if i == 146 { return "Mi"; }
+        if i == 147 { return "Ben"; }
+        if i == 148 { return "Ju"; }
+        if i == 149 { return "Che"; }
         return "Wang";
     }
 }

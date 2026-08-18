@@ -126,6 +126,21 @@ public class KdspDeepScanSettings {
     public let scannerGlitchChance: Int32 = 200;
 
     @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Generation")
+    @runtimeProperty("ModSettings.displayName", "BOLO Notices")
+    @runtimeProperty("ModSettings.description", "NCPD lookout flags on scanned civilians — persons of interest, missing person matches, material witnesses, corp asset recovery. Independent of warrant status.")
+    public let enableBoloNotices: Bool = true;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
+    @runtimeProperty("ModSettings.category", "Generation")
+    @runtimeProperty("ModSettings.displayName", "BOLO Notice Chance")
+    @runtimeProperty("ModSettings.description", "How often a scanned civilian carries a BOLO notice. 5 = 1 in 5 scans, 200 = 1 in 200. Default: 40 (2.5%).")
+    @runtimeProperty("ModSettings.step", "5")
+    @runtimeProperty("ModSettings.min", "5")
+    @runtimeProperty("ModSettings.max", "200")
+    public let boloNoticeChance: Int32 = 40;
+
+    @runtimeProperty("ModSettings.mod", "Kiroshi Deep Scan")
     @runtimeProperty("ModSettings.category", "Developer")
     @runtimeProperty("ModSettings.displayName", "Debug Mode")
     @runtimeProperty("ModSettings.description", "Shows the NPC's TweakDB ID and appearance name in the scanner. Useful for bug reports.")
@@ -339,6 +354,22 @@ public abstract class KdspSettings {
             return system.GetSettings().scannerGlitchChance;
         }
         return 200;
+    }
+
+    public static func BoloNoticesEnabled() -> Bool {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().enableBoloNotices;
+        }
+        return true;
+    }
+
+    public static func GetBoloNoticeChance() -> Int32 {
+        let system = KdspDeepScanSystem.GetInstance(GetGameInstance());
+        if IsDefined(system) && IsDefined(system.GetSettings()) {
+            return system.GetSettings().boloNoticeChance;
+        }
+        return 40;
     }
 
     public static func CompactRelationshipsEnabled() -> Bool {

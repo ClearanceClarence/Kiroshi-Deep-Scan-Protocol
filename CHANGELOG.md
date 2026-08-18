@@ -4,6 +4,46 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [2.4]
+
+- Name pools expanded from 100 to 130-150 per category across all 13 ethnicities — ~1,700 new names, total combinations up from 260K to ~560K
+- Home event pool expanded from 162 to 201 — megabuildings, capsule pods, marina boats, rooftop shacks, Badlands trailers, storage units, corpo-ruin squats, housing co-ops, gang-taxed blocks
+- Job event pool expanded from 210 to 240 — BD editing sweatshops, AV traffic control, body banks, ripperdoc assistants, NCPD evidence room, Delamain depots, drone recovery, combat zone towing
+- Adult event pool expanded from 484 to 524 — heavily weighted toward positive and neutral outcomes: paid-off debts, sobriety milestones, hobby communities, stable marriages, night school, mentorship, quiet lives
+- Upbringing event pool expanded from 235 to 255 — non-parent-focused entries: school life, sibling dynamics, first jobs, neighborhood culture, block festivals, stoop chess
+- Positive/neutral additions deliberately counterbalance the tragedy-heavy pools — contrast makes the dark entries land harder
+- District-flavored scanner loading text — the scan sequence now routes through local infrastructure: Watson municipal nodes, Pacifica darknet relays, corpo-grade encryption in City Center, Barghest jamming in Dogtown, nomad repeaters in the Badlands
+- 51 district-specific loading lines across 8 districts plus generic fallback, appearing as the second line of every scan when the district is known
+- Implemented real coordinate-based district detection (GetCurrentDistrict was previously a placeholder that always returned WATSON) — approximate world-space bounding regions for all districts including Dogtown
+- New BOLO / alert notice system — ~1 in 40 civilian scans carries an NCPD lookout flag independent of warrant status: persons of interest, material witnesses, missing person facial matches, corp asset recovery, welfare checks, cyberware recalls, anonymous tips
+- 72 BOLO notice types across twelve categories, deterministic per NPC — persons of interest, witnesses, missing persons, corp flags, civil/administrative, medical/safety, NetWatch/cyber, gang/street, financial, bounty/private contracts, cold cases, and statistical anomalies
+- New settings: BOLO Notices toggle (default On) and BOLO Notice Chance slider (5-200, default 40 = 2.5%)
+- Clean-record civilians can carry a BOLO — being looked for doesn't require a rap sheet; the notice shows with "NO CRIMINAL RECORD" status
+- Criminal Record section now renders in urgent red when a BOLO notice or active warrant is present, standard soft red otherwise
+- Performance: unique NPC lookup consolidated to a single resolution call — the 244-check entry scan previously ran up to 6 times per unique NPC scan, now runs at most 3 (once per identifier type)
+- Performance: life event pools now cached per archetype in a ScriptableSystem — previously every scan allocated ~1,375 event objects and rebuilt 5 weight tables, now only the first scan of each archetype pays the build cost
+- Performance: event selection switched from linear scan to binary search (~200 iterations down to ~8 on the largest pool, runs 8+ times per scan)
+- Performance: event text token replacement skips the 18+ per-token scans entirely for strings with no tokens (most of them)
+- Performance: NPC identity strings (appearance, record ID) computed once per scan instead of up to 6 times across detection, exclusion, and debug paths
+- Fixed latent crash in event selection — the index search had no bounds check and could overrun the weight table when the roll landed on the total weight
+- Fixed weight table off-by-one — the last event in every life event pool was silently excluded from selection since the pools were introduced
+- Seed version bumped to 5 — event distributions shift due to the weight table fix and new content, existing NPCs regenerate on next scan
+- Scanner footer: v2.4
+
+---
+
+## [2.3.2]
+
+- Fixed excessive parent absence frequency in Upbringing pool — 14 similar entries had ~34% combined weight, reduced to ~12%
+- Replaced amnesia text (MOT_ANSA/FAT_ANSA) with varied Night City causes (food riots, corpo crossfire)
+- Replaced generic "unidentified" and "never knew" parent text with specific backstory
+- Removed duplicate SLD_BY_PRNTS entry
+- Halved weight on BD_HD_PRNTS, PRNTS_CRSH, ABON_CHILD, STRTS_NOPRNTS
+- Reduced MOT_UNID, FAT_UNID, UNKNOWN_FATHER, UNKNOWN_MOTHER, MOT_ANSA, FAT_ANSA to 1/3 weight
+- Added optional Trauma Team mod compatibility patch (optional/TraumaTeamCompat/) — replaces procedural TT coverage with the external mod's subscription system
+
+---
+
 ## [2.3.1]
 
 - Trimmed Wilson entry from 12 fields to 7 — was overflowing the scanner panel

@@ -21,11 +21,28 @@ public class KdspScannerLoadingText {
             lineCount = RandRange(seed, 3, 8);
         }
         
+        // Detect the player's district for location-flavored lines.
+        // Scan range is short, so player and target share a district.
+        let district: String = "UNKNOWN";
+        let player = GetPlayer(GetGameInstance());
+        if IsDefined(player) {
+            district = KdspCrowdDistrictManager.GetCurrentDistrict(player.GetWorldPosition());
+        };
+
         // Always start with connection
         ArrayPush(lines, KdspScannerLoadingText.GetConnectionLine(seed));
-        
+
+        // When the district is known, the second line routes through
+        // local infrastructure before hitting citywide databases
+        let usedDistrictLine: Bool = false;
+        if lineCount >= 3 && NotEquals(district, "UNKNOWN") {
+            ArrayPush(lines, KdspScannerLoadingText.GetDistrictLine(seed + 31, district));
+            usedDistrictLine = true;
+        };
+
         // Fill middle lines based on count
         let i = 1;
+        if usedDistrictLine { i = 2; };
         while i < lineCount - 1 {
             let lineType = RandRange(seed + (i * 50), 1, 100);
             
@@ -52,6 +69,78 @@ public class KdspScannerLoadingText {
         ArrayPush(lines, KdspScannerLoadingText.GetSuccessLine(seed + 999));
         
         return lines;
+    }
+
+    // ══════════════════════════════════════════════════════════════════════
+    // DISTRICT-FLAVORED LINES
+    // ══════════════════════════════════════════════════════════════════════
+    private static func GetDistrictLine(seed: Int32, district: String) -> String {
+        let lines: array<String>;
+
+        if Equals(district, "WATSON") {
+            ArrayPush(lines, "Accessing Watson municipal records node...");
+            ArrayPush(lines, "Routing through Kabuki market mesh network...");
+            ArrayPush(lines, "Querying Little China district registry...");
+            ArrayPush(lines, "Pinging Northside industrial subnet...");
+            ArrayPush(lines, "Tapping Watson NCPD precinct feed...");
+            ArrayPush(lines, "Negotiating with Tyger Claw-patched local node...");
+        } else if Equals(district, "WESTBROOK") {
+            ArrayPush(lines, "Routing through Japantown commercial grid...");
+            ArrayPush(lines, "Accessing Charter Hill resident registry [ENCRYPTED]...");
+            ArrayPush(lines, "Querying North Oak private security logs...");
+            ArrayPush(lines, "Handshaking with Westbrook luxury retail net...");
+            ArrayPush(lines, "Bypassing Tyger Claw traffic monitors...");
+            ArrayPush(lines, "Piggybacking a Japantown BD lounge uplink...");
+        } else if Equals(district, "CITY_CENTER") {
+            ArrayPush(lines, "Negotiating corpo-grade encryption layer...");
+            ArrayPush(lines, "Routing around Arasaka Tower exclusion zone...");
+            ArrayPush(lines, "Accessing City Center financial district node...");
+            ArrayPush(lines, "Spoofing corporate plaza credentials...");
+            ArrayPush(lines, "Evading Militech perimeter sniffers...");
+            ArrayPush(lines, "Querying downtown surveillance backbone...");
+        } else if Equals(district, "HEYWOOD") {
+            ArrayPush(lines, "Routing through Heywood barrio mesh...");
+            ArrayPush(lines, "Querying Vista del Rey community node...");
+            ArrayPush(lines, "Accessing The Glen municipal substation...");
+            ArrayPush(lines, "Skirting Valentino-monitored channels...");
+            ArrayPush(lines, "Tapping Wellsprings transit data spine...");
+            ArrayPush(lines, "Handshaking with a Heywood bodega relay...");
+        } else if Equals(district, "SANTO_DOMINGO") {
+            ArrayPush(lines, "Routing through Arroyo industrial trunk line...");
+            ArrayPush(lines, "Accessing Santo Domingo factory worknet...");
+            ArrayPush(lines, "Querying Rancho Coronado housing registry...");
+            ArrayPush(lines, "Tapping a power plant maintenance channel...");
+            ArrayPush(lines, "Bypassing 6th Street checkpoint scanners...");
+            ArrayPush(lines, "Negotiating with an Arroyo union server...");
+        } else if Equals(district, "PACIFICA") {
+            ArrayPush(lines, "Routing through Pacifica darknet relay...");
+            ArrayPush(lines, "Scavenging bandwidth off dead resort infrastructure...");
+            ArrayPush(lines, "Avoiding Voodoo Boys netrunner territory...");
+            ArrayPush(lines, "Querying Coastview's last functioning node...");
+            ArrayPush(lines, "WARNING: No municipal coverage — using darknet...");
+            ArrayPush(lines, "Tunneling past NetWatch's Pacifica blacklist...");
+        } else if Equals(district, "DOGTOWN") {
+            ArrayPush(lines, "Tunneling under Barghest signal jamming...");
+            ArrayPush(lines, "Routing through smuggler frequency bands...");
+            ArrayPush(lines, "WARNING: Dogtown — no NCPD data available...");
+            ArrayPush(lines, "Negotiating with a black market data broker...");
+            ArrayPush(lines, "Piggybacking a Barghest patrol uplink [RISKY]...");
+            ArrayPush(lines, "Accessing pre-blockade municipal archives...");
+        } else if Equals(district, "BADLANDS") {
+            ArrayPush(lines, "Boosting signal — nearest relay 12 km out...");
+            ArrayPush(lines, "Routing through a nomad convoy repeater...");
+            ArrayPush(lines, "Querying sparse Badlands satellite coverage...");
+            ArrayPush(lines, "WARNING: Rural registry data may be years stale...");
+            ArrayPush(lines, "Tapping an abandoned Petrochem field station...");
+            ArrayPush(lines, "Handshaking with long-haul trucker mesh net...");
+        } else {
+            // Fallback for UNKNOWN — generic but local-sounding
+            ArrayPush(lines, "Triangulating local infrastructure nodes...");
+            ArrayPush(lines, "Routing through nearest municipal relay...");
+            ArrayPush(lines, "Querying district registry services...");
+        };
+
+        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
     }
 
     // ══════════════════════════════════════════════════════════════════════

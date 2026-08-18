@@ -2,7 +2,7 @@
 public abstract class KdspSoutheastAsianNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 148);
         if i == 0 { return "Nguyen"; }
         if i == 1 { return "Tran"; }
         if i == 2 { return "Minh"; }
@@ -103,11 +103,59 @@ public abstract class KdspSoutheastAsianNames {
         if i == 97 { return "Dani"; }
         if i == 98 { return "Ferry"; }
         if i == 99 { return "Gede"; }
+        if i == 100 { return "Arif"; }
+        if i == 101 { return "Dinh"; }
+        if i == 102 { return "Endro"; }
+        if i == 103 { return "Firman"; }
+        if i == 104 { return "Irwan"; }
+        if i == 105 { return "Ketut"; }
+        if i == 106 { return "Ngoc"; }
+        if i == 107 { return "Thanh"; }
+        if i == 108 { return "Virote"; }
+        if i == 109 { return "Wayan"; }
+        if i == 110 { return "Yusof"; }
+        if i == 111 { return "Zulkifli"; }
+        if i == 112 { return "Anh"; }
+        if i == 113 { return "Chanthara"; }
+        if i == 114 { return "Eka"; }
+        if i == 115 { return "Faisal"; }
+        if i == 116 { return "Gunawan"; }
+        if i == 117 { return "Lam"; }
+        if i == 118 { return "Phuc"; }
+        if i == 119 { return "San"; }
+        if i == 120 { return "Utomo"; }
+        if i == 121 { return "Wira"; }
+        if i == 122 { return "Sovann"; }
+        if i == 123 { return "Thura"; }
+        if i == 124 { return "Uthai"; }
+        if i == 125 { return "Veasna"; }
+        if i == 126 { return "Winai"; }
+        if i == 127 { return "Yothin"; }
+        if i == 128 { return "Zeya"; }
+        if i == 129 { return "Adisak"; }
+        if i == 130 { return "Boonmee"; }
+        if i == 131 { return "Chaiya"; }
+        if i == 132 { return "Dararith"; }
+        if i == 133 { return "Ekachai"; }
+        if i == 134 { return "Kittisak"; }
+        if i == 135 { return "Loem"; }
+        if i == 136 { return "Montri"; }
+        if i == 137 { return "Oudom"; }
+        if i == 138 { return "Piseth"; }
+        if i == 139 { return "Rithy"; }
+        if i == 140 { return "Sokha"; }
+        if i == 141 { return "Thawin"; }
+        if i == 142 { return "Vibol"; }
+        if i == 143 { return "Wattana"; }
+        if i == 144 { return "Yannick-Tho"; }
+        if i == 145 { return "Zaw-Min"; }
+        if i == 146 { return "Anong"; }
+        if i == 147 { return "Borey"; }
         return "Minh";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Linh"; }
         if i == 1 { return "Mai"; }
         if i == 2 { return "Lan"; }
@@ -208,11 +256,61 @@ public abstract class KdspSoutheastAsianNames {
         if i == 97 { return "Julia"; }
         if i == 98 { return "Kiki"; }
         if i == 99 { return "Lina"; }
+        if i == 100 { return "Anh"; }
+        if i == 101 { return "Bich"; }
+        if i == 102 { return "Chau"; }
+        if i == 103 { return "Dara"; }
+        if i == 104 { return "Jasmin"; }
+        if i == 105 { return "Ngan"; }
+        if i == 106 { return "Ratna"; }
+        if i == 107 { return "Siti"; }
+        if i == 108 { return "Thuy"; }
+        if i == 109 { return "Vy"; }
+        if i == 110 { return "Zahara"; }
+        if i == 111 { return "Aisyah"; }
+        if i == 112 { return "Bopha"; }
+        if i == 113 { return "Chanthou"; }
+        if i == 114 { return "Farida"; }
+        if i == 115 { return "Hang"; }
+        if i == 116 { return "Kim-Ly"; }
+        if i == 117 { return "Nhung"; }
+        if i == 118 { return "Puspita"; }
+        if i == 119 { return "Rina"; }
+        if i == 120 { return "Sopheap"; }
+        if i == 121 { return "Trang"; }
+        if i == 122 { return "Utari"; }
+        if i == 123 { return "Vania"; }
+        if i == 124 { return "Champa"; }
+        if i == 125 { return "Duyen"; }
+        if i == 126 { return "Sokhem"; }
+        if i == 127 { return "Thida"; }
+        if i == 128 { return "Utharat"; }
+        if i == 129 { return "Veata"; }
+        if i == 130 { return "Wipha"; }
+        if i == 131 { return "Yani"; }
+        if i == 132 { return "Zeyar"; }
+        if i == 133 { return "Achara"; }
+        if i == 134 { return "Bopha-Devi"; }
+        if i == 135 { return "Chenda"; }
+        if i == 136 { return "Davi"; }
+        if i == 137 { return "Ekarin"; }
+        if i == 138 { return "Hansa"; }
+        if i == 139 { return "Kanda"; }
+        if i == 140 { return "Leakena"; }
+        if i == 141 { return "Malis"; }
+        if i == 142 { return "Nary"; }
+        if i == 143 { return "Pisey"; }
+        if i == 144 { return "Ratanak"; }
+        if i == 145 { return "Sokhany"; }
+        if i == 146 { return "Theary"; }
+        if i == 147 { return "Vanna"; }
+        if i == 148 { return "Wassana"; }
+        if i == 149 { return "Yaowaluk"; }
         return "Linh";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Nguyen"; }
         if i == 1 { return "Tran"; }
         if i == 2 { return "Pham"; }
@@ -313,6 +411,56 @@ public abstract class KdspSoutheastAsianNames {
         if i == 97 { return "Villanueva"; }
         if i == 98 { return "Wong"; }
         if i == 99 { return "Yap"; }
+        if i == 100 { return "Aquino"; }
+        if i == 101 { return "Chea"; }
+        if i == 102 { return "Eng"; }
+        if i == 103 { return "Iskandar"; }
+        if i == 104 { return "Jaafar"; }
+        if i == 105 { return "Khoo"; }
+        if i == 106 { return "Mahmud"; }
+        if i == 107 { return "Ocampo"; }
+        if i == 108 { return "Quach"; }
+        if i == 109 { return "Trinh"; }
+        if i == 110 { return "Ung"; }
+        if i == 111 { return "Bacani"; }
+        if i == 112 { return "Cheam"; }
+        if i == 113 { return "Dinh"; }
+        if i == 114 { return "Escobar"; }
+        if i == 115 { return "Fajardo"; }
+        if i == 116 { return "Goh"; }
+        if i == 117 { return "Hashim"; }
+        if i == 118 { return "Ismail"; }
+        if i == 119 { return "Javier"; }
+        if i == 120 { return "Keo"; }
+        if i == 121 { return "Luong"; }
+        if i == 122 { return "Nop"; }
+        if i == 123 { return "Ramos"; }
+        if i == 124 { return "Salim"; }
+        if i == 125 { return "Tolentino"; }
+        if i == 126 { return "Utama"; }
+        if i == 127 { return "Widodo"; }
+        if i == 128 { return "Yusuf"; }
+        if i == 129 { return "Zamora"; }
+        if i == 130 { return "Chandra"; }
+        if i == 131 { return "Sok"; }
+        if i == 132 { return "Thach"; }
+        if i == 133 { return "Uch"; }
+        if i == 134 { return "Vann"; }
+        if i == 135 { return "Wong-Sar"; }
+        if i == 136 { return "Yim"; }
+        if i == 137 { return "Zaw-Htet"; }
+        if i == 138 { return "Ang"; }
+        if i == 139 { return "Bou"; }
+        if i == 140 { return "Chhim"; }
+        if i == 141 { return "Ek"; }
+        if i == 142 { return "Heng-Ly"; }
+        if i == 143 { return "Kim-Seng"; }
+        if i == 144 { return "Mao"; }
+        if i == 145 { return "Nhem"; }
+        if i == 146 { return "Ouk"; }
+        if i == 147 { return "Pen"; }
+        if i == 148 { return "Rath"; }
+        if i == 149 { return "Sam"; }
         return "Nguyen";
     }
 }

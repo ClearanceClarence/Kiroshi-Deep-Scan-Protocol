@@ -1,14 +1,6 @@
-// ============================================================================
-//  KdspCommunityPool.reds
-//  Kiroshi Deep Scan Protocol v2.3 — Phantom Connection System
-//
-//  Deterministic "neighborhood fabric" — NPCs in the same district pull
-//  relationship names from the same pool, creating the illusion of a
-//  connected community with zero state tracking.
-//
-//  Mode: PHANTOM / FULL (setting connectionMode 1 or 3)
-//  State: None — purely seed-based
-// ============================================================================
+// Kiroshi Deep Scan Protocol - Community Pool
+// Deterministic district name pools — NPCs in the same area independently
+// generate overlapping contacts. Used by Phantom and Full connection modes.
 
 public abstract class KdspCommunityPool {
 

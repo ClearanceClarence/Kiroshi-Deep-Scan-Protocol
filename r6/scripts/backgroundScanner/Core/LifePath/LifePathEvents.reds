@@ -1526,6 +1526,136 @@ public class KdspCrowdScannerEvents {
     public static func WORKPLACE_AFFAIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WORKPLACE_AFFAIR()); }
     public static func WORKPLACE_ENEMY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WORKPLACE_ENEMY()); }
     public static func WRONGFUL_ARREST() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.WRONGFUL_ARREST()); }
+
+    public static func LIVED_MEGA_H4() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MEGA_H4()).SetWealthMod(5); }
+    public static func LIVED_MEGA_H2() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MEGA_H2()); }
+    public static func LIVED_CAPSULE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CAPSULE()); }
+    public static func LIVED_STACKED() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STACKED()); }
+    public static func LIVED_MARINA_BOAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MARINA_BOAT()).SetCoolMod(5); }
+    public static func LIVED_ROOFTOP_SHACK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ROOFTOP_SHACK()).SetTechMod(10); }
+    public static func LIVED_OLD_METRO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_OLD_METRO()); }
+    public static func LIVED_CORPO_RUIN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CORPO_RUIN()).SetTechMod(5); }
+    public static func LIVED_MOTEL_MONTH() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MOTEL_MONTH()); }
+    public static func LIVED_LANDFILL_EDGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LANDFILL_EDGE()); }
+    public static func LIVED_BADLANDS_TRAILER() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BADLANDS_TRAILER()).SetTechMod(10); }
+    public static func LIVED_CLAN_CONVOY() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CLAN_CONVOY()).SetTechMod(15); }
+    public static func LIVED_ABOVE_SHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ABOVE_SHOP()).SetWealthMod(5); }
+    public static func LIVED_SRO_NORTHSIDE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_SRO_NORTHSIDE()); }
+    public static func LIVED_JAPANTOWN_MICRO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_JAPANTOWN_MICRO()).SetWealthMod(5); }
+    public static func LIVED_CHARTER_HILL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_CHARTER_HILL()).SetWealthMod(15) .SetIntMod(5); }
+    public static func LIVED_BASEMENT_SUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_BASEMENT_SUB()); }
+    public static func LIVED_GLEN_WALKUP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_GLEN_WALKUP()); }
+    public static func EVICTED_MEGACORP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.EVICTED_MEGACORP()); }
+    public static func EVICTED_RENT_ALGO() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.EVICTED_RENT_ALGO()); }
+    public static func HOUSE_FIRE_ARSON() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.HOUSE_FIRE_ARSON()); }
+    public static func BUILDING_CONDEMNED() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.BUILDING_CONDEMNED()); }
+    public static func INHERITED_UNIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.INHERITED_UNIT()).SetWealthMod(15); }
+    public static func RENT_CONTROLLED() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.RENT_CONTROLLED()).SetWealthMod(10); }
+    public static func ROOMMATE_SEVEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.ROOMMATE_SEVEN()); }
+    public static func LIVED_PACIFICA_HOTEL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_PACIFICA_HOTEL()); }
+    public static func LIVED_DOGTOWN_BLOCK() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_DOGTOWN_BLOCK()); }
+    public static func LIVED_ARROYO_INDUSTRIAL() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_ARROYO_INDUSTRIAL()); }
+    public static func LIVED_COASTVIEW_WALKUP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_COASTVIEW_WALKUP()); }
+    public static func SLEPT_WORKPLACE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.SLEPT_WORKPLACE()).SetWealthMod(5); }
+    public static func LIVED_STORAGE_UNIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_STORAGE_UNIT()); }
+    public static func HOME_FLOODED() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.HOME_FLOODED()); }
+    public static func LIVED_NEAR_POWERPLANT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_NEAR_POWERPLANT()); }
+    public static func LIVED_WITH_GRANDPARENTS_ADULT() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_WITH_GRANDPARENTS_ADULT()); }
+    public static func HOUSING_COOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.HOUSING_COOP()).SetIntMod(5); }
+    public static func LIVED_MAELSTROM_EDGE() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_MAELSTROM_EDGE()).SetCoolMod(10); }
+    public static func APARTMENT_BUGGED() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.APARTMENT_BUGGED()); }
+    public static func LIVED_LUXURY_SUBLET() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.LIVED_LUXURY_SUBLET()).SetWealthMod(10).SetCoolMod(10); }
+    public static func BUILDING_GANG_TAX() -> ref<KdspLifePathEvent> { return LPE(KdspTextHousing.BUILDING_GANG_TAX()); }
+    public static func JOB_BD_EDITOR_SWEATSHOP() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BD_EDITOR_SWEATSHOP()).SetIntMod(10).SetCoolMod(-5); }
+    public static func JOB_AV_TRAFFIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_AV_TRAFFIC()).SetIntMod(15); }
+    public static func JOB_BODY_BANK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_BODY_BANK()).SetCoolMod(10); }
+    public static func JOB_RIPPERDOC_ASSIST() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_RIPPERDOC_ASSIST()).SetTechMod(15); }
+    public static func JOB_NCPD_EVIDENCE() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NCPD_EVIDENCE()).SetCoolMod(10); }
+    public static func JOB_VENDING_RESTOCK() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_VENDING_RESTOCK()); }
+    public static func JOB_NOODLE_STAND() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NOODLE_STAND()).SetCoolMod(5).SetWealthMod(5); }
+    public static func JOB_DELAMAIN_DEPOT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DELAMAIN_DEPOT()).SetTechMod(15); }
+    public static func JOB_SCREAMSHEET() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SCREAMSHEET()).SetIntMod(10); }
+    public static func JOB_CORPO_CONTRACTOR_CHURN() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_CONTRACTOR_CHURN()).SetWealthMod(10); }
+    public static func JOB_DATA_JANITOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DATA_JANITOR()).SetIntMod(15); }
+    public static func JOB_CROWD_EXTRA() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CROWD_EXTRA()); }
+    public static func JOB_ORGAN_COURIER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ORGAN_COURIER()).SetReflexMod(10).SetCoolMod(10); }
+    public static func JOB_TOWING_COMBAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TOWING_COMBAT()).SetReflexMod(10); }
+    public static func JOB_CLINIC_NIGHT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CLINIC_NIGHT()).SetCoolMod(15); }
+    public static func JOB_SYNTH_MEAT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_SYNTH_MEAT()); }
+    public static func JOB_NEON_REPAIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_NEON_REPAIR()).SetTechMod(15); }
+    public static func JOB_DEBT_COLLECTOR_CALLS() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DEBT_COLLECTOR_CALLS()).SetCoolMod(5); }
+    public static func JOB_ARCADE_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_ARCADE_TECH()).SetTechMod(10); }
+    public static func JOB_FUNERAL_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_FUNERAL_TECH()).SetCoolMod(15); }
+    public static func JOB_WATER_RECLAIM() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_WATER_RECLAIM()).SetTechMod(15); }
+    public static func JOB_CORPO_GYM() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_CORPO_GYM()); }
+    public static func JOB_PAWN_COUNTER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PAWN_COUNTER()).SetCoolMod(10).SetWealthMod(5); }
+    public static func JOB_STREET_FOOD_CART() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_STREET_FOOD_CART()).SetReflexMod(5).SetWealthMod(5); }
+    public static func JOB_MAGLEV_CLEANER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_MAGLEV_CLEANER()).SetCoolMod(10); }
+    public static func JOB_DRONE_WRANGLER() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_DRONE_WRANGLER()).SetReflexMod(10).SetTechMod(10); }
+    public static func JOB_HOLO_AD_TECH() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_HOLO_AD_TECH()).SetTechMod(15); }
+    public static func JOB_TRANSLATOR_STREET() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_TRANSLATOR_STREET()).SetIntMod(15).SetCoolMod(10); }
+    public static func JOB_KIBBLE_QA() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_KIBBLE_QA()); }
+    public static func JOB_PARKING_ENFORCEMENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextJobs.JOB_PARKING_ENFORCEMENT()).SetCoolMod(15); }
+    public static func ADULT_PAID_OFF_DEBT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_PAID_OFF_DEBT()).SetWealthMod(10).SetCoolMod(5); }
+    public static func ADULT_TEN_YEARS_SOBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_TEN_YEARS_SOBER()).SetCoolMod(15); }
+    public static func ADULT_COMMUNITY_GARDEN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_COMMUNITY_GARDEN()).SetIntMod(5); }
+    public static func ADULT_CHESS_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_CHESS_CLUB()).SetIntMod(10); }
+    public static func ADULT_NIGHT_SCHOOL() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_NIGHT_SCHOOL()).SetIntMod(15); }
+    public static func ADULT_COACHES_KIDS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_COACHES_KIDS()).SetCoolMod(5); }
+    public static func ADULT_MARRIED_STABLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_MARRIED_STABLE()).SetCoolMod(5); }
+    public static func ADULT_BAND_WEEKENDS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_BAND_WEEKENDS()).SetCoolMod(10); }
+    public static func ADULT_FIXED_CREDIT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_FIXED_CREDIT()).SetWealthMod(10).SetIntMod(5); }
+    public static func ADULT_MENTORS_APPRENTICE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_MENTORS_APPRENTICE()).SetIntMod(10); }
+    public static func ADULT_SMALL_SAVINGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_SMALL_SAVINGS()).SetWealthMod(15); }
+    public static func ADULT_VOLUNTEERS_CLINIC() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_VOLUNTEERS_CLINIC()).SetCoolMod(5); }
+    public static func ADULT_BOOK_CLUB() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_BOOK_CLUB()).SetIntMod(10); }
+    public static func ADULT_QUIT_CORPO_HAPPY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_QUIT_CORPO_HAPPY()).SetCoolMod(10); }
+    public static func ADULT_FOSTER_PARENT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_FOSTER_PARENT()).SetCoolMod(10); }
+    public static func ADULT_FISHING_CONTACT() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_FISHING_CONTACT()); }
+    public static func ADULT_RESTORES_RADIOS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_RESTORES_RADIOS()).SetTechMod(15); }
+    public static func ADULT_NEIGHBORHOOD_WATCH() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_NEIGHBORHOOD_WATCH()).SetCoolMod(10); }
+    public static func ADULT_LEARNED_COOK() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_LEARNED_COOK()).SetCoolMod(5); }
+    public static func ADULT_REGULAR_BLOOD_DONOR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_REGULAR_BLOOD_DONOR()); }
+    public static func ADULT_SAME_BARBER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_SAME_BARBER()); }
+    public static func ADULT_PIGEON_KEEPER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_PIGEON_KEEPER()); }
+    public static func ADULT_TRIVIA_CHAMPION() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_TRIVIA_CHAMPION()).SetIntMod(10); }
+    public static func ADULT_STREET_HISTORIAN() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_STREET_HISTORIAN()).SetIntMod(15); }
+    public static func ADULT_WALKS_DOGS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_WALKS_DOGS()); }
+    public static func ADULT_COLLECTS_MAPS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_COLLECTS_MAPS()).SetIntMod(10); }
+    public static func ADULT_MAHJONG_CIRCLE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_MAHJONG_CIRCLE()).SetCoolMod(5); }
+    public static func ADULT_BALCONY_ASTRONOMER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_BALCONY_ASTRONOMER()).SetTechMod(5).SetIntMod(5); }
+    public static func ADULT_LETTERS_ABROAD() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_LETTERS_ABROAD()); }
+    public static func ADULT_REPAIRS_FREE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_REPAIRS_FREE()).SetTechMod(15).SetCoolMod(5); }
+    public static func ADULT_KARAOKE_REGULAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_KARAOKE_REGULAR()).SetCoolMod(5); }
+    public static func ADULT_QUIET_LIFE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_QUIET_LIFE()); }
+    public static func ADULT_MEMORIZED_BUS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_MEMORIZED_BUS()).SetIntMod(10); }
+    public static func ADULT_SUNDAY_MARKET() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_SUNDAY_MARKET()); }
+    public static func ADULT_TEACHES_LITERACY() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_TEACHES_LITERACY()).SetIntMod(10).SetCoolMod(5); }
+    public static func ADULT_OLD_CAR_RESTORE() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_OLD_CAR_RESTORE()).SetTechMod(15); }
+    public static func ADULT_ROOFTOP_MOVIES() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_ROOFTOP_MOVIES()).SetCoolMod(10); }
+    public static func ADULT_KEEPS_BEES() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_KEEPS_BEES()).SetTechMod(5).SetWealthMod(5); }
+    public static func ADULT_ANNIVERSARY_DINER() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_ANNIVERSARY_DINER()); }
+    public static func ADULT_HOSPITAL_VISITS() -> ref<KdspLifePathEvent> { return LPE(KdspTextAdulthood.ADULT_HOSPITAL_VISITS()).SetCoolMod(10); }
+    public static func UPB_SCHOOL_ROOF() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_SCHOOL_ROOF()); }
+    public static func UPB_CORPO_SCHOLARSHIP_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_CORPO_SCHOLARSHIP_KID()).SetIntMod(15); }
+    public static func UPB_STREET_VENDOR_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_STREET_VENDOR_KID()).SetReflexMod(5); }
+    public static func UPB_ARCADE_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_ARCADE_RAISED()).SetReflexMod(10); }
+    public static func UPB_OLDEST_OF_SIX() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_OLDEST_OF_SIX()).SetIntMod(10).SetCoolMod(5); }
+    public static func UPB_YOUNGEST_SPOILED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_YOUNGEST_SPOILED()); }
+    public static func UPB_LIBRARY_KID() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_LIBRARY_KID()).SetIntMod(15); }
+    public static func UPB_CHURCH_CHOIR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_CHURCH_CHOIR()).SetCoolMod(5); }
+    public static func UPB_MECHANIC_SHADOW() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_MECHANIC_SHADOW()).SetTechMod(15); }
+    public static func UPB_TRANSLATOR_CHILD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_TRANSLATOR_CHILD()).SetIntMod(15).SetCoolMod(5); }
+    public static func UPB_ROOFTOP_GANG_KIDS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_ROOFTOP_GANG_KIDS()).SetReflexMod(10); }
+    public static func UPB_PAPER_ROUTE_2060() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_PAPER_ROUTE_2060()).SetReflexMod(10); }
+    public static func UPB_SIBLING_RIVALRY_GOOD() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_SIBLING_RIVALRY_GOOD()).SetIntMod(5).SetReflexMod(5); }
+    public static func UPB_GRANDMOTHER_STORIES() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_GRANDMOTHER_STORIES()).SetIntMod(10); }
+    public static func UPB_FIRST_JOB_TWELVE() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_FIRST_JOB_TWELVE()).SetWealthMod(5); }
+    public static func UPB_BLOCK_PARTY_FAMILY() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_BLOCK_PARTY_FAMILY()).SetCoolMod(10); }
+    public static func UPB_SCRAP_PICKING() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_SCRAP_PICKING()).SetTechMod(10).SetWealthMod(5); }
+    public static func UPB_STOOP_CHESS() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_STOOP_CHESS()).SetIntMod(15); }
+    public static func UPB_SCHOOL_SHUT_MIDYEAR() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_SCHOOL_SHUT_MIDYEAR()); }
+    public static func UPB_NEIGHBOR_RAISED() -> ref<KdspLifePathEvent> { return LPE(KdspTextUpbringing.UPB_NEIGHBOR_RAISED()).SetCoolMod(10); }
 }
 
 public static func UpbringingEvents(
@@ -1555,16 +1685,15 @@ public static func UpbringingEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MDCRE_ORPHN(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.SNGL_MOT(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.SNGL_FAT(), NEU_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.BD_HD_PRNTS(), NEG_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.SLD_BY_PRNTS(), NEG_OUTCOME_WGT + GANGER_MOD);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.SLD_BY_PRNTS(), NEG_OUTCOME_WGT + JUNKIE_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.BD_HD_PRNTS(), NEG_OUTCOME_WGT / 2);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.SLD_BY_PRNTS(), NEG_OUTCOME_WGT + GANGER_MOD + JUNKIE_MOD);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.TRD_FOR_CHEM(), NEG_OUTCOME_WGT + JUNKIE_MOD);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.PRNTS_CRSH(), NEG_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MOT_ANSA(), NEG_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.FAT_ANSA(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.PRNTS_CRSH(), NEG_OUTCOME_WGT / 2);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MOT_ANSA(), NEG_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.FAT_ANSA(), NEG_OUTCOME_WGT / 3);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ABSV_FOSTER(), NEG_OUTCOME_WGT + JUNKIE_MOD + GANGER_MOD);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.TRB_ORPHN(), NEG_OUTCOME_WGT + JUNKIE_MOD + GANGER_MOD);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ABON_CHILD(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ABON_CHILD(), NEG_OUTCOME_WGT / 2);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.VLNT_MGTWR(), NEG_OUTCOME_WGT + GANGER_MOD);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.GRP_SCAVS(), NEG_OUTCOME_WGT + GANGER_MOD);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.VTGRN_LAB(), 1 + CORPO_MOD / 5);
@@ -1576,8 +1705,8 @@ public static func UpbringingEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.PAT_GNG_WRFR(), NEG_OUTCOME_WGT + GANGER_MOD);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.PAT_AVRG_CTZN(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.PAT_WLTH_CTZN(), POS_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MOT_UNID(), NEU_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.FAT_UNID(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MOT_UNID(), NEU_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.FAT_UNID(), NEU_OUTCOME_WGT / 3);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MOT_KLD_NCPD(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.FAT_KLD_NCPD(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MOT_KLD_MXTC(), NEG_OUTCOME_WGT);
@@ -1659,7 +1788,7 @@ public static func UpbringingEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.GOLDEN_CHILD(), POS_OUTCOME_WGT / 2);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UNWANTED_CHILD(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.FAMILY_SECRET(), NEU_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.STRTS_NOPRNTS(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.STRTS_NOPRNTS(), NEG_OUTCOME_WGT / 2);
     // Expanded Upbringing - NC Specific
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.NC_NATIVE(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MEGABUILDING_RAISED(), NEU_OUTCOME_WGT);
@@ -1679,6 +1808,26 @@ public static func UpbringingEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.RAISED_ON_KIBBLE(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.MUSIC_HOUSEHOLD(), POS_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.VIOLENCE_NORMAL(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_SCHOOL_ROOF(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_CORPO_SCHOLARSHIP_KID(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_STREET_VENDOR_KID(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_ARCADE_RAISED(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_OLDEST_OF_SIX(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_YOUNGEST_SPOILED(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_LIBRARY_KID(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_CHURCH_CHOIR(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_MECHANIC_SHADOW(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_TRANSLATOR_CHILD(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_ROOFTOP_GANG_KIDS(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_PAPER_ROUTE_2060(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_SIBLING_RIVALRY_GOOD(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_GRANDMOTHER_STORIES(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_FIRST_JOB_TWELVE(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_BLOCK_PARTY_FAMILY(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_SCRAP_PICKING(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_STOOP_CHESS(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_SCHOOL_SHUT_MIDYEAR(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UPB_NEIGHBOR_RAISED(), NEU_OUTCOME_WGT);
     return events;
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ABUSIVE_HOME(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ACCEL_GROWTH(), NEU_OUTCOME_WGT);
@@ -1775,8 +1924,8 @@ public static func UpbringingEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.TWO_DADS(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.TWO_MOMS(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UNDERGROUND(), NEU_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UNKNOWN_FATHER(), NEU_OUTCOME_WGT);
-    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UNKNOWN_MOTHER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UNKNOWN_FATHER(), NEU_OUTCOME_WGT / 3);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.UNKNOWN_MOTHER(), NEU_OUTCOME_WGT / 3);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.WAR_CHILD(), POS_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.WATSON_POOR(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.WELFARE_KID(), NEU_OUTCOME_WGT);
@@ -1930,6 +2079,45 @@ public static func HomeEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_ABOVE_BAR(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_BACK_SHOP(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_RIPPER_CLINIC(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_MEGA_H4(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_MEGA_H2(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_CAPSULE(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_STACKED(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_MARINA_BOAT(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_ROOFTOP_SHACK(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_OLD_METRO(), NEG_OUTCOME_WGT + JUNKIE_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_CORPO_RUIN(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_MOTEL_MONTH(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_LANDFILL_EDGE(), NEG_OUTCOME_WGT + JUNKIE_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_BADLANDS_TRAILER(), NEU_OUTCOME_WGT + NOMAD_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_CLAN_CONVOY(), NEU_OUTCOME_WGT + NOMAD_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_ABOVE_SHOP(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_SRO_NORTHSIDE(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_JAPANTOWN_MICRO(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_CHARTER_HILL(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_BASEMENT_SUB(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_GLEN_WALKUP(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.EVICTED_MEGACORP(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.EVICTED_RENT_ALGO(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.HOUSE_FIRE_ARSON(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.BUILDING_CONDEMNED(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.INHERITED_UNIT(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.RENT_CONTROLLED(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ROOMMATE_SEVEN(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_PACIFICA_HOTEL(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_DOGTOWN_BLOCK(), NEG_OUTCOME_WGT + GANGER_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_ARROYO_INDUSTRIAL(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_COASTVIEW_WALKUP(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.SLEPT_WORKPLACE(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_STORAGE_UNIT(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.HOME_FLOODED(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_NEAR_POWERPLANT(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_WITH_GRANDPARENTS_ADULT(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.HOUSING_COOP(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_MAELSTROM_EDGE(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.APARTMENT_BUGGED(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_LUXURY_SUBLET(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.BUILDING_GANG_TAX(), NEG_OUTCOME_WGT + GANGER_MOD);
     return events;
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_ARASAKA_TWR(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.LIVED_ATLANTA(), NEU_OUTCOME_WGT);
@@ -2454,6 +2642,36 @@ public static func JobEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_NET_ADMIN(), NEU_OUTCOME_WGT + CORPO_MOD);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_SHARD_WRITER(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_ELEVATOR_TECH(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_BD_EDITOR_SWEATSHOP(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_AV_TRAFFIC(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_BODY_BANK(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_RIPPERDOC_ASSIST(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_NCPD_EVIDENCE(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_VENDING_RESTOCK(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_NOODLE_STAND(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_DELAMAIN_DEPOT(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_SCREAMSHEET(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_CORPO_CONTRACTOR_CHURN(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_DATA_JANITOR(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_CROWD_EXTRA(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_ORGAN_COURIER(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_TOWING_COMBAT(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_CLINIC_NIGHT(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_SYNTH_MEAT(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_NEON_REPAIR(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_DEBT_COLLECTOR_CALLS(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_ARCADE_TECH(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_FUNERAL_TECH(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_WATER_RECLAIM(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_CORPO_GYM(), NEU_OUTCOME_WGT + CORPO_MOD);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_PAWN_COUNTER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_STREET_FOOD_CART(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_MAGLEV_CLEANER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_DRONE_WRANGLER(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_HOLO_AD_TECH(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_TRANSLATOR_STREET(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_KIBBLE_QA(), NEG_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_PARKING_ENFORCEMENT(), NEU_OUTCOME_WGT);
     return events;
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_ACTOR(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.JOB_AV_MECH(), NEU_OUTCOME_WGT);
@@ -2995,6 +3213,46 @@ public static func AdultEvents(
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.COLLATERAL(), NEG_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.DEBT_COLLECTOR(), NEU_OUTCOME_WGT);
 
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_PAID_OFF_DEBT(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_TEN_YEARS_SOBER(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_COMMUNITY_GARDEN(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_CHESS_CLUB(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_NIGHT_SCHOOL(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_COACHES_KIDS(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_MARRIED_STABLE(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_BAND_WEEKENDS(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_FIXED_CREDIT(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_MENTORS_APPRENTICE(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_SMALL_SAVINGS(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_VOLUNTEERS_CLINIC(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_BOOK_CLUB(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_QUIT_CORPO_HAPPY(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_FOSTER_PARENT(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_FISHING_CONTACT(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_RESTORES_RADIOS(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_NEIGHBORHOOD_WATCH(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_LEARNED_COOK(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_REGULAR_BLOOD_DONOR(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_SAME_BARBER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_PIGEON_KEEPER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_TRIVIA_CHAMPION(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_STREET_HISTORIAN(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_WALKS_DOGS(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_COLLECTS_MAPS(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_MAHJONG_CIRCLE(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_BALCONY_ASTRONOMER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_LETTERS_ABROAD(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_REPAIRS_FREE(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_KARAOKE_REGULAR(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_QUIET_LIFE(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_MEMORIZED_BUS(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_SUNDAY_MARKET(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_TEACHES_LITERACY(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_OLD_CAR_RESTORE(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_ROOFTOP_MOVIES(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_KEEPS_BEES(), POS_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_ANNIVERSARY_DINER(), NEU_OUTCOME_WGT);
+    PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ADULT_HOSPITAL_VISITS(), NEU_OUTCOME_WGT);
     return events;
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ACTIVISM(), NEU_OUTCOME_WGT);
     PushWeightedLifeEvent(events, KdspCrowdScannerEvents.ALBUM(), NEU_OUTCOME_WGT);

@@ -2,7 +2,7 @@
 public abstract class KdspEuropeanNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Hans"; }
         if i == 1 { return "Klaus"; }
         if i == 2 { return "Dieter"; }
@@ -103,11 +103,61 @@ public abstract class KdspEuropeanNames {
         if i == 97 { return "Daniele"; }
         if i == 98 { return "Riccardo"; }
         if i == 99 { return "Nicola"; }
+        if i == 100 { return "Bastien"; }
+        if i == 101 { return "Cormac"; }
+        if i == 102 { return "Emil"; }
+        if i == 103 { return "Fabien"; }
+        if i == 104 { return "Gunnar"; }
+        if i == 105 { return "Ivo"; }
+        if i == 106 { return "Jasper"; }
+        if i == 107 { return "Matthias"; }
+        if i == 108 { return "Nils"; }
+        if i == 109 { return "Otto"; }
+        if i == 110 { return "Pascal"; }
+        if i == 111 { return "Quentin"; }
+        if i == 112 { return "Rafael"; }
+        if i == 113 { return "Tobias"; }
+        if i == 114 { return "Ulrich"; }
+        if i == 115 { return "Viggo"; }
+        if i == 116 { return "Xavier"; }
+        if i == 117 { return "Yannick"; }
+        if i == 118 { return "Zoltan"; }
+        if i == 119 { return "Bruno"; }
+        if i == 120 { return "Cesare"; }
+        if i == 121 { return "Dominik"; }
+        if i == 122 { return "Enzo"; }
+        if i == 123 { return "Giancarlo"; }
+        if i == 124 { return "Ivan"; }
+        if i == 125 { return "Joachim"; }
+        if i == 126 { return "Konstantin"; }
+        if i == 127 { return "Marcel"; }
+        if i == 128 { return "Piero"; }
+        if i == 129 { return "Rasmus"; }
+        if i == 130 { return "Umberto"; }
+        if i == 131 { return "Valentin"; }
+        if i == 132 { return "Werner"; }
+        if i == 133 { return "Aldo"; }
+        if i == 134 { return "Sixten"; }
+        if i == 135 { return "Torbjorn"; }
+        if i == 136 { return "Vittorio"; }
+        if i == 137 { return "Waldemar"; }
+        if i == 138 { return "Ambrogio"; }
+        if i == 139 { return "Benedikt"; }
+        if i == 140 { return "Corentin"; }
+        if i == 141 { return "Donatello"; }
+        if i == 142 { return "Eusebio"; }
+        if i == 143 { return "Ferdinand"; }
+        if i == 144 { return "Gottfried"; }
+        if i == 145 { return "Hjalmar"; }
+        if i == 146 { return "Isidoro"; }
+        if i == 147 { return "Jean-Luc"; }
+        if i == 148 { return "Kristoffer"; }
+        if i == 149 { return "Leopold"; }
         return "Hans";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 147);
         if i == 0 { return "Ingrid"; }
         if i == 1 { return "Helga"; }
         if i == 2 { return "Greta"; }
@@ -208,11 +258,58 @@ public abstract class KdspEuropeanNames {
         if i == 97 { return "Giorgia"; }
         if i == 98 { return "Lucia"; }
         if i == 99 { return "Paola"; }
+        if i == 100 { return "Amelie"; }
+        if i == 101 { return "Beatrix"; }
+        if i == 102 { return "Delphine"; }
+        if i == 103 { return "Elsa"; }
+        if i == 104 { return "Hannelore"; }
+        if i == 105 { return "Johanna"; }
+        if i == 106 { return "Katarina"; }
+        if i == 107 { return "Liesel"; }
+        if i == 108 { return "Margot"; }
+        if i == 109 { return "Noelle"; }
+        if i == 110 { return "Ottilie"; }
+        if i == 111 { return "Paloma"; }
+        if i == 112 { return "Romy"; }
+        if i == 113 { return "Therese"; }
+        if i == 114 { return "Vivienne"; }
+        if i == 115 { return "Wilhelmina"; }
+        if i == 116 { return "Ynez"; }
+        if i == 117 { return "Zelda"; }
+        if i == 118 { return "Brigitta"; }
+        if i == 119 { return "Dagmar"; }
+        if i == 120 { return "Jutta"; }
+        if i == 121 { return "Marlene"; }
+        if i == 122 { return "Nadja"; }
+        if i == 123 { return "Oriana"; }
+        if i == 124 { return "Renate"; }
+        if i == 125 { return "Solveig"; }
+        if i == 126 { return "Tatiana"; }
+        if i == 127 { return "Ulrike"; }
+        if i == 128 { return "Veronique"; }
+        if i == 129 { return "Wanda"; }
+        if i == 130 { return "Yvette"; }
+        if i == 131 { return "Zita"; }
+        if i == 132 { return "Birgit"; }
+        if i == 133 { return "Annegret"; }
+        if i == 134 { return "Clothilde"; }
+        if i == 135 { return "Donatella"; }
+        if i == 136 { return "Edeltraud"; }
+        if i == 137 { return "Fiorella"; }
+        if i == 138 { return "Gunhild"; }
+        if i == 139 { return "Henriette"; }
+        if i == 140 { return "Immacolata"; }
+        if i == 141 { return "Jorunn"; }
+        if i == 142 { return "Kristiina"; }
+        if i == 143 { return "Maddalena"; }
+        if i == 144 { return "Nicoletta"; }
+        if i == 145 { return "Ottavia"; }
+        if i == 146 { return "Philippa"; }
         return "Ingrid";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Mueller"; }
         if i == 1 { return "Schmidt"; }
         if i == 2 { return "Schneider"; }
@@ -313,6 +410,56 @@ public abstract class KdspEuropeanNames {
         if i == 97 { return "Santoro"; }
         if i == 98 { return "Mariani"; }
         if i == 99 { return "Rinaldi"; }
+        if i == 100 { return "Aldenberg"; }
+        if i == 101 { return "Bertolini"; }
+        if i == 102 { return "Castellano"; }
+        if i == 103 { return "Dijkstra"; }
+        if i == 104 { return "Falkenrath"; }
+        if i == 105 { return "Grimaldi"; }
+        if i == 106 { return "Iversen"; }
+        if i == 107 { return "Kowalczyk"; }
+        if i == 108 { return "Lindqvist"; }
+        if i == 109 { return "Nystrom"; }
+        if i == 110 { return "Obermann"; }
+        if i == 111 { return "Paulsen"; }
+        if i == 112 { return "Thorsen"; }
+        if i == 113 { return "Uccello"; }
+        if i == 114 { return "Vandenberg"; }
+        if i == 115 { return "Wexler"; }
+        if i == 116 { return "Ziegler"; }
+        if i == 117 { return "Almqvist"; }
+        if i == 118 { return "Bergstrom"; }
+        if i == 119 { return "Dufresne"; }
+        if i == 120 { return "Engel"; }
+        if i == 121 { return "Fontaine"; }
+        if i == 122 { return "Hartmann"; }
+        if i == 123 { return "Ibsen"; }
+        if i == 124 { return "Jorgensen"; }
+        if i == 125 { return "Kessler"; }
+        if i == 126 { return "Lombardi"; }
+        if i == 127 { return "Neumann"; }
+        if i == 128 { return "Ohlsson"; }
+        if i == 129 { return "Pedersen"; }
+        if i == 130 { return "Sorensen"; }
+        if i == 131 { return "Toussaint"; }
+        if i == 132 { return "Ulfsson"; }
+        if i == 133 { return "Zimmermann"; }
+        if i == 134 { return "Antonelli"; }
+        if i == 135 { return "Clement"; }
+        if i == 136 { return "DeVries"; }
+        if i == 137 { return "Aakesson"; }
+        if i == 138 { return "Battaglia"; }
+        if i == 139 { return "Cavalcanti"; }
+        if i == 140 { return "Delacroix"; }
+        if i == 141 { return "Eichmann"; }
+        if i == 142 { return "Ferrante"; }
+        if i == 143 { return "Giordano"; }
+        if i == 144 { return "Holmberg"; }
+        if i == 145 { return "Ippolito"; }
+        if i == 146 { return "Jansen-Berg"; }
+        if i == 147 { return "Kirchner"; }
+        if i == 148 { return "Lagerkvist"; }
+        if i == 149 { return "Montanari"; }
         return "Mueller";
     }
 }

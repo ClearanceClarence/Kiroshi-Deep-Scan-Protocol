@@ -1,14 +1,6 @@
-// ============================================================================
-//  KdspConnectionTracker.reds
-//  Kiroshi Deep Scan Protocol v2.3 — Cross-NPC Connection System
-//
-//  ScriptableSystem that stores scan history during a game session.
-//  Tracks scanned NPC names, gangs, districts, and relationship names.
-//  Enables real cross-referencing between scanned NPCs.
-//
-//  Mode: TRACKED / FULL (setting connectionMode 2 or 3)
-//  Persists: Game session only (resets on load)
-// ============================================================================
+// Kiroshi Deep Scan Protocol - Connection Tracker
+// Session scan history for cross-referencing between scanned NPCs.
+// Used by Tracked and Full connection modes. Resets on load.
 
 public class KdspConnectionTracker extends ScriptableSystem {
 

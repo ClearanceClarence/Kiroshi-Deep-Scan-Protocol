@@ -238,5 +238,36 @@ public abstract class KdspTextJobs {
     public static func JOB_NET_ADMIN() -> String { return "Worked as a network administrator. "; }
     public static func JOB_SHARD_WRITER() -> String { return "Wrote data shards for distribution. "; }
     public static func JOB_ELEVATOR_TECH() -> String { return "Maintained elevators in megabuildings. "; }
+
+    public static func JOB_BD_EDITOR_SWEATSHOP() -> String { return "Edited BDs in a Kabuki sweatshop. Twelve-hour shifts inside other people's worst days. "; }
+    public static func JOB_AV_TRAFFIC() -> String { return "Worked AV traffic control for the city. One mistake is a headline. "; }
+    public static func JOB_BODY_BANK() -> String { return "Clerked at a body bank. Learned not to read the intake forms too closely. "; }
+    public static func JOB_RIPPERDOC_ASSIST() -> String { return "Assisted a ripperdoc. Held the tray, cleaned the chrome, kept the secrets. "; }
+    public static func JOB_NCPD_EVIDENCE() -> String { return "Worked the NCPD evidence room. Knows exactly what goes missing and when. "; }
+    public static func JOB_VENDING_RESTOCK() -> String { return "Restocked vending machines across Watson. Robbed eleven times. Company kept a counter. "; }
+    public static func JOB_NOODLE_STAND() -> String { return "Ran a noodle stand outside a corpo plaza. Knew every regular's order by heart. "; }
+    public static func JOB_DELAMAIN_DEPOT() -> String { return "Worked maintenance at a Delamain depot. The cabs talk to you if you work alone at night. "; }
+    public static func JOB_SCREAMSHEET() -> String { return "Wrote for a screamsheet. Made up half the quotes. Nobody ever checked. "; }
+    public static func JOB_CORPO_CONTRACTOR_CHURN() -> String { return "Third corpo contract in two years. Badge changes, cubicle doesn't. "; }
+    public static func JOB_DATA_JANITOR() -> String { return "Worked as a data janitor, scrubbing NET archives of things corps wanted forgotten. "; }
+    public static func JOB_CROWD_EXTRA() -> String { return "Paid crowd extra for BD shoots. Professional bystander. "; }
+    public static func JOB_ORGAN_COURIER() -> String { return "Couriered medical cargo across town. Never opened the cooler. Never asked. "; }
+    public static func JOB_TOWING_COMBAT() -> String { return "Drove a tow truck in the combat zone. Hazard pay barely covered the armor plating. "; }
+    public static func JOB_CLINIC_NIGHT() -> String { return "Night receptionist at a document-free clinic. Saw everything, remembered nothing. "; }
+    public static func JOB_SYNTH_MEAT() -> String { return "Line worker at a synth-meat plant. Hasn't eaten a burger since. "; }
+    public static func JOB_NEON_REPAIR() -> String { return "Repaired neon signage across Japantown. The city looks different from a cherry picker at 3 AM. "; }
+    public static func JOB_DEBT_COLLECTOR_CALLS() -> String { return "Worked phone collections for a lending app. Quit when they added the family-contact script. "; }
+    public static func JOB_ARCADE_TECH() -> String { return "Fixed arcade cabinets in Kabuki. Half the machines are older than the customers. "; }
+    public static func JOB_FUNERAL_TECH() -> String { return "Prepped bodies at a columbarium services firm. Steady work. Always steady work. "; }
+    public static func JOB_WATER_RECLAIM() -> String { return "Shift tech at a water reclamation plant. The city drinks because of people nobody thanks. "; }
+    public static func JOB_CORPO_GYM() -> String { return "Front desk at a corpo-only gym. Watched executives scream into phones on treadmills. "; }
+    public static func JOB_PAWN_COUNTER() -> String { return "Worked a pawnshop counter. Learned to price desperation. "; }
+    public static func JOB_STREET_FOOD_CART() -> String { return "Ran a food cart without a permit. Outran health inspectors twice. "; }
+    public static func JOB_MAGLEV_CLEANER() -> String { return "Cleaned NCART maglev cars overnight. Found things people would kill to get back. Left them alone. "; }
+    public static func JOB_DRONE_WRANGLER() -> String { return "Recovered crashed delivery drones for a logistics firm. Half the job is fighting scavs to the wreck. "; }
+    public static func JOB_HOLO_AD_TECH() -> String { return "Serviced holographic billboards. The city's dreams run on scaffolding and bad wiring. "; }
+    public static func JOB_TRANSLATOR_STREET() -> String { return "Freelance translator for street deals. Neutral party, paid by both sides. "; }
+    public static func JOB_KIBBLE_QA() -> String { return "Quality control at a kibble factory. There is no quality. There is only control. "; }
+    public static func JOB_PARKING_ENFORCEMENT() -> String { return "Wrote parking citations in Heywood. Most dangerous job in the city, per capita. "; }
 }
 

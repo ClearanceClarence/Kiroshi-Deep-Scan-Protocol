@@ -2,7 +2,7 @@
 public abstract class KdspKoreanNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Min-jun"; }
         if i == 1 { return "Seo-jun"; }
         if i == 2 { return "Ji-hoon"; }
@@ -103,11 +103,61 @@ public abstract class KdspKoreanNames {
         if i == 97 { return "Young"; }
         if i == 98 { return "Soo"; }
         if i == 99 { return "Hyun"; }
+        if i == 100 { return "Byung-Ho"; }
+        if i == 101 { return "Chang-Min"; }
+        if i == 102 { return "Dae-Sung"; }
+        if i == 103 { return "Eun-Woo"; }
+        if i == 104 { return "Gun-Woo"; }
+        if i == 105 { return "Hyun-Woo"; }
+        if i == 106 { return "In-Su"; }
+        if i == 107 { return "Jae-Hyun"; }
+        if i == 108 { return "Kang-Min"; }
+        if i == 109 { return "Kwang-Su"; }
+        if i == 110 { return "Min-Jun"; }
+        if i == 111 { return "Nam-Il"; }
+        if i == 112 { return "Sang-Hoon"; }
+        if i == 113 { return "Tae-Yang"; }
+        if i == 114 { return "Woo-Jin"; }
+        if i == 115 { return "Yong-Su"; }
+        if i == 116 { return "Chul-Soo"; }
+        if i == 117 { return "Do-Hyun"; }
+        if i == 118 { return "Gi-Hun"; }
+        if i == 119 { return "Ho-Jin"; }
+        if i == 120 { return "Il-Sung"; }
+        if i == 121 { return "Jin-Woo"; }
+        if i == 122 { return "Ki-Tae"; }
+        if i == 123 { return "Man-Sik"; }
+        if i == 124 { return "Nam-Gil"; }
+        if i == 125 { return "Sang-Woo"; }
+        if i == 126 { return "Tae-Min"; }
+        if i == 127 { return "Won-Ho"; }
+        if i == 128 { return "Young-Chul"; }
+        if i == 129 { return "Byeong-Cheol"; }
+        if i == 130 { return "Chan-Ho"; }
+        if i == 131 { return "Dong-Hyun"; }
+        if i == 132 { return "Geon-Woo"; }
+        if i == 133 { return "Hae-Sung"; }
+        if i == 134 { return "Ik-Jun"; }
+        if i == 135 { return "Jung-Ho"; }
+        if i == 136 { return "Kyung-Soo"; }
+        if i == 137 { return "Min-Ho"; }
+        if i == 138 { return "Oh-Sung"; }
+        if i == 139 { return "Seok-Jin"; }
+        if i == 140 { return "Tae-Joon"; }
+        if i == 141 { return "Woo-Sik"; }
+        if i == 142 { return "Yun-Ho"; }
+        if i == 143 { return "Beom-Seok"; }
+        if i == 144 { return "Chi-Won"; }
+        if i == 145 { return "Doo-Joon"; }
+        if i == 146 { return "Gwang-Hyun"; }
+        if i == 147 { return "Hyun-Bin"; }
+        if i == 148 { return "In-Guk"; }
+        if i == 149 { return "Jae-Wook"; }
         return "Min-jun";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Ji-yeon"; }
         if i == 1 { return "Soo-yeon"; }
         if i == 2 { return "Min-ji"; }
@@ -208,11 +258,61 @@ public abstract class KdspKoreanNames {
         if i == 97 { return "Ye"; }
         if i == 98 { return "Ga"; }
         if i == 99 { return "So"; }
+        if i == 100 { return "Bo-Ra"; }
+        if i == 101 { return "Chae-Won"; }
+        if i == 102 { return "Da-Eun"; }
+        if i == 103 { return "Eun-Ji"; }
+        if i == 104 { return "Ga-Young"; }
+        if i == 105 { return "Ha-Eun"; }
+        if i == 106 { return "In-Na"; }
+        if i == 107 { return "Ji-Woo"; }
+        if i == 108 { return "Kyung-Mi"; }
+        if i == 109 { return "Mi-Rae"; }
+        if i == 110 { return "Na-Yeon"; }
+        if i == 111 { return "Sang-Mi"; }
+        if i == 112 { return "Tae-Hee"; }
+        if i == 113 { return "Woo-Ri"; }
+        if i == 114 { return "Ye-Jin"; }
+        if i == 115 { return "Ah-Reum"; }
+        if i == 116 { return "Bo-Young"; }
+        if i == 117 { return "Chun-Hei"; }
+        if i == 118 { return "Da-Som"; }
+        if i == 119 { return "Eun-Kyung"; }
+        if i == 120 { return "Gyu-Ri"; }
+        if i == 121 { return "Hae-Won"; }
+        if i == 122 { return "Il-Hwa"; }
+        if i == 123 { return "Ji-Yeon"; }
+        if i == 124 { return "Kyung-Ja"; }
+        if i == 125 { return "Mi-Sook"; }
+        if i == 126 { return "Nam-Joo"; }
+        if i == 127 { return "Se-Yeon"; }
+        if i == 128 { return "Ha-Neul"; }
+        if i == 129 { return "Yeo-Reum"; }
+        if i == 130 { return "Byul"; }
+        if i == 131 { return "Chae-Rin"; }
+        if i == 132 { return "Dal-Rae"; }
+        if i == 133 { return "Eun-Bi"; }
+        if i == 134 { return "Ga-In"; }
+        if i == 135 { return "Hana"; }
+        if i == 136 { return "In-Young"; }
+        if i == 137 { return "Jin-Ah"; }
+        if i == 138 { return "Kyung-Hee"; }
+        if i == 139 { return "Mi-Cha"; }
+        if i == 140 { return "Nari"; }
+        if i == 141 { return "Seo-Yeon"; }
+        if i == 142 { return "Ye-Won"; }
+        if i == 143 { return "A-Yeong"; }
+        if i == 144 { return "Bom"; }
+        if i == 145 { return "Cho-Hee"; }
+        if i == 146 { return "Da-Hye"; }
+        if i == 147 { return "Eun-Seo"; }
+        if i == 148 { return "Go-Eun"; }
+        if i == 149 { return "Hye-Jin"; }
         return "Ji-yeon";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 135);
         if i == 0 { return "Kim"; }
         if i == 1 { return "Lee"; }
         if i == 2 { return "Park"; }
@@ -313,6 +413,41 @@ public abstract class KdspKoreanNames {
         if i == 97 { return "Gwak"; }
         if i == 98 { return "Hu"; }
         if i == 99 { return "Jae"; }
+        if i == 100 { return "Gil"; }
+        if i == 101 { return "Im"; }
+        if i == 102 { return "Ko"; }
+        if i == 103 { return "Uhm"; }
+        if i == 104 { return "Chae"; }
+        if i == 105 { return "Doh"; }
+        if i == 106 { return "Koo"; }
+        if i == 107 { return "Yeon"; }
+        if i == 108 { return "Gu"; }
+        if i == 109 { return "Ohm"; }
+        if i == 110 { return "Rha"; }
+        if i == 111 { return "Byeon"; }
+        if i == 112 { return "Dokgo"; }
+        if i == 113 { return "Eun"; }
+        if i == 114 { return "Gam"; }
+        if i == 115 { return "Hwangbo"; }
+        if i == 116 { return "Jegal"; }
+        if i == 117 { return "Kal"; }
+        if i == 118 { return "Namgung"; }
+        if i == 119 { return "Ogeum"; }
+        if i == 120 { return "Pyeon"; }
+        if i == 121 { return "Sagong"; }
+        if i == 122 { return "Seonu"; }
+        if i == 123 { return "Tan"; }
+        if i == 124 { return "Yeom"; }
+        if i == 125 { return "Deok"; }
+        if i == 126 { return "Gae"; }
+        if i == 127 { return "Hyeon"; }
+        if i == 128 { return "Kang-Jeon"; }
+        if i == 129 { return "Mo"; }
+        if i == 130 { return "No"; }
+        if i == 131 { return "On"; }
+        if i == 132 { return "Pung"; }
+        if i == 133 { return "Sang"; }
+        if i == 134 { return "Tang"; }
         return "Kim";
     }
 }

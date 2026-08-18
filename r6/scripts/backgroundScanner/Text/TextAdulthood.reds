@@ -545,5 +545,46 @@ public abstract class KdspTextAdulthood {
     public static func BLOOD_OATH() -> String { return "Bound by a blood oath. Won't say to whom. "; }
     public static func COLLATERAL() -> String { return "Was used as collateral for someone else's debt. "; }
     public static func DEBT_COLLECTOR() -> String { return "Works as a debt collector. Nobody's favorite person. "; }
+
+    public static func ADULT_PAID_OFF_DEBT() -> String { return "Paid off the last of the medical debt in %year%. Kept the receipt framed. "; }
+    public static func ADULT_TEN_YEARS_SOBER() -> String { return "Ten years clean this spring. Still carries the chip. "; }
+    public static func ADULT_COMMUNITY_GARDEN() -> String { return "Runs a rooftop garden co-op. Real tomatoes, traded like contraband. "; }
+    public static func ADULT_CHESS_CLUB() -> String { return "Plays chess every Sunday at the same Watson cafe. Twelve-year rivalry with the owner. "; }
+    public static func ADULT_NIGHT_SCHOOL() -> String { return "Finished a night-school certification while working doubles. Took four years. "; }
+    public static func ADULT_COACHES_KIDS() -> String { return "Coaches a kids' soccer league in The Glen. Keeps the trophies at work. "; }
+    public static func ADULT_MARRIED_STABLE() -> String { return "Married %years% years. Still eats lunch together every Thursday. "; }
+    public static func ADULT_BAND_WEEKENDS() -> String { return "Plays bass in a bar band on weekends. They're not good. Nobody cares. "; }
+    public static func ADULT_FIXED_CREDIT() -> String { return "Rebuilt a credit rating from scratch after the bankruptcy. Seven years of discipline. "; }
+    public static func ADULT_MENTORS_APPRENTICE() -> String { return "Mentors an apprentice in the trade. Says teaching is the only thing that lasts. "; }
+    public static func ADULT_SMALL_SAVINGS() -> String { return "Has an actual savings account. In this city, that's a personality trait. "; }
+    public static func ADULT_VOLUNTEERS_CLINIC() -> String { return "Volunteers weekends at a free clinic in Santo Domingo. "; }
+    public static func ADULT_BOOK_CLUB() -> String { return "In a book club that actually reads the books. Meets in a laundromat back room. "; }
+    public static func ADULT_QUIT_CORPO_HAPPY() -> String { return "Walked out of a corpo job in %year% and never looked back. Makes less. Sleeps more. "; }
+    public static func ADULT_FOSTER_PARENT() -> String { return "Fosters kids through the city system. Three placements so far. Keeps every drawing. "; }
+    public static func ADULT_FISHING_CONTACT() -> String { return "Fishes the bay every month with the same three friends since 2065. Nobody catches anything. "; }
+    public static func ADULT_RESTORES_RADIOS() -> String { return "Restores pre-war radios as a hobby. The apartment smells like solder and patience. "; }
+    public static func ADULT_NEIGHBORHOOD_WATCH() -> String { return "Organizes the building's informal watch rotation. Crime on the floor dropped by half. "; }
+    public static func ADULT_LEARNED_COOK() -> String { return "Learned to cook from a neighbor. Now feeds half the floor on holidays. "; }
+    public static func ADULT_REGULAR_BLOOD_DONOR() -> String { return "Donates blood every eight weeks. Rare type. The clinic sends birthday messages. "; }
+    public static func ADULT_SAME_BARBER() -> String { return "Same barber for fifteen years. It's the closest thing to therapy either of them has. "; }
+    public static func ADULT_PIGEON_KEEPER() -> String { return "Keeps racing pigeons on the roof. Illegal in the building code. Beloved on the block. "; }
+    public static func ADULT_TRIVIA_CHAMPION() -> String { return "Three-time champion of a Kabuki bar's trivia night. The trophy is a spray-painted boot. "; }
+    public static func ADULT_STREET_HISTORIAN() -> String { return "Unofficial historian of the block. Remembers every business that ever held the corner lease. "; }
+    public static func ADULT_WALKS_DOGS() -> String { return "Walks dogs for shut-ins in the building. Doesn't charge the ones on fixed income. "; }
+    public static func ADULT_COLLECTS_MAPS() -> String { return "Collects paper maps of old Night City. Owns editions the city archive doesn't. "; }
+    public static func ADULT_MAHJONG_CIRCLE() -> String { return "Plays mahjong Tuesdays with the aunties on floor nine. Loses on purpose. Sometimes. "; }
+    public static func ADULT_BALCONY_ASTRONOMER() -> String { return "Stargazes from the balcony with a homemade scope. Light pollution wins most nights. "; }
+    public static func ADULT_LETTERS_ABROAD() -> String { return "Writes actual paper letters to a cousin in the EU. Takes months. Worth it. "; }
+    public static func ADULT_REPAIRS_FREE() -> String { return "Fixes neighbors' appliances for free. Payment arrives anyway: tamales, favors, respect. "; }
+    public static func ADULT_KARAOKE_REGULAR() -> String { return "Owns one karaoke song and performs it like a sworn duty every Friday. "; }
+    public static func ADULT_QUIET_LIFE() -> String { return "No record, no debts, no drama. In Night City, statistically remarkable. "; }
+    public static func ADULT_MEMORIZED_BUS() -> String { return "Has the entire NCART schedule memorized. People plan trips by asking. "; }
+    public static func ADULT_SUNDAY_MARKET() -> String { return "Hasn't missed the Sunday market in Heywood in six years. The vendors hold things aside. "; }
+    public static func ADULT_TEACHES_LITERACY() -> String { return "Teaches reading at the community center two nights a week. "; }
+    public static func ADULT_OLD_CAR_RESTORE() -> String { return "Restoring a 2040s sedan in a rented garage bay. Five years in. Almost runs. "; }
+    public static func ADULT_ROOFTOP_MOVIES() -> String { return "Runs a rooftop movie night in summer. Projector, bedsheet, whoever shows up. "; }
+    public static func ADULT_KEEPS_BEES() -> String { return "Keeps bees on the roof. The honey sells out in a day. City says it's illegal. City buys it anyway. "; }
+    public static func ADULT_ANNIVERSARY_DINER() -> String { return "Eats at the same diner every anniversary of getting to Night City. Orders the same thing. "; }
+    public static func ADULT_HOSPITAL_VISITS() -> String { return "Visits a hospitalized friend every week. Two years now. Never missed one. "; }
 }
 

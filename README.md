@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=0a0e14" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-2.3.1-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-2.4-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=0a0e14" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=0a0e14" alt="License">
 </p>
@@ -37,10 +37,11 @@
 │  ▸ Procedural Generation .... Systems that build NPC lives                   │
 │  ▸ Special Classifications .. 90 hidden NPC types                            │
 │  ▸ Relationships ............ Social network generation                      │
-│  ▸ Name Generation .......... 280K+ culturally matched names                 │
+│  ▸ Name Generation .......... 560K+ culturally matched names                 │
 │  ▸ Narrative Coherence ...... Life theme system                              │
 │  ▸ Scanner Glitches ......... Kiroshi malfunction system                     │
 │  ▸ NPC Connections .......... Cross-NPC cross-referencing                    │
+│  ▸ BOLO Notices ............. NCPD lookout flag system                       │
 │  ▸ Translation .............. Community localization guide                   │
 │  ▸ Configuration ............ Mod settings breakdown                         │
 │  ▸ Installation ............. Requirements + setup                           │
@@ -60,7 +61,7 @@ Deep Scan Protocol hooks your Kiroshi optics into every major database in Night 
 
 All data is **deterministically generated** from each NPC's entity ID — the same NPC always produces identical results across sessions. No two citizens share a profile.
 
-> **`230 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`90 SOURCE FILES`**
+> **`230 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`93 SOURCE FILES`**
 
 <br>
 
@@ -328,7 +329,7 @@ Every non-unique NPC gets a full procedural profile built from their entity ID.
 
 ### ░ Life Events
 
-1,901 unique events build procedural backstories. Each carries gender-specific text, stat modifiers, and lifepath weighting.
+2,012 unique events build procedural backstories. Each carries gender-specific text, stat modifiers, and lifepath weighting.
 
 | Category | Count | Examples |
 |:--|:--|:--|
@@ -555,6 +556,26 @@ Cross-NPC connection system with four modes: **Off**, **Phantom**, **Tracked**, 
 
 <br>
 
+### ░ BOLO Notices &nbsp; <img src="https://img.shields.io/badge/v2.4-ff4757?style=flat-square&labelColor=0a0e14" alt="v2.4">
+
+NCPD lookout flags on scanned civilians — independent of warrant status. A BOLO doesn't mean charges. It means someone is looking for this person.
+
+72 notice types across twelve categories: persons of interest, material witnesses, missing person facial matches, corp asset recovery, NDA enforcement watches, welfare checks, cyberware recalls, NetWatch interest flags, gang retaliation warnings, private locate contracts, cold case DNA reviews, and statistical anomalies the system can't explain.
+
+Clean-record civilians can carry a BOLO — being looked for doesn't require a rap sheet. When a notice or active warrant is present, the entire Criminal Record section renders in urgent red.
+
+> Default: ~1 in 40 scans (2.5%). Toggleable and tunable (1 in 5 to 1 in 200) in Settings → Generation.
+
+<br>
+
+### ░ District-Aware Scanning &nbsp; <img src="https://img.shields.io/badge/v2.4-5ef6e1?style=flat-square&labelColor=0a0e14" alt="v2.4">
+
+The scan loading sequence now routes through whatever local infrastructure your district actually has. Scan someone in Watson and the Kiroshi taps municipal records nodes and Kabuki market mesh networks. In Pacifica there's no municipal coverage — the scanner falls back to darknet relays. City Center means negotiating corpo-grade encryption. Dogtown means tunneling under Barghest signal jamming. The Badlands means boosting signal to a relay 12 kilometers out.
+
+51 district-specific lines across 8 districts, driven by real position-based district detection.
+
+<br>
+
 <img src="/branding/section_translation.svg" alt="Translation" width="100%">
 
 Want to translate Kiroshi Deep Scan into your language? Download the [Translation Guide](TRANSLATION_GUIDE.html), extract it, and open in your browser.
@@ -587,6 +608,8 @@ All settings: **Mod Settings Menu → Kiroshi Deep Scan**
 | Scanner Glitches | On / Off | On |
 | Scanner Glitch Chance | 1–500 | 200 |
 | NPC Connections | Off / Phantom / Tracked / Full | Off |
+| BOLO Notices | On / Off | On |
+| BOLO Notice Chance | 5–200 | 40 |
 
 ### ░ Sections
 
@@ -769,6 +792,12 @@ That's the Tracked connection system. After 3+ scans, there's a 15% chance per n
 </details>
 
 <details>
+<summary><b>▸ What does a red Criminal Record section mean?</b></summary>
+<br>
+New in v2.4. The section turns urgent red when the subject carries a BOLO notice or an active warrant. A BOLO means someone — NCPD, a corp, a bail bondsman, a private client — is looking for this person. About 1 in 40 civilians has one. Some of them don't even have criminal records. Some of them don't know they're being looked for.
+</details>
+
+<details>
 <summary><b>▸ What's the difference between Phantom and Tracked connections?</b></summary>
 <br>
 Phantom is pure illusion — deterministic name pools mean NPCs in the same neighborhood independently generate the same contacts, but no alerts fire. You notice patterns yourself. Tracked actually remembers who you've scanned and fires ⊕ CROSS-REFERENCE alerts when it finds real matches. Full combines both.
@@ -851,7 +880,7 @@ if StrContains(recordId, "takemura") { return KdspUniqueNPCEntries.Takemura(); }
 </details>
 
 <details>
-<summary><b>▸ PROJECT STRUCTURE</b> — 90 source files</summary>
+<summary><b>▸ PROJECT STRUCTURE</b> — 93 source files</summary>
 <br>
 
 ```
@@ -874,13 +903,13 @@ r6/scripts/backgroundScanner/
 │   ├── Names/                             13 ethnicity files × 300 names
 │   ├── Barghest/                          Barghest militia profiles
 │   ├── Coherence/                         Narrative coherence system
-│   ├── Connections/                       Cross-NPC connection system (v2.3)
-│   ├── Criminal/                          Criminal record generation
+│   ├── Connections/                       Cross-NPC connection system
+│   ├── Criminal/                          Criminal records + BOLO notices
 │   ├── Cyberware/                         Cyberware registry
 │   ├── District/                          District-based generation
 │   ├── Financial/                         Financial profiles + NC ID
 │   ├── Gang/                              11 gang profiles + name generator
-│   ├── LifePath/                          1,901 event definitions
+│   ├── LifePath/                          2,012 event definitions + pool cache
 │   ├── Medical/                           Medical records + blood types
 │   ├── NCPD/                              Personnel files + 200 profile entries
 │   ├── NET/                               NET profiles + 300 aliases

@@ -14,31 +14,32 @@ public const func CompileScannerChunks() -> Bool {
         return wrappedMethod();
     }
 
+    // Identity strings used across detection, exclusion, and debug paths
+    let npcAppearance: String = NameToString(this.GetCurrentAppearanceName());
+    let npcRecordId: String = TDBID.ToStringDEBUG(this.GetRecordID());
+    let npcRecordLower: String = StrLower(npcRecordId);
+
     // Quest-critical NPCs that need the vanilla scanner for mission progression.
     // These NPCs have scanner interactions (eavesdrop, quest data) that break
     // if we override their scanner output. Skip them entirely.
-    if KdspQuestScannerExclusions.ShouldUseVanillaScanner(this) {
+    if KdspQuestScannerExclusions.ShouldUseVanillaScannerPrecomputed(npcRecordLower, npcAppearance) {
         return wrappedMethod();
     }
 
-    // First check: Is this a unique/named NPC with a hand-crafted backstory?
-    if KdspUniqueNPCManager.IsUniqueNPC(this) {
-        let uniqueBackstory = KdspUniqueNPCManager.GetBackstory(this);
-        if IsDefined(uniqueBackstory) {
-            backstoryChunk = new KdspScannerBackstory();
-            let backstoryUI = uniqueBackstory.ToBackstoryUI();
-            
-            // Add debug info if enabled
-            if KdspSettings.DebugModeEnabled() {
-                let recordID = this.GetRecordID();
-                let appearanceName = NameToString(this.GetCurrentAppearanceName());
-                backstoryUI.debugInfo = "TweakDBID: " + TDBID.ToStringDEBUG(recordID) + "\nAppearance: " + appearanceName;
-            }
-            
-            backstoryChunk.Set(backstoryUI);
-            scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.KdspScannerBackstory, ToVariant(backstoryChunk));
-            return wrappedMethod();
+    // Is this a unique/named NPC with a hand-crafted backstory?
+    let uniqueBackstory = KdspUniqueNPCManager.TryGetBackstory(this);
+    if IsDefined(uniqueBackstory) {
+        backstoryChunk = new KdspScannerBackstory();
+        let backstoryUI = uniqueBackstory.ToBackstoryUI();
+
+        // Add debug info if enabled
+        if KdspSettings.DebugModeEnabled() {
+            backstoryUI.debugInfo = "TweakDBID: " + npcRecordId + "\nAppearance: " + npcAppearance;
         }
+
+        backstoryChunk.Set(backstoryUI);
+        scannerBlackboard.SetVariant(GetAllBlackboardDefs().UI_ScannerModules.KdspScannerBackstory, ToVariant(backstoryChunk));
+        return wrappedMethod();
     }
 
     // Second check: Generate procedural backstories for generic NPCs
@@ -50,53 +51,49 @@ public const func CompileScannerChunks() -> Bool {
 
     // Also generate for sex workers and service NPCs - they're placed NPCs, not crowd
     if !shouldGenerate && this.IsHuman() {
-        let checkAppearance = NameToString(this.GetCurrentAppearanceName());
-        let checkRecord = TDBID.ToStringDEBUG(this.GetRecordID());
-        let checkRecordLower = StrLower(checkRecord);
-        if StrContains(checkAppearance, "prostitute") || StrContains(checkAppearance, "sexworker") || StrContains(checkAppearance, "joytoy") {
+        if StrContains(npcAppearance, "prostitute") || StrContains(npcAppearance, "sexworker") || StrContains(npcAppearance, "joytoy") {
             shouldGenerate = true;
         }
         // Trauma Team - they have dedicated profiles now
-        if StrContains(checkAppearance, "trauma") {
+        if StrContains(npcAppearance, "trauma") {
             shouldGenerate = true;
         }
         // Corpo civilians - placed corporate employees, not crowd
-        if StrContains(checkAppearance, "corporat") || StrContains(checkRecordLower, "corpoman") || StrContains(checkRecordLower, "corpowoman") {
+        if StrContains(npcAppearance, "corporat") || StrContains(npcRecordLower, "corpoman") || StrContains(npcRecordLower, "corpowoman") {
             shouldGenerate = true;
         }
         // Service NPCs - ripperdocs, vendors, bartenders with unique TweakDB entries
-        if StrContains(checkAppearance, "ripperdoc") || StrContains(checkAppearance, "service_") || StrContains(checkAppearance, "barman") || StrContains(checkAppearance, "bartender") {
+        if StrContains(npcAppearance, "ripperdoc") || StrContains(npcAppearance, "service_") || StrContains(npcAppearance, "barman") || StrContains(npcAppearance, "bartender") {
             shouldGenerate = true;
         }
         // Quest-placed NPCs that use gang/civilian appearances but aren't crowd
         // Covers mq040 (Raymond Chandler Evening), mq013 (A Day In The Life), sts_ep1 (Phantom Liberty), etc.
-        if StrContains(checkRecordLower, ".mq0") || StrContains(checkRecordLower, ".sq0") || StrContains(checkRecordLower, ".sts_") || StrContains(checkAppearance, "mq0") || StrContains(checkAppearance, "sq0") || StrContains(checkAppearance, "sts_ep") {
+        if StrContains(npcRecordLower, ".mq0") || StrContains(npcRecordLower, ".sq0") || StrContains(npcRecordLower, ".sts_") || StrContains(npcAppearance, "mq0") || StrContains(npcAppearance, "sq0") || StrContains(npcAppearance, "sts_ep") {
             shouldGenerate = true;
         }
         // Vendor/shopkeeper NPCs
-        if StrContains(checkAppearance, "vendor") || StrContains(checkAppearance, "foodshop") || StrContains(checkRecordLower, "foodshop") {
+        if StrContains(npcAppearance, "vendor") || StrContains(npcAppearance, "foodshop") || StrContains(npcRecordLower, "foodshop") {
             shouldGenerate = true;
         }
     }
 
     // Skip corporate/military combat NPCs - only actual soldiers, not employees
     if shouldGenerate {
-        let appearanceName = NameToString(this.GetCurrentAppearanceName());
         // Skip military/tactical units that shouldn't have civilian backstories
-        if StrContains(appearanceName, "militech_soldier") || 
-           StrContains(appearanceName, "militech_mech") ||
-           StrContains(appearanceName, "arasaka_soldier") || 
-           StrContains(appearanceName, "arasaka_ninja") ||
-           StrContains(appearanceName, "arasaka_mech") ||
-           StrContains(appearanceName, "kang_tao_soldier") || 
-           StrContains(appearanceName, "ranger") || 
-           StrContains(appearanceName, "netwatch") || 
-           StrContains(appearanceName, "max_tac") || 
-           StrContains(appearanceName, "maxtac") ||
-           StrContains(appearanceName, "android") ||
-           StrContains(appearanceName, "droid") ||
-           StrContains(appearanceName, "robot") ||
-           StrContains(appearanceName, "mech_") {
+        if StrContains(npcAppearance, "militech_soldier") || 
+           StrContains(npcAppearance, "militech_mech") ||
+           StrContains(npcAppearance, "arasaka_soldier") || 
+           StrContains(npcAppearance, "arasaka_ninja") ||
+           StrContains(npcAppearance, "arasaka_mech") ||
+           StrContains(npcAppearance, "kang_tao_soldier") || 
+           StrContains(npcAppearance, "ranger") || 
+           StrContains(npcAppearance, "netwatch") || 
+           StrContains(npcAppearance, "max_tac") || 
+           StrContains(npcAppearance, "maxtac") ||
+           StrContains(npcAppearance, "android") ||
+           StrContains(npcAppearance, "droid") ||
+           StrContains(npcAppearance, "robot") ||
+           StrContains(npcAppearance, "mech_") {
             shouldGenerate = false;
         }
     }
@@ -106,9 +103,7 @@ public const func CompileScannerChunks() -> Bool {
         
         // Add debug info if enabled
         if KdspSettings.DebugModeEnabled() {
-            let recordID = this.GetRecordID();
-            let appearanceName = NameToString(this.GetCurrentAppearanceName());
-            backstoryUI.debugInfo = "TweakDBID: " + TDBID.ToStringDEBUG(recordID) + "\nAppearance: " + appearanceName;
+            backstoryUI.debugInfo = "TweakDBID: " + npcRecordId + "\nAppearance: " + npcAppearance;
         }
         
         backstoryChunk = new KdspScannerBackstory();
@@ -120,9 +115,7 @@ public const func CompileScannerChunks() -> Bool {
         // Still show debug info for skipped NPCs if debug mode enabled
         if KdspSettings.DebugModeEnabled() {
             let backstoryUI: KdspBackstoryUI;
-            let recordID = this.GetRecordID();
-            let appearanceName = NameToString(this.GetCurrentAppearanceName());
-            backstoryUI.debugInfo = "TweakDBID: " + TDBID.ToStringDEBUG(recordID) + "\nAppearance: " + appearanceName + "\n[No backstory generated for this NPC type]";
+            backstoryUI.debugInfo = "TweakDBID: " + npcRecordId + "\nAppearance: " + npcAppearance + "\n[No backstory generated for this NPC type]";
             backstoryUI.background = " "; // Non-empty to trigger display
             backstoryChunk.Set(backstoryUI);
         } else {

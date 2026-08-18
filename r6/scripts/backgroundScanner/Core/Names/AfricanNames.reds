@@ -2,7 +2,7 @@
 public abstract class KdspAfricanNames {
 
     public static func GetMaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Kwame"; }
         if i == 1 { return "Kofi"; }
         if i == 2 { return "Chidi"; }
@@ -103,11 +103,61 @@ public abstract class KdspAfricanNames {
         if i == 97 { return "Dubem"; }
         if i == 98 { return "Ezenwa"; }
         if i == 99 { return "Festus"; }
+        if i == 100 { return "Kwasi"; }
+        if i == 101 { return "Bakari"; }
+        if i == 102 { return "Chike"; }
+        if i == 103 { return "Ekon"; }
+        if i == 104 { return "Gyasi"; }
+        if i == 105 { return "Hasani"; }
+        if i == 106 { return "Idris"; }
+        if i == 107 { return "Jabari"; }
+        if i == 108 { return "Obi"; }
+        if i == 109 { return "Rudo"; }
+        if i == 110 { return "Sefu"; }
+        if i == 111 { return "Wekesa"; }
+        if i == 112 { return "Abioye"; }
+        if i == 113 { return "Babajide"; }
+        if i == 114 { return "Diallo"; }
+        if i == 115 { return "Folami"; }
+        if i == 116 { return "Gowon"; }
+        if i == 117 { return "Hondo"; }
+        if i == 118 { return "Lumumba"; }
+        if i == 119 { return "Mosi"; }
+        if i == 120 { return "Nuru"; }
+        if i == 121 { return "Tafari"; }
+        if i == 122 { return "Umaru"; }
+        if i == 123 { return "Yohannes"; }
+        if i == 124 { return "Zik"; }
+        if i == 125 { return "Bandele"; }
+        if i == 126 { return "Dakarai"; }
+        if i == 127 { return "Enitan"; }
+        if i == 128 { return "Kagiso"; }
+        if i == 129 { return "Tumelo"; }
+        if i == 130 { return "Katlego"; }
+        if i == 131 { return "Neo"; }
+        if i == 132 { return "Lesego"; }
+        if i == 133 { return "Tshepo"; }
+        if i == 134 { return "Karabo"; }
+        if i == 135 { return "Sizwe"; }
+        if i == 136 { return "Themba"; }
+        if i == 137 { return "Ayanda"; }
+        if i == 138 { return "Bhekizizwe"; }
+        if i == 139 { return "Dingane"; }
+        if i == 140 { return "Fanyana"; }
+        if i == 141 { return "Gatsha"; }
+        if i == 142 { return "Jabulani"; }
+        if i == 143 { return "Khulekani"; }
+        if i == 144 { return "Mduduzi"; }
+        if i == 145 { return "Nhlanhla"; }
+        if i == 146 { return "Phumlani"; }
+        if i == 147 { return "Sandile"; }
+        if i == 148 { return "Thulani"; }
+        if i == 149 { return "Velaphi"; }
         return "Kwame";
     }
 
     public static func GetFemaleFirstName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 150);
         if i == 0 { return "Amara"; }
         if i == 1 { return "Zuri"; }
         if i == 2 { return "Nia"; }
@@ -208,11 +258,61 @@ public abstract class KdspAfricanNames {
         if i == 97 { return "Esther"; }
         if i == 98 { return "Favor"; }
         if i == 99 { return "Gift"; }
+        if i == 100 { return "Dalila"; }
+        if i == 101 { return "Folasade"; }
+        if i == 102 { return "Jendayi"; }
+        if i == 103 { return "Kessie"; }
+        if i == 104 { return "Nailah"; }
+        if i == 105 { return "Panya"; }
+        if i == 106 { return "Ramla"; }
+        if i == 107 { return "Saada"; }
+        if i == 108 { return "Thema"; }
+        if i == 109 { return "Uzuri"; }
+        if i == 110 { return "Wangari"; }
+        if i == 111 { return "Zalika"; }
+        if i == 112 { return "Bosede"; }
+        if i == 113 { return "Chinwe"; }
+        if i == 114 { return "Ekene"; }
+        if i == 115 { return "Fumilayo"; }
+        if i == 116 { return "Gugu"; }
+        if i == 117 { return "Hadiza"; }
+        if i == 118 { return "Ijeoma"; }
+        if i == 119 { return "Kagiso"; }
+        if i == 120 { return "Lerato"; }
+        if i == 121 { return "Mbali"; }
+        if i == 122 { return "Onyeka"; }
+        if i == 123 { return "Palesa"; }
+        if i == 124 { return "Rufaro"; }
+        if i == 125 { return "Sibongile"; }
+        if i == 126 { return "Urenna"; }
+        if i == 127 { return "Wanjiru"; }
+        if i == 128 { return "Yejide"; }
+        if i == 129 { return "Bunmi"; }
+        if i == 130 { return "Desta"; }
+        if i == 131 { return "Ntombi"; }
+        if i == 132 { return "Refilwe"; }
+        if i == 133 { return "Boitumelo"; }
+        if i == 134 { return "Dikeledi"; }
+        if i == 135 { return "Lesedi"; }
+        if i == 136 { return "Mmabatho"; }
+        if i == 137 { return "Naledi"; }
+        if i == 138 { return "Palesa-Rose"; }
+        if i == 139 { return "Reabetswe"; }
+        if i == 140 { return "Tebogo"; }
+        if i == 141 { return "Tshegofatso"; }
+        if i == 142 { return "Zodwa"; }
+        if i == 143 { return "Andile"; }
+        if i == 144 { return "Buhle"; }
+        if i == 145 { return "Duduzile"; }
+        if i == 146 { return "Fikile"; }
+        if i == 147 { return "Gugulethu"; }
+        if i == 148 { return "Hlengiwe"; }
+        if i == 149 { return "Khanyisile"; }
         return "Amara";
     }
 
     public static func GetLastName(seed: Int32) -> String {
-        let i = RandRange(seed, 0, 100);
+        let i = RandRange(seed, 0, 147);
         if i == 0 { return "Okonkwo"; }
         if i == 1 { return "Mensah"; }
         if i == 2 { return "Adeyemi"; }
@@ -313,6 +413,53 @@ public abstract class KdspAfricanNames {
         if i == 97 { return "Jagne"; }
         if i == 98 { return "Keita"; }
         if i == 99 { return "Lekota"; }
+        if i == 100 { return "Abara"; }
+        if i == 101 { return "Bankole"; }
+        if i == 102 { return "Folarin"; }
+        if i == 103 { return "Gbeho"; }
+        if i == 104 { return "Hakizimana"; }
+        if i == 105 { return "Igwe"; }
+        if i == 106 { return "Jalloh"; }
+        if i == 107 { return "Lumu"; }
+        if i == 108 { return "Ndiaye"; }
+        if i == 109 { return "Obasanjo"; }
+        if i == 110 { return "Preira"; }
+        if i == 111 { return "Rugambwa"; }
+        if i == 112 { return "Sankara"; }
+        if i == 113 { return "Uwimana"; }
+        if i == 114 { return "Wanjala"; }
+        if i == 115 { return "Zongo"; }
+        if i == 116 { return "Chirwa"; }
+        if i == 117 { return "Danjuma"; }
+        if i == 118 { return "Elumelu"; }
+        if i == 119 { return "Hussein"; }
+        if i == 120 { return "Juma"; }
+        if i == 121 { return "Kagame"; }
+        if i == 122 { return "Lubega"; }
+        if i == 123 { return "Musa"; }
+        if i == 124 { return "Umar"; }
+        if i == 125 { return "Waweru"; }
+        if i == 126 { return "Cisse"; }
+        if i == 127 { return "Mthembu"; }
+        if i == 128 { return "Nkomo"; }
+        if i == 129 { return "Khumalo"; }
+        if i == 130 { return "Buthelezi"; }
+        if i == 131 { return "Gumede"; }
+        if i == 132 { return "Hadebe"; }
+        if i == 133 { return "Jiyane"; }
+        if i == 134 { return "Khoza"; }
+        if i == 135 { return "Luthuli"; }
+        if i == 136 { return "Mahlangu"; }
+        if i == 137 { return "Ngcobo"; }
+        if i == 138 { return "Ntuli"; }
+        if i == 139 { return "Pilane"; }
+        if i == 140 { return "Sithole"; }
+        if i == 141 { return "Tshabalala"; }
+        if i == 142 { return "Zwane"; }
+        if i == 143 { return "Mokoena"; }
+        if i == 144 { return "Molefe"; }
+        if i == 145 { return "Sekhukhune"; }
+        if i == 146 { return "Thwala"; }
         return "Okonkwo";
     }
 }
