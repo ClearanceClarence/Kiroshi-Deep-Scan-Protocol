@@ -37,7 +37,7 @@ public class KdspAldecaldosProfile {
         ArrayPush(specs, "Tech Specialist");
         ArrayPush(specs, "Convoy Defense");
         ArrayPush(specs, "Supply Management");
-        ArrayPush(specs, "Solar Tech Maintenance");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S0"));
         ArrayPush(specs, "Animal Husbandry");
         ArrayPush(specs, "Water Purification");
         ArrayPush(specs, "Communications/Radio");
@@ -46,7 +46,7 @@ public class KdspAldecaldosProfile {
         
         // Territory
         let territories: array<String>;
-        ArrayPush(territories, "Rocky Ridge Camp");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S1"));
         ArrayPush(territories, "Trade Routes");
         ArrayPush(territories, "Solar Farm");
         ArrayPush(territories, "Badlands Highways");
@@ -67,53 +67,53 @@ public class KdspAldecaldosProfile {
         // Style
         let marks: array<String>;
         if RandRange(seed + 700, 1, 100) <= 70 {
-            ArrayPush(marks, "Aldecaldo clan tattoo");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S2"));
         }
         if RandRange(seed + 710, 1, 100) <= 50 {
             ArrayPush(marks, "Road-worn appearance");
         }
         if RandRange(seed + 720, 1, 100) <= 40 {
-            ArrayPush(marks, "Family memorial marks");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S3"));
         }
         if RandRange(seed + 730, 1, 100) <= 55 {
-            ArrayPush(marks, "Calloused mechanic hands");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S4"));
         }
         if RandRange(seed + 740, 1, 100) <= 35 {
-            ArrayPush(marks, "Desert sun tan lines");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S5"));
         }
         if RandRange(seed + 750, 1, 100) <= 30 {
-            ArrayPush(marks, "Clan beadwork jewelry");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S6"));
         }
         profile.distinguishingMarks = marks;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Born on the road. Aldecaldo blood. The clan is home, wherever the wheels take us.");
-        ArrayPush(backstories, "Left Night City's poison. Found family in the Badlands. Nomad life isn't easy, but it's free.");
-        ArrayPush(backstories, "Third generation Aldecaldo. Grandparents founded this clan. Legacy means something.");
-        ArrayPush(backstories, "Outsider taken in when no one else would. Clan doesn't judge where you're from, only who you become.");
-        ArrayPush(backstories, "Former corpo who woke up. Everything they said about nomads was lies. Found truth on the road.");
-        ArrayPush(backstories, "Married into the clan. Took time to earn trust. Now would die for familia without hesitation.");
-        ArrayPush(backstories, "Orphaned by a Wraith raid. Aldecaldos found the wreckage and a scared kid. Raised as their own.");
-        ArrayPush(backstories, "Mechanic who kept a convoy alive through a three-day sandstorm. Earned a permanent spot that night.");
-        ArrayPush(backstories, "Ran from a corpo contract on my life. Aldecaldos don't ask questions when someone needs shelter.");
-        ArrayPush(backstories, "Grew up fixing solar panels at Rocky Ridge. Every watt of power is a small victory against the wasteland.");
-        ArrayPush(backstories, "Former street kid from Heywood. City was eating me alive. The open road healed what concrete broke.");
-        ArrayPush(backstories, "Voted into the clan by council after smuggling medical supplies through Militech checkpoints. Actions earned the name.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S7"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S8"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S9"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S10"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S11"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S12"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S17"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S18"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Supply run to Night City. Trade goods for essentials.");
-        ArrayPush(activities, "Camp maintenance. Keeping home in working order.");
-        ArrayPush(activities, "Convoy escort. Getting goods through Wraith territory.");
-        ArrayPush(activities, "Tech salvage in the wastes. One person's trash is our survival.");
-        ArrayPush(activities, "Clan gathering. Family comes first, always.");
-        ArrayPush(activities, "Solar array expansion at Rocky Ridge. More power means more independence.");
-        ArrayPush(activities, "Water purification rig repair. Can't afford downtime in the desert.");
-        ArrayPush(activities, "Negotiating trade deal with a Night City fixer. Fair terms or no deal.");
-        ArrayPush(activities, "Scouting new camp locations. Need to stay ahead of the Wraith patrols.");
-        ArrayPush(activities, "Teaching younger members to drive and shoot. Survival skills are a birthright.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S19"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S20"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S21"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S22"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S28"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);

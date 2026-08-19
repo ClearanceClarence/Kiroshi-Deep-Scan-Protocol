@@ -132,67 +132,6 @@ public abstract class KdspCommunityPool {
 
     // ── Community Relationship Contexts (40 entries) ──────────────────────
 
-    public static func GetCommunityContext(seed: Int32) -> String {
-        let roll: Int32 = RandRange(seed, 0, 40);
-
-        // Proximity
-        if roll == 0  { return "Neighbor — same floor"; };
-        if roll == 1  { return "Neighbor — same building"; };
-        if roll == 2  { return "Lives across the street"; };
-        if roll == 3  { return "Shares a megabuilding corridor"; };
-
-        // Commercial
-        if roll == 4  { return "Regular at same bar"; };
-        if roll == 5  { return "Regular at same food stall"; };
-        if roll == 6  { return "Uses same ripperdoc"; };
-        if roll == 7  { return "Same gym membership"; };
-        if roll == 8  { return "Shops at same market"; };
-        if roll == 9  { return "Same braindance rental shop"; };
-
-        // Practical
-        if roll == 10 { return "Borrows tools from"; };
-        if roll == 11 { return "Split a NET subscription"; };
-        if roll == 12 { return "Carpool to work"; };
-        if roll == 13 { return "Swaps shifts with"; };
-        if roll == 14 { return "In same building association"; };
-        if roll == 15 { return "Same landlord"; };
-
-        // Social
-        if roll == 16 { return "Drinking buddy"; };
-        if roll == 17 { return "Plays cards with weekly"; };
-        if roll == 18 { return "Kids go to same school"; };
-        if roll == 19 { return "Dog walking acquaintance"; };
-        if roll == 20 { return "Met through mutual friend"; };
-        if roll == 21 { return "Same apartment complex social group"; };
-
-        // Work-adjacent
-        if roll == 22 { return "Former coworker"; };
-        if roll == 23 { return "Works nearby — lunch regular"; };
-        if roll == 24 { return "Freelance client"; };
-        if roll == 25 { return "Sold them a car"; };
-        if roll == 26 { return "Referred them to a fixer"; };
-        if roll == 27 { return "Same union local"; };
-
-        // Deeper
-        if roll == 28 { return "Childhood friend — grew up on same block"; };
-        if roll == 29 { return "Owes them money"; };
-        if roll == 30 { return "They owe them money"; };
-        if roll == 31 { return "Dated briefly — stayed friendly"; };
-        if roll == 32 { return "Testified for them in court"; };
-        if roll == 33 { return "Helped them move apartments"; };
-
-        // Negative
-        if roll == 34 { return "Noise complaint filed against"; };
-        if roll == 35 { return "Parking dispute — ongoing"; };
-        if roll == 36 { return "Suspected of stealing packages"; };
-        if roll == 37 { return "Avoids — bad history"; };
-
-        // Surveillance
-        if roll == 38 { return "Flagged in same NCPD sweep"; };
-        if roll == 39 { return "Both listed on same lease"; };
-
-        return "Local acquaintance";
-    }
 
     // ── Injection Pipeline ────────────────────────────────────────────────
     //  Returns [name, context] or empty array if no injection.
@@ -213,7 +152,7 @@ public abstract class KdspCommunityPool {
             let idx: Int32 = RandRange(seed + 1, 0, 10);
             let female: Bool = RandRange(seed + 2, 0, 2) == 0;
             ArrayPush(result, KdspCommunityPool.GetCommunityName(subSeed, idx, female));
-            ArrayPush(result, KdspCommunityPool.GetCommunityContext(seed + 3));
+            ArrayPush(result, KdspTextConnections.GetCommunityContext(seed + 3));
             return result;
         };
 
@@ -223,7 +162,7 @@ public abstract class KdspCommunityPool {
             let idx: Int32 = RandRange(seed + 4, 0, 15);
             let female: Bool = RandRange(seed + 5, 0, 2) == 0;
             ArrayPush(result, KdspCommunityPool.GetCommunityName(distSeed, idx, female));
-            ArrayPush(result, KdspCommunityPool.GetCommunityContext(seed + 6));
+            ArrayPush(result, KdspTextConnections.GetCommunityContext(seed + 6));
             return result;
         };
 

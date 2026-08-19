@@ -135,10 +135,10 @@ public class KdspGangManager {
             ArrayPush(activities, "Arms Dealing");
             ArrayPush(activities, "Vigilante Justice");
             ArrayPush(activities, "Protection Services");
-            ArrayPush(activities, "Military Equipment Trade");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-S0"));
             ArrayPush(activities, "Community Defense");
         } else if Equals(affiliation, "ANIMALS") {
-            ArrayPush(activities, "Muscle for Hire");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S0"));
             ArrayPush(activities, "Underground Fighting");
             ArrayPush(activities, "Security Services");
             ArrayPush(activities, "Steroid Distribution");
@@ -150,7 +150,7 @@ public class KdspGangManager {
             ArrayPush(activities, "AI Contact");
             ArrayPush(activities, "Information Brokering");
         } else if Equals(affiliation, "MOXES") {
-            ArrayPush(activities, "Sex Worker Protection");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-S1"));
             ArrayPush(activities, "Braindance Production");
             ArrayPush(activities, "Community Defense");
             ArrayPush(activities, "Anti-Trafficking");
@@ -158,7 +158,7 @@ public class KdspGangManager {
             ArrayPush(activities, "Organ Harvesting");
             ArrayPush(activities, "Cyberware Theft");
             ArrayPush(activities, "Kidnapping");
-            ArrayPush(activities, "Black Market Surgery");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-S2"));
         } else if Equals(affiliation, "WRAITHS") {
             ArrayPush(activities, "Highway Robbery");
             ArrayPush(activities, "Vehicle Theft");
@@ -183,9 +183,9 @@ public class KdspGangManager {
             ArrayPush(allies, "Militech (Informal)");
             ArrayPush(allies, "NUSA Veterans");
         } else if Equals(affiliation, "VALENTINOS") {
-            ArrayPush(allies, "Local Heywood Community");
+            ArrayPush(allies, GetLocalizedTextByKey(n"Kdsp-GangManager-S3"));
         } else if Equals(affiliation, "MOXES") {
-            ArrayPush(allies, "Lizzie's Bar Patrons");
+            ArrayPush(allies, GetLocalizedTextByKey(n"Kdsp-GangManager-S4"));
         }
 
         if ArraySize(allies) == 0 {
@@ -222,7 +222,7 @@ public class KdspGangManager {
             ArrayPush(enemies, "Everyone");
         } else if Equals(affiliation, "WRAITHS") {
             ArrayPush(enemies, "Aldecaldos");
-            ArrayPush(enemies, "Other Nomad Clans");
+            ArrayPush(enemies, GetLocalizedTextByKey(n"Kdsp-GangManager-S5"));
         } else if Equals(affiliation, "ALDECALDOS") {
             ArrayPush(enemies, "Wraiths");
             ArrayPush(enemies, "Militech");
@@ -303,17 +303,17 @@ public class KdspGangManager {
 
         if Equals(affiliation, "TYGER_CLAWS") {
             if RandRange(seed, 1, 100) <= 80 {
-                ArrayPush(tattoos, "Luminous tiger stripes (back/arms)");
+                ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S6"));
             }
             if RandRange(seed + 10, 1, 100) <= 60 {
-                ArrayPush(tattoos, "Japanese kanji (neck)");
+                ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S7"));
             }
         } else if Equals(affiliation, "VALENTINOS") {
             if RandRange(seed, 1, 100) <= 85 {
-                ArrayPush(tattoos, "Santa Muerte imagery");
+                ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S8"));
             }
             if RandRange(seed + 10, 1, 100) <= 70 {
-                ArrayPush(tattoos, "Golden heart with thorns");
+                ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S9"));
             }
         } else if Equals(affiliation, "MAELSTROM") {
             if RandRange(seed, 1, 100) <= 60 {
@@ -322,15 +322,15 @@ public class KdspGangManager {
             // Maelstrom prefers chrome to ink
         } else if Equals(affiliation, "6TH_STREET") {
             if RandRange(seed, 1, 100) <= 90 {
-                ArrayPush(tattoos, "American flag imagery");
+                ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S10"));
             }
             if RandRange(seed + 10, 1, 100) <= 70 {
-                ArrayPush(tattoos, "Military unit insignia");
+                ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S11"));
             }
         }
 
         if ArraySize(tattoos) == 0 {
-            ArrayPush(tattoos, "Gang identification marks (various)");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S12"));
         }
 
         return tattoos;
@@ -340,21 +340,21 @@ public class KdspGangManager {
         let hangouts: array<String>;
 
         if Equals(affiliation, "TYGER_CLAWS") {
-            ArrayPush(hangouts, "Dark Matter Club");
-            ArrayPush(hangouts, "Japantown Pachinko Parlors");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S13"));
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S14"));
             ArrayPush(hangouts, "Clouds");
         } else if Equals(affiliation, "VALENTINOS") {
-            ArrayPush(hangouts, "El Coyote Cojo");
-            ArrayPush(hangouts, "Vista del Rey Streets");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S15"));
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S16"));
             ArrayPush(hangouts, "Local Churches");
         } else if Equals(affiliation, "MAELSTROM") {
             ArrayPush(hangouts, "Totentanz");
-            ArrayPush(hangouts, "All Foods Plant");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S17"));
             ArrayPush(hangouts, "Northside Warehouses");
         } else if Equals(affiliation, "6TH_STREET") {
-            ArrayPush(hangouts, "Red Dirt Bar");
-            ArrayPush(hangouts, "Arroyo Gun Ranges");
-            ArrayPush(hangouts, "Veterans Meeting Halls");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S18"));
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S19"));
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S20"));
         } else if Equals(affiliation, "MOXES") {
             ArrayPush(hangouts, "Lizzie's Bar");
         } else if Equals(affiliation, "VOODOO_BOYS") {
@@ -369,31 +369,31 @@ public class KdspGangManager {
         let backstories: array<String>;
 
         if Equals(affiliation, "TYGER_CLAWS") {
-            ArrayPush(backstories, "Recruited from Japantown youth. Trained in traditional yakuza codes. ");
-            ArrayPush(backstories, "Former Arasaka security, found better opportunities with the Claws. ");
-            ArrayPush(backstories, "Born into a family with Tyger Claw ties. Expected to join. ");
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S21"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S22"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S23"));
         } else if Equals(affiliation, "VALENTINOS") {
-            ArrayPush(backstories, "Grew up in Heywood, joined for family protection. Devotee of Santa Muerte. ");
-            ArrayPush(backstories, "Third-generation Valentino. The gang is everything. ");
-            ArrayPush(backstories, "Sought belonging after losing family. Found it with the Valentinos. ");
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S24"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S25"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S26"));
         } else if Equals(affiliation, "MAELSTROM") {
-            ArrayPush(backstories, "Cyberpsychosis survivor. Found acceptance among the similarly augmented. ");
-            ArrayPush(backstories, "Former corpo techie gone rogue. Now installs illegal chrome. ");
-            ArrayPush(backstories, "Obsessed with transcending flesh. Maelstrom offered the path. ");
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S27"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S28"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S29"));
         } else if Equals(affiliation, "6TH_STREET") {
-            ArrayPush(backstories, "Veteran of the Unification War. Couldn't adjust to civilian life. ");
-            ArrayPush(backstories, "Believes in protecting the community from corp exploitation. ");
-            ArrayPush(backstories, "Lost family to gang violence. Joined 6th Street for revenge and order. ");
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S30"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S31"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S32"));
         } else if Equals(affiliation, "ANIMALS") {
-            ArrayPush(backstories, "Former athlete turned muscle. The juice keeps flowing. ");
-            ArrayPush(backstories, "Respects only strength. Animals offer the ultimate test. ");
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S33"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S34"));
         } else if Equals(affiliation, "VOODOO_BOYS") {
-            ArrayPush(backstories, "Haitian descent, grew up in Pacifica. The Net is the only way forward. ");
-            ArrayPush(backstories, "Netrunner seeking answers beyond the Blackwall. ");
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S35"));
+            ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-GangManager-S36"));
         }
 
         if ArraySize(backstories) == 0 {
-            return "Gang member with standard recruitment background. ";
+            return GetLocalizedTextByKey(n"Kdsp-GangManager-S37");
         }
 
         return backstories[RandRange(seed, 0, ArraySize(backstories) - 1)];

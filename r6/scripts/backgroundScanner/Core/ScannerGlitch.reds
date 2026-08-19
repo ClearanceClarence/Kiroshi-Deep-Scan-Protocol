@@ -94,16 +94,16 @@ public abstract class KdspScannerGlitch {
     // Corrupt the NCPD ID
     private static func CorruptID(seed: Int32) -> String {
         let r = RandRange(seed, 0, 9);
-        if r == 0 { return "NC??????"; }
-        if r == 1 { return "NC000000"; }
-        if r == 2 { return "ERR_NULL_REF"; }
-        if r == 3 { return "NC---[CORRUPTED]"; }
-        if r == 4 { return "ID_NOT_FOUND"; }
-        if r == 5 { return "NC8█████"; }
-        if r == 6 { return "RECORD_EXPUNGED"; }
-        if r == 7 { return "██████████"; }
-        if r == 8 { return "NC[OVERFLOW]"; }
-        return "SYS_ERR_0xDEAD";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-6"); }
+        if r == 7 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-7"); }
+        if r == 8 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-8"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-9");
     }
 
     // Generate the glitch classification flag
@@ -111,73 +111,73 @@ public abstract class KdspScannerGlitch {
         // Type 0: Hardware malfunction
         if glitchType == 0 { 
             let r = RandRange(seed, 0, 4);
-            if r == 0 { return "⚠ KIROSHI OPTICS MALFUNCTION - DATA INTEGRITY COMPROMISED ⚠"; }
-            if r == 1 { return "⚠ SCANNER HARDWARE FAULT - RECALIBRATION REQUIRED ⚠"; }
-            if r == 2 { return "⚠ OPTIC NERVE INTERFERENCE DETECTED - SCAN UNRELIABLE ⚠"; }
-            if r == 3 { return "⚠ FIRMWARE CORRUPTION - KIROSHI v4.7.2 INTEGRITY CHECK FAILED ⚠"; }
-            return "⚠ LENS ARRAY MISALIGNMENT - BIOMETRIC READ FAILED ⚠";
+            if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-0"); }
+            if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-1"); }
+            if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-2"); }
+            if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-3"); }
+            return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-4");
         }
         // Type 1: Database corruption
         if glitchType == 1 {
             let r = RandRange(seed, 0, 4);
-            if r == 0 { return "⚠ NCPD DATABASE CORRUPTION - RECORD UNREADABLE ⚠"; }
-            if r == 1 { return "⚠ DB_ERROR: TABLE 'citizens' CHECKSUM MISMATCH ⚠"; }
-            if r == 2 { return "⚠ CORRUPTED SECTOR 0x7F - PARTIAL DATA LOSS ⚠"; }
-            if r == 3 { return "⚠ DATABASE TIMEOUT - NCPD CENTRAL NODE UNREACHABLE ⚠"; }
-            return "⚠ FATAL: CITIZEN RECORD FRAGMENTED ACROSS 3 SHARDS ⚠";
+            if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-5"); }
+            if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-6"); }
+            if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-7"); }
+            if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-8"); }
+            return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-9");
         }
         // Type 2: NetWatch interference 
         if glitchType == 2 {
             let r = RandRange(seed, 0, 4);
-            if r == 0 { return "⚠ NETWATCH INTERFERENCE DETECTED - SCAN BLOCKED ⚠"; }
-            if r == 1 { return "⚠ ACTIVE ICE ENCOUNTERED - DATA RETRIEVAL ABORTED ⚠"; }
-            if r == 2 { return "⚠ NETWATCH BLACKWALL PROXIMITY ALERT - SIGNAL SCRAMBLED ⚠"; }
-            if r == 3 { return "⚠ NET INTRUSION COUNTERMEASURE ACTIVE - ACCESS DENIED ⚠"; }
-            return "⚠ UNAUTHORIZED SCAN DETECTED BY NETWATCH - CONNECTION SEVERED ⚠";
+            if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-10"); }
+            if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-11"); }
+            if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-12"); }
+            if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-13"); }
+            return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-14");
         }
         // Type 3: Ghost / scrubbed identity
         if glitchType == 3 {
             let r = RandRange(seed, 0, 4);
-            if r == 0 { return "⚠ IDENTITY SCRUBBED - PROFESSIONAL WIPE DETECTED ⚠"; }
-            if r == 1 { return "⚠ GHOST PROTOCOL - NO RECORDS EXIST FOR THIS INDIVIDUAL ⚠"; }
-            if r == 2 { return "⚠ ALL DATABASES RETURN NULL - IDENTITY DOES NOT EXIST ⚠"; }
-            if r == 3 { return "⚠ FIXER-GRADE IDENTITY WIPE - ZERO FOOTPRINT ⚠"; }
-            return "⚠ SUBJECT HAS NO DIGITAL EXISTENCE - POSSIBLE DEEP COVER ⚠";
+            if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-15"); }
+            if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-16"); }
+            if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-17"); }
+            if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-18"); }
+            return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-19");
         }
         // Type 4: Cyberpsychosis interference
         if glitchType == 4 {
             let r = RandRange(seed, 0, 4);
-            if r == 0 { return "⚠ SUBJECT EMITTING HOSTILE SIGNAL - SCAN CORRUPTED ⚠"; }
-            if r == 1 { return "⚠ CYBERPSYCHOTIC EMISSION DETECTED - OPTICS SCRAMBLED ⚠"; }
-            if r == 2 { return "⚠ ELECTROMAGNETIC INTERFERENCE FROM SUBJECT - DATA LOST ⚠"; }
-            if r == 3 { return "⚠ HOSTILE CYBERWARE BROADCAST - SCANNER OVERLOADED ⚠"; }
-            return "⚠ WARNING: SUBJECT'S ICE ATTACKING YOUR OPTICS ⚠";
+            if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-20"); }
+            if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-21"); }
+            if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-22"); }
+            if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-23"); }
+            return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-24");
         }
         // Type 5: Classified / government blackout
         if glitchType == 5 {
             let r = RandRange(seed, 0, 4);
-            if r == 0 { return "⚠ CLASSIFIED - NUSA FEDERAL RECORDS SEALED ⚠"; }
-            if r == 1 { return "⚠ ACCESS LEVEL INSUFFICIENT - ARASAKA SECURITY CLEARANCE REQUIRED ⚠"; }
-            if r == 2 { return "⚠ MILITECH COUNTERINTELLIGENCE FLAG - DATA RESTRICTED ⚠"; }
-            if r == 3 { return "⚠ RECORD SEALED BY ORDER OF NIGHT CITY COUNCIL ⚠"; }
-            return "⚠ CORPORATE BLACKSITE PERSONNEL - ALL DATA CLASSIFIED ⚠";
+            if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-25"); }
+            if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-26"); }
+            if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-27"); }
+            if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-28"); }
+            return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-29");
         }
         // Type 6: Data overflow / memory corruption
         if glitchType == 6 {
             let r = RandRange(seed, 0, 4);
-            if r == 0 { return "⚠ BUFFER OVERFLOW - STACK TRACE DUMPED ⚠"; }
-            if r == 1 { return "⚠ MEMORY ALLOCATION FAILURE - KIROSHI CORE DUMP ⚠"; }
-            if r == 2 { return "⚠ SEGFAULT AT 0xDEADBEEF - REBOOT OPTICS ⚠"; }
-            if r == 3 { return "⚠ HEAP CORRUPTION DETECTED - SCAN DATA UNRELIABLE ⚠"; }
-            return "⚠ FATAL EXCEPTION IN BIOMETRIC_PARSER.DLL - SCAN ABORTED ⚠";
+            if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-30"); }
+            if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-31"); }
+            if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-32"); }
+            if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-33"); }
+            return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-34");
         }
         // Type 7: Signal jamming
         let r = RandRange(seed, 0, 4);
-        if r == 0 { return "⚠ ACTIVE SIGNAL JAMMER IN AREA - SCAN DISRUPTED ⚠"; }
-        if r == 1 { return "⚠ ELECTRONIC WARFARE COUNTERMEASURES DETECTED ⚠"; }
-        if r == 2 { return "⚠ MILITARY-GRADE SIGNAL INTERFERENCE - NO DATA ⚠"; }
-        if r == 3 { return "⚠ BROADBAND JAMMING ON ALL FREQUENCIES - SCAN FAILED ⚠"; }
-        return "⚠ UNKNOWN SIGNAL SOURCE DISRUPTING KIROSHI UPLINK ⚠";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-35"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-36"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-37"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-38"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-GetGlitchFlag-39");
     }
 
     // Corrupt a specific field based on glitch type
@@ -218,97 +218,97 @@ public abstract class KdspScannerGlitch {
 
     private static func HardwareGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "L█ved in a c░rpo z██e... [LENS ERROR] ...fa██er d█ed of..."; }
-        if r == 1 { return "R░ised by... [SIGNAL LOST] ...str██t fig██s for m░ney..."; }
-        if r == 2 { return "█████ ░░░ OPTIC FEED INTERRUPTED ░░░ █████"; }
-        if r == 3 { return "...wor██d as a... [CALIBRATION DRIFT] ...ter░inated in 20█░..."; }
-        if r == 4 { return "Sc░nner re░d: [NOISE] ...imp█ants: █ | Sta█us: ░░░..."; }
-        if r == 5 { return "Da█a fr░gment: ...cr░dit ra█ing: ░░░ | Inc░me: €$█,███..."; }
-        if r == 6 { return "Bio░etric lo██: ...bl██d: ░ R█D+ | Co█ditions: ░░░ [ERR]..."; }
-        return "[KIROSHI v4.7 RECALIBRATING] ...par█ial d░ta: ...███ ░░░ ███...";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-HardwareGlitch-7");
     }
 
     private static func DatabaseGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "ERROR 1045: Access denied for user 'kiroshi_scan'@'ncpd.local'"; }
-        if r == 1 { return "SELECT * FROM citizens WHERE id=NULL; -- 0 rows returned"; }
-        if r == 2 { return "TABLE 'background_records' corrupted at block 0x4F2A - rebuild required"; }
-        if r == 3 { return "FOREIGN KEY CONSTRAINT FAILED: citizen_id references deleted record"; }
-        if r == 4 { return "WARNING: Record modified 847 times in last 24h - data tampering suspected"; }
-        if r == 5 { return "DEADLOCK on table 'financial_records' - transaction rolled back"; }
-        if r == 6 { return "Checksum mismatch: expected 0xA7F3, got 0x0000. Record zeroed."; }
-        return "CONNECTION_RESET: NCPD master DB unreachable (timeout after 30000ms)";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-DatabaseGlitch-7");
     }
 
     private static func NetWatchGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "[ACCESS DENIED - NETWATCH AUTH LEVEL 7 REQUIRED]"; }
-        if r == 1 { return "██████████████ [REDACTED BY NETWATCH] ██████████████"; }
-        if r == 2 { return "CONNECTION TERMINATED BY REMOTE HOST (netwatch-node-07.nc)"; }
-        if r == 3 { return "ICE LEVEL 3 ENCOUNTERED - SCAN PROBE DESTROYED"; }
-        if r == 4 { return "[BLACKWALL ADJACENT DATA - RETRIEVAL PROHIBITED]"; }
-        if r == 5 { return "NETWATCH DIRECTIVE 7-7-0: UNAUTHORIZED SCAN OF PROTECTED INDIVIDUAL"; }
-        if r == 6 { return "YOUR KIROSHI SERIAL HAS BEEN LOGGED. CEASE SCANNING IMMEDIATELY."; }
-        return "DATA QUARANTINED - POSSIBLE ROGUE AI CONTAMINATION IN RECORD";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-NetWatchGlitch-7");
     }
 
     private static func GhostGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "[NO DATA]"; }
-        if r == 1 { return "[RECORD NOT FOUND]"; }
-        if r == 2 { return "---"; }
-        if r == 3 { return "[NULL]"; }
-        if r == 4 { return "This person does not exist."; }
-        if r == 5 { return "[ZERO RESULTS ACROSS ALL DATABASES]"; }
-        if r == 6 { return "No birth certificate. No ID. No history. Nothing."; }
-        return "[BLANK]";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-GhostGlitch-7");
     }
 
     private static func CyberpsychoGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "k̷͉̈́i̸̛̱l̸̰̾l̶̰̈ ̴̧̛t̸͙̊h̶͎̄e̸̞̔m̶̩̊ ̷̣̊a̶̦͝l̸̰̈́l̶̜͝ k̵̢̈́i̷̱̇l̸̰̾l̶̰̈ SIGNAL CORRUPTED"; }
-        if r == 1 { return "HOSTILE BROADCAST: ...I CAN SEE YOU SCANNING ME..."; }
-        if r == 2 { return "█▓▒░ OPTICS OVERLOAD ░▒▓█ ...they're in the walls..."; }
-        if r == 3 { return "ALERT: Your cyberware is being probed. Disconnect NOW."; }
-        if r == 4 { return "W̵̱̄Ȃ̷̧R̸̖̈N̸̡̔Ȉ̸̧N̷̰̕G̸̱̈: ̸̧̈S̵̱̄U̸̡̔B̵̰̄J̵̧̈́E̵̱̔C̵̢̈́T̸̖̈ ̵̧̈́A̵̱̔W̵̰̄Ä̵̧́Ṟ̵̔E̸̡̔"; }
-        if r == 5 { return "ṠCAN ░RROR: Subject's chrome is broadcasting junk data on all bands"; }
-        if r == 6 { return "...hElP mE... [INTERCEPTION] ...iT wOnT sToP... [SIGNAL NOISE]..."; }
-        return "CYBERPSYCHOTIC EMISSION OVERRIDING SCAN FEED - PURGING BUFFER";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-CyberpsychoGlitch-7");
     }
 
     private static func ClassifiedGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "[CLASSIFIED - NUSA FEDERAL STATUTE 77.4.2]"; }
-        if r == 1 { return "████████████ [REDACTED] ████████████"; }
-        if r == 2 { return "[SECURITY CLEARANCE LEVEL 9 REQUIRED - YOU HAVE LEVEL 0]"; }
-        if r == 3 { return "This record is sealed by corporate security order #NC-2077-CLASSIFIED"; }
-        if r == 4 { return "[DATA RESTRICTED - AUTHORIZED PERSONNEL ONLY]"; }
-        if r == 5 { return "ARASAKA SECURITY DIVISION: ACCESS TO THIS FILE IS A CRIMINAL OFFENSE"; }
-        if r == 6 { return "[MILITECH INTERNAL - EYES ONLY - DO NOT DISTRIBUTE]"; }
-        return "[SEALED BY NIGHT CITY DISTRICT ATTORNEY - PENDING INVESTIGATION]";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-ClassifiedGlitch-7");
     }
 
     private static func MemoryGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "0x4B 0x49 0x52 0x4F 0x53 0x48 0x49 [HEAP OVERFLOW]"; }
-        if r == 1 { return "at kiroshi.scan.parse(BiometricData.cpp:1847) SIGSEGV"; }
-        if r == 2 { return "PANIC: kernel stack overflow at address 0xFFFFFFFF8041A2C0"; }
-        if r == 3 { return "free(): corrupted unsorted chunks - optics firmware unstable"; }
-        if r == 4 { return "*** stack smashing detected ***: kiroshi_scanner terminated"; }
-        if r == 5 { return "NullPointerException: target.biometric_profile is undefined"; }
-        if r == 6 { return "CORE DUMP: /tmp/kiroshi_crash_2077_02_14.bin (47.3 MB)"; }
-        return "malloc(): memory corruption (fast) 0x0000555555DC4A70";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-MemoryGlitch-7");
     }
 
     private static func JammedGlitch(seed: Int32, fieldName: String) -> String {
         let r = RandRange(seed, 0, 7);
-        if r == 0 { return "░░░░░░ [STATIC] ░░░░░░ [STATIC] ░░░░░░"; }
-        if r == 1 { return "...fra█ment... [JAM] ...█████... [JAM] ...los░..."; }
-        if r == 2 { return "[SIGNAL: 2% - INSUFFICIENT FOR BIOMETRIC READ]"; }
-        if r == 3 { return "▓▓▓▓▓ NO CARRIER ▓▓▓▓▓"; }
-        if r == 4 { return "[BROADBAND NOISE FLOOR EXCEEDED - ALL CHANNELS UNUSABLE]"; }
-        if r == 5 { return "...░░░... [BURST] ...█████... [LOST] ...░░░... [NOTHING]..."; }
-        if r == 6 { return "CARRIER LOST | RETRY 1/5... FAILED | RETRY 2/5... FAILED | ABORTING"; }
-        return "JAMMING SOURCE TRIANGULATED: <LOCATION UNKNOWN> - MILITARY GRADE EQUIPMENT";
+        if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-0"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-1"); }
+        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-2"); }
+        if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-3"); }
+        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-4"); }
+        if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-5"); }
+        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-6"); }
+        return GetLocalizedTextByKey(n"Kdsp-Glitch-JammedGlitch-7");
     }
 }

@@ -59,8 +59,8 @@ public class KdspGangProfileGenerator {
         profile.bodyCount = RandRange(seed + 400, 0, 20);
         profile.arrestCount = RandRange(seed + 500, 0, 5);
         profile.loyaltyRating = "UNKNOWN";
-        profile.background = "Gang member with standard criminal background.";
-        profile.recentActivity = "Active in local operations.";
+        profile.background = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-S0");
+        profile.recentActivity = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-S1");
         profile.status = "ACTIVE";
         
         return profile;

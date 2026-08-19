@@ -27,7 +27,7 @@ public class KdspVoodooBoysProfile {
         
         // Specializations
         let specs: array<String>;
-        ArrayPush(specs, "Deep Net Diving");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S0"));
         ArrayPush(specs, "ICE Breaking");
         ArrayPush(specs, "Data Mining");
         ArrayPush(specs, "Blackwall Research");
@@ -39,9 +39,9 @@ public class KdspVoodooBoysProfile {
         ArrayPush(specs, "Wetwork Support");
         ArrayPush(specs, "Daemon Crafting");
         ArrayPush(specs, "Signal Jamming");
-        ArrayPush(specs, "Dead Drop Networks");
-        ArrayPush(specs, "Rogue AI Containment");
-        ArrayPush(specs, "Community Net Access");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S1"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S2"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S3"));
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
@@ -50,7 +50,7 @@ public class KdspVoodooBoysProfile {
         ArrayPush(territories, "Pacifica Chapel");
         ArrayPush(territories, "Batty's Hotel");
         ArrayPush(territories, "GIM Underground");
-        ArrayPush(territories, "Net Cafe Row");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S4"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
         // Stats
@@ -68,53 +68,53 @@ public class KdspVoodooBoysProfile {
         // Marks
         let marks: array<String>;
         if RandRange(seed + 700, 1, 100) <= 70 {
-            ArrayPush(marks, "Veve ritual scarification");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S5"));
         }
         if RandRange(seed + 710, 1, 100) <= 80 {
-            ArrayPush(marks, "Netrunning interface ports");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S6"));
         }
         if RandRange(seed + 720, 1, 100) <= 40 {
-            ArrayPush(marks, "Haitian spiritual symbols");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S7"));
         }
         if RandRange(seed + 730, 1, 100) <= 50 {
-            ArrayPush(marks, "Bloodshot eyes from deep dives");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S8"));
         }
         if RandRange(seed + 740, 1, 100) <= 35 {
-            ArrayPush(marks, "Neural burn scarring at temples");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S9"));
         }
         if RandRange(seed + 750, 1, 100) <= 30 {
-            ArrayPush(marks, "Protective gris-gris charms");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S10"));
         }
         profile.distinguishingMarks = marks;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Born in Pacifica to Haitian parents. The Net is the loa now - spirits in the machine. Seeking truth beyond the Blackwall.");
-        ArrayPush(backstories, "Refugee from the islands. Found community in Pacifica. The Voodoo Boys protect their own - in meat and in Net.");
-        ArrayPush(backstories, "Touched the other side during a deep dive. Something spoke back. Now searching for answers only VDBs understand.");
-        ArrayPush(backstories, "Grew up with a deck in hand. Natural talent caught Brigitte's attention. Trained in ways outsiders never see.");
-        ArrayPush(backstories, "Outsider who proved loyalty. Rare for non-Haitians. The spirits accepted - that's what matters.");
-        ArrayPush(backstories, "Lost family to corpo data theft. Learned to fight back in the Net. VDBs gave purpose to the rage.");
-        ArrayPush(backstories, "Grandmother was a real mambo back in Haiti. Said the loa would find new homes. She was right - they live in the Net.");
-        ArrayPush(backstories, "NetWatch killed a friend during a raid. Pacifica doesn't forget. The Blackwall is their weapon - it will be ours.");
-        ArrayPush(backstories, "Grew up in the ruins when Pacifica was abandoned. No corps came to help. VDBs built something from nothing.");
-        ArrayPush(backstories, "Flatlined during a deep dive and saw what waits beyond. Came back different. The others understand.");
-        ArrayPush(backstories, "Former corpo netrunner who discovered what NetWatch really guards. Defected to the only people seeking real answers.");
-        ArrayPush(backstories, "Second generation Pacifica. Parents built this community with bare hands. Protecting it with code and will.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S11"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S12"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S17"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S18"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S19"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S20"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S21"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S22"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Deep Net reconnaissance. Mapping pathways to the Blackwall.");
-        ArrayPush(activities, "Information extraction contract. Client pays well, asks no questions.");
-        ArrayPush(activities, "Protecting Pacifica servers. Outsiders keep probing. Keep failing.");
-        ArrayPush(activities, "Ritual dive scheduled. Contacting the other side requires preparation.");
-        ArrayPush(activities, "Training new runners. Knowledge passes to the worthy.");
-        ArrayPush(activities, "Intercepted NetWatch probe near Coastview. Traced and neutralized.");
-        ArrayPush(activities, "Daemon deployment across Night City infrastructure. Sleeper protocol.");
-        ArrayPush(activities, "Community network maintenance. Pacifica stays connected on our terms.");
-        ArrayPush(activities, "Encrypted data auction. Corpo secrets fetch premium prices.");
-        ArrayPush(activities, "Blackwall fluctuation detected. Council convened. Something is changing.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S28"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S29"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S30"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S31"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S32"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);

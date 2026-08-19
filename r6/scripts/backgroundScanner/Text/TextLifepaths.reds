@@ -8,126 +8,126 @@ public abstract class KdspTextLifepaths {
     // ═══════════════════════════════════════════════════════════
     // STREET KID - UPBRINGING
     // ═══════════════════════════════════════════════════════════
-    public static func SK_WATSON_NATIVE() -> String { return "Born and raised in Watson. "; }
-    public static func SK_HEYWOOD_NATIVE() -> String { return "Grew up in the barrios of Heywood. "; }
-    public static func SK_PACIFICA_SURVIVOR() -> String { return "Survived childhood in the ruins of Pacifica. "; }
-    public static func SK_GANG_FAMILY() -> String { return "Born into a family with deep gang ties. "; }
-    public static func SK_ORPHAN_STREET() -> String { return "Orphaned young, learned to survive on the streets. "; }
-    public static func SK_RUNAWAY() -> String { return "Ran away from an abusive home at twelve. "; }
-    public static func SK_IMMIGRANT() -> String { return "Family immigrated to Night City seeking opportunity. "; }
-    public static func SK_MEGATOWER_KID() -> String { return "Grew up in the lower floors of a megatower. "; }
-    public static func SK_CLUB_KID() -> String { return "Spent %his% youth in Night City's club scene. "; }
-    public static func SK_FIXER_CHILD() -> String { return "Raised by a fixer who taught %him% the trade. "; }
+    public static func SK_WATSON_NATIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_WATSON_NATIVE"); }
+    public static func SK_HEYWOOD_NATIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_HEYWOOD_NATIVE"); }
+    public static func SK_PACIFICA_SURVIVOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_PACIFICA_SURVIVOR"); }
+    public static func SK_GANG_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_GANG_FAMILY"); }
+    public static func SK_ORPHAN_STREET() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_ORPHAN_STREET"); }
+    public static func SK_RUNAWAY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_RUNAWAY"); }
+    public static func SK_IMMIGRANT() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_IMMIGRANT"); }
+    public static func SK_MEGATOWER_KID() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_MEGATOWER_KID"); }
+    public static func SK_CLUB_KID() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_CLUB_KID"); }
+    public static func SK_FIXER_CHILD() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_FIXER_CHILD"); }
     // ═══════════════════════════════════════════════════════════
     // STREET KID - YOUTH EVENTS
     // ═══════════════════════════════════════════════════════════
-    public static func SK_FIRST_BOOST() -> String { return "Boosted %his% first car at thirteen. "; }
-    public static func SK_GANG_RUNNER() -> String { return "Ran errands for the local gang as a kid. "; }
-    public static func SK_STREET_FIGHTING() -> String { return "Got into street fighting to earn eddies. "; }
-    public static func SK_NIGHTCLUB_UNDERAGE() -> String { return "Snuck into nightclubs from age fourteen. "; }
-    public static func SK_DEALER_YOUTH() -> String { return "Started dealing small-time at fifteen. "; }
-    public static func SK_PICKPOCKET() -> String { return "Made ends meet picking pockets in Kabuki. "; }
-    public static func SK_GANG_AFFILIATE() -> String { return "Became affiliated with a gang in %his% teens. "; }
-    public static func SK_STREET_RACE() -> String { return "Got into illegal street racing. "; }
-    public static func SK_RIPPER_APPRENTICE() -> String { return "Apprenticed under a back-alley ripper. "; }
-    public static func SK_AFTERLIFE_DREAMER() -> String { return "Dreamed of drinking at the Afterlife someday. "; }
+    public static func SK_FIRST_BOOST() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_FIRST_BOOST"); }
+    public static func SK_GANG_RUNNER() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_GANG_RUNNER"); }
+    public static func SK_STREET_FIGHTING() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_STREET_FIGHTING"); }
+    public static func SK_NIGHTCLUB_UNDERAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_NIGHTCLUB_UNDERAGE"); }
+    public static func SK_DEALER_YOUTH() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_DEALER_YOUTH"); }
+    public static func SK_PICKPOCKET() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_PICKPOCKET"); }
+    public static func SK_GANG_AFFILIATE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_GANG_AFFILIATE"); }
+    public static func SK_STREET_RACE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_STREET_RACE"); }
+    public static func SK_RIPPER_APPRENTICE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_RIPPER_APPRENTICE"); }
+    public static func SK_AFTERLIFE_DREAMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_AFTERLIFE_DREAMER"); }
     // ═══════════════════════════════════════════════════════════
     // STREET KID - ADULT EVENTS
     // ═══════════════════════════════════════════════════════════
-    public static func SK_FIXER_JOBS() -> String { return "Started taking jobs from local fixers. "; }
-    public static func SK_REP_BUILDING() -> String { return "Built a reputation on the streets. "; }
-    public static func SK_GANG_FULL_MEMBER() -> String { return "Became a full member of a gang. "; }
-    public static func SK_BETRAYAL() -> String { return "Was betrayed by a close choom. "; }
-    public static func SK_DEBT_TO_FIXER() -> String { return "Owes a debt to a powerful fixer. "; }
-    public static func SK_TURF_WAR() -> String { return "Survived a brutal turf war. "; }
-    public static func SK_NCPD_RAP() -> String { return "Has a record with NCPD. "; }
-    public static func SK_SAVED_CHOOM() -> String { return "Saved a choom's life in a shootout. "; }
+    public static func SK_FIXER_JOBS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_FIXER_JOBS"); }
+    public static func SK_REP_BUILDING() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_REP_BUILDING"); }
+    public static func SK_GANG_FULL_MEMBER() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_GANG_FULL_MEMBER"); }
+    public static func SK_BETRAYAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_BETRAYAL"); }
+    public static func SK_DEBT_TO_FIXER() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_DEBT_TO_FIXER"); }
+    public static func SK_TURF_WAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_TURF_WAR"); }
+    public static func SK_NCPD_RAP() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_NCPD_RAP"); }
+    public static func SK_SAVED_CHOOM() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SK_SAVED_CHOOM"); }
     // ═══════════════════════════════════════════════════════════
     // NOMAD - UPBRINGING
     // ═══════════════════════════════════════════════════════════
-    public static func NM_CLAN_BORN() -> String { return "Born into a nomad clan. "; }
-    public static func NM_ALDECALDOS() -> String { return "Raised in the Aldecaldos family. "; }
-    public static func NM_BAKKERS() -> String { return "Grew up with the Bakkers clan. "; }
-    public static func NM_SNAKE_NATION() -> String { return "Born into the Snake Nation. "; }
-    public static func NM_WRAITH_SURVIVOR() -> String { return "Escaped the Wraiths as a child. "; }
-    public static func NM_RAFFEN_ORPHAN() -> String { return "Parents were killed by Raffen Shiv. "; }
-    public static func NM_CONVOY_CHILD() -> String { return "Spent childhood moving with the convoy. "; }
-    public static func NM_TECH_FAMILY() -> String { return "Raised in a family of nomad mechanics. "; }
-    public static func NM_SMUGGLER_PARENTS() -> String { return "Parents were nomad smugglers. "; }
-    public static func NM_MERGED_CLANS() -> String { return "Born when two clans merged. "; }
+    public static func NM_CLAN_BORN() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_CLAN_BORN"); }
+    public static func NM_ALDECALDOS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_ALDECALDOS"); }
+    public static func NM_BAKKERS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_BAKKERS"); }
+    public static func NM_SNAKE_NATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_SNAKE_NATION"); }
+    public static func NM_WRAITH_SURVIVOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_WRAITH_SURVIVOR"); }
+    public static func NM_RAFFEN_ORPHAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_RAFFEN_ORPHAN"); }
+    public static func NM_CONVOY_CHILD() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_CONVOY_CHILD"); }
+    public static func NM_TECH_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_TECH_FAMILY"); }
+    public static func NM_SMUGGLER_PARENTS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_SMUGGLER_PARENTS"); }
+    public static func NM_MERGED_CLANS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_MERGED_CLANS"); }
     // ═══════════════════════════════════════════════════════════
     // NOMAD - YOUTH EVENTS
     // ═══════════════════════════════════════════════════════════
-    public static func NM_FIRST_DRIVE() -> String { return "Learned to drive at ten years old. "; }
-    public static func NM_MECHANIC_TRAINING() -> String { return "Trained as a mechanic from childhood. "; }
-    public static func NM_BORDER_CROSSINGS() -> String { return "Made dozens of border crossings as a youth. "; }
-    public static func NM_AMBUSH_SURVIVOR() -> String { return "Survived a raider ambush on the convoy. "; }
-    public static func NM_CLAN_STORIES() -> String { return "Grew up hearing stories of the old world. "; }
-    public static func NM_WASTELAND_SKILLS() -> String { return "Learned survival skills in the wasteland. "; }
-    public static func NM_BONFIRE_NIGHTS() -> String { return "Spent nights around the bonfire with family. "; }
-    public static func NM_FIRST_GUN() -> String { return "Received %his% first gun at twelve. "; }
-    public static func NM_DROVE_CONVOY() -> String { return "Drove a convoy vehicle for the first time at fourteen. "; }
+    public static func NM_FIRST_DRIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_FIRST_DRIVE"); }
+    public static func NM_MECHANIC_TRAINING() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_MECHANIC_TRAINING"); }
+    public static func NM_BORDER_CROSSINGS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_BORDER_CROSSINGS"); }
+    public static func NM_AMBUSH_SURVIVOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_AMBUSH_SURVIVOR"); }
+    public static func NM_CLAN_STORIES() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_CLAN_STORIES"); }
+    public static func NM_WASTELAND_SKILLS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_WASTELAND_SKILLS"); }
+    public static func NM_BONFIRE_NIGHTS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_BONFIRE_NIGHTS"); }
+    public static func NM_FIRST_GUN() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_FIRST_GUN"); }
+    public static func NM_DROVE_CONVOY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_DROVE_CONVOY"); }
     // ═══════════════════════════════════════════════════════════
     // NOMAD - ADULT EVENTS
     // ═══════════════════════════════════════════════════════════
-    public static func NM_LEFT_CLAN() -> String { return "Left the clan to make %his% own way. "; }
-    public static func NM_CLAN_DISSOLVED() -> String { return "Clan dissolved after internal conflict. "; }
-    public static func NM_NIGHT_CITY_ARRIVAL() -> String { return "Arrived in Night City seeking work. "; }
-    public static func NM_SMUGGLER_RUN() -> String { return "Made a living on smuggler runs. "; }
-    public static func NM_CITY_CULTURE_SHOCK() -> String { return "Struggled to adapt to city life. "; }
-    public static func NM_CORPO_BETRAYAL() -> String { return "Was betrayed by a corpo on a job. "; }
-    public static func NM_MISSES_ROAD() -> String { return "Still misses the open road. "; }
-    public static func NM_CLAN_CONTACT() -> String { return "Maintains contact with the old clan. "; }
-    public static func NM_VEHICLE_BOND() -> String { return "Treats %his% vehicle like family. "; }
+    public static func NM_LEFT_CLAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_LEFT_CLAN"); }
+    public static func NM_CLAN_DISSOLVED() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_CLAN_DISSOLVED"); }
+    public static func NM_NIGHT_CITY_ARRIVAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_NIGHT_CITY_ARRIVAL"); }
+    public static func NM_SMUGGLER_RUN() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_SMUGGLER_RUN"); }
+    public static func NM_CITY_CULTURE_SHOCK() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_CITY_CULTURE_SHOCK"); }
+    public static func NM_CORPO_BETRAYAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_CORPO_BETRAYAL"); }
+    public static func NM_MISSES_ROAD() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_MISSES_ROAD"); }
+    public static func NM_CLAN_CONTACT() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_CLAN_CONTACT"); }
+    public static func NM_VEHICLE_BOND() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-NM_VEHICLE_BOND"); }
     // ═══════════════════════════════════════════════════════════
     // CORPO - UPBRINGING
     // ═══════════════════════════════════════════════════════════
-    public static func CP_CORPO_BORN() -> String { return "Born into a corporate family. "; }
-    public static func CP_ARASAKA_FAMILY() -> String { return "Raised in an Arasaka loyalist family. "; }
-    public static func CP_MILITECH_FAMILY() -> String { return "Grew up in a Militech family. "; }
-    public static func CP_KANG_TAO_FAMILY() -> String { return "Family served Kang Tao for generations. "; }
-    public static func CP_BOARDING_SCHOOL() -> String { return "Sent to elite corporate boarding school. "; }
-    public static func CP_PRIVILEGE() -> String { return "Grew up in corporate privilege. "; }
-    public static func CP_COMPETITIVE() -> String { return "Raised in a fiercely competitive environment. "; }
-    public static func CP_EXPECTATIONS() -> String { return "Burdened by family expectations from childhood. "; }
-    public static func CP_CORPO_NANNY() -> String { return "Raised primarily by corporate-assigned caregivers. "; }
-    public static func CP_LUXURY_CHILDHOOD() -> String { return "Childhood of luxury and isolation. "; }
+    public static func CP_CORPO_BORN() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_CORPO_BORN"); }
+    public static func CP_ARASAKA_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_ARASAKA_FAMILY"); }
+    public static func CP_MILITECH_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_MILITECH_FAMILY"); }
+    public static func CP_KANG_TAO_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_KANG_TAO_FAMILY"); }
+    public static func CP_BOARDING_SCHOOL() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_BOARDING_SCHOOL"); }
+    public static func CP_PRIVILEGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_PRIVILEGE"); }
+    public static func CP_COMPETITIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_COMPETITIVE"); }
+    public static func CP_EXPECTATIONS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_EXPECTATIONS"); }
+    public static func CP_CORPO_NANNY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_CORPO_NANNY"); }
+    public static func CP_LUXURY_CHILDHOOD() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_LUXURY_CHILDHOOD"); }
     // ═══════════════════════════════════════════════════════════
     // CORPO - YOUTH EVENTS
     // ═══════════════════════════════════════════════════════════
-    public static func CP_ELITE_EDUCATION() -> String { return "Attended elite corporate academy. "; }
-    public static func CP_INTERNSHIP() -> String { return "Interned at parent's corporation as a teen. "; }
-    public static func CP_BUSINESS_TRAINING() -> String { return "Trained in corporate strategy from youth. "; }
-    public static func CP_CORPORATE_POLITICS() -> String { return "Learned corporate politics early. "; }
-    public static func CP_FIRST_BETRAYAL() -> String { return "Witnessed %his% first corporate betrayal as a teen. "; }
-    public static func CP_PRIVATE_SECURITY() -> String { return "Always had private security growing up. "; }
-    public static func CP_LANGUAGE_TRAINING() -> String { return "Trained in multiple languages for business. "; }
-    public static func CP_ETIQUETTE() -> String { return "Drilled in corporate etiquette and protocol. "; }
+    public static func CP_ELITE_EDUCATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_ELITE_EDUCATION"); }
+    public static func CP_INTERNSHIP() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_INTERNSHIP"); }
+    public static func CP_BUSINESS_TRAINING() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_BUSINESS_TRAINING"); }
+    public static func CP_CORPORATE_POLITICS() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_CORPORATE_POLITICS"); }
+    public static func CP_FIRST_BETRAYAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_FIRST_BETRAYAL"); }
+    public static func CP_PRIVATE_SECURITY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_PRIVATE_SECURITY"); }
+    public static func CP_LANGUAGE_TRAINING() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_LANGUAGE_TRAINING"); }
+    public static func CP_ETIQUETTE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_ETIQUETTE"); }
     // ═══════════════════════════════════════════════════════════
     // CORPO - ADULT EVENTS
     // ═══════════════════════════════════════════════════════════
-    public static func CP_FAST_TRACK() -> String { return "Fast-tracked through the corporate ladder. "; }
-    public static func CP_BACKSTABBED() -> String { return "Was backstabbed by a colleague. "; }
-    public static func CP_FACTION_WAR() -> String { return "Caught in an internal faction war. "; }
-    public static func CP_FALL_FROM_GRACE() -> String { return "Experienced a sudden fall from grace. "; }
-    public static func CP_SCAPEGOAT() -> String { return "Made a scapegoat for a failed project. "; }
-    public static func CP_BLACKMAILED() -> String { return "Was blackmailed by a rival. "; }
-    public static func CP_DIRTY_WORK() -> String { return "Did corporate dirty work to climb higher. "; }
-    public static func CP_MERGER_CASUALTY() -> String { return "Lost position in a corporate merger. "; }
-    public static func CP_WHISTLEBLOWER() -> String { return "Considered whistleblowing but backed down. "; }
-    public static func CP_GOLDEN_PARACHUTE() -> String { return "Received a golden parachute after termination. "; }
-    public static func CP_STARTED_OVER() -> String { return "Had to start over after corporate exile. "; }
-    public static func CP_STILL_CONNECTED() -> String { return "Still has connections in the corporate world. "; }
+    public static func CP_FAST_TRACK() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_FAST_TRACK"); }
+    public static func CP_BACKSTABBED() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_BACKSTABBED"); }
+    public static func CP_FACTION_WAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_FACTION_WAR"); }
+    public static func CP_FALL_FROM_GRACE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_FALL_FROM_GRACE"); }
+    public static func CP_SCAPEGOAT() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_SCAPEGOAT"); }
+    public static func CP_BLACKMAILED() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_BLACKMAILED"); }
+    public static func CP_DIRTY_WORK() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_DIRTY_WORK"); }
+    public static func CP_MERGER_CASUALTY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_MERGER_CASUALTY"); }
+    public static func CP_WHISTLEBLOWER() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_WHISTLEBLOWER"); }
+    public static func CP_GOLDEN_PARACHUTE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_GOLDEN_PARACHUTE"); }
+    public static func CP_STARTED_OVER() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_STARTED_OVER"); }
+    public static func CP_STILL_CONNECTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-CP_STILL_CONNECTED"); }
     // ═══════════════════════════════════════════════════════════
     // GANG-SPECIFIC BACKGROUNDS
     // ═══════════════════════════════════════════════════════════
-    public static func MAELSTROM_RAISED() -> String { return "Raised around Maelstrom influence. "; }
-    public static func TYGER_CLAW_FAMILY() -> String { return "Family has Tyger Claw connections. "; }
-    public static func VALENTINO_BLOOD() -> String { return "Has Valentino blood in the family. "; }
-    public static func SIXTH_STREET_VETERAN() -> String { return "Parents were 6th Street veterans. "; }
-    public static func ANIMALS_ASSOCIATE() -> String { return "Family associated with The Animals. "; }
-    public static func VOODOO_BOYS_RAISED() -> String { return "Grew up around the Voodoo Boys in Pacifica. "; }
-    public static func MOXES_PROTECTED() -> String { return "Was protected by the Moxes as a youth. "; }
-    public static func SCAV_SURVIVOR() -> String { return "Escaped from Scavs as a child. "; }
+    public static func MAELSTROM_RAISED() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-MAELSTROM_RAISED"); }
+    public static func TYGER_CLAW_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-TYGER_CLAW_FAMILY"); }
+    public static func VALENTINO_BLOOD() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-VALENTINO_BLOOD"); }
+    public static func SIXTH_STREET_VETERAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SIXTH_STREET_VETERAN"); }
+    public static func ANIMALS_ASSOCIATE() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-ANIMALS_ASSOCIATE"); }
+    public static func VOODOO_BOYS_RAISED() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-VOODOO_BOYS_RAISED"); }
+    public static func MOXES_PROTECTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-MOXES_PROTECTED"); }
+    public static func SCAV_SURVIVOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Lp-SCAV_SURVIVOR"); }
     // ═══════════════════════════════════════════════════════════
 }

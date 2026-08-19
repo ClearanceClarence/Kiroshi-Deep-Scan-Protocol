@@ -1,136 +1,136 @@
 // Corporation names for the %corp% token
 public abstract class KdspTextCorpos {
     // Media
-    public static func NIPPON_NETWORK() -> String { return "Nippon Network"; }
-    public static func DIVERSE_MEDIA() -> String { return "Diverse Media Systems"; }
-    public static func WORLD_NEWS() -> String { return "World News Service"; }
-    public static func NN54() -> String { return "Network News 54"; }
-    public static func NIGHT_CITY_HERALD() -> String { return "Night City Herald"; }
-    public static func SCREAMSHEETS_INC() -> String { return "Screamsheets Inc."; }
+    public static func NIPPON_NETWORK() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NIPPON_NETWORK"); }
+    public static func DIVERSE_MEDIA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-DIVERSE_MEDIA"); }
+    public static func WORLD_NEWS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-WORLD_NEWS"); }
+    public static func NN54() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NN54"); }
+    public static func NIGHT_CITY_HERALD() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NIGHT_CITY_HERALD"); }
+    public static func SCREAMSHEETS_INC() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-SCREAMSHEETS_INC"); }
 
     // Biotech & Pharma
-    public static func AKAROMI() -> String { return "Akaromi BioCorp"; }
-    public static func BIOTECHNICA() -> String { return "Biotechnica"; }
-    public static func RAVEN_MICRO() -> String { return "Raven Microcybernetics"; }
-    public static func LIFEPATH_GENOMICS() -> String { return "Lifepath Genomics"; }
-    public static func CYBERSPACE_MEDICAL() -> String { return "Cyberspace Medical Systems"; }
-    public static func NEURODYNAMICS() -> String { return "NeuroDynamics"; }
-    public static func GENECRAFT() -> String { return "GeneCraft"; }
+    public static func AKAROMI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-AKAROMI"); }
+    public static func BIOTECHNICA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BIOTECHNICA"); }
+    public static func RAVEN_MICRO() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-RAVEN_MICRO"); }
+    public static func LIFEPATH_GENOMICS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-LIFEPATH_GENOMICS"); }
+    public static func CYBERSPACE_MEDICAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-CYBERSPACE_MEDICAL"); }
+    public static func NEURODYNAMICS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NEURODYNAMICS"); }
+    public static func GENECRAFT() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-GENECRAFT"); }
 
     // Agriculture & Food
-    public static func CONAG() -> String { return "ConAg"; }
-    public static func PETROCHEM() -> String { return "Petrochem"; }
-    public static func SOVOIL() -> String { return "SovOil"; }
-    public static func ALL_FOODS() -> String { return "All Foods"; }
-    public static func PROTEIN_DREAMS() -> String { return "Protein Dreams"; }
-    public static func NICOLA() -> String { return "Nicola"; }
+    public static func CONAG() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-CONAG"); }
+    public static func PETROCHEM() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-PETROCHEM"); }
+    public static func SOVOIL() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-SOVOIL"); }
+    public static func ALL_FOODS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ALL_FOODS"); }
+    public static func PROTEIN_DREAMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-PROTEIN_DREAMS"); }
+    public static func NICOLA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NICOLA"); }
 
     // Weapons & Security
-    public static func ARASAKA() -> String { return "Arasaka"; }
-    public static func KANG_TAO() -> String { return "Kang Tao"; }
-    public static func MILITECH() -> String { return "Militech"; }
-    public static func MITSU_SUGO() -> String { return "Mitsubishi-Sugo"; }
-    public static func TDS() -> String { return "Tsunami Defense Systems"; }
-    public static func BUDGET_ARMS() -> String { return "Budget Arms"; }
-    public static func NOKOTA() -> String { return "Nokota Manufacturing"; }
-    public static func CONSTITUTIONAL_ARMS() -> String { return "Constitutional Arms"; }
-    public static func MIDNIGHT_ARMS() -> String { return "Midnight Arms"; }
-    public static func ROSTOVIC() -> String { return "Rostović"; }
-    public static func TECHTRONIKA() -> String { return "Techtronika"; }
-    public static func MALORIAN_ARMS() -> String { return "Malorian Arms"; }
-    public static func FEDERATED_ARMS() -> String { return "Federated Arms"; }
+    public static func ARASAKA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ARASAKA"); }
+    public static func KANG_TAO() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-KANG_TAO"); }
+    public static func MILITECH() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MILITECH"); }
+    public static func MITSU_SUGO() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MITSU_SUGO"); }
+    public static func TDS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-TDS"); }
+    public static func BUDGET_ARMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BUDGET_ARMS"); }
+    public static func NOKOTA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NOKOTA"); }
+    public static func CONSTITUTIONAL_ARMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-CONSTITUTIONAL_ARMS"); }
+    public static func MIDNIGHT_ARMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MIDNIGHT_ARMS"); }
+    public static func ROSTOVIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ROSTOVIC"); }
+    public static func TECHTRONIKA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-TECHTRONIKA"); }
+    public static func MALORIAN_ARMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MALORIAN_ARMS"); }
+    public static func FEDERATED_ARMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-FEDERATED_ARMS"); }
 
     // Electronics & Cyberware
-    public static func SEG_ATARI() -> String { return "SegAtari"; }
-    public static func AHI() -> String { return "Akari Heavy Industries"; }
-    public static func EBM() -> String { return "Euro Business Machines"; }
-    public static func IEC() -> String { return "IEC"; }
-    public static func MICROTECH() -> String { return "Microtech"; }
-    public static func ZETATECH() -> String { return "Zetatech"; }
-    public static func ADREK_ROBO() -> String { return "Adrek Robotics"; }
-    public static func AKAGI_SYS() -> String { return "Akagi Systems"; }
-    public static func BAKU_CHIPMASTERS() -> String { return "Bakumatsu Chipmasters"; }
-    public static func CYPHIRE() -> String { return "Cyphire Cyberware"; }
-    public static func DAKAI() -> String { return "Dakai Soundsystems"; }
-    public static func DYNALAR() -> String { return "Dynalar Technologies"; }
-    public static func KENJIRI() -> String { return "Kenjiri Technology"; }
-    public static func KIROSHI() -> String { return "Kiroshi Opticals"; }
-    public static func FUYUTSUKI() -> String { return "Fuyutsuki Electronics"; }
-    public static func KENDACHI() -> String { return "Kendachi"; }
-    public static func BIOTECH_SIGMA() -> String { return "BioTech Σ"; }
-    public static func STEPHENSON_TECH() -> String { return "Stephenson Tech"; }
-    public static func NETWATCH() -> String { return "NetWatch"; }
-    public static func BIODYNE() -> String { return "BioDyne"; }
+    public static func SEG_ATARI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-SEG_ATARI"); }
+    public static func AHI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-AHI"); }
+    public static func EBM() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-EBM"); }
+    public static func IEC() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-IEC"); }
+    public static func MICROTECH() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MICROTECH"); }
+    public static func ZETATECH() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ZETATECH"); }
+    public static func ADREK_ROBO() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ADREK_ROBO"); }
+    public static func AKAGI_SYS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-AKAGI_SYS"); }
+    public static func BAKU_CHIPMASTERS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BAKU_CHIPMASTERS"); }
+    public static func CYPHIRE() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-CYPHIRE"); }
+    public static func DAKAI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-DAKAI"); }
+    public static func DYNALAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-DYNALAR"); }
+    public static func KENJIRI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-KENJIRI"); }
+    public static func KIROSHI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-KIROSHI"); }
+    public static func FUYUTSUKI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-FUYUTSUKI"); }
+    public static func KENDACHI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-KENDACHI"); }
+    public static func BIOTECH_SIGMA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BIOTECH_SIGMA"); }
+    public static func STEPHENSON_TECH() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-STEPHENSON_TECH"); }
+    public static func NETWATCH() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NETWATCH"); }
+    public static func BIODYNE() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BIODYNE"); }
 
     // Automotive
-    public static func TOYOTA() -> String { return "Toyota Motor"; }
-    public static func CHEVILLON() -> String { return "Chevillon"; }
-    public static func ARCHER() -> String { return "Archer"; }
-    public static func QUADRA() -> String { return "Quadra"; }
-    public static func RAYFIELD() -> String { return "Rayfield"; }
-    public static func THORTON() -> String { return "Thorton"; }
-    public static func MIZUTANI() -> String { return "Mizutani"; }
-    public static func MAKIGAI() -> String { return "Makigai"; }
-    public static func VILLEFORT() -> String { return "Villefort"; }
-    public static func BRENNAN() -> String { return "Brennan"; }
-    public static func HERRERA() -> String { return "Herrera"; }
-    public static func DELAMAIN() -> String { return "Delamain"; }
-    public static func YAIBA() -> String { return "Yaiba"; }
+    public static func TOYOTA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-TOYOTA"); }
+    public static func CHEVILLON() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-CHEVILLON"); }
+    public static func ARCHER() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ARCHER"); }
+    public static func QUADRA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-QUADRA"); }
+    public static func RAYFIELD() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-RAYFIELD"); }
+    public static func THORTON() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-THORTON"); }
+    public static func MIZUTANI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MIZUTANI"); }
+    public static func MAKIGAI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MAKIGAI"); }
+    public static func VILLEFORT() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-VILLEFORT"); }
+    public static func BRENNAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BRENNAN"); }
+    public static func HERRERA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-HERRERA"); }
+    public static func DELAMAIN() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-DELAMAIN"); }
+    public static func YAIBA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-YAIBA"); }
 
     // Aerospace & Communications
-    public static func ORBITAL_AIR() -> String { return "Orbital Air"; }
-    public static func WORLDSAT() -> String { return "WorldSat Communications Network"; }
-    public static func EURO_SPACE_AGENCY() -> String { return "Euro Space Agency"; }
+    public static func ORBITAL_AIR() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ORBITAL_AIR"); }
+    public static func WORLDSAT() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-WORLDSAT"); }
+    public static func EURO_SPACE_AGENCY() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-EURO_SPACE_AGENCY"); }
 
     // Financial & Services
-    public static func EUROBANK() -> String { return "EuroBank"; }
-    public static func FUJIWARA() -> String { return "Fujiwara"; }
-    public static func INFOCOMP() -> String { return "InfoComp"; }
-    public static func MAF() -> String { return "Merrill, Asukaga, & Finch"; }
-    public static func TTI() -> String { return "Trauma Team International"; }
-    public static func BAKENEKO() -> String { return "Bakeneko"; }
-    public static func LAZARUS_GROUP() -> String { return "Lazarus Group"; }
-    public static func ARASAKA_BANK() -> String { return "Arasaka Bank"; }
-    public static func SECURE_YOUR_SOUL() -> String { return "Secure Your Soul"; }
+    public static func EUROBANK() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-EUROBANK"); }
+    public static func FUJIWARA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-FUJIWARA"); }
+    public static func INFOCOMP() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-INFOCOMP"); }
+    public static func MAF() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MAF"); }
+    public static func TTI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-TTI"); }
+    public static func BAKENEKO() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BAKENEKO"); }
+    public static func LAZARUS_GROUP() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-LAZARUS_GROUP"); }
+    public static func ARASAKA_BANK() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ARASAKA_BANK"); }
+    public static func SECURE_YOUR_SOUL() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-SECURE_YOUR_SOUL"); }
 
     // Entertainment
-    public static func BRAINDANCE_INC() -> String { return "Braindance Inc."; }
-    public static func DREAM_ON() -> String { return "Dream On"; }
-    public static func JINGUJI() -> String { return "Jinguji"; }
+    public static func BRAINDANCE_INC() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BRAINDANCE_INC"); }
+    public static func DREAM_ON() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-DREAM_ON"); }
+    public static func JINGUJI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-JINGUJI"); }
 
     // Construction
-    public static func MEGABUILDING_CORP() -> String { return "MegaBuilding Corp"; }
-    public static func NC_HOUSING() -> String { return "Night City Housing Authority"; }
-    public static func STEEL_HORIZON() -> String { return "Steel Horizon Construction"; }
+    public static func MEGABUILDING_CORP() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MEGABUILDING_CORP"); }
+    public static func NC_HOUSING() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NC_HOUSING"); }
+    public static func STEEL_HORIZON() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-STEEL_HORIZON"); }
 
     // Food & Agriculture
-    public static func NOURISH_CORP() -> String { return "Nourish Corp"; }
-    public static func SYNTHESIS_AGRICULTURE() -> String { return "Synthesis Agriculture"; }
+    public static func NOURISH_CORP() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NOURISH_CORP"); }
+    public static func SYNTHESIS_AGRICULTURE() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-SYNTHESIS_AGRICULTURE"); }
 
     // Pharmaceuticals
-    public static func RAVEN_MICROCYBERNETICS() -> String { return "Raven Microcybernetics"; }
-    public static func BIODYNAMIK() -> String { return "BioDynamik"; }
-    public static func MEDTECH_PHARMA() -> String { return "MedTech Pharma"; }
+    public static func RAVEN_MICROCYBERNETICS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-RAVEN_MICROCYBERNETICS"); }
+    public static func BIODYNAMIK() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BIODYNAMIK"); }
+    public static func MEDTECH_PHARMA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MEDTECH_PHARMA"); }
 
     // Private Military / Security
-    public static func LAZARUS_MILITARY() -> String { return "Lazarus Military"; }
-    public static func IRON_GUARD_SEC() -> String { return "Iron Guard Security"; }
-    public static func BLACKWALL_SECURITIES() -> String { return "Blackwall Securities"; }
+    public static func LAZARUS_MILITARY() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-LAZARUS_MILITARY"); }
+    public static func IRON_GUARD_SEC() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-IRON_GUARD_SEC"); }
+    public static func BLACKWALL_SECURITIES() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-BLACKWALL_SECURITIES"); }
 
     // Media & Communications  
-    public static func WNS() -> String { return "World News Service"; }
-    public static func EXCELSIOR() -> String { return "Excelsior Media Group"; }
-    public static func NEON_ARCADE_MEDIA() -> String { return "Neon Arcade Media"; }
+    public static func WNS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-WNS"); }
+    public static func EXCELSIOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-EXCELSIOR"); }
+    public static func NEON_ARCADE_MEDIA() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NEON_ARCADE_MEDIA"); }
 
     // Transportation
 
     // Utilities & Infrastructure
-    public static func NC_POWER() -> String { return "Night City Power & Gas"; }
-    public static func HYDRO_NC() -> String { return "Hydro NC"; }
-    public static func DATAVAULT() -> String { return "DataVault Solutions"; }
+    public static func NC_POWER() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-NC_POWER"); }
+    public static func HYDRO_NC() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-HYDRO_NC"); }
+    public static func DATAVAULT() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-DATAVAULT"); }
 
     // Cybernetics & Chrome
-    public static func TSUNAMI_DEFENSE() -> String { return "Tsunami Defense Systems"; }
-    public static func ARASAKA_CYBERNETICS() -> String { return "Arasaka Cybernetics Division"; }
+    public static func TSUNAMI_DEFENSE() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-TSUNAMI_DEFENSE"); }
+    public static func ARASAKA_CYBERNETICS() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ARASAKA_CYBERNETICS"); }
 
 }

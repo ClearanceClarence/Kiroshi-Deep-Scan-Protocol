@@ -134,8 +134,8 @@ public class KdspPsychProfileManager {
         if IsDefined(coherence) && coherence.hasViolentPast {
             if Equals(coherence.violenceType, "gang") {
                 let training: array<String>;
-                ArrayPush(training, "Street combat experienced");
-                ArrayPush(training, "Gang warfare veteran");
+                ArrayPush(training, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S0"));
+                ArrayPush(training, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S1"));
                 ArrayPush(training, "Self-taught fighter");
                 return training[RandRange(seed, 0, ArraySize(training) - 1)];
             }
@@ -233,10 +233,10 @@ public class KdspPsychProfileManager {
             return "Alcohol dependency";
         }
         if StrContains(StrLower(substanceType), "synth-coke") {
-            return "Stimulant addiction (synth-coke)";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S2");
         }
         if StrContains(StrLower(substanceType), "black lace") {
-            return "Combat drug dependency (Black Lace)";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S3");
         }
         if StrContains(StrLower(substanceType), "glitter") {
             return "Glitter addiction";
@@ -244,7 +244,7 @@ public class KdspPsychProfileManager {
         if StrContains(StrLower(substanceType), "stim") {
             return "Stimulant dependency";
         }
-        return "Substance use disorder (" + substanceType + ")";
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S4") + substanceType + ")";
     }
 
     // Generate trauma matching type
@@ -253,65 +253,65 @@ public class KdspPsychProfileManager {
         
         if Equals(traumaType, "violence") {
             let traumas: array<String>;
-            ArrayPush(traumas, "Violent assault survivor");
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S5"));
             ArrayPush(traumas, "Witnessed murder");
             ArrayPush(traumas, "Shooting victim");
-            ArrayPush(traumas, "Gang violence trauma");
-            ArrayPush(traumas, "Home invasion survivor");
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S6"));
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S7"));
             return traumas[RandRange(seed, 0, ArraySize(traumas) - 1)] + " (" + IntToString(year) + ")";
         }
         if Equals(traumaType, "accident") {
             let traumas: array<String>;
-            ArrayPush(traumas, "Major vehicle accident");
-            ArrayPush(traumas, "Industrial accident survivor");
-            ArrayPush(traumas, "Building collapse survivor");
-            ArrayPush(traumas, "Cyberware malfunction trauma");
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S8"));
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S9"));
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S10"));
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S11"));
             return traumas[RandRange(seed, 0, ArraySize(traumas) - 1)] + " (" + IntToString(year) + ")";
         }
         if Equals(traumaType, "loss") {
             let traumas: array<String>;
-            ArrayPush(traumas, "Lost family member to violence");
-            ArrayPush(traumas, "Death of close friend");
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S12"));
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S13"));
             ArrayPush(traumas, "Lost child");
             ArrayPush(traumas, "Partner death");
             return traumas[RandRange(seed, 0, ArraySize(traumas) - 1)] + " (" + IntToString(year) + ")";
         }
         if Equals(traumaType, "war") {
             let traumas: array<String>;
-            ArrayPush(traumas, "Corporate war veteran");
-            ArrayPush(traumas, "Unification War survivor");
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S14"));
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S15"));
             ArrayPush(traumas, "Combat PTSD");
-            ArrayPush(traumas, "War zone displacement");
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S16"));
             return traumas[RandRange(seed, 0, ArraySize(traumas) - 1)] + " (" + IntToString(year) + ")";
         }
         if Equals(traumaType, "abandonment") {
             let traumas: array<String>;
             ArrayPush(traumas, "Childhood abandonment");
-            ArrayPush(traumas, "Foster system survivor");
+            ArrayPush(traumas, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S17"));
             ArrayPush(traumas, "Parental rejection");
             return traumas[RandRange(seed, 0, ArraySize(traumas) - 1)] + " (" + IntToString(year) + ")";
         }
         
-        return "Unspecified trauma event (" + IntToString(year) + ")";
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S18") + IntToString(year) + ")";
     }
 
     // Psych evaluation coherent with issues
     private static func GeneratePsychEvaluationCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) {
             if coherence.hasSubstanceIssues && coherence.hasTrauma {
-                return "Dual diagnosis - substance use disorder with PTSD. High risk.";
+                return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S19");
             }
             if coherence.hasSubstanceIssues {
-                return "Substance use disorder identified. Treatment recommended.";
+                return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S20");
             }
             if coherence.hasTrauma {
-                return "Trauma-related symptoms present. Therapy recommended.";
+                return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S21");
             }
             if coherence.hasViolentPast && Equals(coherence.lifeTheme, "FALLING") {
-                return "High-risk profile. History of violence, current decline. Monitor closely.";
+                return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S22");
             }
             if Equals(coherence.lifeTheme, "FALLING") {
-                return "Deteriorating mental state. Intervention may be needed.";
+                return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S23");
             }
         }
         return KdspPsychProfileManager.GeneratePsychEvaluation(seed, archetype, null);
@@ -363,10 +363,10 @@ public class KdspPsychProfileManager {
         
         if IsDefined(coherence) {
             if coherence.hasSubstanceIssues {
-                ArrayPush(factors, "Active substance abuse");
+                ArrayPush(factors, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S24"));
             }
             if coherence.hasViolentPast {
-                ArrayPush(factors, "History of violence");
+                ArrayPush(factors, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S25"));
             }
             if coherence.hasTrauma {
                 ArrayPush(factors, "Unresolved trauma");
@@ -383,8 +383,8 @@ public class KdspPsychProfileManager {
         // Add some random factors
         if ArraySize(factors) < 2 {
             let possibleFactors: array<String>;
-            ArrayPush(possibleFactors, "Unstable living situation");
-            ArrayPush(possibleFactors, "Limited support network");
+            ArrayPush(possibleFactors, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S26"));
+            ArrayPush(possibleFactors, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S27"));
             ArrayPush(possibleFactors, "Economic stress");
             ArrayPush(possibleFactors, "Social isolation");
             
@@ -520,74 +520,74 @@ public class KdspPsychProfileManager {
     private static func AssessCombatTraining(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Corporate Self-Defense Training"; }
-            if i == 1 { return "Executive Protection Awareness"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S28"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S29"); }
             if i == 2 { return "None Detected"; }
-            if i == 3 { return "Private Security Training"; }
-            if i == 4 { return "Firearms Certification (Concealed)"; }
-            if i == 5 { return "Krav Maga (Executive Program)"; }
-            if i == 6 { return "Arasaka Personal Defense Course"; }
-            if i == 7 { return "Militech Executive Combat Course"; }
-            if i == 8 { return "Minimal - Relies on security"; }
-            return "Former Military (Officer)";
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S30"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S31"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S32"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S33"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S34"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S35"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S36");
         }
         
         if Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 7);
             if i == 0 { return "None Detected"; }
             if i == 1 { return "Basic Self-Defense"; }
-            if i == 2 { return "Corporate Security Basics"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S37"); }
             if i == 3 { return "Minimal"; }
             if i == 4 { return "Unknown"; }
             if i == 5 { return "Firearms Familiarization"; }
-            if i == 6 { return "Workplace Safety Training"; }
-            return "Former Security (Low-level)";
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S38"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S39");
         }
         
         if Equals(archetype, "GANGER") {
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Street Combat (Experienced)"; }
-            if i == 1 { return "Gang Warfare Training"; }
-            if i == 2 { return "Military Training (Suspected)"; }
-            if i == 3 { return "Melee Combat Specialist"; }
-            if i == 4 { return "Firearms Training (Informal)"; }
-            if i == 5 { return "Close Quarters Combat"; }
-            if i == 6 { return "Street Fighting (Veteran)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S40"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S41"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S42"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S43"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S44"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S45"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S46"); }
             if i == 7 { return "Drive-by Tactics"; }
             if i == 8 { return "Knife Fighting"; }
             if i == 9 { return "Self-Taught Combat"; }
-            if i == 10 { return "Prison Fighting Skills"; }
-            if i == 11 { return "Former Military (Enlisted)"; }
-            if i == 12 { return "Cyberware Combat Integration"; }
-            if i == 13 { return "Pack Tactics Training"; }
-            return "Enforcer Training (Internal)";
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S47"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S48"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S49"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S50"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S51");
         }
         
         if Equals(archetype, "NOMAD") {
             let i = RandRange(seed, 0, 11);
             if i == 0 { return "Wilderness Survival"; }
-            if i == 1 { return "Vehicle Combat Training"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S52"); }
             if i == 2 { return "Firearms Proficiency"; }
-            if i == 3 { return "Pack Defense Tactics"; }
-            if i == 4 { return "Convoy Security Training"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S53"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S54"); }
             if i == 5 { return "Ambush Tactics"; }
             if i == 6 { return "Long-Range Marksmanship"; }
-            if i == 7 { return "Badlands Survival Combat"; }
-            if i == 8 { return "Mechanical Combat (Improvised)"; }
-            if i == 9 { return "Clan Defense Training"; }
-            if i == 10 { return "Border Skirmish Experience"; }
-            return "Raider Combat Experience";
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S55"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S56"); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S57"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S58"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S59");
         }
         
         if Equals(archetype, "LOWLIFE") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Street Fighting (Basic)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S60"); }
             if i == 1 { return "None Detected"; }
             if i == 2 { return "Self-Defense (Informal)"; }
-            if i == 3 { return "Knife Skills (Basic)"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S61"); }
             if i == 4 { return "Firearms (Untrained)"; }
             if i == 5 { return "Brawling Experience"; }
-            if i == 6 { return "Prison Defense Skills"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S62"); }
             if i == 7 { return "Opportunistic Combat"; }
             if i == 8 { return "Evasion Tactics"; }
             return "Unknown";
@@ -599,17 +599,17 @@ public class KdspPsychProfileManager {
         if i == 1 { return "Basic Self-Defense"; }
         if i == 2 { return "Minimal"; }
         if i == 3 { return "Unknown"; }
-        if i == 4 { return "Gym/Fitness Training Only"; }
-        if i == 5 { return "Martial Arts (Hobbyist)"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S63"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S64"); }
         if i == 6 { return "Boxing (Amateur)"; }
-        if i == 7 { return "Firearms Owner (Range Only)"; }
-        if i == 8 { return "Former Military (Support Role)"; }
-        if i == 9 { return "Security Guard (Former)"; }
-        if i == 10 { return "Sports Combat (MMA Fan)"; }
-        if i == 11 { return "Self-Defense Class (Completed)"; }
-        if i == 12 { return "No Formal Training"; }
-        if i == 13 { return "Childhood Martial Arts"; }
-        return "Online Combat Tutorials Only";
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S65"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S66"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S67"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S68"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S69"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S70"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S71"); }
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S72");
     }
 
     private static func AssessArmedLikelihood(seed: Int32, archetype: String, criminal: ref<KdspCriminalRecordData>) -> String {
@@ -657,10 +657,10 @@ public class KdspPsychProfileManager {
             if RandRange(seed + 5, 1, 100) <= 60 {
                 // Gang-specific negative traits (15)
                 let i = RandRange(seed, 0, 14);
-                if i == 0 { return "Prone to violence when threatened"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S73"); }
                 if i == 1 { return "Territorial"; }
-                if i == 2 { return "Distrustful of outsiders"; }
-                if i == 3 { return "Quick to anger"; }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S51"); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S74"); }
                 if i == 4 { return "Ruthless"; }
                 if i == 5 { return "Street-hardened"; }
                 if i == 6 { return "Vengeful"; }
@@ -668,7 +668,7 @@ public class KdspPsychProfileManager {
                 if i == 8 { return "Pack mentality"; }
                 if i == 9 { return "Confrontational"; }
                 if i == 10 { return "Intimidating presence"; }
-                if i == 11 { return "Defensive of crew"; }
+                if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S75"); }
                 if i == 12 { return "Impulsive"; }
                 if i == 13 { return "Risk-taking behavior"; }
                 return "Antisocial tendencies";
@@ -687,10 +687,10 @@ public class KdspPsychProfileManager {
                 if i == 6 { return "Networking instincts"; }
                 if i == 7 { return "Competitive"; }
                 if i == 8 { return "Image-conscious"; }
-                if i == 9 { return "Diplomatic when needed"; }
-                if i == 10 { return "Guarded with information"; }
+                if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S76"); }
+                if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S77"); }
                 if i == 11 { return "Results-oriented"; }
-                if i == 12 { return "Calm under pressure"; }
+                if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S78"); }
                 if i == 13 { return "Detail-oriented"; }
                 return "Professional composure";
             }
@@ -701,15 +701,15 @@ public class KdspPsychProfileManager {
                 let i = RandRange(seed, 0, 11);
                 if i == 0 { return "Desperate"; }
                 if i == 1 { return "Unpredictable"; }
-                if i == 2 { return "Fixated on substances"; }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S79"); }
                 if i == 3 { return "Paranoid tendencies"; }
                 if i == 4 { return "Emotionally volatile"; }
-                if i == 5 { return "Manipulative when using"; }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S80"); }
                 if i == 6 { return "Withdrawn"; }
-                if i == 7 { return "Erratic mood swings"; }
-                if i == 8 { return "Short attention span"; }
-                if i == 9 { return "Deceitful about use"; }
-                if i == 10 { return "Prone to panic"; }
+                if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S81"); }
+                if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S82"); }
+                if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S83"); }
+                if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S84"); }
                 return "Self-destructive patterns";
             }
         }
@@ -719,10 +719,10 @@ public class KdspPsychProfileManager {
                 let i = RandRange(seed, 0, 11);
                 if i == 0 { return "Clan-loyal"; }
                 if i == 1 { return "Self-reliant"; }
-                if i == 2 { return "Distrustful of corpos"; }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S85"); }
                 if i == 3 { return "Freedom-seeking"; }
                 if i == 4 { return "Resourceful"; }
-                if i == 5 { return "Protective of family"; }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S86"); }
                 if i == 6 { return "Practical mindset"; }
                 if i == 7 { return "Wanderlust"; }
                 if i == 8 { return "Independent spirit"; }
@@ -760,7 +760,7 @@ public class KdspPsychProfileManager {
         // Positive traits (20-39)
         if i == 20 { return "Loyal"; }
         if i == 21 { return "Resourceful"; }
-        if i == 22 { return "Calm under pressure"; }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S78"); }
         if i == 23 { return "Protective"; }
         if i == 24 { return "Adaptable"; }
         if i == 25 { return "Honest"; }
@@ -780,12 +780,12 @@ public class KdspPsychProfileManager {
         if i == 39 { return "Self-aware"; }
         
         // Negative traits (40-59)
-        if i == 40 { return "Prone to violence when threatened"; }
+        if i == 40 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S73"); }
         if i == 41 { return "Impulsive"; }
-        if i == 42 { return "Distrustful of authority"; }
+        if i == 42 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S87"); }
         if i == 43 { return "Paranoid tendencies"; }
         if i == 44 { return "Risk-taking behavior"; }
-        if i == 45 { return "Difficulty with authority"; }
+        if i == 45 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S88"); }
         if i == 46 { return "Emotionally volatile"; }
         if i == 47 { return "Manipulative"; }
         if i == 48 { return "Antisocial tendencies"; }
@@ -834,59 +834,59 @@ public class KdspPsychProfileManager {
         let i = RandRange(seed, 0, 44);
         
         // Violence-related (0-9)
-        if i == 0 { return "History of violent outbursts"; }
-        if i == 1 { return "Known to carry concealed weapons"; }
-        if i == 2 { return "Previous resistance to arrest"; }
-        if i == 3 { return "Known to use violence preemptively"; }
-        if i == 4 { return "Domestic violence history"; }
-        if i == 5 { return "Bar fight incidents"; }
-        if i == 6 { return "Road rage incidents"; }
-        if i == 7 { return "Assault charges (past)"; }
-        if i == 8 { return "Threats against authority"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S89"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S90"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S91"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S92"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S93"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S94"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S95"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S96"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S97"); }
         if i == 9 { return "Intimidation tactics"; }
         
         // Criminal associations (10-19)
-        if i == 10 { return "Gang-related activities suspected"; }
-        if i == 11 { return "Possible underground connections"; }
-        if i == 12 { return "Associates with known criminals"; }
-        if i == 13 { return "Possible information broker"; }
-        if i == 14 { return "Fixer network connections"; }
-        if i == 15 { return "Black market involvement"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S98"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S99"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S100"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S101"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S102"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S103"); }
         if i == 16 { return "Smuggling suspicion"; }
-        if i == 17 { return "Fence for stolen goods"; }
-        if i == 18 { return "Money laundering indicators"; }
-        if i == 19 { return "Illegal gambling involvement"; }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S104"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S105"); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S106"); }
         
         // Behavioral patterns (20-29)
-        if i == 20 { return "Erratic behavior reported"; }
-        if i == 21 { return "Known to flee when confronted"; }
-        if i == 22 { return "Substance abuse affects judgment"; }
-        if i == 23 { return "Financial desperation noted"; }
-        if i == 24 { return "History of fraud"; }
-        if i == 25 { return "Compulsive lying pattern"; }
-        if i == 26 { return "Stalking behavior history"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S107"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S108"); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S109"); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S110"); }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S111"); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S112"); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S113"); }
         if i == 27 { return "Harassment complaints"; }
-        if i == 28 { return "Boundary violation issues"; }
-        if i == 29 { return "Impulse control disorder"; }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S114"); }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S14"); }
         
         // Psychological flags (30-39)
-        if i == 30 { return "Protective of specific individuals"; }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S115"); }
         if i == 31 { return "Anti-corporate sentiment"; }
         if i == 32 { return "Anti-authority sentiment"; }
         if i == 33 { return "Paranoid ideation"; }
         if i == 34 { return "Conspiracy beliefs"; }
         if i == 35 { return "Depressive indicators"; }
-        if i == 36 { return "Anxiety disorder suspected"; }
-        if i == 37 { return "Mood disorder indicators"; }
-        if i == 38 { return "Personality disorder traits"; }
+        if i == 36 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S116"); }
+        if i == 37 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S117"); }
+        if i == 38 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S118"); }
         if i == 39 { return "Dissociative episodes"; }
         
         // Risk indicators (40-44)
         if i == 40 { return "Self-harm history"; }
-        if i == 41 { return "Suicidal ideation (past)"; }
-        if i == 42 { return "Crisis intervention history"; }
-        if i == 43 { return "Involuntary commitment (past)"; }
-        return "Cyberpsychosis early warning";
+        if i == 41 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S119"); }
+        if i == 42 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S120"); }
+        if i == 43 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S121"); }
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S122");
     }
 
     private static func HasAddictions(seed: Int32, archetype: String) -> Bool {
@@ -907,31 +907,31 @@ public class KdspPsychProfileManager {
         if Equals(archetype, "JUNKIE") {
             // Hard substances for junkies (15)
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Black Lace (Severe)"; }
-            if i == 1 { return "Synth-Cocaine (Heavy use)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S123"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S124"); }
             if i == 2 { return "Glitter (Compulsive)"; }
             if i == 3 { return "Dorph (Dependency)"; }
-            if i == 4 { return "S-Keef (Daily use)"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S125"); }
             if i == 5 { return "Bounce (Stimulant)"; }
-            if i == 6 { return "Spike (Combat drug)"; }
-            if i == 7 { return "Smash (Rage inducer)"; }
-            if i == 8 { return "Blue Glass (Hallucinogen)"; }
-            if i == 9 { return "Synthcoke + Alcohol combo"; }
-            if i == 10 { return "Multiple substances (Poly-drug)"; }
-            if i == 11 { return "IV drug use"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S126"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S127"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S128"); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S129"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S130"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S131"); }
             if i == 12 { return "Bootleg pharmaceuticals"; }
-            if i == 13 { return "Unknown street drug"; }
-            return "XBD Addiction (Extreme)";
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S132"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S133");
         }
         
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
             // Corporate-appropriate addictions (12)
             let i = RandRange(seed, 0, 11);
-            if i == 0 { return "Work (Corporate Burnout)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S134"); }
             if i == 1 { return "Alcohol (Functioning)"; }
-            if i == 2 { return "Alcohol (Hidden problem)"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S135"); }
             if i == 3 { return "Prescription stimulants"; }
-            if i == 4 { return "Sleeping pills (Dependency)"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S136"); }
             if i == 5 { return "Anti-anxiety medication"; }
             if i == 6 { return "Caffeine (Extreme)"; }
             if i == 7 { return "Nicotine (Heavy)"; }
@@ -944,10 +944,10 @@ public class KdspPsychProfileManager {
         if Equals(archetype, "GANGER") {
             // Gang-related substances (10)
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Black Lace (Combat prep)"; }
-            if i == 1 { return "Smash (Violence enhancer)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S137"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S138"); }
             if i == 2 { return "Alcohol (Heavy)"; }
-            if i == 3 { return "S-Keef (Social use)"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S139"); }
             if i == 4 { return "Bounce (Energy)"; }
             if i == 5 { return "Synthcoke (Recreational)"; }
             if i == 6 { return "Adrenaline chasing"; }
@@ -962,10 +962,10 @@ public class KdspPsychProfileManager {
         // Alcohol (0-5)
         if i == 0 { return "Alcohol (Moderate)"; }
         if i == 1 { return "Alcohol (Severe)"; }
-        if i == 2 { return "Alcohol (Binge pattern)"; }
-        if i == 3 { return "Alcohol (Daily use)"; }
-        if i == 4 { return "Alcohol (In recovery)"; }
-        if i == 5 { return "Alcohol + Other substances"; }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S140"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S141"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S142"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S143"); }
         
         // Tobacco/Nicotine (6-8)
         if i == 6 { return "Tobacco/Nicotine (Light)"; }
@@ -983,28 +983,28 @@ public class KdspPsychProfileManager {
         if i == 16 { return "Spike"; }
         if i == 17 { return "Smash"; }
         if i == 18 { return "Street opioids"; }
-        if i == 19 { return "Designer drugs (Various)"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S144"); }
         
         // Prescription (20-26)
-        if i == 20 { return "Prescription Medication Misuse"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S145"); }
         if i == 21 { return "Sedatives (Self-Medicating)"; }
         if i == 22 { return "Stimulants (Prescription)"; }
         if i == 23 { return "Painkillers (Dependency)"; }
-        if i == 24 { return "Anti-anxiety meds (Abuse)"; }
-        if i == 25 { return "Sleeping aids (Dependency)"; }
-        if i == 26 { return "Mood stabilizers (Overuse)"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S146"); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S147"); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S148"); }
         
         // Behavioral (27-37)
         if i == 27 { return "Braindance (Compulsive)"; }
-        if i == 28 { return "Braindance (XBD - Illegal)"; }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S149"); }
         if i == 29 { return "Gambling"; }
         if i == 30 { return "Gambling (Severe)"; }
-        if i == 31 { return "Cyberware (Chrome Addiction)"; }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S150"); }
         if i == 32 { return "Sex/Pornography"; }
         if i == 33 { return "Shopping (Compulsive)"; }
         if i == 34 { return "Gaming (Excessive)"; }
         if i == 35 { return "Social media"; }
-        if i == 36 { return "Food (Compulsive eating)"; }
+        if i == 36 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S151"); }
         if i == 37 { return "Exercise (Compulsive)"; }
         
         // Other (38-44)
@@ -1014,7 +1014,7 @@ public class KdspPsychProfileManager {
         if i == 41 { return "Attention/Validation"; }
         if i == 42 { return "Control (Behavioral)"; }
         if i == 43 { return "Self-harm (Pattern)"; }
-        return "Multiple addictions (Co-occurring)";
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S152");
     }
 
     private static func GetTraumaChance(archetype: String) -> Int32 {
@@ -1033,130 +1033,130 @@ public class KdspPsychProfileManager {
         // Archetype-specific traumas
         if Equals(archetype, "GANGER") && RandRange(seed + 50, 1, 100) <= 60 {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Gang initiation violence (" + IntToString(year) + ")"; }
-            if i == 1 { return "Lost crew members to rivals (" + IntToString(year) + ")"; }
-            if i == 2 { return "Drive-by survivor (" + IntToString(year) + ")"; }
-            if i == 3 { return "Incarceration trauma (" + IntToString(year) + ")"; }
-            if i == 4 { return "Betrayed by gang member (" + IntToString(year) + ")"; }
-            if i == 5 { return "Witnessed execution (" + IntToString(year) + ")"; }
-            if i == 6 { return "Tortured by rivals (" + IntToString(year) + ")"; }
-            if i == 7 { return "Police brutality victim (" + IntToString(year) + ")"; }
-            if i == 8 { return "Lost sibling to streets (" + IntToString(year) + ")"; }
-            return "Forced to commit violence (" + IntToString(year) + ")";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S153") + IntToString(year) + ")"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S154") + IntToString(year) + ")"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S155") + IntToString(year) + ")"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S156") + IntToString(year) + ")"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S157") + IntToString(year) + ")"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S158") + IntToString(year) + ")"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S159") + IntToString(year) + ")"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S160") + IntToString(year) + ")"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S161") + IntToString(year) + ")"; }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S162") + IntToString(year) + ")";
         }
         
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
             if RandRange(seed + 50, 1, 100) <= 50 {
                 let i = RandRange(seed, 0, 7);
-                if i == 0 { return "Corporate betrayal (" + IntToString(year) + ")"; }
-                if i == 1 { return "Hostile takeover survivor (" + IntToString(year) + ")"; }
-                if i == 2 { return "Workplace violence incident (" + IntToString(year) + ")"; }
-                if i == 3 { return "Career destruction event (" + IntToString(year) + ")"; }
-                if i == 4 { return "Witnessed colleague's breakdown (" + IntToString(year) + ")"; }
-                if i == 5 { return "Corporate espionage victim (" + IntToString(year) + ")"; }
-                if i == 6 { return "Blackmail victim (" + IntToString(year) + ")"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S163") + IntToString(year) + ")"; }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S164") + IntToString(year) + ")"; }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S165") + IntToString(year) + ")"; }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S166") + IntToString(year) + ")"; }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S167") + IntToString(year) + ")"; }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S168") + IntToString(year) + ")"; }
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S169") + IntToString(year) + ")"; }
                 return "Burnout/breakdown (" + IntToString(year) + ")";
             }
         }
         
         if Equals(archetype, "NOMAD") && RandRange(seed + 50, 1, 100) <= 60 {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "Clan massacre survivor (" + IntToString(year) + ")"; }
-            if i == 1 { return "Badlands ambush (" + IntToString(year) + ")"; }
-            if i == 2 { return "Lost family in desert (" + IntToString(year) + ")"; }
-            if i == 3 { return "Raider attack survivor (" + IntToString(year) + ")"; }
-            if i == 4 { return "Exile from clan (" + IntToString(year) + ")"; }
-            if i == 5 { return "Vehicle accident (severe) (" + IntToString(year) + ")"; }
-            if i == 6 { return "Corporate land seizure (" + IntToString(year) + ")"; }
-            return "Lost entire convoy (" + IntToString(year) + ")";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S170") + IntToString(year) + ")"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S171") + IntToString(year) + ")"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S172") + IntToString(year) + ")"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S173") + IntToString(year) + ")"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S174") + IntToString(year) + ")"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S175") + IntToString(year) + ")"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S176") + IntToString(year) + ")"; }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S177") + IntToString(year) + ")";
         }
         
         // General trauma pool (50)
         let i = RandRange(seed, 0, 49);
         
         // Violence traumas (0-14)
-        if i == 0 { return "Witnessed violent death (" + IntToString(year) + ")"; }
-        if i == 1 { return "Victim of violent crime (" + IntToString(year) + ")"; }
-        if i == 2 { return "Gang-related violence (" + IntToString(year) + ")"; }
-        if i == 3 { return "Combat trauma (" + IntToString(year) + ")"; }
-        if i == 4 { return "Near-death experience (" + IntToString(year) + ")"; }
-        if i == 5 { return "Shooting victim (" + IntToString(year) + ")"; }
-        if i == 6 { return "Stabbing victim (" + IntToString(year) + ")"; }
-        if i == 7 { return "Assault survivor (" + IntToString(year) + ")"; }
-        if i == 8 { return "Kidnapping survivor (" + IntToString(year) + ")"; }
-        if i == 9 { return "Hostage situation (" + IntToString(year) + ")"; }
-        if i == 10 { return "Torture survivor (" + IntToString(year) + ")"; }
-        if i == 11 { return "Home invasion (" + IntToString(year) + ")"; }
-        if i == 12 { return "Mugging (violent) (" + IntToString(year) + ")"; }
-        if i == 13 { return "Carjacking victim (" + IntToString(year) + ")"; }
-        if i == 14 { return "Cyberpsycho encounter (" + IntToString(year) + ")"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S178") + IntToString(year) + ")"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S179") + IntToString(year) + ")"; }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S180") + IntToString(year) + ")"; }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S181") + IntToString(year) + ")"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S182") + IntToString(year) + ")"; }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S183") + IntToString(year) + ")"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S184") + IntToString(year) + ")"; }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S185") + IntToString(year) + ")"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S186") + IntToString(year) + ")"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S187") + IntToString(year) + ")"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S188") + IntToString(year) + ")"; }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S81") + IntToString(year) + ")"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S189") + IntToString(year) + ")"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S190") + IntToString(year) + ")"; }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S191") + IntToString(year) + ")"; }
         
         // Loss traumas (15-24)
-        if i == 15 { return "Loss of family member (" + IntToString(year) + ")"; }
-        if i == 16 { return "Loss of child (" + IntToString(year) + ")"; }
-        if i == 17 { return "Loss of spouse/partner (" + IntToString(year) + ")"; }
-        if i == 18 { return "Loss of parent (" + IntToString(year) + ")"; }
-        if i == 19 { return "Loss of sibling (" + IntToString(year) + ")"; }
-        if i == 20 { return "Loss of close friend (" + IntToString(year) + ")"; }
-        if i == 21 { return "Multiple losses (" + IntToString(year) + ")"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S192") + IntToString(year) + ")"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S193") + IntToString(year) + ")"; }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S194") + IntToString(year) + ")"; }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S195") + IntToString(year) + ")"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S196") + IntToString(year) + ")"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S197") + IntToString(year) + ")"; }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S198") + IntToString(year) + ")"; }
         if i == 22 { return "Miscarriage/Stillbirth (" + IntToString(year) + ")"; }
-        if i == 23 { return "Pet death (significant) (" + IntToString(year) + ")"; }
-        if i == 24 { return "Sudden unexpected death (" + IntToString(year) + ")"; }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S199") + IntToString(year) + ")"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S200") + IntToString(year) + ")"; }
         
         // Childhood/Development (25-32)
-        if i == 25 { return "Childhood abuse (" + IntToString(year) + ")"; }
-        if i == 26 { return "Childhood neglect (" + IntToString(year) + ")"; }
-        if i == 27 { return "Parental abandonment (" + IntToString(year) + ")"; }
-        if i == 28 { return "Foster system trauma (" + IntToString(year) + ")"; }
-        if i == 29 { return "Bullying (severe) (" + IntToString(year) + ")"; }
-        if i == 30 { return "Witnessed domestic violence (" + IntToString(year) + ")"; }
-        if i == 31 { return "Early life poverty (" + IntToString(year) + ")"; }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S201") + IntToString(year) + ")"; }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S202") + IntToString(year) + ")"; }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S203") + IntToString(year) + ")"; }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S204") + IntToString(year) + ")"; }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S205") + IntToString(year) + ")"; }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S206") + IntToString(year) + ")"; }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S207") + IntToString(year) + ")"; }
         if i == 32 { return "Parentification (" + IntToString(year) + ")"; }
         
         // Accidents/Disasters (33-40)
-        if i == 33 { return "Major vehicle accident (" + IntToString(year) + ")"; }
-        if i == 34 { return "Industrial accident (" + IntToString(year) + ")"; }
-        if i == 35 { return "Building collapse (" + IntToString(year) + ")"; }
-        if i == 36 { return "Fire survivor (" + IntToString(year) + ")"; }
-        if i == 37 { return "Natural disaster (" + IntToString(year) + ")"; }
-        if i == 38 { return "Cyberware malfunction trauma (" + IntToString(year) + ")"; }
-        if i == 39 { return "Medical emergency (" + IntToString(year) + ")"; }
+        if i == 33 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S208") + IntToString(year) + ")"; }
+        if i == 34 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S209") + IntToString(year) + ")"; }
+        if i == 35 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S210") + IntToString(year) + ")"; }
+        if i == 36 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S211") + IntToString(year) + ")"; }
+        if i == 37 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S212") + IntToString(year) + ")"; }
+        if i == 38 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S213") + IntToString(year) + ")"; }
+        if i == 39 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S214") + IntToString(year) + ")"; }
         if i == 40 { return "Near-drowning (" + IntToString(year) + ")"; }
         
         // Other (41-49)
         if i == 41 { return "Imprisonment (" + IntToString(year) + ")"; }
-        if i == 42 { return "Refugee displacement (" + IntToString(year) + ")"; }
-        if i == 43 { return "Abusive relationship (" + IntToString(year) + ")"; }
-        if i == 44 { return "Sexual trauma (" + IntToString(year) + ")"; }
-        if i == 45 { return "Medical trauma (" + IntToString(year) + ")"; }
-        if i == 46 { return "Addiction-related trauma (" + IntToString(year) + ")"; }
-        if i == 47 { return "Prolonged homelessness (" + IntToString(year) + ")"; }
-        if i == 48 { return "Identity theft/destruction (" + IntToString(year) + ")"; }
-        return "Cyberpsychosis episode (witnessed) (" + IntToString(year) + ")";
+        if i == 42 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S215") + IntToString(year) + ")"; }
+        if i == 43 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S216") + IntToString(year) + ")"; }
+        if i == 44 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S217") + IntToString(year) + ")"; }
+        if i == 45 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S218") + IntToString(year) + ")"; }
+        if i == 46 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S219") + IntToString(year) + ")"; }
+        if i == 47 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S220") + IntToString(year) + ")"; }
+        if i == 48 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S221") + IntToString(year) + ")"; }
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S222") + IntToString(year) + ")";
     }
 
     private static func GeneratePsychEvaluation(seed: Int32, archetype: String, profile: ref<KdspPsychProfileData>) -> String {
         if profile.threatLevel >= 70 {
-            return "HIGH RISK - Professional intervention recommended. Subject displays multiple concerning indicators.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S223");
         }
         if profile.threatLevel >= 50 {
-            return "MODERATE RISK - Monitoring advised. Potential for escalation under stress.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S224");
         }
         if ArraySize(profile.addictions) > 0 {
-            return "AT RISK - Addiction issues noted. Behavior may be unpredictable.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S225");
         }
         if ArraySize(profile.traumaEvents) > 1 {
-            return "ELEVATED CONCERN - Multiple trauma indicators. Therapeutic support recommended.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S226");
         }
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "YUPPIE") {
-            return "STABLE - Within normal parameters for socioeconomic group.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S227");
         }
-        return "STABLE - No immediate concerns. Routine monitoring sufficient.";
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S228");
     }
 
     private static func GenerateLastEvalDate(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
-            return IntToString(RandRange(seed, 2075, 2077)) + " (Corporate Mandatory)";
+            return IntToString(RandRange(seed, 2075, 2077)) + GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S229");
         }
         if RandRange(seed, 1, 100) <= 30 {
             return IntToString(RandRange(seed, 2070, 2076));
@@ -1225,12 +1225,12 @@ public class KdspPsychProfileManager {
             if i == 6 { return "SCAVENGERS"; }
             if i == 7 { return "WRAITHS"; }
             if i == 8 { return "MOX"; }
-            if i == 9 { return "Rival Gang Member (Specific)"; }
-            if i == 10 { return "Former Gang Leader"; }
-            if i == 11 { return "Snitch Within Gang"; }
-            if i == 12 { return "NCPD Gang Unit"; }
-            if i == 13 { return "Dealer Who Cheated Them"; }
-            return "Ex-Partner (Gang Related)";
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S230"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S231"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S232"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S233"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S234"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S235");
         }
         
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
@@ -1240,8 +1240,8 @@ public class KdspPsychProfileManager {
             if i == 1 { return "MILITECH"; }
             if i == 2 { return "Former Employer"; }
             if i == 3 { return "Rival Executive"; }
-            if i == 4 { return "Board Member (Specific)"; }
-            if i == 5 { return "Former Business Partner"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S236"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S237"); }
             if i == 6 { return "Whistleblower"; }
             if i == 7 { return "Corporate Lawyer"; }
             if i == 8 { return "HR Department"; }
@@ -1254,13 +1254,13 @@ public class KdspPsychProfileManager {
             if i == 0 { return "MILITECH"; }
             if i == 1 { return "ARASAKA CORPORATION"; }
             if i == 2 { return "Rival Clan"; }
-            if i == 3 { return "NCPD Border Patrol"; }
-            if i == 4 { return "WRAITHS (Raider Clan)"; }
-            if i == 5 { return "Corporate Land Grabbers"; }
-            if i == 6 { return "Clan Elder (Exiled By)"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S238"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S239"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S240"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S241"); }
             if i == 7 { return "Biotechnica"; }
-            if i == 8 { return "Former Clan Member (Traitor)"; }
-            return "Night City Officials";
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S242"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S243");
         }
         
         // General targets (35)
@@ -1276,13 +1276,13 @@ public class KdspPsychProfileManager {
         if i == 6 { return "PETROCHEM"; }
         if i == 7 { return "Former Employer"; }
         if i == 8 { return "Insurance Company"; }
-        if i == 9 { return "Corporate Entity (Unspecified)"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S244"); }
         
         // Law Enforcement (10-14)
         if i == 10 { return "NCPD"; }
-        if i == 11 { return "NCPD Officer (Specific)"; }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S245"); }
         if i == 12 { return "MAXTAC"; }
-        if i == 13 { return "Night City Courts"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S246"); }
         if i == 14 { return "Prison System"; }
         
         // Gangs (15-22)
@@ -1293,21 +1293,21 @@ public class KdspPsychProfileManager {
         if i == 19 { return "ANIMALS"; }
         if i == 20 { return "VOODOO BOYS"; }
         if i == 21 { return "SCAVENGERS"; }
-        if i == 22 { return "Local Gang (Unspecified)"; }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S247"); }
         
         // Personal (23-34)
         if i == 23 { return "Unknown Individual"; }
-        if i == 24 { return "Family Member (Estranged)"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S248"); }
         if i == 25 { return "Ex-Spouse/Partner"; }
         if i == 26 { return "Former Friend"; }
         if i == 27 { return "Neighbor"; }
         if i == 28 { return "Landlord/Property Owner"; }
         if i == 29 { return "Loan Shark"; }
-        if i == 30 { return "Ripperdoc (Botched Job)"; }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S249"); }
         if i == 31 { return "Fixer (Betrayal)"; }
         if i == 32 { return "Medical System"; }
         if i == 33 { return "Parent/Guardian"; }
-        return "The System (General)";
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S250");
     }
 
     private static func GenerateIdeologyFlags(seed: Int32, archetype: String) -> array<String> {
@@ -1320,11 +1320,11 @@ public class KdspPsychProfileManager {
             while i < count {
                 let j = RandRange(seed + (i * 19), 0, 9);
                 if j == 0 { ArrayPush(flags, "Pro-Corporate"); }
-                else if j == 1 { ArrayPush(flags, "Free Market Absolutist"); }
+                else if j == 1 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S251")); }
                 else if j == 2 { ArrayPush(flags, "Meritocracy Believer"); }
                 else if j == 3 { ArrayPush(flags, "Corporate Loyalist"); }
                 else if j == 4 { ArrayPush(flags, "Techno-Optimist"); }
-                else if j == 5 { ArrayPush(flags, "Status Quo Defender"); }
+                else if j == 5 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S252")); }
                 else if j == 6 { ArrayPush(flags, "Apolitical (Career-focused)"); }
                 else if j == 7 { ArrayPush(flags, "Privately Anti-Corporate"); }
                 else if j == 8 { ArrayPush(flags, "Transhumanist"); }
@@ -1342,7 +1342,7 @@ public class KdspPsychProfileManager {
                 if j == 0 { ArrayPush(flags, "Gang Loyalist"); }
                 else if j == 1 { ArrayPush(flags, "Anti-Corporate"); }
                 else if j == 2 { ArrayPush(flags, "Anti-Authority"); }
-                else if j == 3 { ArrayPush(flags, "Street Code Adherent"); }
+                else if j == 3 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S253")); }
                 else if j == 4 { ArrayPush(flags, "Territorial Nationalism"); }
                 else if j == 5 { ArrayPush(flags, "Criminal Pragmatist"); }
                 else if j == 6 { ArrayPush(flags, "Revolutionary"); }
@@ -1359,16 +1359,16 @@ public class KdspPsychProfileManager {
             let i = 0;
             while i < count {
                 let j = RandRange(seed + (i * 19), 0, 9);
-                if j == 0 { ArrayPush(flags, "Nomad Clan First"); }
+                if j == 0 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S254")); }
                 else if j == 1 { ArrayPush(flags, "Freedom Absolutist"); }
                 else if j == 2 { ArrayPush(flags, "Anti-Corporate"); }
                 else if j == 3 { ArrayPush(flags, "Self-Reliance Philosophy"); }
                 else if j == 4 { ArrayPush(flags, "Family/Clan Loyalty"); }
-                else if j == 5 { ArrayPush(flags, "Distrust of Cities"); }
+                else if j == 5 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S255")); }
                 else if j == 6 { ArrayPush(flags, "Environmental Concern"); }
                 else if j == 7 { ArrayPush(flags, "Traditional Values"); }
                 else if j == 8 { ArrayPush(flags, "Libertarian"); }
-                else { ArrayPush(flags, "Road Culture Adherent"); }
+                else { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S256")); }
                 i += 1;
             }
             return flags;
@@ -1397,12 +1397,12 @@ public class KdspPsychProfileManager {
             else if j == 11 { ArrayPush(flags, "Bioconservative"); }
             else if j == 12 { ArrayPush(flags, "Techno-Optimist"); }
             else if j == 13 { ArrayPush(flags, "Techno-Skeptic"); }
-            else if j == 14 { ArrayPush(flags, "AI Rights Advocate"); }
+            else if j == 14 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S257")); }
             
             // Social (15-24)
             else if j == 15 { ArrayPush(flags, "Gang Loyalist"); }
-            else if j == 16 { ArrayPush(flags, "Nomad Clan First"); }
-            else if j == 17 { ArrayPush(flags, "Religious (Specific Sect)"); }
+            else if j == 16 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S254")); }
+            else if j == 17 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S258")); }
             else if j == 18 { ArrayPush(flags, "Apolitical"); }
             else if j == 19 { ArrayPush(flags, "Survivalist"); }
             else if j == 20 { ArrayPush(flags, "Family Values"); }
@@ -1415,7 +1415,7 @@ public class KdspPsychProfileManager {
             else if j == 25 { ArrayPush(flags, "Conspiracy Believer"); }
             else if j == 26 { ArrayPush(flags, "Doomsday Prepper"); }
             else if j == 27 { ArrayPush(flags, "Anti-Government"); }
-            else if j == 28 { ArrayPush(flags, "Cult Member (Suspected)"); }
+            else if j == 28 { ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S259")); }
             else if j == 29 { ArrayPush(flags, "Extremist Sympathizer"); }
             else if j == 30 { ArrayPush(flags, "Militant Activist"); }
             else if j == 31 { ArrayPush(flags, "Nihilist"); }
@@ -1433,10 +1433,10 @@ public class KdspPsychProfileManager {
         let factors: array<String>;
 
         if profile.threatLevel >= 60 {
-            ArrayPush(factors, "High threat profile");
+            ArrayPush(factors, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S260"));
         }
         if profile.hasAddictions {
-            ArrayPush(factors, "Active addiction issues");
+            ArrayPush(factors, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S261"));
         }
         if ArraySize(profile.traumaEvents) > 0 {
             ArrayPush(factors, "Unresolved trauma");
@@ -1459,18 +1459,18 @@ public class KdspPsychProfileManager {
 
     private static func GenerateHandlingRecommendation(profile: ref<KdspPsychProfileData>) -> String {
         if profile.threatLevel >= 80 {
-            return "EXTREME CAUTION. MaxTac referral may be warranted. Do not engage without significant backup.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S262");
         }
         if profile.threatLevel >= 60 {
-            return "HIGH CAUTION. Armed backup recommended. De-escalation training useful.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S263");
         }
         if profile.threatLevel >= 40 {
-            return "STANDARD CAUTION. Follow routine protocols. Be prepared for potential resistance.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S264");
         }
         if profile.stabilityScore < 40 {
-            return "PSYCHOLOGICAL SENSITIVITY. Avoid confrontational approach. Crisis intervention training recommended.";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S265");
         }
-        return "ROUTINE. Standard engagement protocols sufficient.";
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S266");
     }
 
     // Get temperament based on stability - how the person generally behaves
@@ -1484,10 +1484,10 @@ public class KdspPsychProfileManager {
             return "Tense, alert";
         }
         if stabilityScore >= 40 {
-            return "Prone to mood swings";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S267");
         }
         if stabilityScore >= 20 {
-            return "Erratic behavior patterns";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S268");
         }
         return "Severe instability";
     }
@@ -1502,12 +1502,12 @@ public class KdspPsychProfileManager {
             if i == 3 { return "Guarded, political"; }
             if i == 4 { return "Results-driven"; }
             if i == 5 { return "Coldly efficient"; }
-            if i == 6 { return "Charming but ruthless"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S269"); }
             if i == 7 { return "Networking constantly"; }
-            if i == 8 { return "Stressed but composed"; }
-            if i == 9 { return "Competitive to a fault"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S270"); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S271"); }
             if i == 10 { return "Image-obsessed"; }
-            if i == 11 { return "Distrustful of subordinates"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S272"); }
             if i == 12 { return "Power-hungry"; }
             if i == 13 { return "Diplomatically aggressive"; }
             return "Corporate survivor";
@@ -1520,16 +1520,16 @@ public class KdspPsychProfileManager {
             if i == 2 { return "Quietly ambitious"; }
             if i == 3 { return "Stressed, overworked"; }
             if i == 4 { return "Corporate loyalist"; }
-            if i == 5 { return "Exhausted but persistent"; }
-            if i == 6 { return "Dreaming of promotion"; }
-            if i == 7 { return "Resigned to fate"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S273"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S274"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S275"); }
             if i == 8 { return "Passive-aggressive"; }
             if i == 9 { return "Clock-watching"; }
             if i == 10 { return "Secretly resentful"; }
-            if i == 11 { return "Living for weekends"; }
-            if i == 12 { return "Anxious about job security"; }
-            if i == 13 { return "Going through the motions"; }
-            return "Burned out but functional";
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S276"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S277"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S278"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S279");
         }
         
         if Equals(archetype, "YUPPIE") {
@@ -1545,28 +1545,28 @@ public class KdspPsychProfileManager {
             if i == 8 { return "Status-seeking"; }
             if i == 9 { return "Experience collector"; }
             if i == 10 { return "FOMO-driven"; }
-            if i == 11 { return "Appearance over substance"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S280"); }
             if i == 12 { return "Influencer aspirant"; }
             if i == 13 { return "Debt-funded lifestyle"; }
-            return "Living beyond means";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S281");
         }
         
         if Equals(archetype, "GANGER") {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return "Territorial"; }
-            if i == 1 { return "Loyalty to crew"; }
-            if i == 2 { return "Distrustful of outsiders"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S282"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S51"); }
             if i == 3 { return "Street-smart"; }
             if i == 4 { return "Confrontational"; }
             if i == 5 { return "Hair-trigger temper"; }
-            if i == 6 { return "Proud of reputation"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S283"); }
             if i == 7 { return "Vengeful"; }
-            if i == 8 { return "Protective of family"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S86"); }
             if i == 9 { return "Honor-bound"; }
-            if i == 10 { return "Ruthless when necessary"; }
-            if i == 11 { return "Ambitious within gang"; }
-            if i == 12 { return "Tired of the life"; }
-            if i == 13 { return "Ride or die mentality"; }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S284"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S285"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S286"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S287"); }
             return "Survivor mentality";
         }
         
@@ -1574,19 +1574,19 @@ public class KdspPsychProfileManager {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return "Clan-oriented"; }
             if i == 1 { return "Self-reliant"; }
-            if i == 2 { return "Distrustful of corpos"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S85"); }
             if i == 3 { return "Freedom-seeking"; }
             if i == 4 { return "Resourceful"; }
             if i == 5 { return "Wanderlust"; }
             if i == 6 { return "Fiercely independent"; }
-            if i == 7 { return "Protective of family"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S86"); }
             if i == 8 { return "Road-hardened"; }
-            if i == 9 { return "Suspicious of cities"; }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S288"); }
             if i == 10 { return "Traditional values"; }
             if i == 11 { return "Practical mindset"; }
             if i == 12 { return "Tight-knit loyalty"; }
             if i == 13 { return "Adaptable survivor"; }
-            return "Open road philosophy";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S289");
         }
         
         if Equals(archetype, "LOWLIFE") {
@@ -1597,59 +1597,59 @@ public class KdspPsychProfileManager {
             if i == 3 { return "Adaptable"; }
             if i == 4 { return "Street-wise"; }
             if i == 5 { return "Hustler mentality"; }
-            if i == 6 { return "Quick to exploit"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S290"); }
             if i == 7 { return "Distrustful"; }
-            if i == 8 { return "Bitter but resilient"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S291"); }
             if i == 9 { return "Day-to-day survivor"; }
             if i == 10 { return "Small-time schemer"; }
-            if i == 11 { return "Looking for angle"; }
-            if i == 12 { return "Worn down by life"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S292"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S293"); }
             if i == 13 { return "Pragmatic pessimist"; }
-            return "Whatever it takes";
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S294");
         }
         
         if Equals(archetype, "JUNKIE") {
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Fixation on next fix"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S295"); }
             if i == 1 { return "Unpredictable"; }
             if i == 2 { return "Desperate"; }
             if i == 3 { return "Withdrawn"; }
             if i == 4 { return "Paranoid tendencies"; }
-            if i == 5 { return "Erratic mood swings"; }
-            if i == 6 { return "Manipulative when using"; }
-            if i == 7 { return "Charming when sober"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S81"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S80"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S296"); }
             if i == 8 { return "Shame-filled"; }
-            if i == 9 { return "Denial of problem"; }
-            if i == 10 { return "Fleeting moments of clarity"; }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S297"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S298"); }
             if i == 11 { return "Self-destructive"; }
-            if i == 12 { return "Burned all bridges"; }
-            if i == 13 { return "Wants help but can't ask"; }
-            return "Lost in addiction";
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S299"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S300"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S301");
         }
         
         if Equals(archetype, "HOMELESS") {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return "Survival-focused"; }
-            if i == 1 { return "Withdrawn from society"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S302"); }
             if i == 2 { return "Distrustful"; }
             if i == 3 { return "Day-to-day existence"; }
             if i == 4 { return "Resigned outlook"; }
-            if i == 5 { return "Invisible to society"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S303"); }
             if i == 6 { return "Unexpectedly wise"; }
             if i == 7 { return "Mentally fragile"; }
             if i == 8 { return "Former professional"; }
-            if i == 9 { return "Proud despite circumstances"; }
-            if i == 10 { return "Helpful to other homeless"; }
-            if i == 11 { return "Talks to self"; }
-            if i == 12 { return "Haunted by past"; }
-            if i == 13 { return "One bad break away"; }
-            return "Clinging to dignity";
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S304"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S305"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S306"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S307"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S308"); }
+            return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S309");
         }
         
         // CIVVIE and default (20)
         let i = RandRange(seed, 0, 19);
         if i == 0 { return "Average citizen"; }
-        if i == 1 { return "Keeps to themselves"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S310"); }
         if i == 2 { return "Family-oriented"; }
         if i == 3 { return "Work-focused"; }
         if i == 4 { return "Community-minded"; }
@@ -1659,15 +1659,15 @@ public class KdspPsychProfileManager {
         if i == 8 { return "Friendly neighbor"; }
         if i == 9 { return "Hardworking"; }
         if i == 10 { return "Quietly struggling"; }
-        if i == 11 { return "Hoping for better"; }
-        if i == 12 { return "Tired but trying"; }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S311"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S312"); }
         if i == 13 { return "Simple pleasures"; }
-        if i == 14 { return "Mind their own business"; }
-        if i == 15 { return "Salt of the earth"; }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S313"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S314"); }
         if i == 16 { return "Getting by"; }
-        if i == 17 { return "Worried about future"; }
-        if i == 18 { return "Content with little"; }
-        return "Just trying to survive";
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S315"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S316"); }
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S317");
     }
 }
 

@@ -157,59 +157,59 @@ public class KdspMedicalHistoryManager {
     private static func GenerateSubstanceCondition(seed: Int32, substanceType: String) -> String {
         if Equals(substanceType, "alcohol") || Equals(substanceType, "synthetic alcohol") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Liver damage (alcohol-related)"; }
-            if i == 1 { return "Cirrhosis - early stage"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S0"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S1"); }
             if i == 2 { return "Alcohol-induced neuropathy"; }
             if i == 3 { return "Chronic gastritis"; }
             if i == 4 { return "Alcoholic cardiomyopathy"; }
-            if i == 5 { return "Wernicke-Korsakoff syndrome (early)"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S2"); }
             if i == 6 { return "Pancreatitis (alcohol-induced)"; }
             if i == 7 { return "Esophageal varices"; }
             if i == 8 { return "Alcohol-induced dementia"; }
-            return "Fatty liver disease";
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S3");
         }
         
         if StrContains(StrLower(substanceType), "synth-coke") || StrContains(StrLower(substanceType), "stim") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Cardiac arrhythmia (stimulant abuse)"; }
-            if i == 1 { return "Nasal septum damage"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S4"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S5"); }
             if i == 2 { return "Chronic hypertension"; }
-            if i == 3 { return "Stimulant-induced anxiety disorder"; }
-            if i == 4 { return "Stimulant psychosis (recurring)"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S6"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S7"); }
             if i == 5 { return "Cardiovascular strain"; }
             if i == 6 { return "Chronic insomnia"; }
-            if i == 7 { return "Bruxism (teeth grinding)"; }
-            if i == 8 { return "Malnutrition (appetite suppression)"; }
-            return "Dopamine receptor damage";
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S8"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S9"); }
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S10");
         }
         
         if StrContains(StrLower(substanceType), "black lace") {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return "Neurotransmitter imbalance"; }
-            if i == 1 { return "Chronic pain syndrome"; }
-            if i == 2 { return "Rage disorder (substance-induced)"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S11"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S12"); }
             if i == 3 { return "Adrenal fatigue"; }
             if i == 4 { return "Combat addiction"; }
-            if i == 5 { return "Pain receptor damage"; }
-            if i == 6 { return "Impulse control disorder"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S13"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S14"); }
             if i == 7 { return "Aggression syndrome"; }
-            if i == 8 { return "Endocrine system damage"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S15"); }
             return "Violence-induced PTSD";
         }
         
         if StrContains(StrLower(substanceType), "glitter") {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "Serotonin syndrome (mild)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S16"); }
             if i == 1 { return "Memory fragmentation"; }
             if i == 2 { return "Emotional dysregulation"; }
             if i == 3 { return "Hyperthermia episodes"; }
-            if i == 4 { return "Jaw tension (chronic)"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S17"); }
             return "Dehydration damage";
         }
         
         if StrContains(StrLower(substanceType), "smash") {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "Muscle tissue damage"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S18"); }
             if i == 1 { return "Testosterone imbalance"; }
             if i == 2 { return "Heart enlargement"; }
             if i == 3 { return "Liver stress"; }
@@ -220,26 +220,26 @@ public class KdspMedicalHistoryManager {
         if StrContains(StrLower(substanceType), "spike") || StrContains(StrLower(substanceType), "dorph") {
             let i = RandRange(seed, 0, 7);
             if i == 0 { return "Opioid dependency"; }
-            if i == 1 { return "Respiratory depression risk"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S19"); }
             if i == 2 { return "Chronic constipation"; }
             if i == 3 { return "Hormonal imbalance"; }
             if i == 4 { return "Immune suppression"; }
-            if i == 5 { return "Overdose scarring (organs)"; }
-            if i == 6 { return "Needle site infections"; }
-            return "Chronic sedation effects";
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S20"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S21"); }
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S22");
         }
         
         // Generic substance condition
         let i = RandRange(seed, 0, 11);
-        if i == 0 { return "Substance use disorder"; }
-        if i == 1 { return "Liver enzyme abnormalities"; }
-        if i == 2 { return "Chronic fatigue (substance-related)"; }
-        if i == 3 { return "Immune system compromise"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S23"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S24"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S25"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S26"); }
         if i == 4 { return "Nutritional deficiencies"; }
-        if i == 5 { return "Sleep cycle disruption"; }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S27"); }
         if i == 6 { return "Cognitive impairment"; }
         if i == 7 { return "Mood instability"; }
-        if i == 8 { return "Withdrawal syndrome (chronic)"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S28"); }
         if i == 9 { return "Polydrug complications"; }
         if i == 10 { return "Vascular damage"; }
         return "Neurological deterioration";
@@ -278,71 +278,71 @@ public class KdspMedicalHistoryManager {
         if IsDefined(coherence) && coherence.hasViolentPast && RandRange(seed + 50, 1, 100) <= 60 {
             if Equals(coherence.violenceType, "gang") {
                 let i = RandRange(seed, 0, 11);
-                if i == 0 { return "Gunshot wound (healed) - " + IntToString(year); }
-                if i == 1 { return "Stab wound - gang altercation - " + IntToString(year); }
-                if i == 2 { return "Blunt force trauma - gang violence - " + IntToString(year); }
-                if i == 3 { return "Multiple lacerations - knife fight - " + IntToString(year); }
-                if i == 4 { return "Machete wound (healed) - " + IntToString(year); }
-                if i == 5 { return "Baseball bat injuries - " + IntToString(year); }
-                if i == 6 { return "Drive-by shooting injuries - " + IntToString(year); }
-                if i == 7 { return "Crowbar assault wounds - " + IntToString(year); }
-                if i == 8 { return "Curb stomp injuries (facial) - " + IntToString(year); }
-                if i == 9 { return "Brass knuckle trauma - " + IntToString(year); }
-                if i == 10 { return "Chain whip lacerations - " + IntToString(year); }
-                return "Execution attempt survival - " + IntToString(year);
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S29") + IntToString(year); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S30") + IntToString(year); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S31") + IntToString(year); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S32") + IntToString(year); }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S33") + IntToString(year); }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S34") + IntToString(year); }
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S35") + IntToString(year); }
+                if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S36") + IntToString(year); }
+                if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S37") + IntToString(year); }
+                if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S38") + IntToString(year); }
+                if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S39") + IntToString(year); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S40") + IntToString(year);
             }
             if Equals(coherence.violenceType, "domestic") {
                 let i = RandRange(seed, 0, 8);
-                if i == 0 { return "Contusions - domestic incident - " + IntToString(year); }
-                if i == 1 { return "Fracture (set) - fall/assault - " + IntToString(year); }
-                if i == 2 { return "Soft tissue injuries - " + IntToString(year); }
-                if i == 3 { return "Defensive wounds (forearms) - " + IntToString(year); }
-                if i == 4 { return "Strangulation marks (healed) - " + IntToString(year); }
-                if i == 5 { return "Burns (domestic) - " + IntToString(year); }
-                if i == 6 { return "Pushed down stairs - " + IntToString(year); }
-                if i == 7 { return "Blunt object trauma - " + IntToString(year); }
-                return "Multiple old fractures - " + IntToString(year);
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S41") + IntToString(year); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S42") + IntToString(year); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S43") + IntToString(year); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S44") + IntToString(year); }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S45") + IntToString(year); }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S46") + IntToString(year); }
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S47") + IntToString(year); }
+                if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S48") + IntToString(year); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S49") + IntToString(year);
             }
             if Equals(coherence.violenceType, "bar fight") {
                 let i = RandRange(seed, 0, 9);
-                if i == 0 { return "Broken nose (set) - " + IntToString(year); }
-                if i == 1 { return "Facial lacerations - brawl - " + IntToString(year); }
-                if i == 2 { return "Concussion - fight - " + IntToString(year); }
-                if i == 3 { return "Hand fractures - fight - " + IntToString(year); }
-                if i == 4 { return "Broken bottle wounds - " + IntToString(year); }
-                if i == 5 { return "Teeth knocked out - " + IntToString(year); }
-                if i == 6 { return "Eye socket damage - " + IntToString(year); }
-                if i == 7 { return "Rib fractures - kicked - " + IntToString(year); }
-                if i == 8 { return "Pool cue injuries - " + IntToString(year); }
-                return "Bar stool trauma - " + IntToString(year);
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S50") + IntToString(year); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S51") + IntToString(year); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S52") + IntToString(year); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S53") + IntToString(year); }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S54") + IntToString(year); }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S55") + IntToString(year); }
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S56") + IntToString(year); }
+                if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S57") + IntToString(year); }
+                if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S58") + IntToString(year); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S59") + IntToString(year);
             }
             if Equals(coherence.violenceType, "street") {
                 let i = RandRange(seed, 0, 7);
-                if i == 0 { return "Mugging injuries - " + IntToString(year); }
-                if i == 1 { return "Random assault wounds - " + IntToString(year); }
-                if i == 2 { return "Robbery violence - " + IntToString(year); }
-                if i == 3 { return "Carjacking injuries - " + IntToString(year); }
-                if i == 4 { return "Wrong place wrong time - " + IntToString(year); }
-                if i == 5 { return "Bystander shooting - " + IntToString(year); }
-                if i == 6 { return "Drug deal gone wrong - " + IntToString(year); }
-                return "Street racing crash - " + IntToString(year);
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S60") + IntToString(year); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S61") + IntToString(year); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S62") + IntToString(year); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S63") + IntToString(year); }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S64") + IntToString(year); }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S65") + IntToString(year); }
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S66") + IntToString(year); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S67") + IntToString(year);
             }
         }
         
         if IsDefined(coherence) && coherence.hasTrauma && Equals(coherence.traumaType, "accident") {
             let i = RandRange(seed, 0, 11);
-            if i == 0 { return "Vehicular accident injuries - " + IntToString(year); }
-            if i == 1 { return "Industrial accident - " + IntToString(year); }
-            if i == 2 { return "Fall injuries - serious - " + IntToString(year); }
-            if i == 3 { return "Multiple fractures - accident - " + IntToString(year); }
-            if i == 4 { return "Motorcycle crash - " + IntToString(year); }
-            if i == 5 { return "Construction site accident - " + IntToString(year); }
-            if i == 6 { return "AV crash injuries - " + IntToString(year); }
-            if i == 7 { return "Chemical spill exposure - " + IntToString(year); }
-            if i == 8 { return "Machinery accident - " + IntToString(year); }
-            if i == 9 { return "Explosion injuries - " + IntToString(year); }
-            if i == 10 { return "Structural collapse - " + IntToString(year); }
-            return "Train/Metro accident - " + IntToString(year);
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S68") + IntToString(year); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S69") + IntToString(year); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S70") + IntToString(year); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S71") + IntToString(year); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S72") + IntToString(year); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S73") + IntToString(year); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S74") + IntToString(year); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S75") + IntToString(year); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S76") + IntToString(year); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S77") + IntToString(year); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S78") + IntToString(year); }
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S79") + IntToString(year);
         }
         
         return KdspMedicalHistoryManager.GenerateInjury(seed);
@@ -429,7 +429,7 @@ public class KdspMedicalHistoryManager {
         let feet = heightCm / 30;
         let inches = (heightCm % 30) / 2;
         
-        return IntToString(heightCm) + " cm (" + IntToString(feet) + "'" + IntToString(inches) + "\")";
+        return IntToString(heightCm) + GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S80") + IntToString(feet) + "'" + IntToString(inches) + "\")";
     }
 
     private static func GenerateWeight(seed: Int32, archetype: String) -> String {
@@ -449,7 +449,7 @@ public class KdspMedicalHistoryManager {
         }
 
         let lbs = Cast<Int32>(Cast<Float>(weightKg) * 2.2);
-        return IntToString(weightKg) + " kg (" + IntToString(lbs) + " lbs)";
+        return IntToString(weightKg) + GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S81") + IntToString(lbs) + " lbs)";
     }
 
     private static func GetConditionCount(seed: Int32, archetype: String, age: Int32) -> Int32 {
@@ -479,36 +479,36 @@ public class KdspMedicalHistoryManager {
         if RandRange(seed + 999, 1, 100) <= 20 {
             if Equals(archetype, "JUNKIE") {
                 let i = RandRange(seed, 0, 7);
-                if i == 0 { return "Substance Dependency - Active"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S82"); }
                 if i == 1 { return "Hepatic Damage"; }
                 if i == 2 { return "Neurochemical Imbalance"; }
                 if i == 3 { return "Malnutrition"; }
-                if i == 4 { return "Track Marks (Infected)"; }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S83"); }
                 if i == 5 { return "Overdose History"; }
-                if i == 6 { return "Kidney Failure (Early Stage)"; }
-                return "Withdrawal Syndrome - Chronic";
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S84"); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S85");
             }
             if Equals(archetype, "GANGER") {
                 let i = RandRange(seed, 0, 7);
-                if i == 0 { return "Healed Stab Wounds"; }
-                if i == 1 { return "Bullet Fragment Retention"; }
-                if i == 2 { return "Combat Injuries (Multiple)"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S86"); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S87"); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S88"); }
                 if i == 3 { return "Cauliflower Ear"; }
-                if i == 4 { return "Facial Scarring (Extensive)"; }
-                if i == 5 { return "Nerve Damage (Combat)"; }
-                if i == 6 { return "Hearing Loss (Gunfire)"; }
-                return "Chronic Pain (Gang Violence)";
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S89"); }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S90"); }
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S91"); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S92");
             }
             if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
                 let i = RandRange(seed, 0, 7);
-                if i == 0 { return "Carpal Tunnel Syndrome"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S93"); }
                 if i == 1 { return "Stress-Related Hypertension"; }
                 if i == 2 { return "Burnout Syndrome"; }
-                if i == 3 { return "Eye Strain (Chronic)"; }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S94"); }
                 if i == 4 { return "Tension Headaches"; }
                 if i == 5 { return "Insomnia (Work-Related)"; }
-                if i == 6 { return "Gastric Ulcers (Stress)"; }
-                return "Executive Fatigue Syndrome";
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S95"); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S96");
             }
             if Equals(archetype, "HOMELESS") {
                 let i = RandRange(seed, 0, 7);
@@ -517,18 +517,18 @@ public class KdspMedicalHistoryManager {
                 if i == 2 { return "Untreated Infections"; }
                 if i == 3 { return "Parasitic Infection"; }
                 if i == 4 { return "Frostbite Scarring"; }
-                if i == 5 { return "Skin Conditions (Untreated)"; }
-                if i == 6 { return "Dental Decay (Severe)"; }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S97"); }
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S98"); }
                 return "Chronic Dehydration";
             }
             if Equals(archetype, "NOMAD") {
                 let i = RandRange(seed, 0, 5);
-                if i == 0 { return "Radiation Exposure (Badlands)"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S99"); }
                 if i == 1 { return "Dust Lung"; }
-                if i == 2 { return "Sun Damage (Chronic)"; }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S100"); }
                 if i == 3 { return "Dehydration History"; }
-                if i == 4 { return "Vehicle Crash Injuries (Old)"; }
-                return "Desert Fever (Recovered)";
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S101"); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S102");
             }
         }
 
@@ -537,18 +537,18 @@ public class KdspMedicalHistoryManager {
         
         // Common conditions (0-19)
         if i == 0 { return "Hypertension"; }
-        if i == 1 { return "Type 2 Diabetes"; }
-        if i == 2 { return "Chronic Back Pain"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S103"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S104"); }
         if i == 3 { return "Asthma"; }
         if i == 4 { return "Arthritis"; }
         if i == 5 { return "Anxiety Disorder"; }
         if i == 6 { return "Depression"; }
         if i == 7 { return "Migraines"; }
         if i == 8 { return "Sleep Disorder"; }
-        if i == 9 { return "Respiratory Issues (Smog-Related)"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S105"); }
         if i == 10 { return "High Cholesterol"; }
         if i == 11 { return "Acid Reflux"; }
-        if i == 12 { return "Irritable Bowel Syndrome"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S106"); }
         if i == 13 { return "Chronic Fatigue"; }
         if i == 14 { return "Allergic Rhinitis"; }
         if i == 15 { return "Eczema"; }
@@ -558,30 +558,30 @@ public class KdspMedicalHistoryManager {
         if i == 19 { return "Anemia"; }
         
         // Night City specific (20-39)
-        if i == 20 { return "Cyberware Rejection Syndrome"; }
-        if i == 21 { return "Neural Degradation (Mild)"; }
-        if i == 22 { return "Synthetic Organ Maintenance"; }
-        if i == 23 { return "Radiation Exposure Effects"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S107"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S108"); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S109"); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S110"); }
         if i == 24 { return "Combat-Related PTSD"; }
         if i == 25 { return "Braindance Dependency"; }
-        if i == 26 { return "Chronic Pain (Bullet Wound)"; }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S111"); }
         if i == 27 { return "Toxin Accumulation"; }
-        if i == 28 { return "Cyberpsychosis (Early Warning)"; }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S112"); }
         if i == 29 { return "Chrome Allergy"; }
-        if i == 30 { return "Neural Port Infection (Recurring)"; }
-        if i == 31 { return "Phantom Limb Syndrome"; }
-        if i == 32 { return "Sensory Overload Disorder"; }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S113"); }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S114"); }
+        if i == 32 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S115"); }
         if i == 33 { return "Memory Fragmentation"; }
         if i == 34 { return "Interface Headaches"; }
         if i == 35 { return "Biomon Dependency"; }
-        if i == 36 { return "Reflex Booster Burnout"; }
+        if i == 36 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S116"); }
         if i == 37 { return "Kerenzikov Tremors"; }
         if i == 38 { return "Sandevistan Strain"; }
-        if i == 39 { return "Optical Implant Migraines"; }
+        if i == 39 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S117"); }
         
         // Mental health (40-49)
-        if i == 40 { return "Generalized Anxiety Disorder"; }
-        if i == 41 { return "Major Depressive Disorder"; }
+        if i == 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S118"); }
+        if i == 41 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S119"); }
         if i == 42 { return "Bipolar Disorder"; }
         if i == 43 { return "PTSD"; }
         if i == 44 { return "Panic Disorder"; }
@@ -592,25 +592,25 @@ public class KdspMedicalHistoryManager {
         if i == 49 { return "Dissociative Episodes"; }
         
         // Cardiovascular (50-54)
-        if i == 50 { return "Coronary Artery Disease"; }
+        if i == 50 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S120"); }
         if i == 51 { return "Heart Arrhythmia"; }
         if i == 52 { return "Heart Murmur"; }
         if i == 53 { return "Varicose Veins"; }
-        if i == 54 { return "Deep Vein Thrombosis History"; }
+        if i == 54 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S121"); }
         
         // Respiratory (55-59)
         if i == 55 { return "COPD"; }
         if i == 56 { return "Chronic Bronchitis"; }
         if i == 57 { return "Emphysema"; }
         if i == 58 { return "Pneumonia (Recurring)"; }
-        if i == 59 { return "Lung Scarring (Pollution)"; }
+        if i == 59 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S122"); }
         
         // Digestive (60-64)
         if i == 60 { return "Crohn's Disease"; }
         if i == 61 { return "Ulcerative Colitis"; }
         if i == 62 { return "Gastric Ulcers"; }
-        if i == 63 { return "Liver Cirrhosis (Early)"; }
-        if i == 64 { return "Fatty Liver Disease"; }
+        if i == 63 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S123"); }
+        if i == 64 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S124"); }
         
         // Neurological (65-69)
         if i == 65 { return "Epilepsy"; }
@@ -623,7 +623,7 @@ public class KdspMedicalHistoryManager {
         if i == 70 { return "Lupus"; }
         if i == 71 { return "Rheumatoid Arthritis"; }
         if i == 72 { return "Fibromyalgia"; }
-        if i == 73 { return "Chronic Kidney Disease"; }
+        if i == 73 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S125"); }
         if i == 74 { return "Gout"; }
         if i == 75 { return "Osteoporosis"; }
         if i == 76 { return "Tinnitus"; }
@@ -651,18 +651,18 @@ public class KdspMedicalHistoryManager {
         if i == 10 { return "Synthetic Proteins"; }
         if i == 11 { return "Titanium Compounds"; }
         if i == 12 { return "Biofoam"; }
-        if i == 13 { return "Neural Interface Gel"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S126"); }
         if i == 14 { return "Specific Nanobots"; }
-        if i == 15 { return "Anesthetic (Type C)"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S127"); }
         if i == 16 { return "Kibble Additives"; }
         if i == 17 { return "Soy Derivatives"; }
-        if i == 18 { return "Synthetic Blood Components"; }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S128"); }
         if i == 19 { return "Cyberware Coolant"; }
-        if i == 20 { return "Chrome Polish Compounds"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S129"); }
         if i == 21 { return "Neural Suppressants"; }
         if i == 22 { return "Biotech Adhesives"; }
-        if i == 23 { return "Recycled Water Treatment"; }
-        if i == 24 { return "SCOP Protein Mix"; }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S130"); }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S131"); }
         
         // Medical/Drug allergies (25-34)
         if i == 25 { return "Morphine Derivatives"; }
@@ -672,9 +672,9 @@ public class KdspMedicalHistoryManager {
         if i == 29 { return "Antivirals (Common)"; }
         if i == 30 { return "Synthetic Hormones"; }
         if i == 31 { return "Stimulant Medications"; }
-        if i == 32 { return "Sedatives (Class B)"; }
+        if i == 32 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S132"); }
         if i == 33 { return "Anti-Rejection Meds"; }
-        return "Nanobot Repair Fluid";
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S133");
     }
 
     private static func GetOrganReplacementChance(archetype: String, age: Int32) -> Int32 {
@@ -697,40 +697,40 @@ public class KdspMedicalHistoryManager {
         let i = RandRange(seed, 0, 29);
         
         // Major organs (0-11)
-        if i == 0 { return "Synthetic Liver (Biotechnica)"; }
-        if i == 1 { return "Synthetic Kidney (Left)"; }
-        if i == 2 { return "Synthetic Kidney (Right)"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S134"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S135"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S136"); }
         if i == 3 { return "Synthetic Heart"; }
-        if i == 4 { return "Synthetic Lung (Left)"; }
-        if i == 5 { return "Synthetic Lung (Right)"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S137"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S138"); }
         if i == 6 { return "Cloned Liver"; }
         if i == 7 { return "Cloned Kidney"; }
-        if i == 8 { return "Artificial Eye (Non-Kiroshi)"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S139"); }
         if i == 9 { return "Synthetic Pancreas"; }
         if i == 10 { return "Bioengineered Stomach"; }
-        if i == 11 { return "Vat-Grown Skin Grafts"; }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S140"); }
         
         // Additional organs (12-19)
         if i == 12 { return "Synthetic Spleen"; }
         if i == 13 { return "Artificial Bladder"; }
-        if i == 14 { return "Bioprinted Intestinal Section"; }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S141"); }
         if i == 15 { return "Synthetic Thyroid"; }
         if i == 16 { return "Cloned Corneas"; }
         if i == 17 { return "Artificial Larynx"; }
-        if i == 18 { return "Synthetic Adrenal Glands"; }
-        if i == 19 { return "Bioengineered Bone Marrow"; }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S142"); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S143"); }
         
         // Specialized replacements (20-29)
-        if i == 20 { return "Synthetic Heart Valve"; }
-        if i == 21 { return "Artificial Blood Vessels"; }
-        if i == 22 { return "Cloned Liver (Partial)"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S144"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S145"); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S146"); }
         if i == 23 { return "3D-Printed Trachea"; }
-        if i == 24 { return "Biotech Ear Reconstruction"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S147"); }
         if i == 25 { return "Synthetic Esophagus"; }
-        if i == 26 { return "Lab-Grown Cartilage (Multiple)"; }
-        if i == 27 { return "Artificial Bile Duct"; }
-        if i == 28 { return "Bioprinted Skin (Face)"; }
-        return "Vat-Grown Muscle Tissue";
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S148"); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S149"); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S150"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S151");
     }
 
     private static func GenerateLastCheckup(seed: Int32, archetype: String) -> String {
@@ -740,8 +740,8 @@ public class KdspMedicalHistoryManager {
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") { return "Unknown / Never"; }
 
         let months = RandRange(seed, 6, 48);
-        if months >= 24 { return IntToString(months / 12) + "+ years ago"; }
-        return IntToString(months) + " months ago";
+        if months >= 24 { return IntToString(months / 12) + GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S152"); }
+        return IntToString(months) + GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S155");
     }
 
     private static func GenerateRipperdocVisits(seed: Int32, archetype: String) -> Int32 {
@@ -765,11 +765,11 @@ public class KdspMedicalHistoryManager {
         ArrayPush(statuses, "Universal Donor");
         ArrayPush(statuses, "Compatible Donor");
         ArrayPush(statuses, "Limited Compatibility");
-        ArrayPush(statuses, "Incompatible (Medical Issues)");
-        ArrayPush(statuses, "Organ Harvest Consent on File");
-        ArrayPush(statuses, "Corporate Organ Reserve (Contracted)");
-        ArrayPush(statuses, "No Consent Given");
-        ArrayPush(statuses, "Synthetic Organs - N/A");
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S153"));
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S154"));
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S155"));
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S156"));
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S157"));
 
         if Equals(archetype, "CORPO_DRONE") && RandRange(seed + 5, 1, 100) <= 30 {
             return statuses[5]; // Corporate organ reserve
@@ -795,28 +795,28 @@ public class KdspMedicalHistoryManager {
         if RandRange(seed + 999, 1, 100) <= 25 {
             if Equals(archetype, "JUNKIE") {
                 let i = RandRange(seed, 0, 5);
-                if i == 0 { return "Addiction Treatment (Non-compliant)"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S158"); }
                 if i == 1 { return "Naloxone (Self-Administered)"; }
-                if i == 2 { return "Liver Support Supplements"; }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S159"); }
                 if i == 3 { return "Methadone (Prescription)"; }
-                if i == 4 { return "Anti-Craving Implant Meds"; }
-                return "Vitamin Injections (Deficiency)";
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S160"); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S161");
             }
             if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
                 let i = RandRange(seed, 0, 5);
-                if i == 0 { return "Executive Focus (Prescription)"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S162"); }
                 if i == 1 { return "CorpoCalm (Anti-Anxiety)"; }
                 if i == 2 { return "SleepCycle Regulator"; }
-                if i == 3 { return "StressShield (Cortisol Blocker)"; }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S163"); }
                 if i == 4 { return "NeuroSharp (Cognitive)"; }
                 return "UlcerGuard (Preventive)";
             }
             if Equals(archetype, "GANGER") {
                 let i = RandRange(seed, 0, 3);
-                if i == 0 { return "Combat Stim Recovery"; }
-                if i == 1 { return "Trauma Response Meds"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S164"); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S165"); }
                 if i == 2 { return "Scarring Treatment"; }
-                return "Pain Management (Heavy Duty)";
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S166");
             }
         }
 
@@ -829,29 +829,29 @@ public class KdspMedicalHistoryManager {
         if i == 2 { return "Immunosuppressants (Cyberware)"; }
         if i == 3 { return "Anti-Rejection Meds"; }
         if i == 4 { return "Cognitive Enhancers"; }
-        if i == 5 { return "Cyberware Maintenance Supplements"; }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S167"); }
         if i == 6 { return "Neural Stabilizers"; }
-        if i == 7 { return "Chrome Compatibility Boosters"; }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S168"); }
         if i == 8 { return "Implant Anti-Inflammatory"; }
-        if i == 9 { return "Biomonitor Calibration Meds"; }
-        if i == 10 { return "Reflex Enhancer Support"; }
-        if i == 11 { return "Optical Implant Drops"; }
-        if i == 12 { return "Synthetic Organ Nutrients"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S169"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S170"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S171"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S172"); }
         if i == 13 { return "Nanobot Replenishment"; }
         if i == 14 { return "Cyberpsychosis Preventive"; }
         
         // Cardiovascular (15-19)
         if i == 15 { return "HeartGuard"; }
-        if i == 16 { return "Blood Pressure Meds"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S173"); }
         if i == 17 { return "Cholesterol Blockers"; }
         if i == 18 { return "Blood Thinners"; }
-        if i == 19 { return "Heart Rhythm Stabilizers"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S174"); }
         
         // Pain/Inflammation (20-24)
         if i == 20 { return "PainAway"; }
         if i == 21 { return "Anti-Inflammatory (Chronic)"; }
-        if i == 22 { return "Nerve Pain Blockers"; }
-        if i == 23 { return "Joint Support Formula"; }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S175"); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S176"); }
         if i == 24 { return "Muscle Relaxants"; }
         
         // Mental health (25-34)
@@ -863,27 +863,27 @@ public class KdspMedicalHistoryManager {
         if i == 30 { return "ADHD Medication"; }
         if i == 31 { return "SleepEZ"; }
         if i == 32 { return "Nightmare Suppressants"; }
-        if i == 33 { return "Panic Attack Prevention"; }
-        if i == 34 { return "Stress Hormone Regulators"; }
+        if i == 33 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S177"); }
+        if i == 34 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S178"); }
         
         // Metabolic/Endocrine (35-39)
         if i == 35 { return "Metabolic Boosters"; }
-        if i == 36 { return "Diabetes Management System"; }
+        if i == 36 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S179"); }
         if i == 37 { return "Thyroid Regulators"; }
         if i == 38 { return "Hormone Replacement"; }
         if i == 39 { return "Appetite Suppressants"; }
         
         // Respiratory/Other (40-49)
-        if i == 40 { return "Respiratory Therapy Inhaler"; }
+        if i == 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S180"); }
         if i == 41 { return "Asthma Controller"; }
         if i == 42 { return "Allergy Blockers"; }
-        if i == 43 { return "Bone Density Treatment"; }
-        if i == 44 { return "Immune System Boosters"; }
+        if i == 43 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S181"); }
+        if i == 44 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S182"); }
         if i == 45 { return "Digestive Enzymes"; }
-        if i == 46 { return "Acid Reflux Control"; }
-        if i == 47 { return "Kidney Function Support"; }
-        if i == 48 { return "Liver Detox Formula"; }
-        return "Vitamin Deficiency Supplements";
+        if i == 46 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S183"); }
+        if i == 47 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S184"); }
+        if i == 48 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S185"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S186");
     }
 
     private static func GetInjuryCount(seed: Int32, archetype: String) -> Int32 {
@@ -899,62 +899,62 @@ public class KdspMedicalHistoryManager {
         let i = RandRange(seed, 0, 39);
         
         // Violent injuries (0-14)
-        if i == 0 { return "Gunshot wound (healed) - " + IntToString(year); }
-        if i == 1 { return "Stab wound - " + IntToString(year); }
-        if i == 2 { return "Assault injuries - " + IntToString(year); }
-        if i == 3 { return "Blunt force trauma - " + IntToString(year); }
-        if i == 4 { return "Multiple lacerations - " + IntToString(year); }
-        if i == 5 { return "Broken jaw (healed) - " + IntToString(year); }
-        if i == 6 { return "Fractured skull - " + IntToString(year); }
-        if i == 7 { return "Bullet fragment retention - " + IntToString(year); }
-        if i == 8 { return "Knife wound (torso) - " + IntToString(year); }
-        if i == 9 { return "Shrapnel injuries - " + IntToString(year); }
-        if i == 10 { return "Strangling trauma - " + IntToString(year); }
-        if i == 11 { return "Broken ribs (multiple) - " + IntToString(year); }
-        if i == 12 { return "Defensive wounds (arms) - " + IntToString(year); }
-        if i == 13 { return "Orbital fracture - " + IntToString(year); }
-        if i == 14 { return "Ruptured eardrum (combat) - " + IntToString(year); }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S29") + IntToString(year); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S187") + IntToString(year); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S188") + IntToString(year); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S189") + IntToString(year); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S190") + IntToString(year); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S191") + IntToString(year); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S192") + IntToString(year); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S193") + IntToString(year); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S194") + IntToString(year); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S195") + IntToString(year); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S196") + IntToString(year); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S197") + IntToString(year); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S198") + IntToString(year); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S199") + IntToString(year); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S200") + IntToString(year); }
         
         // Accidents (15-24)
-        if i == 15 { return "Vehicular accident injuries - " + IntToString(year); }
-        if i == 16 { return "Industrial accident - " + IntToString(year); }
-        if i == 17 { return "Fall injuries - " + IntToString(year); }
-        if i == 18 { return "Burns (2nd degree) - " + IntToString(year); }
-        if i == 19 { return "Burns (3rd degree) - " + IntToString(year); }
-        if i == 20 { return "Chemical exposure - " + IntToString(year); }
-        if i == 21 { return "Electrical shock injuries - " + IntToString(year); }
-        if i == 22 { return "Crush injuries - " + IntToString(year); }
-        if i == 23 { return "Motorcycle crash - " + IntToString(year); }
-        if i == 24 { return "Workplace accident - " + IntToString(year); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S68") + IntToString(year); }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S69") + IntToString(year); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S201") + IntToString(year); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S202") + IntToString(year); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S203") + IntToString(year); }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S204") + IntToString(year); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S205") + IntToString(year); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S206") + IntToString(year); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S72") + IntToString(year); }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S207") + IntToString(year); }
         
         // Fractures/Orthopedic (25-34)
-        if i == 25 { return "Broken arm (set) - " + IntToString(year); }
-        if i == 26 { return "Broken leg (set) - " + IntToString(year); }
-        if i == 27 { return "Concussion - " + IntToString(year); }
-        if i == 28 { return "Spinal injury (recovered) - " + IntToString(year); }
-        if i == 29 { return "Dislocated shoulder - " + IntToString(year); }
-        if i == 30 { return "Torn ACL (repaired) - " + IntToString(year); }
-        if i == 31 { return "Broken collarbone - " + IntToString(year); }
-        if i == 32 { return "Fractured wrist - " + IntToString(year); }
-        if i == 33 { return "Ankle fracture - " + IntToString(year); }
-        if i == 34 { return "Herniated disc - " + IntToString(year); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S208") + IntToString(year); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S209") + IntToString(year); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S210") + IntToString(year); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S211") + IntToString(year); }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S212") + IntToString(year); }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S213") + IntToString(year); }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S214") + IntToString(year); }
+        if i == 32 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S215") + IntToString(year); }
+        if i == 33 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S216") + IntToString(year); }
+        if i == 34 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S217") + IntToString(year); }
         
         // Cyberware-related (35-39)
-        if i == 35 { return "Cyberware malfunction injury - " + IntToString(year); }
-        if i == 36 { return "Implant rejection trauma - " + IntToString(year); }
-        if i == 37 { return "Neural port damage - " + IntToString(year); }
-        if i == 38 { return "Reflex booster burnout - " + IntToString(year); }
-        return "Chrome installation complications - " + IntToString(year);
+        if i == 35 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S218") + IntToString(year); }
+        if i == 36 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S219") + IntToString(year); }
+        if i == 37 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S220") + IntToString(year); }
+        if i == 38 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S221") + IntToString(year); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S222") + IntToString(year);
     }
 
     private static func GenerateVaccinationStatus(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
-            return "CURRENT (Corporate Mandatory)";
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S223");
         }
         if Equals(archetype, "YUPPIE") { return "CURRENT"; }
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 20 { return "CURRENT (City Program)"; }
+            if roll <= 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S224"); }
             if roll <= 50 { return "OUTDATED"; }
             return "UNKNOWN";
         }
@@ -983,44 +983,44 @@ public class KdspMedicalHistoryManager {
         let i = RandRange(seed, 0, 29);
         
         // Disease risk markers (0-11)
-        if i == 0 { return "Elevated cancer risk (BRCA variant)"; }
-        if i == 1 { return "Heart disease predisposition"; }
-        if i == 2 { return "Alzheimer's risk marker"; }
-        if i == 3 { return "Diabetes Type 1 susceptibility"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S225"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S226"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S227"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S228"); }
         if i == 4 { return "Huntington's carrier"; }
-        if i == 5 { return "Cystic fibrosis carrier"; }
-        if i == 6 { return "Parkinson's risk markers"; }
-        if i == 7 { return "Multiple sclerosis susceptibility"; }
-        if i == 8 { return "Schizophrenia risk factors"; }
-        if i == 9 { return "Autoimmune disorder predisposition"; }
-        if i == 10 { return "Colon cancer genetic markers"; }
-        if i == 11 { return "Breast cancer genetic risk"; }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S229"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S230"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S231"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S232"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S233"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S234"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S235"); }
         
         // Cyberware compatibility (12-17)
-        if i == 12 { return "Enhanced cyberware compatibility"; }
-        if i == 13 { return "Reduced cyberware compatibility"; }
-        if i == 14 { return "Neural interface optimization"; }
-        if i == 15 { return "Cyberpsychosis resistance markers"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S236"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S237"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S238"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S239"); }
         if i == 16 { return "Cyberpsychosis susceptibility"; }
-        if i == 17 { return "Rapid chrome rejection risk"; }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S240"); }
         
         // Aging/Longevity (18-21)
-        if i == 18 { return "Longevity markers (positive)"; }
-        if i == 19 { return "Accelerated aging markers"; }
-        if i == 20 { return "Telomere stability (above average)"; }
-        if i == 21 { return "Premature aging risk"; }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S241"); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S242"); }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S243"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S244"); }
         
         // Physical traits (22-25)
-        if i == 22 { return "Enhanced muscle development"; }
-        if i == 23 { return "Above average bone density"; }
-        if i == 24 { return "Fast metabolism markers"; }
-        if i == 25 { return "Slow metabolism markers"; }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S245"); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S246"); }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S247"); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S248"); }
         
         // Other genetic findings (26-29)
-        if i == 26 { return "Genetic modification detected"; }
-        if i == 27 { return "Unknown genetic anomaly"; }
-        if i == 28 { return "Chimeric DNA markers"; }
-        return "Possible gene therapy modifications";
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S249"); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S250"); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S251"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S252");
     }
 
     private static func CalculateHealthRating(medical: ref<KdspMedicalHistoryData>, archetype: String) -> String {

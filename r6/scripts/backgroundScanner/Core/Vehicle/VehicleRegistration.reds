@@ -15,39 +15,39 @@ public abstract class KdspVehicleRegistration {
         if isRich {
             if makeRoll == 0 { result = "Rayfield Aerondight"; }
             else if makeRoll == 1 { result = "Rayfield Caliburn"; }
-            else if makeRoll == 2 { result = "Herrera Outlaw GTS"; }
+            else if makeRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S0"); }
             else if makeRoll == 3 { result = "Rayfield Guinevere"; }
-            else if makeRoll == 4 { result = "Villefort Alvarado Vato"; }
-            else if makeRoll == 5 { result = "Porsche 911 II (930)"; }
+            else if makeRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S1"); }
+            else if makeRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S2"); }
             else if makeRoll == 6 { result = "Herrera Riptide"; }
             else { result = "Rayfield Excalibur"; }
         } else if isCorpo {
-            if makeRoll == 0 { result = "Villefort Cortes V4000"; }
+            if makeRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S3"); }
             else if makeRoll == 1 { result = "Villefort Alvarado"; }
-            else if makeRoll == 2 { result = "Archer Hella EC-D I360"; }
-            else if makeRoll == 3 { result = "Villefort Columbus V340-F"; }
-            else if makeRoll == 4 { result = "Thorton Galena GA-5"; }
+            else if makeRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S4"); }
+            else if makeRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S5"); }
+            else if makeRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S6"); }
             else if makeRoll == 5 { result = "Herrera Outlaw"; }
-            else if makeRoll == 6 { result = "Mahir Supron FS3"; }
+            else if makeRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S7"); }
             else { result = "Villefort Cortes"; }
         } else if isNomad {
-            if makeRoll == 0 { result = "Thorton Colby CX410 Butte"; }
-            else if makeRoll == 1 { result = "Thorton Colby C240T"; }
-            else if makeRoll == 2 { result = "Thorton Mackinaw MTL1"; }
-            else if makeRoll == 3 { result = "Quadra Type-66 Javelina"; }
-            else if makeRoll == 4 { result = "Thorton Galena Rattler"; }
-            else if makeRoll == 5 { result = "Mizutani Shion Coyote"; }
-            else if makeRoll == 6 { result = "Thorton Colby Little Mule"; }
-            else { result = "Thorton Mackinaw Beast"; }
+            if makeRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S8"); }
+            else if makeRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S9"); }
+            else if makeRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S10"); }
+            else if makeRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S11"); }
+            else if makeRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S12"); }
+            else if makeRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S13"); }
+            else if makeRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S14"); }
+            else { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S15"); }
         } else {
-            if makeRoll == 0 { result = "Thorton Galena G240"; }
-            else if makeRoll == 1 { result = "Makigai MaiMai P126"; }
-            else if makeRoll == 2 { result = "Archer Quartz EC-T2 R660"; }
-            else if makeRoll == 3 { result = "Thorton Colby C125"; }
-            else if makeRoll == 4 { result = "Mahir Supron FS3"; }
-            else if makeRoll == 5 { result = "Villefort Columbus V340-F"; }
-            else if makeRoll == 6 { result = "Archer Hella EC-D I360"; }
-            else { result = "Makigai Tanishi T2000"; }
+            if makeRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S16"); }
+            else if makeRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S17"); }
+            else if makeRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S18"); }
+            else if makeRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S19"); }
+            else if makeRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S7"); }
+            else if makeRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S5"); }
+            else if makeRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S4"); }
+            else { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S20"); }
         }
 
         // License plate
@@ -56,27 +56,27 @@ public abstract class KdspVehicleRegistration {
         let plateNum = RandRange(seed + 103, 1000, 9999);
         let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let plate = StrMid(letters, plateA, 1) + StrMid(letters, plateB, 1) + "-" + IntToString(plateNum);
-        result = result + " | Plate: " + plate;
+        result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S21") + plate;
 
         // Registration status
         let statusRoll = RandRange(seed + 200, 0, 9);
-        if statusRoll <= 5 { result = result + " | Status: CURRENT"; }
-        else if statusRoll <= 7 { result = result + " | Status: EXPIRED"; }
-        else if statusRoll == 8 { result = result + " | Status: SUSPENDED"; }
-        else { result = result + " | Status: STOLEN FLAG"; }
+        if statusRoll <= 5 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S22"); }
+        else if statusRoll <= 7 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S23"); }
+        else if statusRoll == 8 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S24"); }
+        else { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S25"); }
 
         // Violations (30% chance)
         let violationRoll = RandRange(seed + 300, 1, 100);
         if violationRoll <= 30 {
             let vCount = RandRange(seed + 301, 1, 12);
-            result = result + " | Violations: " + IntToString(vCount);
+            result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S26") + IntToString(vCount);
             let vTypeRoll = RandRange(seed + 302, 0, 5);
-            if vTypeRoll == 0 { result = result + " (Speeding, Reckless driving)"; }
-            else if vTypeRoll == 1 { result = result + " (Parking, Expired registration)"; }
-            else if vTypeRoll == 2 { result = result + " (Illegal modifications)"; }
-            else if vTypeRoll == 3 { result = result + " (DUI, Failure to stop)"; }
-            else if vTypeRoll == 4 { result = result + " (Hit and run, Vehicular assault)"; }
-            else { result = result + " (Contraband transport)"; }
+            if vTypeRoll == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S27"); }
+            else if vTypeRoll == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S28"); }
+            else if vTypeRoll == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S29"); }
+            else if vTypeRoll == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S30"); }
+            else if vTypeRoll == 4 { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S31"); }
+            else { result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S32"); }
         }
 
         return result;

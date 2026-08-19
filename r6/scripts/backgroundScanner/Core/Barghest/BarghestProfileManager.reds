@@ -77,14 +77,14 @@ public class KdspBarghestProfileManager {
     private static func GetFormerAffiliation(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         
-        if roll <= 35 { return "NUSA Armed Forces"; }
-        if roll <= 50 { return "NUSA Army - Deserter"; }
-        if roll <= 60 { return "Militech Corporate Security"; }
-        if roll <= 70 { return "Private Military Contractor"; }
-        if roll <= 78 { return "Arasaka Security (Former)"; }
-        if roll <= 84 { return "European Federation Military"; }
-        if roll <= 88 { return "SovOil Security Forces"; }
-        if roll <= 92 { return "Free State Militia"; }
+        if roll <= 35 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S0"); }
+        if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S1"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S2"); }
+        if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S3"); }
+        if roll <= 78 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S4"); }
+        if roll <= 84 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S5"); }
+        if roll <= 88 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S6"); }
+        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S7"); }
         if roll <= 96 { return "NCPD (Discharged)"; }
         return "Street Merc";
     }
@@ -120,9 +120,9 @@ public class KdspBarghestProfileManager {
             if roll <= 50 { return "Squad Leader"; }
             if roll <= 80 { return "Platoon Commander"; }
             if roll <= 95 { return "Company Commander"; }
-            return "Hansen's Inner Circle";
+            return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S8");
         } else if isHeavy {
-            return "Heavy Weapons Specialist";
+            return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S9");
         } else if isSniper {
             return "Recon Specialist";
         } else if isNetrunner {
@@ -131,7 +131,7 @@ public class KdspBarghestProfileManager {
             let roll = RandRange(seed, 1, 100);
             if roll <= 50 { return "Trooper"; }
             if roll <= 75 { return "Veteran Trooper"; }
-            if roll <= 90 { return "Fire Team Leader"; }
+            if roll <= 90 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S10"); }
             return "Section Leader";
         }
     }
@@ -139,8 +139,8 @@ public class KdspBarghestProfileManager {
     private static func GetMOS(seed: Int32, appearanceName: String) -> String {
         if StrContains(appearanceName, "heavy") || StrContains(appearanceName, "mech") {
             let specs: array<String>;
-            ArrayPush(specs, "Heavy Weapons (Support Gunner)");
-            ArrayPush(specs, "Heavy Weapons (Anti-Armor)");
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S11"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S12"));
             ArrayPush(specs, "Mechanized Infantry");
             ArrayPush(specs, "Exosuit Operations");
             return specs[RandRange(seed, 0, ArraySize(specs) - 1)];
@@ -165,11 +165,11 @@ public class KdspBarghestProfileManager {
         let specs: array<String>;
         ArrayPush(specs, "Infantry (Rifleman)");
         ArrayPush(specs, "Infantry (Grenadier)");
-        ArrayPush(specs, "Infantry (Automatic Rifleman)");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S13"));
         ArrayPush(specs, "Combat Medic");
         ArrayPush(specs, "Combat Engineer");
         ArrayPush(specs, "Vehicle Crew");
-        ArrayPush(specs, "Close Quarters Specialist");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S14"));
         ArrayPush(specs, "Urban Warfare");
         return specs[RandRange(seed, 0, ArraySize(specs) - 1)];
     }
@@ -187,7 +187,7 @@ public class KdspBarghestProfileManager {
         ArrayPush(roles, "Security Detail");
         ArrayPush(roles, "Patrol");
         ArrayPush(roles, "Checkpoint Operations");
-        ArrayPush(roles, "Quick Reaction Force");
+        ArrayPush(roles, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S15"));
         ArrayPush(roles, "Perimeter Defense");
         return roles[RandRange(seed, 0, ArraySize(roles) - 1)];
     }
@@ -226,17 +226,17 @@ public class KdspBarghestProfileManager {
     private static func GetAssignedSector(seed: Int32) -> String {
         let sectors: array<String>;
         ArrayPush(sectors, "Stadium Gate");
-        ArrayPush(sectors, "Black Sapphire District");
-        ArrayPush(sectors, "Heavy Hearts Club Area");
-        ArrayPush(sectors, "EBM Petrochem Perimeter");
-        ArrayPush(sectors, "Luxor High Perimeter");
-        ArrayPush(sectors, "Terra Cognita Border");
-        ArrayPush(sectors, "Growth District Patrol");
-        ArrayPush(sectors, "Hansen's HQ Security");
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S16"));
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S17"));
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S18"));
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S19"));
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S20"));
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S21"));
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S22"));
         ArrayPush(sectors, "Checkpoint Alpha");
         ArrayPush(sectors, "Checkpoint Bravo");
-        ArrayPush(sectors, "Mobile Response Unit");
-        ArrayPush(sectors, "Supply Depot Guard");
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S23"));
+        ArrayPush(sectors, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S24"));
         return sectors[RandRange(seed, 0, ArraySize(sectors) - 1)];
     }
 
@@ -257,48 +257,48 @@ public class KdspBarghestProfileManager {
         let backgrounds: array<String>;
         
         if Equals(reason, "DESERTER") {
-            ArrayPush(backgrounds, "Deserted during the Unification War. Found purpose in Hansen's vision for Dogtown.");
-            ArrayPush(backgrounds, "Went AWOL after refusing illegal orders. NUSA wants them back - dead or alive.");
-            ArrayPush(backgrounds, "Fled unit after friendly fire incident. Haunted but effective.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S25"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S26"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S27"));
         } else if Equals(reason, "DISCHARGED") {
-            ArrayPush(backgrounds, "Dishonorably discharged for excessive force. Hansen appreciates the aggression.");
-            ArrayPush(backgrounds, "Medical discharge after severe injuries. Cyberware got them back in the fight.");
-            ArrayPush(backgrounds, "Discharged for insubordination. Follows Hansen's orders without question now.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S28"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S29"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S30"));
         } else if Equals(reason, "MERCENARY") {
-            ArrayPush(backgrounds, "Professional soldier for hire. Hansen pays well and on time.");
-            ArrayPush(backgrounds, "Former PMC operator. Tired of corpo politics, prefers Hansen's direct approach.");
-            ArrayPush(backgrounds, "Freelance military contractor. Dogtown offers steady work and no questions.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S31"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S32"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S33"));
         } else if Equals(reason, "IDEOLOGICAL") {
-            ArrayPush(backgrounds, "True believer in Hansen's free Dogtown. Would die for the cause.");
-            ArrayPush(backgrounds, "Hates NUSA government. Sees Barghest as freedom fighters.");
-            ArrayPush(backgrounds, "Believes corporations are the enemy. Hansen offers a different path.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S34"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S35"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S36"));
         } else if Equals(reason, "REFUGEE") {
-            ArrayPush(backgrounds, "Fled war-torn region. Found new home and purpose with Barghest.");
-            ArrayPush(backgrounds, "Family killed in corporate conflict. Barghest is their only family now.");
-            ArrayPush(backgrounds, "Escaped corpo black site. Hansen gave them shelter and a gun.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S37"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S38"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S39"));
         } else if Equals(reason, "CRIMINAL_PAST") {
-            ArrayPush(backgrounds, "Wanted in multiple jurisdictions. Dogtown offers sanctuary.");
-            ArrayPush(backgrounds, "Former gang soldier. Barghest offered legitimacy and better pay.");
-            ArrayPush(backgrounds, "Escaped convict. Hansen doesn't care about the past, only loyalty.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S40"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S41"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S42"));
         } else if Equals(reason, "ECONOMIC") {
-            ArrayPush(backgrounds, "Couldn't find work after military service. Barghest was the only option.");
-            ArrayPush(backgrounds, "Family needed money for medical care. Barghest pays well for combat skills.");
-            ArrayPush(backgrounds, "Debt drove them to mercenary work. Hansen cleared the debt for service.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S43"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S44"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S45"));
         } else {
-            ArrayPush(backgrounds, "Recruited directly by Barghest scouts. Skills speak for themselves.");
-            ArrayPush(backgrounds, "Impressed Hansen during a firefight. Got an offer they couldn't refuse.");
-            ArrayPush(backgrounds, "Recommended by another Barghest veteran. Loyalty vouched for.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S46"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S47"));
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S48"));
         }
         
         // Add former affiliation context
         if StrContains(formerAffiliation, "NUSA") {
-            ArrayPush(backgrounds, "Former NUSA soldier who saw too much corruption. Hansen's truth resonated.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S49"));
         }
         if StrContains(formerAffiliation, "Militech") {
-            ArrayPush(backgrounds, "Ex-Militech operative. Left after being treated as expendable. Hansen values soldiers.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S50"));
         }
         if StrContains(formerAffiliation, "Arasaka") {
-            ArrayPush(backgrounds, "Former Arasaka security. Tower attack changed everything. Found new purpose.");
+            ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S51"));
         }
         
         return backgrounds[RandRange(seed, 0, ArraySize(backgrounds) - 1)];
@@ -314,10 +314,10 @@ public class KdspBarghestProfileManager {
         }
         
         record += " | MOS: " + data.mos;
-        record += " | " + IntToString(data.yearsBarghest) + " yrs Barghest";
-        record += " | Prior: " + data.formerAffiliation;
-        record += " | Sector: " + data.assignedSector;
-        record += " | Status: " + data.dutyStatus;
+        record += " | " + IntToString(data.yearsBarghest) + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S127");
+        record += GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S117") + data.formerAffiliation;
+        record += GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S126") + data.assignedSector;
+        record += GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S91") + data.dutyStatus;
         
         return record;
     }

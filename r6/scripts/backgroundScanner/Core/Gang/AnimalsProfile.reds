@@ -28,7 +28,7 @@ public class KdspAnimalsProfile {
         // Specializations
         let specs: array<String>;
         ArrayPush(specs, "Close Combat");
-        ArrayPush(specs, "Muscle for Hire");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S0"));
         ArrayPush(specs, "Underground Fighting");
         ArrayPush(specs, "Security Detail");
         ArrayPush(specs, "Intimidation Ops");
@@ -36,19 +36,19 @@ public class KdspAnimalsProfile {
         ArrayPush(specs, "Training/Sparring");
         ArrayPush(specs, "Debt Collection");
         ArrayPush(specs, "Club Bouncer");
-        ArrayPush(specs, "Fight Pit Champion");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S1"));
         ArrayPush(specs, "Juice Brewing");
-        ArrayPush(specs, "Cage Match Promoter");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S2"));
         ArrayPush(specs, "Body Disposal");
         ArrayPush(specs, "Convoy Escort");
-        ArrayPush(specs, "Street Brawl Enforcer");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S3"));
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
         let territories: array<String>;
-        ArrayPush(territories, "Grand Imperial Mall");
-        ArrayPush(territories, "Pacifica Gym District");
-        ArrayPush(territories, "West Wind Estate");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S4"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S5"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S6"));
         ArrayPush(territories, "Underground Pits");
         ArrayPush(territories, "Coastview Corners");
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
@@ -67,7 +67,7 @@ public class KdspAnimalsProfile {
         
         // Physical markers
         let marks: array<String>;
-        ArrayPush(marks, "Extreme muscle mass");
+        ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S7"));
         if RandRange(seed + 700, 1, 100) <= 80 {
             ArrayPush(marks, "Steroid scarring");
         }
@@ -75,47 +75,47 @@ public class KdspAnimalsProfile {
             ArrayPush(marks, "Fighting scars");
         }
         if RandRange(seed + 720, 1, 100) <= 40 {
-            ArrayPush(marks, "Animal brand tattoo");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S8"));
         }
         if RandRange(seed + 730, 1, 100) <= 50 {
-            ArrayPush(marks, "Broken nose (multiple times)");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S9"));
         }
         if RandRange(seed + 740, 1, 100) <= 35 {
             ArrayPush(marks, "Cauliflower ears");
         }
         if RandRange(seed + 750, 1, 100) <= 30 {
-            ArrayPush(marks, "Gorilla Arms implants");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S10"));
         }
         profile.distinguishingMarks = marks;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Weak once. The juice changed everything. Pack made a beast out of nothing. Strength is all that matters now.");
-        ArrayPush(backstories, "Former athlete - career ended by injury. Animals showed how to become stronger than ever. Beyond human limits.");
-        ArrayPush(backstories, "Grew up in Pacifica. Only the strong survive. Earned place in the pack through blood and broken bones.");
-        ArrayPush(backstories, "Was prey once. Someone else's victim. Never again. The pack protects its own, and destroys everything else.");
-        ArrayPush(backstories, "Fighting is the only language that matters. Found family in the pits. Win or die - simple philosophy.");
-        ArrayPush(backstories, "Bouncer turned soldier. Security work pays, but the real rush is in the ring. Pack respects winners.");
-        ArrayPush(backstories, "Got hooked on the juice working construction. When the site closed, the pack was the only place left.");
-        ArrayPush(backstories, "Underground boxing circuit burned out. Animals offered real fights - no refs, no rules, no limits.");
-        ArrayPush(backstories, "Sasquatch personally tested during initiation. Survived three rounds. Most don't last one.");
-        ArrayPush(backstories, "Corpo gym rat who got bored lifting for vanity. Animals lift for war. Real purpose behind the iron.");
-        ArrayPush(backstories, "Pacifica kid who watched VDBs hide behind screens. Wanted to solve problems with fists, not code.");
-        ArrayPush(backstories, "Spent two years in a NUSA prison. Came out bigger than when going in. Pack recognized the hunger.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S11"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S12"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S17"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S18"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S19"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S20"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S21"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S22"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Working security at the Grand Imperial Mall. Nobody causes trouble twice.");
-        ArrayPush(activities, "Training for upcoming pit fight. Victory or death - either way, glory.");
-        ArrayPush(activities, "Muscle contract in Pacifica. Client wanted intimidation. Delivered.");
-        ArrayPush(activities, "Juice distribution run. Keeping the pack supplied with the good stuff.");
-        ArrayPush(activities, "Collecting debts. Most people pay when they see us coming. Smart.");
-        ArrayPush(activities, "Cage match tonight in West Wind. Betting pool is already deep.");
-        ArrayPush(activities, "Escorting a fixer through VDB territory. They looked but didn't touch.");
-        ArrayPush(activities, "New juice formula testing. Volunteer batch. Results are promising.");
-        ArrayPush(activities, "Clearing squatters from a building the pack wants. Didn't take long.");
-        ArrayPush(activities, "Recruitment tryouts. Line of wannabes outside the gym. Most won't last.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S28"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S29"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S30"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S31"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S32"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);

@@ -5,50 +5,50 @@ public abstract class KdspTraumaTeamGenerator {
 
     public static func GenerateTTBackground(seed: Int32) -> String {
         let backgrounds: array<String>;
-        ArrayPush(backgrounds, "Trauma Team International operative. Former combat medic, recruited after military discharge.");
-        ArrayPush(backgrounds, "TTI field operative. Background in emergency medicine. Recruited from Night City General.");
-        ArrayPush(backgrounds, "Trauma Team responder. Ex-Militech security contractor. Transitioned to medical extraction.");
-        ArrayPush(backgrounds, "TTI tactical medic. Former NCPD SWAT. Recruited for high-threat extraction operations.");
-        ArrayPush(backgrounds, "Trauma Team operative. Military paramedic background. Three tours in the South American conflict.");
-        ArrayPush(backgrounds, "TTI rapid response unit. Former Arasaka security detail. Lateral transfer to medical extraction.");
-        ArrayPush(backgrounds, "Trauma Team specialist. Trained at TTI Academy, Night City campus. Top 10% of graduating class.");
-        ArrayPush(backgrounds, "TTI field operative. Former nomad clan medic. Recruited for Badlands extraction expertise.");
-        ArrayPush(backgrounds, "Trauma Team International. Ex-military corpsman. Recruited after honorable discharge with commendations.");
-        ArrayPush(backgrounds, "TTI combat medic. Background in biosystems engineering. Field-promoted from technical support.");
-        ArrayPush(backgrounds, "Trauma Team operative. Former firefighter, Night City FD. Cross-trained in tactical medicine.");
-        ArrayPush(backgrounds, "TTI extraction specialist. No prior military service. Graduated TTI internal training program.");
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S0"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S1"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S2"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S3"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S4"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S5"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S6"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S7"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S8"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S9"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S10"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S11"));
         return backgrounds[RandRange(seed + 100, 0, ArraySize(backgrounds) - 1)];
     }
 
     public static func GenerateTTEarlyLife(seed: Int32) -> String {
         let events: array<String>;
-        ArrayPush(events, "Completed TTI tactical medicine certification. Advanced trauma surgery qualified.");
-        ArrayPush(events, "Survived hostile extraction in Pacifica. Team lost two operatives. Commendation received.");
-        ArrayPush(events, "Assigned to high-priority Platinum client protection detail for 18 months.");
-        ArrayPush(events, "Transferred between three AV crews. Performance evaluations: consistently above standard.");
-        ArrayPush(events, "Field-tested prototype medical cyberware during probationary period.");
-        ArrayPush(events, "Cross-trained in AV piloting. Emergency flight certification obtained.");
-        ArrayPush(events, "Completed hostile environment medical training. Qualified for combat zone deployments.");
-        ArrayPush(events, "Early career incident: client expired during extraction. Internal review: no fault found.");
-        ArrayPush(events, "Partnered with senior operative for 2-year mentorship rotation. Standard career track.");
-        ArrayPush(events, "Assigned to corporate district. Low-risk rotation. Used for advanced training certification.");
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S12"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S13"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S14"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S15"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S16"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S17"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S18"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S19"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S20"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S21"));
         return events[RandRange(seed + 200, 0, ArraySize(events) - 1)];
     }
 
     public static func GenerateTTRecentActivity(seed: Int32) -> String {
         let activities: array<String>;
-        ArrayPush(activities, "Active duty. Currently assigned to AV rapid response unit. Patrol sector: variable.");
-        ArrayPush(activities, "On standard rotation. Recent extraction in Watson. Client survived. Mission success.");
-        ArrayPush(activities, "Returning from administrative duty. Full combat readiness restored.");
-        ArrayPush(activities, "Currently assigned to high-value client escort detail. Threat level: elevated.");
-        ArrayPush(activities, "Recent combat engagement during Heywood extraction. Hostile fire encountered. No casualties.");
-        ArrayPush(activities, "Under evaluation for team leader promotion. Field assessment in progress.");
-        ArrayPush(activities, "Completed mandatory recertification. All combat and medical scores: PASS.");
-        ArrayPush(activities, "Transferred to new AV crew following reorganization. Integration period ongoing.");
-        ArrayPush(activities, "Recently deployed to Badlands recovery operation. Extended duration mission.");
-        ArrayPush(activities, "On rotation following high-stress deployment. Mandatory psych evaluation cleared.");
-        ArrayPush(activities, "Currently running double shifts due to personnel shortage. Overtime flagged by HR.");
-        ArrayPush(activities, "Assigned to Night City central response zone. High call volume. Performance steady.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S22"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S28"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S29"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S30"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S31"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S32"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S33"));
         return activities[RandRange(seed + 300, 0, ArraySize(activities) - 1)];
     }
 
@@ -58,25 +58,25 @@ public abstract class KdspTraumaTeamGenerator {
         let years = RandRange(seed + 50, 2, 18);
         let extractions = RandRange(seed + 51, 30, 800);
         let successRate = RandRange(seed + 52, 87, 99);
-        let result = "TTI SERVICE RECORD | Years: " + IntToString(years) + " | Extractions: " + IntToString(extractions) + " | Success rate: " + IntToString(successRate) + "%";
+        let result = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S34") + IntToString(years) + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S35") + IntToString(extractions) + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S36") + IntToString(successRate) + "%";
 
         // Commendations or disciplinary
         if r <= 4 {
             let commRoll = RandRange(seed + 60, 0, 5);
-            if commRoll == 0 { result = result + " | Commendations: Valor under fire"; }
-            else if commRoll == 1 { result = result + " | Commendations: Distinguished service"; }
-            else if commRoll == 2 { result = result + " | Commendations: Client survival (critical)"; }
-            else if commRoll == 3 { result = result + " | Commendations: Zero-loss streak (6 months)"; }
-            else if commRoll == 4 { result = result + " | Commendations: Hostile zone extraction"; }
-            else { result = result + " | Commendations: Team leadership award"; }
+            if commRoll == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S37"); }
+            else if commRoll == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S38"); }
+            else if commRoll == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S39"); }
+            else if commRoll == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S40"); }
+            else if commRoll == 4 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S41"); }
+            else { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S42"); }
         } else if r <= 6 {
-            result = result + " | Record: CLEAN - No disciplinary actions";
+            result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S43");
         } else if r == 7 {
-            result = result + " | Disciplinary: Excessive force complaint (DISMISSED)";
+            result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S44");
         } else if r == 8 {
-            result = result + " | Disciplinary: Unauthorized engagement (WARNING)";
+            result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S45");
         } else {
-            result = result + " | Disciplinary: Client complaint - delayed response (RESOLVED)";
+            result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S46");
         }
 
         return result;
@@ -93,15 +93,15 @@ public abstract class KdspTraumaTeamGenerator {
         else if rankRoll == 8 { rank = "Flight Medic"; salary = "95,000-140,000"; }
         else { rank = "Tactical Specialist"; salary = "110,000-160,000"; }
 
-        let result = "Employer: Trauma Team International | Rank: " + rank + " | Salary: " + salary + "/yr";
+        let result = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S47") + rank + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S48") + salary + "/yr";
 
         // Benefits
         let benefitRoll = RandRange(seed + 70, 0, 4);
-        if benefitRoll == 0 { result = result + " | Benefits: Full TT coverage (employee), hazard pay"; }
-        else if benefitRoll == 1 { result = result + " | Benefits: Platinum TT coverage, combat bonus"; }
-        else if benefitRoll == 2 { result = result + " | Benefits: Full medical, cyberware maintenance stipend"; }
-        else if benefitRoll == 3 { result = result + " | Benefits: Housing allowance, TT coverage (family)"; }
-        else { result = result + " | Benefits: Standard TTI package, overtime eligible"; }
+        if benefitRoll == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S49"); }
+        else if benefitRoll == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S50"); }
+        else if benefitRoll == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S51"); }
+        else if benefitRoll == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S52"); }
+        else { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S53"); }
 
         return result;
     }
@@ -123,25 +123,25 @@ public abstract class KdspTraumaTeamGenerator {
         let fitness: String;
         if fitnessRoll <= 5 { fitness = "COMBAT READY"; }
         else if fitnessRoll <= 7 { fitness = "FIT FOR DUTY"; }
-        else if fitnessRoll == 8 { fitness = "RESTRICTED DUTY - recovery"; }
-        else { fitness = "UNDER REVIEW - pending evaluation"; }
+        else if fitnessRoll == 8 { fitness = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S54"); }
+        else { fitness = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S55"); }
 
-        let result = "Blood: " + blood + " | Fitness: " + fitness + " | TT: EMPLOYEE COVERAGE";
+        let result = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S95") + blood + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S56") + fitness + " | TT: EMPLOYEE COVERAGE";
 
         // Combat injuries
         let injuryRoll = RandRange(seed + 20, 0, 9);
         if injuryRoll <= 3 {
             // No significant injuries
-            result = result + " | Combat injuries: None on record";
+            result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S57");
         } else if injuryRoll <= 6 {
             let injType = RandRange(seed + 21, 0, 4);
-            if injType == 0 { result = result + " | Combat injuries: Ballistic trauma (healed), shrapnel scarring"; }
-            else if injType == 1 { result = result + " | Combat injuries: Concussion (2x), reconstructed left arm"; }
-            else if injType == 2 { result = result + " | Combat injuries: Burns (chemical), skin graft"; }
-            else if injType == 3 { result = result + " | Combat injuries: Broken ribs (healed), torn ACL (repaired)"; }
-            else { result = result + " | Combat injuries: Gunshot wound (through-and-through), nerve damage (treated)"; }
+            if injType == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S58"); }
+            else if injType == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S59"); }
+            else if injType == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S60"); }
+            else if injType == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S61"); }
+            else { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S62"); }
         } else {
-            result = result + " | Combat injuries: CLASSIFIED - sealed by TTI medical";
+            result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S63");
         }
 
         return result;
@@ -158,20 +158,20 @@ public abstract class KdspTraumaTeamGenerator {
         else if roleRoll == 6 { role = "AV Gunner"; }
         else { role = "Team Leader"; }
 
-        let result = "TTI OPERATIVE | Combat role: " + role + " | Threat to hostiles: EXTREME";
+        let result = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S64") + role + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S65");
 
         let combatRoll = RandRange(seed + 10, 0, 4);
-        if combatRoll == 0 { result = result + " | Training: CQB, tactical medicine, AV insertion"; }
-        else if combatRoll == 1 { result = result + " | Training: Heavy weapons, suppressive fire, field surgery"; }
-        else if combatRoll == 2 { result = result + " | Training: Precision shooting, overwatch, triage"; }
-        else if combatRoll == 3 { result = result + " | Training: Breach and clear, demolitions, trauma care"; }
-        else { result = result + " | Training: Squad command, tactical coordination, emergency medicine"; }
+        if combatRoll == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S66"); }
+        else if combatRoll == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S67"); }
+        else if combatRoll == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S68"); }
+        else if combatRoll == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S69"); }
+        else { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S70"); }
 
         // Engagement stats on some
         let engRoll = RandRange(seed + 20, 0, 9);
         if engRoll <= 5 {
             let engagements = RandRange(seed + 21, 5, 120);
-            result = result + " | Hostile engagements: " + IntToString(engagements);
+            result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S71") + IntToString(engagements);
         }
 
         return result;
@@ -180,17 +180,17 @@ public abstract class KdspTraumaTeamGenerator {
     // Trauma Team cyberware profile
     public static func GenerateTTCyberware(seed: Int32) -> String {
         let implantCount = RandRange(seed, 5, 12);
-        let result = "Implants: " + IntToString(implantCount) + " | Status: MILITARY-GRADE - TTI MAINTAINED";
+        let result = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S90") + IntToString(implantCount) + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S72");
 
         let loadoutRoll = RandRange(seed + 10, 0, 5);
-        if loadoutRoll == 0 { result = result + " | Kiroshi Mk.4 (tactical), Subdermal armor, Reflex boosters"; }
-        else if loadoutRoll == 1 { result = result + " | Militech optics (ballistic tracking), Kerenzikov, Biomonitor"; }
-        else if loadoutRoll == 2 { result = result + " | Kiroshi tactical suite, Sandevistan (limited), Trauma response HUD"; }
-        else if loadoutRoll == 3 { result = result + " | Enhanced optics, Gorilla arms (medical variant), Subdermal plating"; }
-        else if loadoutRoll == 4 { result = result + " | Threat detection array, Reinforced skeleton, Combat stimulant injector"; }
-        else { result = result + " | TTI standard loadout: Optics, biomonitor, subdermal armor, comm suite"; }
+        if loadoutRoll == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S73"); }
+        else if loadoutRoll == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S74"); }
+        else if loadoutRoll == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S75"); }
+        else if loadoutRoll == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S76"); }
+        else if loadoutRoll == 4 { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S77"); }
+        else { result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S78"); }
 
-        result = result + " | PSYCHOSIS RISK: MONITORED (mandatory quarterly eval)";
+        result = result + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S79");
         return result;
     }
 

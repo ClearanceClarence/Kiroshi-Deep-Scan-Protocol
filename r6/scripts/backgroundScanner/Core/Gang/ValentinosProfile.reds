@@ -38,7 +38,7 @@ public class KdspValentinosProfile {
         ArrayPush(specs, "Debt Collection");
         ArrayPush(specs, "Honor Enforcement");
         ArrayPush(specs, "Street Racing");
-        ArrayPush(specs, "Fencing Stolen Goods");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S0"));
         ArrayPush(specs, "Lowrider Mechanic");
         ArrayPush(specs, "Recruitment/Initiation");
         ArrayPush(specs, "Gambling Operations");
@@ -46,10 +46,10 @@ public class KdspValentinosProfile {
         
         // Territory
         let territories: array<String>;
-        ArrayPush(territories, "Vista del Rey");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S1"));
         ArrayPush(territories, "The Glen");
         ArrayPush(territories, "Wellsprings");
-        ArrayPush(territories, "El Coyote Cojo");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-S15"));
         ArrayPush(territories, "Heywood Streets");
         ArrayPush(territories, "Glen Cemetery");
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
@@ -65,56 +65,56 @@ public class KdspValentinosProfile {
         // Tattoos - Valentinos have religious imagery
         let tattoos: array<String>;
         if RandRange(seed + 700, 1, 100) <= 90 {
-            ArrayPush(tattoos, "Santa Muerte imagery");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S8"));
         }
         if RandRange(seed + 710, 1, 100) <= 70 {
-            ArrayPush(tattoos, "Golden heart with thorns");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S9"));
         }
         if RandRange(seed + 720, 1, 100) <= 50 {
-            ArrayPush(tattoos, "Heywood territorial markers");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S2"));
         }
         if RandRange(seed + 730, 1, 100) <= 40 {
             ArrayPush(tattoos, "Memorial portraits");
         }
         if RandRange(seed + 740, 1, 100) <= 55 {
-            ArrayPush(tattoos, "Gold tooth implants");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S3"));
         }
         if RandRange(seed + 750, 1, 100) <= 35 {
-            ArrayPush(tattoos, "Rosary bead wrist tattoo");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S4"));
         }
         if RandRange(seed + 760, 1, 100) <= 30 {
-            ArrayPush(tattoos, "Valentino cross on neck");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S5"));
         }
         profile.distinguishingMarks = tattoos;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Third generation Valentino. The gold runs in the blood. Heywood is home, familia is everything.");
-        ArrayPush(backstories, "Grew up on these streets. Valentinos protected the neighborhood when no one else would. Loyalty repaid.");
-        ArrayPush(backstories, "Lost family to corpo greed. Found new family in the Valentinos. Santa Muerte guides now.");
-        ArrayPush(backstories, "Started boosting cars young. Valentinos saw potential. Now handling bigger jobs for the familia.");
-        ArrayPush(backstories, "Came from nothing. Valentinos offered respect, purpose, brotherhood. Would die for these streets.");
-        ArrayPush(backstories, "Ex-military, returned to Heywood. Skills serve the community now. La familia needed soldiers.");
-        ArrayPush(backstories, "Crossed the border with nothing but a prayer. Valentinos were the first to offer a hand. Owe them everything.");
-        ArrayPush(backstories, "Mother lit candles at the Santa Muerte shrine every night. When she died, the Valentinos paid for everything. Blood debt.");
-        ArrayPush(backstories, "Was a boxer in The Glen. Lost a fixed fight, owed the wrong people. Valentinos settled the debt. Now settling theirs.");
-        ArrayPush(backstories, "Sicario from way back. Other gangs wanted muscle. Valentinos wanted loyalty. Only one of those earns respect.");
-        ArrayPush(backstories, "Grew up watching lowriders cruise Vista del Rey. Always knew which crew to ride with. Gold forever.");
-        ArrayPush(backstories, "Abuela was one of the originals. Her stories built this. Carrying the legacy forward - with honor.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S6"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S7"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S8"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S9"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S10"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S11"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S12"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S17"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Holding down Vista del Rey. Nobody moves without paying respects.");
-        ArrayPush(activities, "Running product through Heywood. Clean supply, loyal customers.");
-        ArrayPush(activities, "Community protection detail. Valentinos watch over their own.");
-        ArrayPush(activities, "Enforcing honor debts. Some lessons taught with gold, others with lead.");
-        ArrayPush(activities, "Car acquisition specialist. High-end vehicles for high-end clients.");
-        ArrayPush(activities, "Organizing the Santa Muerte procession. The dead walk with us tonight.");
-        ArrayPush(activities, "Lowrider meet in The Glen. Business and pleasure. Mostly business.");
-        ArrayPush(activities, "Settling a blood feud between two Valentino families. Delicate work.");
-        ArrayPush(activities, "Expanding into Wellsprings. New territory means new revenue.");
-        ArrayPush(activities, "Weapons cache resupply from a Militech contact. Premium iron at family prices.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S18"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S19"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S20"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S21"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S22"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-S27"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);

@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=0a0e14" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-2.4-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-3.0-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=0a0e14" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=0a0e14" alt="License">
 </p>
@@ -42,6 +42,7 @@
 │  ▸ Scanner Glitches ......... Kiroshi malfunction system                     │
 │  ▸ NPC Connections .......... Cross-NPC cross-referencing                    │
 │  ▸ BOLO Notices ............. NCPD lookout flag system                       │
+│  ▸ Localization ............. Play the mod in your language                  │
 │  ▸ Translation .............. Community localization guide                   │
 │  ▸ Configuration ............ Mod settings breakdown                         │
 │  ▸ Installation ............. Requirements + setup                           │
@@ -61,7 +62,7 @@ Deep Scan Protocol hooks your Kiroshi optics into every major database in Night 
 
 All data is **deterministically generated** from each NPC's entity ID — the same NPC always produces identical results across sessions. No two citizens share a profile.
 
-> **`230 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`93 SOURCE FILES`**
+> **`230 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`98 SOURCE FILES`**
 
 <br>
 
@@ -576,13 +577,27 @@ The scan loading sequence now routes through whatever local infrastructure your 
 
 <br>
 
+### ░ Localization &nbsp; <img src="https://img.shields.io/badge/v3.0-5ef6e1?style=flat-square&labelColor=0a0e14" alt="v3.0">
+
+Every display string in the mod — all **7,914** of them, from life events to unique NPC backstories to BOLO notices to glitch output — runs through [Codeware's localization system](https://github.com/psiberx/cp2077-codeware/wiki#localization).
+
+Translations are no longer forks of the mod. A translator ships one small language file that installs alongside KDSP, and the game's language setting picks it automatically. Mod updates don't break translations — new strings fall back to English until the translator adds them. Multiple languages coexist in a single install.
+
+Playing in English? Nothing changes.
+
+> Master key file: `Strings/English.reds`. Language resolver: `Strings/LocalizationProvider.reds`.
+
+<br>
+
 <img src="/branding/section_translation.svg" alt="Translation" width="100%">
 
-Want to translate Kiroshi Deep Scan into your language? Download the [Translation Guide](TRANSLATION_GUIDE.html), extract it, and open in your browser.
+Want to translate Kiroshi Deep Scan into your language? As of v3.0 it's a single-file job. Download the [Translation Guide](TRANSLATION_GUIDE.html), extract it, and open in your browser.
 
-The guide covers every file in the mod with real code examples, showing exactly which strings to translate and which to leave alone. Includes placeholder token reference, custom gender token instructions for languages with verb conjugation (Russian, Polish, German, etc.), difficulty ratings per file, decision flowchart, and common mistakes.
+Open `Strings/English.reds` — every translatable string in the mod as a key-value list. Translate the values, wrap them in a language package, ship it as a companion mod. The guide covers the package template with a complete working example, the full key map, token and trailing-space rules, what stays untranslated by design, migration notes for v2.x translations, and a release checklist.
 
-Translations are published as separate standalone mods on Nexus. No permission needed — just credit the original page. If you publish one, drop a comment and it'll be linked here.
+Partial translations work — untranslated keys fall back to English, so you can publish at any coverage level and update incrementally.
+
+Translations are published as separate mods on Nexus. No permission needed — just credit the original page. If you publish one, drop a comment and it'll be linked here.
 
 <br>
 
@@ -880,11 +895,15 @@ if StrContains(recordId, "takemura") { return KdspUniqueNPCEntries.Takemura(); }
 </details>
 
 <details>
-<summary><b>▸ PROJECT STRUCTURE</b> — 93 source files</summary>
+<summary><b>▸ PROJECT STRUCTURE</b> — 98 source files</summary>
 <br>
 
 ```
 r6/scripts/backgroundScanner/
+│
+├── Strings/                               Localization system (v3.0)
+│   ├── English.reds                       All 7,914 display strings
+│   └── LocalizationProvider.reds          Game language resolver
 │
 ├── Core/
 │   ├── BackstoryManager.reds              Main generation orchestrator

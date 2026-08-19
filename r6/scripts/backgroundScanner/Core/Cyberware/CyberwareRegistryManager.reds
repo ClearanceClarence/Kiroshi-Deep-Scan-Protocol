@@ -118,11 +118,11 @@ public class KdspCyberwareRegistryManager {
     private static func GenerateRipperdocCoherent(seed: Int32, archetype: String, coherence: ref<KdspCoherenceProfile>) -> String {
         if IsDefined(coherence) && Equals(coherence.lifeTheme, "CRIMINAL") {
             let docs: array<String>;
-            ArrayPush(docs, "Unlicensed clinic (Kabuki)");
-            ArrayPush(docs, "Back-alley doc (Watson)");
-            ArrayPush(docs, "Black market surgeon");
+            ArrayPush(docs, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S0"));
+            ArrayPush(docs, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S1"));
+            ArrayPush(docs, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S2"));
             ArrayPush(docs, "Gang-affiliated ripperdoc");
-            ArrayPush(docs, "Scav chop shop survivor");
+            ArrayPush(docs, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S3"));
             return docs[RandRange(seed, 0, ArraySize(docs) - 1)];
         }
         return KdspCyberwareRegistryManager.GenerateRipperdoc(seed, archetype);
@@ -134,8 +134,8 @@ public class KdspCyberwareRegistryManager {
             if Equals(coherence.lifeTheme, "FALLING") || Equals(coherence.lifeTheme, "STRUGGLING") {
                 let statuses: array<String>;
                 ArrayPush(statuses, "EXPIRED");
-                ArrayPush(statuses, "VOID - Non-payment");
-                ArrayPush(statuses, "VOID - Unauthorized mods");
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S4"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S5"));
                 ArrayPush(statuses, "NONE");
                 return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
             }
@@ -199,33 +199,33 @@ public class KdspCyberwareRegistryManager {
         
         // Select body mod implant type (20 options)
         let i = RandRange(seed, 0, 19);
-        if i == 0 { implant.name = "Hormonal Regulation Implant"; }
-        else if i == 1 { implant.name = "Voice Modulator (Feminine)"; }
-        else if i == 2 { implant.name = "Voice Modulator (Masculine)"; }
-        else if i == 3 { implant.name = "Voice Modulator (Androgynous)"; }
-        else if i == 4 { implant.name = "Biosculpt Integration Suite"; }
-        else if i == 5 { implant.name = "Dermal Contouring System"; }
-        else if i == 6 { implant.name = "Full Body Biosculpt Package"; }
-        else if i == 7 { implant.name = "Skeletal Feminization Frame"; }
-        else if i == 8 { implant.name = "Skeletal Masculinization Frame"; }
-        else if i == 9 { implant.name = "Gender Confirmation Suite"; }
-        else if i == 10 { implant.name = "Hormone Synthesis Module"; }
-        else if i == 11 { implant.name = "Facial Reconstruction Suite"; }
-        else if i == 12 { implant.name = "Body Proportion Adjuster"; }
-        else if i == 13 { implant.name = "Height Modification System"; }
-        else if i == 14 { implant.name = "Vocal Cord Replacement"; }
-        else if i == 15 { implant.name = "Cosmetic Dermal Implants"; }
-        else if i == 16 { implant.name = "Appearance Alteration Suite"; }
-        else if i == 17 { implant.name = "Biosculpted Features Package"; }
-        else if i == 18 { implant.name = "Identity Reassignment Implants"; }
-        else { implant.name = "Comprehensive Body Modification"; }
+        if i == 0 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S6"); }
+        else if i == 1 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S7"); }
+        else if i == 2 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S8"); }
+        else if i == 3 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S9"); }
+        else if i == 4 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S10"); }
+        else if i == 5 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S11"); }
+        else if i == 6 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S12"); }
+        else if i == 7 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S13"); }
+        else if i == 8 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S14"); }
+        else if i == 9 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S15"); }
+        else if i == 10 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S16"); }
+        else if i == 11 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S17"); }
+        else if i == 12 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S18"); }
+        else if i == 13 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S19"); }
+        else if i == 14 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S20"); }
+        else if i == 15 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S21"); }
+        else if i == 16 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S22"); }
+        else if i == 17 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S23"); }
+        else if i == 18 { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S24"); }
+        else { implant.name = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S25"); }
         
         // Body mod manufacturers (10 options)
         let m = RandRange(seed + 10, 0, 9);
         if m == 0 { implant.manufacturer = "Biosyn Medical"; }
         else if m == 1 { implant.manufacturer = "Raven Microcyber"; }
-        else if m == 2 { implant.manufacturer = "Night City Medical"; }
-        else if m == 3 { implant.manufacturer = "Chrome & Flesh Inc."; }
+        else if m == 2 { implant.manufacturer = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S26"); }
+        else if m == 3 { implant.manufacturer = GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S27"); }
         else if m == 4 { implant.manufacturer = "BodyWorks Ltd."; }
         else if m == 5 { implant.manufacturer = "Arasaka Biotech"; }
         else if m == 6 { implant.manufacturer = "Zetatech Medical"; }
@@ -271,26 +271,26 @@ public class KdspCyberwareRegistryManager {
     private static func GetImplantForSlot(seed: Int32, slot: String, archetype: String) -> String {
         if Equals(slot, "Optics") {
             let i = RandRange(seed, 0, 19);
-            if i == 0 { return "Kiroshi Optics Mk.1"; }
-            if i == 1 { return "Kiroshi Optics Mk.2"; }
-            if i == 2 { return "Kiroshi Optics Mk.3"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S28"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S29"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S30"); }
             if i == 3 { return "Kiroshi Cockatrice"; }
             if i == 4 { return "Kiroshi Doomsayer"; }
-            if i == 5 { return "Basic Optic Enhancer"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S31"); }
             if i == 6 { return "Threat Detector"; }
             if i == 7 { return "Trajectory Analysis"; }
-            if i == 8 { return "Low-Light Vision Mod"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S32"); }
             if i == 9 { return "Infrared Scanner"; }
             if i == 10 { return "Zoom Enhancement"; }
-            if i == 11 { return "Target Analysis System"; }
-            if i == 12 { return "Facial Recognition Suite"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S33"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S34"); }
             if i == 13 { return "Reticle Overlay"; }
             if i == 14 { return "Weakspot Detection"; }
             if i == 15 { return "Thermographic Scanner"; }
             if i == 16 { return "Combat HUD"; }
-            if i == 17 { return "Targeting Reticle Mk.1"; }
+            if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S35"); }
             if i == 18 { return "Cyberoptic Scanner"; }
-            return "Budget Ocular Implant";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S36");
         }
         
         if Equals(slot, "Neural") {
@@ -302,7 +302,7 @@ public class KdspCyberwareRegistryManager {
             if i == 4 { return "Sandevistan Mk.3"; }
             if i == 5 { return "Synaptic Accelerator"; }
             if i == 6 { return "Memory Boost"; }
-            if i == 7 { return "Limbic System Enhancement"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S37"); }
             if i == 8 { return "Pain Editor"; }
             if i == 9 { return "Reflex Tuner"; }
             if i == 10 { return "Neural Processor"; }
@@ -311,10 +311,10 @@ public class KdspCyberwareRegistryManager {
             if i == 13 { return "Reaction Enhancer"; }
             if i == 14 { return "Adrenaline Converter"; }
             if i == 15 { return "Neofiber"; }
-            if i == 16 { return "Kerenzikov Boost System"; }
+            if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S38"); }
             if i == 17 { return "Maneuvering System"; }
             if i == 18 { return "Reflex Booster"; }
-            return "Basic Neural Interface";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S39");
         }
         
         if Equals(slot, "Circulatory") {
@@ -325,22 +325,22 @@ public class KdspCyberwareRegistryManager {
             if i == 3 { return "Second Heart"; }
             if i == 4 { return "Adrenaline Booster"; }
             if i == 5 { return "Toxin Binder"; }
-            if i == 6 { return "Bioplastic Blood Vessels"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S40"); }
             if i == 7 { return "Microgenerator"; }
             if i == 8 { return "Metabolic Editor"; }
             if i == 9 { return "Blood Oxygenator"; }
             if i == 10 { return "Detoxifier"; }
-            if i == 11 { return "Emergency Clotting System"; }
-            if i == 12 { return "Adrenal Surge Regulator"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S41"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S42"); }
             if i == 13 { return "Heal-on-Kill"; }
-            return "Blood Flow Optimizer";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S43");
         }
         
         if Equals(slot, "Skeletal") {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return "Titanium Bones"; }
             if i == 1 { return "Dense Marrow"; }
-            if i == 2 { return "Synaptic Signal Optimizer"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S44"); }
             if i == 3 { return "Microrotors"; }
             if i == 4 { return "Para Bellum"; }
             if i == 5 { return "Kinetic Frame"; }
@@ -349,10 +349,10 @@ public class KdspCyberwareRegistryManager {
             if i == 8 { return "Spring Joints"; }
             if i == 9 { return "Epimorphic Skeleton"; }
             if i == 10 { return "Micro-Vibration Motor"; }
-            if i == 11 { return "Sway Reduction System"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S45"); }
             if i == 12 { return "Hardened Skeleton"; }
-            if i == 13 { return "Carry Capacity Boost"; }
-            return "Reinforced Bone Lacing";
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S46"); }
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S47");
         }
         
         if Equals(slot, "Integumentary") {
@@ -364,10 +364,10 @@ public class KdspCyberwareRegistryManager {
             if i == 4 { return "Optical Camo"; }
             if i == 5 { return "Subdermal Weave"; }
             if i == 6 { return "Nano-Plating"; }
-            if i == 7 { return "Ballistic Dermal Plating"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S48"); }
             if i == 8 { return "Chitin Shell"; }
             if i == 9 { return "Shock-n-Awe"; }
-            if i == 10 { return "Pain Suppressor Skin"; }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S49"); }
             if i == 11 { return "Thermal Regulator"; }
             if i == 12 { return "EMP Shielding"; }
             if i == 13 { return "Self-Healing Dermis"; }
@@ -380,40 +380,40 @@ public class KdspCyberwareRegistryManager {
             if i == 1 { return "Arasaka MKV"; }
             if i == 2 { return "NetWatch Netdriver"; }
             if i == 3 { return "Raven Microcyber"; }
-            if i == 4 { return "Stephenson Tech Mk.4"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S50"); }
             if i == 5 { return "Tetratronic Rippler"; }
-            if i == 6 { return "Biodyne Berserk Mk.1"; }
-            if i == 7 { return "Biodyne Berserk Mk.2"; }
-            if i == 8 { return "Biodyne Berserk Mk.3"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S51"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S52"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S53"); }
             if i == 9 { return "Zetatech Sandevistan"; }
             if i == 10 { return "Dynalar Sandevistan"; }
             if i == 11 { return "QianT Sandevistan"; }
             if i == 12 { return "Militech Falcon"; }
-            if i == 13 { return "Fuyutsuki Electronics Mk.1"; }
-            if i == 14 { return "Fuyutsuki Electronics Mk.2"; }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S54"); }
+            if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S55"); }
             if i == 15 { return "Netdriver Mk.5"; }
-            if i == 16 { return "Arasaka Quickhack Array"; }
-            if i == 17 { return "Militech Combat OS"; }
+            if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S56"); }
+            if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S57"); }
             if i == 18 { return "Standard Cyberdeck"; }
-            return "Budget Operating System";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S58");
         }
         
         if Equals(slot, "Arms") {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return "Gorilla Arms"; }
-            if i == 1 { return "Gorilla Arms (Thermal)"; }
-            if i == 2 { return "Gorilla Arms (Electric)"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S59"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S60"); }
             if i == 3 { return "Mantis Blades"; }
-            if i == 4 { return "Mantis Blades (Thermal)"; }
-            if i == 5 { return "Mantis Blades (Chemical)"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S61"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S62"); }
             if i == 6 { return "Monowire"; }
             if i == 7 { return "Monowire (Electrical)"; }
-            if i == 8 { return "Projectile Launch System"; }
-            if i == 9 { return "Launcher - Explosive"; }
-            if i == 10 { return "Launcher - Tranquilizer"; }
-            if i == 11 { return "Standard Cyberlimb (Left)"; }
-            if i == 12 { return "Standard Cyberlimb (Right)"; }
-            if i == 13 { return "Full Cyberarm Replacement"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S63"); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S64"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S65"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S66"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S67"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S68"); }
             return "Partial Cyberarm";
         }
         
@@ -422,13 +422,13 @@ public class KdspCyberwareRegistryManager {
             if i == 0 { return "Reinforced Tendons"; }
             if i == 1 { return "Fortified Ankles"; }
             if i == 2 { return "Lynx Paws"; }
-            if i == 3 { return "Standard Cyberleg (Left)"; }
-            if i == 4 { return "Standard Cyberleg (Right)"; }
-            if i == 5 { return "Full Cyberleg Replacement"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S69"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S70"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S71"); }
             if i == 6 { return "Jenkins Tendons"; }
-            if i == 7 { return "Leeroy Ligament System"; }
-            if i == 8 { return "Speed Boosting Legs"; }
-            if i == 9 { return "Jump Enhancement System"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S72"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S73"); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S74"); }
             if i == 10 { return "Hover System"; }
             return "Partial Cyberleg";
         }
@@ -437,28 +437,28 @@ public class KdspCyberwareRegistryManager {
             let i = RandRange(seed, 0, 11);
             if i == 0 { return "Ballistic Coprocessor"; }
             if i == 1 { return "Smart Link"; }
-            if i == 2 { return "Tattoo: Tyger Claws Dermal Imprint"; }
-            if i == 3 { return "Tattoo: Security Decryption Coprocessor"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S75"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S76"); }
             if i == 4 { return "Power Grip"; }
             if i == 5 { return "Precision Targeting"; }
-            if i == 6 { return "Steadying Hand Mod"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S77"); }
             if i == 7 { return "Recoil Dampener"; }
             if i == 8 { return "Grip Enhancement"; }
             if i == 9 { return "Feedback Circuit"; }
-            if i == 10 { return "Technical Aptitude Coprocessor"; }
-            return "Standard Hand Cyberware";
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S78"); }
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S79");
         }
         
         if Equals(slot, "Frontal Cortex") {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return "Mechatronic Core"; }
             if i == 1 { return "Ex-Disk"; }
-            if i == 2 { return "RAM Upgrade Mk.1"; }
-            if i == 3 { return "RAM Upgrade Mk.2"; }
-            if i == 4 { return "RAM Upgrade Mk.3"; }
-            if i == 5 { return "Limbic System Enhancement"; }
-            if i == 6 { return "Visual Cortex Support"; }
-            if i == 7 { return "Camillo RAM Manager"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S80"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S81"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S82"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S37"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S83"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S84"); }
             if i == 8 { return "Memory Bank"; }
             if i == 9 { return "Self-ICE"; }
             if i == 10 { return "Bioconductor"; }
@@ -476,10 +476,10 @@ public class KdspCyberwareRegistryManager {
             if i == 3 { return "Neofiber"; }
             if i == 4 { return "Tyrosine Injector"; }
             if i == 5 { return "Adrenaline Surge"; }
-            if i == 6 { return "Nerve Speed Enhancer"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S85"); }
             if i == 7 { return "Pain Inhibitor"; }
-            if i == 8 { return "Sensory Overload Protector"; }
-            return "Basic Nerve Boost";
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S86"); }
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S87");
         }
         
         if Equals(slot, "Immune System") {
@@ -491,9 +491,9 @@ public class KdspCyberwareRegistryManager {
             if i == 4 { return "Nano-Antibodies"; }
             if i == 5 { return "Pathogen Filter"; }
             if i == 6 { return "Rad Shield"; }
-            if i == 7 { return "Viral Resistance Module"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S88"); }
             if i == 8 { return "Auto-Immune Booster"; }
-            return "Basic Immune Enhancer";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S89");
         }
         
         if Equals(slot, "Cardiovascular") {
@@ -512,16 +512,16 @@ public class KdspCyberwareRegistryManager {
         
         if Equals(slot, "Musculature") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Bionic Muscle Fiber"; }
-            if i == 1 { return "Synthetic Muscle Enhancement"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S90"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S91"); }
             if i == 2 { return "Power Amplifier"; }
             if i == 3 { return "Reflex Muscle"; }
             if i == 4 { return "Micro-Generator Muscles"; }
-            if i == 5 { return "Fast-Twitch Fiber Mod"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S92"); }
             if i == 6 { return "Slow-Twitch Enhancer"; }
-            if i == 7 { return "Grip Strength Boost"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S93"); }
             if i == 8 { return "Core Stabilizer"; }
-            return "Standard Muscle Boost";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S94");
         }
         
         if Equals(slot, "Internal Organs") {
@@ -531,11 +531,11 @@ public class KdspCyberwareRegistryManager {
             if i == 2 { return "Synthetic Stomach"; }
             if i == 3 { return "Metabolic Optimizer"; }
             if i == 4 { return "Digestive Enhancement"; }
-            if i == 5 { return "Toxin Processing Unit"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S95"); }
             if i == 6 { return "Nutrient Extractor"; }
-            if i == 7 { return "Internal Air Filter"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S96"); }
             if i == 8 { return "Waste Recycler"; }
-            return "Organ Support System";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S97");
         }
         
         return "Generic Implant";
@@ -549,7 +549,7 @@ public class KdspCyberwareRegistryManager {
             if i == 0 { return "Arasaka"; }
             if i == 1 { return "Arasaka Biotech"; }
             if i == 2 { return "Militech"; }
-            if i == 3 { return "Militech Advanced Systems"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S98"); }
             if i == 4 { return "Kiroshi"; }
             if i == 5 { return "Kiroshi Group"; }
             if i == 6 { return "Zetatech"; }
@@ -557,10 +557,10 @@ public class KdspCyberwareRegistryManager {
             if i == 8 { return "Dynalar"; }
             if i == 9 { return "Raven Microcybernetics"; }
             if i == 10 { return "Kang Tao"; }
-            if i == 11 { return "Kang Tao Medical"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S99"); }
             if i == 12 { return "Biotechnica"; }
             if i == 13 { return "Biotechnica Premium"; }
-            if i == 14 { return "Trauma Team Medical"; }
+            if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S100"); }
             if i == 15 { return "Petrochem Biotech"; }
             if i == 16 { return "QianT"; }
             if i == 17 { return "Fuyutsuki Electronics"; }
@@ -579,14 +579,14 @@ public class KdspCyberwareRegistryManager {
             if i == 5 { return "Kendachi"; }
             if i == 6 { return "Tsunami Defense"; }
             if i == 7 { return "Biotechnica"; }
-            if i == 8 { return "Night City Cybernetics"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S101"); }
             if i == 9 { return "BudgetArms Cyber"; }
             if i == 10 { return "SovOil Cybertech"; }
             if i == 11 { return "EuroCorps Medical"; }
             if i == 12 { return "IEC Implants"; }
-            if i == 13 { return "Orbital Air Medical"; }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S102"); }
             if i == 14 { return "Continental Brands"; }
-            if i == 15 { return "All Foods Medical"; }
+            if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S103"); }
             if i == 16 { return "Standard Cybernetics"; }
             if i == 17 { return "MediCorp"; }
             if i == 18 { return "CyberMed Inc."; }
@@ -600,22 +600,22 @@ public class KdspCyberwareRegistryManager {
             if i == 1 { return "Scav-Sourced"; }
             if i == 2 { return "Homemade"; }
             if i == 3 { return "Bootleg"; }
-            if i == 4 { return "Street Doc Special"; }
-            if i == 5 { return "Black Market Import"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S104"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S105"); }
             if i == 6 { return "Salvaged"; }
             if i == 7 { return "Gang Workshop"; }
-            if i == 8 { return "Chop Shop Reclaimed"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S106"); }
             if i == 9 { return "Pirated Firmware"; }
             if i == 10 { return "BudgetArms Cyber"; }
             if i == 11 { return "Kendachi"; }
-            if i == 12 { return "Night City Cybernetics"; }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S101"); }
             if i == 13 { return "Second-Hand"; }
             if i == 14 { return "Refurbished"; }
             if i == 15 { return "Gray Market"; }
             if i == 16 { return "Maelstrom Modified"; }
-            if i == 17 { return "Voodoo Boys Tech"; }
+            if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S107"); }
             if i == 18 { return "Animals Sourced"; }
-            return "6th Street Supply";
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S108");
         }
         
         // Budget default (15)
@@ -623,7 +623,7 @@ public class KdspCyberwareRegistryManager {
         if i == 0 { return "BudgetArms Cyber"; }
         if i == 1 { return "Kendachi"; }
         if i == 2 { return "Tsunami Defense"; }
-        if i == 3 { return "Night City Cybernetics"; }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S101"); }
         if i == 4 { return "Standard Cybernetics"; }
         if i == 5 { return "MediCorp"; }
         if i == 6 { return "GenCyber"; }
@@ -664,41 +664,41 @@ public class KdspCyberwareRegistryManager {
     private static func GetCondition(seed: Int32, wealth: Int32) -> String {
         let roll = RandRange(seed, 1, 100) + (wealth / 2);
         
-        if roll >= 95 { return "Factory New - Pristine"; }
+        if roll >= 95 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S109"); }
         if roll >= 90 { return "Factory New"; }
-        if roll >= 85 { return "Excellent - Like New"; }
+        if roll >= 85 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S110"); }
         if roll >= 80 { return "Excellent"; }
         if roll >= 75 { return "Very Good"; }
-        if roll >= 70 { return "Good - Minor Wear"; }
+        if roll >= 70 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S111"); }
         if roll >= 60 { return "Good"; }
         if roll >= 50 { return "Satisfactory"; }
-        if roll >= 40 { return "Fair - Signs of Use"; }
+        if roll >= 40 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S112"); }
         if roll >= 35 { return "Fair"; }
         if roll >= 30 { return "Worn"; }
         if roll >= 25 { return "Degraded"; }
-        if roll >= 20 { return "Poor - Maintenance Required"; }
+        if roll >= 20 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S113"); }
         if roll >= 15 { return "Poor"; }
         if roll >= 10 { return "Failing"; }
-        if roll >= 5 { return "Critical - Needs Replacement"; }
-        return "Dangerous - Immediate Attention";
+        if roll >= 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S114"); }
+        return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S115");
     }
 
     private static func GetGrade(seed: Int32, wealth: Int32) -> String {
         let roll = RandRange(seed, 1, 100) + (wealth / 3);
         
-        if roll >= 98 { return "Legendary - Iconic"; }
+        if roll >= 98 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S116"); }
         if roll >= 95 { return "Legendary"; }
-        if roll >= 90 { return "Epic - Modified"; }
+        if roll >= 90 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S117"); }
         if roll >= 85 { return "Epic"; }
-        if roll >= 80 { return "Epic - Standard"; }
-        if roll >= 75 { return "Rare - Enhanced"; }
-        if roll >= 70 { return "Rare - Modified"; }
+        if roll >= 80 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S118"); }
+        if roll >= 75 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S119"); }
+        if roll >= 70 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S120"); }
         if roll >= 65 { return "Rare"; }
-        if roll >= 55 { return "Uncommon - Quality"; }
+        if roll >= 55 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S121"); }
         if roll >= 45 { return "Uncommon"; }
-        if roll >= 35 { return "Common - Good"; }
+        if roll >= 35 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S122"); }
         if roll >= 25 { return "Common"; }
-        if roll >= 15 { return "Common - Budget"; }
+        if roll >= 15 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S123"); }
         if roll >= 10 { return "Junk Grade"; }
         return "Salvage Grade";
     }
@@ -762,72 +762,72 @@ public class KdspCyberwareRegistryManager {
         let i = RandRange(seed, 0, 29);
         
         // Immune rejection (0-9)
-        if i == 0 { return "Subdermal Armor (immune rejection)"; }
-        if i == 1 { return "Neural Link v1 (incompatible genetics)"; }
-        if i == 2 { return "Syn-Lungs (allergic reaction)"; }
-        if i == 3 { return "Kiroshi Optics Mk.1 (nerve damage)"; }
-        if i == 4 { return "Gorilla Arms (skeletal incompatibility)"; }
-        if i == 5 { return "Sandevistan (cardiac complications)"; }
-        if i == 6 { return "Memory Boost (seizure inducing)"; }
-        if i == 7 { return "Second Heart (clotting disorder)"; }
-        if i == 8 { return "Mantis Blades (tissue rejection)"; }
-        if i == 9 { return "Monowire (neural pathway damage)"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S124"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S125"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S126"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S127"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S128"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S129"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S130"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S131"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S132"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S133"); }
         
         // Technical failure (10-19)
-        if i == 10 { return "Cyberdeck v1 (firmware incompatible)"; }
-        if i == 11 { return "Reflex Tuner (signal interference)"; }
-        if i == 12 { return "Kerenzikov (heart arrhythmia)"; }
-        if i == 13 { return "Titanium Bones (bone density mismatch)"; }
-        if i == 14 { return "Blood Pump (valve failure)"; }
-        if i == 15 { return "Adrenaline Booster (overproduction crisis)"; }
-        if i == 16 { return "Pain Editor (sensory loss)"; }
-        if i == 17 { return "Optical Camo (skin necrosis)"; }
-        if i == 18 { return "Reinforced Tendons (mobility loss)"; }
-        if i == 19 { return "Biomonitor (false readings)"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S134"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S135"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S136"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S137"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S138"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S139"); }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S140"); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S141"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S142"); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S143"); }
         
         // Psychological rejection (20-29)
-        if i == 20 { return "Limbic Enhancement (personality changes)"; }
-        if i == 21 { return "Synaptic Accelerator (anxiety inducing)"; }
-        if i == 22 { return "RAM Upgrade (memory fragmentation)"; }
-        if i == 23 { return "Berserk OS (uncontrollable rage)"; }
-        if i == 24 { return "Cyberlimb (phantom pain syndrome)"; }
-        if i == 25 { return "Facial Reconstruction (identity dissociation)"; }
-        if i == 26 { return "Voice Modulator (speech dysphoria)"; }
-        if i == 27 { return "Sensory Amp (sensory overload)"; }
-        if i == 28 { return "Cognitive Processor (decision paralysis)"; }
-        return "Full Cyberarm (body dysmorphia)";
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S144"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S145"); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S146"); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S147"); }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S148"); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S149"); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S150"); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S151"); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S152"); }
+        return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S153");
     }
 
     private static func GenerateLastVisit(seed: Int32) -> String {
         let months = RandRange(seed, 1, 24);
-        if months == 1 { return "1 month ago"; }
-        if months <= 12 { return IntToString(months) + " months ago"; }
-        return IntToString(months / 12) + " year(s) ago";
+        if months == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S154"); }
+        if months <= 12 { return IntToString(months) + GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S155"); }
+        return IntToString(months / 12) + GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S156");
     }
 
     private static func GenerateRipperdoc(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "YUPPIE") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Arasaka Medical Division (Corporate Plan)"; }
-            if i == 1 { return "Militech Health Services (Executive)"; }
-            if i == 2 { return "Trauma Team Platinum Care"; }
-            if i == 3 { return "Biotechnica Premium Wellness"; }
-            if i == 4 { return "Kang Tao Executive Medical"; }
-            if i == 5 { return "Night City Medical Center (VIP)"; }
-            if i == 6 { return "Charter Hill Private Clinic"; }
-            if i == 7 { return "Westbrook Wellness Center"; }
-            if i == 8 { return "Corporate Concierge Medical"; }
-            return "Private Practice (Retained)";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S157"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S158"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S159"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S160"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S161"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S162"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S163"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S164"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S165"); }
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S166");
         }
         
         if Equals(archetype, "CORPO_DRONE") {
             if RandRange(seed + 5, 1, 100) <= 70 {
                 let i = RandRange(seed, 0, 4);
-                if i == 0 { return "Corporate Health Services"; }
-                if i == 1 { return "Arasaka Employee Medical"; }
-                if i == 2 { return "Militech Staff Clinic"; }
-                if i == 3 { return "Company Insurance Network"; }
-                return "Corporate HMO Provider";
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S167"); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S168"); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S169"); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S170"); }
+                return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S171");
             }
         }
         
@@ -835,55 +835,55 @@ public class KdspCyberwareRegistryManager {
             if RandRange(seed + 5, 1, 100) <= 50 {
                 let i = RandRange(seed, 0, 14);
                 if i == 0 { return "Unknown (unlicensed)"; }
-                if i == 1 { return "Street Clinic (Pacifica)"; }
-                if i == 2 { return "Scav Operation (records unclear)"; }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S172"); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S173"); }
                 if i == 3 { return "Self-installed"; }
-                if i == 4 { return "Back-alley doc (Watson)"; }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S1"); }
                 if i == 5 { return "Gang-affiliated ripperdoc"; }
-                if i == 6 { return "Maelstrom Chop Shop"; }
-                if i == 7 { return "Unlicensed clinic (Kabuki)"; }
-                if i == 8 { return "Black market surgeon"; }
-                if i == 9 { return "Cargo container clinic"; }
-                if i == 10 { return "Basement operation (Northside)"; }
-                if i == 11 { return "Mobile clinic (untraceable)"; }
-                if i == 12 { return "Combat medic (former)"; }
-                if i == 13 { return "Veterinary clinic (after hours)"; }
-                return "Friend of a friend";
+                if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S174"); }
+                if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S0"); }
+                if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S2"); }
+                if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S175"); }
+                if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S176"); }
+                if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S177"); }
+                if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S178"); }
+                if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S179"); }
+                return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S180");
             }
         }
 
         // Standard ripperdocs (30 options)
         let i = RandRange(seed, 0, 29);
-        if i == 0 { return "Viktor Vektor, Watson"; }
-        if i == 1 { return "Dr. Chrome, Westbrook"; }
-        if i == 2 { return "Cassius Ryder, Wellsprings"; }
-        if i == 3 { return "Charles Bucks, Kabuki"; }
-        if i == 4 { return "Instant Implants, City Center"; }
-        if i == 5 { return "Doc Ryder, Northside"; }
-        if i == 6 { return "Fingers M.D., Jig-Jig Street"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S181"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S182"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S183"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S184"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S185"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S186"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S187"); }
         if i == 7 { return "Octavio, Arroyo"; }
-        if i == 8 { return "Nina Kraviz, Pacifica"; }
-        if i == 9 { return "Robert, Rancho Coronado"; }
-        if i == 10 { return "Buck, Santo Domingo"; }
-        if i == 11 { return "Kraviz Clinic, Coastview"; }
-        if i == 12 { return "Japantown Cyberware Clinic"; }
-        if i == 13 { return "Little China Implant Center"; }
-        if i == 14 { return "Heywood Medical Plaza"; }
-        if i == 15 { return "Wellsprings Health Center"; }
-        if i == 16 { return "Northside Industrial Med"; }
-        if i == 17 { return "Kabuki Market Clinic"; }
-        if i == 18 { return "Glen Ripperdoc Services"; }
-        if i == 19 { return "Vista del Rey Medical"; }
-        if i == 20 { return "Rancho Coronado Clinic"; }
-        if i == 21 { return "Arroyo Community Health"; }
-        if i == 22 { return "Downtown Implant Center"; }
-        if i == 23 { return "Watson Cyberware Clinic"; }
-        if i == 24 { return "Corpo Plaza Medical (basic)"; }
-        if i == 25 { return "Charter Hill Ripperdoc"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S188"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S189"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S190"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S191"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S192"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S193"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S194"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S195"); }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S196"); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S197"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S198"); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S199"); }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S200"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S201"); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S202"); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S203"); }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S204"); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S205"); }
         if i == 26 { return "Dogtown Clinic"; }
-        if i == 27 { return "Pacifica Free Clinic"; }
-        if i == 28 { return "Stadium City Medical"; }
-        return "Local Neighborhood Ripperdoc";
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S206"); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S207"); }
+        return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S208");
     }
 
     private static func GenerateWarrantyStatus(seed: Int32, wealth: Int32) -> String {
@@ -891,16 +891,16 @@ public class KdspCyberwareRegistryManager {
         
         if wealth >= 70 {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Full Coverage (Platinum Plan)"; }
-            if i == 1 { return "Full Coverage (Corporate Executive)"; }
-            if i == 2 { return "Premium Protection Plus"; }
-            if i == 3 { return "Lifetime Warranty (Transferable)"; }
-            if i == 4 { return "Extended Warranty Active"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S209"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S210"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S211"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S212"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S213"); }
             if i == 5 { return "Comprehensive Coverage"; }
-            if i == 6 { return "Standard Coverage + Upgrades"; }
-            if i == 7 { return "Trauma Team Cyber Package"; }
-            if i == 8 { return "Arasaka Elite Protection"; }
-            return "Militech Security Warranty";
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S214"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S215"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S216"); }
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S217");
         }
         
         if wealth >= 40 {
@@ -908,32 +908,32 @@ public class KdspCyberwareRegistryManager {
             if i == 0 { return "Standard Coverage"; }
             if i == 1 { return "Basic Coverage"; }
             if i == 2 { return "Limited Warranty"; }
-            if i == 3 { return "Extended Warranty (3 years)"; }
-            if i == 4 { return "Parts Only Coverage"; }
-            if i == 5 { return "Labor Only Coverage"; }
-            if i == 6 { return "Warranty Expired (Renewable)"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S218"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S219"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S220"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S221"); }
             if i == 7 { return "Partial Coverage"; }
-            if i == 8 { return "Emergency Repairs Only"; }
-            return "Standard Plan - Current";
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S222"); }
+            return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S223");
         }
         
         // Low wealth
         let i = RandRange(seed, 0, 14);
         if i == 0 { return "Basic Coverage"; }
         if i == 1 { return "Warranty Expired"; }
-        if i == 2 { return "Warranty Expired (2074)"; }
-        if i == 3 { return "Warranty Expired (2075)"; }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S224"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S225"); }
         if i == 4 { return "No Warranty"; }
-        if i == 5 { return "No Warranty - Used Parts"; }
-        if i == 6 { return "No Warranty - Black Market"; }
-        if i == 7 { return "VOID - Unauthorized Mods"; }
-        if i == 8 { return "VOID - Non-Payment"; }
-        if i == 9 { return "VOID - Illegal Modifications"; }
-        if i == 10 { return "VOID - Self-Installation"; }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S226"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S227"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S228"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S229"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S230"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S231"); }
         if i == 11 { return "Never Registered"; }
         if i == 12 { return "Registration Pending"; }
-        if i == 13 { return "Unknown - No Records"; }
-        return "Salvage - No Warranty";
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S232"); }
+        return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S233");
     }
 }
 

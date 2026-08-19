@@ -88,9 +88,9 @@ public class KdspConnectionTracker extends ScriptableSystem {
                         out += " [" + this.m_gangs[idx] + "]";
                     };
                     if NotEquals(this.m_districts[idx], "") {
-                        out += " — " + this.m_districts[idx];
+                        out += GetLocalizedTextByKey(n"Kdsp-ConnectionTrac-S0") + this.m_districts[idx];
                     };
-                    out += " | Listed as: " + this.m_relContexts[i];
+                    out += GetLocalizedTextByKey(n"Kdsp-ConnectionTrac-S1") + this.m_relContexts[i];
                     return out;
                 };
             };
@@ -111,7 +111,7 @@ public class KdspConnectionTracker extends ScriptableSystem {
                 if Equals(StrLower(this.m_relNames[j]), target) {
                     let idx: Int32 = this.m_relOwnerIdx[j];
                     if idx >= 0 && idx < ArraySize(this.m_names) {
-                        ArrayPush(matches, names[i] + " (also known to " + this.m_names[idx] + ")");
+                        ArrayPush(matches, names[i] + GetLocalizedTextByKey(n"Kdsp-ConnectionTrac-S2") + this.m_names[idx] + ")");
                     };
                 };
                 j += 1;

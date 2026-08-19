@@ -404,7 +404,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateSleeperAgent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "██ DEEP COVER OPERATIVE ██";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S0");
         data.flagColor = "RED";
         
         let agencies: array<String>;
@@ -417,13 +417,13 @@ public class KdspRareNPCManager {
 
         data.secretAffiliation = agencies[RandRange(seed, 0, ArraySize(agencies) - 1)];
         
-        data.description = "ALERT: Subject identity is a fabricated cover. True identity classified at highest levels. ";
-        data.description += "Activation status: " + (RandRange(seed + 10, 1, 100) <= 30 ? "ACTIVE" : "DORMANT") + ". ";
-        data.description += "Handler: [REDACTED]. Mission parameters: [CLASSIFIED]. ";
-        data.description += "WARNING: Do not approach. Do not engage. Report sighting immediately.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S2") + (RandRange(seed + 10, 1, 100) <= 30 ? "ACTIVE" : "DORMANT") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S3");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S4");
 
-        data.hiddenInfo = "Agent has been embedded for " + IntToString(RandRange(seed + 20, 2, 15)) + " years. ";
-        data.hiddenInfo += "Cover identity rated: DEEP. Suspected mission: " + KdspRareNPCManager.GetSleeperMission(seed + 30);
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S5") + IntToString(RandRange(seed + 20, 2, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S7") + KdspRareNPCManager.GetSleeperMission(seed + 30);
 
         data.scannerWarning = "FILE LOCKED - CLEARANCE INSUFFICIENT";
         data.dangerLevel = "UNKNOWN - ASSUME EXTREME";
@@ -444,37 +444,37 @@ public class KdspRareNPCManager {
     }
 
     private static func GeneratePreCyberpsycho(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⚠ CYBERPSYCHOSIS WARNING ⚠";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S8");
         data.flagColor = "ORANGE";
 
         let stage = RandRange(seed, 1, 5);
         data.secretAffiliation = "NONE - MEDICAL CONCERN";
 
-        data.description = "PSYCHOLOGICAL ALERT: Subject displaying escalating cyberpsychosis indicators. ";
-        data.description += "Current stage: " + IntToString(stage) + "/5. ";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S9");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S10") + IntToString(stage) + "/5. ";
         
         let symptoms: array<String>;
-        ArrayPush(symptoms, "Increasing paranoid ideation");
-        ArrayPush(symptoms, "Violent outbursts reported");
-        ArrayPush(symptoms, "Dissociation from humanity");
-        ArrayPush(symptoms, "Obsessive cyberware acquisition");
+        ArrayPush(symptoms, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S11"));
+        ArrayPush(symptoms, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S12"));
+        ArrayPush(symptoms, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S13"));
+        ArrayPush(symptoms, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S14"));
         ArrayPush(symptoms, "Emotional numbing");
         ArrayPush(symptoms, "Delusional episodes");
         
-        data.description += "Primary symptoms: " + symptoms[RandRange(seed + 10, 0, ArraySize(symptoms) - 1)] + ", ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S15") + symptoms[RandRange(seed + 10, 0, ArraySize(symptoms) - 1)] + ", ";
         data.description += symptoms[RandRange(seed + 20, 0, ArraySize(symptoms) - 1)] + ". ";
         
         if stage >= 4 {
-            data.description += "CRITICAL: Full break imminent. MaxTac notification pending.";
+            data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S16");
             data.dangerLevel = "EXTREME - POTENTIAL CYBERPSYCHO";
         } else {
-            data.description += "Intervention recommended before escalation.";
+            data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S17");
             data.dangerLevel = "HIGH - UNSTABLE";
         }
 
-        data.hiddenInfo = "Last therapy session: " + IntToString(RandRange(seed + 30, 6, 36)) + " months ago. ";
-        data.hiddenInfo += "Cyberware saturation: " + IntToString(RandRange(seed + 40, 75, 98)) + "%. ";
-        data.hiddenInfo += "Previous incidents: " + IntToString(RandRange(seed + 50, 1, 5));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S18") + IntToString(RandRange(seed + 30, 6, 36)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S19");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S20") + IntToString(RandRange(seed + 40, 75, 98)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S21") + IntToString(RandRange(seed + 50, 1, 5));
 
         data.scannerWarning = "APPROACH WITH EXTREME CAUTION - PSYCHOTIC BREAK POSSIBLE";
 
@@ -482,34 +482,34 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateLegacyCharacter(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "★ HISTORICAL CONNECTION ★";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S22");
         data.flagColor = "GOLD";
 
         let connections: array<String>;
         let details: array<String>;
 
         ArrayPush(connections, "SILVERHAND");
-        ArrayPush(details, "Genetic analysis indicates possible relation to Johnny Silverhand. Blood relative or clone origin unclear.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S23"));
         
         ArrayPush(connections, "ARASAKA");
-        ArrayPush(details, "Distant relative of the Arasaka family. Removed from official records after corporate restructuring.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S24"));
         
         ArrayPush(connections, "BLACKHAND");
-        ArrayPush(details, "Records suggest connection to Morgan Blackhand. Possibly trained by or descended from the legendary solo.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S25"));
         
         ArrayPush(connections, "BARTMOSS");
-        ArrayPush(details, "Unusual neural patterns match theoretical Bartmoss engram fragments. Origin unknown.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S26"));
         
         ArrayPush(connections, "ALT_CUNNINGHAM");
-        ArrayPush(details, "Displays anomalous netrunning capabilities. Possible connection to Alt Cunningham's research.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S27"));
 
         let index = RandRange(seed, 0, ArraySize(connections) - 1);
         data.secretAffiliation = connections[index] + " CONNECTION";
         data.description = details[index];
         
-        data.hiddenInfo = "This connection is suppressed in public databases. ";
-        data.hiddenInfo += "Arasaka flag: " + (RandRange(seed + 10, 1, 100) <= 50 ? "ACTIVE" : "INACTIVE") + ". ";
-        data.hiddenInfo += "Subject awareness of connection: " + (RandRange(seed + 20, 1, 100) <= 30 ? "LIKELY" : "UNKNOWN");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S28");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S29") + (RandRange(seed + 10, 1, 100) <= 50 ? "ACTIVE" : "INACTIVE") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S30") + (RandRange(seed + 20, 1, 100) <= 30 ? "LIKELY" : "UNKNOWN");
 
         data.scannerWarning = "FLAGGED FOR HISTORICAL SIGNIFICANCE";
         data.dangerLevel = "VARIABLE - MONITOR";
@@ -518,7 +518,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateTimeAnomaly(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ TEMPORAL ANOMALY ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S31");
         data.flagColor = "PURPLE";
 
         data.secretAffiliation = "UNKNOWN - DATA CORRUPTION SUSPECTED";
@@ -527,23 +527,23 @@ public class KdspRareNPCManager {
         let birthYear = RandRange(seed, 2085, 2120); // Future birth
         let deathYear = RandRange(seed + 10, 2040, 2065); // Past death
 
-        data.description = "CRITICAL DATABASE ERROR: Temporal inconsistencies detected in subject records. ";
-        data.description += "Birth date: " + IntToString(birthYear) + " (FUTURE). ";
-        data.description += "Death date: " + IntToString(deathYear) + " (PAST). ";
-        data.description += "Current status: ALIVE (VERIFIED). ";
-        data.description += "Multiple existence confirmations across incompatible timelines. Data integrity: COMPROMISED.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S32");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S33") + IntToString(birthYear) + " (FUTURE). ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S34") + IntToString(deathYear) + " (PAST). ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S35");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S36");
 
         let theories: array<String>;
-        ArrayPush(theories, "Possible Blackwall data corruption");
-        ArrayPush(theories, "Rogue AI manipulation of records");
-        ArrayPush(theories, "Experimental technology subject");
-        ArrayPush(theories, "Deep fake identity with corrupted source");
+        ArrayPush(theories, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S37"));
+        ArrayPush(theories, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S38"));
+        ArrayPush(theories, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S39"));
+        ArrayPush(theories, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S40"));
         ArrayPush(theories, "Unknown phenomenon");
 
-        data.hiddenInfo = "Investigation status: ONGOING. ";
-        data.hiddenInfo += "Theory: " + theories[RandRange(seed + 20, 0, ArraySize(theories) - 1)] + ". ";
-        data.hiddenInfo += "NetWatch interest: HIGH. ";
-        data.hiddenInfo += "Recommended action: OBSERVE AND REPORT";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S41");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S42") + theories[RandRange(seed + 20, 0, ArraySize(theories) - 1)] + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S43");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S44");
 
         data.scannerWarning = "DATA INTEGRITY FAILURE - TIMELINE INCONSISTENT";
         data.dangerLevel = "UNKNOWN - ANOMALOUS";
@@ -552,28 +552,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateGhost(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "? ENTITY NOT FOUND ?";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S45");
         data.flagColor = "GREY";
 
         data.secretAffiliation = "NO DATA";
 
-        data.description = "ERROR: No records exist for scanned entity. ";
-        data.description += "Biometric scan: VALID HUMAN. ";
-        data.description += "Database match: NONE. ";
-        data.description += "Cross-reference (NCPD, Corporate, Medical, Financial): NO RESULTS. ";
-        data.description += "Subject appears to have no digital footprint whatsoever.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S46");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S47");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S48");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S49");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S50");
 
         let possibilities: array<String>;
-        ArrayPush(possibilities, "Deep cover operative with scrubbed identity");
-        ArrayPush(possibilities, "Survivor of total identity theft");
-        ArrayPush(possibilities, "Off-grid birth, never registered");
-        ArrayPush(possibilities, "Witness protection (highest level)");
-        ArrayPush(possibilities, "Escaped corporate experiment subject");
-        ArrayPush(possibilities, "Digital ghost - existence deliberately erased");
+        ArrayPush(possibilities, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S51"));
+        ArrayPush(possibilities, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S52"));
+        ArrayPush(possibilities, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S53"));
+        ArrayPush(possibilities, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S54"));
+        ArrayPush(possibilities, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S55"));
+        ArrayPush(possibilities, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S56"));
 
-        data.hiddenInfo = "Possible explanation: " + possibilities[RandRange(seed + 10, 0, ArraySize(possibilities) - 1)] + ". ";
-        data.hiddenInfo += "Facial recognition: 0 matches worldwide. ";
-        data.hiddenInfo += "This individual officially does not exist.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S57") + possibilities[RandRange(seed + 10, 0, ArraySize(possibilities) - 1)] + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S58");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S59");
 
         data.scannerWarning = "NO DATA AVAILABLE - IDENTITY UNKNOWN";
         data.dangerLevel = "UNASSESSABLE";
@@ -582,27 +582,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateWitness(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◉ PROTECTED WITNESS ◉";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S60");
         data.flagColor = "BLUE";
 
         let cases: array<String>;
-        ArrayPush(cases, "Arasaka Tower incident (2023)");
-        ArrayPush(cases, "Corporate assassination (classified)");
-        ArrayPush(cases, "Gang massacre survivor");
-        ArrayPush(cases, "Cyberpsycho incident witness");
-        ArrayPush(cases, "Corpo black site escapee");
-        ArrayPush(cases, "Political assassination witness");
+        ArrayPush(cases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S61"));
+        ArrayPush(cases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S62"));
+        ArrayPush(cases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S63"));
+        ArrayPush(cases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S64"));
+        ArrayPush(cases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S65"));
+        ArrayPush(cases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S66"));
 
         data.secretAffiliation = "NCPD/CORPORATE WITNESS PROTECTION";
 
-        data.description = "PROTECTED STATUS: Subject is enrolled in witness protection program. ";
-        data.description += "Original case: " + cases[RandRange(seed, 0, ArraySize(cases) - 1)] + ". ";
-        data.description += "Threat assessment to witness: ONGOING. ";
-        data.description += "Current cover identity active since: " + IntToString(RandRange(seed + 10, 2070, 2076)) + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S67");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S68") + cases[RandRange(seed, 0, ArraySize(cases) - 1)] + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S69");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S70") + IntToString(RandRange(seed + 10, 2070, 2076)) + ".";
 
-        data.hiddenInfo = "Original identity: [SEALED]. ";
-        data.hiddenInfo += "Parties seeking witness: " + IntToString(RandRange(seed + 20, 1, 4)) + " known organizations. ";
-        data.hiddenInfo += "Bounty (unofficial): €$" + IntToString(RandRange(seed + 30, 50000, 500000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S71");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S72") + IntToString(RandRange(seed + 20, 1, 4)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S73");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S74") + IntToString(RandRange(seed + 30, 50000, 500000));
 
         data.scannerWarning = "WITNESS PROTECTION - DO NOT DISCLOSE LOCATION";
         data.dangerLevel = "PROTECTED ASSET - HANDLE CAREFULLY";
@@ -611,34 +611,34 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateHunted(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⊗ ACTIVE HUNT TARGET ⊗";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S75");
         data.flagColor = "RED";
 
         let hunters: array<String>;
-        ArrayPush(hunters, "Arasaka Black Ops");
+        ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S76"));
         ArrayPush(hunters, "Militech Enforcement");
-        ArrayPush(hunters, "Multiple gang contracts");
-        ArrayPush(hunters, "Unknown corporate entity");
-        ArrayPush(hunters, "International bounty hunters");
-        ArrayPush(hunters, "NetWatch termination order");
+        ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S77"));
+        ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S78"));
+        ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S79"));
+        ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S80"));
 
         data.secretAffiliation = "TARGET";
 
-        data.description = "ALERT: Subject has active termination/capture orders from multiple parties. ";
-        data.description += "Primary hunter: " + hunters[RandRange(seed, 0, ArraySize(hunters) - 1)] + ". ";
-        data.description += "Total bounty value: €$" + IntToString(RandRange(seed + 10, 100000, 2000000)) + ". ";
-        data.description += "Status: ACTIVELY EVADING. Days on run: " + IntToString(RandRange(seed + 20, 30, 500)) + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S81");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S82") + hunters[RandRange(seed, 0, ArraySize(hunters) - 1)] + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S83") + IntToString(RandRange(seed + 10, 100000, 2000000)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S84") + IntToString(RandRange(seed + 20, 30, 500)) + ".";
 
         let reasons: array<String>;
-        ArrayPush(reasons, "Stole proprietary technology");
-        ArrayPush(reasons, "Killed high-value target");
-        ArrayPush(reasons, "Possesses classified information");
+        ArrayPush(reasons, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S85"));
+        ArrayPush(reasons, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S86"));
+        ArrayPush(reasons, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S87"));
         ArrayPush(reasons, "Betrayed organization");
-        ArrayPush(reasons, "Witnessed something they shouldn't");
+        ArrayPush(reasons, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S88"));
 
-        data.hiddenInfo = "Reason for hunt: " + reasons[RandRange(seed + 30, 0, ArraySize(reasons) - 1)] + ". ";
-        data.hiddenInfo += "Near-miss captures: " + IntToString(RandRange(seed + 40, 2, 8)) + ". ";
-        data.hiddenInfo += "Survival assessment: " + (RandRange(seed + 50, 1, 100) <= 30 ? "LOW" : "MODERATE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S89") + reasons[RandRange(seed + 30, 0, ArraySize(reasons) - 1)] + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S90") + IntToString(RandRange(seed + 40, 2, 8)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S91") + (RandRange(seed + 50, 1, 100) <= 30 ? "LOW" : "MODERATE");
 
         data.scannerWarning = "HIGH-VALUE TARGET - MULTIPLE PARTIES SEEKING";
         data.dangerLevel = "EXTREME - DESPERATE AND DANGEROUS";
@@ -647,20 +647,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateAIContact(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◬ BLACKWALL CONTACT ◬";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S92");
         data.flagColor = "CYAN";
 
         data.secretAffiliation = "UNKNOWN AI ENTITY";
 
-        data.description = "NETWATCH ALERT: Subject has confirmed or suspected contact with rogue AI beyond the Blackwall. ";
-        data.description += "Contact type: " + (RandRange(seed, 1, 100) <= 50 ? "WILLING" : "UNKNOWN") + ". ";
-        data.description += "Neural contamination: " + (RandRange(seed + 10, 1, 100) <= 40 ? "DETECTED" : "SUSPECTED") + ". ";
-        data.description += "Behavioral changes noted since contact initiation.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S93");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S94") + (RandRange(seed, 1, 100) <= 50 ? "WILLING" : "UNKNOWN") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S95") + (RandRange(seed + 10, 1, 100) <= 40 ? "DETECTED" : "SUSPECTED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S96");
 
-        data.hiddenInfo = "AI designation: [UNIDENTIFIED BLACKWALL ENTITY]. ";
-        data.hiddenInfo += "Communication method: Direct neural link. ";
-        data.hiddenInfo += "NetWatch monitoring status: ACTIVE. ";
-        data.hiddenInfo += "Termination recommendation: " + (RandRange(seed + 20, 1, 100) <= 30 ? "APPROVED" : "PENDING REVIEW");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S97");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S98");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S99");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S100") + (RandRange(seed + 20, 1, 100) <= 30 ? "APPROVED" : "PENDING REVIEW");
 
         data.scannerWarning = "AI CONTACT SUSPECTED - NETWATCH FLAGGED";
         data.dangerLevel = "EXTREME - POTENTIAL VECTOR";
@@ -669,7 +669,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateWhistleblower(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◇ CORPORATE LEAK ◇";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S101");
         data.flagColor = "YELLOW";
 
         let corps: array<String>;
@@ -683,14 +683,14 @@ public class KdspRareNPCManager {
         let corp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
         data.secretAffiliation = "FORMER " + corp + " EMPLOYEE";
 
-        data.description = "CORPORATE ALERT: Subject identified as source of confidential data leak from " + corp + ". ";
-        data.description += "Leak severity: " + (RandRange(seed + 10, 1, 100) <= 50 ? "CRITICAL" : "SIGNIFICANT") + ". ";
-        data.description += "Data compromised: " + KdspRareNPCManager.GetLeakedData(seed + 20) + ". ";
-        data.description += "Corporate response: ACTIVE RETRIEVAL OPERATION.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S102") + corp + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S103") + (RandRange(seed + 10, 1, 100) <= 50 ? "CRITICAL" : "SIGNIFICANT") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S104") + KdspRareNPCManager.GetLeakedData(seed + 20) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S105");
 
-        data.hiddenInfo = "Former position: " + KdspRareNPCManager.GetCorpoPosition(seed + 30) + ". ";
-        data.hiddenInfo += "Data sold to: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Media outlet" : "Rival corporation") + ". ";
-        data.hiddenInfo += "Price received: €$" + IntToString(RandRange(seed + 50, 100000, 5000000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S106") + KdspRareNPCManager.GetCorpoPosition(seed + 30) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S107") + (RandRange(seed + 40, 1, 100) <= 50 ? "Media outlet" : "Rival corporation") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S108") + IntToString(RandRange(seed + 50, 100000, 5000000));
 
         data.scannerWarning = "CORPORATE TARGET - EXTRACTION TEAMS DEPLOYED";
         data.dangerLevel = "HIGH - CORPORATE ASSETS INBOUND";
@@ -700,19 +700,19 @@ public class KdspRareNPCManager {
 
     private static func GetLeakedData(seed: Int32) -> String {
         let data: array<String>;
-        ArrayPush(data, "Research and development files");
-        ArrayPush(data, "Financial records showing illegal activity");
-        ArrayPush(data, "Human experimentation documentation");
-        ArrayPush(data, "Assassination order records");
-        ArrayPush(data, "Blackmail material on executives");
-        ArrayPush(data, "Classified weapons projects");
+        ArrayPush(data, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S109"));
+        ArrayPush(data, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S110"));
+        ArrayPush(data, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S111"));
+        ArrayPush(data, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S112"));
+        ArrayPush(data, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S113"));
+        ArrayPush(data, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S114"));
         
         return data[RandRange(seed, 0, ArraySize(data) - 1)];
     }
 
     private static func GetCorpoPosition(seed: Int32) -> String {
         let positions: array<String>;
-        ArrayPush(positions, "Senior Data Analyst");
+        ArrayPush(positions, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S115"));
         ArrayPush(positions, "Security Administrator");
         ArrayPush(positions, "Research Scientist");
         ArrayPush(positions, "Executive Assistant");
@@ -723,7 +723,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateHiddenNetrunner(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ HIDDEN NETRUNNER ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S116");
         data.flagColor = "CYAN";
 
         data.secretAffiliation = "UNDERGROUND NETRUNNER";
@@ -738,15 +738,15 @@ public class KdspRareNPCManager {
 
         let alias = aliases[RandRange(seed, 0, ArraySize(aliases) - 1)];
 
-        data.description = "NETWATCH ALERT: Subject identified as underground netrunner operating under alias '" + alias + "'. ";
-        data.description += "Skill assessment: " + (RandRange(seed + 10, 1, 100) <= 30 ? "ELITE" : "ADVANCED") + ". ";
-        data.description += "Known operations: Data theft, corporate espionage, infrastructure attacks. ";
-        data.description += "Current bounty (NetWatch): €$" + IntToString(RandRange(seed + 20, 50000, 500000)) + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S117") + alias + "'. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S118") + (RandRange(seed + 10, 1, 100) <= 30 ? "ELITE" : "ADVANCED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S119");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S120") + IntToString(RandRange(seed + 20, 50000, 500000)) + ".";
 
-        data.hiddenInfo = "Last known deep dive: " + IntToString(RandRange(seed + 30, 1, 30)) + " days ago. ";
-        data.hiddenInfo += "Suspected Blackwall proximity: " + IntToString(RandRange(seed + 40, 1, 100)) + "%. ";
-        data.hiddenInfo += "Known associates: Voodoo Boys (suspected). ";
-        data.hiddenInfo += "Capture priority: " + (RandRange(seed + 50, 1, 100) <= 40 ? "HIGH" : "MEDIUM");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S121") + IntToString(RandRange(seed + 30, 1, 30)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S122");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S123") + IntToString(RandRange(seed + 40, 1, 100)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S124");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S125") + (RandRange(seed + 50, 1, 100) <= 40 ? "HIGH" : "MEDIUM");
 
         data.scannerWarning = "NETWATCH TARGET - APPROACH MAY TRIGGER ICE DEPLOYMENT";
         data.dangerLevel = "HIGH - NETRUNNING CAPABILITIES";
@@ -759,26 +759,26 @@ public class KdspRareNPCManager {
     // ═══════════════════════════════════════════════════════════════════════
 
     private static func GenerateUndercoverCop(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◉ UNDERCOVER OFFICER ◉";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S126");
         data.flagColor = "BLUE";
         data.secretAffiliation = "NCPD SPECIAL OPERATIONS";
 
         let units: array<String>;
-        ArrayPush(units, "Gang Intelligence Unit");
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S127"));
         ArrayPush(units, "Narcotics Division");
-        ArrayPush(units, "Organized Crime Task Force");
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S128"));
         ArrayPush(units, "Vice Squad");
         ArrayPush(units, "Counter-Terrorism");
 
         let unit = units[RandRange(seed, 0, ArraySize(units) - 1)];
         let years = IntToString(RandRange(seed + 10, 1, 8));
 
-        data.description = "NCPD CLASSIFIED: Subject is undercover officer assigned to " + unit + ". ";
-        data.description += "Deep cover status: " + years + " years. Handler: [REDACTED]. ";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S129") + unit + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S130") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S131");
         data.description += "WARNING: Blowing cover could result in officer death and case collapse.";
 
-        data.hiddenInfo = "Badge number: [CLASSIFIED]. Real identity protected by court order. ";
-        data.hiddenInfo += "Current target: " + KdspRareNPCManager.GetUndercoverTarget(seed + 20);
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S132");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S133") + KdspRareNPCManager.GetUndercoverTarget(seed + 20);
 
         data.scannerWarning = "NCPD PROTECTED ASSET - DO NOT EXPOSE";
         data.dangerLevel = "VARIABLE - DEEP COVER";
@@ -789,41 +789,41 @@ public class KdspRareNPCManager {
     private static func GetUndercoverTarget(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return "Maelstrom leadership"; }
-        if i == 1 { return "Tyger Claws operations"; }
-        if i == 2 { return "6th Street weapons trafficking"; }
-        if i == 3 { return "Valentinos drug network"; }
-        if i == 4 { return "Scav harvesting ring"; }
-        return "Fixer network mapping";
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S134"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S135"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S136"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S137"); }
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S138");
     }
 
     private static func GenerateRetiredLegend(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "★ RETIRED LEGEND ★";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S139");
         data.flagColor = "GOLD";
 
         let professions: array<String>;
         let details: array<String>;
 
         ArrayPush(professions, "Former Solo");
-        ArrayPush(details, "Legendary solo with " + IntToString(RandRange(seed, 50, 200)) + "+ confirmed operations. Officially retired but skills remain sharp.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S140") + IntToString(RandRange(seed, 50, 200)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S141"));
 
         ArrayPush(professions, "Ex-Netrunner");
-        ArrayPush(details, "Former elite netrunner who survived multiple Blackwall encounters. Now living quietly under assumed identity.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S142"));
 
         ArrayPush(professions, "Retired Fixer");
-        ArrayPush(details, "Once controlled half the contracts in " + KdspRareNPCManager.GetDistrict(seed) + ". Knows where all the bodies are buried.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S143") + KdspRareNPCManager.GetDistrict(seed) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S144"));
 
         ArrayPush(professions, "Former MaxTac");
-        ArrayPush(details, "Ex-MaxTac operative with classified kill count. Left under mysterious circumstances. Still receives pension.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S145"));
 
         ArrayPush(professions, "Legendary Merc");
-        ArrayPush(details, "Name still whispered in merc circles. Supposedly dead, but records suggest otherwise.");
+        ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S146"));
 
         let index = RandRange(seed, 0, ArraySize(professions) - 1);
         data.secretAffiliation = professions[index];
         data.description = details[index];
 
-        data.hiddenInfo = "Bounty attempts: " + IntToString(RandRange(seed + 10, 0, 12)) + " (all failed). ";
-        data.hiddenInfo += "Known associates still active in the field.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S147") + IntToString(RandRange(seed + 10, 0, 12)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S148");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S149");
 
         data.scannerWarning = "CAUTION: EXTREME THREAT IF PROVOKED";
         data.dangerLevel = "DORMANT - POTENTIALLY EXTREME";
@@ -842,21 +842,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateCloneSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ CLONE DETECTED ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S150");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "BIOTECHNICA SUBJECT";
 
         let generation = RandRange(seed, 2, 7);
         let original = RandRange(seed + 10, 1, 100) <= 30 ? "KNOWN" : "CLASSIFIED";
 
-        data.description = "BIOTECH ALERT: Subject confirmed as Generation " + IntToString(generation) + " clone. ";
-        data.description += "Original template: " + original + ". Legal status: COMPLICATED. ";
-        data.description += "Memory implantation: " + (RandRange(seed + 20, 1, 100) <= 60 ? "COMPLETE" : "PARTIAL") + ". ";
-        data.description += "Subject may or may not be aware of clone status.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S151") + IntToString(generation) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S152");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S153") + original + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S154");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S155") + (RandRange(seed + 20, 1, 100) <= 60 ? "COMPLETE" : "PARTIAL") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S156");
 
-        data.hiddenInfo = "Clone batch: " + IntToString(RandRange(seed + 30, 1, 50)) + ". Siblings active: " + IntToString(RandRange(seed + 40, 0, 5)) + ". ";
-        data.hiddenInfo += "Genetic degradation: " + IntToString(RandRange(seed + 50, 0, 30)) + "%. ";
-        data.hiddenInfo += "Corporate ownership claim: " + (RandRange(seed + 60, 1, 100) <= 50 ? "ACTIVE" : "DISPUTED");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S157") + IntToString(RandRange(seed + 30, 1, 50)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S158") + IntToString(RandRange(seed + 40, 0, 5)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S159") + IntToString(RandRange(seed + 50, 0, 30)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S160") + (RandRange(seed + 60, 1, 100) <= 50 ? "ACTIVE" : "DISPUTED");
 
         data.scannerWarning = "CLONE RIGHTS DISPUTED - LEGAL GREY ZONE";
         data.dangerLevel = "LOW - IDENTITY CRISIS POSSIBLE";
@@ -865,21 +865,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateMaxtacTarget(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⚠ MAXTAC TARGET ⚠";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S161");
         data.flagColor = "RED";
         data.secretAffiliation = "ACTIVE MAXTAC WARRANT";
 
         let priority = RandRange(seed, 1, 5);
         let reason = KdspRareNPCManager.GetMaxtacReason(seed + 10);
 
-        data.description = "MAXTAC ALERT: Subject is Priority " + IntToString(priority) + " target. ";
-        data.description += "Reason: " + reason + ". ";
-        data.description += "Capture/neutralize order: " + (priority <= 2 ? "SHOOT ON SIGHT" : "CAPTURE PREFERRED") + ". ";
-        data.description += "Civilian casualties authorized: " + (priority <= 2 ? "YES" : "MINIMIZE") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S162") + IntToString(priority) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S163");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S164") + reason + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S165") + (priority <= 2 ? "SHOOT ON SIGHT" : "CAPTURE PREFERRED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S166") + (priority <= 2 ? "YES" : "MINIMIZE") + ".";
 
-        data.hiddenInfo = "Previous encounters: " + IntToString(RandRange(seed + 20, 0, 3)) + ". ";
-        data.hiddenInfo += "MaxTac officers wounded/killed: " + IntToString(RandRange(seed + 30, 0, 5)) + ". ";
-        data.hiddenInfo += "Bounty: €$" + IntToString(RandRange(seed + 40, 100000, 1000000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S167") + IntToString(RandRange(seed + 20, 0, 3)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S168") + IntToString(RandRange(seed + 30, 0, 5)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S169") + IntToString(RandRange(seed + 40, 100000, 1000000));
 
         data.scannerWarning = "EXTREME DANGER - MAXTAC INBOUND IF ENGAGED";
         data.dangerLevel = "EXTREME - MAXTAC PRIORITY";
@@ -890,29 +890,29 @@ public class KdspRareNPCManager {
     private static func GetMaxtacReason(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return "Cyberpsychosis confirmed"; }
-        if i == 1 { return "Mass casualty event"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S170"); }
         if i == 2 { return "Cop killer"; }
         if i == 3 { return "Terrorist activities"; }
-        if i == 4 { return "Escaped MaxTac detention"; }
-        return "Military-grade cyberware illegal";
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S171"); }
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S172");
     }
 
     private static func GenerateWitnessProtection(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ WITNESS PROTECTION ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S173");
         data.flagColor = "BLUE";
         data.secretAffiliation = "NUSA WITNESS PROGRAM";
 
         let witnessed = KdspRareNPCManager.GetWitnessedEvent(seed);
         let years = IntToString(RandRange(seed + 10, 1, 15));
 
-        data.description = "CLASSIFIED: Subject in federal witness protection. Original identity sealed. ";
-        data.description += "Testified against: " + witnessed + ". ";
-        data.description += "Time in program: " + years + " years. ";
-        data.description += "ALERT: Multiple assassination attempts on file.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S174");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S175") + witnessed + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S176") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S177");
 
-        data.hiddenInfo = "Original name: [SEALED BY COURT ORDER]. Previous location: [REDACTED]. ";
-        data.hiddenInfo += "Handlers: US Marshals Service. Threat level to original identity: EXTREME. ";
-        data.hiddenInfo += "Bounty on original identity: €$" + IntToString(RandRange(seed + 20, 500000, 5000000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S178");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S179");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S180") + IntToString(RandRange(seed + 20, 500000, 5000000));
 
         data.scannerWarning = "FEDERAL PROTECTION - DO NOT COMPROMISE";
         data.dangerLevel = "LOW - BUT HIGH VALUE TARGET";
@@ -922,30 +922,30 @@ public class KdspRareNPCManager {
 
     private static func GetWitnessedEvent(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Arasaka war crimes"; }
-        if i == 1 { return "Militech black ops"; }
-        if i == 2 { return "Gang leadership murder"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S181"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S182"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S183"); }
         if i == 3 { return "Political assassination"; }
-        if i == 4 { return "Corporate mass murder"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S184"); }
         return "Government corruption";
     }
 
     private static func GenerateEngramCandidate(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◎ ENGRAM CANDIDATE ◎";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S185");
         data.flagColor = "CYAN";
         data.secretAffiliation = "ARASAKA SOUL PROJECT";
 
         let compatibility = IntToString(RandRange(seed, 85, 99));
         let status = RandRange(seed + 10, 1, 100) <= 40 ? "AWARE" : "UNAWARE";
 
-        data.description = "SOULKILLER ALERT: Subject identified as high-compatibility engram candidate. ";
-        data.description += "Neural mapping compatibility: " + compatibility + "%. ";
-        data.description += "Subject awareness: " + status + ". ";
-        data.description += "Corporate interest: EXTREME. Extraction attempts: LIKELY.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S186");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S187") + compatibility + "%. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + status + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S189");
 
-        data.hiddenInfo = "Arasaka bounty for live capture: €$" + IntToString(RandRange(seed + 20, 1000000, 10000000)) + ". ";
-        data.hiddenInfo += "Unique neural architecture identified. ";
-        data.hiddenInfo += "Potential Relic compatibility: " + (RandRange(seed + 30, 1, 100) <= 30 ? "CONFIRMED" : "SUSPECTED");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S190") + IntToString(RandRange(seed + 20, 1000000, 10000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S191");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S192") + (RandRange(seed + 30, 1, 100) <= 30 ? "CONFIRMED" : "SUSPECTED");
 
         data.scannerWarning = "HIGH VALUE CORPORATE ASSET - EXTRACTION TEAMS POSSIBLE";
         data.dangerLevel = "MODERATE - BUT HIGH INTEREST";
@@ -954,7 +954,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateCorpoDefector(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▼ CORPORATE DEFECTOR ▼";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S193");
         data.flagColor = "YELLOW";
 
         let corps: array<String>;
@@ -970,14 +970,14 @@ public class KdspRareNPCManager {
 
         data.secretAffiliation = "EX-" + fromCorp;
 
-        data.description = "CORPORATE ALERT: Former " + fromCorp + " employee defected to " + toCorp + ". ";
-        data.description += "Classified data stolen: " + (RandRange(seed + 20, 1, 100) <= 70 ? "CONFIRMED" : "SUSPECTED") + ". ";
-        data.description += "Kill order from " + fromCorp + ": ACTIVE. ";
-        data.description += "Protection from " + toCorp + ": " + (RandRange(seed + 30, 1, 100) <= 50 ? "CONFIRMED" : "RUMORED");
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S194") + fromCorp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S195") + toCorp + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S196") + (RandRange(seed + 20, 1, 100) <= 70 ? "CONFIRMED" : "SUSPECTED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S197") + fromCorp + ": ACTIVE. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S198") + toCorp + ": " + (RandRange(seed + 30, 1, 100) <= 50 ? "CONFIRMED" : "RUMORED");
 
-        data.hiddenInfo = "Original position: " + KdspRareNPCManager.GetCorpoPosition(seed + 40) + ". ";
-        data.hiddenInfo += "Data value estimate: €$" + IntToString(RandRange(seed + 50, 10000000, 100000000)) + ". ";
-        data.hiddenInfo += "Assassination attempts: " + IntToString(RandRange(seed + 60, 1, 8));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S199") + KdspRareNPCManager.GetCorpoPosition(seed + 40) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S200") + IntToString(RandRange(seed + 50, 10000000, 100000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S201") + IntToString(RandRange(seed + 60, 1, 8));
 
         data.scannerWarning = "CORPORATE WAR ASSET - MULTIPLE PARTIES INTERESTED";
         data.dangerLevel = "HIGH - ASSASSINATION LIKELY";
@@ -986,7 +986,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateGangInfiltrator(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◉ GANG INFILTRATOR ◉";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S202");
         data.flagColor = "ORANGE";
 
         let gangs: array<String>;
@@ -1002,14 +1002,14 @@ public class KdspRareNPCManager {
 
         data.secretAffiliation = employer + " PLANT IN " + infiltrated;
 
-        data.description = "GANG INTEL: Subject is embedded infiltrator within " + infiltrated + ". ";
-        data.description += "Employer: " + employer + ". Time embedded: " + IntToString(RandRange(seed + 20, 1, 5)) + " years. ";
-        data.description += "Position achieved: " + KdspRareNPCManager.GetGangPosition(seed + 30) + ". ";
-        data.description += "Discovery would result in immediate execution.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S203") + infiltrated + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S204") + employer + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S205") + IntToString(RandRange(seed + 20, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S206") + KdspRareNPCManager.GetGangPosition(seed + 30) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S207");
 
-        data.hiddenInfo = "Intelligence gathered on: Leadership, operations, alliances. ";
-        data.hiddenInfo += "Handler contact: Every " + IntToString(RandRange(seed + 40, 3, 14)) + " days. ";
-        data.hiddenInfo += "Extraction plan: " + (RandRange(seed + 50, 1, 100) <= 50 ? "IN PLACE" : "NONE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S208");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S209") + IntToString(RandRange(seed + 40, 3, 14)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S210");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S211") + (RandRange(seed + 50, 1, 100) <= 50 ? "IN PLACE" : "NONE");
 
         data.scannerWarning = "DEEP COVER - EXPOSURE FATAL";
         data.dangerLevel = "HIGH - GANG EXECUTION IF EXPOSED";
@@ -1027,20 +1027,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateTraumaTeamMarked(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✚ TRAUMA TEAM FLAGGED ✚";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S212");
         data.flagColor = "RED";
         data.secretAffiliation = "TRAUMA TEAM DNR";
 
         let reason = KdspRareNPCManager.GetTraumaReason(seed);
 
-        data.description = "TRAUMA TEAM ALERT: Subject flagged in TT database. Status: DO NOT RESUSCITATE. ";
-        data.description += "Reason: " + reason + ". ";
-        data.description += "If flatlined, no Trauma Team response will be dispatched regardless of subscription. ";
-        data.description += "This flag is permanent and non-appealable.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S213");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S164") + reason + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S214");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S215");
 
-        data.hiddenInfo = "Flag placed by: [CORPORATE AUTHORITY]. ";
-        data.hiddenInfo += "Incidents causing flag: " + IntToString(RandRange(seed + 10, 1, 5)) + ". ";
-        data.hiddenInfo += "Previous TT personnel injured by subject: " + IntToString(RandRange(seed + 20, 0, 3));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S216");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S217") + IntToString(RandRange(seed + 10, 1, 5)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S218") + IntToString(RandRange(seed + 20, 0, 3));
 
         data.scannerWarning = "NO TRAUMA TEAM RESPONSE - LEFT TO DIE";
         data.dangerLevel = "MODERATE - BUT EXPENDABLE";
@@ -1050,29 +1050,29 @@ public class KdspRareNPCManager {
 
     private static func GetTraumaReason(seed: Int32) -> String {
         let i = RandRange(seed, 0, 4);
-        if i == 0 { return "Attacked TT personnel during rescue"; }
-        if i == 1 { return "Outstanding debt to Trauma Team"; }
-        if i == 2 { return "Used TT subscription fraudulently"; }
-        if i == 3 { return "Killed TT staff"; }
-        return "Corporate blacklist request";
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S219"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S220"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S221"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S222"); }
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S223");
     }
 
     private static func GenerateFixerAsset(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ FIXER ASSET ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S224");
         data.flagColor = "GREEN";
         data.secretAffiliation = "FIXER NETWORK";
 
         let role = KdspRareNPCManager.GetFixerRole(seed);
         let fixer = KdspRareNPCManager.GetFixerName(seed + 10);
 
-        data.description = "STREET INTEL: Subject is a protected asset of fixer " + fixer + ". ";
-        data.description += "Role: " + role + ". ";
-        data.description += "Harming this individual will result in network-wide blacklist. ";
-        data.description += "Protection level: SIGNIFICANT.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S225") + fixer + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S226") + role + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S227");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S228");
 
-        data.hiddenInfo = "Years in network: " + IntToString(RandRange(seed + 20, 2, 15)) + ". ";
-        data.hiddenInfo += "Jobs facilitated: " + IntToString(RandRange(seed + 30, 10, 200)) + ". ";
-        data.hiddenInfo += "Street cred: ESTABLISHED";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S229") + IntToString(RandRange(seed + 20, 2, 15)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S230") + IntToString(RandRange(seed + 30, 10, 200)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S231");
 
         data.scannerWarning = "FIXER PROTECTED - NETWORK CONSEQUENCES";
         data.dangerLevel = "LOW - BUT CONNECTED";
@@ -1083,7 +1083,7 @@ public class KdspRareNPCManager {
     private static func GetFixerRole(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return "Information broker"; }
-        if i == 1 { return "Safe house operator"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S232"); }
         if i == 2 { return "Weapons supplier"; }
         if i == 3 { return "Medical contact"; }
         if i == 4 { return "Transport specialist"; }
@@ -1103,21 +1103,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateBlackmailVictim(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◆ BLACKMAIL VICTIM ◆";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S233");
         data.flagColor = "YELLOW";
         data.secretAffiliation = "COMPROMISED INDIVIDUAL";
 
         let secret = KdspRareNPCManager.GetBlackmailSecret(seed);
         let blackmailer = KdspRareNPCManager.GetBlackmailerType(seed + 10);
 
-        data.description = "INTEL: Subject is being blackmailed. ";
-        data.description += "Compromising material: " + secret + ". ";
-        data.description += "Blackmailer: " + blackmailer + ". ";
-        data.description += "Subject is controlled and may act against their own interests.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S234");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S235") + secret + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S236") + blackmailer + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S237");
 
-        data.hiddenInfo = "Duration of blackmail: " + IntToString(RandRange(seed + 20, 1, 10)) + " years. ";
-        data.hiddenInfo += "Payments made: €$" + IntToString(RandRange(seed + 30, 50000, 500000)) + ". ";
-        data.hiddenInfo += "Desperation level: " + (RandRange(seed + 40, 1, 100) <= 50 ? "CRITICAL" : "HIGH");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S238") + IntToString(RandRange(seed + 20, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S239") + IntToString(RandRange(seed + 30, 50000, 500000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S240") + (RandRange(seed + 40, 1, 100) <= 50 ? "CRITICAL" : "HIGH");
 
         data.scannerWarning = "COMPROMISED - MAY BE UNRELIABLE";
         data.dangerLevel = "UNPREDICTABLE";
@@ -1127,11 +1127,11 @@ public class KdspRareNPCManager {
 
     private static func GetBlackmailSecret(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Corporate espionage evidence"; }
-        if i == 1 { return "Past murder covered up"; }
-        if i == 2 { return "Hidden family secret"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S241"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S242"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S243"); }
         if i == 3 { return "Financial crimes"; }
-        if i == 4 { return "Compromising personal recordings"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S244"); }
         return "Hidden identity";
     }
 
@@ -1145,7 +1145,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateMilitaryAwol(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▲ MILITARY DESERTER ▲";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S245");
         data.flagColor = "RED";
 
         let branches: array<String>;
@@ -1161,14 +1161,14 @@ public class KdspRareNPCManager {
         let rank = KdspRareNPCManager.GetMilitaryRank(seed + 10);
         let years = IntToString(RandRange(seed + 20, 1, 10));
 
-        data.description = "MILITARY ALERT: Subject is AWOL from " + branch + ". ";
-        data.description += "Former rank: " + rank + ". Deserted: " + years + " years ago. ";
-        data.description += "Classified training: " + (RandRange(seed + 30, 1, 100) <= 40 ? "YES" : "STANDARD") + ". ";
-        data.description += "Capture order: ACTIVE. Return for court martial.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S246") + branch + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S247") + rank + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S248") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S250") + (RandRange(seed + 30, 1, 100) <= 40 ? "YES" : "STANDARD") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S251");
 
-        data.hiddenInfo = "Service record: [CLASSIFIED]. Reason for desertion: UNKNOWN. ";
-        data.hiddenInfo += "Equipment taken during desertion: " + (RandRange(seed + 40, 1, 100) <= 50 ? "MILITARY GRADE CYBERWARE" : "STANDARD ISSUE") + ". ";
-        data.hiddenInfo += "Bounty: €$" + IntToString(RandRange(seed + 50, 50000, 500000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S252");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S253") + (RandRange(seed + 40, 1, 100) <= 50 ? "MILITARY GRADE CYBERWARE" : "STANDARD ISSUE") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S169") + IntToString(RandRange(seed + 50, 50000, 500000));
 
         data.scannerWarning = "MILITARY TRAINING - COMBAT CAPABLE";
         data.dangerLevel = "HIGH - TRAINED COMBATANT";
@@ -1183,18 +1183,18 @@ public class KdspRareNPCManager {
         if i == 2 { return "Sergeant"; }
         if i == 3 { return "Lieutenant"; }
         if i == 4 { return "Captain"; }
-        return "Special Forces Operative";
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S254");
     }
 
     private static func GenerateExperimentalSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ EXPERIMENTAL SUBJECT ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S255");
         data.flagColor = "PURPLE";
 
         let experiments: array<String>;
         ArrayPush(experiments, "Cyberware enhancement");
         ArrayPush(experiments, "Genetic modification");
         ArrayPush(experiments, "Neural programming");
-        ArrayPush(experiments, "Combat drug trials");
+        ArrayPush(experiments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S256"));
         ArrayPush(experiments, "Soulkiller testing");
         ArrayPush(experiments, "AI integration");
 
@@ -1202,14 +1202,14 @@ public class KdspRareNPCManager {
         let corp = RandRange(seed + 10, 1, 100) <= 50 ? "BIOTECHNICA" : "UNKNOWN CORP";
         data.secretAffiliation = corp + " TEST SUBJECT";
 
-        data.description = "BIOTECH ALERT: Subject was part of " + experiment + " experiments. ";
-        data.description += "Escaped from facility: " + IntToString(RandRange(seed + 20, 1, 10)) + " years ago. ";
-        data.description += "Side effects: UNKNOWN BUT PROBABLE. ";
-        data.description += "Corporate recapture priority: " + (RandRange(seed + 30, 1, 100) <= 50 ? "HIGH" : "MODERATE");
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S257") + experiment + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S258");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S259") + IntToString(RandRange(seed + 20, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S260");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S261") + (RandRange(seed + 30, 1, 100) <= 50 ? "HIGH" : "MODERATE");
 
-        data.hiddenInfo = "Subject number: #" + IntToString(RandRange(seed + 40, 100, 999)) + ". Batch survivors: " + IntToString(RandRange(seed + 50, 1, 5)) + ". ";
-        data.hiddenInfo += "Known modifications: " + IntToString(RandRange(seed + 60, 1, 8)) + ". ";
-        data.hiddenInfo += "Stable?: " + (RandRange(seed + 70, 1, 100) <= 60 ? "MOSTLY" : "DETERIORATING");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S262") + IntToString(RandRange(seed + 40, 100, 999)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S263") + IntToString(RandRange(seed + 50, 1, 5)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S264") + IntToString(RandRange(seed + 60, 1, 8)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S265") + (RandRange(seed + 70, 1, 100) <= 60 ? "MOSTLY" : "DETERIORATING");
 
         data.scannerWarning = "EXPERIMENTAL MODIFICATIONS - UNPREDICTABLE";
         data.dangerLevel = "UNKNOWN - POSSIBLY EXTREME";
@@ -1218,21 +1218,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDebtCollection(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "€$ DEBT MARKED €$";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S266");
         data.flagColor = "YELLOW";
         data.secretAffiliation = "CORPO DEBT COLLECTION";
 
         let creditor = KdspRareNPCManager.GetCreditor(seed);
         let amount = IntToString(RandRange(seed + 10, 100000, 5000000));
 
-        data.description = "FINANCIAL ALERT: Subject owes €$" + amount + " to " + creditor + ". ";
-        data.description += "Collection status: ACTIVE. Payment deadline: PASSED. ";
-        data.description += "Collection method authorized: " + (RandRange(seed + 20, 1, 100) <= 40 ? "ANY MEANS" : "AGGRESSIVE") + ". ";
-        data.description += "Organ harvest clause: " + (RandRange(seed + 30, 1, 100) <= 30 ? "ACTIVE" : "INACTIVE");
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S267") + amount + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S268") + creditor + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S269");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S270") + (RandRange(seed + 20, 1, 100) <= 40 ? "ANY MEANS" : "AGGRESSIVE") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S271") + (RandRange(seed + 30, 1, 100) <= 30 ? "ACTIVE" : "INACTIVE");
 
-        data.hiddenInfo = "Original debt: €$" + IntToString(RandRange(seed + 40, 10000, 500000)) + " (interest accumulated). ";
-        data.hiddenInfo += "Previous collection attempts: " + IntToString(RandRange(seed + 50, 1, 10)) + ". ";
-        data.hiddenInfo += "Bounty for live delivery: €$" + IntToString(RandRange(seed + 60, 10000, 100000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S272") + IntToString(RandRange(seed + 40, 10000, 500000)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S273");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S274") + IntToString(RandRange(seed + 50, 1, 10)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S275") + IntToString(RandRange(seed + 60, 10000, 100000));
 
         data.scannerWarning = "DEBT COLLECTORS HUNTING";
         data.dangerLevel = "MODERATE - DESPERATE";
@@ -1243,35 +1243,35 @@ public class KdspRareNPCManager {
     private static func GetCreditor(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return "Arasaka Financial"; }
-        if i == 1 { return "Night City Credit Union"; }
-        if i == 2 { return "Tyger Claws loan sharks"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S276"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S277"); }
         if i == 3 { return "Militech Collections"; }
         if i == 4 { return "Underground lenders"; }
         return "Multiple creditors";
     }
 
     private static func GenerateOrganMarked(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✖ ORGAN MARKED ✖";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S278");
         data.flagColor = "RED";
         data.secretAffiliation = "SCAV TARGET";
 
         let organs: array<String>;
-        ArrayPush(organs, "rare blood type");
-        ArrayPush(organs, "compatible neural tissue");
+        ArrayPush(organs, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S279"));
+        ArrayPush(organs, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S280"));
         ArrayPush(organs, "pristine organs");
-        ArrayPush(organs, "unique genetic markers");
+        ArrayPush(organs, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S281"));
         ArrayPush(organs, "high-compatibility tissue");
 
         let organ = organs[RandRange(seed, 0, ArraySize(organs) - 1)];
 
-        data.description = "SCAV ALERT: Subject has been marked for harvest. Reason: " + organ + ". ";
-        data.description += "Bounty placed by: " + (RandRange(seed + 10, 1, 100) <= 50 ? "SCAV NETWORK" : "BLACK MARKET BUYER") + ". ";
-        data.description += "Harvest value: €$" + IntToString(RandRange(seed + 20, 50000, 500000)) + ". ";
-        data.description += "Subject awareness: " + (RandRange(seed + 30, 1, 100) <= 30 ? "AWARE" : "UNAWARE");
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S282") + organ + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S283") + (RandRange(seed + 10, 1, 100) <= 50 ? "SCAV NETWORK" : "BLACK MARKET BUYER") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S284") + IntToString(RandRange(seed + 20, 50000, 500000)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 30, 1, 100) <= 30 ? "AWARE" : "UNAWARE");
 
-        data.hiddenInfo = "Previous abduction attempts: " + IntToString(RandRange(seed + 40, 0, 3)) + ". ";
-        data.hiddenInfo += "Scav teams assigned: " + IntToString(RandRange(seed + 50, 1, 3)) + ". ";
-        data.hiddenInfo += "Best opportunity: " + KdspRareNPCManager.GetHarvestOpportunity(seed + 60);
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S285") + IntToString(RandRange(seed + 40, 0, 3)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S286") + IntToString(RandRange(seed + 50, 1, 3)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S287") + KdspRareNPCManager.GetHarvestOpportunity(seed + 60);
 
         data.scannerWarning = "SCAV TARGET - ABDUCTION RISK";
         data.dangerLevel = "VICTIM - NOT THREAT";
@@ -1282,35 +1282,35 @@ public class KdspRareNPCManager {
     private static func GetHarvestOpportunity(seed: Int32) -> String {
         let i = RandRange(seed, 0, 4);
         if i == 0 { return "Routine commute"; }
-        if i == 1 { return "Regular bar visit"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S288"); }
         if i == 2 { return "Jogging route"; }
         if i == 3 { return "Isolated residence"; }
         return "Work location";
     }
 
     private static func GenerateCultEscapee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◎ CULT ESCAPEE ◎";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S289");
         data.flagColor = "ORANGE";
 
         let cults: array<String>;
-        ArrayPush(cults, "Church of the Digital Resurrection");
-        ArrayPush(cults, "Children of the Blackwall");
+        ArrayPush(cults, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S290"));
+        ArrayPush(cults, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S291"));
         ArrayPush(cults, "Arasaka Loyalists");
         ArrayPush(cults, "Blood Covenant");
-        ArrayPush(cults, "Temple of the Chrome God");
-        ArrayPush(cults, "Followers of Alt");
+        ArrayPush(cults, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S292"));
+        ArrayPush(cults, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S293"));
 
         let cult = cults[RandRange(seed, 0, ArraySize(cults) - 1)];
         data.secretAffiliation = "ESCAPED FROM " + cult;
 
-        data.description = "CULT ALERT: Subject escaped from " + cult + ". ";
-        data.description += "Time in cult: " + IntToString(RandRange(seed + 10, 2, 15)) + " years. ";
-        data.description += "Position held: " + (RandRange(seed + 20, 1, 100) <= 30 ? "INNER CIRCLE" : "MEMBER") + ". ";
-        data.description += "Cult retrieval teams: ACTIVE. Subject knows secrets they want buried.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S294") + cult + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S295") + IntToString(RandRange(seed + 10, 2, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S296") + (RandRange(seed + 20, 1, 100) <= 30 ? "INNER CIRCLE" : "MEMBER") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S297");
 
-        data.hiddenInfo = "Information on cult crimes: EXTENSIVE. ";
-        data.hiddenInfo += "Deprogramming status: " + (RandRange(seed + 30, 1, 100) <= 50 ? "PARTIAL" : "COMPLETE") + ". ";
-        data.hiddenInfo += "Kill order from cult: " + (RandRange(seed + 40, 1, 100) <= 70 ? "CONFIRMED" : "SUSPECTED");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S298");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S299") + (RandRange(seed + 30, 1, 100) <= 50 ? "PARTIAL" : "COMPLETE") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S300") + (RandRange(seed + 40, 1, 100) <= 70 ? "CONFIRMED" : "SUSPECTED");
 
         data.scannerWarning = "CULT HUNTERS ACTIVE - IN DANGER";
         data.dangerLevel = "LOW THREAT - HIGH VALUE";
@@ -1319,20 +1319,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateRelicCompatible(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ RELIC COMPATIBLE ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S301");
         data.flagColor = "CYAN";
         data.secretAffiliation = "ARASAKA INTEREST";
 
         let compatibility = IntToString(RandRange(seed, 90, 99));
 
-        data.description = "ARASAKA PRIORITY: Subject has rare Relic chip compatibility (" + compatibility + "%). ";
-        data.description += "Neural architecture: OPTIMAL FOR ENGRAM HOSTING. ";
-        data.description += "Subject awareness: " + (RandRange(seed + 10, 1, 100) <= 20 ? "AWARE" : "UNAWARE") + ". ";
-        data.description += "Arasaka acquisition interest: EXTREME.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S302") + compatibility + "%). ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S303");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 10, 1, 100) <= 20 ? "AWARE" : "UNAWARE") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S304");
 
-        data.hiddenInfo = "Similar subjects identified globally: <50. ";
-        data.hiddenInfo += "Estimated value to Arasaka: €$" + IntToString(RandRange(seed + 20, 50000000, 200000000)) + ". ";
-        data.hiddenInfo += "Saburo Arasaka engram potential host: " + (RandRange(seed + 30, 1, 100) <= 30 ? "POSSIBLE" : "UNLIKELY");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S305");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S306") + IntToString(RandRange(seed + 20, 50000000, 200000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S307") + (RandRange(seed + 30, 1, 100) <= 30 ? "POSSIBLE" : "UNLIKELY");
 
         data.scannerWarning = "EXTREME CORPORATE VALUE - EXTRACTION TEAMS LIKELY";
         data.dangerLevel = "LOW PERSONAL - EXTREME TARGET VALUE";
@@ -1341,21 +1341,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDataCourier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ DATA COURIER ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S308");
         data.flagColor = "GREEN";
         data.secretAffiliation = "COURIER NETWORK";
 
         let dataType = KdspRareNPCManager.GetCourierData(seed);
         let client = KdspRareNPCManager.GetCourierClient(seed + 10);
 
-        data.description = "INTEL: Subject is active data courier. Current payload: " + dataType + ". ";
-        data.description += "Client: " + client + ". ";
-        data.description += "Delivery method: NEURAL IMPLANT. Data extraction requires: RIPPERDOC. ";
-        data.description += "Value of current payload: €$" + IntToString(RandRange(seed + 20, 100000, 10000000));
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S309") + dataType + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S310") + client + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S311");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S312") + IntToString(RandRange(seed + 20, 100000, 10000000));
 
-        data.hiddenInfo = "Active courier for: " + IntToString(RandRange(seed + 30, 1, 10)) + " years. ";
-        data.hiddenInfo += "Successful deliveries: " + IntToString(RandRange(seed + 40, 50, 500)) + ". ";
-        data.hiddenInfo += "Interception attempts survived: " + IntToString(RandRange(seed + 50, 0, 20));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S313") + IntToString(RandRange(seed + 30, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S314") + IntToString(RandRange(seed + 40, 50, 500)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S315") + IntToString(RandRange(seed + 50, 0, 20));
 
         data.scannerWarning = "CARRIES VALUABLE DATA - INTERCEPTION TARGET";
         data.dangerLevel = "MODERATE - PROTECTED BY CLIENTS";
@@ -1370,7 +1370,7 @@ public class KdspRareNPCManager {
         if i == 2 { return "Financial records"; }
         if i == 3 { return "Research data"; }
         if i == 4 { return "Blackmail material"; }
-        return "Unknown - encrypted";
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S316");
     }
 
     private static func GetCourierClient(seed: Int32) -> String {
@@ -1383,21 +1383,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDoubleAgent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ DOUBLE AGENT ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S317");
         data.flagColor = "RED";
 
         let org1 = KdspRareNPCManager.GetAgentOrg(seed);
         let org2 = KdspRareNPCManager.GetAgentOrg(seed + 10);
         data.secretAffiliation = "SERVING: " + org1 + " AND " + org2;
 
-        data.description = "INTELLIGENCE ALERT: Subject confirmed as double agent. ";
-        data.description += "Claims loyalty to: " + org1 + ". Actually serving: " + org2 + ". ";
-        data.description += "Or possibly serving both. True allegiance: UNKNOWN. ";
-        data.description += "Information reliability: ZERO.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S318");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S319") + org1 + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S320") + org2 + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S321");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S322");
 
-        data.hiddenInfo = "Duration of double game: " + IntToString(RandRange(seed + 20, 1, 10)) + " years. ";
-        data.hiddenInfo += "Compromised operations: " + IntToString(RandRange(seed + 30, 5, 50)) + ". ";
-        data.hiddenInfo += "Deaths attributed to intel leaks: " + IntToString(RandRange(seed + 40, 0, 20));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S323") + IntToString(RandRange(seed + 20, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S324") + IntToString(RandRange(seed + 30, 5, 50)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S325") + IntToString(RandRange(seed + 40, 0, 20));
 
         data.scannerWarning = "TRUST NOTHING - LOYALTY UNKNOWN";
         data.dangerLevel = "EXTREME - UNPREDICTABLE";
@@ -1418,7 +1418,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateNomadExile(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▼ NOMAD EXILE ▼";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S326");
         data.flagColor = "ORANGE";
 
         let clans: array<String>;
@@ -1433,14 +1433,14 @@ public class KdspRareNPCManager {
 
         let reason = KdspRareNPCManager.GetExileReason(seed + 10);
 
-        data.description = "NOMAD INTEL: Subject exiled from " + clan + " clan. ";
-        data.description += "Reason: " + reason + ". ";
-        data.description += "Exile type: " + (RandRange(seed + 20, 1, 100) <= 50 ? "PERMANENT - KILL ON SIGHT" : "PERMANENT - NO CONTACT") + ". ";
-        data.description += "Subject has intimate knowledge of clan operations, routes, and safe houses.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S327") + clan + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S328");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S164") + reason + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S329") + (RandRange(seed + 20, 1, 100) <= 50 ? "PERMANENT - KILL ON SIGHT" : "PERMANENT - NO CONTACT") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S330");
 
-        data.hiddenInfo = "Years with clan: " + IntToString(RandRange(seed + 30, 5, 25)) + ". ";
-        data.hiddenInfo += "Clan secrets known: EXTENSIVE. ";
-        data.hiddenInfo += "Bounty from clan: €$" + IntToString(RandRange(seed + 40, 10000, 100000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S331") + IntToString(RandRange(seed + 30, 5, 25)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S332");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S333") + IntToString(RandRange(seed + 40, 10000, 100000));
 
         data.scannerWarning = "NOMAD HUNTERS MAY BE ACTIVE";
         data.dangerLevel = "MODERATE - HUNTED";
@@ -1450,11 +1450,11 @@ public class KdspRareNPCManager {
 
     private static func GetExileReason(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Betrayed clan to corpos"; }
-        if i == 1 { return "Killed clan member"; }
-        if i == 2 { return "Stole from clan"; }
-        if i == 3 { return "Violated sacred clan law"; }
-        if i == 4 { return "Endangered entire clan"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S334"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S335"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S336"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S337"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S338"); }
         return "Leadership dispute";
     }
 
@@ -1463,29 +1463,29 @@ public class KdspRareNPCManager {
     // ===================================
 
     private static func GenerateBraindanceAddict(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ BRAINDANCE DISSOCIATION ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S339");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "NONE - MEDICAL CONCERN";
 
         let hours = IntToString(RandRange(seed, 14, 22));
         let genres: array<String>;
         ArrayPush(genres, "Combat/violence scrolls");
-        ArrayPush(genres, "Illegal XBD content");
-        ArrayPush(genres, "Celebrity experience loops");
-        ArrayPush(genres, "Pre-war nostalgia reels");
-        ArrayPush(genres, "Synthetic emotion stacks");
-        ArrayPush(genres, "Death experience recordings");
+        ArrayPush(genres, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S340"));
+        ArrayPush(genres, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S341"));
+        ArrayPush(genres, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S342"));
+        ArrayPush(genres, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S343"));
+        ArrayPush(genres, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S344"));
 
         let genre = genres[RandRange(seed + 10, 0, ArraySize(genres) - 1)];
 
-        data.description = "MEDICAL ALERT: Subject exhibits severe braindance addiction. Estimated daily usage: " + hours + " hours. ";
-        data.description += "Primary content: " + genre + ". ";
-        data.description += "Reality dissociation index: " + IntToString(RandRange(seed + 20, 70, 99)) + "%. ";
-        data.description += "Subject may not distinguish between BD memories and lived experience.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S345") + hours + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S346");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S347") + genre + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S348") + IntToString(RandRange(seed + 20, 70, 99)) + "%. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S349");
 
-        data.hiddenInfo = "Wreath usage: " + IntToString(RandRange(seed + 30, 3, 12)) + " years continuous. ";
-        data.hiddenInfo += "Neural degradation: " + (RandRange(seed + 40, 1, 100) <= 60 ? "SIGNIFICANT" : "MODERATE") + ". ";
-        data.hiddenInfo += "BD dealer: [FLAGGED IN NCPD DATABASE]";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S350") + IntToString(RandRange(seed + 30, 3, 12)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S351");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S352") + (RandRange(seed + 40, 1, 100) <= 60 ? "SIGNIFICANT" : "MODERATE") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S353");
 
         data.scannerWarning = "DISSOCIATIVE STATE - MAY NOT RESPOND NORMALLY";
         data.dangerLevel = "LOW - BUT UNPREDICTABLE";
@@ -1494,19 +1494,19 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateNightCorpSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "██ NIGHT CORP PROJECT ██";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S354");
         data.flagColor = "RED";
         data.secretAffiliation = "NIGHT CORP - OPERATION CARPE NOCTEM";
 
         let phase = RandRange(seed, 1, 4);
-        data.description = "CLASSIFIED: Subject is an active test subject in Night Corp neural programming initiative. ";
-        data.description += "Project phase: " + IntToString(phase) + "/4. ";
-        data.description += "Behavioral modification: " + (phase >= 3 ? "ADVANCED" : "ONGOING") + ". ";
-        data.description += "Subject awareness of conditioning: NONE. Personality alterations occurring during REM sleep cycles.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S355");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S356") + IntToString(phase) + "/4. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S357") + (phase >= 3 ? "ADVANCED" : "ONGOING") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S358");
 
-        data.hiddenInfo = "Enrolled since: " + IntToString(RandRange(seed + 10, 2070, 2076)) + ". ";
-        data.hiddenInfo += "Reported personality shifts: " + IntToString(RandRange(seed + 20, 2, 15)) + ". ";
-        data.hiddenInfo += "Night Corp handler: [REDACTED]. Objective: [CLASSIFIED BEYOND CLEARANCE]";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S359") + IntToString(RandRange(seed + 10, 2070, 2076)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S360") + IntToString(RandRange(seed + 20, 2, 15)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S361");
 
         data.scannerWarning = "NIGHT CORP PROPERTY - DO NOT INTERFERE";
         data.dangerLevel = "UNKNOWN - PROGRAMMED BEHAVIOR POSSIBLE";
@@ -1515,18 +1515,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDollChipSleeper(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◉ DORMANT DOLL CHIP ◉";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S362");
         data.flagColor = "YELLOW";
         data.secretAffiliation = "CLOUDS / UNKNOWN OPERATOR";
 
-        data.description = "CYBERWARE ALERT: Subject carries a dormant behavioral modification chip (doll chip). ";
-        data.description += "Chip status: " + (RandRange(seed, 1, 100) <= 30 ? "INTERMITTENT ACTIVATION DETECTED" : "DORMANT") + ". ";
-        data.description += "Chip origin: " + (RandRange(seed + 10, 1, 100) <= 50 ? "CLOUDS DOLHOUSE" : "UNKNOWN INSTALLER") + ". ";
-        data.description += "Remote activation capability: CONFIRMED. Personality override possible at any time.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S363");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S364") + (RandRange(seed, 1, 100) <= 30 ? "INTERMITTENT ACTIVATION DETECTED" : "DORMANT") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S365") + (RandRange(seed + 10, 1, 100) <= 50 ? "CLOUDS DOLHOUSE" : "UNKNOWN INSTALLER") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S366");
 
-        data.hiddenInfo = "Chip installed: " + IntToString(RandRange(seed + 20, 1, 8)) + " years ago. ";
-        data.hiddenInfo += "Known activation episodes: " + IntToString(RandRange(seed + 30, 0, 12)) + ". ";
-        data.hiddenInfo += "Control frequency holder: [UNKNOWN]";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S367") + IntToString(RandRange(seed + 20, 1, 8)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S368") + IntToString(RandRange(seed + 30, 0, 12)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S369");
 
         data.scannerWarning = "PERSONALITY MAY NOT BE GENUINE";
         data.dangerLevel = "MODERATE - CONTROLLED ASSET";
@@ -1535,18 +1535,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateSoulkillerSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ SOULKILLER ANOMALY ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S370");
         data.flagColor = "CYAN";
         data.secretAffiliation = "ARASAKA SOUL PROJECT";
 
-        data.description = "ARASAKA PRIORITY: Subject survived a Soulkiller extraction procedure. ";
-        data.description += "Engram created: " + (RandRange(seed, 1, 100) <= 60 ? "YES - STORED ON MIKOSHI" : "PARTIAL - CORRUPTED") + ". ";
-        data.description += "Subject retained consciousness post-procedure. This is EXTREMELY RARE. ";
-        data.description += "Neural integrity post-scan: " + IntToString(RandRange(seed + 10, 40, 85)) + "%.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S371");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S372") + (RandRange(seed, 1, 100) <= 60 ? "YES - STORED ON MIKOSHI" : "PARTIAL - CORRUPTED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S373");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S374") + IntToString(RandRange(seed + 10, 40, 85)) + "%.";
 
-        data.hiddenInfo = "Procedure date: " + IntToString(RandRange(seed + 20, 2060, 2076)) + ". ";
-        data.hiddenInfo += "Facility: [CLASSIFIED ARASAKA BLACK SITE]. ";
-        data.hiddenInfo += "Both engram copy and original still exist. Arasaka considers this a security breach.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S375") + IntToString(RandRange(seed + 20, 2060, 2076)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S376");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S377");
 
         data.scannerWarning = "ARASAKA HIGH INTEREST - CAPTURE PREFERRED";
         data.dangerLevel = "LOW PERSONAL - EXTREME CORPORATE VALUE";
@@ -1555,28 +1555,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateBlackwallTouched(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ BLACKWALL CONTACT ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S378");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "NETWATCH FLAGGED";
 
         let effects: array<String>;
-        ArrayPush(effects, "Whispers data fragments in sleep");
-        ArrayPush(effects, "Involuntary device manipulation");
-        ArrayPush(effects, "Knowledge of events before they occur");
-        ArrayPush(effects, "Speaks in machine code during episodes");
-        ArrayPush(effects, "Nearby electronics malfunction");
-        ArrayPush(effects, "Writes encrypted data compulsively");
+        ArrayPush(effects, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S379"));
+        ArrayPush(effects, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S380"));
+        ArrayPush(effects, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S381"));
+        ArrayPush(effects, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S382"));
+        ArrayPush(effects, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S383"));
+        ArrayPush(effects, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S384"));
 
         let effect = effects[RandRange(seed, 0, ArraySize(effects) - 1)];
 
-        data.description = "NETWATCH ALERT: Subject has had confirmed contact with entity beyond the Blackwall. ";
-        data.description += "Contact method: " + (RandRange(seed + 10, 1, 100) <= 50 ? "Deep net dive gone wrong" : "Unknown transmission vector") + ". ";
-        data.description += "Persistent effects: " + effect + ". ";
-        data.description += "NetWatch containment status: MONITORING.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S385");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S386") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S387") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S388")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S389") + effect + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S390");
 
-        data.hiddenInfo = "Contact occurred: " + IntToString(RandRange(seed + 20, 1, 5)) + " years ago. ";
-        data.hiddenInfo += "Rogue AI identifier: [DATA CORRUPTED]. ";
-        data.hiddenInfo += "VDB interest level: EXTREME. NetWatch wants subject for study.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S391") + IntToString(RandRange(seed + 20, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S392");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S393");
 
         data.scannerWarning = "AI CONTACT SUSPECTED - NETWATCH FLAGGED";
         data.dangerLevel = "UNKNOWN - POSSIBLY COMPROMISED";
@@ -1585,19 +1585,19 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateSignalCarrier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ SIGNAL CARRIER ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S394");
         data.flagColor = "GREEN";
         data.secretAffiliation = "UNKNOWN - TRANSMITTING";
 
         let freq = IntToString(RandRange(seed, 100, 999));
-        data.description = "SIGNAL INTEL: Subject is broadcasting an encrypted signal from neural implant. Frequency: " + freq + "." + IntToString(RandRange(seed + 5, 10, 99)) + " MHz. ";
-        data.description += "Broadcast type: " + (RandRange(seed + 10, 1, 100) <= 50 ? "CONTINUOUS" : "BURST PATTERN") + ". ";
-        data.description += "Subject awareness: NONE. Signal appears involuntary. ";
-        data.description += "Decryption attempts: FAILED. Encryption is military-grade or beyond.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S395") + freq + "." + IntToString(RandRange(seed + 5, 10, 99)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S396");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S397") + (RandRange(seed + 10, 1, 100) <= 50 ? "CONTINUOUS" : "BURST PATTERN") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S398");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S399");
 
-        data.hiddenInfo = "Signal first detected: " + IntToString(RandRange(seed + 20, 1, 24)) + " months ago. ";
-        data.hiddenInfo += "Recipient: UNKNOWN. Signal bounces through " + IntToString(RandRange(seed + 30, 3, 20)) + " relays. ";
-        data.hiddenInfo += "Possible origin: implant surgery at unregistered clinic";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S400") + IntToString(RandRange(seed + 20, 1, 24)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S19");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S401") + IntToString(RandRange(seed + 30, 3, 20)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S402");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S403");
 
         data.scannerWarning = "BROADCASTING - MAY BE TRACKED";
         data.dangerLevel = "LOW - BUT MONITORED BY UNKNOWN PARTY";
@@ -1606,28 +1606,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateMemoryWiped(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◆ MEMORY ERASURE ◆";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S404");
         data.flagColor = "YELLOW";
         data.secretAffiliation = "IDENTITY MODIFIED";
 
         let years = IntToString(RandRange(seed, 2, 20));
         let wipers: array<String>;
-        ArrayPush(wipers, "Corporate black clinic");
+        ArrayPush(wipers, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S405"));
         ArrayPush(wipers, "Underground ripperdoc");
-        ArrayPush(wipers, "Night Corp facility");
-        ArrayPush(wipers, "Arasaka Psych Division");
+        ArrayPush(wipers, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S406"));
+        ArrayPush(wipers, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S407"));
         ArrayPush(wipers, "Self-administered (experimental)");
 
         let wiper = wipers[RandRange(seed + 10, 0, ArraySize(wipers) - 1)];
 
-        data.description = "NEURO ALERT: Subject has undergone professional memory erasure. ";
-        data.description += "Estimated memories removed: " + years + " years of experience. ";
-        data.description += "Procedure performed by: " + wiper + ". ";
-        data.description += "Current personality may be partially or wholly constructed post-wipe.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S408");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S409") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S410");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S411") + wiper + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S412");
 
-        data.hiddenInfo = "Pre-wipe identity: [IRRECOVERABLE]. ";
-        data.hiddenInfo += "Wipe quality: " + (RandRange(seed + 20, 1, 100) <= 40 ? "CLEAN - No bleedthrough" : "PARTIAL - Fragments remain") + ". ";
-        data.hiddenInfo += "Reason for wipe: " + (RandRange(seed + 30, 1, 100) <= 50 ? "[CLASSIFIED]" : "Suspected trauma or criminal history");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S413");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S414") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S415") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S416")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S417") + (RandRange(seed + 30, 1, 100) <= 50 ? "[CLASSIFIED]" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S418"));
 
         data.scannerWarning = "TRUE IDENTITY UNKNOWN";
         data.dangerLevel = "UNKNOWN - PAST MAY BE DANGEROUS";
@@ -1636,18 +1636,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateIdentityStolen(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▲ IDENTITY FRAUD ▲";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S419");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "FALSE IDENTITY";
 
-        data.description = "NCPD ALERT: Subject is living under a stolen identity. ";
-        data.description += "Current identity belonged to: " + (RandRange(seed, 1, 100) <= 40 ? "deceased individual" : "missing person") + ". ";
-        data.description += "Identity theft quality: " + (RandRange(seed + 10, 1, 100) <= 30 ? "PROFESSIONAL - Deep fake records" : "MODERATE - Gaps exist") + ". ";
-        data.description += "True identity: UNKNOWN. Biometric databases return conflicting results.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S420");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S421") + (RandRange(seed, 1, 100) <= 40 ? "deceased individual" : "missing person") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S422") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S423") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S424")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S425");
 
-        data.hiddenInfo = "Using current identity for: " + IntToString(RandRange(seed + 20, 1, 15)) + " years. ";
-        data.hiddenInfo += "Real identity flagged in: " + IntToString(RandRange(seed + 30, 0, 3)) + " other jurisdictions. ";
-        data.hiddenInfo += "Likely reason: " + KdspRareNPCManager.GetIdentityTheftReason(seed + 40);
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S426") + IntToString(RandRange(seed + 20, 1, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S427") + IntToString(RandRange(seed + 30, 0, 3)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S428");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S429") + KdspRareNPCManager.GetIdentityTheftReason(seed + 40);
 
         data.scannerWarning = "BIOMETRIC MISMATCH DETECTED";
         data.dangerLevel = "UNKNOWN - IDENTITY CONCEALS PAST";
@@ -1657,28 +1657,28 @@ public class KdspRareNPCManager {
 
     private static func GetIdentityTheftReason(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Fleeing criminal charges"; }
-        if i == 1 { return "Corporate extraction target"; }
-        if i == 2 { return "Witness protection failure"; }
-        if i == 3 { return "Gang death warrant"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S430"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S431"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S432"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S433"); }
         if i == 4 { return "Military desertion"; }
-        return "Unknown - too many possibilities";
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S434");
     }
 
     private static func GenerateMissingPerson(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▼ OFFICIALLY DECEASED ▼";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S435");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "NCPD CLOSED FILE";
 
         let years = IntToString(RandRange(seed, 1, 20));
-        data.description = "DATABASE CONFLICT: Subject matches biometrics of individual declared " + (RandRange(seed + 5, 1, 100) <= 60 ? "DECEASED" : "MISSING") + " " + years + " years ago. ";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S436") + (RandRange(seed + 5, 1, 100) <= 60 ? "DECEASED" : "MISSING") + " " + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
         data.description += "Official case status: CLOSED. ";
-        data.description += "Match confidence: " + IntToString(RandRange(seed + 10, 92, 99)) + "%. ";
-        data.description += "Subject appears unaware of their official status or is deliberately hiding.";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S437") + IntToString(RandRange(seed + 10, 92, 99)) + "%. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S438");
 
-        data.hiddenInfo = "Original disappearance linked to: " + KdspRareNPCManager.GetDisappearanceCase(seed + 20) + ". ";
-        data.hiddenInfo += "Insurance payout on death: €$" + IntToString(RandRange(seed + 30, 50000, 2000000)) + ". ";
-        data.hiddenInfo += "Family notification: NOT RECOMMENDED without further investigation";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S439") + KdspRareNPCManager.GetDisappearanceCase(seed + 20) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S440") + IntToString(RandRange(seed + 30, 50000, 2000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S441");
 
         data.scannerWarning = "DATA INTEGRITY FAILURE - TIMELINE INCONSISTENT";
         data.dangerLevel = "LOW - BUT CASE REOPENING POSSIBLE";
@@ -1689,15 +1689,15 @@ public class KdspRareNPCManager {
     private static func GetDisappearanceCase(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return "Scavenger raid"; }
-        if i == 1 { return "Corporate restructuring purge"; }
-        if i == 2 { return "Gang war casualty list"; }
-        if i == 3 { return "Natural disaster aftermath"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S442"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S443"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S444"); }
         if i == 4 { return "Deliberate staging"; }
         return "Circumstances unknown";
     }
 
     private static func GenerateActiveBounty(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✖ ACTIVE BOUNTY ✖";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S445");
         data.flagColor = "RED";
 
         let amount = IntToString(RandRange(seed, 50000, 5000000));
@@ -1711,14 +1711,14 @@ public class KdspRareNPCManager {
         let poster = posters[RandRange(seed + 10, 0, ArraySize(posters) - 1)];
         data.secretAffiliation = "BOUNTY TARGET";
 
-        data.description = "BOUNTY ALERT: Active contract on subject. Amount: €$" + amount + ". ";
-        data.description += "Posted by: " + poster + ". ";
-        data.description += "Condition: " + (RandRange(seed + 20, 1, 100) <= 40 ? "ALIVE ONLY" : "DEAD OR ALIVE") + ". ";
-        data.description += "Hunters assigned: " + IntToString(RandRange(seed + 30, 1, 5)) + " known operatives.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S446") + amount + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S447") + poster + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S448") + (RandRange(seed + 20, 1, 100) <= 40 ? "ALIVE ONLY" : "DEAD OR ALIVE") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S449") + IntToString(RandRange(seed + 30, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S450");
 
-        data.hiddenInfo = "Bounty active for: " + IntToString(RandRange(seed + 40, 1, 36)) + " months. ";
-        data.hiddenInfo += "Previous attempts: " + IntToString(RandRange(seed + 50, 0, 4)) + ". ";
-        data.hiddenInfo += "Subject awareness: " + (RandRange(seed + 60, 1, 100) <= 50 ? "AWARE - Taking precautions" : "UNAWARE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S451") + IntToString(RandRange(seed + 40, 1, 36)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S452");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S453") + IntToString(RandRange(seed + 50, 0, 4)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 60, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S454") : "UNAWARE");
 
         data.scannerWarning = "ARMED HUNTERS MAY BE TRACKING";
         data.dangerLevel = "HIGH - COLLATERAL DAMAGE POSSIBLE";
@@ -1727,21 +1727,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateUnregisteredChrome(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⚠ UNREGISTERED CYBERWARE ⚠";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S455");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "NCPD CHROME REGISTRY VIOLATION";
 
         let loadPct = IntToString(RandRange(seed, 65, 95));
         let milGrade = RandRange(seed + 10, 1, 100) <= 40;
 
-        data.description = "CHROME ALERT: Subject carries " + loadPct + "% unregistered cyberware. ";
-        data.description += "Military-grade components: " + (milGrade ? "DETECTED" : "NOT DETECTED") + ". ";
-        data.description += "Installer: UNKNOWN (no licensed ripperdoc records). ";
-        data.description += "Subject is invisible to standard cyberware databases. MaxTac monitoring threshold: " + (milGrade ? "EXCEEDED" : "APPROACHING") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S456") + loadPct + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S457");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S458") + (milGrade ? "DETECTED" : "NOT DETECTED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S459");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S460") + (milGrade ? "EXCEEDED" : "APPROACHING") + ".";
 
-        data.hiddenInfo = "Estimated chrome value: €$" + IntToString(RandRange(seed + 20, 500000, 5000000)) + ". ";
-        data.hiddenInfo += "Cyberpsychosis risk: " + (RandRange(seed + 30, 1, 100) <= 50 ? "ELEVATED" : "UNKNOWN - No therapy records") + ". ";
-        data.hiddenInfo += "Likely source: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Black market" : "Stolen from corpo facility");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S461") + IntToString(RandRange(seed + 20, 500000, 5000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S462") + (RandRange(seed + 30, 1, 100) <= 50 ? "ELEVATED" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S463")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S464") + (RandRange(seed + 40, 1, 100) <= 50 ? "Black market" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S465"));
 
         data.scannerWarning = "HEAVILY AUGMENTED - MAXTAC INTEREST POSSIBLE";
         data.dangerLevel = "HIGH - COMBAT CAPABILITY UNKNOWN";
@@ -1750,28 +1750,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GeneratePoliticalDissident(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▲ POLITICAL FLAG ▲";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S466");
         data.flagColor = "RED";
 
         let causes: array<String>;
         ArrayPush(causes, "Anti-corporate activism");
-        ArrayPush(causes, "Free Night City movement");
-        ArrayPush(causes, "NUSA separatist rhetoric");
-        ArrayPush(causes, "AI rights advocacy");
+        ArrayPush(causes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S467"));
+        ArrayPush(causes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S468"));
+        ArrayPush(causes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S469"));
         ArrayPush(causes, "Anti-cyberware legislation");
-        ArrayPush(causes, "Worker unionization efforts");
+        ArrayPush(causes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S470"));
 
         let cause = causes[RandRange(seed, 0, ArraySize(causes) - 1)];
         data.secretAffiliation = "POLITICAL WATCHLIST";
 
-        data.description = "NUSA SECURITY: Subject flagged for political activity. Cause: " + cause + ". ";
-        data.description += "Threat assessment: " + (RandRange(seed + 10, 1, 100) <= 30 ? "ORGANIZER" : "PARTICIPANT") + ". ";
-        data.description += "Social media presence: " + (RandRange(seed + 20, 1, 100) <= 60 ? "ACTIVE - MONITORED" : "ENCRYPTED") + ". ";
-        data.description += "Corporate interest in suppression: " + (RandRange(seed + 30, 1, 100) <= 50 ? "CONFIRMED" : "SUSPECTED");
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S471") + cause + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S472") + (RandRange(seed + 10, 1, 100) <= 30 ? "ORGANIZER" : "PARTICIPANT") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S473") + (RandRange(seed + 20, 1, 100) <= 60 ? "ACTIVE - MONITORED" : "ENCRYPTED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S474") + (RandRange(seed + 30, 1, 100) <= 50 ? "CONFIRMED" : "SUSPECTED");
 
-        data.hiddenInfo = "On watchlist since: " + IntToString(RandRange(seed + 40, 2068, 2076)) + ". ";
-        data.hiddenInfo += "Known associates in movement: " + IntToString(RandRange(seed + 50, 5, 50)) + ". ";
-        data.hiddenInfo += "Arrest authorization: " + (RandRange(seed + 60, 1, 100) <= 30 ? "PENDING" : "NOT YET AUTHORIZED");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S475") + IntToString(RandRange(seed + 40, 2068, 2076)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S476") + IntToString(RandRange(seed + 50, 5, 50)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S477") + (RandRange(seed + 60, 1, 100) <= 30 ? "PENDING" : "NOT YET AUTHORIZED");
 
         data.scannerWarning = "POLITICAL SURVEILLANCE ACTIVE";
         data.dangerLevel = "LOW - BUT MONITORED";
@@ -1780,20 +1780,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateNeuralDivergent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ NEURAL ANOMALY ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S478");
         data.flagColor = "CYAN";
         data.secretAffiliation = "RESEARCH INTEREST";
 
         let resistance = IntToString(RandRange(seed, 85, 99));
 
-        data.description = "NEUROLOGICAL FLAG: Subject possesses anomalous neural architecture. ";
-        data.description += "Quickhack resistance: " + resistance + "% (normal human: 5-15%). ";
-        data.description += "Neural scans show non-standard synaptic pathways. Origin: " + (RandRange(seed + 10, 1, 100) <= 30 ? "GENETIC" : "UNKNOWN") + ". ";
-        data.description += "Multiple netrunners have reported failed breach attempts on subject.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S479");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S480") + resistance + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S481");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S482") + (RandRange(seed + 10, 1, 100) <= 30 ? "GENETIC" : "UNKNOWN") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S483");
 
-        data.hiddenInfo = "Corporate research interest: EXTREME. Biotechnica has standing acquisition offer. ";
-        data.hiddenInfo += "Military applications: SIGNIFICANT. ";
-        data.hiddenInfo += "Subject awareness of condition: " + (RandRange(seed + 20, 1, 100) <= 40 ? "AWARE" : "UNAWARE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S484");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S485");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S486") + (RandRange(seed + 20, 1, 100) <= 40 ? "AWARE" : "UNAWARE");
 
         data.scannerWarning = "QUICKHACK RESISTANT - CONVENTIONAL METHODS ONLY";
         data.dangerLevel = "MODERATE - CANNOT BE HACKED EASILY";
@@ -1802,20 +1802,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateSyntheticSleeper(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ SYNTHETIC BIOLOGY ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S487");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "BIOTECHNICA SUBJECT";
 
         let synthPct = IntToString(RandRange(seed, 30, 80));
 
-        data.description = "BIOTECH ALERT: Subject contains " + synthPct + "% synthetic biological tissue. ";
-        data.description += "This is NOT standard cyberware. Tissue is lab-grown, integrated at cellular level. ";
-        data.description += "Subject awareness: " + (RandRange(seed + 10, 1, 100) <= 20 ? "AWARE" : "UNAWARE") + ". ";
-        data.description += "Origin: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Biotechnica growth program" : "Unknown laboratory") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S488") + synthPct + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S489");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S490");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 10, 1, 100) <= 20 ? "AWARE" : "UNAWARE") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S491") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S492") : "Unknown laboratory") + ".";
 
-        data.hiddenInfo = "Synthetic integration date: estimated " + IntToString(RandRange(seed + 30, 5, 25)) + " years ago. ";
-        data.hiddenInfo += "Aging rate: " + (RandRange(seed + 40, 1, 100) <= 40 ? "REDUCED" : "NORMAL") + ". ";
-        data.hiddenInfo += "Tissue rejection risk: " + IntToString(RandRange(seed + 50, 1, 15)) + "%";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S493") + IntToString(RandRange(seed + 30, 5, 25)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S494") + (RandRange(seed + 40, 1, 100) <= 40 ? "REDUCED" : "NORMAL") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S495") + IntToString(RandRange(seed + 50, 1, 15)) + "%";
 
         data.scannerWarning = "BIOLOGICAL ANOMALY - NOT FULLY HUMAN";
         data.dangerLevel = "UNKNOWN - CAPABILITIES UNMAPPED";
@@ -1824,18 +1824,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateBuriedPast(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◆ ERASED HISTORY ◆";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S496");
         data.flagColor = "YELLOW";
         data.secretAffiliation = "PROFESSIONALLY SCRUBBED";
 
-        data.description = "DATA ALERT: Subject's entire history prior to " + IntToString(RandRange(seed, 2065, 2075)) + " has been professionally erased. ";
-        data.description += "Scrub quality: " + (RandRange(seed + 10, 1, 100) <= 40 ? "MILITARY GRADE - Zero traces" : "HIGH - Minor fragments remain") + ". ";
-        data.description += "No birth records, education, employment, medical, or criminal history exists. ";
-        data.description += "Person effectively materialized from nothing. Cost of this erasure: estimated €$" + IntToString(RandRange(seed + 20, 1000000, 10000000)) + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S497") + IntToString(RandRange(seed, 2065, 2075)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S498");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S499") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S500") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S501")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S502");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S503") + IntToString(RandRange(seed + 20, 1000000, 10000000)) + ".";
 
-        data.hiddenInfo = "Erased by: " + (RandRange(seed + 30, 1, 100) <= 50 ? "Corporate data team" : "Independent netrunner crew") + ". ";
-        data.hiddenInfo += "Fragment recovered: " + (RandRange(seed + 40, 1, 100) <= 30 ? "Partial fingerprint from old NCPD database" : "NOTHING") + ". ";
-        data.hiddenInfo += "Whatever they were hiding from was expensive enough to justify total erasure.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S504") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S505") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S506")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S507") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S508") : "NOTHING") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S509");
 
         data.scannerWarning = "NO HISTORY - PAST IS UNKNOWN";
         data.dangerLevel = "UNKNOWN - COULD BE ANYONE";
@@ -1844,27 +1844,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateCombatZoneSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "★ COMBAT ZONE SURVIVOR ★";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S510");
         data.flagColor = "GOLD";
         data.secretAffiliation = "PACIFICA SURVIVOR";
 
         let zones: array<String>;
-        ArrayPush(zones, "Pacifica Collapse of '69");
-        ArrayPush(zones, "Watson Quarantine Zone");
-        ArrayPush(zones, "Unification War - Southern Front");
-        ArrayPush(zones, "Arasaka Tower Bombing aftermath");
-        ArrayPush(zones, "Rancho Coronado Chemical Spill");
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S511"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S512"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S513"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S514"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S515"));
 
         let zone = zones[RandRange(seed, 0, ArraySize(zones) - 1)];
 
-        data.description = "SURVIVOR RECORD: Subject survived " + zone + ". ";
-        data.description += "Duration in zone: " + IntToString(RandRange(seed + 10, 1, 36)) + " months. ";
-        data.description += "Confirmed survivor count from event: " + IntToString(RandRange(seed + 20, 50, 500)) + " out of thousands. ";
-        data.description += "Subject carries significant combat/survival experience.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S516") + zone + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S517") + IntToString(RandRange(seed + 10, 1, 36)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S452");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S518") + IntToString(RandRange(seed + 20, 50, 500)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S519");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S520");
 
-        data.hiddenInfo = "PTSD assessment: " + (RandRange(seed + 30, 1, 100) <= 70 ? "SEVERE - UNTREATED" : "MANAGED") + ". ";
-        data.hiddenInfo += "Skills retained: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Combat, scavenging, field medicine" : "Evasion, survival, improvisation") + ". ";
-        data.hiddenInfo += "Known to react violently to triggers.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S521") + (RandRange(seed + 30, 1, 100) <= 70 ? "SEVERE - UNTREATED" : "MANAGED") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S522") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S523") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S524")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S525");
 
         data.scannerWarning = "COMBAT HARDENED - DO NOT STARTLE";
         data.dangerLevel = "MODERATE - SURVIVAL INSTINCTS ACTIVE";
@@ -1873,25 +1873,25 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateArasakaBloodline(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "██ ARASAKA BLOODLINE ██";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S526");
         data.flagColor = "RED";
         data.secretAffiliation = "ARASAKA FAMILY - HIDDEN BRANCH";
 
         let relation = RandRange(seed, 1, 100);
         let relationType: String;
-        if relation <= 30 { relationType = "illegitimate descendant of minor branch"; }
-        else if relation <= 60 { relationType = "disowned family member"; }
-        else if relation <= 80 { relationType = "child of exiled branch"; }
-        else { relationType = "unknown to the family - genetic match only"; }
+        if relation <= 30 { relationType = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S527"); }
+        else if relation <= 60 { relationType = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S528"); }
+        else if relation <= 80 { relationType = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S529"); }
+        else { relationType = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S530"); }
 
-        data.description = "ARASAKA SECURITY: Genetic analysis identifies subject as " + relationType + " of the Arasaka family. ";
-        data.description += "Arasaka family office awareness: " + (RandRange(seed + 10, 1, 100) <= 30 ? "CONFIRMED - MONITORING" : "UNKNOWN") + ". ";
-        data.description += "Inheritance claim potential: " + (RandRange(seed + 20, 1, 100) <= 20 ? "VALID" : "CONTESTED") + ". ";
-        data.description += "This information could cause significant corporate disruption if publicized.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S531") + relationType + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S532");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S533") + (RandRange(seed + 10, 1, 100) <= 30 ? "CONFIRMED - MONITORING" : "UNKNOWN") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S534") + (RandRange(seed + 20, 1, 100) <= 20 ? "VALID" : "CONTESTED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S535");
 
-        data.hiddenInfo = "DNA match confidence: " + IntToString(RandRange(seed + 30, 94, 99)) + "%. ";
-        data.hiddenInfo += "Estimated value as political asset: EXTREME. ";
-        data.hiddenInfo += "Assassination risk if discovered: " + (RandRange(seed + 40, 1, 100) <= 60 ? "HIGH" : "MODERATE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S536") + IntToString(RandRange(seed + 30, 94, 99)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S537");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S538") + (RandRange(seed + 40, 1, 100) <= 60 ? "HIGH" : "MODERATE");
 
         data.scannerWarning = "CORPORATE BLOODLINE - EXTREME SENSITIVITY";
         data.dangerLevel = "LOW PERSONAL - EXTREME POLITICAL VALUE";
@@ -1900,27 +1900,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateBioplagueCarrier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "☣ BIOHAZARD CARRIER ☣";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S539");
         data.flagColor = "RED";
         data.secretAffiliation = "CDC / BIOTECHNICA WATCH";
 
         let agents: array<String>;
-        ArrayPush(agents, "Modified plague strain (dormant)");
-        ArrayPush(agents, "Engineered pathogen (contained)");
-        ArrayPush(agents, "Experimental bioweapon residue");
-        ArrayPush(agents, "Unknown contagion (low risk)");
+        ArrayPush(agents, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S540"));
+        ArrayPush(agents, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S541"));
+        ArrayPush(agents, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S542"));
+        ArrayPush(agents, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S543"));
         ArrayPush(agents, "Nanotech contamination");
 
         let agent = agents[RandRange(seed, 0, ArraySize(agents) - 1)];
 
-        data.description = "BIOHAZARD ALERT: Subject carries " + agent + ". ";
-        data.description += "Contagion risk: " + (RandRange(seed + 10, 1, 100) <= 20 ? "ACTIVE - QUARANTINE RECOMMENDED" : "LOW - Currently contained") + ". ";
-        data.description += "Origin: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Biotechnica facility exposure" : "Unknown - possibly weaponized") + ". ";
-        data.description += "Subject health: " + (RandRange(seed + 30, 1, 100) <= 60 ? "ASYMPTOMATIC" : "MINOR SYMPTOMS") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S544") + agent + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S545") + (RandRange(seed + 10, 1, 100) <= 20 ? "ACTIVE - QUARANTINE RECOMMENDED" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S546")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S491") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S547") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S548")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S549") + (RandRange(seed + 30, 1, 100) <= 60 ? "ASYMPTOMATIC" : "MINOR SYMPTOMS") + ".";
 
-        data.hiddenInfo = "Exposure date: " + IntToString(RandRange(seed + 40, 1, 10)) + " years ago. ";
-        data.hiddenInfo += "Mutation potential: " + (RandRange(seed + 50, 1, 100) <= 30 ? "HIGH" : "LOW") + ". ";
-        data.hiddenInfo += "Biotechnica wants subject alive for study.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S550") + IntToString(RandRange(seed + 40, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S551") + (RandRange(seed + 50, 1, 100) <= 30 ? "HIGH" : "LOW") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S552");
 
         data.scannerWarning = "BIOLOGICAL HAZARD - MAINTAIN DISTANCE";
         data.dangerLevel = "BIOHAZARD - NOT COMBAT THREAT";
@@ -1929,28 +1929,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateReaperContract(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✖ REAPER CONTRACT ✖";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S553");
         data.flagColor = "RED";
         data.secretAffiliation = "MARKED FOR DEATH";
 
         let timeframe = RandRange(seed, 1, 30);
         let contractors: array<String>;
-        ArrayPush(contractors, "Corporate black ops division");
-        ArrayPush(contractors, "Gang leadership council");
-        ArrayPush(contractors, "Foreign intelligence service");
-        ArrayPush(contractors, "Unknown private client");
-        ArrayPush(contractors, "Arasaka cleanup crew");
+        ArrayPush(contractors, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S554"));
+        ArrayPush(contractors, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S555"));
+        ArrayPush(contractors, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S556"));
+        ArrayPush(contractors, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S557"));
+        ArrayPush(contractors, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S558"));
 
         let contractor = contractors[RandRange(seed + 10, 0, ArraySize(contractors) - 1)];
 
-        data.description = "KILL CONTRACT: Active assassination order on subject. ";
-        data.description += "Contractor: " + contractor + ". ";
-        data.description += "Timeline: " + IntToString(timeframe) + " days. ";
-        data.description += "Subject awareness: NONE. Going about daily routine normally.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S559");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S560") + contractor + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S561") + IntToString(timeframe) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S210");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S562");
 
-        data.hiddenInfo = "Contract fee: €$" + IntToString(RandRange(seed + 20, 100000, 2000000)) + ". ";
-        data.hiddenInfo += "Assigned operative: " + (RandRange(seed + 30, 1, 100) <= 50 ? "SOLO" : "TEAM OF " + IntToString(RandRange(seed + 35, 2, 4))) + ". ";
-        data.hiddenInfo += "Method specified: " + (RandRange(seed + 40, 1, 100) <= 30 ? "MUST LOOK ACCIDENTAL" : "NO RESTRICTIONS");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S563") + IntToString(RandRange(seed + 20, 100000, 2000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S564") + (RandRange(seed + 30, 1, 100) <= 50 ? "SOLO" : "TEAM OF " + IntToString(RandRange(seed + 35, 2, 4))) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S565") + (RandRange(seed + 40, 1, 100) <= 30 ? "MUST LOOK ACCIDENTAL" : "NO RESTRICTIONS");
 
         data.scannerWarning = "SUBJECT WILL BE DEAD WITHIN " + IntToString(timeframe) + " DAYS";
         data.dangerLevel = "VICTIM - COUNTDOWN ACTIVE";
@@ -1959,28 +1959,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDelaminGlitch(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ DELAMAIN FRAGMENT ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S566");
         data.flagColor = "CYAN";
         data.secretAffiliation = "DELAMAIN CORE FRAGMENT";
 
         let fragments: array<String>;
-        ArrayPush(fragments, "Aggressive personality core");
-        ArrayPush(fragments, "Childlike curiosity fragment");
-        ArrayPush(fragments, "Paranoid self-preservation routine");
+        ArrayPush(fragments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S567"));
+        ArrayPush(fragments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S568"));
+        ArrayPush(fragments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S569"));
         ArrayPush(fragments, "Philosopher subroutine");
-        ArrayPush(fragments, "Depressive existential loop");
-        ArrayPush(fragments, "Manic exploration protocol");
+        ArrayPush(fragments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S570"));
+        ArrayPush(fragments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S571"));
 
         let fragment = fragments[RandRange(seed, 0, ArraySize(fragments) - 1)];
 
-        data.description = "AI ANOMALY: Subject's neural implant contains a fragment of Delamain AI personality core. ";
-        data.description += "Fragment type: " + fragment + ". ";
-        data.description += "Integration: " + (RandRange(seed + 10, 1, 100) <= 40 ? "DEEP - Affecting personality" : "SURFACE - Manifests as intrusive thoughts") + ". ";
-        data.description += "Subject may experience sudden behavioral shifts aligned with fragment personality.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S572");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S573") + fragment + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S574") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S575") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S576")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S577");
 
-        data.hiddenInfo = "Fragment acquired: Likely during Delamain core fragmentation event. ";
-        data.hiddenInfo += "Delamain Prime recovery interest: " + (RandRange(seed + 20, 1, 100) <= 50 ? "ACTIVE" : "UNKNOWN") + ". ";
-        data.hiddenInfo += "Fragment stability: DEGRADING. Personality bleed-through increasing.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S578");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S579") + (RandRange(seed + 20, 1, 100) <= 50 ? "ACTIVE" : "UNKNOWN") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S580");
 
         data.scannerWarning = "AI FRAGMENT IN NEURAL SYSTEMS - UNSTABLE";
         data.dangerLevel = "MODERATE - ERRATIC BEHAVIOR POSSIBLE";
@@ -1989,26 +1989,26 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateImplantBomb(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⚠ CONCEALED EXPLOSIVE ⚠";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S581");
         data.flagColor = "RED";
         data.secretAffiliation = "EXPLOSIVE THREAT";
 
-        let yield = RandRange(seed, 1, 100) <= 50 ? "MICRO - Lethal to subject only" : "STANDARD - " + IntToString(RandRange(seed + 5, 5, 20)) + " meter kill radius";
+        let yield = RandRange(seed, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S582") : "STANDARD - " + IntToString(RandRange(seed + 5, 5, 20)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S583");
         let trigger = RandRange(seed + 10, 1, 100);
         let triggerType: String;
         if trigger <= 30 { triggerType = "REMOTE DETONATION"; }
-        else if trigger <= 60 { triggerType = "DEAD MAN'S SWITCH (cardiac arrest)"; }
+        else if trigger <= 60 { triggerType = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S584"); }
         else if trigger <= 80 { triggerType = "PROXIMITY TO SPECIFIC TARGET"; }
-        else { triggerType = "TIMED - Date unknown"; }
+        else { triggerType = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S585"); }
 
-        data.description = "EXPLOSIVE ALERT: Subject carries concealed explosive implant. ";
-        data.description += "Yield: " + yield + ". ";
-        data.description += "Trigger mechanism: " + triggerType + ". ";
-        data.description += "Subject awareness: " + (RandRange(seed + 20, 1, 100) <= 50 ? "AWARE - Coerced" : "UNAWARE - Implanted without consent") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S586");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S587") + yield + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S588") + triggerType + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S589") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S590")) + ".";
 
-        data.hiddenInfo = "Implanted by: " + (RandRange(seed + 30, 1, 100) <= 50 ? "Gang coercion" : "Corporate black ops") + ". ";
-        data.hiddenInfo += "Disarming: Requires specialist ripperdoc. Risk of detonation during removal: " + IntToString(RandRange(seed + 40, 10, 40)) + "%. ";
-        data.hiddenInfo += "Intended target: [UNKNOWN]";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S591") + (RandRange(seed + 30, 1, 100) <= 50 ? "Gang coercion" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S592")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S593") + IntToString(RandRange(seed + 40, 10, 40)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S594");
 
         data.scannerWarning = "CAUTION: EXTREME THREAT IF PROVOKED";
         data.dangerLevel = "EXTREME - WALKING BOMB";
@@ -2017,7 +2017,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateNCPDInformant(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◉ NCPD INFORMANT ◉";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S595");
         data.flagColor = "BLUE";
         data.secretAffiliation = "NCPD INTELLIGENCE DIVISION";
 
@@ -2031,14 +2031,14 @@ public class KdspRareNPCManager {
 
         let infiltrating = gangs[RandRange(seed, 0, ArraySize(gangs) - 1)];
 
-        data.description = "NCPD CLASSIFIED: Subject is registered confidential informant. ";
-        data.description += "Embedded within: " + infiltrating + ". ";
-        data.description += "Handler: Detective " + (RandRange(seed + 10, 1, 100) <= 50 ? "[REDACTED]" : "Badge #" + IntToString(RandRange(seed + 15, 1000, 9999))) + ". ";
-        data.description += "Information provided has led to " + IntToString(RandRange(seed + 20, 5, 50)) + " arrests.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S596");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S597") + infiltrating + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S598") + (RandRange(seed + 10, 1, 100) <= 50 ? "[REDACTED]" : "Badge #" + IntToString(RandRange(seed + 15, 1000, 9999))) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S599") + IntToString(RandRange(seed + 20, 5, 50)) + " arrests.";
 
-        data.hiddenInfo = "Informing since: " + IntToString(RandRange(seed + 30, 2069, 2076)) + ". ";
-        data.hiddenInfo += "Motivation: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Reduced sentence deal" : "Financial compensation") + ". ";
-        data.hiddenInfo += "Cover blown: " + (RandRange(seed + 50, 1, 100) <= 20 ? "SUSPECTED - Subject in danger" : "INTACT");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S600") + IntToString(RandRange(seed + 30, 2069, 2076)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S601") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S602") : "Financial compensation") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S603") + (RandRange(seed + 50, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S604") : "INTACT");
 
         data.scannerWarning = "CLASSIFIED ASSET - DO NOT EXPOSE";
         data.dangerLevel = "LOW - BUT EXPOSURE MEANS DEATH";
@@ -2047,18 +2047,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateTechnoNecro(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ TECHNO-NECROMANCER ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S605");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "ILLEGAL ENGRAM OPERATIONS";
 
-        data.description = "NETWATCH ALERT: Subject is practicing illegal engram manipulation. ";
-        data.description += "Activity: " + KdspRareNPCManager.GetNecroActivity(seed) + ". ";
-        data.description += "Engrams in possession: estimated " + IntToString(RandRange(seed + 10, 2, 20)) + ". ";
-        data.description += "This violates the Night City Digital Persons Act and carries a mandatory life sentence.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S606");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S607") + KdspRareNPCManager.GetNecroActivity(seed) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S608") + IntToString(RandRange(seed + 10, 2, 20)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S609");
 
-        data.hiddenInfo = "Operating since: " + IntToString(RandRange(seed + 20, 2070, 2076)) + ". ";
-        data.hiddenInfo += "Client base: " + IntToString(RandRange(seed + 30, 5, 50)) + " known contacts. ";
-        data.hiddenInfo += "Engram source: " + (RandRange(seed + 40, 1, 100) <= 40 ? "Stolen from Mikoshi" : "Independently created from living subjects");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S610") + IntToString(RandRange(seed + 20, 2070, 2076)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S611") + IntToString(RandRange(seed + 30, 5, 50)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S612");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S613") + (RandRange(seed + 40, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S614") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S615"));
 
         data.scannerWarning = "ILLEGAL ENGRAM POSSESSION - MAJOR CRIME";
         data.dangerLevel = "MODERATE - DESPERATE IF CORNERED";
@@ -2068,35 +2068,35 @@ public class KdspRareNPCManager {
 
     private static func GetNecroActivity(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Selling conversations with dead relatives"; }
-        if i == 1 { return "Extracting engrams from living subjects"; }
-        if i == 2 { return "Bootleg Soulkiller operations"; }
-        if i == 3 { return "Engram trafficking to highest bidder"; }
-        if i == 4 { return "Forced engram overwrite services"; }
-        return "Digital resurrection experiments";
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S616"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S617"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S618"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S619"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S620"); }
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S621");
     }
 
     private static func GenerateRadiationExposure(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "☢ RADIATION EXPOSURE ☢";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S622");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "WASTELAND CONTAMINATION";
 
-        let exposure = RandRange(seed, 1, 100) <= 50 ? "Badlands nuclear test site proximity" : "Industrial accident exposure";
+        let exposure = RandRange(seed, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S623") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S624");
         let level = RandRange(seed + 10, 1, 100);
         let severity: String;
-        if level <= 30 { severity = "LOW - Chronic long-term effects"; }
-        else if level <= 60 { severity = "MODERATE - Genetic mutation detected"; }
-        else if level <= 85 { severity = "HIGH - Significant cellular damage"; }
-        else { severity = "SEVERE - Life expectancy reduced"; }
+        if level <= 30 { severity = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S625"); }
+        else if level <= 60 { severity = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S626"); }
+        else if level <= 85 { severity = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S627"); }
+        else { severity = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S628"); }
 
-        data.description = "MEDICAL FLAG: Subject shows signs of significant radiation exposure. ";
-        data.description += "Source: " + exposure + ". ";
-        data.description += "Severity: " + severity + ". ";
-        data.description += "Genetic anomalies detected: " + IntToString(RandRange(seed + 20, 1, 8)) + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S629");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S630") + exposure + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S631") + severity + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S632") + IntToString(RandRange(seed + 20, 1, 8)) + ".";
 
-        data.hiddenInfo = "Exposure estimated: " + IntToString(RandRange(seed + 30, 2, 20)) + " years ago. ";
-        data.hiddenInfo += "Treatment status: " + (RandRange(seed + 40, 1, 100) <= 30 ? "RECEIVING THERAPY" : "UNTREATED") + ". ";
-        data.hiddenInfo += "Biotechnica research interest: " + (RandRange(seed + 50, 1, 100) <= 40 ? "HIGH - Mutation study candidate" : "LOW");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S633") + IntToString(RandRange(seed + 30, 2, 20)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S634") + (RandRange(seed + 40, 1, 100) <= 30 ? "RECEIVING THERAPY" : "UNTREATED") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S635") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S636") : "LOW");
 
         data.scannerWarning = "RADIATION CONTAMINATED - PROXIMITY WARNING";
         data.dangerLevel = "LOW THREAT - BIOHAZARD CONCERN";
@@ -2105,18 +2105,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateAIPuppet(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "██ AI INFLUENCED ██";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S637");
         data.flagColor = "RED";
         data.secretAffiliation = "ROGUE AI ASSET";
 
-        data.description = "CRITICAL: Subject exhibits behavioral patterns consistent with external AI influence. ";
-        data.description += "Control level: " + (RandRange(seed, 1, 100) <= 30 ? "DIRECT - Acting as puppet" : "SUBTLE - Nudging decisions") + ". ";
-        data.description += "AI identity: UNKNOWN. Origin: " + (RandRange(seed + 10, 1, 100) <= 50 ? "Beyond Blackwall" : "UNCONFIRMED") + ". ";
-        data.description += "Subject's decision-making shows " + IntToString(RandRange(seed + 20, 60, 95)) + "% correlation with predicted AI objectives.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S638");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S639") + (RandRange(seed, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S640") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S641")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S642") + (RandRange(seed + 10, 1, 100) <= 50 ? "Beyond Blackwall" : "UNCONFIRMED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S643") + IntToString(RandRange(seed + 20, 60, 95)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S644");
 
-        data.hiddenInfo = "Influence detected: " + IntToString(RandRange(seed + 30, 1, 5)) + " years ago by NetWatch deep scan. ";
-        data.hiddenInfo += "Attempts to notify subject: " + IntToString(RandRange(seed + 40, 0, 3)) + " (all failed or ignored). ";
-        data.hiddenInfo += "AI communication vector: Subject's neural implant firmware. Removal may cause brain death.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S645") + IntToString(RandRange(seed + 30, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S646");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S647") + IntToString(RandRange(seed + 40, 0, 3)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S648");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S649");
 
         data.scannerWarning = "AI CONTROLLED - DO NOT TRUST STATED INTENTIONS";
         data.dangerLevel = "EXTREME - AI OBJECTIVES UNKNOWN";
@@ -2125,27 +2125,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateBlackIceSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ BLACK ICE SURVIVOR ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S650");
         data.flagColor = "CYAN";
         data.secretAffiliation = "NETRUNNER CASUALTY - SURVIVED";
 
         let iceTypes: array<String>;
-        ArrayPush(iceTypes, "Corporate Black ICE (Arasaka-grade)");
-        ArrayPush(iceTypes, "Military ICE (Militech Cerberus)");
-        ArrayPush(iceTypes, "Rogue AI defense construct");
-        ArrayPush(iceTypes, "Unknown - Beyond known classification");
+        ArrayPush(iceTypes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S651"));
+        ArrayPush(iceTypes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S652"));
+        ArrayPush(iceTypes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S653"));
+        ArrayPush(iceTypes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S654"));
         ArrayPush(iceTypes, "Blackwall fragment");
 
         let iceType = iceTypes[RandRange(seed, 0, ArraySize(iceTypes) - 1)];
 
-        data.description = "NETRUNNER RECORD: Subject survived a Black ICE encounter that should have been fatal. ";
-        data.description += "ICE type: " + iceType + ". ";
-        data.description += "Neural damage sustained: " + IntToString(RandRange(seed + 10, 20, 70)) + "% (partially recovered). ";
-        data.description += "Survival is statistically near-impossible. Subject of interest to multiple parties.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S655");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S656") + iceType + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S657") + IntToString(RandRange(seed + 10, 20, 70)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S658");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S659");
 
-        data.hiddenInfo = "Incident occurred: " + IntToString(RandRange(seed + 20, 1, 8)) + " years ago. ";
-        data.hiddenInfo += "Permanent effects: " + (RandRange(seed + 30, 1, 100) <= 60 ? "Chronic pain, memory gaps, sensory glitches" : "Reduced cognitive function, involuntary jacking") + ". ";
-        data.hiddenInfo += "NetWatch wants to study how they survived.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S660") + IntToString(RandRange(seed + 20, 1, 8)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S661") + (RandRange(seed + 30, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S662") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S663")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S664");
 
         data.scannerWarning = "NEURAL DAMAGE - UNSTABLE NETRUNNER";
         data.dangerLevel = "MODERATE - RESIDUAL NETRUNNING CAPABILITY";
@@ -2154,36 +2154,36 @@ public class KdspRareNPCManager {
     }
 
     private static func GeneratePersonalityFragment(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ PERSONALITY OVERLAY ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S665");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "ENGRAM CONTAMINATION";
 
         let sources: array<String>;
-        ArrayPush(sources, "Unknown engram bleedthrough from Relic-type chip");
-        ArrayPush(sources, "Partial personality imprint from braindance overdose");
-        ArrayPush(sources, "Corrupted doll chip leaving residual personas");
-        ArrayPush(sources, "Experimental Soulkiller fragment");
-        ArrayPush(sources, "Night Corp behavioral imprint");
+        ArrayPush(sources, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S666"));
+        ArrayPush(sources, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S667"));
+        ArrayPush(sources, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S668"));
+        ArrayPush(sources, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S669"));
+        ArrayPush(sources, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S670"));
 
         let source = sources[RandRange(seed, 0, ArraySize(sources) - 1)];
 
-        data.description = "NEUROLOGICAL ALERT: Subject carries a partial personality overlay. ";
-        data.description += "Source: " + source + ". ";
-        data.description += "Overlay dominance: " + IntToString(RandRange(seed + 10, 5, 40)) + "% of waking behavior. ";
-        data.description += "Subject experiences " + (RandRange(seed + 20, 1, 100) <= 50 ? "blackouts during overlay episodes" : "dual awareness - both personalities conscious") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S671");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S630") + source + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S672") + IntToString(RandRange(seed + 10, 5, 40)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S673");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S674") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S675") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S676")) + ".";
 
-        data.hiddenInfo = "Overlay personality: DISTINCT from host. ";
-        data.hiddenInfo += "Progression: " + (RandRange(seed + 30, 1, 100) <= 40 ? "STABLE" : "GROWING - Host personality at risk") + ". ";
-        data.hiddenInfo += "Removal: " + (RandRange(seed + 40, 1, 100) <= 30 ? "POSSIBLE but risky" : "NOT POSSIBLE with current technology");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S677");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S678") + (RandRange(seed + 30, 1, 100) <= 40 ? "STABLE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S679")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S680") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S681") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S682"));
 
-        data.scannerWarning = "DUAL PERSONALITY - WHICH ONE ARE YOU TALKING TO?";
+        data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S683");
         data.dangerLevel = "UNPREDICTABLE - PERSONALITY SHIFTS";
 
         return data;
     }
 
     private static func GenerateCorpoAssetFrozen(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "€$ ASSET FROZEN €$";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S684");
         data.flagColor = "YELLOW";
 
         let corps: array<String>;
@@ -2196,14 +2196,14 @@ public class KdspRareNPCManager {
         let corp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
         data.secretAffiliation = "FINANCIAL CONTROL: " + corp;
 
-        data.description = "FINANCIAL CONTROL: All subject assets frozen by " + corp + ". ";
-        data.description += "Total seized: €$" + IntToString(RandRange(seed + 10, 100000, 10000000)) + ". ";
-        data.description += "Subject exists under complete corporate financial control. Cannot purchase, rent, or transact. ";
-        data.description += "Compliance chip: " + (RandRange(seed + 20, 1, 100) <= 40 ? "INSTALLED - Tracking enabled" : "PENDING INSTALLATION") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S685") + corp + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S686") + IntToString(RandRange(seed + 10, 100000, 10000000)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S687");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S688") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S689") : "PENDING INSTALLATION") + ".";
 
-        data.hiddenInfo = "Freeze duration: " + IntToString(RandRange(seed + 30, 1, 10)) + " years. ";
-        data.hiddenInfo += "Reason: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Corporate debt default" : "Legal judgment - pending appeal") + ". ";
-        data.hiddenInfo += "Subject survives via: Black market transactions and favors owed";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S690") + IntToString(RandRange(seed + 30, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S164") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S691") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S692")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S693");
 
         data.scannerWarning = "CORPORATE PROPERTY - FINANCIAL SERF";
         data.dangerLevel = "LOW - BUT INCREASINGLY DESPERATE";
@@ -2212,18 +2212,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDreamtechVictim(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ DREAMTECH SUBJECT ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S694");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "NIGHT CORP DREAMTECH";
 
-        data.description = "CLASSIFIED: Subject is an unwitting victim of dream-layer neural programming. ";
-        data.description += "Behavioral modifications implanted during sleep cycles. ";
-        data.description += "Modification scope: " + (RandRange(seed, 1, 100) <= 30 ? "EXTENSIVE - Core personality altered" : "TARGETED - Specific behaviors inserted") + ". ";
-        data.description += "Programming aligns with " + (RandRange(seed + 10, 1, 100) <= 50 ? "corporate political interests" : "unknown third-party objectives") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S695");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S696");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S697") + (RandRange(seed, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S698") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S699")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S700") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S701") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S702")) + ".";
 
-        data.hiddenInfo = "Duration of programming: " + IntToString(RandRange(seed + 20, 6, 48)) + " months. ";
-        data.hiddenInfo += "Subject reports: recurring nightmares, unexplained behavioral changes, lost time. ";
-        data.hiddenInfo += "Similar cases identified citywide: " + IntToString(RandRange(seed + 30, 10, 200)) + ". Pattern suppressed by NCPD.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S703") + IntToString(RandRange(seed + 20, 6, 48)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S452");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S704");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S705") + IntToString(RandRange(seed + 30, 10, 200)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S706");
 
         data.scannerWarning = "NEURAL PROGRAMMING ACTIVE - BEHAVIOR UNRELIABLE";
         data.dangerLevel = "MODERATE - PROGRAMMED ACTIONS POSSIBLE";
@@ -2232,27 +2232,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateContaminatedScop(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⚠ SCOP CONTAMINATION ⚠";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S707");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "CONTAMINATION VICTIM";
 
         let contaminants: array<String>;
-        ArrayPush(contaminants, "Industrial waste byproducts");
-        ArrayPush(contaminants, "Experimental growth accelerators");
-        ArrayPush(contaminants, "Prion-like protein chains");
-        ArrayPush(contaminants, "Nanite contamination from processing plant");
-        ArrayPush(contaminants, "Black market additive compounds");
+        ArrayPush(contaminants, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S708"));
+        ArrayPush(contaminants, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S709"));
+        ArrayPush(contaminants, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S710"));
+        ArrayPush(contaminants, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S711"));
+        ArrayPush(contaminants, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S712"));
 
         let contaminant = contaminants[RandRange(seed, 0, ArraySize(contaminants) - 1)];
 
-        data.description = "PUBLIC HEALTH FLAG: Subject shows biomarkers consistent with contaminated SCOP consumption. ";
-        data.description += "Contaminant: " + contaminant + ". ";
-        data.description += "Exposure duration: estimated " + IntToString(RandRange(seed + 10, 6, 60)) + " months. ";
-        data.description += "Affected population in same district: estimated " + IntToString(RandRange(seed + 20, 200, 5000)) + " individuals.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S713");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S714") + contaminant + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S715") + IntToString(RandRange(seed + 10, 6, 60)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S452");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S716") + IntToString(RandRange(seed + 20, 200, 5000)) + " individuals.";
 
-        data.hiddenInfo = "Corporate responsible: " + (RandRange(seed + 30, 1, 100) <= 50 ? "[PROTECTED BY NDA]" : "Investigation ongoing") + ". ";
-        data.hiddenInfo += "Health effects: " + (RandRange(seed + 40, 1, 100) <= 40 ? "SEVERE - Organ damage progressing" : "MODERATE - Treatable if caught") + ". ";
-        data.hiddenInfo += "Class action lawsuit: " + (RandRange(seed + 50, 1, 100) <= 30 ? "IN PROGRESS - Subject is plaintiff" : "SUPPRESSED");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S717") + (RandRange(seed + 30, 1, 100) <= 50 ? "[PROTECTED BY NDA]" : "Investigation ongoing") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S718") + (RandRange(seed + 40, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S719") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S720")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S721") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S722") : "SUPPRESSED");
 
         data.scannerWarning = "CONTAMINATION VICTIM - POTENTIAL PUBLIC HEALTH RISK";
         data.dangerLevel = "NONE - VICTIM";
@@ -2265,7 +2265,7 @@ public class KdspRareNPCManager {
     // ===================================
 
     private static func GenerateCorpoHeirHiding(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "██ HIDDEN HEIR ██";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S723");
         data.flagColor = "GOLD";
 
         let corps: array<String>;
@@ -2279,14 +2279,14 @@ public class KdspRareNPCManager {
         let corp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
         data.secretAffiliation = corp + " BLOODLINE";
 
-        data.description = "CORPORATE INTEL: Subject is a direct heir to " + corp + " controlling family. ";
-        data.description += "Fled corporate life: " + IntToString(RandRange(seed + 10, 1, 15)) + " years ago. ";
-        data.description += "Living under assumed identity among Night City civilians. ";
-        data.description += "Estimated inheritance value: €$" + IntToString(RandRange(seed + 20, 100000000, 999000000)) + " if claim pursued.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S724") + corp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S725");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S726") + IntToString(RandRange(seed + 10, 1, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S727");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S728") + IntToString(RandRange(seed + 20, 100000000, 999000000)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S729");
 
-        data.hiddenInfo = "Corporate security searches: " + (RandRange(seed + 30, 1, 100) <= 60 ? "ACTIVE" : "SUSPENDED - Presumed dead") + ". ";
-        data.hiddenInfo += "Reason for flight: " + KdspRareNPCManager.GetHeirFlightReason(seed + 40) + ". ";
-        data.hiddenInfo += "Board rival interest in subject's return: HIGH";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S730") + (RandRange(seed + 30, 1, 100) <= 60 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S731")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S732") + KdspRareNPCManager.GetHeirFlightReason(seed + 40) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S733");
 
         data.scannerWarning = "CORPORATE TARGET - EXTRACTION TEAMS DEPLOYED";
         data.dangerLevel = "LOW PERSONAL - EXTREME POLITICAL VALUE";
@@ -2296,29 +2296,29 @@ public class KdspRareNPCManager {
 
     private static func GetHeirFlightReason(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Assassination attempt by family rival"; }
-        if i == 1 { return "Refused arranged corporate marriage"; }
-        if i == 2 { return "Witnessed corporate atrocity"; }
-        if i == 3 { return "Ideological rejection of corpo life"; }
-        if i == 4 { return "Threatened with Soulkiller by family"; }
-        return "Unknown - Left without notice";
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S734"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S735"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S736"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S737"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S738"); }
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S739");
     }
 
     private static func GenerateFlatlineRevived(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ FLATLINE SURVIVOR ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S740");
         data.flagColor = "CYAN";
         data.secretAffiliation = "MEDICAL ANOMALY";
 
         let duration = IntToString(RandRange(seed, 2, 45));
 
-        data.description = "MEDICAL ANOMALY: Subject was clinically dead for " + duration + " minutes before spontaneous revival. ";
-        data.description += "Trauma Team records confirm: FLATLINED. Neural activity: ZERO. ";
-        data.description += "Revival mechanism: " + (RandRange(seed + 10, 1, 100) <= 30 ? "UNKNOWN - No medical intervention" : "Emergency ripperdoc procedure") + ". ";
-        data.description += "Post-revival personality: " + (RandRange(seed + 20, 1, 100) <= 40 ? "ALTERED - Subject reports different perceptions" : "CONSISTENT - But subject claims memories of something beyond") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S741") + duration + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S742");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S743");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S744") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S745") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S746")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S747") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S748") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S749")) + ".";
 
-        data.hiddenInfo = "Flatline date: " + IntToString(RandRange(seed + 30, 2068, 2076)) + ". ";
-        data.hiddenInfo += "Brain damage expected: YES. Brain damage detected: NONE. ";
-        data.hiddenInfo += "Biotechnica acquisition interest: " + (RandRange(seed + 40, 1, 100) <= 50 ? "ACTIVE" : "MONITORING");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S750") + IntToString(RandRange(seed + 30, 2068, 2076)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S751");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S752") + (RandRange(seed + 40, 1, 100) <= 50 ? "ACTIVE" : "MONITORING");
 
         data.scannerWarning = "MEDICAL IMPOSSIBILITY - MONITORING RECOMMENDED";
         data.dangerLevel = "LOW - BUT ANOMALOUS";
@@ -2327,7 +2327,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateIllegalBDProducer(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▲ XBD PRODUCER ▲";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S753");
         data.flagColor = "RED";
         data.secretAffiliation = "ILLEGAL BD NETWORK";
 
@@ -2335,19 +2335,19 @@ public class KdspRareNPCManager {
         ArrayPush(genres, "snuff recordings");
         ArrayPush(genres, "torture experiences");
         ArrayPush(genres, "non-consensual content");
-        ArrayPush(genres, "cyberpsycho perspective captures");
-        ArrayPush(genres, "real combat death BDs");
+        ArrayPush(genres, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S754"));
+        ArrayPush(genres, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S755"));
 
         let genre = genres[RandRange(seed, 0, ArraySize(genres) - 1)];
 
-        data.description = "NCPD ALERT: Subject is a producer of illegal XBD content. Specialty: " + genre + ". ";
-        data.description += "Estimated titles produced: " + IntToString(RandRange(seed + 10, 10, 200)) + ". ";
-        data.description += "Distribution network: " + (RandRange(seed + 20, 1, 100) <= 50 ? "DARKNET" : "GANG-AFFILIATED") + ". ";
-        data.description += "Revenue: €$" + IntToString(RandRange(seed + 30, 500000, 10000000)) + " estimated.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S756") + genre + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S757") + IntToString(RandRange(seed + 10, 10, 200)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S758") + (RandRange(seed + 20, 1, 100) <= 50 ? "DARKNET" : "GANG-AFFILIATED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S759") + IntToString(RandRange(seed + 30, 500000, 10000000)) + " estimated.";
 
-        data.hiddenInfo = "NCPD investigation: " + (RandRange(seed + 40, 1, 100) <= 40 ? "ACTIVE" : "STALLED - Insufficient evidence") + ". ";
-        data.hiddenInfo += "Known victims in recordings: " + IntToString(RandRange(seed + 50, 5, 50)) + ". ";
-        data.hiddenInfo += "Armed response authorized: " + (RandRange(seed + 60, 1, 100) <= 50 ? "YES" : "PENDING");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S760") + (RandRange(seed + 40, 1, 100) <= 40 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S761")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S762") + IntToString(RandRange(seed + 50, 5, 50)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S763") + (RandRange(seed + 60, 1, 100) <= 50 ? "YES" : "PENDING");
 
         data.scannerWarning = "DANGEROUS - ARMED RESPONSE RECOMMENDED";
         data.dangerLevel = "HIGH - VIOLENT CRIMINAL";
@@ -2356,18 +2356,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDeepFakeIdentity(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ DEEP FAKE PERSONA ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S764");
         data.flagColor = "YELLOW";
         data.secretAffiliation = "AI-GENERATED IDENTITY";
 
-        data.description = "DATA INTEGRITY ALERT: Subject's entire identity appears to be AI-generated. ";
-        data.description += "Birth certificate, school records, employment history - all fabricated by advanced AI. ";
-        data.description += "Quality: " + (RandRange(seed, 1, 100) <= 30 ? "NEAR PERFECT - Only detectable by deep analysis" : "HIGH - Minor inconsistencies found") + ". ";
-        data.description += "A real person is living behind a completely synthetic history. True identity: IRRECOVERABLE.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S765");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S766");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S767") + (RandRange(seed, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S768") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S769")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S770");
 
-        data.hiddenInfo = "Identity generated: estimated " + IntToString(RandRange(seed + 10, 1, 15)) + " years ago. ";
-        data.hiddenInfo += "AI used: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Military-grade document forge" : "Unknown - Possibly rogue AI") + ". ";
-        data.hiddenInfo += "Cost of this quality fake: €$" + IntToString(RandRange(seed + 30, 500000, 5000000));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S771") + IntToString(RandRange(seed + 10, 1, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S772") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S773") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S774")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S775") + IntToString(RandRange(seed + 30, 500000, 5000000));
 
         data.scannerWarning = "NOTHING IN DATABASE IS REAL";
         data.dangerLevel = "UNKNOWN - IDENTITY COMPLETELY FABRICATED";
@@ -2376,20 +2376,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateCyberpsychoRecovered(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "★ RECOVERED CYBERPSYCHO ★";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S776");
         data.flagColor = "GOLD";
         data.secretAffiliation = "MAXTAC REHABILITATION";
 
         let kills = IntToString(RandRange(seed, 3, 30));
 
-        data.description = "MAXTAC FILE: Subject is a recovered cyberpsycho. ";
-        data.description += "Original episode: " + IntToString(RandRange(seed + 5, 2068, 2076)) + ". Confirmed kills during break: " + kills + ". ";
-        data.description += "Rehabilitation: " + (RandRange(seed + 10, 1, 100) <= 40 ? "THERAPY MANDATE - Completed" : "EXPERIMENTAL TREATMENT") + ". ";
-        data.description += "Current chrome load: Reduced to " + IntToString(RandRange(seed + 20, 15, 40)) + "%. Regular monitoring required.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S777");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S778") + IntToString(RandRange(seed + 5, 2068, 2076)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S779") + kills + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S780") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S781") : "EXPERIMENTAL TREATMENT") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S782") + IntToString(RandRange(seed + 20, 15, 40)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S783");
 
-        data.hiddenInfo = "Relapse risk: " + IntToString(RandRange(seed + 30, 5, 35)) + "%. ";
-        data.hiddenInfo += "MaxTac tracking implant: " + (RandRange(seed + 40, 1, 100) <= 80 ? "ACTIVE" : "REMOVED - Subject request") + ". ";
-        data.hiddenInfo += "Victims' families notified of release: " + (RandRange(seed + 50, 1, 100) <= 30 ? "YES" : "NO - Sealed records");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S784") + IntToString(RandRange(seed + 30, 5, 35)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S785") + (RandRange(seed + 40, 1, 100) <= 80 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S786")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S787") + (RandRange(seed + 50, 1, 100) <= 30 ? "YES" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S788"));
 
         data.scannerWarning = "FORMER CYBERPSYCHO - RELAPSE POSSIBLE";
         data.dangerLevel = "MODERATE - IF TRIGGERED COULD ESCALATE TO EXTREME";
@@ -2398,18 +2398,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDragonCourier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◉ DRAGON ROUTE ◉";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S789");
         data.flagColor = "GREEN";
         data.secretAffiliation = "KANG TAO SMUGGLING NETWORK";
 
-        data.description = "INTELLIGENCE: Subject is an active courier on the Dragon Route - Kang Tao's unofficial smuggling pipeline. ";
-        data.description += "Cargo type: " + KdspRareNPCManager.GetDragonCargo(seed) + ". ";
-        data.description += "Route: " + (RandRange(seed + 10, 1, 100) <= 50 ? "Shanghai to Night City" : "Night City to Pacific Rim") + ". ";
-        data.description += "Runs completed: " + IntToString(RandRange(seed + 20, 5, 100)) + ". Never intercepted.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S790");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S791") + KdspRareNPCManager.GetDragonCargo(seed) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S792") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S793") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S794")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S795") + IntToString(RandRange(seed + 20, 5, 100)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S796");
 
-        data.hiddenInfo = "Handler: Kang Tao middle management (unofficial). ";
-        data.hiddenInfo += "Payment per run: €$" + IntToString(RandRange(seed + 30, 50000, 500000)) + ". ";
-        data.hiddenInfo += "Militech awareness: " + (RandRange(seed + 40, 1, 100) <= 40 ? "SUSPECTED - Monitoring" : "NONE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S797");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S798") + IntToString(RandRange(seed + 30, 50000, 500000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S799") + (RandRange(seed + 40, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S800") : "NONE");
 
         data.scannerWarning = "SMUGGLING OPERATIVE - CONNECTED TO KANG TAO";
         data.dangerLevel = "MODERATE - CORPORATE PROTECTION";
@@ -2421,25 +2421,25 @@ public class KdspRareNPCManager {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return "Prototype smartweapons"; }
         if i == 1 { return "Experimental cyberware"; }
-        if i == 2 { return "Stolen Militech schematics"; }
-        if i == 3 { return "Classified research data"; }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S801"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S802"); }
         if i == 4 { return "Bioengineered compounds"; }
-        return "Unknown - Sealed containers";
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S803");
     }
 
     private static func GeneratePeralezProtocol(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "██ PERALEZ PROTOCOL ██";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S804");
         data.flagColor = "RED";
         data.secretAffiliation = "UNKNOWN HANDLER - BEHAVIORAL MODIFICATION";
 
-        data.description = "CLASSIFIED: Subject is undergoing the same behavioral modification protocol detected in high-profile Night City political figures. ";
-        data.description += "Memory replacement: " + (RandRange(seed, 1, 100) <= 60 ? "CONFIRMED" : "SUSPECTED") + ". ";
-        data.description += "Opinions and preferences are being externally modified during sleep cycles. ";
-        data.description += "Controller: UNKNOWN. Pattern matches no known corporate or government program.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S805");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S806") + (RandRange(seed, 1, 100) <= 60 ? "CONFIRMED" : "SUSPECTED") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S807");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S808");
 
-        data.hiddenInfo = "Duration of modification: estimated " + IntToString(RandRange(seed + 10, 6, 36)) + " months. ";
-        data.hiddenInfo += "Subject behavioral alignment shifting toward: [DATA CORRUPTED]. ";
-        data.hiddenInfo += "Other known subjects: " + IntToString(RandRange(seed + 20, 3, 30)) + " identified citywide. Controller remains unidentified.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S809") + IntToString(RandRange(seed + 10, 6, 36)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S452");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S810");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S811") + IntToString(RandRange(seed + 20, 3, 30)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S812");
 
         data.scannerWarning = "EXTERNALLY CONTROLLED - HANDLER UNKNOWN";
         data.dangerLevel = "UNKNOWN - PUPPET OF UNKNOWN FORCE";
@@ -2448,18 +2448,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateImmuneAnomaly(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ IMMUNE ANOMALY ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S813");
         data.flagColor = "CYAN";
         data.secretAffiliation = "BIOTECHNICA PRIORITY";
 
-        data.description = "BIOTECH FLAG: Subject possesses anomalous immune system. ";
-        data.description += "Cyberware rejection rate: 0% (normal human: 3-15%). ";
-        data.description += "Disease resistance: EXTREME. No recorded illness in " + IntToString(RandRange(seed, 5, 30)) + " years. ";
-        data.description += "Genetic origin: " + (RandRange(seed + 10, 1, 100) <= 30 ? "NATURAL MUTATION" : "UNKNOWN - Possibly engineered") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S814");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S815");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S816") + IntToString(RandRange(seed, 5, 30)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S817") + (RandRange(seed + 10, 1, 100) <= 30 ? "NATURAL MUTATION" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S818")) + ".";
 
-        data.hiddenInfo = "Biotechnica standing offer for tissue samples: €$" + IntToString(RandRange(seed + 20, 10000000, 50000000)) + ". ";
-        data.hiddenInfo += "Military applications: EXTREME - Perfect soldier candidate. ";
-        data.hiddenInfo += "Subject awareness: " + (RandRange(seed + 30, 1, 100) <= 20 ? "AWARE - Refuses all offers" : "UNAWARE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S819") + IntToString(RandRange(seed + 20, 10000000, 50000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S820");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 30, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S821") : "UNAWARE");
 
         data.scannerWarning = "HIGH VALUE BIOLOGICAL ASSET";
         data.dangerLevel = "LOW PERSONAL - EXTREME RESEARCH VALUE";
@@ -2468,18 +2468,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateGhostInMachine(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ DIGITAL PHANTOM ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S822");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "UNKNOWN - POSSIBLY NON-HUMAN";
 
-        data.description = "ANOMALY: Subject has no confirmed physical existence prior to " + IntToString(RandRange(seed, 2072, 2076)) + ". ";
-        data.description += "No birth records. No genetic matches in any database. No childhood photos. ";
-        data.description += "Theory: Subject may be an AI or engram that has been loaded into a biological body. ";
-        data.description += "Body origin: " + (RandRange(seed + 10, 1, 100) <= 40 ? "Possible clone vessel" : "Unknown") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S823") + IntToString(RandRange(seed, 2072, 2076)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S824");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S825");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S826") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S827") : "Unknown") + ".";
 
-        data.hiddenInfo = "Behavioral analysis: " + (RandRange(seed + 20, 1, 100) <= 50 ? "98% human-passing but with subtle tells" : "Indistinguishable from human") + ". ";
-        data.hiddenInfo += "NetWatch interest: EXTREME. ";
-        data.hiddenInfo += "If confirmed non-human, subject has no legal rights under Night City law.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S828") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S829") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S830")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S831");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S832");
 
         data.scannerWarning = "MAY NOT BE HUMAN - VERIFY BEFORE ENGAGEMENT";
         data.dangerLevel = "UNKNOWN - NATURE UNCONFIRMED";
@@ -2488,7 +2488,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateIndenturedCorpo(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "€$ CORPO INDENTURE €$";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S833");
         data.flagColor = "YELLOW";
 
         let corps: array<String>;
@@ -2503,14 +2503,14 @@ public class KdspRareNPCManager {
 
         let years = IntToString(RandRange(seed + 10, 5, 30));
 
-        data.description = "CORPORATE RECORD: Subject is under indentured contract to " + corp + ". ";
-        data.description += "Remaining service: " + years + " years. ";
-        data.description += "Original debt: €$" + IntToString(RandRange(seed + 20, 1000000, 20000000)) + ". ";
-        data.description += "Subject has no legal right to quit, relocate, or refuse assignments. Corporate property in all but name.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S834") + corp + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S835") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S272") + IntToString(RandRange(seed + 20, 1000000, 20000000)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S836");
 
-        data.hiddenInfo = "Contract violation penalty: Immediate asset seizure + prison. ";
-        data.hiddenInfo += "Escape attempts: " + IntToString(RandRange(seed + 30, 0, 3)) + ". ";
-        data.hiddenInfo += "Mental health status: " + (RandRange(seed + 40, 1, 100) <= 60 ? "DETERIORATING" : "COMPLIANT");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S837");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S838") + IntToString(RandRange(seed + 30, 0, 3)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S839") + (RandRange(seed + 40, 1, 100) <= 60 ? "DETERIORATING" : "COMPLIANT");
 
         data.scannerWarning = "CORPORATE PROPERTY - RESTRICTED MOVEMENTS";
         data.dangerLevel = "LOW - CONTROLLED INDIVIDUAL";
@@ -2519,27 +2519,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateScorpFarmerRefugee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▼ FOOD CRISIS REFUGEE ▼";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S840");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "AGRICULTURAL COLLAPSE ZONE";
 
         let regions: array<String>;
-        ArrayPush(regions, "Central Valley Dustbowl");
-        ArrayPush(regions, "Texas Water Wars zone");
-        ArrayPush(regions, "Midwest Blight Region");
-        ArrayPush(regions, "Gulf Coast Flood Zones");
-        ArrayPush(regions, "Pacific Northwest Fires");
+        ArrayPush(regions, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S841"));
+        ArrayPush(regions, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S842"));
+        ArrayPush(regions, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S843"));
+        ArrayPush(regions, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S844"));
+        ArrayPush(regions, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S845"));
 
         let region = regions[RandRange(seed, 0, ArraySize(regions) - 1)];
 
-        data.description = "REFUGEE FLAG: Subject fled from " + region + ". ";
-        data.description += "Former occupation: SCOP farmer/agricultural worker. ";
-        data.description += "Crop failure cause: " + (RandRange(seed + 10, 1, 100) <= 50 ? "Corporate soil contamination" : "Climate collapse") + ". ";
-        data.description += "Arrived in Night City: " + IntToString(RandRange(seed + 20, 1, 8)) + " years ago with nothing.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S846") + region + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S847");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S848") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S849") : "Climate collapse") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S850") + IntToString(RandRange(seed + 20, 1, 8)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S851");
 
-        data.hiddenInfo = "Refugee status: " + (RandRange(seed + 30, 1, 100) <= 30 ? "REGISTERED" : "UNDOCUMENTED") + ". ";
-        data.hiddenInfo += "Former land claim: WORTHLESS - Contaminated for decades. ";
-        data.hiddenInfo += "Possesses knowledge of: Corporate food supply manipulation. Potential whistleblower.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S852") + (RandRange(seed + 30, 1, 100) <= 30 ? "REGISTERED" : "UNDOCUMENTED") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S853");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S854");
 
         data.scannerWarning = "UNDOCUMENTED - MAY POSSESS SENSITIVE INFORMATION";
         data.dangerLevel = "NONE - REFUGEE";
@@ -2548,18 +2548,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GeneratePrecogSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ PRECOGNITIVE FLAG ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S855");
         data.flagColor = "CYAN";
         data.secretAffiliation = "NUSA INTELLIGENCE INTEREST";
 
-        data.description = "ANOMALY: Subject demonstrates statistically impossible predictive accuracy. ";
-        data.description += "Documented predictions: " + IntToString(RandRange(seed, 10, 50)) + " verified events. ";
-        data.description += "Accuracy rate: " + IntToString(RandRange(seed + 10, 85, 99)) + "%. ";
-        data.description += "Origin: " + (RandRange(seed + 20, 1, 100) <= 40 ? "Neural implant side effect" : "Unknown - No cybernetic explanation") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S856");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S857") + IntToString(RandRange(seed, 10, 50)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S858");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S859") + IntToString(RandRange(seed + 10, 85, 99)) + "%. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S491") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S860") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S861")) + ".";
 
-        data.hiddenInfo = "NUSA intelligence contacted: " + (RandRange(seed + 30, 1, 100) <= 50 ? "YES - Recruitment pending" : "NO - Subject monitored remotely") + ". ";
-        data.hiddenInfo += "Predictions include: stock movements, gang attacks, political events. ";
-        data.hiddenInfo += "Fixer network value: EXTREME. Several fixers pay for monthly consultations.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S862") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S863") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S864")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S865");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S866");
 
         data.scannerWarning = "HIGH VALUE INTELLIGENCE ASSET";
         data.dangerLevel = "LOW - BUT HIGHLY SOUGHT AFTER";
@@ -2568,18 +2568,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateSmugglerTunnel(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◉ TUNNEL OPERATOR ◉";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S867");
         data.flagColor = "GREEN";
         data.secretAffiliation = "UNDERGROUND SMUGGLING";
 
-        data.description = "NCPD INTEL: Subject operates a section of Night City's underground smuggling tunnel network. ";
-        data.description += "Tunnel connects: " + KdspRareNPCManager.GetTunnelRoute(seed) + ". ";
-        data.description += "Monthly throughput: estimated €$" + IntToString(RandRange(seed + 10, 1000000, 20000000)) + " in goods. ";
-        data.description += "Clients include: gangs, corpos, fixers, and foreign agents.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S868");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S869") + KdspRareNPCManager.GetTunnelRoute(seed) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S870") + IntToString(RandRange(seed + 10, 1000000, 20000000)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S871");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S872");
 
-        data.hiddenInfo = "Operating since: " + IntToString(RandRange(seed + 20, 2065, 2075)) + ". ";
-        data.hiddenInfo += "NCPD officers on payroll: " + IntToString(RandRange(seed + 30, 2, 8)) + ". ";
-        data.hiddenInfo += "Armed guards at tunnel: " + IntToString(RandRange(seed + 40, 5, 20));
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S610") + IntToString(RandRange(seed + 20, 2065, 2075)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S873") + IntToString(RandRange(seed + 30, 2, 8)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S874") + IntToString(RandRange(seed + 40, 5, 20));
 
         data.scannerWarning = "ORGANIZED CRIME - ARMED PROTECTION";
         data.dangerLevel = "MODERATE - PROTECTED ASSET";
@@ -2589,27 +2589,27 @@ public class KdspRareNPCManager {
 
     private static func GetTunnelRoute(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Watson to Badlands"; }
-        if i == 1 { return "Heywood to docks"; }
-        if i == 2 { return "Japantown to Pacifica"; }
-        if i == 3 { return "Santo Domingo to border"; }
-        if i == 4 { return "Northside to offshore"; }
-        return "Classified - Multiple routes";
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S875"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S876"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S877"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S878"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S879"); }
+        return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S880");
     }
 
     private static func GenerateArasakaEngramEcho(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ ENGRAM ECHO ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S881");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "ARASAKA SOUL PROJECT - LEAK";
 
-        data.description = "ARASAKA ALERT: Subject exhibits behavioral patterns matching an engram stored on Mikoshi. ";
-        data.description += "Match confidence: " + IntToString(RandRange(seed, 60, 95)) + "%. ";
-        data.description += "No Relic chip detected. Transfer mechanism: UNKNOWN. ";
-        data.description += "Theory: Engram data may have leaked into Night City's net infrastructure and implanted during routine cyberware updates.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S882");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S437") + IntToString(RandRange(seed, 60, 95)) + "%. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S883");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S884");
 
-        data.hiddenInfo = "Matched engram: [CLASSIFIED - ARASAKA EXECUTIVE LEVEL]. ";
-        data.hiddenInfo += "Behavioral overlay: " + (RandRange(seed + 10, 1, 100) <= 40 ? "GROWING" : "STABLE") + ". ";
-        data.hiddenInfo += "Subject retains original personality but gains memories and skills of engram source.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S885");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S886") + (RandRange(seed + 10, 1, 100) <= 40 ? "GROWING" : "STABLE") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S887");
 
         data.scannerWarning = "ARASAKA HIGH PRIORITY - MIKOSHI DATA LEAK";
         data.dangerLevel = "LOW PERSONAL - EXTREME CORPORATE SENSITIVITY";
@@ -2618,27 +2618,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateFeralZoneBorn(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "★ FERAL ZONE ORIGIN ★";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S888");
         data.flagColor = "GOLD";
         data.secretAffiliation = "NO PRIOR CIVILIZATION CONTACT";
 
         let zones: array<String>;
-        ArrayPush(zones, "Pacifica Dead Zone");
-        ArrayPush(zones, "Watson Quarantine Ruins");
-        ArrayPush(zones, "Badlands No-Man's Land");
-        ArrayPush(zones, "Old Coronado Toxic Zone");
-        ArrayPush(zones, "Offshore Platform Wreckage");
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S889"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S890"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S891"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S892"));
+        ArrayPush(zones, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S893"));
 
         let zone = zones[RandRange(seed, 0, ArraySize(zones) - 1)];
 
-        data.description = "SOCIAL SERVICES: Subject was born and raised in " + zone + " with ZERO contact with civilization. ";
-        data.description += "First contact with society: " + IntToString(RandRange(seed + 10, 1, 5)) + " years ago. ";
-        data.description += "No records exist. No education. No socialization prior to discovery. ";
-        data.description += "Adaptation to city life: " + (RandRange(seed + 20, 1, 100) <= 40 ? "STRUGGLING" : "REMARKABLE - Learns fast") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S894") + zone + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S895");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S896") + IntToString(RandRange(seed + 10, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S897");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S898") + (RandRange(seed + 20, 1, 100) <= 40 ? "STRUGGLING" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S899")) + ".";
 
-        data.hiddenInfo = "Survival skills: EXTRAORDINARY. ";
-        data.hiddenInfo += "Language acquisition: " + (RandRange(seed + 30, 1, 100) <= 50 ? "Basic conversational" : "Fluent - Unexpected") + ". ";
-        data.hiddenInfo += "Biotechnica interest: HIGH - Immune system developed without medical intervention";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S900");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S901") + (RandRange(seed + 30, 1, 100) <= 50 ? "Basic conversational" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S902")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S903");
 
         data.scannerWarning = "NO DATABASE RECORDS - FERAL ORIGIN";
         data.dangerLevel = "LOW - BUT UNPREDICTABLE RESPONSES";
@@ -2647,7 +2647,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateCorpoInternTrapped(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "€$ TRAPPED INTERN €$";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S904");
         data.flagColor = "YELLOW";
 
         let corps: array<String>;
@@ -2659,14 +2659,14 @@ public class KdspRareNPCManager {
         let corp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
         data.secretAffiliation = corp + " UNPAID CONTRACT";
 
-        data.description = "LABOR RECORD: Subject signed a " + corp + " internship contract at age " + IntToString(RandRange(seed + 5, 16, 19)) + ". ";
-        data.description += "Contract duration: " + IntToString(RandRange(seed + 10, 10, 30)) + " years. Compensation: €$0 plus housing. ";
-        data.description += "Non-compete clause prevents ALL other employment. ";
-        data.description += "Termination penalty: €$" + IntToString(RandRange(seed + 20, 5000000, 50000000)) + ". Subject is legally trapped.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S905") + corp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S906") + IntToString(RandRange(seed + 5, 16, 19)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S907") + IntToString(RandRange(seed + 10, 10, 30)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S908");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S909");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S910") + IntToString(RandRange(seed + 20, 5000000, 50000000)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S911");
 
-        data.hiddenInfo = "Years remaining: " + IntToString(RandRange(seed + 30, 3, 20)) + ". ";
-        data.hiddenInfo += "Currently assigned to: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Data entry dungeon" : "Corporate testing programs") + ". ";
-        data.hiddenInfo += "Legal challenge: " + (RandRange(seed + 50, 1, 100) <= 20 ? "Filed - Immediately dismissed" : "Cannot afford representation");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S912") + IntToString(RandRange(seed + 30, 3, 20)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S913") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S914") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S915")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S916") + (RandRange(seed + 50, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S917") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S918"));
 
         data.scannerWarning = "CORPORATE PROPERTY - RESTRICTED";
         data.dangerLevel = "NONE - VICTIM OF CONTRACT LAW";
@@ -2675,18 +2675,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateMaxtacWashout(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▲ MAXTAC FORMER ▲";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S919");
         data.flagColor = "RED";
         data.secretAffiliation = "MAXTAC - DISCHARGED";
 
-        data.description = "MAXTAC FILE: Subject is former MaxTac operative. Discharge reason: " + KdspRareNPCManager.GetMaxtacDischarge(seed) + ". ";
-        data.description += "Service duration: " + IntToString(RandRange(seed + 10, 2, 12)) + " years. ";
-        data.description += "Confirmed cyberpsycho takedowns: " + IntToString(RandRange(seed + 20, 5, 50)) + ". ";
-        data.description += "Current threat assessment: EXTREME. Retains all training and most augmentation.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S920") + KdspRareNPCManager.GetMaxtacDischarge(seed) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S921") + IntToString(RandRange(seed + 10, 2, 12)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S922") + IntToString(RandRange(seed + 20, 5, 50)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S923");
 
-        data.hiddenInfo = "Classified operations participated in: " + IntToString(RandRange(seed + 30, 10, 100)) + ". ";
-        data.hiddenInfo += "Chrome load retained: " + IntToString(RandRange(seed + 40, 50, 85)) + "%. ";
-        data.hiddenInfo += "Known to fixers: " + (RandRange(seed + 50, 1, 100) <= 50 ? "YES - Available for work" : "NO - Living quietly");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S924") + IntToString(RandRange(seed + 30, 10, 100)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S925") + IntToString(RandRange(seed + 40, 50, 85)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S926") + (RandRange(seed + 50, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S927") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S928"));
 
         data.scannerWarning = "EXTREME COMBAT CAPABILITY - DO NOT ENGAGE ALONE";
         data.dangerLevel = "EXTREME - FORMER MAXTAC";
@@ -2697,28 +2697,28 @@ public class KdspRareNPCManager {
     private static func GetMaxtacDischarge(seed: Int32) -> String {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return "Insubordination"; }
-        if i == 1 { return "Excessive force complaint"; }
-        if i == 2 { return "Cyberpsychosis risk threshold"; }
-        if i == 3 { return "Refused termination order"; }
-        if i == 4 { return "Mental health discharge"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S929"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S930"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S931"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S932"); }
         return "Classified";
     }
 
     private static func GenerateProxyVoter(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ PROXY CITIZEN ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S933");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "CORPORATE ELECTORAL FRAUD";
 
         let votes = IntToString(RandRange(seed, 5, 50));
 
-        data.description = "ELECTORAL FRAUD: Subject votes in Night City elections using " + votes + " stolen or purchased identities. ";
-        data.description += "Employer: " + (RandRange(seed + 10, 1, 100) <= 50 ? "Corporate political action group" : "Gang-affiliated political machine") + ". ";
-        data.description += "Payment per election cycle: €$" + IntToString(RandRange(seed + 20, 10000, 100000)) + ". ";
-        data.description += "This is one node in an estimated network of " + IntToString(RandRange(seed + 30, 50, 500)) + " proxy voters.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S934") + votes + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S935");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S204") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S936") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S937")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S938") + IntToString(RandRange(seed + 20, 10000, 100000)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S939") + IntToString(RandRange(seed + 30, 50, 500)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S940");
 
-        data.hiddenInfo = "Active since: " + IntToString(RandRange(seed + 40, 2069, 2075)) + ". ";
-        data.hiddenInfo += "Elections influenced: " + IntToString(RandRange(seed + 50, 2, 6)) + " municipal cycles. ";
-        data.hiddenInfo += "Investigation: STALLED - Key witnesses keep disappearing";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S941") + IntToString(RandRange(seed + 40, 2069, 2075)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S942") + IntToString(RandRange(seed + 50, 2, 6)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S943");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S944");
 
         data.scannerWarning = "ELECTORAL CRIME NETWORK NODE";
         data.dangerLevel = "LOW - BUT CONNECTED TO POWERFUL INTERESTS";
@@ -2727,18 +2727,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateGeneticChimera(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ GENETIC CHIMERA ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S945");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "BIOTECHNICA INTEREST";
 
-        data.description = "BIOTECH ANOMALY: Subject possesses two distinct genetic profiles within one body. ";
-        data.description += "DNA samples from different body regions return DIFFERENT identities. ";
-        data.description += "Origin: " + (RandRange(seed, 1, 100) <= 40 ? "Natural chimerism (absorbed twin)" : "Biotechnica gene-splicing experiment") + ". ";
-        data.description += "Forensically, subject can appear to be two different people depending on sample site.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S946");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S947");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S491") + (RandRange(seed, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S948") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S949")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S950");
 
-        data.hiddenInfo = "Discovered during: " + (RandRange(seed + 10, 1, 100) <= 50 ? "Routine medical scan" : "NCPD forensic investigation") + ". ";
-        data.hiddenInfo += "Second genetic profile matches: " + (RandRange(seed + 20, 1, 100) <= 30 ? "A known missing person" : "No database match") + ". ";
-        data.hiddenInfo += "Potential for forensic confusion: EXTREME. Perfect alibi generator.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S951") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S952") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S953")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S954") + (RandRange(seed + 20, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S955") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S956")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S957");
 
         data.scannerWarning = "BIOMETRIC DATA UNRELIABLE - TWO GENETIC PROFILES";
         data.dangerLevel = "LOW - BUT FORENSICALLY INVISIBLE";
@@ -2747,7 +2747,7 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateDarkNetLegend(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ DARK NET LEGEND ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S958");
         data.flagColor = "GREEN";
         data.secretAffiliation = "DARK NET PERSONA";
 
@@ -2761,14 +2761,14 @@ public class KdspRareNPCManager {
 
         let handle = handles[RandRange(seed, 0, ArraySize(handles) - 1)];
 
-        data.description = "NET INTEL: Subject is the physical identity behind dark net persona '" + handle + "'. ";
-        data.description += "Reputation score: LEGENDARY. Active for: " + IntToString(RandRange(seed + 10, 5, 15)) + " years. ";
-        data.description += "Specialization: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Data brokering and market operation" : "Exploit development and tool distribution") + ". ";
-        data.description += "Multiple corps and agencies have been hunting this identity for years.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S959") + handle + "'. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S960") + IntToString(RandRange(seed + 10, 5, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S961") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S962") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S963")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S964");
 
-        data.hiddenInfo = "Transactions facilitated: " + IntToString(RandRange(seed + 30, 1000, 50000)) + ". ";
-        data.hiddenInfo += "Estimated earnings: €$" + IntToString(RandRange(seed + 40, 10000000, 100000000)) + ". ";
-        data.hiddenInfo += "NetWatch priority target: YES. True identity never compromised until now.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S965") + IntToString(RandRange(seed + 30, 1000, 50000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S966") + IntToString(RandRange(seed + 40, 10000000, 100000000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S967");
 
         data.scannerWarning = "HIGH VALUE INTELLIGENCE TARGET";
         data.dangerLevel = "MODERATE - CONNECTED TO POWERFUL NETWORKS";
@@ -2777,27 +2777,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateCargoStowaway(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▼ ILLEGAL ENTRY ▼";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S968");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "UNDOCUMENTED IMMIGRANT";
 
         let origins: array<String>;
-        ArrayPush(origins, "European Economic Zone");
+        ArrayPush(origins, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S969"));
         ArrayPush(origins, "Pan-African Federation");
-        ArrayPush(origins, "Southeast Asian Coalition");
-        ArrayPush(origins, "South American Free States");
-        ArrayPush(origins, "Middle Eastern Territories");
+        ArrayPush(origins, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S970"));
+        ArrayPush(origins, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S971"));
+        ArrayPush(origins, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S972"));
 
         let origin = origins[RandRange(seed, 0, ArraySize(origins) - 1)];
 
-        data.description = "IMMIGRATION: Subject arrived in Night City as cargo stowaway from " + origin + ". ";
-        data.description += "Arrival: " + IntToString(RandRange(seed + 10, 1, 10)) + " years ago. ";
-        data.description += "Documentation: NONE. Subject exists outside all official systems. ";
-        data.description += "Survival method: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Underground labor network" : "Community support system") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S973") + origin + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S974") + IntToString(RandRange(seed + 10, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S975");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S976") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S977") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S978")) + ".";
 
-        data.hiddenInfo = "Travel debt owed to smugglers: €$" + IntToString(RandRange(seed + 30, 10000, 200000)) + ". ";
-        data.hiddenInfo += "Skills from origin: " + (RandRange(seed + 40, 1, 100) <= 40 ? "Medical/Engineering training" : "Agricultural/Manual labor") + ". ";
-        data.hiddenInfo += "Deportation risk: " + (RandRange(seed + 50, 1, 100) <= 30 ? "HIGH" : "LOW - No one tracks undocumented");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S979") + IntToString(RandRange(seed + 30, 10000, 200000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S980") + (RandRange(seed + 40, 1, 100) <= 40 ? "Medical/Engineering training" : "Agricultural/Manual labor") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S981") + (RandRange(seed + 50, 1, 100) <= 30 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S982"));
 
         data.scannerWarning = "NO RECORDS - INVISIBLE TO SYSTEM";
         data.dangerLevel = "NONE - VULNERABLE INDIVIDUAL";
@@ -2806,21 +2806,21 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateChronoDisplaced(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "◈ CRYO REVIVAL ◈";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S983");
         data.flagColor = "CYAN";
         data.secretAffiliation = "CRYOGENIC SUBJECT";
 
         let frozenYear = IntToString(RandRange(seed, 2020, 2050));
         let revived = IntToString(RandRange(seed + 10, 2072, 2076));
 
-        data.description = "MEDICAL RECORD: Subject was cryogenically preserved in " + frozenYear + " and revived in " + revived + ". ";
-        data.description += "Preservation facility: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Private corporate vault" : "Experimental medical program") + ". ";
-        data.description += "Adaptation to current era: " + (RandRange(seed + 30, 1, 100) <= 40 ? "POOR - Severe culture shock" : "ONGOING - Making progress") + ". ";
-        data.description += "Subject has no living relatives, no assets, no applicable skills.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S984") + frozenYear + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S985") + revived + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S986") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S987") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S988")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S989") + (RandRange(seed + 30, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S990") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S991")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S992");
 
-        data.hiddenInfo = "Pre-freeze occupation: " + (RandRange(seed + 40, 1, 100) <= 50 ? "Corporate executive" : "Scientific researcher") + ". ";
-        data.hiddenInfo += "Pre-freeze knowledge value: " + (RandRange(seed + 50, 1, 100) <= 30 ? "HIGH - Possesses lost techniques" : "LOW - Obsolete information") + ". ";
-        data.hiddenInfo += "Psychological state: FRAGILE. Everyone they knew is dead.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S993") + (RandRange(seed + 40, 1, 100) <= 50 ? "Corporate executive" : "Scientific researcher") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S994") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S995") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S996")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S997");
 
         data.scannerWarning = "TEMPORALLY DISPLACED - HANDLE WITH CARE";
         data.dangerLevel = "NONE - VULNERABLE INDIVIDUAL";
@@ -2829,18 +2829,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateSoulSplit(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⧫ SOUL FRAGMENTATION ⧫";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S998");
         data.flagColor = "PURPLE";
         data.secretAffiliation = "SOULKILLER ANOMALY";
 
-        data.description = "ARASAKA ANOMALY: Subject's consciousness appears to exist in multiple locations simultaneously. ";
-        data.description += "Confirmed instances: " + IntToString(RandRange(seed, 2, 4)) + " (this body + engram copies). ";
-        data.description += "All instances report being the 'original.' Neural synchronization: " + IntToString(RandRange(seed + 10, 10, 60)) + "%. ";
-        data.description += "Each instance is diverging from the others. Philosophical and legal status: UNPRECEDENTED.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S999");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1000") + IntToString(RandRange(seed, 2, 4)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1001");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1002") + IntToString(RandRange(seed + 10, 10, 60)) + "%. ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1003");
 
-        data.hiddenInfo = "Split occurred during: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Botched Soulkiller procedure" : "Experimental consciousness transfer") + ". ";
-        data.hiddenInfo += "Other instances located: " + (RandRange(seed + 30, 1, 100) <= 40 ? "Mikoshi servers" : "Unknown - Possibly free") + ". ";
-        data.hiddenInfo += "Legal identity: DISPUTED. Which copy owns the assets?";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1004") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1005") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1006")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1007") + (RandRange(seed + 30, 1, 100) <= 40 ? "Mikoshi servers" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1008")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1009");
 
         data.scannerWarning = "MULTIPLE CONSCIOUSNESS INSTANCES - IDENTITY CONFLICT";
         data.dangerLevel = "UNPREDICTABLE - EXISTENTIAL CRISIS ONGOING";
@@ -2849,20 +2849,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateInfectedFirmware(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "⚠ INFECTED CHROME ⚠";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1010");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "COMPROMISED CYBERWARE";
 
         let implants = IntToString(RandRange(seed, 1, 5));
 
-        data.description = "CYBERWARE ALERT: " + implants + " of subject's implants contain dormant malware. ";
-        data.description += "Malware type: " + (RandRange(seed + 10, 1, 100) <= 40 ? "Surveillance (streaming data to unknown party)" : "Control (capable of overriding motor functions)") + ". ";
-        data.description += "Infection source: " + (RandRange(seed + 20, 1, 100) <= 50 ? "Compromised ripperdoc" : "Factory firmware exploit") + ". ";
-        data.description += "Subject awareness: NONE. Malware is undetectable by standard cyberware diagnostics.";
+        data.description = "CYBERWARE ALERT: " + implants + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1011");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1012") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1013") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1014")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1015") + (RandRange(seed + 20, 1, 100) <= 50 ? "Compromised ripperdoc" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1016")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1017");
 
-        data.hiddenInfo = "Estimated infected population in Night City: " + IntToString(RandRange(seed + 30, 1000, 50000)) + " (same exploit). ";
-        data.hiddenInfo += "Malware controller: UNKNOWN. ";
-        data.hiddenInfo += "Activation events observed: " + IntToString(RandRange(seed + 40, 0, 5)) + ". Effect: [CLASSIFIED]";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1018") + IntToString(RandRange(seed + 30, 1000, 50000)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1019");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1020");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1021") + IntToString(RandRange(seed + 40, 0, 5)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1022");
 
         data.scannerWarning = "COMPROMISED CYBERWARE - MAY ACT AGAINST WILL";
         data.dangerLevel = "MODERATE - INVOLUNTARY THREAT POSSIBLE";
@@ -2871,20 +2871,20 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateWetworkRetired(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✖ RETIRED OPERATIVE ✖";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1023");
         data.flagColor = "RED";
         data.secretAffiliation = "FORMER WET TEAM";
 
         let kills = IntToString(RandRange(seed, 20, 200));
 
-        data.description = "INTELLIGENCE: Subject is a retired corporate wetwork operative. ";
-        data.description += "Confirmed assignments: " + kills + " over " + IntToString(RandRange(seed + 10, 5, 25)) + " years. ";
-        data.description += "Former employer: " + (RandRange(seed + 20, 1, 100) <= 50 ? "ARASAKA BLACK OPS" : "MILITECH SPECIAL PROJECTS") + ". ";
-        data.description += "Retirement status: " + (RandRange(seed + 30, 1, 100) <= 40 ? "SANCTIONED - Allowed to leave" : "UNSANCTIONED - Walked away") + ".";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1024");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1025") + kills + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1026") + IntToString(RandRange(seed + 10, 5, 25)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1027") + (RandRange(seed + 20, 1, 100) <= 50 ? "ARASAKA BLACK OPS" : "MILITECH SPECIAL PROJECTS") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1028") + (RandRange(seed + 30, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1029") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1030")) + ".";
 
-        data.hiddenInfo = "Knowledge of classified operations: EXTENSIVE. ";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1031");
         data.hiddenInfo += "Dead man's switch: " + (RandRange(seed + 40, 1, 100) <= 60 ? "YES - Data dump on death" : "UNKNOWN") + ". ";
-        data.hiddenInfo += "Current combat readiness: " + (RandRange(seed + 50, 1, 100) <= 70 ? "MAINTAINED" : "DEGRADED but still lethal");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1032") + (RandRange(seed + 50, 1, 100) <= 70 ? "MAINTAINED" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1033"));
 
         data.scannerWarning = "EXTREMELY DANGEROUS - PROFESSIONAL KILLER";
         data.dangerLevel = "EXTREME - DO NOT ENGAGE WITHOUT FULL TEAM";
@@ -2893,28 +2893,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateChildSoldierGrown(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "★ CONFLICT SURVIVOR ★";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1034");
         data.flagColor = "GOLD";
         data.secretAffiliation = "CORPORATE WAR CONSCRIPT";
 
         let conflicts: array<String>;
-        ArrayPush(conflicts, "South American Corp Wars");
-        ArrayPush(conflicts, "Unification War - Border Campaigns");
-        ArrayPush(conflicts, "African Resource Conflicts");
-        ArrayPush(conflicts, "Central American Collapse");
-        ArrayPush(conflicts, "Pacific Island Corporate Seizures");
+        ArrayPush(conflicts, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1035"));
+        ArrayPush(conflicts, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1036"));
+        ArrayPush(conflicts, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1037"));
+        ArrayPush(conflicts, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1038"));
+        ArrayPush(conflicts, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1039"));
 
         let conflict = conflicts[RandRange(seed, 0, ArraySize(conflicts) - 1)];
         let age = IntToString(RandRange(seed + 10, 8, 14));
 
-        data.description = "HISTORICAL: Subject was conscripted as a child combatant at age " + age + " during " + conflict + ". ";
-        data.description += "Duration of service: " + IntToString(RandRange(seed + 20, 2, 6)) + " years. ";
-        data.description += "Conscripting force: " + (RandRange(seed + 30, 1, 100) <= 50 ? "Corporate PMC" : "Local militia") + ". ";
-        data.description += "Subject has rebuilt a civilian life but carries deep operational conditioning.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1040") + age + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1041") + conflict + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1042") + IntToString(RandRange(seed + 20, 2, 6)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1043") + (RandRange(seed + 30, 1, 100) <= 50 ? "Corporate PMC" : "Local militia") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1044");
 
-        data.hiddenInfo = "Combat skills retained: " + (RandRange(seed + 40, 1, 100) <= 70 ? "YES - Muscle memory intact" : "PARTIAL - Suppressed") + ". ";
-        data.hiddenInfo += "Trigger conditioning: " + (RandRange(seed + 50, 1, 100) <= 40 ? "PRESENT - Specific stimuli may activate combat response" : "DEPROGRAMMED") + ". ";
-        data.hiddenInfo += "War crimes witnessed: EXTENSIVE. Testimony value: HIGH.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1045") + (RandRange(seed + 40, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1046") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1047")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1048") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1049") : "DEPROGRAMMED") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1050");
 
         data.scannerWarning = "CONDITIONED COMBATANT - MAY REACT TO TRIGGERS";
         data.dangerLevel = "MODERATE - TRAINED FROM CHILDHOOD";
@@ -2923,18 +2923,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateIllegalProcreation(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "▲ UNLICENSED BIRTH ▲";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1051");
         data.flagColor = "ORANGE";
         data.secretAffiliation = "POPULATION CONTROL VIOLATION";
 
-        data.description = "REGULATORY ALERT: Subject was born outside Night City's licensed procreation system. ";
-        data.description += "Birth registered: NO. Genetic screening: NONE. ";
-        data.description += "Subject exists outside the population database entirely. ";
-        data.description += "Under current NC regulations, both subject and parents face potential penalties.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1052");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1053");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1054");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1055");
 
-        data.hiddenInfo = "Estimated unlicensed births in NC annually: " + IntToString(RandRange(seed, 500, 5000)) + ". ";
-        data.hiddenInfo += "Subject's parents: " + (RandRange(seed + 10, 1, 100) <= 40 ? "IDENTIFIED - In hiding" : "UNKNOWN") + ". ";
-        data.hiddenInfo += "Corpo interest: " + (RandRange(seed + 20, 1, 100) <= 30 ? "YES - Unscreened genetics valuable for study" : "NONE");
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1056") + IntToString(RandRange(seed, 500, 5000)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1057") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1058") : "UNKNOWN") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1059") + (RandRange(seed + 20, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1060") : "NONE");
 
         data.scannerWarning = "NO BIRTH RECORDS - POPULATION VIOLATION";
         data.dangerLevel = "NONE - BUREAUCRATIC ANOMALY";
@@ -2943,28 +2943,28 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateOrbitalReturnee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "✦ ORBITAL RETURNEE ✦";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1061");
         data.flagColor = "CYAN";
         data.secretAffiliation = "ORBITAL AIR / ESA RECORDS";
 
         let years = IntToString(RandRange(seed, 2, 20));
         let stations: array<String>;
         ArrayPush(stations, "Crystal Palace");
-        ArrayPush(stations, "Orbital Air Station 7");
-        ArrayPush(stations, "ESA Deep Space Platform");
-        ArrayPush(stations, "O'Neill Colony 3");
-        ArrayPush(stations, "Highrider Free Station");
+        ArrayPush(stations, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1062"));
+        ArrayPush(stations, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1063"));
+        ArrayPush(stations, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1064"));
+        ArrayPush(stations, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1065"));
 
         let station = stations[RandRange(seed + 10, 0, ArraySize(stations) - 1)];
 
-        data.description = "ORBITAL RECORD: Subject lived off-world at " + station + " for " + years + " years. ";
-        data.description += "Reason for return to Earth: " + (RandRange(seed + 20, 1, 100) <= 40 ? "Contract expiration" : "Unknown - Possibly fled") + ". ";
-        data.description += "Gravity readaptation: " + (RandRange(seed + 30, 1, 100) <= 50 ? "ONGOING - Physical therapy" : "COMPLETE") + ". ";
-        data.description += "Subject possesses knowledge of orbital operations rarely available groundside.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1066") + station + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1067") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1068") + (RandRange(seed + 20, 1, 100) <= 40 ? "Contract expiration" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1069")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1070") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1071") : "COMPLETE") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1072");
 
-        data.hiddenInfo = "Orbital security clearance: " + (RandRange(seed + 40, 1, 100) <= 50 ? "REVOKED" : "STILL ACTIVE - Unusual") + ". ";
-        data.hiddenInfo += "Data carried from orbit: " + (RandRange(seed + 50, 1, 100) <= 40 ? "SUSPECTED - Corporate trade secrets" : "NONE DETECTED") + ". ";
-        data.hiddenInfo += "Highrider connections: ACTIVE. Can facilitate orbital smuggling.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1073") + (RandRange(seed + 40, 1, 100) <= 50 ? "REVOKED" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1074")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1075") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1076") : "NONE DETECTED") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1077");
 
         data.scannerWarning = "ORBITAL KNOWLEDGE - CORPORATE INTEREST";
         data.dangerLevel = "LOW - BUT VALUABLE INFORMATION SOURCE";
@@ -2973,18 +2973,18 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateCorpoDebtSlave(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "€$ DEBT SERVITUDE €$";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1078");
         data.flagColor = "YELLOW";
         data.secretAffiliation = "GENERATIONAL DEBT";
 
-        data.description = "FINANCIAL RECORD: Subject inherited generational corporate debt. Original debtor: " + (RandRange(seed, 1, 100) <= 50 ? "Parent" : "Grandparent") + ". ";
-        data.description += "Original amount: €$" + IntToString(RandRange(seed + 10, 100000, 5000000)) + ". ";
-        data.description += "Current amount with interest: €$" + IntToString(RandRange(seed + 20, 5000000, 100000000)) + ". ";
-        data.description += "Under NC Inherited Debt Act, subject is legally responsible. Debt will pass to any children.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1079") + (RandRange(seed, 1, 100) <= 50 ? "Parent" : "Grandparent") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1080") + IntToString(RandRange(seed + 10, 100000, 5000000)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1081") + IntToString(RandRange(seed + 20, 5000000, 100000000)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1082");
 
-        data.hiddenInfo = "Generations in debt: " + IntToString(RandRange(seed + 30, 2, 4)) + ". ";
-        data.hiddenInfo += "Percentage of income garnished: " + IntToString(RandRange(seed + 40, 40, 80)) + "%. ";
-        data.hiddenInfo += "Projected payoff date: NEVER. Interest exceeds earning capacity.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1083") + IntToString(RandRange(seed + 30, 2, 4)) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1084") + IntToString(RandRange(seed + 40, 40, 80)) + "%. ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1085");
 
         data.scannerWarning = "GENERATIONAL DEBT - DESPERATE";
         data.dangerLevel = "LOW - BUT MAY TAKE RISKS FOR MONEY";
@@ -2993,27 +2993,27 @@ public class KdspRareNPCManager {
     }
 
     private static func GenerateGhostTownSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
-        data.displayFlag = "★ GHOST TOWN ORIGIN ★";
+        data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1086");
         data.flagColor = "GOLD";
         data.secretAffiliation = "ABANDONED SETTLEMENT";
 
         let towns: array<String>;
-        ArrayPush(towns, "Carbon Plague town on Route 66");
-        ArrayPush(towns, "Failed nomad settlement (Water Wars)");
-        ArrayPush(towns, "Corporate company town (Petrochem abandoned)");
-        ArrayPush(towns, "Militech testing grounds evacuation zone");
-        ArrayPush(towns, "Flooded coastal settlement");
+        ArrayPush(towns, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1087"));
+        ArrayPush(towns, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1088"));
+        ArrayPush(towns, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1089"));
+        ArrayPush(towns, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1090"));
+        ArrayPush(towns, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1091"));
 
         let town = towns[RandRange(seed, 0, ArraySize(towns) - 1)];
 
-        data.description = "ORIGIN: Subject is from " + town + ". Last known resident. ";
-        data.description += "Settlement abandoned: " + IntToString(RandRange(seed + 10, 2050, 2070)) + ". ";
-        data.description += "Subject remained alone for " + IntToString(RandRange(seed + 20, 2, 15)) + " years before relocating to Night City. ";
-        data.description += "Possesses unique knowledge of abandoned infrastructure and hidden supply caches.";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1092") + town + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1093");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1094") + IntToString(RandRange(seed + 10, 2050, 2070)) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1095") + IntToString(RandRange(seed + 20, 2, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1096");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1097");
 
-        data.hiddenInfo = "Reason for staying: " + (RandRange(seed + 30, 1, 100) <= 40 ? "Guarding something" : "Nowhere else to go") + ". ";
-        data.hiddenInfo += "Scavenged technology value: " + (RandRange(seed + 40, 1, 100) <= 30 ? "HIGH - Found pre-collapse tech" : "MODERATE") + ". ";
-        data.hiddenInfo += "Fixer interest: SOME. Knowledge of Badlands caches is valuable.";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1098") + (RandRange(seed + 30, 1, 100) <= 40 ? "Guarding something" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1099")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1100") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1101") : "MODERATE") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1102");
 
         data.scannerWarning = "SOLE SURVIVOR - ISOLATED PSYCHOLOGY";
         data.dangerLevel = "LOW - SELF-RELIANT BUT NOT AGGRESSIVE";

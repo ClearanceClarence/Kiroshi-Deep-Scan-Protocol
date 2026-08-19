@@ -18,8 +18,8 @@
 */
 public abstract class KdspTextCore {
     // Static Scanner Texts
-    public static func SCANNER_BACKGROUND() -> String { return "Background"; }
-    public static func SCANNER_CHILDHOOD() -> String { return "Early Life"; }
-    public static func SCANNER_SIG_EVENTS() -> String { return "Significant Events"; }
-    public static func SCANNER_FOOTER() -> String { return "© InfoComp 2077. All rights reserved."; }
+    public static func SCANNER_BACKGROUND() -> String { return GetLocalizedTextByKey(n"Kdsp-Core-SCANNER_BACKGROUND"); }
+    public static func SCANNER_CHILDHOOD() -> String { return GetLocalizedTextByKey(n"Kdsp-Core-SCANNER_CHILDHOOD"); }
+    public static func SCANNER_SIG_EVENTS() -> String { return GetLocalizedTextByKey(n"Kdsp-Core-SCANNER_SIG_EVENTS"); }
+    public static func SCANNER_FOOTER() -> String { return GetLocalizedTextByKey(n"Kdsp-Core-SCANNER_FOOTER"); }
 }

@@ -48,10 +48,10 @@ public class KdspSixthStreetProfile {
         let territories: array<String>;
         ArrayPush(territories, "Arroyo");
         ArrayPush(territories, "Rancho Coronado");
-        ArrayPush(territories, "Santo Domingo Industrial");
-        ArrayPush(territories, "Red Dirt Bar");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S0"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-S18"));
         ArrayPush(territories, "Veterans Hall");
-        ArrayPush(territories, "Gun Range District");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S1"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
         // Stats
@@ -61,12 +61,12 @@ public class KdspSixthStreetProfile {
         
         // Military service - unique to 6th Street
         let services: array<String>;
-        ArrayPush(services, "NUSA Army - Unification War");
-        ArrayPush(services, "NUSA Marines - Border Ops");
-        ArrayPush(services, "Militech PMC - Corporate Conflicts");
-        ArrayPush(services, "National Guard - Domestic");
-        ArrayPush(services, "Private Security - Corp Wars");
-        ArrayPush(services, "No prior service - Community trained");
+        ArrayPush(services, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S2"));
+        ArrayPush(services, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S3"));
+        ArrayPush(services, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S4"));
+        ArrayPush(services, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S5"));
+        ArrayPush(services, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S6"));
+        ArrayPush(services, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S7"));
         profile.priorService = services[RandRange(seed + 350, 0, ArraySize(services) - 1)];
         
         // Loyalty
@@ -75,56 +75,56 @@ public class KdspSixthStreetProfile {
         // Tattoos - American/military imagery
         let tattoos: array<String>;
         if RandRange(seed + 700, 1, 100) <= 90 {
-            ArrayPush(tattoos, "American flag imagery");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S10"));
         }
         if RandRange(seed + 710, 1, 100) <= 70 {
-            ArrayPush(tattoos, "Military unit insignia");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-GangManager-S11"));
         }
         if RandRange(seed + 720, 1, 100) <= 50 {
-            ArrayPush(tattoos, "6th Street stars");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S8"));
         }
         if RandRange(seed + 730, 1, 100) <= 30 {
-            ArrayPush(tattoos, "Memorial names - fallen brothers");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S9"));
         }
         if RandRange(seed + 740, 1, 100) <= 45 {
-            ArrayPush(tattoos, "Dog tags (original or replica)");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S10"));
         }
         if RandRange(seed + 750, 1, 100) <= 35 {
-            ArrayPush(tattoos, "Combat action scars");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S11"));
         }
         if RandRange(seed + 760, 1, 100) <= 25 {
-            ArrayPush(tattoos, "Bald eagle chest piece");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S12"));
         }
         profile.distinguishingMarks = tattoos;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Served in the Unification War. Came home to nothing. 6th Street gave purpose to soldiers forgotten by NUSA.");
-        ArrayPush(backstories, "Community was being torn apart by gangs. 6th Street offered protection and asked for loyalty. Fair trade.");
-        ArrayPush(backstories, "Father was 6th Street. His father before him. Patriotism and protection run in the family.");
-        ArrayPush(backstories, "Lost squad overseas to corpo orders. Found new brothers in Santo Domingo. Fighting for something real now.");
-        ArrayPush(backstories, "Ex-Militech. Got tired of corporate wars. 6th Street fights for the neighborhood, not shareholders.");
-        ArrayPush(backstories, "Never served, but trained by vets. Earned respect through dedication. Community over everything.");
-        ArrayPush(backstories, "Discharged after refusing an unlawful order. Military didn't want heroes. 6th Street does.");
-        ArrayPush(backstories, "Grew up watching veterans drink at Red Dirt. Their stories shaped everything. Enlisted at sixteen.");
-        ArrayPush(backstories, "Border patrol went sideways. Three friends didn't come home. Came back to Santo Domingo with a purpose.");
-        ArrayPush(backstories, "Ran with gangs as a kid. 6th Street pulled out of that life. Gave discipline instead of chaos.");
-        ArrayPush(backstories, "Weapons instructor with nowhere to teach. 6th Street needed trainers. Perfect fit for a patriot.");
-        ArrayPush(backstories, "Wife was killed in a Valentino crossfire. Picked up a rifle and never put it down. This neighborhood will be safe.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S17"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S18"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S19"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S20"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S21"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S22"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S23"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S24"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Neighborhood watch in Arroyo. Keeping streets safe from predators.");
-        ArrayPush(activities, "Arms deal in progress. Quality military hardware, fair prices.");
-        ArrayPush(activities, "Training new recruits. Standards matter. Discipline saves lives.");
-        ArrayPush(activities, "Territory patrol. Rancho Coronado stays American.");
-        ArrayPush(activities, "Community cookout security. Protecting our people, our way.");
-        ArrayPush(activities, "Weapons maintenance day. Every rifle cleaned, every scope zeroed.");
-        ArrayPush(activities, "Intercepted Valentino scouts in Arroyo. Sent them home with a message.");
-        ArrayPush(activities, "Running a shooting competition at the range. Winner gets a new piece.");
-        ArrayPush(activities, "Escorting a supply truck through contested territory. No incidents.");
-        ArrayPush(activities, "Meeting with city council rep. Negotiating community funding. Politely.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S28"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S29"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S30"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S31"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S32"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S33"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S34"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);

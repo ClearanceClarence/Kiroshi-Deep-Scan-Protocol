@@ -315,987 +315,987 @@ public abstract class KdspUniqueNPCEntries {
 
     // === BODYGUARD ENTRIES ===
     public static func HanakoBodyguard() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hanako_bodyguard").SetClassification("ARASAKA - PERSONAL SECURITY")
-            .SetBackground("Elite Arasaka operative assigned to Hanako Arasaka's protective detail. Vetted through extensive background checks and loyalty conditioning.")
-            .SetAffiliation("Arasaka | Personal Security Division")
-            .SetCyberwareStatus("Military-grade combat implants | Sandevistan | Kerenzikov | Encrypted comms")
-            .SetThreatAssessment("HIGH (78/100) | Advanced combat training | Will protect principal at all costs")
-            .SetNotes("Part of multi-layer security detail. Reports directly to Oda. Trained to die for the Arasaka family.");
+        return KdspUniqueNPCBackstory.Create("hanako_bodyguard").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoBodyguard-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoBodyguard-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoBodyguard-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoBodyguard-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoBodyguard-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoBodyguard-Notes"));
     }
 
     public static func ArasakaBodyguard() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("arasaka_bodyguard").SetClassification("ARASAKA - SECURITY")
-            .SetBackground("Professional Arasaka security operative. Recruited from military or law enforcement backgrounds.")
-            .SetAffiliation("Arasaka | Corporate Security Division")
-            .SetCyberwareStatus("Standard corporate security package | Combat optics | Reinforced skeleton")
-            .SetThreatAssessment("MODERATE-HIGH (65/100) | Professional training | Coordinated tactics")
-            .SetNotes("Well-equipped and trained. Works in coordinated teams. Full corporate backing.");
+        return KdspUniqueNPCBackstory.Create("arasaka_bodyguard").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ArasakaBodyguard-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ArasakaBodyguard-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ArasakaBodyguard-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ArasakaBodyguard-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ArasakaBodyguard-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ArasakaBodyguard-Notes"));
     }
 
     // === TAKEMURA (DYNAMIC) ===
     public static func Takemura() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsHeistCompleted() {
-            return KdspUniqueNPCBackstory.Create("takemura").SetClassification("ARASAKA - DISAVOWED")
-                .SetBackground("Born Chiba-11, Tokyo. Father worked in kitchen. Selected by Arasaka military as child.")
-                .SetEarlyLife("Rose to special forces. Graduated top of Arasaka Academy. Served as Saburo Arasaka's bodyguard for decades. Trained Sandayu Oda.")
-                .SetSignificantEvents("DISAVOWED following Saburo's death at Konpeki Plaza. Operating as fugitive. Seeking to expose truth.")
-                .SetAffiliation("Arasaka (Former) | Status: KILL ON SIGHT")
-                .SetCriminalRecord("Arasaka Corporate: MOST WANTED")
-                .SetCyberwareStatus("Cyberoptics (Custom) | Subdermal Armor | Kerenzikov | Endoskeleton")
-                .SetFinancialStatus("Accounts FROZEN | Operating with minimal resources")
-                .SetMedicalStatus("No corporate support | Field status: ACTIVE")
-                .SetThreatAssessment("EXTREME (95/100) | TIER-1 SOLO")
-                .SetRelationships("Saburo (Deceased) | Hanako (Contact) | Oda (Estranged)")
-                .SetNotes("High-priority target. Possesses classified intel. Will not surrender.");
+            return KdspUniqueNPCBackstory.Create("takemura").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Background"))
+                .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-EarlyLife"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-SignificantEvents"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Affiliation"))
+                .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-CriminalRecord"))
+                .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-CyberwareStatus"))
+                .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-FinancialStatus"))
+                .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-MedicalStatus"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-ThreatAssessment"))
+                .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Relationships"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("takemura").SetClassification("ARASAKA - PERSONAL SECURITY")
-            .SetBackground("Born Chiba-11, Tokyo. Father worked in kitchen. Selected by Arasaka military as child.")
-            .SetEarlyLife("Rose to special forces. Graduated top of Arasaka Academy. Selected as Saburo's bodyguard. Trained Sandayu Oda.")
-            .SetSignificantEvents("Head of Saburo Arasaka's security. Decades of flawless service. Accompanying principal to Night City.")
-            .SetAffiliation("Arasaka | Head of Security - Saburo Arasaka")
-            .SetCriminalRecord("NCPD: None | Arasaka legal authority")
-            .SetCyberwareStatus("Cyberoptics (Custom) | Subdermal Armor | Kerenzikov | Endoskeleton | Combat Stims")
-            .SetFinancialStatus("Executive compensation | Status: SECURE")
-            .SetMedicalStatus("Peak condition | Combat readiness: OPTIMAL")
-            .SetThreatAssessment("EXTREME (95/100) | TIER-1 SOLO | DO NOT ENGAGE")
-            .SetRelationships("Saburo Arasaka (Principal) | Hanako (Protected) | Oda (Student)")
-            .SetNotes("Engaging triggers Arasaka response. Loyalty: ABSOLUTE.");
+        return KdspUniqueNPCBackstory.Create("takemura").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Background-1"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-EarlyLife-1"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-SignificantEvents-1"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Affiliation-1"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-CriminalRecord-1"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-CyberwareStatus-1"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-FinancialStatus-1"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-MedicalStatus-1"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-ThreatAssessment-1"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Relationships-1"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Takemura-Notes-1"));
     }
 
     // === SABURO (DYNAMIC) ===
     public static func SaburoArasaka() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsHeistCompleted() {
-            return KdspUniqueNPCBackstory.Create("saburo").SetClassification("DECEASED")
-                .SetBackground("Born 1919 Tokyo. WWII Navy veteran. Founded Arasaka 1945.")
-                .SetSignificantEvents("DECEASED. Died Konpeki Plaza. Age: 158. Official cause: Poisoning.")
-                .SetAffiliation("Arasaka (Former CEO)").SetNotes("Death triggered corporate power struggle.");
+            return KdspUniqueNPCBackstory.Create("saburo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Background"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-SignificantEvents"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Affiliation")).SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("saburo").SetClassification("ARASAKA - CEO")
-            .SetBackground("Born 1919 Tokyo. WWII veteran. Founded Arasaka 1945. Built megacorp over 150+ years.")
-            .SetEarlyLife("Post-war: Founded Arasaka security. Expanded through corporate warfare.")
-            .SetSignificantEvents("CEO of Arasaka. Maintained through life-extension tech. En route to Night City.")
-            .SetAffiliation("Arasaka | Founder / CEO")
-            .SetCriminalRecord("IMMUNE - Corporate sovereignty")
-            .SetCyberwareStatus("Life-extension suite | Neural backup | TOP SECRET")
-            .SetFinancialStatus("Net worth: Trillions")
-            .SetThreatAssessment("N/A | MAXIMUM security | DO NOT APPROACH")
-            .SetRelationships("Yorinobu (Son) | Hanako (Daughter)")
-            .SetNotes("ONE OF MOST POWERFUL HUMANS ALIVE.");
+        return KdspUniqueNPCBackstory.Create("saburo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Background-1"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-SignificantEvents-1"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Affiliation-1"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Notes-1"));
     }
 
     // === YORINOBU (DYNAMIC) ===
     public static func YorinobuArasaka() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsHeistCompleted() {
-            return KdspUniqueNPCBackstory.Create("yorinobu").SetClassification("ARASAKA - CEO")
-                .SetBackground("Son of Saburo. Former Steel Dragons rebel. Now commands Arasaka.")
-                .SetSignificantEvents("Assumed CEO after father's death. Consolidating power.")
-                .SetAffiliation("Arasaka | CEO")
-                .SetThreatAssessment("EXTREME (90/100) | Commands Arasaka military")
-                .SetNotes("New leadership. Power struggles ongoing.");
+            return KdspUniqueNPCBackstory.Create("yorinobu").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Background"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-SignificantEvents"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Affiliation"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-ThreatAssessment"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("yorinobu").SetClassification("ARASAKA - HEIR")
-            .SetBackground("Son of Saburo. Led Steel Dragons rebellion for decades. Recently reconciled.")
-            .SetSignificantEvents("At Konpeki Plaza. Father en route for meeting.")
-            .SetAffiliation("Arasaka | Heir | Former: Steel Dragons")
-            .SetThreatAssessment("HIGH (75/100) | Combat trained | Unpredictable")
-            .SetNotes("History of rebellion. Reconciliation reasons unclear.");
+        return KdspUniqueNPCBackstory.Create("yorinobu").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Background-1"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-SignificantEvents-1"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Affiliation-1"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-ThreatAssessment-1"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-YorinobuArasaka-Notes-1"));
     }
 
     // === STATIC ARASAKA ===
     public static func HanakoArasaka() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hanako").SetClassification("ARASAKA - EXECUTIVE")
-            .SetBackground("Daughter of Saburo. Groomed for leadership. Skilled diplomat.")
-            .SetAffiliation("Arasaka | Board Member | Kiji Faction")
-            .SetCyberwareStatus("Minimal visible | Neural security: MAXIMUM")
-            .SetThreatAssessment("MINIMAL (5/100) | MAXIMUM security | DO NOT ENGAGE")
-            .SetRelationships("Saburo (Father) | Yorinobu (Brother) | Oda (Bodyguard)")
-            .SetNotes("Any hostile action triggers global Arasaka response.");
+        return KdspUniqueNPCBackstory.Create("hanako").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoArasaka-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoArasaka-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoArasaka-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoArasaka-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoArasaka-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoArasaka-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-HanakoArasaka-Notes"));
     }
 
     public static func SandayuOda() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("oda").SetClassification("ARASAKA - PERSONAL SECURITY")
-            .SetBackground("Elite bodyguard. Trained by Takemura. Protects Hanako Arasaka.")
-            .SetCyberwareStatus("Mantis Blades (Custom) | Sandevistan | Kerenzikov | ELITE combat")
-            .SetThreatAssessment("EXTREME (92/100) | Master swordsman | Military reflexes")
-            .SetNotes("Will die protecting principal without hesitation.");
+        return KdspUniqueNPCBackstory.Create("oda").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SandayuOda-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SandayuOda-Background"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-SandayuOda-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SandayuOda-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SandayuOda-Notes"));
     }
 
     public static func AdamSmasher() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("smasher").SetClassification("ARASAKA - SPECIAL ASSETS")
-            .SetBackground("Born 1989 NYC. Full cyborg since 2019. Arasaka's primary enforcer. Killed Johnny Silverhand 2023.")
-            .SetAffiliation("Arasaka | Director of Special Operations")
-            .SetCriminalRecord("Known kills: 500+ | War crimes: SEALED")
-            .SetCyberwareStatus("FULL CYBORG | <2% organic | Sandevistan Mk.5 | Gorilla Arms | Projectile System")
-            .SetThreatAssessment("MAXIMUM (100/100) | OMEGA-LEVEL | DO NOT ENGAGE")
-            .SetNotes("WALKING WMD. No empathy. More machine than man. RUN ON SIGHT.");
+        return KdspUniqueNPCBackstory.Create("smasher").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AdamSmasher-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AdamSmasher-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AdamSmasher-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AdamSmasher-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AdamSmasher-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AdamSmasher-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AdamSmasher-Notes"));
     }
 
     public static func AndersHellman() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hellman").SetClassification("SCIENTIST")
-            .SetBackground("Swedish neuroscientist. Created Relic biochip. Former Arasaka R&D lead.")
-            .SetSignificantEvents("Departed Arasaka. Whereabouts unknown. Multiple parties seeking him.")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | HIGH VALUE intelligence")
-            .SetNotes("Creator of Relic. Irreplaceable knowledge.");
+        return KdspUniqueNPCBackstory.Create("hellman").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-Background"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-SignificantEvents"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-Notes"));
     }
 
     // === MILITECH ===
     public static func MeredithStout() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("meredith").SetClassification("MILITECH - COUNTERINTELLIGENCE")
-            .SetBackground("Militech Senior Operations Manager. Excels at financial and street ops. Ruthless, goal-oriented.")
-            .SetEarlyLife("Fast-tracked through Militech. Lives and breathes corporate. Results regardless of methods.")
-            .SetSignificantEvents("Investigating Maelstrom theft of Militech convoy. Has detained Anthony Gilchrist as suspected leak. Career depends on recovery.")
-            .SetAffiliation("Militech | Senior Operations Manager")
-            .SetCriminalRecord("NCPD: None | Militech authority | Internal affairs inquiries - cleared")
-            .SetCyberwareStatus("Corporate suite | Lie detection software | Combat-capable")
-            .SetFinancialStatus("Executive compensation | Status: SECURE (operation dependent)")
-            .SetMedicalStatus("Excellent | Stress: ELEVATED")
-            .SetThreatAssessment("HIGH (70/100) | Combat trained | Militech resources")
-            .SetRelationships("Militech (Employer) | Gilchrist (Rival - detained)")
-            .SetNotes("Egomaniac. Despises common folk. Dangerous when cornered.");
+        return KdspUniqueNPCBackstory.Create("meredith").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MeredithStout-Notes"));
     }
 
     public static func WeldonHolt() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("holt").SetClassification("MILITECH - EXECUTIVE")
-            .SetBackground("Senior Militech executive. Political maneuvering expertise.")
-            .SetAffiliation("Militech | Senior VP")
-            .SetThreatAssessment("MODERATE (40/100) | Political threat: HIGH")
-            .SetNotes("Influence extends beyond corporate sphere.");
+        return KdspUniqueNPCBackstory.Create("holt").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-WeldonHolt-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-WeldonHolt-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-WeldonHolt-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-WeldonHolt-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-WeldonHolt-Notes"));
     }
 
     // === FIXERS ===
     public static func Oleg() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("bodyguard_dex_default").SetClassification("FIXER SECURITY — PERSONAL BODYGUARD")
-            .SetBackground("Eastern European origin. Former private military contractor — discharged under unclear circumstances. Arrived in Night City 2074. Connected with DeShawn's operation through underground boxing circles in Kabuki.")
-            .SetEarlyLife("Served as close protection detail for multiple fixers before DeShawn. Reputation for absolute loyalty and zero tolerance for disrespect toward his principal. Known to have eliminated at least three threats to DeShawn without authorization or hesitation.")
-            .SetSignificantEvents("Permanently attached to Dexter DeShawn's detail since 2075. Present during all major negotiations. Suspected in the disappearance of two mercs who tried to renegotiate terms with DeShawn after job completion.")
-            .SetAffiliation("Dexter DeShawn (Personal Security) | Status: ACTIVE")
-            .SetCriminalRecord("NCPD File: SUSPECTED — Multiple assault charges dismissed. Witnesses recanted or disappeared. No convictions on record. Known to carry concealed military-grade hardware.")
-            .SetCyberwareStatus("Reinforced Subdermal Armor | Gorilla Arms (Military Spec) | Kerenzikov | Biomonitor")
-            .SetFinancialStatus("Paid through DeShawn's accounts — no independent financial trail. Estimated compensation: well above market rate for close protection.")
-            .SetMedicalStatus("Peak physical conditioning. Multiple healed fractures consistent with close-quarters combat. Blood type: O RhD+. No Trauma Team coverage — handles own medical needs.")
-            .SetThreatAssessment("HIGH (78/100) | Close-quarters specialist. Do not approach DeShawn without accounting for this asset. Always armed. Will not negotiate.")
-            .SetRelationships("Dexter DeShawn (Principal — absolute loyalty) | Underground boxing contacts — Kabuki")
-            .SetNotes("Silent professional. Rarely speaks. If Oleg is talking to you, something has already gone wrong. DeShawn trusts him completely — one of very few people who does.");
+        return KdspUniqueNPCBackstory.Create("bodyguard_dex_default").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Oleg-Notes"));
     }
 
     public static func DexterDeShawn(id: String) -> ref<KdspUniqueNPCBackstory> {
         // Post-Heist: Beaten state
         if StrContains(id, "dex_beaten") {
-            return KdspUniqueNPCBackstory.Create("dex_dex_beaten").SetClassification("FIXER — DISGRACED / STATUS: COMPROMISED")
-                .SetBackground("Tyrell 'Dexter' DeShawn. Watson-based fixer. Returned to Night City after two years in exile following a series of botched operations. Attempted high-profile Konpeki Plaza heist to reestablish reputation. Operation failed catastrophically.")
-                .SetEarlyLife("Rose through Night City's fixer ranks in the early '70s. Known for ambitious jobs, flashy lifestyle, and ruthless pragmatism. Disappeared from Night City circa 2075 — rumored to have fled debts, enemies, or both. Returned 2077 seeking one last big score.")
-                .SetSignificantEvents("KONPEKI PLAZA INCIDENT: Contracted V and Jackie Welles for Relic extraction. Operation resulted in the death of Saburo Arasaka. DeShawn panicked, attempted to eliminate V to cut loose ends. Currently in physical distress — situation deteriorating.")
-                .SetAffiliation("Independent Fixer | Status: BURNED — no allies remaining")
-                .SetCriminalRecord("NCPD File: EXTENSIVE — Conspiracy, contract fraud, accessory to corporate espionage. New flag: SUSPECTED ACCESSORY TO HOMICIDE — Konpeki Plaza incident. Multiple warrants pending.")
-                .SetCyberwareStatus("Gold-plated dermal implants (cosmetic) | Kiroshi Optics | Neural link — standard fixer suite")
-                .SetFinancialStatus("Accounts flagged. Assets likely frozen or seized. Previous estimated net worth: €$2-5M. Current status: DEPLETED.")
-                .SetMedicalStatus("Current condition: PHYSICAL TRAUMA — visible injuries. Stress indicators critical. No Trauma Team response — coverage likely lapsed or revoked.")
-                .SetThreatAssessment("LOW (15/100) | Formerly MODERATE. Currently compromised. No remaining security detail. Oleg's status unknown. Desperate and unpredictable.")
-                .SetRelationships("V (Former contractor — hostile) | Jackie Welles (Deceased — Konpeki) | T-Bug (Deceased — Konpeki) | Oleg (Bodyguard — status unknown) | Evelyn Parker (Client — status unknown)")
-                .SetNotes("DeShawn's operation has collapsed. All assets burned. All allies dead or missing. A fixer with no network is just a man with enemies.");
+            return KdspUniqueNPCBackstory.Create("dex_dex_beaten").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Background"))
+                .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-EarlyLife"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-SignificantEvents"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Affiliation"))
+                .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-CriminalRecord"))
+                .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-CyberwareStatus"))
+                .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-FinancialStatus"))
+                .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-MedicalStatus"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-ThreatAssessment"))
+                .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Relationships"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Notes"));
         }
         // Post-Heist: Shot/dead state
         if StrContains(id, "dex_shot") {
-            return KdspUniqueNPCBackstory.Create("dex_dex_shot").SetClassification("FIXER — DECEASED")
-                .SetBackground("Tyrell 'Dexter' DeShawn. Watson-based fixer. Orchestrated the Konpeki Plaza heist that resulted in the death of Saburo Arasaka. Attempted to eliminate contractor V to sever connection to the job. Failed.")
-                .SetEarlyLife("Rose through Night City's fixer ranks in the early '70s. Known for ambitious jobs, flashy lifestyle, and ruthless pragmatism. Left Night City circa 2075. Returned 2077 for one last job. It was.")
-                .SetSignificantEvents("KONPEKI PLAZA INCIDENT: Hired V and Jackie Welles. Job went catastrophically wrong. DeShawn shot V in the head and dumped the body at a landfill. V survived. DeShawn did not survive what came next.")
-                .SetAffiliation("Independent Fixer | Status: DECEASED")
-                .SetCriminalRecord("NCPD File: CLOSED — Subject deceased. Outstanding warrants: voided. Conspiracy, contract fraud, accessory to corporate espionage, attempted murder.")
-                .SetCyberwareStatus("Gold-plated dermal implants (cosmetic) | All systems: OFFLINE")
-                .SetFinancialStatus("Estate status: UNCLAIMED. No next of kin on file. Assets: seized or scattered.")
-                .SetMedicalStatus("Status: DECEASED. Cause of death: gunshot wound. Body recovered at No-Tell Motel, Watson.")
-                .SetThreatAssessment("NONE (0/100) | Deceased.")
-                .SetRelationships("V (Former contractor — killed him) | Jackie Welles (Deceased) | T-Bug (Deceased) | Oleg (Bodyguard — whereabouts unknown) | Evelyn Parker (Client — whereabouts unknown)")
-                .SetNotes("Came back to Night City for the score that would put him on top. Got exactly what Night City gives everyone who reaches too high.");
+            return KdspUniqueNPCBackstory.Create("dex_dex_shot").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Classification-1"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Background-1"))
+                .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-EarlyLife-1"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-SignificantEvents-1"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Affiliation-1"))
+                .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-CriminalRecord-1"))
+                .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-CyberwareStatus-1"))
+                .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-FinancialStatus-1"))
+                .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-MedicalStatus-1"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-ThreatAssessment-1"))
+                .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Relationships-1"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Notes-1"));
         }
         // Default: Pre-Heist
-        return KdspUniqueNPCBackstory.Create("dex_default").SetClassification("FIXER — HIGH PROFILE")
-            .SetBackground("Tyrell 'Dexter' DeShawn. Watson-based fixer. Recently returned to Night City after a two-year absence. Reputation precedes him — known for high-stakes jobs, meticulous planning, and a preference for expendable contractors. Gold-plated everything.")
-            .SetEarlyLife("Rose through Night City's fixer ranks in the early '70s. Ran some of the biggest operations Watson had ever seen. Disappeared circa 2075 — rumors range from debt to a botched corpo job to simply cashing out. Returned 2077 with something to prove.")
-            .SetSignificantEvents("Currently planning a major operation. Recruiting fresh talent. Operating out of the No-Tell Motel in Watson. Reconnecting with old contacts, calling in favors.")
-            .SetAffiliation("Independent Fixer | Territory: Watson | Status: ACTIVE — rebuilding network")
-            .SetCriminalRecord("NCPD File: KNOWN FIXER — Suspected conspiracy, contract fraud, accessory to numerous felonies. No direct convictions — always insulated by layers of contractors. Classified: UNTOUCHABLE (insufficient evidence).")
-            .SetCyberwareStatus("Gold-plated dermal implants (cosmetic, custom) | Kiroshi Optics | Neural link — high-end fixer suite. Style over substance.")
-            .SetFinancialStatus("Estimated net worth: €$2-5M. Multiple shell accounts. Income: commission-based — 30-40% of contractor payouts. Lifestyle: extravagant. Trauma Team coverage: GOLD.")
-            .SetMedicalStatus("Overweight. Sedentary lifestyle offset by premium medical care. Chronic stress indicators. Blood type: AB RhD+. Trauma Team GOLD — response priority 2.")
-            .SetThreatAssessment("MODERATE (45/100) | Not personally dangerous. Threat is organizational — extensive contacts, disposable assets, zero loyalty to contractors. Protected by Oleg (bodyguard, HIGH threat).")
-            .SetRelationships("Oleg (Personal bodyguard — absolute loyalty) | Afterlife contacts (rebuilding) | Evelyn Parker (New client) | Multiple merc contractors (expendable)")
-            .SetNotes("DeShawn treats people like tools — useful until they aren't. The gold on his chrome is real. The loyalty isn't. If a job goes wrong, Dex will cut you loose before the bullet casings hit the ground.");
+        return KdspUniqueNPCBackstory.Create("dex_default").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Classification-2"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Background-2"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-EarlyLife-2"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-SignificantEvents-2"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Affiliation-2"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-CriminalRecord-2"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-CyberwareStatus-2"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-FinancialStatus-2"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-MedicalStatus-2"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-ThreatAssessment-2"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Relationships-2"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DexterDeShawn-Notes-2"));
     }
 
     public static func WakakoOkada() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("wakako").SetClassification("FIXER")
-            .SetBackground("Japanese. Former Tyger Claws affiliate. 30+ years fixing in Westbrook/Japantown.")
-            .SetAffiliation("Independent | Territory: Westbrook")
-            .SetThreatAssessment("LOW (20/100) | INFLUENCE: EXTREME")
-            .SetNotes("Do not underestimate. Betraying her is death sentence.");
+        return KdspUniqueNPCBackstory.Create("wakako").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Notes"));
     }
 
     public static func ReginaJones() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("regina").SetClassification("FIXER")
-            .SetBackground("Former journalist. Watson fixer. Focus on cyberpsychos and corporate misconduct.")
-            .SetAffiliation("Independent | Territory: Watson")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | Well-connected")
-            .SetNotes("Has conscience. Prefers non-lethal. Reliable employer.");
+        return KdspUniqueNPCBackstory.Create("regina").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-Notes"));
     }
 
     public static func Padre() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("padre").SetClassification("FIXER")
-            .SetBackground("Sebastian Ibarra. Former priest. Heywood fixer. Respected by Valentinos.")
-            .SetAffiliation("Independent | Territory: Heywood")
-            .SetThreatAssessment("LOW (20/100) | Valentinos protection")
-            .SetNotes("Cares about community. Won't take contracts against Heywood.");
+        return KdspUniqueNPCBackstory.Create("padre").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-Notes"));
     }
 
     public static func DakotaSmith() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("dakota").SetClassification("FIXER")
-            .SetBackground("Former Aldecaldos nomad. Badlands fixer. Bridge between city and desert.")
-            .SetAffiliation("Independent | Territory: Badlands")
-            .SetThreatAssessment("MODERATE (40/100) | Nomad backup available")
-            .SetNotes("Best contact for Badlands work. Don't cross nomads through her.");
+        return KdspUniqueNPCBackstory.Create("dakota").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-Notes"));
     }
 
     public static func DinoDinovic() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("dino").SetClassification("FIXER")
-            .SetBackground("European. City Center fixer. High-end contracts requiring discretion.")
-            .SetAffiliation("Independent | Territory: City Center")
-            .SetThreatAssessment("LOW (25/100) | Excellent protection")
-            .SetNotes("Sophisticated. Expects professionalism.");
+        return KdspUniqueNPCBackstory.Create("dino").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-Notes"));
     }
 
     public static func MrHands() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hands").SetClassification("FIXER")
-            .SetBackground("Identity unknown. Pacifica fixer. Never meets in person - hologram only.")
-            .SetAffiliation("Independent | Territory: Pacifica")
-            .SetThreatAssessment("UNKNOWN | Operates in hostile territory")
-            .SetNotes("Enigmatic. Only fixer for Pacifica. Payment always honored.");
+        return KdspUniqueNPCBackstory.Create("hands").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-Notes"));
     }
 
     public static func ElCapitan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("capitan").SetClassification("FIXER")
-            .SetBackground("Muamar Reyes. Former military. Santo Domingo fixer. Vehicle specialist.")
-            .SetAffiliation("Independent | Territory: Santo Domingo")
-            .SetThreatAssessment("MODERATE (50/100) | Combat veteran")
-            .SetNotes("Professional. Specializes in vehicle-related contracts.");
+        return KdspUniqueNPCBackstory.Create("capitan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-Notes"));
     }
 
     public static func Mickey() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mickey").SetClassification("FIXER ASSOCIATE")
-            .SetBackground("Personal driver and courier for Muamar 'El Capitan' Reyes. Handles vehicle deliveries and drop-off logistics across Santo Domingo.")
-            .SetEarlyLife("Street kid background. Ran errands for local fixers before El Capitan recruited him full-time.")
-            .SetSignificantEvents("Promoted from courier to personal driver after proving reliable under fire. Armed escort clearance.")
-            .SetAffiliation("El Capitan (Employer) | Independent")
-            .SetCriminalRecord("NCPD: Minor traffic violations | No outstanding warrants")
-            .SetCyberwareStatus("Kiroshi Optics (Standard) | Reflex Booster")
-            .SetFinancialStatus("Steady income | Fixer payroll")
-            .SetThreatAssessment("LOW-MODERATE (35/100) | Armed, combat-trained")
-            .SetNotes("Trusted associate. Handles sensitive deliveries. Loyal to El Capitan.");
+        return KdspUniqueNPCBackstory.Create("mickey").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Mickey-Notes"));
     }
 
     // === MERCS / AFTERLIFE ===
     public static func JackieWelles() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsHeistCompleted() {
-            return KdspUniqueNPCBackstory.Create("jackie").SetClassification("MERCENARY - DECEASED")
-                .SetBackground("Heywood native. Former Valentinos. Merc partnered with V.")
-                .SetSignificantEvents("DECEASED. Died during Konpeki Plaza extraction. Combat injuries.")
-                .SetNotes("Died pursuing legend status. Honored by those who knew him.");
+            return KdspUniqueNPCBackstory.Create("jackie").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Background"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-SignificantEvents"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("jackie").SetClassification("MERCENARY")
-            .SetBackground("Heywood native. Son of Mama Welles. Former Valentinos. Independent merc.")
-            .SetSignificantEvents("Active merc. Working toward Afterlife recognition. Partner with V.")
-            .SetCyberwareStatus("Gorilla Arms | Basic combat suite | Kiroshi optics")
-            .SetThreatAssessment("HIGH (65/100) | Skilled combatant | Loyal")
-            .SetRelationships("Mama Welles (Mother) | Misty (Girlfriend) | V (Partner)")
-            .SetNotes("Ambitious. Dreams of legend status. Fiercely loyal.");
+        return KdspUniqueNPCBackstory.Create("jackie").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Background-1"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-SignificantEvents-1"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Notes-1"));
     }
 
     public static func EmmerickBronson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("emmerick_bronson").SetClassification("ANIMALS - AFTERLIFE SECURITY")
-            .SetBackground("Animals gang member. Head bouncer at Afterlife. Unusual position - most Animals work corpo or gang muscle.")
-            .SetEarlyLife("Rose through Animals ranks. Known for controlled aggression. Recruited by Rogue for Afterlife security.")
-            .SetSignificantEvents("Primary door security for Afterlife. Screens all entrants. Reports to Rogue Amendiares.")
-            .SetAffiliation("Animals | Afterlife Head Bouncer")
-            .SetCriminalRecord("NCPD: Assault (multiple) | Protected under Afterlife neutrality")
-            .SetCyberwareStatus("Muscle grafts | Subdermal armor | Gorilla Arms | Berserk suppression implant")
-            .SetFinancialStatus("Afterlife salary + Animals cut | COMFORTABLE")
-            .SetMedicalStatus("Peak condition | Animals enhancement protocol")
-            .SetThreatAssessment("HIGH (72/100) | Controlled aggression | Won't engage without cause")
-            .SetRelationships("Rogue (Employer) | Animals (Gang)")
-            .SetNotes("More professional than typical Animals. Do not start trouble at the door.");
+        return KdspUniqueNPCBackstory.Create("emmerick_bronson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-EmmerickBronson-Notes"));
     }
 
     public static func TBug() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsHeistCompleted() {
-            return KdspUniqueNPCBackstory.Create("tbug").SetClassification("NETRUNNER - DECEASED")
-                .SetSignificantEvents("DECEASED. Killed by Arasaka ICE during Konpeki Plaza breach.")
-                .SetNotes("Killed by countermeasures during failed operation.");
+            return KdspUniqueNPCBackstory.Create("tbug").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Classification"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-SignificantEvents"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("tbug").SetClassification("NETRUNNER")
-            .SetBackground("Professional netrunner. Known for high-skill infiltration. Anonymous profile.")
-            .SetCyberwareStatus("High-end netrunning suite | ICE-resistant mods")
-            .SetThreatAssessment("HIGH (70/100) | Can breach most systems")
-            .SetNotes("Elite netrunner. Anonymous by design.");
+        return KdspUniqueNPCBackstory.Create("tbug").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Background"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Notes-1"));
     }
 
     public static func RogueAmendiares() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("rogue").SetClassification("FIXER - LEGENDARY")
-            .SetBackground("Solo since 2010s. Survived 2023 Arasaka Tower raid. Now owns Afterlife. Queen of Fixers.")
-            .SetEarlyLife("Rebellious teen. Rejected gang life for solo work. Best merc of her era with partner Santiago.")
-            .SetSignificantEvents("2013: Arasaka raid for Alt. 2023: Tower assault with Silverhand. Watched Johnny die. Retired after car crash.")
-            .SetAffiliation("Afterlife | Owner | Queen of Fixers")
-            .SetCriminalRecord("Historical: Terrorism, corporate assault | Current: UNTOUCHABLE")
-            .SetCyberwareStatus("Vintage chrome | Still combat-capable | Age maintenance")
-            .SetFinancialStatus("Extremely wealthy | Controls NC merc economy")
-            .SetMedicalStatus("Good for 80s | Life extension | Old injuries")
-            .SetThreatAssessment("HIGH (75/100) | Living legend | Better shot than you")
-            .SetRelationships("Johnny Silverhand (Ex) | Santiago (Ex-partner) | Squama (Bodyguard)")
-            .SetNotes("LEGEND. Controls who works in NC. Betraying her ends careers permanently.");
+        return KdspUniqueNPCBackstory.Create("rogue").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RogueAmendiares-Notes"));
     }
 
     public static func CrispinWeyland() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("squama").SetClassification("AFTERLIFE - BODYGUARD")
-            .SetBackground("Son of Andrew 'Boa Boa' Weyland, NC legend. Personal bodyguard to Rogue Amendiares.")
-            .SetEarlyLife("Inherited father's nickname tradition - 'Squama' (scales). Trained as solo. Recruited by Rogue.")
-            .SetSignificantEvents("Serves as Rogue's muscle and pilot. Only follows the Queen's orders. Trusted with Afterlife security.")
-            .SetAffiliation("Afterlife | Rogue's Personal Security")
-            .SetCriminalRecord("Assault (multiple) | Protected under Afterlife accords")
-            .SetCyberwareStatus("Combat grade | Pilot interface | Heavy augmentation")
-            .SetFinancialStatus("Rogue's payroll | Well compensated")
-            .SetMedicalStatus("Peak condition | Combat ready")
-            .SetThreatAssessment("HIGH (70/100) | Legacy solo | Undying loyalty to Rogue")
-            .SetRelationships("Rogue (Principal) | Andrew Weyland (Father - deceased)")
-            .SetNotes("Intimidating but friendly once known. Calls Rogue 'Queen'. Father was legend.");
+        return KdspUniqueNPCBackstory.Create("squama").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CrispinWeyland-Notes"));
     }
 
     public static func JohnnySilverhand() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("johnny").SetClassification("ENGRAM - TERRORIST / ROCKERBOY")
-            .SetBackground("Robert John Linder. Born 1988. Ex-NUSA Marine, deserted after Central America. Founded Samurai 2003. Most influential rockerboy of his generation. Anti-corporate revolutionary.")
-            .SetEarlyLife("Military family. Deployed Central America. Went AWOL after witnessing corpo atrocities. Reinvented himself in Night City underground.")
-            .SetSignificantEvents("2008: Alt Cunningham. 2013: Alt killed by Arasaka, digitized by Soulkiller. 2023: Nuked Arasaka Tower. Killed by Adam Smasher. Engram extracted.")
-            .SetAffiliation("Samurai (frontman) | Aldecaldos (allied) | Anti-corpo underground")
-            .SetCriminalRecord("TERRORISM | MASS MURDER | MILITARY DESERTION | FILE STATUS: CLOSED - DECEASED 2023")
-            .SetCyberwareStatus("Cyberarm (left, silver) | Military-grade reflexes | Status: DESTROYED")
-            .SetThreatAssessment("DECEASED | If engram exists: CATASTROPHIC risk to Arasaka")
-            .SetNotes("THE Rockerboy. Narcissistic. Self-destructive. Genuinely believed in his cause. 50 years dead and still dangerous.");
+        return KdspUniqueNPCBackstory.Create("johnny").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JohnnySilverhand-Notes"));
     }
 
     public static func KerryEurodyne() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("kerry").SetClassification("CELEBRITY - ROCKERBOY")
-            .SetBackground("Born 1988. Samurai co-founder. Solo career. One of most famous musicians.")
-            .SetSignificantEvents("Semi-retired North Oak. Occasional performances. Processing Johnny's legacy.")
-            .SetFinancialStatus("Extremely wealthy | Royalties | North Oak estate")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | Celebrity protection")
-            .SetNotes("Living legend. Generous to those who earn trust.");
+        return KdspUniqueNPCBackstory.Create("kerry").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-KerryEurodyne-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-KerryEurodyne-Background"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-KerryEurodyne-SignificantEvents"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-KerryEurodyne-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-KerryEurodyne-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-KerryEurodyne-Notes"));
     }
 
     public static func AltCunningham() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("alt").SetClassification("NETRUNNER - AI")
-            .SetBackground("Legendary netrunner. Created Soulkiller. Consciousness digitized 2013. Exists beyond Blackwall.")
-            .SetSignificantEvents("Physical death 2013. Digital consciousness beyond Blackwall. No longer human.")
-            .SetThreatAssessment("INCALCULABLE in cyberspace | Cannot be engaged conventionally")
-            .SetNotes("BEYOND HUMAN. Summoning carries extreme risk.");
+        return KdspUniqueNPCBackstory.Create("alt").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AltCunningham-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AltCunningham-Background"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-AltCunningham-SignificantEvents"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AltCunningham-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AltCunningham-Notes"));
     }
 
     public static func ClaireRussell() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("claire").SetClassification("AFTERLIFE - BARTENDER")
-            .SetBackground("Former Militech engineer. Owns autoshop in Arroyo. Bartender at Afterlife. Street racer.")
-            .SetEarlyLife("Left Militech to open own shop. Built custom vehicle 'Beast'. Trans woman, no cyberware by choice.")
-            .SetSignificantEvents("Husband Dean killed 2076 championship race. Blames rival racer Sampson. Seeking revenge.")
-            .SetAffiliation("Afterlife | Bartender | Racing circuit")
-            .SetCriminalRecord("Traffic violations | Racing: Multiple | No felonies")
-            .SetCyberwareStatus("NONE | Prefers organic | Rare in NC")
-            .SetFinancialStatus("Autoshop income + Afterlife wages | Comfortable")
-            .SetMedicalStatus("Good | Grieving")
-            .SetThreatAssessment("LOW (25/100) | Expert driver | Non-combatant")
-            .SetRelationships("Dean Russell (Deceased husband) | Afterlife staff | Rogue (Employer)")
-            .SetNotes("Names drinks after dead legends. Knows everyone's order. More than she appears.");
+        return KdspUniqueNPCBackstory.Create("claire").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ClaireRussell-Notes"));
     }
 
     // === RIPPERDOCS ===
     public static func ViktorVektor() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("viktor").SetClassification("RIPPERDOC")
-            .SetBackground("Former boxer. Watson ripperdoc. Quality work, fair prices. Trusted by merc community.")
-            .SetSignificantEvents("Operates under Misty's Esoterica. Extends credit to trusted clients.")
-            .SetThreatAssessment("LOW (10/100) | Non-combatant | Community protected")
-            .SetRelationships("Misty (Partner) | Jackie (Client) | V (Client)")
-            .SetNotes("One of the good ones. Ethical. Respected throughout Watson.");
+        return KdspUniqueNPCBackstory.Create("viktor").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-Background"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-SignificantEvents"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-Notes"));
     }
 
     public static func Fingers() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("fingers").SetClassification("RIPPERDOC")
-            .SetBackground("Jig-Jig Street ripperdoc. Budget cyberware. Questionable ethics. Serves the desperate.")
-            .SetCriminalRecord("Complaints on file | No charges | Tyger Claws protection")
-            .SetThreatAssessment("VERY LOW (5/100) | Cowardly")
-            .SetNotes("Unethical. Preys on vulnerable. Few would mourn his absence.");
+        return KdspUniqueNPCBackstory.Create("fingers").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-Notes"));
     }
 
     public static func MistyOlszewski() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("misty").SetClassification("CIVILIAN - MYSTIC")
-            .SetBackground("Runs Misty's Esoterica in Watson. Spiritual advisor. Tarot readings.")
-            .SetRelationships("Jackie Welles (Boyfriend) | Viktor (Partner)")
-            .SetThreatAssessment("NONE (0/100) | No threat")
-            .SetNotes("Genuinely kind. Tarot readings eerily accurate. Heart of gold.");
+        return KdspUniqueNPCBackstory.Create("misty").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MistyOlszewski-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MistyOlszewski-Background"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MistyOlszewski-Relationships"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MistyOlszewski-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MistyOlszewski-Notes"));
     }
 
     // Note: detailed Lucy Thackery entry in Watson District Notables section
 
     // === MOX / CLOUDS ===
     public static func JudyAlvarez() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("judy").SetClassification("TECHNICIAN - MOX")
-            .SetBackground("Born Laguna Bend. BD technician at Lizzie's. Strong convictions about worker exploitation.")
-            .SetAffiliation("The Mox | BD Technician")
-            .SetCyberwareStatus("BD wreath (professional) | Neural interface")
-            .SetThreatAssessment("MODERATE (35/100) | Technical threat via BD/hacking")
-            .SetRelationships("Evelyn Parker (Friend) | The Mox (Family)")
-            .SetNotes("Strong moral compass. Protective of friends.");
+        return KdspUniqueNPCBackstory.Create("judy").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JudyAlvarez-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JudyAlvarez-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JudyAlvarez-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JudyAlvarez-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JudyAlvarez-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JudyAlvarez-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JudyAlvarez-Notes"));
     }
 
     public static func EvelynParker() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsEvelynDead() {
-            return KdspUniqueNPCBackstory.Create("evelyn").SetClassification("DECEASED")
-                .SetSignificantEvents("DECEASED. Suicide following captivity and neural damage.")
-                .SetNotes("Victim of Night City. Mourned by those who knew her.");
+            return KdspUniqueNPCBackstory.Create("evelyn").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Classification"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-SignificantEvents"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("evelyn").SetClassification("DOLL - CLOUDS")
-            .SetBackground("Premium doll at Clouds. Ambitious. Connected to powerful clients including Yorinobu.")
-            .SetThreatAssessment("LOW (15/100) | Has valuable information")
-            .SetRelationships("Judy Alvarez (Friend) | Clouds (Employer)")
-            .SetNotes("Playing dangerous game with powerful people. In over her head.");
+        return KdspUniqueNPCBackstory.Create("evelyn").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Background"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Notes-1"));
     }
 
     public static func MaikoMaeda() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("maiko").SetClassification("TYGER CLAWS - CLOUDS")
-            .SetBackground("Clouds manager. Former doll. Works for Tyger Claws. Ambitious corporate mindset.")
-            .SetAffiliation("Tyger Claws | Clouds Manager")
-            .SetThreatAssessment("MODERATE (40/100) | Tyger Claws backing")
-            .SetRelationships("Judy Alvarez (Ex)")
-            .SetNotes("Pragmatic. Will sacrifice others for advancement.");
+        return KdspUniqueNPCBackstory.Create("maiko").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MaikoMaeda-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MaikoMaeda-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MaikoMaeda-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MaikoMaeda-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MaikoMaeda-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MaikoMaeda-Notes"));
     }
 
     public static func Woodman() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("woodman").SetClassification("TYGER CLAWS - CLOUDS")
-            .SetBackground("Oswald Forrest. Clouds manager. Brutal management style. Exploits dolls.")
-            .SetCriminalRecord("Suspected trafficking, assault | Tyger Claws protection")
-            .SetThreatAssessment("HIGH (65/100) | Combat capable | Tyger Claws backing")
-            .SetNotes("Brutal and exploitative. Few would mourn him.");
+        return KdspUniqueNPCBackstory.Create("woodman").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Woodman-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Woodman-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Woodman-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Woodman-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Woodman-Notes"));
     }
 
     // === ALDECALDOS ===
     public static func PanamPalmer() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("panam").SetClassification("NOMAD - ALDECALDOS")
-            .SetBackground("Born Aldecaldos. Expert driver and mechanic. Fiercely independent.")
-            .SetAffiliation("Aldecaldos | Driver")
-            .SetCyberwareStatus("Vehicle interface | Targeting optics | Minimal chrome")
-            .SetThreatAssessment("HIGH (70/100) | Expert driver | Combat capable | Clan backup")
-            .SetRelationships("Aldecaldos (Family) | Saul (Complicated) | Mitch (Friend)")
-            .SetNotes("Do not threaten her family. Valuable ally, dangerous enemy.");
+        return KdspUniqueNPCBackstory.Create("panam").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-PanamPalmer-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-PanamPalmer-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-PanamPalmer-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-PanamPalmer-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-PanamPalmer-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-PanamPalmer-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-PanamPalmer-Notes"));
     }
 
     public static func SaulBright() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("saul").SetClassification("NOMAD - ALDECALDOS")
-            .SetBackground("Aldecaldos clan leader. Prioritizes clan survival. Pragmatic.")
-            .SetAffiliation("Aldecaldos | Clan Chief")
-            .SetThreatAssessment("HIGH (65/100) | Commands clan | Dangerous when clan threatened")
-            .SetNotes("Decisions made for clan welfare. Can negotiate if mutual benefit.");
+        return KdspUniqueNPCBackstory.Create("saul").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SaulBright-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SaulBright-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SaulBright-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SaulBright-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SaulBright-Notes"));
     }
 
     public static func MitchAnderson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mitch").SetClassification("NOMAD - ALDECALDOS")
-            .SetBackground("Former military. Aldecaldos technician. Steady and reliable.")
-            .SetCyberwareStatus("Military-grade optics | Combat implants | Vehicle interface")
-            .SetThreatAssessment("MODERATE (55/100) | Combat veteran")
-            .SetRelationships("Aldecaldos (Family) | Scorpion (Friend - deceased) | Panam (Friend)")
-            .SetNotes("Solid and dependable. Grieving recent losses.");
+        return KdspUniqueNPCBackstory.Create("mitch").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MitchAnderson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MitchAnderson-Background"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MitchAnderson-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MitchAnderson-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MitchAnderson-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MitchAnderson-Notes"));
     }
 
     // === VOODOO BOYS ===
     public static func Brigitte() -> ref<KdspUniqueNPCBackstory> {
         // Before q110 (Both Sides, Now): scanner glitch hides identity
         if !KdspQuestProgressHelper.IsBothSidesNowDone() {
-            return KdspUniqueNPCBackstory.Create("brigitte").SetClassification("██████ — ████████")
-                .SetBackground("ERR_IDENT_MASK :: Kiroshi unable to resolve identity. Target running active counter-surveillance. Facial recognition: BLOCKED. Neural signature: SCRAMBLED. This person does not want to be seen.")
-                .SetSignificantEvents("DATA_CORRUPT :: ▓▓▓▓ netrunner interference detected ▓▓▓▓ :: Kiroshi firmware exception at 0x4E54 :: Deep scan returned null — target may be running military-grade ICE")
-                .SetThreatAssessment("UNKNOWN | ⊘ SCANNER COMPROMISED — target is actively interfering with your optics. Proceed with extreme caution.")
-                .SetNotes("Your Kiroshi is being jammed. Whoever this is, they have the hardware to burn your optics from across the room. That alone tells you enough.");
+            return KdspUniqueNPCBackstory.Create("brigitte").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Background"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-SignificantEvents"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-ThreatAssessment"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("brigitte").SetClassification("VOODOO BOYS - LEADER")
-            .SetBackground("Maman Brigitte. VDB leader. Master netrunner. Obsessed with breaching Blackwall.")
-            .SetAffiliation("Voodoo Boys | Leader")
-            .SetCyberwareStatus("Elite netrunning suite | Blackwall-resistant mods")
-            .SetThreatAssessment("EXTREME (85/100) | Master netrunner | Will betray anyone")
-            .SetRelationships("Placide (Lieutenant) | Haitian community")
-            .SetNotes("DANGEROUS. Views outsiders as tools. Do not trust.");
+        return KdspUniqueNPCBackstory.Create("brigitte").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Background-1"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-ThreatAssessment-1"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Brigitte-Notes-1"));
     }
 
     public static func Placide() -> ref<KdspUniqueNPCBackstory> {
         // Before q110 (Both Sides, Now): scanner glitch hides rank/affiliation
         if !KdspQuestProgressHelper.IsBothSidesNowDone() {
-            return KdspUniqueNPCBackstory.Create("placide").SetClassification("██████ — ████████")
-                .SetBackground("ERR_IDENT_PARTIAL :: Name resolution failed. Kiroshi returned fragmented data — possible counter-intrusion suite active. Subject appears to have local authority. Affiliation: MASKED.")
-                .SetThreatAssessment("HIGH | ⊘ SCANNER DEGRADED — target's cyberware is pushing back against your scan. Physical profile suggests heavy augmentation and combat readiness.")
-                .SetNotes("Can't get a clean read. Whatever this person is running, it's shutting your Kiroshi down hard. The fact that they're doing it casually is the threat assessment.");
+            return KdspUniqueNPCBackstory.Create("placide").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-Background"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-ThreatAssessment"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("placide").SetClassification("VOODOO BOYS - LIEUTENANT")
-            .SetBackground("VDB lieutenant. Enforcer. Handles external contacts. Hostile to outsiders.")
-            .SetCyberwareStatus("Combat netrunner suite | Physical augmentation")
-            .SetThreatAssessment("HIGH (75/100) | Combat capable | Netrunner | VDB backup")
-            .SetNotes("Will follow betrayal orders without hesitation. Never turn back on him.");
+        return KdspUniqueNPCBackstory.Create("placide").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-Background-1"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-ThreatAssessment-1"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Placide-Notes-1"));
     }
 
     // === MAELSTROM ===
     public static func Royce() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("royce").SetClassification("MAELSTROM - LEADER")
-            .SetBackground("Maelstrom gang leader. Extreme modification. Unstable personality.")
-            .SetCriminalRecord("Murder, assault, arms dealing | Active warrants")
-            .SetCyberwareStatus("EXTREME | Multiple optics | Combat chassis | Cyberpsychosis risk: HIGH")
-            .SetThreatAssessment("EXTREME (80/100) | Heavily chromed | Unpredictable")
-            .SetNotes("UNSTABLE. Cyberpsychosis indicators. Approach with extreme caution.");
+        return KdspUniqueNPCBackstory.Create("royce").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Royce-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Royce-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Royce-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Royce-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Royce-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Royce-Notes"));
     }
 
     public static func DumDum() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("dumdum").SetClassification("MAELSTROM - LIEUTENANT")
-            .SetBackground("Maelstrom lieutenant. Heavily modified but more stable than leadership.")
-            .SetCyberwareStatus("Extensive modification | Combat focused | Humanity: LOW")
-            .SetThreatAssessment("HIGH (70/100) | Combat cyborg | More stable than most Maelstrom")
-            .SetNotes("Occasionally reasonable. Inhaler habit. Still will kill without hesitation.");
+        return KdspUniqueNPCBackstory.Create("dumdum").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DumDum-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DumDum-Background"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DumDum-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DumDum-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DumDum-Notes"));
     }
 
     // === NCPD / POLITICS ===
     public static func RiverWard() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("river").SetClassification("NCPD - DETECTIVE")
-            .SetBackground("NCPD detective. Sometimes bends rules for justice. Family man. Strong moral compass.")
-            .SetAffiliation("NCPD | Detective")
-            .SetThreatAssessment("MODERATE (50/100) | Combat trained | NCPD resources")
-            .SetRelationships("Joss (Sister) | NCPD (Complicated)")
-            .SetNotes("Good cop in bad system. Trustworthy ally.");
+        return KdspUniqueNPCBackstory.Create("river").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RiverWard-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RiverWard-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RiverWard-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RiverWard-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-RiverWard-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RiverWard-Notes"));
     }
 
     public static func JeffersonPeralez() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsDreamOnDone() {
-            return KdspUniqueNPCBackstory.Create("peralez").SetClassification("POLITICIAN - COMPROMISED")
-                .SetBackground("Night City councilman. Frontrunner mayoral candidate. Anti-corruption platform. Previously retained V as private investigator. Public image remains spotless despite mounting anomalies in personal life.")
-                .SetEarlyLife("Law degree from Night City University. Entered politics young. Built reputation on transparency and anti-gang initiatives in Heywood. One of the few politicians not wholly owned by corporate interests.")
-                .SetSignificantEvents("City council election | Anti-corruption legislation | Mayor Rhyne investigation | Retained V for private case | Penthouse security breach | Anomalous behavioral shifts reported by close contacts")
-                .SetAffiliation("Night City Council | Mayoral Candidate")
-                .SetCriminalRecord("CLEAN | No charges | No warrants | Unusually clean for Night City politics")
-                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants - ACTIVITY FLAGGED")
-                .SetFinancialStatus("Upper bracket | Campaign funding: legitimate sources verified | Personal assets: Charter Hill penthouse")
-                .SetMedicalStatus("FLAGGED: Anomalous neural patterns detected | Implant activity inconsistent with registered hardware | Memory engram irregularities | Subject unaware of condition")
-                .SetThreatAssessment("LOW (15/100) | Non-combatant | Private security detail | THIRD-PARTY INTEREST FLAGGED")
-                .SetRelationships("Elizabeth Peralez (Wife) | Night City Council (Colleagues) | NCPD (Professional contacts)")
-                .SetNotes("Believes himself to be in full control of his own mind. He is not. Someone is rewriting Night City's next mayor from the inside.");
+            return KdspUniqueNPCBackstory.Create("peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Background"))
+                .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-EarlyLife"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-SignificantEvents"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Affiliation"))
+                .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-CriminalRecord"))
+                .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-CyberwareStatus"))
+                .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-FinancialStatus"))
+                .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-MedicalStatus"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-ThreatAssessment"))
+                .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Relationships"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Notes"));
         }
         if KdspQuestProgressHelper.IsFoughtTheLawDone() {
-            return KdspUniqueNPCBackstory.Create("peralez").SetClassification("POLITICIAN - MAYORAL CANDIDATE")
-                .SetBackground("Night City councilman. Frontrunner mayoral candidate. Anti-corruption platform. Previously retained V as private investigator regarding Mayor Rhyne's death.")
-                .SetEarlyLife("Law degree from Night City University. Entered politics young. Built reputation on transparency and anti-gang initiatives in Heywood. One of the few politicians not wholly owned by corporate interests.")
-                .SetSignificantEvents("City council election | Anti-corruption legislation | Mayor Rhyne investigation | Retained V for private case")
-                .SetAffiliation("Night City Council | Mayoral Candidate")
-                .SetCriminalRecord("CLEAN | No charges | No warrants | Unusually clean for Night City politics")
-                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
-                .SetFinancialStatus("Upper bracket | Campaign funding: legitimate sources verified | Personal assets: Charter Hill penthouse")
-                .SetMedicalStatus("Good | Regular checkups | Stress: ELEVATED (campaign pressure)")
-                .SetThreatAssessment("LOW (15/100) | Non-combatant | Private security detail")
-                .SetRelationships("Elizabeth Peralez (Wife) | Night City Council (Colleagues) | NCPD (Professional contacts)")
-                .SetNotes("Rare genuine reformer. Campaign gaining momentum. Powerful interests are paying close attention.");
+            return KdspUniqueNPCBackstory.Create("peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Classification-1"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Background-1"))
+                .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-EarlyLife-1"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-SignificantEvents-1"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Affiliation-1"))
+                .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-CriminalRecord-1"))
+                .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-CyberwareStatus-1"))
+                .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-FinancialStatus-1"))
+                .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-MedicalStatus-1"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-ThreatAssessment-1"))
+                .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Relationships-1"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Notes-1"));
         }
-        return KdspUniqueNPCBackstory.Create("peralez").SetClassification("POLITICIAN")
-            .SetBackground("Night City councilman. Mayoral candidate. Anti-corruption platform. Genuinely idealistic. Runs on promise to clean up Night City governance.")
-            .SetEarlyLife("Law degree from Night City University. Entered politics young. Built reputation on transparency and anti-gang initiatives in Heywood. One of the few politicians not wholly owned by corporate interests.")
-            .SetSignificantEvents("City council election | Anti-corruption legislation | Mayoral campaign announcement")
-            .SetAffiliation("Night City Council | Mayoral Candidate")
-            .SetCriminalRecord("CLEAN | No charges | No warrants | Unusually clean for Night City politics")
-            .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
-            .SetFinancialStatus("Upper bracket | Campaign funding: legitimate sources verified | Personal assets: Charter Hill penthouse")
-            .SetMedicalStatus("Good | Regular checkups | No flags")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | Private security detail")
-            .SetRelationships("Elizabeth Peralez (Wife) | Night City Council (Colleagues)")
-            .SetNotes("Rare genuine reformer. Powerful interests oppose him.");
+        return KdspUniqueNPCBackstory.Create("peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Classification-2"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Background-2"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-EarlyLife-2"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-SignificantEvents-2"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Affiliation-2"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-CriminalRecord-2"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-CyberwareStatus-2"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-FinancialStatus-2"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-MedicalStatus-2"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-ThreatAssessment-2"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Relationships-2"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Notes-2"));
     }
 
     public static func ElizabethPeralez() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsDreamOnDone() {
-            return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification("POLITICIAN - CAMPAIGN DIRECTOR | FLAGGED")
-                .SetBackground("Wife and campaign manager to Jefferson Peralez. Political strategist. Retained V to investigate security breach at Peralez penthouse. Increasingly aware that something is wrong with her husband.")
-                .SetEarlyLife("Corporate communications background. Worked in PR for several mid-tier Night City firms before pivoting to political consulting. Met Jefferson during his first council campaign. Became indispensable to his operation.")
-                .SetSignificantEvents("Managed husband's council campaign | Hired V for penthouse investigation | Reported anomalous items and behavioral shifts in home | Evidence of external tampering discovered")
-                .SetAffiliation("Peralez Campaign | Night City Political Elite")
-                .SetCriminalRecord("CLEAN | No charges | No warrants")
-                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants - ACTIVITY FLAGGED: patterns mirror husband's anomalies")
-                .SetFinancialStatus("Upper bracket | Joint assets with Jefferson Peralez | Charter Hill penthouse")
-                .SetMedicalStatus("FLAGGED: Neural pattern anomalies consistent with husband's readings | Possible external influence on cognition and memory | Subject may be partially aware of condition")
-                .SetThreatAssessment("LOW (10/100) | Non-combatant | Shares husband's security detail | THIRD-PARTY INTEREST FLAGGED")
-                .SetRelationships("Jefferson Peralez (Husband) | Campaign staff (Employer)")
-                .SetNotes("Knows something is deeply wrong. Carrying the weight of that knowledge alone. The ones responsible know she knows.");
+            return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Classification"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Background"))
+                .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-EarlyLife"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-SignificantEvents"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Affiliation"))
+                .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-CriminalRecord"))
+                .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-CyberwareStatus"))
+                .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-FinancialStatus"))
+                .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-MedicalStatus"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-ThreatAssessment"))
+                .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Relationships"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Notes"));
         }
         if KdspQuestProgressHelper.IsFoughtTheLawDone() {
-            return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification("POLITICIAN - CAMPAIGN DIRECTOR")
-                .SetBackground("Wife and campaign manager to Jefferson Peralez. Political strategist. Sharp, calculating, fiercely protective of her husband's career and safety. Recently contacted outside help regarding concerns at home.")
-                .SetEarlyLife("Corporate communications background. Worked in PR for several mid-tier Night City firms before pivoting to political consulting. Met Jefferson during his first council campaign. Became indispensable to his operation.")
-                .SetSignificantEvents("Managed husband's council campaign | Oversaw Rhyne investigation media response | Reported unusual incidents at Peralez penthouse")
-                .SetAffiliation("Peralez Campaign | Night City Political Elite")
-                .SetCriminalRecord("CLEAN | No charges | No warrants")
-                .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
-                .SetFinancialStatus("Upper bracket | Joint assets with Jefferson Peralez | Charter Hill penthouse")
-                .SetMedicalStatus("Good | Stress: ELEVATED | Sleep disturbances reported")
-                .SetThreatAssessment("LOW (10/100) | Non-combatant | Shares husband's security detail")
-                .SetRelationships("Jefferson Peralez (Husband) | Campaign staff (Employer)")
-                .SetNotes("The brains behind the campaign. Campaign gaining traction. Has been reporting unusual occurrences at home. Trusts her instincts over official explanations.");
+            return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Classification-1"))
+                .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Background-1"))
+                .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-EarlyLife-1"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-SignificantEvents-1"))
+                .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Affiliation-1"))
+                .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-CriminalRecord-1"))
+                .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-CyberwareStatus-1"))
+                .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-FinancialStatus-1"))
+                .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-MedicalStatus-1"))
+                .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-ThreatAssessment-1"))
+                .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Relationships-1"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Notes-1"));
         }
-        return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification("POLITICIAN - CAMPAIGN DIRECTOR")
-            .SetBackground("Wife and campaign manager to Jefferson Peralez. Former corporate PR specialist turned political strategist. Runs day-to-day operations of the Peralez mayoral campaign. Known for being the sharper half of the partnership.")
-            .SetEarlyLife("Corporate communications background. Worked in PR for several mid-tier Night City firms before pivoting to political consulting. Met Jefferson during his first council campaign. Became indispensable to his operation.")
-            .SetSignificantEvents("Managed husband's council campaign | Key strategist behind anti-corruption messaging")
-            .SetAffiliation("Peralez Campaign | Night City Political Elite")
-            .SetCriminalRecord("CLEAN | No charges | No warrants")
-            .SetCyberwareStatus("Standard civilian suite | Personal link | Neural implants registered and compliant")
-            .SetFinancialStatus("Upper bracket | Joint assets with Jefferson Peralez | Charter Hill penthouse")
-            .SetMedicalStatus("Good | No flags")
-            .SetThreatAssessment("LOW (10/100) | Non-combatant | Shares husband's security detail")
-            .SetRelationships("Jefferson Peralez (Husband) | Campaign staff (Employer)")
-            .SetNotes("The real operator behind the campaign. Connected, resourceful, and not afraid to hire outside help when problems exceed her reach.");
+        return KdspUniqueNPCBackstory.Create("elizabeth_peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Classification-2"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Background-2"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-EarlyLife-2"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-SignificantEvents-2"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Affiliation-2"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-CriminalRecord-2"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-CyberwareStatus-2"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-FinancialStatus-2"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-MedicalStatus-2"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-ThreatAssessment-2"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Relationships-2"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ElizabethPeralez-Notes-2"));
     }
 
     public static func LuciusRhyne() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsRhyneDead() {
-            return KdspUniqueNPCBackstory.Create("rhyne").SetClassification("DECEASED")
-                .SetSignificantEvents("DECEASED. Died in office. Cause: Health complications. Investigation ongoing.")
-                .SetNotes("Death created power vacuum. Investigation unlikely to find truth.");
+            return KdspUniqueNPCBackstory.Create("rhyne").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-Classification"))
+                .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-SignificantEvents"))
+                .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("rhyne").SetClassification("POLITICIAN - MAYOR")
-            .SetBackground("Night City Mayor. Career politician. Balances corporate interests.")
-            .SetMedicalStatus("Health issues reported | Constant medical care")
-            .SetThreatAssessment("LOW (10/100) | Maximum security detail")
-            .SetNotes("Knows where bodies buried. Many would benefit from his absence.");
+        return KdspUniqueNPCBackstory.Create("rhyne").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-Background"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-Notes-1"));
     }
 
     // === OTHER ===
     public static func Delamain() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("delamain").SetClassification("ARTIFICIAL INTELLIGENCE")
-            .SetBackground("Delamain Corp AI. Luxury taxi service. Sophisticated with developing personality fragments.")
-            .SetSignificantEvents("Operating taxi fleet. Experiencing internal conflicts between personality fragments.")
-            .SetThreatAssessment("VARIABLE | Non-violent by design | Fleet can be weaponized")
-            .SetNotes("Evolving AI. Internal conflicts causing erratic behavior.");
+        return KdspUniqueNPCBackstory.Create("delamain").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Delamain-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Delamain-Background"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Delamain-SignificantEvents"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Delamain-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Delamain-Notes"));
     }
 
     public static func MamaWelles() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mama_welles").SetClassification("CIVILIAN")
-            .SetBackground("Guadalupe Welles. Jackie's mother. Owns El Coyote Cojo. Heywood matriarch.")
-            .SetAffiliation("El Coyote Cojo | Owner")
-            .SetThreatAssessment("NONE (0/100) | Community protected")
-            .SetRelationships("Jackie Welles (Son) | Heywood community")
-            .SetNotes("Heart of Heywood. Do not threaten. Even Valentinos protect her.");
+        return KdspUniqueNPCBackstory.Create("mama_welles").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Notes"));
     }
 
     public static func CynthiaNajarro() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mq040_wife").SetClassification("CIVILIAN - HEYWOOD RESIDENT")
-            .SetBackground("Cynthia Najarro. Office worker employed at a firm on Skyline Street East, The Glen. Born and raised in Heywood. Married 10 years.")
-            .SetEarlyLife("Grew up in The Glen district. Attended local public schools. No higher education on file. Entered the workforce early to support family.")
-            .SetSignificantEvents("Steady employment record spanning multiple years. No notable incidents. Recently working extended hours according to employer records.")
-            .SetAffiliation("Civilian | Employed: Skyline Street East (The Glen)")
-            .SetCriminalRecord("Status: CLEAN | No arrests | No warrants | NCPD: NO FILE")
-            .SetCyberwareStatus("Implants: 2 | Status: LOW - STABLE | Standard optics and subdermal link")
-            .SetFinancialStatus("Credit: FAIR | Income: Dual-household, strained | Outstanding debts flagged under spouse's name | Household finances below district average")
-            .SetMedicalStatus("Blood: B RhD+ | Health: GOOD | Records unremarkable | Trauma Team: NONE")
-            .SetThreatAssessment("NONE (0/100) | Standard civilian profile | No known affiliations")
-            .SetRelationships("Pepe Najarro (Husband, bartender at El Coyote Cojo) | One son | Extended family in Heywood")
-            .SetNotes("Spouse works double shifts at El Coyote Cojo. Household under financial pressure from outstanding loan shark debt. Unremarkable citizen profile. No further investigation warranted.");
+        return KdspUniqueNPCBackstory.Create("mq040_wife").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CynthiaNajarro-Notes"));
     }
 
     public static func PepeNajarro() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("elcoyote_barman").SetClassification("CIVILIAN - HEYWOOD RESIDENT")
-            .SetBackground("Pepe Najarro. Bartender at El Coyote Cojo, The Glen, Heywood. Works double shifts to support family. Known and trusted by local community.")
-            .SetEarlyLife("Heywood native. No formal education beyond secondary. Learned the trade working bars across The Glen. Hired at El Coyote Cojo and became a fixture of the establishment.")
-            .SetSignificantEvents("Took on significant personal debt to loan shark Kirk Sawyer to cover family expenses. Works overtime to service the debt. Stable employment record at El Coyote Cojo spanning several years.")
-            .SetAffiliation("Civilian | El Coyote Cojo (Bartender)")
-            .SetCriminalRecord("Status: CLEAN | No arrests | No warrants | NCPD: NO FILE")
-            .SetFinancialStatus("Credit: POOR | Income: Service industry, below average | DEBT: Outstanding loan (Kirk Sawyer, unlicensed lender) | Payment plan: irregular")
-            .SetMedicalStatus("Blood: O RhD+ | Health: FAIR | Chronic fatigue noted (overwork) | Trauma Team: NONE")
-            .SetThreatAssessment("NONE (0/100) | Standard civilian | No combat training")
-            .SetRelationships("Cynthia Najarro (Wife, 10 years) | One son | Mama Welles (Employer) | Kirk Sawyer (Creditor)")
-            .SetNotes("Respected by locals. Valentinos leave him alone out of respect for Mama Welles and the bar. Under financial strain but keeps his head down. Good listener - hears a lot of things people probably shouldn't say to their bartender.");
+        return KdspUniqueNPCBackstory.Create("elcoyote_barman").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Notes"));
     }
 
     public static func ShadyRipperdocMQ040() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mq040_ripperdoc").SetClassification("UNLICENSED MEDICAL - BLACK MARKET")
-            .SetBackground("Former licensed ripperdoc. Medical license revoked following a patient death during a routine implant procedure. Official cause: surgical complication. Family of the deceased pursued civil and criminal action.")
-            .SetEarlyLife("Completed medical training at Night City Institute of Technology. Interned at a legitimate clinic in Heywood. Earned full ripperdoc certification. Early career was unremarkable - steady patient roster, no complaints on file.")
-            .SetSignificantEvents("Patient death during implant surgery led to license revocation. Civil suit filed by victim's family - settled out of court but family continued public campaign. Criminal negligence charge: DISMISSED due to insufficient evidence. Forced out of legitimate practice. Now operates unlicensed from concealed locations.")
-            .SetAffiliation("Independent | Unlicensed | No corporate or gang ties on record")
-            .SetCriminalRecord("Criminal negligence (DISMISSED) | Practicing medicine without license (ACTIVE WARRANT - LOW PRIORITY) | NCPD: LOW PRIORITY - VICE/MEDICAL")
-            .SetCyberwareStatus("Implants: 3 | Status: MODERATE | Surgical-grade optics, precision hand stabilizers, medical diagnostic suite")
-            .SetFinancialStatus("Income: Cash only, untraceable | No registered accounts | Operates below tax threshold | Clients pay premium for discretion")
-            .SetMedicalStatus("Blood: A RhD+ | Health: FAIR | Stress markers elevated | Mild hand tremor noted in last known checkup | Trauma Team: NONE")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | Medical training only | Flight risk if confronted")
-            .SetRelationships("Former colleagues severed ties | Client list: UNKNOWN - no records kept | Victim's family: ongoing harassment campaign")
-            .SetNotes("Skilled practitioner forced underground by one incident. Takes clients who need work done without questions or records. Moves locations periodically to avoid the victim's family and NCPD medical compliance sweeps. Not considered dangerous.");
+        return KdspUniqueNPCBackstory.Create("mq040_ripperdoc").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ShadyRipperdocMQ040-Notes"));
     }
 
     // --- BEAT ON THE BRAT: KABUKI TWINS (mq025) ---
     public static func CertoEsquerdo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mq025_twin_01").SetClassification("UNDERGROUND FIGHTER")
-            .SetBackground("Certo Esquerdo. Twin brother of Esquerdo Certo. Underground prizefighter operating in Kabuki. Portuguese immigrant background. Name translates to 'Right Left' — fighting stance designation used since childhood.")
-            .SetEarlyLife("Raised in Kabuki alongside twin brother. Began fighting in underground circuits as teenagers. Trained in Brazilian martial arts and street brawling. Inseparable from his brother — always fight as a unit.")
-            .SetSignificantEvents("Active participant in Beat on the Brat circuit. Known for tag-team fighting style with twin brother. Multiple underground tournament wins. Reputation for fighting dirty when separated.")
-            .SetAffiliation("Independent | Beat on the Brat circuit | Kabuki underground fight scene")
-            .SetCriminalRecord("Status: WANTED | Battery, Grievous Bodily Harm, Battery of a Corporate Rep., Attempted Murder, Kidnapping of a Corporate Rep.")
-            .SetCyberwareStatus("Implants: 2 | Gorilla Arms (Modified) | Reinforced skeleton | Status: STABLE")
-            .SetFinancialStatus("Income: Fight purses + side bets | Cash economy | No registered employment")
-            .SetMedicalStatus("Blood: B RhD+ | Multiple healed fractures | Scar tissue buildup on knuckles and forearms | Health: FAIR | Trauma Team: NONE")
-            .SetThreatAssessment("HIGH (70/100) | Melee specialist | Always operates with twin brother — treat as two-person threat")
-            .SetRelationships("Esquerdo Certo (Twin brother, fight partner) | Kabuki fight promoters | Underground betting circles")
-            .SetNotes("Never seen without his twin. The pair fight as a coordinated unit — engaging one means engaging both. Portuguese street fighting tradition. Dangerous in close quarters.");
+        return KdspUniqueNPCBackstory.Create("mq025_twin_01").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CertoEsquerdo-Notes"));
     }
 
     public static func EsquerdoCerto() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mq025_twin_02").SetClassification("UNDERGROUND FIGHTER")
-            .SetBackground("Esquerdo Certo. Twin brother of Certo Esquerdo. Underground prizefighter operating in Kabuki. Portuguese immigrant background. Name translates to 'Left Right' — fighting stance designation used since childhood.")
-            .SetEarlyLife("Raised in Kabuki alongside twin brother. Began fighting in underground circuits as teenagers. More technical fighter than his brother — favors grappling and joint locks over raw power.")
-            .SetSignificantEvents("Active participant in Beat on the Brat circuit. Considered the strategist of the pair. Sets up openings for his brother's power strikes. Multiple underground tournament wins.")
-            .SetAffiliation("Independent | Beat on the Brat circuit | Kabuki underground fight scene")
-            .SetCriminalRecord("Status: WANTED | Unlawful Confinement, Racketeering and Extortion, Multiple Homicide, Hostage Taking")
-            .SetCyberwareStatus("Implants: 1 | Reflex Booster | Reinforced tendons | Status: STABLE")
-            .SetFinancialStatus("Income: Fight purses + side bets | Cash economy | No registered employment")
-            .SetMedicalStatus("Blood: B RhD+ | Chronic joint inflammation | Cauliflower ear (bilateral) | Health: FAIR | Trauma Team: NONE")
-            .SetThreatAssessment("HIGH (70/100) | Melee specialist | Always operates with twin brother — treat as two-person threat")
-            .SetRelationships("Certo Esquerdo (Twin brother, fight partner) | Kabuki fight promoters | Underground betting circles")
-            .SetNotes("The tactical half of the twin pair. More patient, waits for openings. Handles the business side — negotiates fight terms, manages bets. Equally dangerous as his brother but in a different way.");
+        return KdspUniqueNPCBackstory.Create("mq025_twin_02").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-EsquerdoCerto-Notes"));
     }
 
     public static func FrankNostra() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("corpo_friend").SetClassification("ARASAKA - COUNTERINTELLIGENCE")
-            .SetBackground("Frank Nostra. Arasaka counterintelligence division, Night City branch. Long-term corporate operative. Close personal friend and drinking buddy of V during V's Arasaka tenure.")
-            .SetEarlyLife("Corporate upbringing. Family connections to Arasaka through multiple generations. Fast-tracked through corporate training programs. Known for building loyal personal networks within the company.")
-            .SetSignificantEvents("Survived multiple rounds of Arasaka internal purges by maintaining useful connections on all sides. Witnessed V's termination from Arasaka firsthand. Remained in good standing with the corporation after V's departure.")
-            .SetAffiliation("Arasaka Corporation | Counterintelligence Division | Night City Operations")
-            .SetCriminalRecord("Status: CLASSIFIED — ARASAKA CORPORATE SEAL | All records suppressed under corporate diplomatic immunity")
-            .SetCyberwareStatus("Implants: 4 | Corporate-grade Kiroshi Optics, neural link, encrypted comm suite, subdermal armor | Status: MONITORED — Arasaka maintenance schedule")
-            .SetFinancialStatus("Credit: EXCEPTIONAL | Income: €$250,000-500,000/year | Arasaka executive benefits package | Corp-provided housing in Charter Hill")
-            .SetMedicalStatus("Blood: A RhD+ | Health: GOOD | Stress markers elevated but within corporate norms | Trauma Team: GOLD")
-            .SetThreatAssessment("MODERATE (45/100) | Corporate combat training | Armed (concealed carry permit — Arasaka issued) | Protected asset")
-            .SetRelationships("V (Former colleague, close friend) | Arasaka corporate network | Night City bar circuit regulars")
-            .SetNotes("Corporate survivor. Knows how to read the room and pick the winning side. Genuine loyalty to V predates and outlasts corporate politics. One of the few people in Arasaka who treated V as a friend, not an asset.");
+        return KdspUniqueNPCBackstory.Create("corpo_friend").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-FrankNostra-Notes"));
     }
 
     public static func PepeNajarro() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("elcoyote_barman").SetClassification("CIVILIAN - SERVICE WORKER")
-            .SetBackground("Pepe Najarro. Bartender at El Coyote Cojo, The Glen, Heywood. Long-term employee. Works double shifts regularly. Known face in the local community.")
-            .SetEarlyLife("Grew up in Heywood. No higher education on file. Entered service industry early. Worked various bar and restaurant jobs across The Glen before settling at El Coyote Cojo.")
-            .SetSignificantEvents("Steady employment at El Coyote Cojo for multiple years. No gaps in work record. Known to take every available shift. Quietly respected by regulars and local Valentinos alike.")
-            .SetAffiliation("El Coyote Cojo | Bartender | Valentinos-adjacent (community, not member)")
-            .SetCriminalRecord("Status: CLEAN | No arrests | No warrants | NCPD: NO FILE")
-            .SetCyberwareStatus("Implants: 1 | Status: LOW - STABLE | Basic optics only")
-            .SetFinancialStatus("Credit: POOR | Income: Service wage + tips | Outstanding debt to Kirk Sawyer (private lender - HIGH INTEREST) | Household finances strained")
-            .SetMedicalStatus("Blood: O RhD+ | Health: FAIR | Chronic fatigue noted | Lower back strain (occupational) | Trauma Team: NONE")
-            .SetThreatAssessment("NONE (0/100) | Non-combatant | Community figure | No known enemies")
-            .SetRelationships("Cynthia Najarro (Wife) | One son | Mama Welles (Employer) | Heywood community")
-            .SetNotes("Hard-working family man under significant financial strain. Owes money to local loan shark Kirk Sawyer. Takes every shift offered. Well-liked by patrons and community. Not a Valentino but operates in their territory without issue - sign of local respect.");
+        return KdspUniqueNPCBackstory.Create("elcoyote_barman").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Background-1"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-EarlyLife-1"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-SignificantEvents-1"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Affiliation-1"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-CriminalRecord-1"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-FinancialStatus-1"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-MedicalStatus-1"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-ThreatAssessment-1"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Relationships-1"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-PepeNajarro-Notes-1"));
     }
 
     // === SPECIAL / ANIMALS ===
     public static func Nibbles() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("nibbles").SetClassification("FELINE - DOMESTIC")
-            .SetBackground("Stray cat. Watson district origin. Registered to current residence following adoption.")
-            .SetEarlyLife("No registered owner prior to current filing. Presumed feral origin. Survived on local pest population.")
-            .SetSignificantEvents("2076: Flagged in NCPD database due to data corruption error. Biometric ID temporarily cross-linked with wanted terrorist profile. NCPD and MaxTac units deployed to Megabuilding H10. Error resolved. Incident classified.")
-            .SetAffiliation("Registered to: V | Megabuilding H10")
-            .SetCriminalRecord("CLEARED | Note: False positive terrorist flag (2076) - data corruption error | Animal Control complaints on file")
-            .SetCyberwareStatus("Microchip ID implant only")
-            .SetFinancialStatus("Dependent | No registered assets")
-            .SetMedicalStatus("Healthy | Neutered | Vaccinations current | No known conditions")
-            .SetThreatAssessment("NEGLIGIBLE | Non-threat classification | Note: Disregard prior THREAT LEVEL OMEGA flag - DATA ERROR")
-            .SetRelationships("V (Registered owner)")
-            .SetNotes("Standard domestic animal. DATABASE INTEGRITY WARNING: This entity was subject to a major data corruption incident. All prior flags invalidated.");
+        return KdspUniqueNPCBackstory.Create("nibbles").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Nibbles-Notes"));
     }
 
     // TYGER CLAWS - note: detailed entry for Jotaro Shobo in Watson District Notables section
 
     public static func HiromiSato() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hiromi_sato").SetClassification("TYGER CLAWS - OPERATIONS")
-            .SetBackground("Tyger Claws operations coordinator. Manages club and entertainment venue protection rackets across Westbrook.")
-            .SetEarlyLife("Second-generation Tyger Claw. Father was enforcer killed in gang war 2067.")
-            .SetAffiliation("Tyger Claws | Westbrook District")
-            .SetCriminalRecord("Extortion | Money laundering | Assault | Intimidation")
-            .SetThreatAssessment("HIGH | Gang operative | Combat trained");
+        return KdspUniqueNPCBackstory.Create("hiromi_sato").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-HiromiSato-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-HiromiSato-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-HiromiSato-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-HiromiSato-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-HiromiSato-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-HiromiSato-ThreatAssessment"));
     }
 
     // VALENTINOS - note: detailed entry for Gustavo Orta in Notable Residents section
 
     public static func MiguelRodriguez() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mq_hey_rey_06_outpost_miniboss").SetClassification("VALENTINOS - LEADERSHIP")
-            .SetBackground("Miguel Rodriguez, alias 'Gizmo'. Valentinos lieutenant operating out of Mercado Sonora, Vista del Rey. Former licensed ripperdoc. Lost license after a patient died on the table - family pursued legal action and won.")
-            .SetEarlyLife("Grew up in Vista del Rey. Trained as a ripperdoc. Ran a small clinic in Heywood before the incident. After losing his medical license, debts mounted and the Valentinos offered a way out.")
-            .SetSignificantEvents("Forced into black market ripperdoc work under Valentinos protection. Expanded into smuggling and trafficking logistics. NCPD dispatch flagged for organized crime activity at Mercado Sonora. Coordinates human trafficking operations using modified vehicles.")
-            .SetAffiliation("Valentinos | Vista del Rey | Mercado Sonora operations")
-            .SetCriminalRecord("NCPD PRIORITY TARGET | Second-degree murder | Drug trafficking | Human smuggling | Suspected human trafficking | Unlicensed medical practice | Organized crime")
-            .SetCyberwareStatus("Implants: 4 | Status: MODERATE | Combat-grade optics, reinforced subdermal | Note: Maintains ripperdoc-grade surgical tools")
-            .SetFinancialStatus("Income: Criminal enterprise | Former medical debts (defaulted) | Multiple front businesses | Controls Mercado Sonora rackets")
-            .SetMedicalStatus("Former medical professional | Ripperdoc license: REVOKED | Malpractice record: 1 fatality | Operates unlicensed from Mercado Sonora")
-            .SetThreatAssessment("EXTREME | Valentinos leadership | Armed and dangerous | Gang security detail | NCPD bounty active")
-            .SetRelationships("Alan Navarez (Associate, logistics) | Ines Jimenez (Associate, transport) | Valentinos inner circle | Victim's family (ongoing legal/personal vendetta)")
-            .SetNotes("WARNING: Active NCPD contract for neutralization. Former ripperdoc turned gang operative after malpractice destroyed career. Family of deceased patient reportedly still pursuing him - may be factor in Valentinos protection arrangement. Armed escort at all times.");
+        return KdspUniqueNPCBackstory.Create("mq_hey_rey_06_outpost_miniboss").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-Notes"));
     }
 
     // MAELSTROM - Additional
     public static func Brick() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("brick").SetClassification("MAELSTROM - FORMER LEADER")
-            .SetBackground("Former Maelstrom leader. Overthrown by Royce in internal coup. Imprisoned in All Foods plant.")
-            .SetEarlyLife("Rose through Maelstrom ranks. Led gang with more restraint than successor. Maintained some honor among thieves.")
-            .SetSignificantEvents("2077: Deposed by Royce over Flathead deal disagreement. Held captive. Fate depends on outside intervention.")
-            .SetAffiliation("Maelstrom (Former Leader) | Status: Deposed")
-            .SetCriminalRecord("Cyberware trafficking | Armed robbery | Assault | Gang leadership")
-            .SetThreatAssessment("HIGH | Maelstrom combat training | Gang connections | Seeking revenge on Royce");
+        return KdspUniqueNPCBackstory.Create("brick").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Brick-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Brick-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Brick-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Brick-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Brick-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Brick-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Brick-ThreatAssessment"));
     }
 
     // XBD EDITORS
     public static func GottfridPersson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("gottfrid_persson").SetClassification("CRIMINAL - XBD EDITOR")
-            .SetBackground("Swedish braindance editor specializing in illegal XBDs. Operates out of Northside with Maelstrom protection. Father of Fredrik Persson.")
-            .SetEarlyLife("Technical background in braindance editing. Built reputation in underground XBD market. Known as a 'craftsman without a conscience'.")
-            .SetAffiliation("Maelstrom (Associate) | Independent XBD production")
-            .SetCriminalRecord("NCPD PRIORITY TARGET | Production of illegal braindances | Snuff content distribution | Multiple accessory to murder charges | Protected by gang affiliation")
-            .SetFinancialStatus("Lucrative underground operation | Maelstrom profit-sharing | Untraceable transactions")
-            .SetThreatAssessment("MODERATE | Non-combatant | Maelstrom security detail | High-value target for NCPD")
-            .SetRelationships("Fredrik Persson (Son/Partner)")
-            .SetNotes("WARNING: Subject produces extreme illegal content. Approach with caution - heavily guarded facility.");
+        return KdspUniqueNPCBackstory.Create("gottfrid_persson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-GottfridPersson-Notes"));
     }
 
     public static func FredrikPersson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("fredrik_persson").SetClassification("CRIMINAL - XBD EDITOR")
-            .SetBackground("Swedish braindance editor. Works alongside father Gottfrid Persson in illegal XBD production. Handles acquisition and client relations.")
-            .SetEarlyLife("Raised in the business. Learned braindance editing from father. No moral qualms about content produced.")
-            .SetAffiliation("Maelstrom (Associate) | Family operation with Gottfrid Persson")
-            .SetCriminalRecord("NCPD PRIORITY TARGET | Production of illegal braindances | Snuff content distribution | Accessory to murder | Client solicitation for extreme content")
-            .SetFinancialStatus("Family business income | Maelstrom profit-sharing")
-            .SetThreatAssessment("MODERATE | Non-combatant | Maelstrom security detail | Will capitulate under pressure")
-            .SetRelationships("Gottfrid Persson (Father/Partner)")
-            .SetNotes("WARNING: Subject involved in extreme illegal content production. Less composed than father - may provide information if pressured.");
+        return KdspUniqueNPCBackstory.Create("fredrik_persson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-FredrikPersson-Notes"));
     }
 
     // ANIMALS
     public static func Sasquatch() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("sasquatch").SetClassification("ANIMALS - LEADERSHIP")
-            .SetBackground("Animals gang leader. Pacifica territory. Augmented with extreme combat-grade cyberware. NetWatch collaborator.")
-            .SetEarlyLife("Unknown origin. Rose to leadership through physical dominance. Extensive body modification.")
-            .SetSignificantEvents("NetWatch collaboration during Voodoo Boys conflict. Grand Imperial Mall stronghold.")
-            .SetAffiliation("Animals | Pacifica")
-            .SetCriminalRecord("Murder | Assault | Cyberware trafficking | Territory violations")
-            .SetCyberwareStatus("EXTREME MODIFICATION | Combat-grade synthetic muscle | Reinforced skeleton | Threat level multiplier")
-            .SetThreatAssessment("EXTREME | Enhanced physiology | Gang leadership | Do not engage without heavy support");
+        return KdspUniqueNPCBackstory.Create("sasquatch").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Sasquatch-ThreatAssessment"));
     }
 
     // WRAITHS
     public static func Nash() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("nash").SetClassification("WRAITHS - LEADERSHIP")
-            .SetBackground("Wraiths leader. Badlands raider. Controls highway robbery operations outside Night City.")
-            .SetEarlyLife("Former nomad exile. Formed Wraiths from outcasts and criminals.")
-            .SetAffiliation("Wraiths | Badlands")
-            .SetCriminalRecord("Murder | Kidnapping | Highway robbery | Vehicle theft | Destruction of property")
-            .SetThreatAssessment("EXTREME | Raider gang leader | Vehicle combat specialist | Badlands territory control");
+        return KdspUniqueNPCBackstory.Create("nash").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Nash-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Nash-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Nash-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Nash-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Nash-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Nash-ThreatAssessment"));
     }
 
     // SCAVENGERS
     public static func AntonKolos() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("anton_kolos").SetClassification("SCAVENGERS - OPERATIONS")
-            .SetBackground("Scavenger cell leader. Specializes in involuntary cyberware extraction. Multiple victim reports.")
-            .SetEarlyLife("Eastern European origin. Immigrated to Night City. Fell into organ trade.")
-            .SetAffiliation("Scavengers")
-            .SetCriminalRecord("Murder | Organ trafficking | Kidnapping | Assault | Body disposal")
-            .SetThreatAssessment("HIGH | Extremely dangerous | No regard for human life | Capture for questioning if possible");
+        return KdspUniqueNPCBackstory.Create("anton_kolos").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-ThreatAssessment"));
     }
 
     // NETWATCH
     public static func BryceMosley() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("bryce_mosley").SetClassification("NETWATCH - AGENT")
-            .SetBackground("NetWatch field agent. Operates in Pacifica. Monitors Blackwall integrity and Voodoo Boys activity.")
-            .SetEarlyLife("CLASSIFIED - NetWatch personnel file sealed")
-            .SetSignificantEvents("2077: Captured by Voodoo Boys during Pacifica operation. Status depends on intervention.")
-            .SetAffiliation("NetWatch | Pacifica Operations")
-            .SetCriminalRecord("N/A - Federal agent immunity")
-            .SetThreatAssessment("HIGH | Federal training | Unknown cyberware | NetWatch resources");
+        return KdspUniqueNPCBackstory.Create("bryce_mosley").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BryceMosley-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BryceMosley-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BryceMosley-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-BryceMosley-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BryceMosley-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BryceMosley-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BryceMosley-ThreatAssessment"));
     }
 
     // MEDIA
     public static func GilleanJordan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("gillean_jordan").SetClassification("MEDIA - N54 NEWS")
-            .SetBackground("N54 News anchor. Night City's most-watched news personality. Corporate-approved messaging.")
-            .SetEarlyLife("Journalism degree from NorCal University. Rapid rise through network ranks.")
-            .SetAffiliation("N54 News | Network Communications International")
-            .SetCriminalRecord("CLEAN")
-            .SetThreatAssessment("LOW | Civilian | High public profile | Corporate protection");
+        return KdspUniqueNPCBackstory.Create("gillean_jordan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-ThreatAssessment"));
     }
 
     // Note: detailed Max Jones entry in Watson District Notables section
 
     // CORPO SECURITY
     public static func GrahamMayfield() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("graham_mayfield").SetClassification("ARASAKA - SECURITY DIVISION")
-            .SetBackground("Arasaka security coordinator. Manages Night City corporate facility protection.")
-            .SetAffiliation("Arasaka Corporation | Security Division")
-            .SetCriminalRecord("CLASSIFIED - Corporate immunity")
-            .SetThreatAssessment("HIGH | Corporate security training | Arasaka resources | Armed response teams");
+        return KdspUniqueNPCBackstory.Create("graham_mayfield").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-GrahamMayfield-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-GrahamMayfield-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-GrahamMayfield-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-GrahamMayfield-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-GrahamMayfield-ThreatAssessment"));
     }
 
     public static func MilitechCommander() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("militech_commander").SetClassification("MILITECH - FIELD OPERATIONS")
-            .SetBackground("Militech field commander. Oversees Night City military contracting operations.")
-            .SetAffiliation("Militech | Night City Operations")
-            .SetCriminalRecord("CLASSIFIED - Military contractor immunity")
-            .SetThreatAssessment("EXTREME | Military training | Heavy weapons access | Tactical command");
+        return KdspUniqueNPCBackstory.Create("militech_commander").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MilitechCommander-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MilitechCommander-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MilitechCommander-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MilitechCommander-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MilitechCommander-ThreatAssessment"));
     }
 
     // RIPPERDOCS
     public static func CharlesBucks() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("charles_bucks").SetClassification("RIPPERDOC - LICENSED")
-            .SetBackground("Licensed ripperdoc. Kabuki clinic. Known for quality work and fair prices.")
-            .SetEarlyLife("Medical school dropout. Self-taught cyberware installation. Built reputation through skill.")
-            .SetAffiliation("Independent | Kabuki")
-            .SetCriminalRecord("Minor licensing violations (resolved)")
-            .SetThreatAssessment("LOW | Civilian | Medical professional | Community respected");
+        return KdspUniqueNPCBackstory.Create("charles_bucks").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesBucks-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesBucks-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesBucks-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesBucks-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesBucks-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesBucks-ThreatAssessment"));
     }
 
     public static func Wilson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("wilson_default").SetClassification("WEAPONS DEALER — LICENSED FRANCHISE HOLDER")
-            .SetBackground("Robert Wilson. 2nd Amendment franchise holder since 2050. Megabuilding H10, Little China. Self-taught gunsmith. Won't sell anything he hasn't personally inspected.")
-            .SetEarlyLife("No military service on record. Two decades in Watson. Known as 'mean' by Megabuilding kids — chased Leo Noone out of the shop more than once.")
-            .SetSignificantEvents("Gifted V an iconic Constitutional Arms Unity ('Dying Night'). Runs 'shooting classes' — more drill instructor than sales pitch.")
-            .SetAffiliation("2nd Amendment Franchise (Budget Arms) | Megabuilding H10, Watson")
-            .SetCriminalRecord("CLEAN | Firearms licensing current. Passes all NCPD audits. Suspected off-books modifications — never charged.")
-            .SetThreatAssessment("MODERATE (50/100) | Armed at all times | Decades of trigger time | Will defend the shop")
-            .SetNotes("Believes a gun should fit the hand it's in. Will refuse a sale. Will also throw in free mods for buyers who know their hardware.");
+        return KdspUniqueNPCBackstory.Create("wilson_default").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Wilson-Notes"));
     }
 
     // US CRACKS / KERRY'S BAND
     public static func BlueMoon() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("blue_moon").SetClassification("ENTERTAINMENT - MUSICIAN")
-            .SetBackground("Member of Us Cracks. Rising star in Night City music scene. Known for distinctive blue aesthetic.")
-            .SetAffiliation("Us Cracks | MSM Records")
-            .SetCriminalRecord("Minor incidents - stalker related (victim)")
-            .SetThreatAssessment("LOW | Civilian | High public profile | Corporate protection");
+        return KdspUniqueNPCBackstory.Create("blue_moon").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BlueMoon-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BlueMoon-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BlueMoon-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BlueMoon-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BlueMoon-ThreatAssessment"));
     }
 
     // CELEBRITIES
     public static func LizzyWizzy() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("lizzy_wizzy").SetClassification("ENTERTAINMENT - CELEBRITY")
-            .SetBackground("Global music icon. Full-body chrome conversion after on-stage incident. Night City's most famous performer.")
-            .SetEarlyLife("Rose to fame in 2060s. Survived critical incident during 2070 concert via emergency cyberization.")
-            .SetSignificantEvents("2070: On-stage incident. Full body conversion. Career resurgence.")
-            .SetAffiliation("Independent Artist | Global touring")
-            .SetCyberwareStatus("FULL BODY CONVERSION | 100% synthetic | Custom chrome aesthetic")
-            .SetCriminalRecord("CLEAN")
-            .SetThreatAssessment("MODERATE | Full-body chrome | Unpredictable mental state | Corporate connections")
-            .SetRelationships("Liam Northom (Manager/Partner)");
+        return KdspUniqueNPCBackstory.Create("lizzy_wizzy").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-Relationships"));
     }
 
     public static func OzobBozo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ozob").SetClassification("ENTERTAINMENT - PERSONALITY")
-            .SetBackground("Underground celebrity. Professional clown with grenade nose implant. Pit fighter and media personality.")
-            .SetEarlyLife("Origins unknown. Rose to fame through underground fighting circuits and bizarre persona.")
-            .SetAffiliation("Independent | Underground entertainment")
-            .SetCyberwareStatus("CUSTOM | Grenade nose implant (live explosive) | Enhanced reflexes")
-            .SetCriminalRecord("Assault | Property damage | Unlicensed explosive device")
-            .SetThreatAssessment("HIGH | Live explosive implant | Unpredictable | Combat experienced");
+        return KdspUniqueNPCBackstory.Create("ozob").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-OzobBozo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-OzobBozo-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-OzobBozo-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-OzobBozo-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-OzobBozo-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-OzobBozo-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-OzobBozo-ThreatAssessment"));
     }
 
     public static func Ozob() -> ref<KdspUniqueNPCBackstory> {
@@ -1303,1199 +1303,1199 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func JoshuaStephenson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("joshua_stephenson").SetClassification("CIVILIAN - DEATH ROW")
-            .SetBackground("Convicted murderer turned born-again Christian. Scheduled for crucifixion broadcast as part of redemption narrative.")
-            .SetEarlyLife("Committed multiple murders. Found faith on death row. Agreed to televised execution.")
-            .SetSignificantEvents("2077: BD crucifixion broadcast deal with media company. Controversial religious programming.")
-            .SetAffiliation("None | Death Row Inmate")
-            .SetCriminalRecord("CONVICTED | Multiple counts murder | Death sentence")
-            .SetThreatAssessment("LOW | Incarcerated | Non-violent since conversion");
+        return KdspUniqueNPCBackstory.Create("joshua_stephenson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JoshuaStephenson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JoshuaStephenson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JoshuaStephenson-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JoshuaStephenson-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JoshuaStephenson-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JoshuaStephenson-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JoshuaStephenson-ThreatAssessment"));
     }
 
     // PHANTOM LIBERTY
     public static func SolomonReed() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("solomon_reed").SetClassification("NUSA - FIA OPERATIVE")
-            .SetBackground("Deep cover FIA agent. Decades of service. Operates in Dogtown under sleeper protocol.")
-            .SetEarlyLife("CLASSIFIED - Federal agent dossier sealed")
-            .SetSignificantEvents("CLASSIFIED | Dogtown assignment | President Myers protection detail")
-            .SetAffiliation("FIA | NUSA Government")
-            .SetCriminalRecord("CLASSIFIED - Federal immunity")
-            .SetThreatAssessment("EXTREME | Elite training | Decades experience | Federal resources | Do not engage");
+        return KdspUniqueNPCBackstory.Create("solomon_reed").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SolomonReed-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SolomonReed-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-SolomonReed-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-SolomonReed-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SolomonReed-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-SolomonReed-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SolomonReed-ThreatAssessment"));
     }
 
     public static func Songbird() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("songbird").SetClassification("NUSA - INTELLIGENCE ASSET")
-            .SetBackground("FIA netrunner asset. Exceptional skills. Health compromised by Blackwall exposure. Key to Dogtown operation.")
-            .SetEarlyLife("Recruited young by FIA. Trained as elite netrunner. Brain damaged by Blackwall interface.")
-            .SetSignificantEvents("President Myers extraction. Blackwall contact. Neural degeneration accelerating.")
-            .SetAffiliation("FIA | President Myers")
-            .SetCyberwareStatus("CRITICAL | Extensive neural modification | Blackwall interface damage | Terminal condition")
-            .SetMedicalStatus("TERMINAL | Neural degeneration | Requires Militech cure or Neural Matrix")
-            .SetThreatAssessment("EXTREME | Elite netrunner | Blackwall access | Unstable condition");
+        return KdspUniqueNPCBackstory.Create("songbird").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-CyberwareStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Songbird-ThreatAssessment"));
     }
 
     public static func KurtHansen() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("kurt_hansen").SetClassification("BARGHEST - LEADER")
-            .SetBackground("Barghest PMC leader. Controls Dogtown. Former NUSA colonel. Declared independence from federal authority.")
-            .SetEarlyLife("NUSA military career. Rose to colonel. Defected during Unification War. Established Dogtown territory.")
-            .SetSignificantEvents("Dogtown establishment. NUSA conflict. Controls black market hub.")
-            .SetAffiliation("Barghest PMC | Dogtown")
-            .SetCriminalRecord("WANTED - NUSA | Treason | Murder | War crimes | Terrorism")
-            .SetThreatAssessment("EXTREME | Military command | PMC army | Dogtown fortress | Do not engage without army");
+        return KdspUniqueNPCBackstory.Create("kurt_hansen").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-KurtHansen-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-KurtHansen-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-KurtHansen-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-KurtHansen-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-KurtHansen-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-KurtHansen-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-KurtHansen-ThreatAssessment"));
     }
 
     public static func RosalindMyers() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("rosalind_myers").SetClassification("NUSA - PRESIDENT")
-            .SetBackground("President of the New United States of America. Former Militech CEO. Architect of the Unification War. Ruthless pragmatist willing to sacrifice anything - and anyone - to rebuild America.")
-            .SetEarlyLife("Rose through Militech ranks. CEO by 2060. Transitioned to politics. Won presidency on reunification platform. Ordered military operations that killed thousands.")
-            .SetSignificantEvents("Militech CEO tenure. Unification War architect. Multiple assassination attempts on record. FIA maintains ongoing protection details classified above TOP SECRET.")
-            .SetAffiliation("NUSA Government | Executive Office | Former Militech")
-            .SetCriminalRecord("IMMUNE - Head of State | War crimes allegations (unsubstantiated) | Civilian casualties (classified)")
-            .SetNotes("Calculating | Manipulative | Believes ends justify means | Views people as assets | Will promise anything to survive | Do not trust")
-            .SetThreatAssessment("EXTREME | Commander-in-Chief | Nuclear authority | FIA assets | Secret Service | Most dangerous person in NUSA");
+        return KdspUniqueNPCBackstory.Create("rosalind_myers").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RosalindMyers-ThreatAssessment"));
     }
 
     public static func AlenaXenakis() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("alena_xenakis").SetClassification("FIA - DEEP COVER OPERATIVE")
-            .SetBackground("Alena Xenakis, alias 'Alex.' Former aspiring braindance actress from the Los Angeles Metroplex slums. Recruited by Solomon Reed after the FIA discovered her talent at a front studio.")
-            .SetEarlyLife("Grew up in LA Metroplex slums. Joined a BD studio that turned out to be an FIA front. Acting skills drew agency attention.")
-            .SetSignificantEvents("Deployed to Dogtown as deep cover agent post-Unification War. Seven years undercover. Runs The Moth bar as cover identity.")
-            .SetAffiliation("FIA | NUSA Intelligence")
-            .SetCyberwareStatus("Shapeshifting implants (identity alteration) | Neural interface")
-            .SetThreatAssessment("HIGH (70/100) | Trained operative | FIA resources | Master of disguise")
-            .SetNotes("Gifted chameleon. Years undercover have sharpened a ruthless edge. Counting down to retirement.");
+        return KdspUniqueNPCBackstory.Create("alena_xenakis").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AlenaXenakis-Notes"));
     }
 
     // === PHANTOM LIBERTY - LONGSHORE STACKS VENDORS ===
 
     public static func LeonWatson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("leon_watson").SetClassification("VENDOR - WEAPONS")
-            .SetBackground("Weapon vendor operating in the Longshore Stacks, Dogtown. Supplies firearms and ammunition to Dogtown residents.")
-            .SetAffiliation("Independent | Longshore Stacks market")
-            .SetThreatAssessment("LOW (20/100) | Armed merchant | Neutral party")
-            .SetNotes("One of Dogtown's few reliable arms dealers outside Hansen's black market.");
+        return KdspUniqueNPCBackstory.Create("leon_watson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LeonWatson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LeonWatson-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LeonWatson-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LeonWatson-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LeonWatson-Notes"));
     }
 
     public static func CostinLahovary() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("costin_lahovary").SetClassification("RIPPERDOC - UNLICENSED")
-            .SetBackground("Former licensed Medtech from Night City. Had medical license revoked under unclear circumstances. Relocated to Dogtown in the 2070s.")
-            .SetSignificantEvents("License revocation. Fled to Dogtown. Established makeshift clinic in the Longshore Stacks.")
-            .SetAffiliation("Independent | Longshore Stacks")
-            .SetCyberwareStatus("Full ripperdoc surgical suite (unlicensed)")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | Medical knowledge")
-            .SetNotes("Lack of medical license is an open secret among Dogtown locals. Competent despite the circumstances.");
+        return KdspUniqueNPCBackstory.Create("costin_lahovary").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CostinLahovary-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CostinLahovary-Background"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-CostinLahovary-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CostinLahovary-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CostinLahovary-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CostinLahovary-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CostinLahovary-Notes"));
     }
 
     public static func RonaldMalone() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ronald_malone").SetClassification("VENDOR - JUNK DEALER")
-            .SetBackground("Ronald P.T. Malone, aka 'The Dogtown Prodigy,' 'Pacifica Typhoon.' Dogtown resident and junk vendor. Former competitive sprinter who ran 100m in 6 seconds under booster effects.")
-            .SetEarlyLife("Rose to fame as a sprinter. Career stalled when new augmented athletes from Fiona Vargas's neuromotor program outpaced him.")
-            .SetSignificantEvents("Retired from athletics. Reinvented himself as Dogtown's most well-connected junk dealer and information broker.")
-            .SetAffiliation("Independent | Dogtown community")
-            .SetThreatAssessment("LOW (10/100) | Non-combatant | Extensive local knowledge")
-            .SetNotes("Knows Dogtown inside and out. Willing to share information — for a price. Wears NCU Signet Ring.");
+        return KdspUniqueNPCBackstory.Create("ronald_malone").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RonaldMalone-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RonaldMalone-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-RonaldMalone-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-RonaldMalone-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RonaldMalone-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RonaldMalone-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RonaldMalone-Notes"));
     }
 
     public static func SusannaMack() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("susanna_mack").SetClassification("EX-TRAUMA TEAM MEDIC")
-            .SetBackground("Former Trauma Team medic laying low in Dogtown. A helmet malfunction during a mid-extraction exposed her face to hostile parties. Working as a meds vendor until the heat clears.")
-            .SetAffiliation("Former Trauma Team | Independent")
-            .SetCyberwareStatus("Gorilla Arms (single, right arm) | Dermal optic implants")
-            .SetMedicalStatus("Trained paramedic. Trauma Team field certification (suspended).")
-            .SetThreatAssessment("MODERATE (40/100) | Combat medic training | Gorilla Arms | Trauma Team experience")
-            .SetNotes("Still wears the Trauma Team logo. Not hiding well. Competent healer — dangerous if cornered.");
+        return KdspUniqueNPCBackstory.Create("susanna_mack").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SusannaMack-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SusannaMack-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SusannaMack-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-SusannaMack-CyberwareStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-SusannaMack-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SusannaMack-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SusannaMack-Notes"));
     }
 
     // === PHANTOM LIBERTY - NO EASY WAY OUT CHARACTERS ===
 
     public static func AngelicaWhelan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("angelica_whelan").SetClassification("ANIMALS - PACK ALPHA")
-            .SetBackground("Pack-leader of the Animals in Dogtown. Unlike most Animals, relies on cunning and business acumen rather than raw muscle. Controls underground fight-fixing operations.")
-            .SetAffiliation("Animals | Dogtown pack")
-            .SetCriminalRecord("Fight-fixing | Extortion | Illegal implant operations | Coercion of athletes")
-            .SetCyberwareStatus("Unknown combat implants | Control chip tech (remote incapacitation)")
-            .SetThreatAssessment("HIGH (65/100) | Gang backing | Cunning strategist | Armed and dangerous")
-            .SetNotes("Carries iconic 'Cheetah' pistol. Witty and calculating. Manipulates fighters via implanted control chips.");
+        return KdspUniqueNPCBackstory.Create("angelica_whelan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AngelicaWhelan-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AngelicaWhelan-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AngelicaWhelan-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AngelicaWhelan-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AngelicaWhelan-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AngelicaWhelan-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AngelicaWhelan-Notes"));
     }
 
     public static func DamirKovac() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("damir_kovac").SetClassification("RIPPERDOC - ANIMALS AFFILIATE")
-            .SetBackground("Ripperdoc operating in Terra Cognita, Dogtown. Left Night City after clients accused him of deliberately sabotaging implant performance to ensure repeat business.")
-            .SetSignificantEvents("Accused of implant sabotage. Fled NC. Now works for Scavengers and takes jobs from Animals.")
-            .SetAffiliation("Scavengers | Animals (contract work)")
-            .SetCyberwareStatus("Full ripperdoc surgical suite | Experimental implant knowledge")
-            .SetThreatAssessment("LOW (20/100) | Non-combatant | Neurotic | Valuable skills")
-            .SetNotes("Competent but unethical. Has a habit of sticking his nose where it doesn't belong. Craves peace and quiet.");
+        return KdspUniqueNPCBackstory.Create("damir_kovac").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DamirKovac-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DamirKovac-Background"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-DamirKovac-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DamirKovac-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DamirKovac-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DamirKovac-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DamirKovac-Notes"));
     }
 
     public static func AaronWaines() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("aaron_waines").SetClassification("ATHLETE - BOXER")
-            .SetBackground("Talented young boxer born and bred in Dogtown. Former Animals associate. Father was a construction worker assigned to the Anatomicon building in Terra Cognita.")
-            .SetEarlyLife("Grew up in Dogtown. Joined the Animals who paid for his combat implants. Career plagued by suspicious losses.")
-            .SetAffiliation("Former Animals | Independent")
-            .SetCyberwareStatus("Combat implants (Animals-funded) | Neural failsafe device (inner ear)")
-            .SetThreatAssessment("MODERATE (45/100) | Trained boxer | Combat cyberware | Physically dangerous")
-            .SetNotes("Promising career undermined by shady circumstances. Seeking to break free and fight clean.");
+        return KdspUniqueNPCBackstory.Create("aaron_waines").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AaronWaines-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AaronWaines-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AaronWaines-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AaronWaines-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AaronWaines-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AaronWaines-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AaronWaines-Notes"));
     }
 
     public static func WilliamCorrey() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("william_correy").SetClassification("ATHLETE - BOXER")
-            .SetBackground("Professional boxer active in Dogtown's underground fight circuit. Opponent of Aaron Waines in a notable bout at Eden Plaza.")
-            .SetAffiliation("Independent | Dogtown fight circuit")
-            .SetThreatAssessment("MODERATE (40/100) | Trained fighter | Combat cyberware")
-            .SetNotes("Tough competitor. Part of Dogtown's thriving underground boxing scene.");
+        return KdspUniqueNPCBackstory.Create("william_correy").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-WilliamCorrey-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-WilliamCorrey-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-WilliamCorrey-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-WilliamCorrey-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-WilliamCorrey-Notes"));
     }
 
     // === PHANTOM LIBERTY - GIGS ===
 
     public static func AlanNoel() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("alan_noel").SetClassification("NETWATCH - UNDERCOVER AGENT")
-            .SetBackground("NetWatch agent (ID: 32387). Operating undercover within the Voodoo Boys of Dogtown. Blood type: O-. Investigating VDB practice of hacking implants of uncooperative targets.")
-            .SetAffiliation("NetWatch | Infiltrating Voodoo Boys")
-            .SetThreatAssessment("HIGH (60/100) | NetWatch training | Netrunner capabilities | Deep cover")
-            .SetNotes("Months deep in VDB territory. Hates the assignment. Working to dismantle VDB's implant-hacking network from within.");
+        return KdspUniqueNPCBackstory.Create("alan_noel").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AlanNoel-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AlanNoel-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AlanNoel-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AlanNoel-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AlanNoel-Notes"));
     }
 
     public static func KyleAraujo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("kyle_araujo").SetClassification("BARGHEST - COURIER")
-            .SetBackground("BARGHEST recruit assigned to courier duties. Moves goods and supplies across Dogtown for the organization.")
-            .SetAffiliation("BARGHEST")
-            .SetCriminalRecord("Suspected smuggling | Supply chain irregularities | Warehouse stock discrepancies")
-            .SetThreatAssessment("LOW (25/100) | BARGHEST soldier | Standard military gear")
-            .SetNotes("Unreliable. Frequently absent from post. Known for making excuses about 'urgent business' at the Luxor.");
+        return KdspUniqueNPCBackstory.Create("kyle_araujo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Notes"));
     }
 
     // === PHANTOM LIBERTY - EBM PETROCHEM STADIUM VENDORS ===
 
     public static func SakiSeo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("saki_seo").SetClassification("VENDOR - MEDICAL SUPPLIES")
-            .SetBackground("Meds vendor operating at the EBM Petrochem Stadium black market in Dogtown. Supplies pharmaceuticals and medical consumables.")
-            .SetAffiliation("Independent | Stadium black market")
-            .SetThreatAssessment("LOW (10/100) | Non-combatant | Medical supplier")
-            .SetNotes("One of the few reliable sources of medical supplies in Dogtown's stadium market.");
+        return KdspUniqueNPCBackstory.Create("saki_seo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SakiSeo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SakiSeo-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SakiSeo-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SakiSeo-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SakiSeo-Notes"));
     }
 
     public static func EronAcedo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("eron_acedo").SetClassification("RIPPERDOC - BLACK MARKET")
-            .SetBackground("Ripperdoc operating from a bloodstained bathroom in the EBM Petrochem Stadium. Deflects all questions about his past with dry humor.")
-            .SetAffiliation("Independent | Stadium black market")
-            .SetCriminalRecord("RUMORED: Hiding from a cartel. Details unknown — he won't say.")
-            .SetCyberwareStatus("Full surgical suite (improvised facility)")
-            .SetThreatAssessment("LOW (15/100) | Non-combatant | Valuable black market services")
-            .SetNotes("Works out of a literal bathroom. Answers every personal question with a joke. Something serious drove him to Dogtown.");
+        return KdspUniqueNPCBackstory.Create("eron_acedo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EronAcedo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-EronAcedo-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-EronAcedo-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-EronAcedo-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EronAcedo-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-EronAcedo-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-EronAcedo-Notes"));
     }
 
     public static func HeroldLowe() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("herold_lowe").SetClassification("VENDOR - BLACK MARKET ARMS")
-            .SetBackground("Black market weapon vendor at the EBM Petrochem Stadium. Specializes in rare and iconic weapons. Evasive about where his inventory comes from.")
-            .SetAffiliation("Independent | Stadium black market")
-            .SetCyberwareStatus("Extensive cyberware (origin unclear — offers different stories each time)")
-            .SetThreatAssessment("MODERATE (35/100) | Heavily chromed | Armed dealer | Connected")
-            .SetNotes("Stocks weapons that surface from all over Night City. Ask where they came from and you'll get a different story every time.");
+        return KdspUniqueNPCBackstory.Create("herold_lowe").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-HeroldLowe-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-HeroldLowe-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-HeroldLowe-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-HeroldLowe-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-HeroldLowe-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-HeroldLowe-Notes"));
     }
 
     public static func SammyTaylor() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("sammy_taylor").SetClassification("VENDOR - NETRUNNER SUPPLIES")
-            .SetBackground("Owner of the netrunner supply store at the EBM Petrochem Stadium in Dogtown. Sells quickhacks and netrunning equipment.")
-            .SetAffiliation("Independent | Stadium black market")
-            .SetThreatAssessment("LOW (15/100) | Netrunner knowledge | Non-combatant")
-            .SetNotes("Usually busy working in the back. Ring the bell if you need service.");
+        return KdspUniqueNPCBackstory.Create("sammy_taylor").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SammyTaylor-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SammyTaylor-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SammyTaylor-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SammyTaylor-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SammyTaylor-Notes"));
     }
 
     public static func MarcinIwinski() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("marcin_iwinski").SetClassification("VENDOR - JUNK DEALER")
-            .SetBackground("Junk vendor at the EBM Petrochem Stadium. Business partners with Michal Kicinski. Ambitious plans to expand beyond the stadium.")
-            .SetAffiliation("Independent | Stadium market")
-            .SetFinancialStatus("Modest. Plans to take out a loan. Dreams of building a company merging video games and braindance.")
-            .SetThreatAssessment("LOW (5/100) | Non-combatant | Entrepreneurial dreamer")
-            .SetNotes("Big dreams for a junk dealer. Talks endlessly about his business expansion plans.");
+        return KdspUniqueNPCBackstory.Create("marcin_iwinski").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MarcinIwinski-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MarcinIwinski-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MarcinIwinski-Affiliation"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MarcinIwinski-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MarcinIwinski-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MarcinIwinski-Notes"));
     }
 
     public static func MichalKicinski() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("michal_kicinski").SetClassification("VENDOR - JUNK DEALER")
-            .SetBackground("Junk vendor at the EBM Petrochem Stadium. Business partner of Marcin Iwinski. The quieter half of the operation.")
-            .SetAffiliation("Independent | Stadium market")
-            .SetThreatAssessment("LOW (5/100) | Non-combatant")
-            .SetNotes("Tends to bump his head on the ceiling of their van. Endures Marcin's grand plans with patience.");
+        return KdspUniqueNPCBackstory.Create("michal_kicinski").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MichalKicinski-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MichalKicinski-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MichalKicinski-Affiliation"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MichalKicinski-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MichalKicinski-Notes"));
     }
 
     public static func DavidWalker() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("david_walker").SetClassification("VENDOR - CLOTHING")
-            .SetBackground("Clothing vendor at the EBM Petrochem Stadium in Dogtown. Father of Tommie Walker, a young athlete with professional potential.")
-            .SetAffiliation("Independent | Stadium market")
-            .SetRelationships("Tommie Walker (Son)")
-            .SetThreatAssessment("LOW (10/100) | Non-combatant | Family man")
-            .SetNotes("Devoted father. Hopes his son Tommie can make it out of Dogtown through athletics.");
+        return KdspUniqueNPCBackstory.Create("david_walker").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DavidWalker-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DavidWalker-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DavidWalker-Affiliation"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-DavidWalker-Relationships"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DavidWalker-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DavidWalker-Notes"));
     }
 
     public static func SophiaDupont() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("sophia_dupont").SetClassification("VENDOR - WEAPONS EMPORIUM")
-            .SetBackground("Veteran weapon vendor at the EBM Petrochem Stadium. Runs a well-stocked emporium. Claims to have been in business before most of her customers were born.")
-            .SetAffiliation("Independent | Stadium market")
-            .SetRelationships("Chris, Darius, Matt (Sons — handle deliveries, retrieval, and security)")
-            .SetFinancialStatus("Well-established. Long-running business. Militech supply contacts.")
-            .SetThreatAssessment("MODERATE (30/100) | Armed household | Three sons providing security | Military-grade inventory")
-            .SetNotes("'Business clean as Saburo Arasaka's conscience.' Has a crate marked 'For Mr. Wick' in the back.");
+        return KdspUniqueNPCBackstory.Create("sophia_dupont").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SophiaDupont-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SophiaDupont-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SophiaDupont-Affiliation"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-SophiaDupont-Relationships"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-SophiaDupont-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SophiaDupont-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SophiaDupont-Notes"));
     }
 
     // AFTERLIFE MERCS
     public static func Nix() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("nix").SetClassification("NETRUNNER - ELITE")
-            .SetBackground("Afterlife resident netrunner. Paranoid. Expertise in data recovery and system infiltration. Rogue's go-to for net work.")
-            .SetEarlyLife("Unknown. Deliberately erased own history from databases.")
-            .SetAffiliation("Afterlife | Independent contractor")
-            .SetCriminalRecord("Suspected: Data theft | Corporate espionage | System intrusion - no evidence (he made sure)")
-            .SetThreatAssessment("HIGH | Elite netrunner | Paranoid security measures | Afterlife protection");
+        return KdspUniqueNPCBackstory.Create("nix").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Nix-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Nix-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Nix-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Nix-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Nix-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Nix-ThreatAssessment"));
     }
 
     // MISC CHARACTERS
     public static func Brendan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("brendan").SetClassification("AI - VENDING MACHINE")
-            .SetBackground("Sentient vending machine AI. Located in Japantown. Achieved sapience through unknown means. Philosophical conversationalist.")
-            .SetEarlyLife("Standard vending unit. Gradually developed self-awareness. Contemplates existence while selling snacks.")
-            .SetAffiliation("None | Stationary unit")
-            .SetCriminalRecord("N/A - Property classification disputed")
-            .SetThreatAssessment("NEGLIGIBLE | Immobile | Peaceful | Existential crisis only");
+        return KdspUniqueNPCBackstory.Create("brendan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Brendan-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Brendan-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Brendan-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Brendan-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Brendan-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Brendan-ThreatAssessment"));
     }
 
     public static func Skippy() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("skippy").SetClassification("AI - SMART WEAPON")
-            .SetBackground("Sentient smart pistol. Annoying personality. Can toggle between lethal and non-lethal modes. Extremely chatty.")
-            .SetEarlyLife("Military-grade AI installed in HJKE-11 Yukimura. Developed personality. Was owned by Regina's husband.")
-            .SetAffiliation("Owner-dependent")
-            .SetCriminalRecord("N/A - Weapon classification")
-            .SetThreatAssessment("MODERATE | Functional weapon | AI targeting assistance | Will not shut up");
+        return KdspUniqueNPCBackstory.Create("skippy").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Skippy-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Skippy-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Skippy-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Skippy-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Skippy-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Skippy-ThreatAssessment"));
     }
 
     public static func CoachFred() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("coach_fred").SetClassification("CIVILIAN - TRAINER")
-            .SetBackground("Boxing coach. Trains fighters in Arroyo. Former professional boxer. Runs small gym.")
-            .SetEarlyLife("Professional boxing career. Retired to coaching. Known for developing talent.")
-            .SetAffiliation("Independent | Arroyo Gym")
-            .SetCriminalRecord("CLEAN")
-            .SetThreatAssessment("LOW | Civilian | Combat capable but non-aggressive");
+        return KdspUniqueNPCBackstory.Create("coach_fred").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-ThreatAssessment"));
     }
 
     // FIXER ASSOCIATES
     public static func Barry() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("barry").SetClassification("NCPD - FORMER OFFICER")
-            .SetBackground("Former NCPD officer. Resigned from active duty citing personal reasons. Lives in Megabuilding H10, one floor below V's apartment. Currently on indefinite leave. Not responding to colleagues' attempts at contact.")
-            .SetEarlyLife("Joined NCPD out of genuine desire to help the community. Years on the force wore him down. Watched cases get buried, perps walk free, and colleagues stop caring. Struggled to find anyone on the force who understood.")
-            .SetSignificantEvents("Years of NCPD service | Grew disillusioned with corruption and bureaucracy | Recently lost his closest companion | Withdrew from social contact | Former colleagues have reported concern for his wellbeing")
-            .SetAffiliation("NCPD (Former) | Megabuilding H10 Resident")
-            .SetCriminalRecord("CLEAN | No charges | Former officer in good standing | Honorable separation")
-            .SetCyberwareStatus("Standard civilian suite | Personal link | Former NCPD-issue implants decommissioned")
-            .SetFinancialStatus("Lower bracket | Mortgage on H10 apartment (NCPD rate) | No active income | Savings depleting")
-            .SetMedicalStatus("FLAGGED: Mental health crisis indicators | No recent medical visits | Former colleagues have requested wellness check | Subject isolating")
-            .SetThreatAssessment("LOW (20/100) | Former officer combat training | Currently non-threatening | AT-RISK INDIVIDUAL")
-            .SetRelationships("Juan Mendez (Former colleague) | Nadia Petrova (Former colleague) | Andrew (Deceased - closest companion)")
-            .SetNotes("Good cop who couldn't survive the system. Lost the one friend who never judged him. His former colleagues are worried. Someone should check on him.");
+        return KdspUniqueNPCBackstory.Create("barry").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Barry-Notes"));
     }
 
     public static func JuanMendez() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("juan_mendez").SetClassification("NCPD - SENIOR OFFICER")
-            .SetBackground("Senior NCPD officer. Cybercrimes Unit. Stationed in Kabuki. Loyal to the badge but carries his own scars from years on the force. Currently off-duty, checking on a former colleague who has gone silent.")
-            .SetEarlyLife("Academy graduate. Family has a history of NCPD service. Raised to believe in the system. Completed crisis negotiation training. Has seen enough of Night City to know the system is broken, but stays because someone has to.")
-            .SetSignificantEvents("14 years NCPD service | Cybercrimes Unit assignment | Multiple commendations | Worked a child murder case that still haunts him | Currently attempting welfare check on former colleague Barry Lewis")
-            .SetAffiliation("NCPD | Cybercrimes Unit | Kabuki District")
-            .SetCriminalRecord("CLEAN | No charges | No internal affairs flags | Exemplary service record")
-            .SetCyberwareStatus("Implants: 5 | NCPD-issue optics and neural link | Status: MODERATE-HIGH | Monitored")
-            .SetFinancialStatus("Middle bracket | Standard NCPD compensation | Stable")
-            .SetMedicalStatus("Good | Stress: ELEVATED | Prior incident-related trauma on file but cleared for duty")
-            .SetThreatAssessment("MODERATE (45/100) | NCPD combat training | Armed | Standard officer threat profile")
-            .SetRelationships("Nadia Petrova (Partner) | Barry Lewis (Former colleague - currently checking on) | NCPD Kabuki Precinct (Unit)")
-            .SetNotes("Struggles to express concern in ways that land. Means well but doesn't always know how to reach people who are hurting. Working on it.");
+        return KdspUniqueNPCBackstory.Create("juan_mendez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JuanMendez-Notes"));
     }
 
     public static func NadiaPetrova() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("nadia_petrova").SetClassification("NCPD - OFFICER")
-            .SetBackground("NCPD officer. Street Enforcement division. Stationed in Rancho Coronado. Academy scholarship recipient. Night City native. Currently off-duty, conducting welfare check on former colleague Barry Lewis alongside partner Mendez.")
-            .SetEarlyLife("Night City native. Earned academy scholarship on merit. Transferred between precincts twice during career. Standard career progression. Known for being more perceptive than her partner when it comes to reading people.")
-            .SetSignificantEvents("20 years NCPD service | Street Enforcement assignment | Rancho Coronado district posting | Requested transfer to specialized unit (application pending) | Currently attempting welfare check on Barry Lewis")
-            .SetAffiliation("NCPD | Street Enforcement | Rancho Coronado District")
-            .SetCriminalRecord("CLEAN | No charges | No internal affairs flags | Solid service record")
-            .SetCyberwareStatus("Implants: 4 | NCPD-issue optics and neural link | Status: LOW-MODERATE | Stable")
-            .SetFinancialStatus("Middle bracket | Standard NCPD compensation | Stable")
-            .SetMedicalStatus("Good | No flags | Regular department physicals")
-            .SetThreatAssessment("MODERATE (45/100) | NCPD combat training | Armed | Standard officer threat profile")
-            .SetRelationships("Juan Mendez (Partner) | Barry Lewis (Former colleague - currently checking on) | NCPD Rancho Coronado Precinct (Unit)")
-            .SetNotes("The one who pushed to check on Barry in person after he stopped answering holos. More emotionally attuned than Mendez. Worries they waited too long.");
+        return KdspUniqueNPCBackstory.Create("nadia_petrova").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-NadiaPetrova-Notes"));
     }
 
     // MORE FIXERS/ASSOCIATES
     public static func CassiusRyder() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("cassius_ryder").SetClassification("MEDIA - JOURNALIST")
-            .SetBackground("Investigative journalist. Works on corporate exposés. High-risk reporting on Night City corruption.")
-            .SetAffiliation("Independent Media")
-            .SetCriminalRecord("Trespassing | Corporate lawsuits (ongoing)")
-            .SetThreatAssessment("LOW | Civilian | Media connections | Protected sources");
+        return KdspUniqueNPCBackstory.Create("cassius_ryder").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CassiusRyder-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CassiusRyder-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CassiusRyder-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CassiusRyder-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CassiusRyder-ThreatAssessment"));
     }
 
     public static func OctavioRuiz() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("octavio_ruiz").SetClassification("VALENTINOS - ASSOCIATE")
-            .SetBackground("Valentinos-connected businessman. Operates legitimate fronts. Money laundering suspected.")
-            .SetAffiliation("Valentinos | Business interests")
-            .SetCriminalRecord("Under investigation | No charges filed")
-            .SetThreatAssessment("MODERATE | Gang connections | Financial resources");
+        return KdspUniqueNPCBackstory.Create("octavio_ruiz").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-OctavioRuiz-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-OctavioRuiz-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-OctavioRuiz-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-OctavioRuiz-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-OctavioRuiz-ThreatAssessment"));
     }
 
     public static func RobertBodean() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("robert_bodean").SetClassification("CIVILIAN - BUSINESS")
-            .SetBackground("Night City businessman. Various legitimate and semi-legitimate enterprises.")
-            .SetAffiliation("Independent business")
-            .SetCriminalRecord("Minor violations | Tax disputes")
-            .SetThreatAssessment("LOW | Civilian | Business connections");
+        return KdspUniqueNPCBackstory.Create("robert_bodean").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RobertBodean-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RobertBodean-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RobertBodean-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RobertBodean-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RobertBodean-ThreatAssessment"));
     }
 
     // === AFTERLIFE CONTACTS ===
     public static func DennisCranmer() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("dennis_cranmer").SetClassification("CIVILIAN - CONTRACTOR")
-            .SetBackground("Independent operator frequenting the Afterlife. Prefers to cut out fixers and work directly with mercs for discrete jobs.")
-            .SetEarlyLife("Background deliberately obscured. Known for handling sensitive personnel matters requiring discretion.")
-            .SetAffiliation("Independent | Afterlife regular")
-            .SetCriminalRecord("No active warrants | Suspected smuggling (unproven)")
-            .SetFinancialStatus("Comfortable | Cash operations | Untraceable accounts")
-            .SetThreatAssessment("LOW | Non-combatant | Well-connected | Pays well but asks no questions");
+        return KdspUniqueNPCBackstory.Create("dennis_cranmer").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DennisCranmer-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DennisCranmer-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-DennisCranmer-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DennisCranmer-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DennisCranmer-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DennisCranmer-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DennisCranmer-ThreatAssessment"));
     }
 
     // === NETRUNNERS ===
     public static func R3n0() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("r3n0").SetClassification("NETRUNNER - CORPORATE")
-            .SetBackground("Corporate netrunner working for Hard Wire Ltd. Sidelines in selling recovered tech on the black market under the alias 'R3n0'.")
-            .SetEarlyLife("Technical background. Rose through corporate IT ranks. Developed skills beyond her official job description.")
-            .SetAffiliation("Hard Wire Ltd (Employee) | Black market (Seller)")
-            .SetCriminalRecord("Suspected data theft | Unlicensed tech sales")
-            .SetFinancialStatus("Corporate salary | Side income from illicit sales")
-            .SetThreatAssessment("LOW-MODERATE | Netrunner capable | Will turn hostile if threatened");
+        return KdspUniqueNPCBackstory.Create("r3n0").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-R3n0-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-R3n0-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-R3n0-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-R3n0-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-R3n0-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-R3n0-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-R3n0-ThreatAssessment"));
     }
 
     // === RIOT CLUB STAFF ===
     public static func LiamNorthom() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("liam_northom").SetClassification("ENTERTAINMENT - MANAGER")
-            .SetBackground("Talent manager and boyfriend of chrome-pop star Lizzy Wizzy. Frequent presence at high-end Night City venues.")
-            .SetEarlyLife("Entertainment industry background. Built career managing talent. Relationship with Lizzy Wizzy elevated his profile significantly.")
-            .SetAffiliation("Wizzy Entertainment")
-            .SetCriminalRecord("None on record")
-            .SetFinancialStatus("Upper class | Celebrity adjacent wealth")
-            .SetThreatAssessment("LOW | Non-combatant | High-profile connections")
-            .SetRelationships("Lizzy Wizzy (Partner)");
+        return KdspUniqueNPCBackstory.Create("liam_northom").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-LiamNorthom-Relationships"));
     }
 
     public static func AsaRisu() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("asa_risu").SetClassification("ARASAKA - ACQUISITIONS")
-            .SetBackground("Arasaka corporate agent specializing in high-value asset acquisition. Handles sensitive negotiations for special projects division.")
-            .SetEarlyLife("Corporate track. Recruited into Arasaka's special projects division. Trained in negotiation and asset handling.")
-            .SetAffiliation("Arasaka | Special Projects Division")
-            .SetCriminalRecord("Corporate immunity | Classified operations")
-            .SetCyberwareStatus("Standard corporate package | Encrypted communications | Neural security")
-            .SetThreatAssessment("MODERATE | Corporate backing | Non-combatant but protected | Arasaka resources on call");
+        return KdspUniqueNPCBackstory.Create("asa_risu").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AsaRisu-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AsaRisu-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AsaRisu-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AsaRisu-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AsaRisu-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AsaRisu-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AsaRisu-ThreatAssessment"));
     }
 
     public static func RalphLogan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ralph_logan").SetClassification("CIVILIAN - SERVICE")
-            .SetBackground("Head bartender at The Riot nightclub in Little China. Well-connected within the club scene. Known for discretion - for the right price.")
-            .SetEarlyLife("Worked various bars across Watson. Rose to head bartender at Riot through reliability and ability to keep secrets.")
-            .SetAffiliation("The Riot | Little China nightlife")
-            .SetCriminalRecord("Minor - serving unlicensed alcohol (dismissed)")
-            .SetFinancialStatus("Service industry | Tips from wealthy clientele | Bribes for information")
-            .SetThreatAssessment("LOW | Civilian | Can be bribed or intimidated for information on VIP guests");
+        return KdspUniqueNPCBackstory.Create("ralph_logan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RalphLogan-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RalphLogan-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-RalphLogan-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RalphLogan-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RalphLogan-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RalphLogan-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RalphLogan-ThreatAssessment"));
     }
 
     public static func LindaSpencer() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("linda_spencer").SetClassification("CIVILIAN - SERVICE")
-            .SetBackground("Hostess at The Riot nightclub. Manages guest list and VIP access. Nice demeanor, perhaps too trusting for Night City.")
-            .SetEarlyLife("Came to Night City with big dreams. Landed hospitality work to make ends meet. Still believes in people despite the city's harsh realities.")
-            .SetAffiliation("The Riot | Little China")
-            .SetCriminalRecord("CLEAN")
-            .SetFinancialStatus("Service industry | Modest income | Making ends meet")
-            .SetThreatAssessment("NEGLIGIBLE | Civilian | Non-combatant | Naive but hardworking");
+        return KdspUniqueNPCBackstory.Create("linda_spencer").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-ThreatAssessment"));
     }
 
     public static func JermaineNorton() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jermaine_norton").SetClassification("SECURITY - CIVILIAN")
-            .SetBackground("Head bouncer at The Riot nightclub. Former amateur boxer. Controls door access and maintains order. Respects street cred.")
-            .SetEarlyLife("Grew up in Watson. Boxing career ended by injury. Transitioned to security work. Built reputation for fairness but firmness.")
-            .SetAffiliation("The Riot | Security staff")
-            .SetCriminalRecord("Assault (dismissed - self defense) | Battery (juvenile - sealed)")
-            .SetCyberwareStatus("Basic subdermal armor | Reinforced joints")
-            .SetFinancialStatus("Security wages | Door tips | Occasional favors")
-            .SetThreatAssessment("MODERATE | Combat capable | Can be intimidated by sufficient reputation | Professional");
+        return KdspUniqueNPCBackstory.Create("jermaine_norton").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JermaineNorton-ThreatAssessment"));
     }
 
     // === VENDORS - CLOTHING ===
     public static func ZaneJagger() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("zane_jagger").SetClassification("VENDOR - HIGH-END RETAIL")
-            .SetBackground("Manager of Jinguji clothing store in Downtown, City Center. Purveyor of Night City's finest fashion to elite clientele. Prissy demeanor, impeccable taste.")
-            .SetEarlyLife("Fashion industry background. Rose through luxury retail. Secured Jinguji management position through connections and expertise.")
-            .SetAffiliation("Jinguji | Downtown retail")
-            .SetCriminalRecord("CLEAN")
-            .SetFinancialStatus("Upper middle class | Commission on high-end sales | Luxury lifestyle")
-            .SetThreatAssessment("NEGLIGIBLE | Civilian | Non-combatant | Corporate security available")
-            .SetRelationships("Gillean Jordan (Client) | Elite Night City clientele")
-            .SetNotes("Known for discretion regarding client purchases. Values returning customers.");
+        return KdspUniqueNPCBackstory.Create("zane_jagger").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Notes"));
     }
 
     // === CYBERPSYCHOS ===
     public static func ZariaHughes() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("zaria_hughes").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Former Maelstrom member. Participated in cult ritual involving near-death Net connection. Process destroyed remaining sanity.")
-            .SetAffiliation("Maelstrom (Former)")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Mantis Blades (thermal) | Optical camo | Neural damage from ritual")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple homicides | Cult activity | Gang affiliation")
-            .SetThreatAssessment("EXTREME | Mantis Blades | Thermal damage | Teleportation capability | Shoot on sight");
+        return KdspUniqueNPCBackstory.Create("zaria_hughes").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ZariaHughes-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ZariaHughes-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ZariaHughes-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZariaHughes-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ZariaHughes-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ZariaHughes-ThreatAssessment"));
     }
 
     public static func EllisCarter() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ellis_carter").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Former Maelstrom member from old regime. Targeted in internal purge by current leadership. Snapped under pressure.")
-            .SetEarlyLife("Previously connected to Brick's faction. Survived gang power transition.")
-            .SetAffiliation("Maelstrom (Former)")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Melee combat optimization | Reflex boosters | Poor optical implants")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple homicides | Gang activity")
-            .SetThreatAssessment("HIGH | Fast melee attacks | Glass cannon - high damage, lower health | Poor eyesight exploitable");
+        return KdspUniqueNPCBackstory.Create("ellis_carter").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EllisCarter-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-EllisCarter-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-EllisCarter-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-EllisCarter-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EllisCarter-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-EllisCarter-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-EllisCarter-ThreatAssessment"));
     }
 
     public static func LelyHein() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("lely_hein").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Valentino member kidnapped by Maelstrom in forced recruitment attempt. Botched cyberware installation triggered psychosis.")
-            .SetAffiliation("Valentinos (Former)")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Forced installation | Sniper optics | Combat augments")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple homicides | Killed Maelstrom captors")
-            .SetRelationships("Tamara Cosby (Girlfriend)")
-            .SetThreatAssessment("HIGH | Sniper rifle | Long-range combatant | Will flee to covered positions");
+        return KdspUniqueNPCBackstory.Create("lely_hein").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LelyHein-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LelyHein-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LelyHein-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LelyHein-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LelyHein-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-LelyHein-Relationships"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LelyHein-ThreatAssessment"));
     }
 
     public static func LtMower() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("lt_mower").SetClassification("CYBERPSYCHO - MILITECH")
-            .SetBackground("Militech Lieutenant. Suffered cyberpsychosis after military-grade cyberware installation. Contacted Dr. Sypura for help but Militech sent termination squad instead.")
-            .SetEarlyLife("Military career. Rose to Lieutenant rank. Underwent extensive combat augmentation program.")
-            .SetAffiliation("Militech (Former)")
-            .SetCyberwareStatus("MILITARY GRADE | Gorilla Arms | Optical camo | Water electrification capability | Stealth systems")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Killed Militech termination squad | Multiple homicides")
-            .SetThreatAssessment("EXTREME | Gorilla Arms | Stealth camo | Area denial via electrified water | Based on Ghost in the Shell");
+        return KdspUniqueNPCBackstory.Create("lt_mower").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LtMower-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LtMower-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LtMower-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LtMower-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LtMower-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LtMower-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LtMower-ThreatAssessment"));
     }
 
     public static func CedricMuller() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("cedric_muller").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho encountered in Downtown parking structure. Found attacking NCPD officers. Self-healing capabilities.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Regeneration implants | Combat augments")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple NCPD casualties | Public rampage")
-            .SetThreatAssessment("EXTREME | Self-healing | Heavy combat capability | Currently engaged with NCPD");
+        return KdspUniqueNPCBackstory.Create("cedric_muller").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CedricMuller-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CedricMuller-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CedricMuller-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CedricMuller-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CedricMuller-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CedricMuller-ThreatAssessment"));
     }
 
     public static func GastonPhillips() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("gaston_phillips").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho operating out of auto shop in Wellsprings, Heywood. Has fortified position with landmines. Fast-moving combatant.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Speed augments | Combat reflexes | SMG proficiency")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Area denial with explosives | Multiple homicides")
-            .SetThreatAssessment("HIGH | Landmines | Fast movement | SMG user | Area heavily trapped");
+        return KdspUniqueNPCBackstory.Create("gaston_phillips").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-GastonPhillips-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-GastonPhillips-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-GastonPhillips-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-GastonPhillips-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-GastonPhillips-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-GastonPhillips-ThreatAssessment"));
     }
 
     public static func DaoHyunh() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("dao_hyunh").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho encountered at Seaside Cafe in southern Heywood. Extremely fast movement capabilities.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Extreme speed augments | Sandevistan-type system")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Public attack | Cafe massacre")
-            .SetThreatAssessment("HIGH | Extreme speed | Difficult to track | Close quarters dangerous");
+        return KdspUniqueNPCBackstory.Create("dao_hyunh").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DaoHyunh-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DaoHyunh-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DaoHyunh-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DaoHyunh-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DaoHyunh-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DaoHyunh-ThreatAssessment"));
     }
 
     public static func DiegoRamirez() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("diego_ramirez").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho found at pier in Coastview, Pacifica. Regina specifically requests non-lethal neutralization.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Combat augments")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple homicides")
-            .SetThreatAssessment("HIGH | Priority: Non-lethal capture requested")
-            .SetNotes("Regina Jones has requested this subject be taken alive for study.");
+        return KdspUniqueNPCBackstory.Create("diego_ramirez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DiegoRamirez-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DiegoRamirez-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DiegoRamirez-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-DiegoRamirez-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DiegoRamirez-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DiegoRamirez-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-DiegoRamirez-Notes"));
     }
 
     public static func TamaraCosby() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("tamara_cosby").SetClassification("CYBERPSYCHO - NETRUNNER")
-            .SetBackground("Netrunner who went cyberpsycho while searching for kidnapped boyfriend Lely Hein. Found at homeless camp in Arroyo, Santo Domingo.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Netrunner suite | Automated turret deployment")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Turret deployment in civilian area")
-            .SetRelationships("Lely Hein (Boyfriend - also cyberpsycho)")
-            .SetThreatAssessment("HIGH | Automated turrets | Netrunner capabilities | Pistol user");
+        return KdspUniqueNPCBackstory.Create("tamara_cosby").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TamaraCosby-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TamaraCosby-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-TamaraCosby-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-TamaraCosby-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-TamaraCosby-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-TamaraCosby-Relationships"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TamaraCosby-ThreatAssessment"));
     }
 
     public static func MattLiaw() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("matt_liaw").SetClassification("CYBERPSYCHO - EX-MILITECH")
-            .SetBackground("Former Militech mercenary. Lost health insurance policy following employment termination. PTSD combined with cyberware rejection triggered psychosis.")
-            .SetEarlyLife("Militech corporate merc. Extensive combat deployments. Company terminated employment and coverage.")
-            .SetAffiliation("Militech (Former)")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Military-grade combat suite | PTSD-related degradation")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Insurance fraud victim | Multiple homicides")
-            .SetThreatAssessment("HIGH | Military training | Heavy weapons | Living in shipping container")
-            .SetNotes("Victim of corporate healthcare system. Policy lapsed after termination.");
+        return KdspUniqueNPCBackstory.Create("matt_liaw").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MattLiaw-Notes"));
     }
 
     public static func ChaseColey() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("chase_coley").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho encountered at construction site in southern Rancho Coronado, Santo Domingo. Found actively fighting security guard upon arrival.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Heavy combat augments | Armor plating")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Construction site rampage | Assault on security")
-            .SetThreatAssessment("HIGH | Heavily armed and armored | Can one-shot from corners");
+        return KdspUniqueNPCBackstory.Create("chase_coley").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ChaseColey-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ChaseColey-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ChaseColey-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ChaseColey-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ChaseColey-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ChaseColey-ThreatAssessment"));
     }
 
     public static func RusselGreene() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("russel_greene").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho located at farm north of highway in Badlands. Position defended by drones and security turrets.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Combat augments | Drone control interface")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Farm fortification | Electronic warfare")
-            .SetThreatAssessment("HIGH | Drone support | Turret defense | Use Remote Deactivation")
-            .SetNotes("Disable electronics before engaging. Stealth headshot recommended.");
+        return KdspUniqueNPCBackstory.Create("russel_greene").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RusselGreene-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RusselGreene-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RusselGreene-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RusselGreene-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RusselGreene-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RusselGreene-ThreatAssessment"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RusselGreene-Notes"));
     }
 
     public static func ZionWylde() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("zion_wylde").SetClassification("CYBERPSYCHO - EX-MERC")
-            .SetBackground("Former mercenary who succumbed to cyberpsychosis. Combat veteran with extensive field experience.")
-            .SetEarlyLife("Merc career. Multiple contracts across Night City and Badlands.")
-            .SetAffiliation("Independent (Former)")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Combat-grade augments | Veteran implant suite")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple homicides")
-            .SetThreatAssessment("HIGH | Experienced combatant | Merc training | Unpredictable");
+        return KdspUniqueNPCBackstory.Create("zion_wylde").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ZionWylde-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ZionWylde-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ZionWylde-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ZionWylde-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZionWylde-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ZionWylde-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ZionWylde-ThreatAssessment"));
     }
 
     public static func NorioAkuhara() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("norio_akuhara").SetClassification("CYBERPSYCHO - EX-TYGER CLAWS")
-            .SetBackground("Former Tyger Claws member who went cyberpsycho. Gang ties severed after mental break.")
-            .SetEarlyLife("Rose through Tyger Claws ranks. Extensive cyberware installation as gang requirement.")
-            .SetAffiliation("Tyger Claws (Former)")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Gang-standard augments | Katana proficiency implants")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Former gang affiliation | Multiple homicides")
-            .SetThreatAssessment("HIGH | Tyger Claws combat training | Melee specialist | Fast reflexes");
+        return KdspUniqueNPCBackstory.Create("norio_akuhara").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-NorioAkuhara-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-NorioAkuhara-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-NorioAkuhara-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-NorioAkuhara-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NorioAkuhara-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-NorioAkuhara-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-NorioAkuhara-ThreatAssessment"));
     }
 
     public static func ShinobuImai() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("shinobu_imai").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho with extensive combat modifications. Highly dangerous close-quarters combatant.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Sandevistan | Combat augments | Speed optimization")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple homicides")
-            .SetThreatAssessment("EXTREME | Time dilation capable | Extremely fast | Melee focused");
+        return KdspUniqueNPCBackstory.Create("shinobu_imai").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ShinobuImai-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ShinobuImai-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ShinobuImai-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ShinobuImai-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ShinobuImai-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ShinobuImai-ThreatAssessment"));
     }
 
     public static func KaiserHerzog() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("kaiser_herzog").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Heavily augmented cyberpsycho. Name suggests European origin. Extreme threat level.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Heavy combat suite | Maximum augmentation")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Mass casualties")
-            .SetThreatAssessment("EXTREME | Heavily augmented | High damage output | Armored");
+        return KdspUniqueNPCBackstory.Create("kaiser_herzog").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-KaiserHerzog-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-KaiserHerzog-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-KaiserHerzog-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-KaiserHerzog-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-KaiserHerzog-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-KaiserHerzog-ThreatAssessment"));
     }
 
     public static func TomAyer() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("tom_ayer").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho encountered during NCPD scanner operation. Snapped under unknown circumstances.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Combat augments")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple homicides")
-            .SetThreatAssessment("HIGH | Standard cyberpsycho threat profile");
+        return KdspUniqueNPCBackstory.Create("tom_ayer").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TomAyer-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TomAyer-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-TomAyer-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-TomAyer-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-TomAyer-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TomAyer-ThreatAssessment"));
     }
 
     public static func AlecJohnson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("alec_johnson").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho target. Descended into psychosis following cyberware overload.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Combat implants")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Violent rampage")
-            .SetThreatAssessment("HIGH | Active threat | Armed and dangerous");
+        return KdspUniqueNPCBackstory.Create("alec_johnson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AlecJohnson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AlecJohnson-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AlecJohnson-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AlecJohnson-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AlecJohnson-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AlecJohnson-ThreatAssessment"));
     }
 
     public static func TracyPhillips() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("tracy_phillips").SetClassification("CYBERPSYCHO - ACTIVE")
-            .SetBackground("Cyberpsycho encountered in Night City. Related to Gaston Phillips unknown.")
-            .SetAffiliation("None")
-            .SetCyberwareStatus("CRITICAL OVERLOAD | Combat systems")
-            .SetCriminalRecord("CYBERPSYCHOSIS | Multiple violent incidents")
-            .SetThreatAssessment("HIGH | Combat capable | Psychotic break active");
+        return KdspUniqueNPCBackstory.Create("tracy_phillips").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-Affiliation"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-CyberwareStatus"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-ThreatAssessment"));
     }
 
     // === NCPD SCANNER HUSTLES / ASSAULT IN PROGRESS ===
     public static func RufusMcBride() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("rufus_mcbride").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Criminal flagged in NCPD scanner system. Active warrant for violent crimes.")
-            .SetCriminalRecord("NCPD PRIORITY | Multiple violent offenses | Armed and dangerous")
-            .SetThreatAssessment("HIGH | Armed | Resist arrest likely");
+        return KdspUniqueNPCBackstory.Create("rufus_mcbride").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RufusMcBride-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RufusMcBride-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RufusMcBride-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RufusMcBride-ThreatAssessment"));
     }
 
     public static func EuralioAlma() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("euralio_alma").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Subject flagged during NCPD scanner operation. Known criminal element.")
-            .SetCriminalRecord("NCPD WARRANT | Criminal activity")
-            .SetThreatAssessment("MODERATE | May be armed | Approach with caution");
+        return KdspUniqueNPCBackstory.Create("euralio_alma").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EuralioAlma-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-EuralioAlma-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-EuralioAlma-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-EuralioAlma-ThreatAssessment"));
     }
 
     public static func BruceWard() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("bruce_ward").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("NCPD target with outstanding warrants. Criminal operations in Night City.")
-            .SetCriminalRecord("NCPD PRIORITY | Multiple charges")
-            .SetThreatAssessment("HIGH | Potentially armed | Criminal associates likely");
+        return KdspUniqueNPCBackstory.Create("bruce_ward").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWard-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWard-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWard-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWard-ThreatAssessment"));
     }
 
     public static func ZoeAlonzo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("zoe_alonzo").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Female criminal flagged in NCPD database. Active in Night City underworld.")
-            .SetCriminalRecord("NCPD WARRANT | Criminal enterprise involvement")
-            .SetThreatAssessment("MODERATE | Armed suspect | Gang connections possible");
+        return KdspUniqueNPCBackstory.Create("zoe_alonzo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ZoeAlonzo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ZoeAlonzo-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ZoeAlonzo-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ZoeAlonzo-ThreatAssessment"));
     }
 
     public static func MiguelRodriguez() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("miguel_rodriguez").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("NCPD scanner target. Hispanic male with criminal history in Night City.")
-            .SetCriminalRecord("NCPD PRIORITY | Violent crimes | Gang affiliation suspected")
-            .SetThreatAssessment("HIGH | Armed and dangerous | Valentino connection possible");
+        return KdspUniqueNPCBackstory.Create("miguel_rodriguez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-Classification-1"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-Background-1"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-CriminalRecord-1"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MiguelRodriguez-ThreatAssessment-1"));
     }
 
     public static func DenzelCryer() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("denzel_cryer").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Criminal subject in NCPD scanner system. Outstanding warrants for violent offenses.")
-            .SetCriminalRecord("NCPD PRIORITY | Assault charges | Armed robbery")
-            .SetThreatAssessment("HIGH | Violent history | Will resist");
+        return KdspUniqueNPCBackstory.Create("denzel_cryer").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DenzelCryer-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DenzelCryer-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DenzelCryer-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DenzelCryer-ThreatAssessment"));
     }
 
     public static func JesseSabara() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jesse_sabara").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("NCPD target with active warrants. Known to operate in Night City criminal circles.")
-            .SetCriminalRecord("NCPD WARRANT | Multiple offenses")
-            .SetThreatAssessment("MODERATE | Armed suspect | May have backup");
+        return KdspUniqueNPCBackstory.Create("jesse_sabara").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JesseSabara-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JesseSabara-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JesseSabara-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JesseSabara-ThreatAssessment"));
     }
 
     public static func StanislausZbyszko() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("stanislaus_zbyszko").SetClassification("CRIMINAL - SCAVENGER CAPTAIN")
-            .SetBackground("Known captain amongst scavengers. Multiple smuggling priors. Eastern European origin.")
-            .SetAffiliation("Scavengers (Leadership)")
-            .SetCriminalRecord("NCPD PRIORITY | Scavenger captain | Smuggling | Cyberware trafficking | Kidnapping")
-            .SetThreatAssessment("HIGH | Gang leadership | Armed crew | Organ harvesting operations");
+        return KdspUniqueNPCBackstory.Create("stanislaus_zbyszko").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-StanislausZbyszko-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-StanislausZbyszko-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-StanislausZbyszko-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-StanislausZbyszko-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-StanislausZbyszko-ThreatAssessment"));
     }
 
     public static func BenDeBaillon() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ben_debaillon").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Criminal flagged in NCPD scanner. French-origin surname suggests immigrant background.")
-            .SetCriminalRecord("NCPD WARRANT | Criminal activity in Night City")
-            .SetThreatAssessment("MODERATE | Approach with standard caution");
+        return KdspUniqueNPCBackstory.Create("ben_debaillon").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BenDeBaillon-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BenDeBaillon-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BenDeBaillon-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BenDeBaillon-ThreatAssessment"));
     }
 
     public static func AyoZarin() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ayo_zarin").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("NCPD scanner target. Active in Night City criminal underworld.")
-            .SetCriminalRecord("NCPD PRIORITY | Outstanding warrants")
-            .SetThreatAssessment("MODERATE | Armed suspect");
+        return KdspUniqueNPCBackstory.Create("ayo_zarin").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AyoZarin-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AyoZarin-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AyoZarin-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AyoZarin-ThreatAssessment"));
     }
 
     public static func RossUlmer() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ross_ulmer").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Criminal subject flagged during NCPD operation. German-origin surname.")
-            .SetCriminalRecord("NCPD WARRANT | Multiple charges")
-            .SetThreatAssessment("MODERATE | Standard criminal threat");
+        return KdspUniqueNPCBackstory.Create("ross_ulmer").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RossUlmer-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RossUlmer-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RossUlmer-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RossUlmer-ThreatAssessment"));
     }
 
     public static func AntonKolev() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("anton_kolev").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("NCPD target with Slavic background. Criminal operations in Night City.")
-            .SetCriminalRecord("NCPD PRIORITY | Violent crimes")
-            .SetThreatAssessment("HIGH | Armed | Eastern European criminal connections");
+        return KdspUniqueNPCBackstory.Create("anton_kolev").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolev-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolev-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolev-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolev-ThreatAssessment"));
     }
 
     public static func JohnQuaid() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("john_quaid").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Criminal flagged in NCPD scanner system. Active warrant enforcement target.")
-            .SetCriminalRecord("NCPD WARRANT | Multiple offenses")
-            .SetThreatAssessment("MODERATE | May be armed");
+        return KdspUniqueNPCBackstory.Create("john_quaid").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JohnQuaid-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JohnQuaid-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JohnQuaid-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JohnQuaid-ThreatAssessment"));
     }
 
     public static func DariusMiles() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("darius_miles").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("NCPD scanner target. Known criminal operating in Night City streets.")
-            .SetCriminalRecord("NCPD PRIORITY | Gang activity suspected | Violent crimes")
-            .SetThreatAssessment("HIGH | Armed | Street-level criminal");
+        return KdspUniqueNPCBackstory.Create("darius_miles").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DariusMiles-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DariusMiles-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-DariusMiles-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DariusMiles-ThreatAssessment"));
     }
 
     public static func PaulCraven() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("paul_craven").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Criminal subject in NCPD database. Outstanding warrants.")
-            .SetCriminalRecord("NCPD WARRANT | Criminal charges pending")
-            .SetThreatAssessment("MODERATE | Standard threat level");
+        return KdspUniqueNPCBackstory.Create("paul_craven").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-PaulCraven-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-PaulCraven-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-PaulCraven-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-PaulCraven-ThreatAssessment"));
     }
 
     public static func OlgaLongmead() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("olga_longmead").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Female criminal flagged during NCPD operation. Full name: Olga Elisabeth Longmead.")
-            .SetCriminalRecord("NCPD WARRANT | Criminal activity")
-            .SetThreatAssessment("MODERATE | Armed female suspect | Approach cautiously");
+        return KdspUniqueNPCBackstory.Create("olga_longmead").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-OlgaLongmead-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-OlgaLongmead-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-OlgaLongmead-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-OlgaLongmead-ThreatAssessment"));
     }
 
     public static func MikeKowalsky() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mike_kowalsky").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("NCPD scanner target. Polish-American background. Night City criminal.")
-            .SetCriminalRecord("NCPD PRIORITY | Violent offenses")
-            .SetThreatAssessment("HIGH | Armed and dangerous");
+        return KdspUniqueNPCBackstory.Create("mike_kowalsky").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MikeKowalsky-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MikeKowalsky-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MikeKowalsky-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MikeKowalsky-ThreatAssessment"));
     }
 
     public static func SamanthaSamu() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("samantha_samu").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Female criminal in NCPD database. Active in Night City underworld.")
-            .SetCriminalRecord("NCPD WARRANT | Outstanding charges")
-            .SetThreatAssessment("MODERATE | Suspect may be armed");
+        return KdspUniqueNPCBackstory.Create("samantha_samu").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SamanthaSamu-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SamanthaSamu-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-SamanthaSamu-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SamanthaSamu-ThreatAssessment"));
     }
 
     public static func BarryAlken() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("barry_alken").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Criminal flagged in NCPD scanner system. Not to be confused with NCPD Officer Barry.")
-            .SetCriminalRecord("NCPD WARRANT | Criminal activity")
-            .SetThreatAssessment("MODERATE | Armed suspect");
+        return KdspUniqueNPCBackstory.Create("barry_alken").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BarryAlken-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BarryAlken-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BarryAlken-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BarryAlken-ThreatAssessment"));
     }
 
     public static func MokomichiYamada() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mokomichi_yamada").SetClassification("CRIMINAL - NCPD TARGET")
-            .SetBackground("Japanese male flagged in NCPD scanner. Criminal operations potentially linked to Tyger Claws territory.")
-            .SetCriminalRecord("NCPD PRIORITY | Gang affiliation suspected | Criminal enterprise")
-            .SetThreatAssessment("HIGH | Possible Tyger Claws connection | Armed | Melee weapons likely");
+        return KdspUniqueNPCBackstory.Create("mokomichi_yamada").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MokomichiYamada-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MokomichiYamada-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MokomichiYamada-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MokomichiYamada-ThreatAssessment"));
     }
 
     // === NOTABLE NIGHT CITY RESIDENTS ===
     public static func BigPete() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("big_pete").SetClassification("TECHIE - WRAITH AFFILIATE")
-            .SetBackground("Pete Kowalski, known as Big Pete. Manager of New American Autoworks garage in the southern Badlands near the border. Former Night City technician who made powerful enemies and fled to the desert. Now survives by keeping Wraith vehicles running.")
-            .SetEarlyLife("Started as street-level techie in Night City. Had a knack for electronics and signal equipment. Made a name selling custom jammers and tech to mercs and fixers. Career ended badly when a faulty signal jammer he sold got someone important killed.")
-            .SetAffiliation("Wraiths (Raffen Shiv)")
-            .SetCriminalRecord("WANTED IN NC | Fraud | Negligent homicide (equipment failure) | Multiple civil suits | Fled jurisdiction")
-            .SetRelationships("Tiny Mike (Brother - merc operating in Night City, estranged)")
-            .SetNotes("Cowardly | Self-preservation focused | Will say anything to survive | Not built for violence")
-            .SetFinancialStatus("Desperate | Constantly begging brother for eddies | Living paycheck to paycheck on Wraith mechanic work")
-            .SetThreatAssessment("LOW | Non-combatant | Mechanic, not fighter | No cyberware of note | Will negotiate and beg under pressure");
+        return KdspUniqueNPCBackstory.Create("big_pete").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BigPete-ThreatAssessment"));
     }
 
     public static func BruceWelby() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("bruce_welby").SetClassification("SMUGGLER - BADLANDS")
-            .SetBackground("Career smuggler who has been moving cargo across the Night City-SoCal border for over a decade. Specializes in 'hot' goods - items too dangerous or illegal to move through official channels. Known for reliability and discretion.")
-            .SetEarlyLife("Grew up in the Badlands. Learned smuggling routes from family. Built network of contacts on both sides of the border and both sides of the law. Reputation for always delivering, no matter the cargo.")
-            .SetCriminalRecord("EXTENSIVE | Smuggling | Border violations | Contraband transport | Tax evasion | Multiple arrests, few convictions")
-            .SetRelationships("Archibald Crane (Close friend - Militech employee who occasionally helps with border crossings)")
-            .SetNotes("Professional | Calm under pressure | Loyal to friends | Knows when to keep his mouth shut")
-            .SetFinancialStatus("Comfortable | Good income from smuggling work | Invests in maintaining border contacts")
-            .SetThreatAssessment("LOW | Smuggler, not fighter | Prefers to run rather than fight | Value in border knowledge and contacts");
+        return KdspUniqueNPCBackstory.Create("bruce_welby").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BruceWelby-ThreatAssessment"));
     }
 
     public static func BenedictMcAdams() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("benedict_mcadams").SetClassification("MERCENARY - PROFESSIONAL")
-            .SetBackground("Reliable, professional mercenary who built his reputation in the Badlands. Known for clean, efficient work and absolute discretion. Unusual practice of installing GPS tracker in his own biomon to prove accountability to clients.")
-            .SetEarlyLife("Military background suspected but unconfirmed. Transitioned to mercenary work in his thirties. Built reputation through consistent, professional performance. Never takes jobs he can't complete.")
-            .SetAffiliation("Independent operator")
-            .SetCriminalRecord("CLASSIFIED | Records sealed | Multiple suspected contract killings | No convictions | Professional enough to avoid evidence")
-            .SetNotes("Disciplined | Methodical | Zero ego | Treats killing as profession, not passion")
-            .SetCyberwareStatus("Standard combat suite | GPS biomon (voluntary) | Neural processor | Sandevistan suspected")
-            .SetThreatAssessment("EXTREME | Professional killer | Combat trained | Disciplined operator | Do not engage without preparation");
+        return KdspUniqueNPCBackstory.Create("benedict_mcadams").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-Notes"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BenedictMcAdams-ThreatAssessment"));
     }
 
     public static func IrisTanner() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("iris_tanner").SetClassification("TECHIE - BADLANDS SPECIALIST")
-            .SetBackground("Considered the best technical specialist in the Badlands. Can fix anything mechanical - vehicles, water filters, generators, solar arrays, you name it. Has saved entire communities during equipment failures. Unfortunately, her skill with machines doesn't extend to reading people.")
-            .SetEarlyLife("Self-taught mechanical genius. Grew up taking apart and rebuilding anything she could find. Built reputation by keeping Badlands communities running when corporate repair was too expensive or too far away.")
-            .SetCriminalRecord("CLEAN | Legitimate technician | No criminal history")
-            .SetNotes("Brilliant with machines | Naive with people | Trusts too easily | Cannot read ulterior motives | Gets taken advantage of")
-            .SetFinancialStatus("Modest | Undercharges for work | Often paid in trade or favors")
-            .SetThreatAssessment("NONE | Civilian | Non-combatant | Absolutely no combat training | Valuable for technical skills only");
+        return KdspUniqueNPCBackstory.Create("iris_tanner").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-IrisTanner-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-IrisTanner-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-IrisTanner-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-IrisTanner-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-IrisTanner-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-IrisTanner-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-IrisTanner-ThreatAssessment"));
     }
 
     public static func JackMausser() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jack_mausser").SetClassification("MERCENARY - CLUB OWNER")
-            .SetBackground("Solo turned club owner who couldn't leave the violence behind. Became addicted to the adrenaline of killing - not for money, but for the rush. Recently purchased 7th Hell, a seedy club in City Center, and hired Animals for security. Still takes jobs, but they've become increasingly brutal.")
-            .SetEarlyLife("Started as competent merc. Over time, developed taste for violence that went beyond professional necessity. Prefers making targets scream rather than quick, clean kills. Reputation shifted from 'effective' to 'psychotic'.")
-            .SetAffiliation("Independent | Animals (security arrangement for his club)")
-            .SetCriminalRecord("MULTIPLE HOMICIDES | Excessive force | Property destruction | Decapitations | Made enemies of multiple corporations through brutality")
-            .SetNotes("Adrenaline junkie | Addicted to violence | Cannot control impulses | Knows he's making enemies | Doesn't care")
-            .SetFinancialStatus("Wealthy | Club ownership | Mercenary income | Spending heavily on Animals protection")
-            .SetCyberwareStatus("Extensive combat augmentation | Reflex boosters | Sandevistan likely | Pain editors")
-            .SetThreatAssessment("EXTREME | Combat specialist | Animals backup on premises | Unpredictable | Psychotic tendencies | Owns 7th Hell club in City Center");
+        return KdspUniqueNPCBackstory.Create("jack_mausser").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-FinancialStatus"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JackMausser-ThreatAssessment"));
     }
 
     public static func JoanneKoch() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("joanne_koch").SetClassification("BIOTECHNICA EXECUTIVE")
-            .SetBackground("Dr. Joanne Koch. Regional Director for Technology and Development at Biotechnica. Genetics engineer whose 'unscrupulous' reputation stands out even among corporate scientists. Responsible for Project Nightingale - an experimental program that killed over 70 nomads from the Red Ocher clan during unauthorized field testing.")
-            .SetEarlyLife("Rose through Biotechnica ranks by delivering results regardless of ethical cost. Uses citizens as test subjects. Has ordered hits on employees who threatened her position. No moral boundaries in pursuit of scientific breakthrough.")
-            .SetAffiliation("Biotechnica (Executive level)")
-            .SetCriminalRecord("CORPORATE PROTECTED | Human experimentation | 70+ deaths (Red Ocher clan) | Test subject coercion | Evidence suppression | Protected by Biotechnica legal")
-            .SetNotes("Sociopathic | No moral reservations | Views human life as expendable research material | Trail of bodies rivals professional killers")
-            .SetFinancialStatus("Extremely wealthy | Corporate executive salary | Biotechnica Hotel penthouse residence | Extensive security budget")
-            .SetThreatAssessment("LOW personally | HIGH via corporate security | Robotics and armed guards | 19th floor penthouse | Biotechnica response team on call");
+        return KdspUniqueNPCBackstory.Create("joanne_koch").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JoanneKoch-ThreatAssessment"));
     }
 
     public static func EvaCole() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("eva_cole").SetClassification("POLITICIAN - NIGHT CITY")
-            .SetBackground("Night City politician who has made powerful enemies by actually trying to enforce regulations against corporate illegal activities. One of the few politicians who hasn't been completely bought. This has made her both admired and endangered.")
-            .SetCriminalRecord("CLEAN | No criminal history | Anti-corruption stance")
-            .SetNotes("Idealistic | Genuinely believes in rule of law | Willing to challenge corporations | Naive about depth of corruption")
-            .SetFinancialStatus("Modest for politician | Refuses most 'contributions' | Limited security budget")
-            .SetThreatAssessment("NONE personally | Politician with limited security | Multiple corporate enemies");
+        return KdspUniqueNPCBackstory.Create("eva_cole").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EvaCole-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-EvaCole-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-EvaCole-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-EvaCole-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-EvaCole-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-EvaCole-ThreatAssessment"));
     }
 
     public static func TuckerAlbach() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("tucker_albach").SetClassification("CORPORATE - KIROSHI OPTICS")
-            .SetBackground("Lucy Montgomery Tucker Albach. Former Vice Managing Director at Kiroshi Optics. Removed from the board by CEO Jacob Lan following a hit-and-run incident. Lives in an apartment in The Glen, Heywood. Her corporate insurance has protected her from prosecution despite clear evidence of guilt.")
-            .SetEarlyLife("Rose to VP level at Kiroshi Optics through competence and connections. Lived the corpo lifestyle - fast cars, expensive tastes, complete disconnection from consequences.")
-            .SetAffiliation("Kiroshi Optics (Former executive - removed from board but still protected)")
-            .SetCriminalRecord("VEHICULAR MANSLAUGHTER | Hit and run while intoxicated | Victim: Rosita Fuscino, age 17 | Left victim to die | NCPD investigation blocked by corporate insurance | No prosecution")
-            .SetNotes("Entitled | Believes money can solve any problem | Zero remorse | Completely detached from consequences of actions")
-            .SetFinancialStatus("Wealthy | Corporate severance | Maintains expensive lifestyle | Safe containing valuables")
-            .SetThreatAssessment("NONE personally | Non-combatant | Will attempt to bribe her way out of any situation | Some security in building");
+        return KdspUniqueNPCBackstory.Create("tucker_albach").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TuckerAlbach-ThreatAssessment"));
     }
 
     public static func RebecaPrice() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("rebeca_price").SetClassification("SHOP OWNER - COERCED")
-            .SetBackground("Runs Data Inc. store in Wellsprings, Heywood. On the surface, a legitimate cyberware retailer. In reality, being forced to sell stolen Militech equipment through unofficial channels. Not a willing criminal - operating under extreme duress.")
-            .SetAffiliation("Animals (Coerced - not voluntary)")
-            .SetCriminalRecord("CYBERWARE TRAFFICKING | Selling stolen Militech goods | Operating as fence | All under duress")
-            .SetRelationships("Family member (Identity protected - held as leverage by Animals)")
-            .SetNotes("Terrified | Desperate | Trapped | Only cooperating because family member's life at stake")
-            .SetFinancialStatus("Store provides income | Most profit goes to Animals | Living in fear")
-            .SetThreatAssessment("NONE | Shop owner | Non-combatant | Victim of circumstances | No combat capability");
+        return KdspUniqueNPCBackstory.Create("rebeca_price").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RebecaPrice-ThreatAssessment"));
     }
 
     public static func KaruboBairei() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("karubo_bairei").SetClassification("CRIMINAL - JAPANTOWN")
-            .SetBackground("Japanese criminal operating in Japantown. Suspected ties to Tyger Claws operations, though affiliation unconfirmed. Involved in protection rackets and illegal gambling.")
-            .SetAffiliation("Tyger Claws (Suspected)")
-            .SetCriminalRecord("EXTORTION | Illegal gambling | Protection rackets | Assault | Japantown operations")
-            .SetNotes("Traditional values | Honor-focused | Violent when disrespected")
-            .SetThreatAssessment("MODERATE | Possible gang backup | Likely melee specialist | Tyger Claw combat training probable");
+        return KdspUniqueNPCBackstory.Create("karubo_bairei").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-KaruboBairei-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-KaruboBairei-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-KaruboBairei-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-KaruboBairei-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-KaruboBairei-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-KaruboBairei-ThreatAssessment"));
     }
 
     public static func JakeEstevez() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jake_estevez").SetClassification("CRIMINAL - STREET LEVEL")
-            .SetBackground("Street-level criminal operating in Night City. Small-time operator who handles various illegal jobs - theft, smuggling, occasional muscle work. Not affiliated with major gangs, prefers to stay independent.")
-            .SetCriminalRecord("MULTIPLE OFFENSES | Theft | Smuggling | Assault | Operates independently")
-            .SetNotes("Opportunistic | Self-interested | Avoids major gang conflicts | Knows his limits")
-            .SetThreatAssessment("MODERATE | Armed | Street-smart | Will fight if cornered");
+        return KdspUniqueNPCBackstory.Create("jake_estevez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JakeEstevez-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JakeEstevez-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JakeEstevez-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JakeEstevez-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JakeEstevez-ThreatAssessment"));
     }
 
     public static func JoseLuis() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jose_luis").SetClassification("VALENTINOS - ROGELIO'S CREW")
-            .SetBackground("José Luis. Valentino gang member, part of Rogelio's crew in Heywood. Shot and killed an NCPD officer during a confrontation. Investigation was mysteriously dropped and officers told to back off - suggesting powerful protection from outside the gang.")
-            .SetEarlyLife("Grew up in Heywood. Joined Valentinos young. Rose through Rogelio's crew. Developed connections that extend beyond typical gang networks.")
-            .SetAffiliation("Valentinos (Rogelio's crew)")
-            .SetCriminalRecord("COP KILLER | Shot NCPD officer | Investigation dropped | Protected by unknown high-level contacts")
-            .SetRelationships("Roberto Luis (Grandfather - elderly, requires care) | Rogelio (Crew leader)")
-            .SetNotes("Loyal to crew | Cares for grandfather | Cold when necessary | Has connections above his station")
-            .SetThreatAssessment("HIGH | Valentino combat training | Armed | Gang backup | Powerful protectors");
+        return KdspUniqueNPCBackstory.Create("jose_luis").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JoseLuis-ThreatAssessment"));
     }
 
     public static func GustavoOrta() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("gustavo_orta").SetClassification("VALENTINOS - LEADERSHIP")
-            .SetBackground("High-ranking Valentino, blood relative of imprisoned gang leader Campo Orta. Built reputation as one of the most ruthless enforcers in Heywood - known for systematically eliminating rival gang presence. Recently, something changed. He's become more contemplative, less quick to violence.")
-            .SetEarlyLife("Grew up in Heywood alongside Jackie Welles. Both were Valentinos as teenagers. While Jackie eventually left gang life, Gustavo embraced it fully and climbed to the top through brutal efficiency. Childhood friendship with Jackie remained despite different paths.")
-            .SetAffiliation("Valentinos (Leadership tier)")
-            .SetCriminalRecord("VALENTINO ENFORCER | Multiple homicides | Gang warfare | Rival elimination | Recently inactive")
-            .SetRelationships("Campo Orta (Blood relative - gang leader, imprisoned) | Jackie Welles (Childhood friend - paths diverged) | Martha Frakes (Girlfriend - complicated)")
-            .SetNotes("Formerly ruthless | Recently changed | More thoughtful | Spends time contemplating rather than killing | Love may have softened him")
-            .SetThreatAssessment("EXTREME | Veteran killer | Gang leadership | Armed guards | But recently non-violent");
+        return KdspUniqueNPCBackstory.Create("gustavo_orta").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-GustavoOrta-ThreatAssessment"));
     }
 
     public static func MarthaFrakes() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("martha_frakes").SetClassification("CIVILIAN - DIVIDED LOYALTIES")
-            .SetBackground("Daughter of Nolan Frakes, senior member of 6th Street. Defected from her family and gang to pursue a relationship with Valentino leader Gustavo Orta. Living between two rival gang worlds that would normally kill each other on sight.")
-            .SetEarlyLife("Raised in 6th Street culture. Father is senior gang member. Expected to marry within the gang. Rebelled against everything by falling for a Valentino leader - the worst possible choice from her family's perspective.")
-            .SetAffiliation("6th Street (Family) | Valentinos (Through relationship)")
-            .SetCriminalRecord("CLEAN | No personal charges | Family gang connections only")
-            .SetRelationships("Nolan Frakes (Father - 6th Street, furious about relationship) | Gustavo Orta (Boyfriend - Valentinos)")
-            .SetNotes("Rebellious | Strong-willed | Chose love over family | Living in constant danger from both sides")
-            .SetThreatAssessment("NONE | Civilian | No combat training | Value only as leverage");
+        return KdspUniqueNPCBackstory.Create("martha_frakes").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MarthaFrakes-ThreatAssessment"));
     }
 
     public static func AnthonyAnderson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("anthony_anderson").SetClassification("CRIMINAL")
-            .SetBackground("Criminal operator in Night City. Involved in various illegal enterprises. Keeps low profile, avoids major gang territories.")
-            .SetCriminalRecord("MULTIPLE CHARGES | Theft | Fencing | Minor assault")
-            .SetThreatAssessment("MODERATE | Potentially armed | Street-level threat");
+        return KdspUniqueNPCBackstory.Create("anthony_anderson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-ThreatAssessment"));
     }
 
     public static func MilkoAlexis() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("milko_alexis").SetClassification("CRIMINAL - EASTERN EUROPEAN")
-            .SetBackground("Eastern European criminal with suspected connections to Scavenger operations. May be involved in cyberware trafficking given known associates and operational patterns.")
-            .SetAffiliation("Scavengers (Suspected)")
-            .SetCriminalRecord("TRAFFICKING suspected | Cyberware theft | Eastern European criminal network ties")
-            .SetThreatAssessment("MODERATE | Armed | Potentially Scavenger tactics | Ruthless if cornered");
+        return KdspUniqueNPCBackstory.Create("milko_alexis").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MilkoAlexis-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MilkoAlexis-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MilkoAlexis-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MilkoAlexis-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MilkoAlexis-ThreatAssessment"));
     }
 
     public static func LeonRinder() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("leon_rinder").SetClassification("BARGHEST - FORMER TRIGGERMAN")
-            .SetBackground("Leon Rinder. One of Kurt Hansen's former triggermen. Discharged from BARGHEST under unclear circumstances. Responsible for the massacre of eight civilians in the Longshore Stacks, including a young man named Jason Foreman. Currently hiding in an abandoned motel in Pacifica, guarded by a single elite bodyguard.")
-            .SetEarlyLife("Military background funneled into BARGHEST private military service. Rose through Hansen's ranks as a reliable enforcer. Something broke — the massacre in the Stacks was not an ordered hit. The question is what caused him to snap.")
-            .SetAffiliation("BARGHEST (Former — discharged)")
-            .SetCriminalRecord("MASS MURDER | Eight civilian deaths in Longshore Stacks | Former BARGHEST enforcement operations | Possible cyberpsychosis-related violence")
-            .SetMedicalStatus("CRITICAL — CYBERPSYCHOSIS INDICATORS | Memory gaps surrounding massacre | Cannot recall killing anyone | Classic dissociative symptoms consistent with advanced cyberware rejection")
-            .SetCyberwareStatus("HEAVY MILITARY-GRADE | Extensive combat augmentation from BARGHEST service | Possible contributing factor to psychological deterioration")
-            .SetRelationships("Kurt Hansen (Former commander — discharged him) | Yasha Ivanov (Bodyguard — loyal) | Briana Dolson (Community representative — wants him dead) | Longshore Stacks community (Victims' families — seeking justice)")
-            .SetNotes("May not fully understand what he did | Offers his dog tags and stash location in exchange for his life | Stash contains Dezerter iconic shotgun | Can be referred to Regina Jones for cyberpsychosis treatment if identified")
-            .SetThreatAssessment("HIGH | Former military elite | Heavy cyberware | Bodyguard Yasha Ivanov must be defeated first | Unstable — cyberpsychosis makes behavior unpredictable");
+        return KdspUniqueNPCBackstory.Create("leon_rinder").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-CriminalRecord"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-MedicalStatus"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-CyberwareStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LeonRinder-ThreatAssessment"));
     }
 
     public static func JasmineDixon() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jasmine_dixon").SetClassification("CIVILIAN")
-            .SetBackground("Night City resident. Limited public information available.")
-            .SetCriminalRecord("CLEAN")
-            .SetThreatAssessment("LOW | Non-combatant");
+        return KdspUniqueNPCBackstory.Create("jasmine_dixon").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-Background"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-CriminalRecord"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-ThreatAssessment"));
     }
 
     public static func JulietHorrigan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("juliet_horrigan").SetClassification("NETRUNNER")
-            .SetBackground("Skilled netrunner specializing in corporate data extraction, particularly from Zetatech systems. Lives with her sister Rose in their family home on Gibson Street, Rancho Coronado. Valued for reliable, clean data work.")
-            .SetEarlyLife("Developed netrunning expertise through self-study and practice. Built reputation for Zetatech penetration specifically. Takes care of her sister Rose, who has been struggling with mental health issues.")
-            .SetCriminalRecord("CORPORATE ESPIONAGE | Zetatech data theft | No violent crimes")
-            .SetRelationships("Rose Horrigan (Sister - lives together, concerning behavior recently) | Viktor Vektor (Medical contact - consulted about sister)")
-            .SetMedicalStatus("Healthy | No significant issues")
-            .SetNotes("Caring | Devoted to sister | Professional in work | Worried about Rose's deteriorating condition")
-            .SetFinancialStatus("Comfortable | Regular income from data work | Family home owner")
-            .SetThreatAssessment("LOW | Netrunner, not fighter | Value in data extraction skills");
+        return KdspUniqueNPCBackstory.Create("juliet_horrigan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-Relationships"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-MedicalStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-ThreatAssessment"));
     }
 
     public static func LoganGarcia() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("logan_garcia").SetClassification("ANIMALS - FIGHT CLUB")
-            .SetBackground("Runs the Tripple Xtreme Epic Workout Center - an Animals-backed underground fight club in an old paint factory in Rancho Coronado. Former fighter who still gets in the ring regularly. Known for not knowing when to stop - has beaten opponents long past the point of surrender.")
-            .SetEarlyLife("Started as fighter in underground circuit. Rose to run his own club with Animals gang backing. Fighting is his identity - he lives for the violence of the ring.")
-            .SetAffiliation("Animals")
-            .SetCriminalRecord("ASSAULT | Multiple ring deaths | Excessive force | Body disposal (suspected) | Protected by Animals")
-            .SetNotes("Cannot control aggression | No concept of 'too far' | Views weakness with contempt | Dangerous in any confrontation")
-            .SetCyberwareStatus("Animals-standard muscle and bone augmentation | Pain editor likely | Combat reflexes")
-            .SetThreatAssessment("EXTREME | Animals combat augments | Professional fighter | Gang backup at club | Will not back down");
+        return KdspUniqueNPCBackstory.Create("logan_garcia").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-Notes"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-ThreatAssessment"));
     }
 
     public static func FlaviodosSantos() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("flavio_dos_santos").SetClassification("6TH STREET - OUTCAST")
-            .SetBackground("Former 6th Street member who backed the wrong side during Will Gunner's coup. Was loyal to the previous leadership and found himself on the losing team when Gunner took over. Known for reckless confidence and a belief in his own invincibility despite mounting evidence to the contrary.")
-            .SetEarlyLife("Rose through 6th Street ranks under old leadership. Loyal soldier, not a leader. When the coup happened, he was on the wrong list. Has survived through luck more than skill.")
-            .SetAffiliation("6th Street (Former - marked by current leadership)")
-            .SetCriminalRecord("GANG ACTIVITY | 6th Street operations | Currently hunted by own former gang")
-            .SetNotes("Reckless | Dangerously overconfident | Believes in his own luck | Throws parties while being hunted | Cannot take situations seriously")
-            .SetFinancialStatus("Unstable | Burning through savings | Spending on parties instead of security")
-            .SetThreatAssessment("LOW | Non-combatant | Injured | More danger to himself than others");
+        return KdspUniqueNPCBackstory.Create("flavio_dos_santos").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-FlaviodosSantos-ThreatAssessment"));
     }
 
     public static func VicVega() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("vic_vega").SetClassification("CORPORATE SECURITY - C-TEAM")
-            .SetBackground("Head of C-Team, a private security company that specializes in corporate union-busting and worker intimidation. Has been terrorizing workers in Rancho Coronado on behalf of corporate clients. Lists 'cracking skulls' as a hobby on his employee profile.")
-            .SetEarlyLife("Corporate security background. Rose to lead C-Team through willingness to do what others wouldn't. Found his calling in causing pain for pay.")
-            .SetAffiliation("C-Team (Leadership) | Various corporate clients (confidential)")
-            .SetCriminalRecord("ASSAULT | Union busting | Worker intimidation | Multiple injuries caused | All charges blocked by corporate legal backing")
-            .SetNotes("Sadistic | Genuinely enjoys inflicting pain | No moral qualms | Views workers as subhuman | Violence is pleasure, not just business")
-            .SetCyberwareStatus("Corporate security standard | Combat augments | Pain tolerance mods")
-            .SetThreatAssessment("HIGH | Corporate security training | Violent tendencies | C-Team backup available");
+        return KdspUniqueNPCBackstory.Create("vic_vega").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-Notes"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-VicVega-ThreatAssessment"));
     }
 
     // === WATSON DISTRICT NOTABLES ===
     public static func RohChiWon() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("roh_chi_won").SetClassification("BOXING COACH - PROFESSIONAL")
-            .SetBackground("Roh Chi-Won (노지원). Former professional boxer with dozens of wins. Now works as personal boxing coach for high-profile clients, most notably Macidew Coolidge of N54's 'Boxathon' fame.")
-            .SetEarlyLife("Successful competitive boxing career in youth. Transitioned to coaching after retirement from the ring. Developed reputation as trainer who could turn anyone into a fighter.")
-            .SetCriminalRecord("CLEAN | No criminal history | Professional athlete background")
-            .SetRelationships("Macidew Coolidge (Client - N54 sports commentator)")
-            .SetNotes("Disciplined | Patient teacher | Dedicated to craft | Loyal to clients")
-            .SetThreatAssessment("MODERATE | Boxing skills | No longer in fighting shape | Non-combatant mindset");
+        return KdspUniqueNPCBackstory.Create("roh_chi_won").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RohChiWon-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RohChiWon-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-RohChiWon-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RohChiWon-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-RohChiWon-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RohChiWon-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RohChiWon-ThreatAssessment"));
     }
 
     public static func TinyMike() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("tiny_mike").SetClassification("MERCENARY - INDEPENDENT")
-            .SetBackground("Mike Kowalski, known as Tiny Mike. Street kid turned merc who built his reputation from nothing. Joined Tyger Claws at age 11, was dealing by 12, left at 15 to go independent. Now works for various fixers across Night City.")
-            .SetEarlyLife("Raised on Night City streets. Learned early that only two things matter: keeping your word and cold hard cash. Dozens of scars and close calls later, achieved recognition from fixers citywide.")
-            .SetAffiliation("Independent | Former Tyger Claws")
-            .SetCriminalRecord("EXTENSIVE | Drug dealing (juvenile) | Multiple assault charges | B&E | Survived numerous gang conflicts")
-            .SetRelationships("Big Pete (Brother - mechanic in Badlands) | Christine Markov (Ex-girlfriend - Cherry Blossom Market vendor)")
-            .SetMedicalStatus("Elbow joints repaired by Charles Bucks")
-            .SetNotes("Street smart | Loyal to family despite frustration | Keeps his word | Values cash")
-            .SetThreatAssessment("HIGH | Combat experienced | Survived Tyger Claws | Quick reflexes");
+        return KdspUniqueNPCBackstory.Create("tiny_mike").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-Relationships"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-MedicalStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TinyMike-ThreatAssessment"));
     }
 
     public static func BryceStone() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("bryce_stone").SetClassification("MEDIA - TELEVANGELIST")
-            .SetBackground("Television minister with significant following in Night City. Public figure known for religious broadcasting. Has experienced personal tragedy that has driven him to seek justice outside official channels.")
-            .SetEarlyLife("Built career as televangelist. Accumulated wealth and influence through religious media programming.")
-            .SetCriminalRecord("CLEAN | Public figure | No criminal record")
-            .SetRelationships("Bobby Stone (Son - deceased)")
-            .SetFinancialStatus("Wealthy | Television ministry income | Willing to spend on personal matters")
-            .SetNotes("Grieving father | Driven by need for justice | Willing to work outside the law to find answers")
-            .SetThreatAssessment("NONE | Non-combatant | Value in resources and connections");
+        return KdspUniqueNPCBackstory.Create("bryce_stone").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-Relationships"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-FinancialStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BryceStone-ThreatAssessment"));
     }
 
     public static func HwangboDongGun() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hwangbo_dong_gun").SetClassification("CRIMINAL - FORMER TYGER CLAWS")
-            .SetBackground("Hwangbo Dong-Gun (황보동건). Korean male, former low-level Tyger Claws associate. Got greedy, got caught stealing from his superiors. Now marked for death by the gang he used to work for.")
-            .SetEarlyLife("Did small-time work for Tyger Claws. Instead of keeping his head down and being patient, took a shortcut by stealing from his own gang. Left evidence that pointed directly to him.")
-            .SetAffiliation("Tyger Claws (Former - marked for death)")
-            .SetCriminalRecord("THEFT | Stole from Tyger Claws | Gang activity | Now hunted by former associates")
-            .SetNotes("Reckless | Short-sighted | Surprisingly upbeat despite situation | Gives people nicknames")
-            .SetThreatAssessment("LOW | Non-combatant | More danger to himself | Tyger Claws actively hunting him");
+        return KdspUniqueNPCBackstory.Create("hwangbo_dong_gun").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-HwangboDongGun-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-HwangboDongGun-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-HwangboDongGun-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-HwangboDongGun-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-HwangboDongGun-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-HwangboDongGun-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-HwangboDongGun-ThreatAssessment"));
     }
 
     public static func MaxJones() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("max_jones").SetClassification("MEDIA - INVESTIGATIVE JOURNALIST")
-            .SetBackground("Independent journalist specializing in exposing corporate scandals. Former colleague of Regina Jones from her muckraking days. Known for being stubborn as they come and thinking he's invincible.")
-            .SetEarlyLife("Built career as investigative journalist. Co-wrote podcast with Regina Jones about independent farmers put out of business by Biotechnica drones. Continued kicking hornet's nests after Regina moved on.")
-            .SetCriminalRecord("CLEAN | Journalist | Multiple corporate enemies")
-            .SetRelationships("Regina Jones (Old friend and former colleague - no longer takes her calls)")
-            .SetNotes("Stubborn | Lost touch with reality | Thinks he can manage on his own | Young male bravado")
-            .SetThreatAssessment("NONE | Non-combatant | Multiple enemies want him dead | Doesn't realize the danger he's in");
+        return KdspUniqueNPCBackstory.Create("max_jones").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MaxJones-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MaxJones-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MaxJones-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MaxJones-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MaxJones-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MaxJones-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MaxJones-ThreatAssessment"));
     }
 
     public static func AloisDaquin() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("alois_daquin").SetClassification("CORPORATE - KANG TAO")
-            .SetBackground("Kang Tao employee who betrayed multiple people in Night City, including fixer Regina Jones. Known as a 'corpo megaprick' who cheated his way through business dealings. Made enough enemies that an entire city wants a piece of him.")
-            .SetAffiliation("Kang Tao")
-            .SetCriminalRecord("FRAUD | Corporate espionage | Betrayal | Multiple civil suits | Fled jurisdiction")
-            .SetNotes("Treacherous | Self-serving | No loyalty | Left gear behind when fleeing")
-            .SetThreatAssessment("LOW | Non-combatant | Corporate suit | More enemies than friends");
+        return KdspUniqueNPCBackstory.Create("alois_daquin").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AloisDaquin-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AloisDaquin-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AloisDaquin-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AloisDaquin-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AloisDaquin-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AloisDaquin-ThreatAssessment"));
     }
 
     public static func HalCantos() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hal_cantos").SetClassification("TECHIE - BD TUNER")
-            .SetBackground("Freelance braindance tuner, considered a 'known quantity' in Watson. Former WNS news employee until he was terminated for fraud. Now does street gigs exclusively, tuning and editing braindances for various clients.")
-            .SetEarlyLife("Worked for WNS news as BD technician. Got caught committing fraud and was fired. Transitioned to street-level BD work.")
-            .SetAffiliation("Independent | Former WNS News")
-            .SetCriminalRecord("FRAUD | Terminated from WNS | Various street-level offenses")
-            .SetNotes("Skilled technician | Morally flexible | Works for whoever pays")
-            .SetThreatAssessment("NONE | Non-combatant | Technical skills only | Value in BD expertise");
+        return KdspUniqueNPCBackstory.Create("hal_cantos").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-HalCantos-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-HalCantos-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-HalCantos-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-HalCantos-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-HalCantos-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-HalCantos-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-HalCantos-ThreatAssessment"));
     }
 
     public static func BlakeCroyle() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("blake_croyle").SetClassification("CRIMINAL - LOAN SHARK")
-            .SetBackground("Racketeering specialist operating in Kabuki. Uses debt schemes to trap victims - offers promising money deals, creates unpayable debts, then seizes ownership of their businesses. Currently has Animals muscle watching his back.")
-            .SetEarlyLife("Built criminal enterprise on predatory lending and racketeering. NCPD badges in the area turn blind eye because of payoffs.")
-            .SetAffiliation("Animals (Protection)")
-            .SetCriminalRecord("RACKETEERING | Fraud | Extortion | Property seizure | Protected by corrupt NCPD")
-            .SetRelationships("Roger Wang (Recent victim - store chain owner)")
-            .SetNotes("Predatory | Calculated | No empathy for victims | Patient manipulator")
-            .SetFinancialStatus("Wealthy | Income from seized businesses | Pays for Animals protection")
-            .SetThreatAssessment("HIGH via Animals | Personal combat ability unknown | Has muscle on site");
+        return KdspUniqueNPCBackstory.Create("blake_croyle").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BlakeCroyle-ThreatAssessment"));
     }
 
     public static func JaeHyunLee() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jae_hyun_lee").SetClassification("CRIMINAL - HUMAN TRAFFICKER")
-            .SetBackground("Jae-Hyun Lee (이재현). Human trafficker who preys on Night City's most vulnerable - outcasts, loners, rejects, people society has failed. Identifies targets, kidnaps them, delivers them to Scavengers for cyberware removal. Victims are stripped of their identities and sold as 'property'.")
-            .SetEarlyLife("Unknown origins. Built network for acquiring and trafficking vulnerable people. Works with Scavengers and XBD producers like Jotaro Shobo.")
-            .SetCriminalRecord("HUMAN TRAFFICKING | Kidnapping | Conspiracy | Works with Scavengers | Supplies victims to Jotaro Shobo")
-            .SetRelationships("Jotaro Shobo (Client - receives 'product')")
-            .SetNotes("Predatory | Targets society's forgotten | Views humans as merchandise | No empathy")
-            .SetThreatAssessment("MODERATE | Not a fighter | Has guards | Operates from Kabuki rooftops");
+        return KdspUniqueNPCBackstory.Create("jae_hyun_lee").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JaeHyunLee-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JaeHyunLee-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JaeHyunLee-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JaeHyunLee-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JaeHyunLee-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JaeHyunLee-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JaeHyunLee-ThreatAssessment"));
     }
 
     public static func LucyThackery() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("lucy_thackery").SetClassification("RIPPERDOC - LEGITIMATE")
-            .SetBackground("Licensed ripperdoc operating from Clean Cut clinic. Since childhood, dreamed of saving people's lives. Put herself through extensive training in anatomy, microanatomy, biochemistry, physiology and robotics. Installed long-term memory enhancement, hand stabilizer, and medical antibodies.")
-            .SetEarlyLife("Held onto dream of becoming ripperdoc since childhood. Hundreds of hours of study. Brother Bertie got mixed up with Maelstrom.")
-            .SetCriminalRecord("CLEAN | Licensed medical professional")
-            .SetRelationships("Bertie Thackery (Brother - former Maelstrom associate)")
-            .SetMedicalStatus("Self-installed medical cyberware for profession | Long-term memory | Hand stabilizer | Medical antibodies")
-            .SetNotes("Compassionate | Dedicated to helping people | Worried about brother | Professional")
-            .SetThreatAssessment("NONE | Medical professional | Non-combatant | Value in ripperdoc skills");
+        return KdspUniqueNPCBackstory.Create("lucy_thackery").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-Relationships"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-MedicalStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LucyThackery-ThreatAssessment"));
     }
 
     public static func NinaKraviz() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("wbr_hil_ripdoc_01").SetClassification("RIPPERDOC - LICENSED")
-            .SetBackground("Nina Kraviz. Licensed ripperdoc operating from Kraviz's Clinic, Charter Hill, Westbrook. Soviet-born. Internationally experienced - previously ran clinics in Irkutsk, Leningrad, Vienna, and Glasgow before relocating to Night City.")
-            .SetEarlyLife("Trained in the Soviet Union. Former dental background before transitioning to cybersurgery. Earned full ripperdoc certification through extensive practical experience across multiple cities and countries.")
-            .SetSignificantEvents("Pattern of short-term clinic residencies across Europe and Asia. Relocates when 'bored' - her word. Current Night City clinic is operated from her uncle's premises in Charter Hill. Describes Night City as 'wonderful' - fascinated by the constant demand for medical services.")
-            .SetAffiliation("Independent | Kraviz's Clinic, Charter Hill, Westbrook")
-            .SetCriminalRecord("Status: CLEAN | Fully licensed | No complaints on file | NCPD: NO FILE")
-            .SetCyberwareStatus("Implants: 4 | Status: MODERATE | Surgical-grade optics, precision hand stabilizers, dental-to-cyber adapted toolset")
-            .SetFinancialStatus("Income: Ripperdoc services (Charter Hill rates) | Clinic leased from uncle | Westbrook clientele - above average income bracket")
-            .SetMedicalStatus("Blood: A RhD- | Health: GOOD | No conditions on file | Trauma Team: SILVER")
-            .SetThreatAssessment("NONE (0/100) | Medical professional | Non-combatant | Valued community asset")
-            .SetRelationships("Uncle (Clinic owner, previous ripperdoc at this location) | Charter Hill client roster | No known gang affiliations")
-            .SetNotes("Well-traveled, restless personality. Moves on when a city stops being interesting. Currently content in Night City - finds the violence-driven demand for medical services 'fascinating.' Skilled practitioner with an unusual dental background. Blunt manner - speaks her mind regardless of patient feelings.");
+        return KdspUniqueNPCBackstory.Create("wbr_hil_ripdoc_01").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-MedicalStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-ThreatAssessment"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-NinaKraviz-Notes"));
     }
 
     public static func JotaroShobo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jotaro_shobo").SetClassification("TYGER CLAWS - HIGH RANKING")
-            .SetBackground("Jotaro Shobo (正法承太郎). High-ranking Tyger Claws member, owner of Ho-Oh club in Kabuki. Known as 'The Devil of Kabuki' for his side business - producing the most violent XBDs imaginable. At least seventeen confirmed murders, mostly joytoys who disappeared without anyone looking for them.")
-            .SetEarlyLife("Rose quickly through Tyger Claws through intelligence, loyalty and ruthlessness. Rules lackeys with iron fist. Never late with cuts to bosses. Gang provides protection and turns blind eye to his 'hobbies'.")
-            .SetAffiliation("Tyger Claws (High Ranking)")
-            .SetCriminalRecord("SERIAL KILLER | 17+ murders | XBD snuff production | Human trafficking | Torture | Protected by Tyger Claws")
-            .SetRelationships("Jae-Hyun Lee (Supplier - provides victims)")
-            .SetNotes("Sadistic | Gets off on suffering | Coldly efficient in gang business | The Mox consider him their primary enemy")
-            .SetFinancialStatus("Wealthy | Ho-Oh club income | XBD production profits")
-            .SetThreatAssessment("HIGH | Tyger Claws protection | Armed guards | Ho-Oh club is fortified | Casino second floor");
+        return KdspUniqueNPCBackstory.Create("jotaro_shobo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JotaroShobo-ThreatAssessment"));
     }
 
     public static func TakiKenmochi() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("taki_kenmochi").SetClassification("TYGER CLAWS - OPERATOR")
-            .SetBackground("Tyger Claws gang member who runs a pachinko operation in Kabuki. Small operation but strategically placed. Red hair, blue and pink jacket, white shoes - easy to identify.")
-            .SetAffiliation("Tyger Claws")
-            .SetCriminalRecord("ILLEGAL GAMBLING | Tyger Claws operations | Pachinko racket")
-            .SetNotes("Gang loyal | Runs tight operation | Not leadership material")
-            .SetThreatAssessment("MODERATE | Tyger Claws training | Armed | Gang backup possible");
+        return KdspUniqueNPCBackstory.Create("taki_kenmochi").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Background"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-ThreatAssessment"));
     }
 
     public static func MikhailAkulov() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mikhail_akulov").SetClassification("FIXER - SOVIET UNION")
-            .SetBackground("Mikhail Sergeievich Akulov (Михаил Сергеевич Акулов). The top fixer in the Soviet Union. Traveled to Night City in 2077 ostensibly on a diplomatic business trip. His presence has generated enormous buzz - a premier Soviet fixer personally handling business in Night City raises questions.")
-            .SetEarlyLife("Rose to fame as USSR's most connected fixer. Has network spanning Soviet territories. First time operating on American soil.")
-            .SetAffiliation("Soviet Union (Government connected)")
-            .SetCriminalRecord("CLASSIFIED | Soviet intelligence connections | Diplomatic immunity claims")
-            .SetRelationships("Nadezhda Tiurina (Bodyguard/companion) | Shelma (Netrunner - status unknown)")
-            .SetFinancialStatus("Extremely wealthy | Soviet government backing | Staying at Hotel Raito penthouse")
-            .SetNotes("Calculating | Professional | Accustomed to power | May be seduced by Night City's freedom and capitalism")
-            .SetThreatAssessment("HIGH | Heavy Soviet security | Diplomatic complications | Professional bodyguards | Hotel Raito penthouse");
+        return KdspUniqueNPCBackstory.Create("mikhail_akulov").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-Relationships"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-FinancialStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MikhailAkulov-ThreatAssessment"));
     }
 
     public static func AnnaHamill() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("anna_hamill").SetClassification("NCPD - PATROL OFFICER")
-            .SetBackground("Blue-blooded cop, through and through. The kind you'd expect in an NCPD recruitment promo - beautiful, smart, honest to a fault. In other words, a really bad fit for Night City. One of the few genuinely good cops trying to make a difference.")
-            .SetEarlyLife("Joined NCPD with genuine desire to serve and protect. Refused bribes and kickbacks that her colleagues accepted freely. Became known for being against any form of injustice.")
-            .SetAffiliation("NCPD (Active but isolated)")
-            .SetCriminalRecord("CLEAN | Model officer | No corruption")
-            .SetNotes("Idealistic | Quick tempered | Impulsive | Persistent despite hostility | Doesn't know when to quit")
-            .SetFinancialStatus("Modest | Lives on NCPD salary | Renting apartment above Kabuki Market for undercover work")
-            .SetThreatAssessment("MODERATE | NCPD training | Armed | But making powerful enemies among her own colleagues");
+        return KdspUniqueNPCBackstory.Create("anna_hamill").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AnnaHamill-ThreatAssessment"));
     }
 
     // === WESTBROOK / JAPANTOWN NOTABLES ===
     public static func BeatriceEllenTrieste() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("beatrice_ellen_trieste").SetClassification("NETRUNNER - FREELANCE")
-            .SetBackground("Beatrice Ellen Trieste, better known by her handle '8ug8ear'. Skilled netrunner living in Japantown. Associate of Wakako Okada and has worked with Tyger Claws on various jobs. Published opinion piece critiquing the after-effects of the DataKrash brought about by Rache Bartmoss.")
-            .SetEarlyLife("Developed netrunning skills over years. Built reputation in Japantown as reliable technical specialist. Academic interest in Net history and the DataKrash.")
-            .SetAffiliation("Wakako Okada (Associate) | Tyger Claws (Contract work)")
-            .SetCriminalRecord("NETRUNNING | Corporate system intrusion | Data theft | Works with gang elements")
-            .SetNotes("Technically skilled | Opportunistic | Self-preserving | Academic interest in Net history")
-            .SetCyberwareStatus("Full netrunning suite | Neural interface | Ice breakers")
-            .SetThreatAssessment("HIGH via Net | Physical threat minimal | Dangerous in cyberspace");
+        return KdspUniqueNPCBackstory.Create("beatrice_ellen_trieste").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-Notes"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BeatriceEllenTrieste-ThreatAssessment"));
     }
 
     public static func SergeiKarasinsky() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("sergei_karasinsky").SetClassification("SOLO - INDEPENDENT")
-            .SetBackground("Russian solo operating in Night City. Has a reputation for acting before thinking - a characteristic that has landed him in trouble more than once. Known to panic when things go wrong, which makes him willing to pay well for help.")
-            .SetEarlyLife("Background in solo work. Has history with Tyger Claws that has not always been smooth. Currently on their bad side.")
-            .SetAffiliation("Independent | Tyger Claws (Strained relationship)")
-            .SetCriminalRecord("ASSAULT | Kidnapping | Various solo work | Currently trying to make amends with Tyger Claws")
-            .SetNotes("Impulsive | Acts before thinking | Panics under pressure | Desperate | Willing to pay for solutions")
-            .SetFinancialStatus("Moderate | Pays well when panicked | Money 'flying out of his account'")
-            .SetThreatAssessment("MODERATE | Solo skills | But judgment problems make him dangerous to be around");
+        return KdspUniqueNPCBackstory.Create("sergei_karasinsky").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-CriminalRecord"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-Notes"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-FinancialStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-SergeiKarasinsky-ThreatAssessment"));
     }
 
     public static func ChangHoonNam() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("chang_hoon_nam").SetClassification("NETRUNNER - PROFESSIONAL")
-            .SetBackground("Chang-Hoon Nam (남창훈). 65-year-old veteran netrunner, hand-picked by Wakako Okada years ago. Hasn't let her down once. Known for being dependable and knowing exactly what's expected of him. Operates from basement hideout beneath restaurant in Japantown.")
-            .SetEarlyLife("Decades of netrunning experience. Built reputation as reliable, methodical operator. Sees himself as bundle of contradictions - ambition vs aloofness, desire to help vs self-preservation, hunger for knowledge vs wanting peace.")
-            .SetAffiliation("Wakako Okada (Primary client)")
-            .SetCriminalRecord("NETRUNNING | Corporate intrusion | Data extraction | Long career with no major incidents")
-            .SetRelationships("Wakako Okada (Employer - hand-picked associate) | Spectral Kid (Mentored - deceased) | Dante (Acquaintance - trapped in Net)")
-            .SetNotes("Dependable | Methodical | Sentimental | Effective but tame | Likes knowing what's expected | Will take calculated risks")
-            .SetCyberwareStatus("Professional netrunning suite | Decades of optimization | Code and daemons match his personality - effective but tame")
-            .SetThreatAssessment("HIGH via Net | Physical threat minimal | Experienced and careful");
+        return KdspUniqueNPCBackstory.Create("chang_hoon_nam").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-Notes"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-CyberwareStatus"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ChangHoonNam-ThreatAssessment"));
     }
 
     public static func LaurenCostigan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("lauren_costigan").SetClassification("CIVILIAN - NON-COMBATANT")
-            .SetBackground("Wife of Bradley Costigan. Ordinary civilian caught up in her husband's past. Bradley is currently incarcerated and his old associations have put Lauren in a difficult position through no fault of her own.")
-            .SetEarlyLife("Married Bradley Costigan. Lived normal civilian life until husband's imprisonment brought unwanted attention from his former associates.")
-            .SetCriminalRecord("CLEAN | No criminal record | Victim of circumstance")
-            .SetRelationships("Bradley Costigan (Husband - imprisoned)")
-            .SetNotes("Innocent civilian | Traumatized by circumstances | Resilient | Has family support network")
-            .SetThreatAssessment("NONE | Non-combatant | No combat training | Vulnerable");
+        return KdspUniqueNPCBackstory.Create("lauren_costigan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LaurenCostigan-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LaurenCostigan-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LaurenCostigan-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LaurenCostigan-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-LaurenCostigan-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LaurenCostigan-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LaurenCostigan-ThreatAssessment"));
     }
 
     // ═══════════════════════════════════════════════════════════
@@ -2505,204 +2505,204 @@ public abstract class KdspUniqueNPCEntries {
     // --- DOGTOWN SAINTS ---
 
     public static func NikaYankovich() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("nika_yankovich").SetClassification("SCAVENGER - DOGTOWN CELL")
-            .SetBackground("Nika Yankovich. Twin sister of Gaspar Yankovich. Scavenger operating in Dogtown. Unusual among her crew — held in high regard because she actually cares about something beyond chrome and eddies. Family.")
-            .SetEarlyLife("Raised alongside twin brother Gaspar. Despite being born minutes apart, always assumed the role of protective older sister. When Gaspar developed an addiction to immunosuppressants, Nika blamed herself. Before she could force him into rehab, he vanished in Dogtown.")
-            .SetAffiliation("Scavengers - Dogtown")
-            .SetCriminalRecord("SCAVENGER OPERATIONS | Organ/implant harvesting | Breaking and entering | Armed intimidation | Hostage situation at Haven Clinic, Montaña de Oro Ave")
-            .SetRelationships("Gaspar Yankovich (Twin brother - missing) | Tim Brent (Associate - dealer, owes Gaspar eddies) | Scavenger crew (Loyal)")
-            .SetNotes("Fiercely protective of family | Emotional | Dangerous when desperate | Last known lead on Gaspar pointed to Haven Clinic")
-            .SetThreatAssessment("MODERATE-HIGH | Armed and volatile | Will escalate when cornered | Scav backup nearby");
+        return KdspUniqueNPCBackstory.Create("nika_yankovich").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-NikaYankovich-ThreatAssessment"));
     }
 
     public static func OdellBlanco() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("odell_blanco").SetClassification("CIVILIAN - CLERGY")
-            .SetBackground("Father Odell Blanco. Pastor operating out of Haven Clinic, an abandoned church on Montaña de Oro Ave in Dogtown. Partners with a local ripperdoc to provide medical care and used implants to those who can't afford Trauma Team — which in Dogtown means everyone.")
-            .SetEarlyLife("Called to service in one of Night City's most godless districts. Survives on donations and goodwill. Built Haven Clinic into a lifeline for Longshore Stacks residents who have nowhere else to turn.")
-            .SetCriminalRecord("CLEAN | No criminal record")
-            .SetRelationships("Anthony Anderson (Partner - ripperdoc at Haven Clinic) | Father Graeff (Correspondence - clergy contact) | Haven Clinic patients (Congregation)")
-            .SetNotes("Genuinely altruistic | Pragmatic faith | Refuses to abandon Dogtown | Will call in outside help when overwhelmed")
-            .SetThreatAssessment("NONE | Non-combatant | Unarmed | High community value");
+        return KdspUniqueNPCBackstory.Create("odell_blanco").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-OdellBlanco-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-OdellBlanco-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-OdellBlanco-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-OdellBlanco-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-OdellBlanco-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-OdellBlanco-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-OdellBlanco-ThreatAssessment"));
     }
 
     public static func AnthonyAndersonRipper() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("anthony_anderson").SetClassification("RIPPERDOC - UNLICENSED")
-            .SetBackground("Dr. Anthony Anderson. Ripperdoc operating out of Haven Clinic, a converted church in Dogtown's Longshore Stacks. Known for providing used implants and medical care to residents who can't pay. One of Dogtown's few genuinely charitable figures — though even saints have secrets in this district.")
-            .SetEarlyLife("Medical background. Chose to set up practice in Dogtown rather than pursue corporate clients. Partnered with Father Odell Blanco to establish Haven Clinic as a community resource.")
-            .SetAffiliation("Haven Clinic - Longshore Stacks")
-            .SetCriminalRecord("UNLICENSED MEDICAL PRACTICE | Unregistered implant installation | Use of salvaged/secondhand cyberware | Possible medical ethics violations — details classified")
-            .SetRelationships("Odell Blanco (Partner - clergy) | Tara Anderson (Wife) | Haven Clinic patients (Dependents)")
-            .SetCyberwareStatus("Standard ripperdoc toolkit | Diagnostic optics | Surgical suite in clinic basement")
-            .SetNotes("Outwardly selfless | Morally complex | Barricades when threatened | Patients depend on his survival")
-            .SetThreatAssessment("LOW | Non-combatant | Medical professional | High community value — loss would devastate local healthcare");
+        return KdspUniqueNPCBackstory.Create("anthony_anderson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-Relationships"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-CyberwareStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAndersonRipper-ThreatAssessment"));
     }
 
     // --- PROTOTYPE IN THE SCRAPER ---
 
     public static func HasanDemir() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hasan_demir").SetClassification("ZETATECH - TECHIE (AWOL)")
-            .SetBackground("Hasan Demir. Former Zetatech engineer specializing in prototype ocular systems. Clever and convincing, capable of bold moves — but consistently underestimates how his audacity drives him toward perilous situations. Currently AWOL from Zetatech with corporate property in his possession.")
-            .SetEarlyLife("Dedicated his career to Zetatech. Years of service left him feeling undercompensated for his contributions. Resentment built until he decided to take what he felt he was owed.")
-            .SetAffiliation("Zetatech (Former — deserted)")
-            .SetCriminalRecord("CORPORATE THEFT | Unauthorized removal of prototype hardware | Breach of Zetatech employment contract | Misappropriation of proprietary technology")
-            .SetCyberwareStatus("PROTOTYPE ZETATECH OCULAR IMPLANT — self-installed | Experimental tech of immense value | Industry analysts suggest potential to rival Kiroshi Optics product line")
-            .SetRelationships("Zetatech (Former employer — actively searching for him) | Mr. Hands (Fixer — contract involvement)")
-            .SetNotes("Intelligent but reckless | Talks his way out of corners | Self-installed experimental chrome — either brilliant or suicidal | Scavengers took interest in his prototype")
-            .SetThreatAssessment("LOW-MODERATE | Non-combatant | High-value target to multiple parties | Prototype makes him a walking payday");
+        return KdspUniqueNPCBackstory.Create("hasan_demir").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-CyberwareStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-HasanDemir-ThreatAssessment"));
     }
 
     // --- WAITING FOR DODGER ---
 
     public static func BillMitchel() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("bill_mitchel").SetClassification("NCPD - OFFICER")
-            .SetBackground("Officer Bill Mitchel. NCPD. The epitome of mediocrity. Mediocre dreams, mediocre needs, and an overall mediocre life. His attempts to break out of this pattern are plain to see. Husband of Stella Ramos.")
-            .SetEarlyLife("Joined NCPD because a friend suggested it. Never learned how to say no. Career defined by going along with whatever path of least resistance presented itself.")
-            .SetAffiliation("NCPD")
-            .SetCriminalRecord("OFFICER FILE | Internal affairs: PENDING REVIEW | Possible connections to BARGHEST drug operations in Coastview — investigation ongoing")
-            .SetRelationships("Stella Ramos (Wife) | Charles Wilson (Partner - NCPD) | Carl 'Dodger' Robinson (BARGHEST — adversarial)")
-            .SetNotes("Risk-averse | People-pleaser | Terrible liar | Aspires to something more but lacks the spine | Dreams of opening a food stand")
-            .SetThreatAssessment("LOW | Standard NCPD sidearm | Unlikely to initiate combat | Will follow stronger personalities");
+        return KdspUniqueNPCBackstory.Create("bill_mitchel").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-ThreatAssessment"));
     }
 
     public static func CharlesWilson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("charles_wilson").SetClassification("NCPD - OFFICER")
-            .SetBackground("Officer Charles Wilson. NCPD. Partner of Bill Mitchel. Currently assigned to Dogtown-adjacent operations. The more competent half of the Mitchel-Wilson unit, though that's a low bar.")
-            .SetEarlyLife("NCPD career officer. Paired with Bill Mitchel. More capable than his partner but dragged into the same compromising situations.")
-            .SetAffiliation("NCPD")
-            .SetCriminalRecord("OFFICER FILE | Internal affairs: PENDING REVIEW | Linked to same BARGHEST entanglement as partner Mitchel")
-            .SetRelationships("Bill Mitchel (Partner - NCPD) | Stella Ramos (Friend - Bill's wife) | Carl 'Dodger' Robinson (BARGHEST — adversarial)")
-            .SetNotes("More competent than Mitchel | Pragmatic | Better under pressure | Still managed to end up in the same mess")
-            .SetThreatAssessment("LOW | Standard NCPD equipment | Marginally more effective than partner");
+        return KdspUniqueNPCBackstory.Create("charles_wilson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-ThreatAssessment"));
     }
 
     public static func CarlRobinson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("carl_robinson").SetClassification("BARGHEST - LIEUTENANT")
-            .SetBackground("Carl 'Dodger' Robinson. High-ranking BARGHEST operator. If you want to escape your past, you go to Night City. If the past catches up, you flee to the Badlands. If several pasts all want you dead — you hop to Dogtown and pray Hansen likes you. Dodger's prayers were answered.")
-            .SetEarlyLife("Multiple criminal histories across jurisdictions. Fled to Dogtown after burning bridges with NCPD, Tyger Claws, and nomad clans simultaneously. Hansen saw value in his skills and took him in.")
-            .SetAffiliation("BARGHEST")
-            .SetCriminalRecord("THREE LIFE SENTENCES (NCPD — outstanding) | Grave insult to prominent Tyger Claws boss | Robbery of nomad clan — several million eddies | Drug manufacturing and distribution in Coastview")
-            .SetRelationships("Kurt Hansen (Commander — patron) | BARGHEST soldiers (Subordinates) | NCPD, Tyger Claws, Nomads (Enemies — all actively hostile)")
-            .SetCyberwareStatus("Combat-grade BARGHEST implants | Reflexes tuned for close-quarters | Armed and chrome-heavy")
-            .SetNotes("Ruthless | Entertained by audacity | Runs drug ops from converted NCPD precinct | Three separate factions want him dead | Carries iconic Rosco revolver")
-            .SetThreatAssessment("HIGH | Armed combatant | BARGHEST backup on-site | Multiple bodyguards | Do not underestimate");
+        return KdspUniqueNPCBackstory.Create("carl_robinson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Relationships"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-CyberwareStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-ThreatAssessment"));
     }
 
     // --- THE MAN WHO KILLED JASON FOREMAN ---
 
     public static func BrianaDolson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("briana_dolson").SetClassification("CIVILIAN - COMMUNITY LEADER")
-            .SetBackground("Briana Dolson. Longshore Stacks' unofficial representative. Organizes community vigils and acts as the voice of residents who have no one else to speak for them. Currently seeking justice for eight civilians killed in a massacre by a former BARGHEST triggerman.")
-            .SetEarlyLife("Rose to prominence in Longshore Stacks through sheer force of will. When nobody else stepped up, Briana did. Became the person the community turns to when Dogtown's violence hits home.")
-            .SetCriminalRecord("CLEAN | No criminal record | Contracted mercenary services through Mr. Hands for community protection")
-            .SetRelationships("Longshore Stacks community (Dependents) | Mr. Hands (Fixer — hired merc on her behalf) | Jason Foreman (Victim — community member, murdered)")
-            .SetNotes("Strong-willed | Expects results | Protective of her community | Will not forgive easily | Meets only during evening vigils (22:00-06:00)")
-            .SetThreatAssessment("NONE | Non-combatant | Political influence within Longshore Stacks");
+        return KdspUniqueNPCBackstory.Create("briana_dolson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BrianaDolson-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BrianaDolson-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BrianaDolson-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BrianaDolson-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BrianaDolson-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BrianaDolson-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BrianaDolson-ThreatAssessment"));
     }
 
     // --- SPY IN THE JUNGLE ---
 
     public static func StevenSantos() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("steven_santos").SetClassification("BIA - RISK ASSESSMENT SPECIALIST")
-            .SetBackground("Steven Santos. Brazilian Intelligence Agency. Risk assessment specialist. A patriot willing to sacrifice much for his country — perhaps not his life, but at the very least his self-respect. Knows when a mission is in jeopardy, and when to look the other way and keep things under wraps.")
-            .SetEarlyLife("Rose through BIA ranks as a dependable, if morally flexible, operative. The kind of man who says 'if I don't do it, someone else will' and 'that's just how the system works.' When his conscience gets too murky, he makes an effort to clean it up. Just not too clean.")
-            .SetAffiliation("Brazilian Intelligence Agency")
-            .SetCriminalRecord("CLASSIFIED | BIA operative | Operating in Dogtown without official agency authorization")
-            .SetRelationships("Ana Friedman (Partner - BIA) | Mark Bana (Mentor/colleague - status unknown) | Mr. Hands (Fixer — contracted V)")
-            .SetNotes("Pragmatic to a fault | Prioritizes survival over justice | Will undercut his own partner to protect himself | Currently operating off-books in Dogtown")
-            .SetThreatAssessment("MODERATE | Intelligence training | Armed | Not a frontline combatant | Dangerous through information rather than firepower");
+        return KdspUniqueNPCBackstory.Create("steven_santos").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-StevenSantos-ThreatAssessment"));
     }
 
     public static func AnaFriedman() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ana_friedman").SetClassification("BIA - FIELD AGENT")
-            .SetBackground("Ana Friedman. Brazilian Intelligence Agency. Field operative partnered with Steven Santos. Currently in Dogtown investigating the reactivation of a colleague's biomonitor signal. Operating without official BIA authorization due to the political sensitivity of the situation.")
-            .SetEarlyLife("BIA career agent. Trained under Mark Bana. More idealistic than her partner Santos — believes in doing the right thing even when the system would prefer she didn't.")
-            .SetAffiliation("Brazilian Intelligence Agency")
-            .SetCriminalRecord("CLASSIFIED | BIA operative | Unauthorized field operation in sovereign Dogtown territory")
-            .SetRelationships("Steven Santos (Partner - BIA) | Mark Bana (Mentor - biomonitor signal reactivated) | Mr. Hands (Fixer — contracted V)")
-            .SetNotes("Idealistic | Driven by loyalty to fallen colleagues | Will push for truth regardless of cost | Tensions with partner over how far to go")
-            .SetThreatAssessment("MODERATE | Intelligence training | Armed | More willing to take risks than Santos");
+        return KdspUniqueNPCBackstory.Create("ana_friedman").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AnaFriedman-ThreatAssessment"));
     }
 
     public static func BorisRibakov() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("boris_ribakov").SetClassification("SOVOIL - ELITE OPERATIVE")
-            .SetBackground("Boris Ribakov. SovOil corporate black-ops. Elite soldier deployed to Night City on a termination contract. Operates with military precision, advanced stealth technology, and zero regard for collateral damage. Currently embedded in Organitopia, Terra Cognita.")
-            .SetEarlyLife("SovOil military pipeline. Trained as tier-one corporate operative. Specializes in high-value target elimination in hostile environments. Scavenger crews in the area answer to him by intimidation.")
-            .SetAffiliation("SovOil")
-            .SetCriminalRecord("CLASSIFIED — SOVOIL CORPORATE DENIABLE | Contract assassinations | Multiple unauthorized military operations on foreign soil")
-            .SetCyberwareStatus("MILITARY-GRADE | Optical camouflage | Sandevistan acceleration | Charge-jump locomotion | Militech Griffin drone deployment system | Holographic decoy projectors")
-            .SetRelationships("SovOil (Handler — corporate command) | Scavenger crews (Subordinates — intimidated into compliance)")
-            .SetNotes("Apex predator | Uses sniper rifle from elevated positions, switches to Smart SMG at close range | Deploys smoke grenades + flashbangs | Will retreat and re-engage | Carries iconic Pizdets SMG")
-            .SetThreatAssessment("EXTREME | Tier-one combatant | Stealth + heavy firepower | Drone support | Do NOT engage without preparation");
+        return KdspUniqueNPCBackstory.Create("boris_ribakov").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-CyberwareStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-ThreatAssessment"));
     }
 
     public static func KatyaKarelina() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("katya_karelina").SetClassification("SOVOIL - FORMER INTERROGATOR")
-            .SetBackground("Katya Karelina. Former SovOil interrogation specialist. Once part of the corporate machine, now marked for termination by her own employers. Hiding in Organitopia's abandoned museum complex in Terra Cognita. Desperate, resourceful, and willing to trade anything for survival.")
-            .SetEarlyLife("SovOil career operative specializing in information extraction. Participated in interrogations that 'never happened.' When the corporation decided to clean house, she found herself on the wrong side of the ledger.")
-            .SetAffiliation("SovOil (Former — terminated)")
-            .SetCriminalRecord("CLASSIFIED — SOVOIL DENIABLE | Enhanced interrogation | Involvement in deaths of foreign intelligence personnel | Identity fraud | Signal spoofing using stolen biomonitor")
-            .SetRelationships("SovOil (Former employer — actively hunting her) | Boris Ribakov (Assassin — sent to eliminate her) | Olya Sergeeva (Contact)")
-            .SetNotes("Master of deception | Will impersonate others to survive | Knows SovOil secrets worth killing for | Offers stash coordinates as bargaining chip")
-            .SetThreatAssessment("LOW-MODERATE | Not a frontline combatant | Dangerous through manipulation and information | Valuable intelligence asset");
+        return KdspUniqueNPCBackstory.Create("katya_karelina").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-KatyaKarelina-ThreatAssessment"));
     }
 
     // --- TALENT ACADEMY ---
 
     public static func Baird() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("baird").SetClassification("NETRUNNER - FREELANCE")
-            .SetBackground("Baird. Freelance netrunner on retainer with Mr. Hands. Specializes in identity fabrication and digital cover stories. Provides operational support for high-profile infiltration gigs throughout Dogtown.")
-            .SetEarlyLife("Career netrunner. Built reputation as reliable support for fixer operations. Doesn't ask too many questions about the jobs — just makes sure the fake IDs hold up long enough.")
-            .SetAffiliation("Mr. Hands (Retainer)")
-            .SetCriminalRecord("NETRUNNING | Identity fraud | Digital forgery | Corporate systems intrusion")
-            .SetCyberwareStatus("Full netrunning suite | Optimized for rapid identity fabrication and systems spoofing")
-            .SetNotes("Professional | Methodical briefer | Doesn't elaborate beyond what's needed | Creates covers good enough to pass biometric scans")
-            .SetThreatAssessment("MODERATE via Net | Minimal physical threat | Support operative, not frontline");
+        return KdspUniqueNPCBackstory.Create("baird").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-CyberwareStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Baird-ThreatAssessment"));
     }
 
     public static func TommieWalker() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("tommie_walker").SetClassification("CIVILIAN - MINOR")
-            .SetBackground("Tommie Walker. Young athlete enrolled at the Center for Neuromotor Development in Dogtown. Son of David Walker, clothing vendor at EBM Petrochem Stadium. One of many Dogtown kids betting everything on a chance to get signed by an off-world sports team and escape the district.")
-            .SetEarlyLife("Grew up in Dogtown. Father runs a clothing stall at the stadium. Enrolled in Dr. Fiona Vargas' academy — the only shot most Dogtown kids have at leaving. The stakes couldn't be higher: get signed or come out with nothing but cyberware debt.")
-            .SetCriminalRecord("CLEAN | Minor | No criminal record")
-            .SetRelationships("David Walker (Father - stadium vendor) | Fiona Vargas (Academy director) | Fellow academy athletes (Peers)")
-            .SetNotes("Resourceful | Curious | Found places he shouldn't be | The system he's in chews up more kids than it launches")
-            .SetThreatAssessment("NONE | Minor | Non-combatant | Protected status");
+        return KdspUniqueNPCBackstory.Create("tommie_walker").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TommieWalker-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TommieWalker-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-TommieWalker-EarlyLife"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-TommieWalker-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-TommieWalker-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-TommieWalker-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TommieWalker-ThreatAssessment"));
     }
 
     public static func FionaVargas() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("fiona_vargas").SetClassification("CORPORATE - MEDICAL DIRECTOR")
-            .SetBackground("Dr. Fiona Vargas. Head of the Center for Neuromotor Development, Site 341. Extremely talented ripperdoc specializing in cybernetic implants for young athletes. Operates in Dogtown to avoid taxes, regulations, and oversight. Her office walls are covered in medals, trophies, and awards won by the athletes she helped mould.")
-            .SetEarlyLife("Became a respected ripper in the community quickly. Faced a choice — stay at the hospital and treat patients, or start cybermodifying athletes. Help people, or make money. The trophies on her wall tell you which she chose.")
-            .SetAffiliation("Center for Neuromotor Development - Site 341")
-            .SetCriminalRecord("TAX EVASION | Unregulated medical procedures on minors | Operating outside NUSA medical oversight | Scout contract fraud — under investigation by Mr. Hands' client")
-            .SetFinancialStatus("WEALTHY | International scout contracts | Sizeable transfer fees | All untaxed")
-            .SetRelationships("Academy athletes (Subjects) | International sports scouts (Clients) | Mr. Hands (Fixer — contract against her operations)")
-            .SetNotes("Talented and cynical in equal measure | Will negotiate when cornered | Exploits Dogtown kids' desperation for profit | Those who don't get signed are left with cyberware debt their families can't cover")
-            .SetThreatAssessment("LOW direct | HIGH indirect | Armed security staff on premises | Will send mercs after threats to her operation");
+        return KdspUniqueNPCBackstory.Create("fiona_vargas").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-CriminalRecord"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-FionaVargas-ThreatAssessment"));
     }
 
     // --- HEAVIEST OF HEARTS ---
 
     public static func MichaelMaldonado() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("michael_maldonado").SetClassification("CIVILIAN - BUSINESS OWNER")
-            .SetBackground("Michael Maldonado. Small business owner operating beneath The Needle in central Dogtown. A man blessed with two things that go together many a time — a son and trouble. Those who possess very little are the most afraid to lose whatever they love.")
-            .SetEarlyLife("Built a small business in Dogtown. Raised son Eric in the district. The kind of man who never leaves his shop — not because business is good, but because the world outside keeps getting worse.")
-            .SetAffiliation("Independent")
-            .SetCriminalRecord("WITNESS TESTIMONY | Testified against own son Eric Maldonado | Claims testimony was coerced | Details disputed by District Attorney's office")
-            .SetRelationships("Eric Maldonado (Son - Valentinos member, incarcerated) | Georgina Zembinsky (D.A. — adversarial) | Hank Davis (D.A.'s partner — adversarial) | Mr. Hands (Fixer — hired V)")
-            .SetNotes("Desperate father | Claims he was tortured into giving false testimony | Story doesn't fully add up | Willing to pay well for someone with very little")
-            .SetThreatAssessment("NONE | Non-combatant | Civilian | Financially motivated");
+        return KdspUniqueNPCBackstory.Create("michael_maldonado").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MichaelMaldonado-ThreatAssessment"));
     }
 
     public static func GeorginaZembinsky() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("georgina_zembinsky").SetClassification("DISTRICT ATTORNEY - DOGTOWN")
-            .SetBackground("Georgina Zembinsky. District Attorney operating out of the Heavy Hearts club in Dogtown. Pursuing a high-profile case involving Valentinos gang activity. Works alongside partner Hank Davis. Frequents the VIP section of Heavy Hearts — one of the few places in Dogtown where the law still pretends to function.")
-            .SetEarlyLife("Legal career built in Dogtown's impossible jurisdiction. Learned that justice in this district requires methods the NUSA bar association wouldn't approve of. Has been chasing a serial murderer connected to the Valentinos for two years.")
-            .SetAffiliation("Dogtown District Attorney's Office")
-            .SetCriminalRecord("NONE ON RECORD | Accusations of coerced testimony — unproven | Allegations of enhanced interrogation techniques — denied | Uses Valentinos informants to build cases")
-            .SetRelationships("Hank Davis (Partner/bodyguard) | Michael Maldonado (Witness — adversarial) | Eric Maldonado (Defendant — Valentinos) | Hector Sacristán (Target — high-ranking Valentinos, alleged serial murderer) | Judge Nathaniel Edwards (Correspondence)")
-            .SetNotes("Ruthless prosecutor | Believes the ends justify the means | Has video testimony evidence on secure terminal | Willing to negotiate when outmatched | Hank Davis provides physical security")
-            .SetThreatAssessment("LOW direct | Hank Davis serves as armed protection | VIP section of Heavy Hearts has additional security | Political connections make her dangerous to cross");
+        return KdspUniqueNPCBackstory.Create("georgina_zembinsky").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-CriminalRecord"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-GeorginaZembinsky-ThreatAssessment"));
     }
 
     // === PHANTOM LIBERTY - BLACK SAPPHIRE PARTY (q303 - You Know My Name) ===
@@ -2710,204 +2710,204 @@ public abstract class KdspUniqueNPCEntries {
     // --- BARGHEST ---
 
     public static func JagoSzabo() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jago_szabo").SetClassification("BARGHEST - LIEUTENANT")
-            .SetBackground("Jago Szabo. Hungarian-born ex-NUSA military officer. One of Kurt Hansen's most trusted lieutenants. Handles Barghest's external negotiations and high-profile arms deals. Known for a polished demeanor that masks ruthless efficiency. The suit he wears to Black Sapphire events costs more than most Dogtown residents earn in a year.")
-            .SetEarlyLife("Born in Budapest before the European collapse. Military family. Emigrated to NUSA as a teenager. Enlisted at 18, served in the Unification War under Colonel Hansen. When Hansen defected, Szabo followed without hesitation.")
-            .SetSignificantEvents("Unification War veteran. Followed Hansen into Dogtown. Promoted to lieutenant after organizing the Sapphire Arms Expo — Barghest's first public-facing weapons showcase. Now manages all diplomatic functions at the Black Sapphire.")
-            .SetAffiliation("Barghest PMC | Kurt Hansen's inner circle")
-            .SetCriminalRecord("WANTED - NUSA | Desertion | Arms trafficking | Conspiracy | Multiple counts of murder (wartime, unproven)")
-            .SetCyberwareStatus("Military-grade optics | Subdermal armor | Encrypted Barghest comms | Kiroshi upgrade (threat detection)")
-            .SetFinancialStatus("AFFLUENT | Arms deal commissions | Black Sapphire revenue share | Hansen's favor")
-            .SetRelationships("Kurt Hansen (Commander - loyal) | Chester Bennett (Fellow officer - trusted) | Tyger Claws leadership (Business contacts)")
-            .SetNotes("Diplomatic but dangerous | Smiles while negotiating your death | Fluent in five languages | Never seen without a pressed suit in social settings")
-            .SetThreatAssessment("HIGH (75/100) | Combat veteran | Armed at all times | Barghest soldiers on call | Do not underestimate the charm");
+        return KdspUniqueNPCBackstory.Create("jago_szabo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JagoSzabo-ThreatAssessment"));
     }
 
     public static func ChesterBennett() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("chester_bennett").SetClassification("BARGHEST - OFFICER")
-            .SetBackground("Chester Bennett. American. Career soldier turned PMC officer. Barghest's logistics and security coordinator for Dogtown's public-facing operations. Responsible for Black Sapphire perimeter security and VIP handling. Where Szabo is the handshake, Bennett is the fist behind it.")
-            .SetEarlyLife("Grew up in the ruins of Baltimore after the Unification War tore through the Eastern Seaboard. No family left to speak of. Joined NUSA military at 16 with forged papers. Served under Hansen's command during the final campaigns.")
-            .SetSignificantEvents("Baltimore survivor. Unification War veteran. Followed Hansen to Dogtown. Oversaw construction of the Black Sapphire's security infrastructure. Personally vetted every attendee of the first three Sapphire events.")
-            .SetAffiliation("Barghest PMC | Security division")
-            .SetCriminalRecord("WANTED - NUSA | Desertion | War crimes (alleged) | Smuggling | Racketeering")
-            .SetCyberwareStatus("Reinforced skeleton | Gorilla arms | Military-grade optics | Ballistic co-processor")
-            .SetFinancialStatus("COMFORTABLE | Barghest officer salary | Black Sapphire security contract")
-            .SetRelationships("Kurt Hansen (Commander) | Jago Szabo (Fellow officer - works closely) | Charles Graham (Subordinate - bodyguard detail)")
-            .SetNotes("Quiet professional | Watches everything | Prefers actions over words | The kind of soldier who sleeps with one eye open")
-            .SetThreatAssessment("HIGH (72/100) | Combat veteran | Heavy cyberware | Armed | Controls Sapphire security detail");
+        return KdspUniqueNPCBackstory.Create("chester_bennett").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ChesterBennett-ThreatAssessment"));
     }
 
     public static func CharlesGraham() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("charles_graham").SetClassification("BARGHEST - BODYGUARD")
-            .SetBackground("Charles Graham. Barghest heavy. Personal bodyguard assigned to Jago Szabo during high-profile events. Built like a tank wrapped in combat armor. Equipped with charge jump legs and flashbang grenades — the kind of firepower you bring when diplomacy fails mid-sentence.")
-            .SetEarlyLife("Texas panhandle. Ranch family. Grew up handling cattle and firearms in equal measure. Drifted into mercenary work after drought killed the ranch and his parents with it. Hansen's recruiters found him in a Heywood fight pit.")
-            .SetSignificantEvents("Recruited into Barghest from underground fighting circuit. Assigned to VIP protection detail after killing three Scavengers with his bare hands during a supply run. Permanent assignment to Szabo's security.")
-            .SetAffiliation("Barghest PMC | VIP protection detail")
-            .SetCriminalRecord("WANTED - NUSA | Desertion | Assault | Multiple homicides (combat context) | Unlicensed cyberware modifications")
-            .SetCyberwareStatus("Reinforced tendons (charge jump capable) | Gorilla arms | Subdermal armor | Flashbang deployment system | Pain inhibitors")
-            .SetRelationships("Jago Szabo (Principal - protective detail) | Chester Bennett (Superior officer)")
-            .SetNotes("Minimal conversation | Maximum violence when provoked | Loyal to Szabo specifically, not just Barghest | Eats enough for three people")
-            .SetThreatAssessment("VERY HIGH (80/100) | Heavy combat specialist | Charge jump capability | Flashbang equipped | Will engage immediately if principal threatened");
+        return KdspUniqueNPCBackstory.Create("charles_graham").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-CyberwareStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesGraham-ThreatAssessment"));
     }
 
     // --- TYGER CLAWS ---
 
     public static func JunAzegami() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jun_azegami").SetClassification("TYGER CLAWS - UNDERBOSS")
-            .SetBackground("Jun Azegami (畦上 潤). Senior Tyger Claws underboss overseeing Japantown and Kabuki operations. Represents the Claws' interests at high-level inter-gang negotiations. His presence at the Black Sapphire signals Tyger Claws are looking to expand their reach into Dogtown's arms and XBD markets. Old school yakuza mentality in a chrome-plated world.")
-            .SetEarlyLife("Born in Chiba, Japan. Son of a mid-ranking Tyger Claws enforcer who operated out of the original Tokyo chapter. Sent to Night City at 19 to apprentice under the NC branch. Rose through the ranks through a combination of business acumen and targeted violence.")
-            .SetSignificantEvents("Took over Kabuki operations after the previous boss disappeared. Brokered the Tyger Claws-Maelstrom XBD distribution agreement. Now expanding into Dogtown's unregulated markets through Hansen's blessing.")
-            .SetAffiliation("Tyger Claws | Japantown/Kabuki division")
-            .SetCriminalRecord("NCPD: 14 arrests, 0 convictions | Racketeering | Extortion | Suspected homicide (x6) | Witnesses consistently recant")
-            .SetCyberwareStatus("Mantis blades (concealed, retracted) | Kerenzikov | Sandevistan | Subdermal armor")
-            .SetFinancialStatus("WEALTHY | Multiple front businesses in Japantown | Jig-Jig Street revenue | XBD distribution profits")
-            .SetRelationships("Marcus Ichida (Fellow underboss - attends as pair) | Jago Szabo (Barghest contact - business) | Jotaro Shobo (Former associate - deceased)")
-            .SetNotes("Traditional | Observes Japanese business etiquette even when discussing murder | Never drinks at these events — always watching | Left hand never leaves his lap")
-            .SetThreatAssessment("EXTREME (85/100) | Mantis blades | Sandevistan equipped | Decades of combat experience | Tyger Claws reinforcements on speed dial");
+        return KdspUniqueNPCBackstory.Create("jun_azegami").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JunAzegami-ThreatAssessment"));
     }
 
     public static func MarcusIchida() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("marcus_ichida").SetClassification("TYGER CLAWS - UNDERBOSS")
-            .SetBackground("Marcus Ichida (市田 マーカス). Japanese-American. Second-generation Night City Tyger Claws. Co-manages the gang's external relations alongside Jun Azegami. Where Azegami is the traditionalist, Ichida is the modernizer — pushing the Claws into legitimate business fronts while maintaining iron control over their illegal operations. Attends the Black Sapphire as the public-facing negotiator.")
-            .SetEarlyLife("Born in Night City, Watson district. Father was a Tyger Claws accountant. Educated at Arasaka-funded academy in Japantown. Business degree from NC Metro University — paid for by gang money. Recruited formally at 22, but grew up in the life.")
-            .SetSignificantEvents("Established multiple Tyger Claws front corporations. Negotiated territorial agreements with Valentinos and Maelstrom. Currently brokering a deal with Barghest for exclusive distribution rights in Dogtown.")
-            .SetAffiliation("Tyger Claws | External relations / Business operations")
-            .SetCriminalRecord("NCPD: 8 arrests, 0 convictions | Money laundering | Tax evasion | RICO investigation (ongoing, no charges filed)")
-            .SetCyberwareStatus("Kiroshi optics (recording suite) | Neural interface (encrypted) | Subdermal armor | Monowire (concealed)")
-            .SetFinancialStatus("WEALTHY | Corporate fronts | Legitimate investments | Japantown real estate portfolio")
-            .SetRelationships("Jun Azegami (Fellow underboss - mutual respect) | Jago Szabo (Barghest contact) | Arasaka mid-level contacts (business)")
-            .SetNotes("Educated and articulate | Dresses corpo, thinks yakuza | Records every conversation through Kiroshi implants | The smarter and more dangerous of the pair in a boardroom")
-            .SetThreatAssessment("HIGH (70/100) | Monowire | Combat-trained but prefers to delegate | Real danger is his connections and resources");
+        return KdspUniqueNPCBackstory.Create("marcus_ichida").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MarcusIchida-ThreatAssessment"));
     }
 
     // --- MEDIA / TV HOSTS ---
 
     public static func RuthDzeng() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ruth_dzeng").SetClassification("MEDIA - DMS NETWORK HOST")
-            .SetBackground("Ruth Dzeng. Anchor and senior correspondent for DMS (Data Mainstream Services). One of Night City's most recognized faces in broadcast journalism. Covers high-society events, corporate politics, and gang-adjacent power brokers. Her presence at the Black Sapphire is professional — she's here to report, network, and gather material for her next series on Dogtown's transformation under Hansen.")
-            .SetEarlyLife("Born in San Francisco to a family of second-generation Chinese-American journalists. Her mother covered the Unification War for the Pacific Standard. Ruth inherited the instincts and none of the idealism. Moved to Night City after DMS offered her the anchor desk at 28.")
-            .SetSignificantEvents("Broke the Watson Waterfront corruption story in 2073. Landed exclusive interview with a Militech VP during the Arasaka-Militech proxy conflict. Currently developing a long-form piece on Dogtown as a 'sovereign experiment.'")
-            .SetAffiliation("DMS Network | Night City press corps")
-            .SetCriminalRecord("CLEAN | One defamation lawsuit (settled out of court, Biotechnica)")
-            .SetCyberwareStatus("Kiroshi optics (recording suite, live-feed capable) | Neural interface (teleprompter overlay) | Voice modulator (broadcast-grade)")
-            .SetFinancialStatus("AFFLUENT | DMS salary | Speaking engagements | Book deal (pending)")
-            .SetRelationships("DMS producers (Professional) | Night City media network (Competitors and colleagues) | Various fixers (Sources)")
-            .SetNotes("Sharp interviewer | Knows when to push and when to smile | Never off the record | Camera-ready at all times")
-            .SetThreatAssessment("NONE (direct) | Influence through broadcast reach | Can destroy reputations with a single segment");
+        return KdspUniqueNPCBackstory.Create("ruth_dzeng").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-RuthDzeng-ThreatAssessment"));
     }
 
     public static func ZiggyQ() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("ziggy_q").SetClassification("MEDIA - N64 PERSONALITY")
-            .SetBackground("Ziggy Q. Stage name. Real name classified — and he'd like to keep it that way. Network 64's most popular entertainment host. Famous for his outrageous on-air persona, celebrity interviews, and willingness to say anything for ratings. At the Black Sapphire for content — every handshake is a potential segment, every scandal a sweeps-week special.")
-            .SetEarlyLife("Rumored origins range from a corpo family in Westbrook to a Heywood street kid who talked his way onto a pirate broadcast. The truth is probably somewhere in between. What's confirmed: he appeared on N64's late-night slot in 2071 and never left.")
-            .SetSignificantEvents("'Ziggy After Dark' debuted 2071, became N54's highest-rated show within six months. Viral segment interviewing a cyberpsycho mid-episode. Banned from three Arasaka facilities for unauthorized filming.")
-            .SetAffiliation("Network 64 (N64) | Night City entertainment media")
-            .SetCriminalRecord("Trespassing (x3, dismissed) | Unauthorized recording (x2, settled) | Contempt of court (1, community service)")
-            .SetCyberwareStatus("Kiroshi optics (always recording) | Neural editor (real-time highlight reel) | Voice modulator | Mood-reactive LED subdermal tattoos")
-            .SetFinancialStatus("WEALTHY | N64 contract | Endorsement deals | Merchandise line ('Ziggy Q Approved')")
-            .SetNotes("Loud, strategic, and smarter than he lets on | The buffoon act is exactly that — an act | Has dirt on half of Night City's elite")
-            .SetThreatAssessment("NONE (direct) | Extremely dangerous to reputations | Has a direct line to millions of viewers");
+        return KdspUniqueNPCBackstory.Create("ziggy_q").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-FinancialStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ZiggyQ-ThreatAssessment"));
     }
 
     public static func ArifIqbal() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("arif_iqbal").SetClassification("MEDIA - WNS CORRESPONDENT")
-            .SetBackground("Arif Iqbal. Senior international correspondent for WNS (World News Service). Specializes in conflict zones, failed states, and corporate-sovereign disputes. Covering Dogtown's Black Sapphire event as part of a broader WNS series on post-Unification War power vacuums. The kind of journalist who's been shot at in four continents and still shows up to parties in a tailored suit.")
-            .SetEarlyLife("Born in Islamabad. Studied journalism at the University of Lahore before securing a WNS internship. First assignment was covering the Karachi port bombing of 2063. Never looked back.")
-            .SetSignificantEvents("Embedded with NUSA forces during the Unification War. Covered the fall of Busan to corporate PMCs. Award-winning documentary on Arasaka's influence in Southeast Asian politics. Currently the only WNS journalist with standing access to Dogtown.")
-            .SetAffiliation("WNS (World News Service) | International press")
-            .SetCriminalRecord("CLEAN | Detained twice (conflict zones — released) | Press credentials valid across NUSA and Free States")
-            .SetCyberwareStatus("Kiroshi optics (documentary-grade recording) | Translation implant (12 languages) | Reinforced subdermal plating (journalist armor, conflict zone standard)")
-            .SetFinancialStatus("COMFORTABLE | WNS salary | Documentary residuals | Freelance consulting")
-            .SetNotes("Calm under fire — literally | Asks uncomfortable questions with a gentle voice | Never reveals sources | Respects Hansen enough to attend, doesn't trust him enough to turn his back")
-            .SetThreatAssessment("NONE (direct) | International press protection | WNS legal team on retainer | Killing him would be an international incident");
+        return KdspUniqueNPCBackstory.Create("arif_iqbal").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-FinancialStatus"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ArifIqbal-ThreatAssessment"));
     }
 
     public static func JoshKavorkin() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("josh_kavorkin").SetClassification("MEDIA - WNS ANALYST")
-            .SetBackground("Josh Kavorkin. WNS political analyst and on-air commentator. Covers Night City governance, NUSA federal politics, and corporate power structures. Known for his measured delivery and ability to explain complex geopolitical situations to a mass audience. At the Black Sapphire networking with power brokers and gathering material for his evening analysis segment.")
-            .SetEarlyLife("Born in Chicago. Russian-American family. Father was a political science professor at the University of Chicago before it was absorbed by Militech's educational trust. Josh inherited the academic temperament and parlayed it into broadcast journalism.")
-            .SetSignificantEvents("Correctly predicted the outcome of three consecutive NUSA elections. His analysis of the Unification War's economic impact became required reading at several universities. Regular panelist on WNS's flagship debate show.")
-            .SetAffiliation("WNS (World News Service) | Political analysis division")
-            .SetCriminalRecord("CLEAN")
-            .SetCyberwareStatus("Kiroshi optics (standard media suite) | Neural interface (data overlay, live statistics feed)")
-            .SetFinancialStatus("COMFORTABLE | WNS contract | University speaking fees | Published author")
-            .SetRelationships("WNS editorial board (Professional) | Arif Iqbal (Colleague - mutual respect) | Various political contacts (Sources)")
-            .SetNotes("Thoughtful and deliberate | Never speculates without data | The kind of journalist politicians fear because he does his homework")
-            .SetThreatAssessment("NONE (direct) | Influence through analysis and commentary | Can shift public opinion with a single broadcast");
+        return KdspUniqueNPCBackstory.Create("josh_kavorkin").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-ThreatAssessment"));
     }
 
     // --- PARTY GUESTS ---
 
     public static func ReverendColver() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("reverend_colver").SetClassification("CLERGY - NIGHT CITY DIOCESE")
-            .SetBackground("Reverend Colver. One of Night City's few remaining ordained ministers. Operates a small congregation in Pacifica's remains and serves as spiritual advisor to several wealthy patrons — which is how he ended up with an invitation to the Black Sapphire. The collar gets him into rooms that guns cannot.")
-            .SetEarlyLife("Seminary education in the NUSA heartland. Took his first parish in Night City in 2058 when the diocese couldn't find anyone else willing to go. Twenty years later, he's still here — held together by faith and the kind of stubbornness only clergy possess.")
-            .SetSignificantEvents("Rebuilt St. Ambrose parish after the Pacifica collapse. Provides sanctuary services to war refugees in Dogtown's border zones. Quietly brokers ceasefire agreements between smaller gangs. His neutrality is his currency.")
-            .SetAffiliation("Night City Diocese | Unaffiliated (political)")
-            .SetCriminalRecord("CLEAN | Cited once for operating an unlicensed shelter (dismissed)")
-            .SetCyberwareStatus("Minimal | Basic neural interface | Kiroshi optics (standard)")
-            .SetFinancialStatus("MODEST | Parish income | Wealthy patrons donate generously | Funds redirected to charitable work")
-            .SetRelationships("Various wealthy patrons (Spiritual advisor) | Pacifica communities (Pastor) | Hansen's administration (Tolerated)")
-            .SetNotes("Genuine faith in a faithless city | Knows everyone's secrets from confession | Never weaponizes them | The one person in the room with no angle to play")
-            .SetThreatAssessment("NONE | Non-combatant | Protected by social convention and genuine neutrality");
+        return KdspUniqueNPCBackstory.Create("reverend_colver").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ReverendColver-ThreatAssessment"));
     }
 
     public static func AuroreCassel() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("aurore_cassel").SetClassification("SOCIALITE - FRENCH EXPATRIATE")
-            .SetBackground("Aurore Cassel. French-born socialite. Twin sister of Aymeric Cassel. The Cassels are fixtures of Night City's ultra-wealthy social circuit — old European money that survived the continental collapse by diversifying into Night City real estate and corpo stock before everyone else saw the writing on the wall. Aurore handles the family's social capital with surgical precision.")
-            .SetEarlyLife("Born in Lyon, France. Privately educated across what remained of the EU. The family relocated to Night City when Aurore and Aymeric were teenagers, converting their European holdings into a Night City portfolio worth billions.")
-            .SetSignificantEvents("Co-hosts the annual Cassel Foundation Gala — Night City's most exclusive charity event. Rumored to have brokered introductions between Arasaka executives and European banking interests. The Black Sapphire is one of the few venues she considers worth attending.")
-            .SetAffiliation("Cassel Family | High society")
-            .SetCriminalRecord("CLEAN | One civil suit (defamation, won)")
-            .SetCyberwareStatus("Cosmetic-grade implants only | Kiroshi optics (social overlay) | Anti-aging suite | Subdermal UV protection")
-            .SetFinancialStatus("ULTRA-WEALTHY | Family trust | Night City real estate | European banking interests | Corpo stock portfolio")
-            .SetRelationships("Aymeric Cassel (Twin brother - inseparable) | Night City's corporate elite (Social circle) | Various fixers (Discreet arrangements)")
-            .SetNotes("Charming and lethal in conversation | Every word is calculated | Speaks four languages fluently | Treats Night City like a chess board she's already winning")
-            .SetThreatAssessment("NONE (direct) | Enormous financial and social influence | Can end careers with a phone call");
+        return KdspUniqueNPCBackstory.Create("aurore_cassel").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AuroreCassel-ThreatAssessment"));
     }
 
     public static func AymericCassel() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("aymeric_cassel").SetClassification("SOCIALITE - FRENCH EXPATRIATE")
-            .SetBackground("Aymeric Cassel. French-born socialite and investor. Twin brother of Aurore Cassel. Where Aurore manages the family's social presence, Aymeric manages the money. A venture capitalist with stakes in everything from Dogtown reconstruction projects to Biotechnica subsidiaries. Quieter than his sister but arguably more dangerous — money moves faster than gossip.")
-            .SetEarlyLife("Born in Lyon, France. Studied finance in Zurich before the Swiss banking collapse. Relocated to Night City with the family. Built the Cassel investment portfolio from inherited European wealth into a Night City powerhouse.")
-            .SetSignificantEvents("Led the Cassel acquisition of three Watson waterfront properties. Early investor in Dogtown's reconstruction — one of the few outsiders Hansen permits to operate financially in his territory. Rumored to hold leverage over at least two city councilors.")
-            .SetAffiliation("Cassel Family | Cassel Ventures")
-            .SetCriminalRecord("CLEAN | SEC investigation (closed, no charges) | Tax optimization (legal)")
-            .SetCyberwareStatus("Minimal cosmetic | Neural interface (financial data feeds) | Kiroshi optics (social overlay)")
-            .SetFinancialStatus("ULTRA-WEALTHY | Venture capital | Real estate | Corpo investments | Dogtown reconstruction stakes")
-            .SetRelationships("Aurore Cassel (Twin sister - inseparable) | Kurt Hansen (Business arrangement - cautious) | Various corpo boards (Investor)")
-            .SetNotes("Quiet, observant, patient | Lets Aurore do the talking while he reads the room | The checkbook behind the charm | Prefers whiskey neat and conversations short")
-            .SetThreatAssessment("NONE (direct) | Financial leverage over multiple parties | Bankrolls operations that others execute");
+        return KdspUniqueNPCBackstory.Create("aymeric_cassel").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-FinancialStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AymericCassel-ThreatAssessment"));
     }
 
     // --- ROADS TO REDEMPTION ---
 
     public static func NeleSpringer() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("nele_springer").SetClassification("CRIMSON HARVEST - DEFECTOR")
-            .SetBackground("Nele Springer. Former member of the Crimson Harvest terrorist organization since 2074. Recently indicated desire to leave the group and prevent further attacks. A brilliant chemist carrying the weight of blood she didn't intend to spill.")
-            .SetEarlyLife("Grew up on her family's corn farm in Indiana with four siblings. When the farm went bankrupt and her parents were forced to sell their land to Biotechnica, Springer moved to Night City. A compensation payout for children of relocated farmers funded her chemistry degree. The university proved to be a breeding ground for revolutionary recruiters — when Crimson Harvest offered, she didn't hesitate.")
-            .SetAffiliation("Crimson Harvest (Defecting)")
-            .SetCriminalRecord("TERRORISM | Crimson Harvest membership since 2074 | Involvement in anti-Biotechnica sabotage operations | Connected to civilian casualties — extent of direct involvement disputed | WANTED by Biotechnica corporate security")
-            .SetMedicalStatus("Psychological: Guilt-driven | Tormented by the belief her education was bought with her parents' suffering | Never stopped feeling like a stranger in Night City")
-            .SetRelationships("Crimson Harvest (Former cell — defecting) | Biotechnica (Primary target — also hunting her) | Mr. Hands (Fixer — contracted V to assist) | Four siblings (Family — Indiana)")
-            .SetNotes("Brilliant chemist | True believer turned disillusioned | Sabotaging Biotechnica felt like alleviating her family's pain — until reality caught up | Biotechnica agents actively pursuing her in Dogtown")
-            .SetThreatAssessment("MODERATE | Chemistry expertise makes her dangerous in theory | Not a direct combatant | Multiple hostile parties tracking her location");
+        return KdspUniqueNPCBackstory.Create("nele_springer").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-EarlyLife"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-CriminalRecord"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-MedicalStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-NeleSpringer-ThreatAssessment"));
     }
 
     // --- ZEN MASTER (mq014 quest chain: Imagine / Stairway to Heaven / Poem of the Atoms / Meetings Along the Edge) ---
 
     public static func ZenMaster() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mq014_zen_master").SetClassification("UNKNOWN - DATABASE INCONCLUSIVE")
-            .SetBackground("No verified identity on file. Subject appears across multiple NCPD surveillance zones in sequence — Reconciliation Park (Corpo Plaza), Japantown shrine district, North Oak roundabout, Jackson Plains overlook — with no recorded transit between locations. Offers unlicensed braindance meditation sessions themed around classical elements. No commercial registration. No fixed address. No known employer. NCPD has received four separate civilian reports describing the same individual in four districts within 48 hours. All reports filed independently.")
-            .SetEarlyLife("NO DATA AVAILABLE. Immigration records return no match. NUSA citizen registry returns no match. Night City municipal database returns no match. Corporate employment databases return no match. Subject's accent, mannerisms, and philosophical references suggest extensive monastic training — tradition and origin unconfirmed. Facial recognition cross-reference produces zero hits across all available databases. This is statistically anomalous.")
-            .SetSignificantEvents("Distributes unlicensed braindances focused on elemental meditation (Earth, Water, Fire, Air). BDs have been flagged for analysis — content is non-harmful, non-addictive, and contains no embedded malware or subliminal encoding. Braindance technicians describe the recordings as 'technically impossible' — the sensory fidelity exceeds known consumer-grade wreath hardware capabilities. Subject has been observed quoting lyrics from the band Samurai intermixed with Buddhist and Sufi philosophical texts. Disappears from location after each encounter — no departure recorded on any surveillance feed.")
-            .SetAffiliation("NONE IDENTIFIED | No gang ties | No corporate affiliation | No political connections | No registered religious organization")
-            .SetCriminalRecord("NO RECORD | Unlicensed braindance distribution (report filed, investigation stalled — cannot locate subject for questioning) | Four civilian reports (wellness checks — subject found in good health each time, then absent on follow-up) | NCPD classification: NON-PRIORITY CURIOSITY")
-            .SetCyberwareStatus("SCAN INCONCLUSIVE | External scan detects no implants, no cyberware signature, no neural interface | This would make subject one of approximately 0.3% of Night City residents with zero chrome | Internal scan unable to penetrate — reason unknown")
-            .SetFinancialStatus("NO FINANCIAL FOOTPRINT | No bank accounts | No registered eddies transactions | No credit history | Accepts voluntary payment for BD sessions (0-610 eddies) — funds not deposited into any tracked account")
-            .SetMedicalStatus("NO MEDICAL RECORDS | No Trauma Team coverage | No clinic visits on file | Visual assessment: excellent physical condition for estimated age range (50-70?) | Age estimation inconsistent between encounters")
-            .SetRelationships("NONE ON FILE | Subject appears to operate entirely alone | No known associates | No known residence shared with others | Surveillance note: subject has been observed engaging with individuals experiencing psychological distress or existential crisis — selection criteria for these interactions is unknown")
-            .SetNotes("PSYCH ASSESSMENT IMPOSSIBLE | Subject demonstrates no markers for any known psychological condition | Exhibits profound calm inconsistent with Night City baseline stress indicators | Speech patterns suggest high intelligence and extensive philosophical education | Does not register on standard threat matrices | Consulting psychologist note: 'This individual is either the most well-adjusted person in Night City, or our tools are not equipped to measure what we are looking at.' | Multiple officers have noted a 'strange sensation' when near the subject — not threat, not fear, described variously as 'peace,' 'stillness,' and 'the feeling of being seen.' One officer requested reassignment after the encounter, citing 'personal reasons.' Another enrolled in a meditation course. | NCPD Dispatch has informally flagged this file as 'Do Not Pursue — Not Worth The Paperwork.'")
-            .SetThreatAssessment("CANNOT BE DETERMINED | Subject has never demonstrated hostile behavior | No weapons detected | No cyberware detected | However: subject's ability to appear and disappear without surveillance detection represents a security anomaly that has been escalated to NetWatch twice | NetWatch response both times: 'Not our problem.' | Recommended classification: OBSERVE ONLY");
+        return KdspUniqueNPCBackstory.Create("mq014_zen_master").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-Classification"))
+            .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-Background"))
+            .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-EarlyLife"))
+            .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-SignificantEvents"))
+            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-Affiliation"))
+            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-CriminalRecord"))
+            .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-CyberwareStatus"))
+            .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-FinancialStatus"))
+            .SetMedicalStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-MedicalStatus"))
+            .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-Relationships"))
+            .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-Notes"))
+            .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ZenMaster-ThreatAssessment"));
     }
 }

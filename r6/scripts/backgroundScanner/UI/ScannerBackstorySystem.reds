@@ -53,7 +53,7 @@ public class KdspScannerBackstorySystem extends inkCustomController {
         header.SetFontStyle(n"Semi-Bold");
         header.SetFontSize(KdspSettings.GetHeaderFontSize() + 2);
         header.SetLetterCase(textLetterCase.UpperCase);
-        header.SetText("Deep Scan Protocol");
+        header.SetText(GetLocalizedTextByKey(n"Kdsp-ScannerBacksto-S0"));
         header.SetTintColor(new HDRColor(0.369, 0.965, 0.878, 0.9)); // Cyan, slightly transparent
         header.SetFitToContent(true);
         header.SetHAlign(inkEHorizontalAlign.Left);
@@ -144,7 +144,7 @@ public class KdspScannerBackstorySystem extends inkCustomController {
         footerText.SetFontFamily("base\\gameplay\\gui\\fonts\\raj\\raj.inkfontfamily");
         footerText.SetFontStyle(n"Medium");
         footerText.SetFontSize(KdspSettings.GetHeaderFontSize() - 6);
-        footerText.SetText("Kiroshi Optics // Deep Scan Protocol v2.4");
+        footerText.SetText(GetLocalizedTextByKey(n"Kdsp-ScannerBacksto-S1"));
         footerText.SetTintColor(new HDRColor(0.4, 0.4, 0.38, 1.0));
         footerText.SetFitToContent(true);
         footerText.Reparent(footer);

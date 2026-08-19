@@ -7,213 +7,213 @@ public abstract class KdspTextBackgrounds {
     // ═══════════════════════════════════════════════════════════
     // PERSONALITY TRAITS
     // ═══════════════════════════════════════════════════════════
-    public static func TRAIT_PARANOID() -> String { return "Known for being paranoid. "; }
-    public static func TRAIT_AGGRESSIVE() -> String { return "Has an aggressive temperament. "; }
-    public static func TRAIT_CALM() -> String { return "Known for staying calm under pressure. "; }
-    public static func TRAIT_RECKLESS() -> String { return "Has a reputation for recklessness. "; }
-    public static func TRAIT_CALCULATING() -> String { return "Known for being calculating. "; }
-    public static func TRAIT_LOYAL() -> String { return "Fiercely loyal to %his% people. "; }
-    public static func TRAIT_OPPORTUNIST() -> String { return "Known as an opportunist. "; }
-    public static func TRAIT_IDEALIST() -> String { return "Still holds idealistic views. "; }
-    public static func TRAIT_CYNICAL() -> String { return "Deeply cynical about the world. "; }
-    public static func TRAIT_AMBITIOUS() -> String { return "Driven by ambition. "; }
-    public static func TRAIT_VENGEFUL() -> String { return "Known for holding grudges. "; }
-    public static func TRAIT_CHARITABLE() -> String { return "Known for charitable acts. "; }
-    public static func TRAIT_SECRETIVE() -> String { return "Keeps %his% past secret. "; }
-    public static func TRAIT_TRUSTING() -> String { return "Too trusting for Night City. "; }
-    public static func TRAIT_SUSPICIOUS() -> String { return "Suspicious of everyone. "; }
+    public static func TRAIT_PARANOID() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_PARANOID"); }
+    public static func TRAIT_AGGRESSIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_AGGRESSIVE"); }
+    public static func TRAIT_CALM() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_CALM"); }
+    public static func TRAIT_RECKLESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_RECKLESS"); }
+    public static func TRAIT_CALCULATING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_CALCULATING"); }
+    public static func TRAIT_LOYAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_LOYAL"); }
+    public static func TRAIT_OPPORTUNIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_OPPORTUNIST"); }
+    public static func TRAIT_IDEALIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_IDEALIST"); }
+    public static func TRAIT_CYNICAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_CYNICAL"); }
+    public static func TRAIT_AMBITIOUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_AMBITIOUS"); }
+    public static func TRAIT_VENGEFUL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_VENGEFUL"); }
+    public static func TRAIT_CHARITABLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_CHARITABLE"); }
+    public static func TRAIT_SECRETIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_SECRETIVE"); }
+    public static func TRAIT_TRUSTING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_TRUSTING"); }
+    public static func TRAIT_SUSPICIOUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_SUSPICIOUS"); }
     // ═══════════════════════════════════════════════════════════
     // SKILLS / SPECIALIZATIONS
     // ═══════════════════════════════════════════════════════════
-    public static func SKILL_DRIVER() -> String { return "Skilled driver. "; }
-    public static func SKILL_PILOT() -> String { return "Licensed AV pilot. "; }
-    public static func SKILL_HACKER() -> String { return "Competent hacker. "; }
-    public static func SKILL_MEDIC() -> String { return "Trained in field medicine. "; }
-    public static func SKILL_MARKSMAN() -> String { return "Expert marksman. "; }
-    public static func SKILL_BRAWLER() -> String { return "Experienced brawler. "; }
-    public static func SKILL_NEGOTIATOR() -> String { return "Skilled negotiator. "; }
-    public static func SKILL_STEALTH() -> String { return "Moves unseen when needed. "; }
-    public static func SKILL_EXPLOSIVES() -> String { return "Knows %his% way around explosives. "; }
-    public static func SKILL_MECHANIC() -> String { return "Can fix almost anything mechanical. "; }
-    public static func SKILL_COOK() -> String { return "Known as a decent cook. "; }
-    public static func SKILL_LANGUAGE() -> String { return "Speaks multiple languages. "; }
+    public static func SKILL_DRIVER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_DRIVER"); }
+    public static func SKILL_PILOT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_PILOT"); }
+    public static func SKILL_HACKER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_HACKER"); }
+    public static func SKILL_MEDIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_MEDIC"); }
+    public static func SKILL_MARKSMAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_MARKSMAN"); }
+    public static func SKILL_BRAWLER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_BRAWLER"); }
+    public static func SKILL_NEGOTIATOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_NEGOTIATOR"); }
+    public static func SKILL_STEALTH() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_STEALTH"); }
+    public static func SKILL_EXPLOSIVES() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_EXPLOSIVES"); }
+    public static func SKILL_MECHANIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_MECHANIC"); }
+    public static func SKILL_COOK() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_COOK"); }
+    public static func SKILL_LANGUAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_LANGUAGE"); }
     // ═══════════════════════════════════════════════════════════
     // REPUTATION / STATUS
     // ═══════════════════════════════════════════════════════════
-    public static func REP_UNKNOWN() -> String { return "No significant reputation. "; }
-    public static func REP_LOCAL() -> String { return "Known in the local area. "; }
-    public static func REP_RESPECTED() -> String { return "Respected in certain circles. "; }
-    public static func REP_FEARED() -> String { return "Has a reputation that precedes %him%. "; }
-    public static func REP_DISGRACED() -> String { return "Carries a disgraced reputation. "; }
-    public static func REP_RISING() -> String { return "On the rise in the underworld. "; }
-    public static func REP_WASHED_UP() -> String { return "Considered washed up by most. "; }
-    public static func REP_LEGEND() -> String { return "Has near-legendary status. "; }
+    public static func REP_UNKNOWN() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_UNKNOWN"); }
+    public static func REP_LOCAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_LOCAL"); }
+    public static func REP_RESPECTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_RESPECTED"); }
+    public static func REP_FEARED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_FEARED"); }
+    public static func REP_DISGRACED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_DISGRACED"); }
+    public static func REP_RISING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_RISING"); }
+    public static func REP_WASHED_UP() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_WASHED_UP"); }
+    public static func REP_LEGEND() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-REP_LEGEND"); }
     // ═══════════════════════════════════════════════════════════
     // MOTIVATIONS / GOALS
     // ═══════════════════════════════════════════════════════════
-    public static func GOAL_SURVIVE() -> String { return "Just trying to survive. "; }
-    public static func GOAL_REVENGE() -> String { return "Seeking revenge for past wrongs. "; }
-    public static func GOAL_WEALTH() -> String { return "Driven by the pursuit of eddies. "; }
-    public static func GOAL_POWER() -> String { return "Seeks power and influence. "; }
-    public static func GOAL_ESCAPE() -> String { return "Dreams of escaping Night City. "; }
-    public static func GOAL_FAMILY() -> String { return "Trying to support %his% family. "; }
-    public static func GOAL_REDEMPTION() -> String { return "Seeking redemption for past sins. "; }
-    public static func GOAL_LEGACY() -> String { return "Wants to leave a legacy. "; }
-    public static func GOAL_JUSTICE() -> String { return "Believes in fighting for justice. "; }
-    public static func GOAL_FREEDOM() -> String { return "Values freedom above all else. "; }
+    public static func GOAL_SURVIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_SURVIVE"); }
+    public static func GOAL_REVENGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_REVENGE"); }
+    public static func GOAL_WEALTH() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_WEALTH"); }
+    public static func GOAL_POWER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_POWER"); }
+    public static func GOAL_ESCAPE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_ESCAPE"); }
+    public static func GOAL_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_FAMILY"); }
+    public static func GOAL_REDEMPTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_REDEMPTION"); }
+    public static func GOAL_LEGACY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_LEGACY"); }
+    public static func GOAL_JUSTICE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_JUSTICE"); }
+    public static func GOAL_FREEDOM() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-GOAL_FREEDOM"); }
     // ═══════════════════════════════════════════════════════════
     // PHYSICAL CHARACTERISTICS
     // ═══════════════════════════════════════════════════════════
-    public static func PHYS_SCARRED() -> String { return "Bears visible scars from past conflicts. "; }
-    public static func PHYS_CHROME_HEAVY() -> String { return "Heavily chromed. "; }
-    public static func PHYS_CHROME_LIGHT() -> String { return "Minimal visible chrome. "; }
-    public static func PHYS_TATTOOS() -> String { return "Covered in tattoos. "; }
-    public static func PHYS_GANG_TATS() -> String { return "Bears gang tattoos. "; }
-    public static func PHYS_ATHLETIC() -> String { return "Maintains athletic physique. "; }
-    public static func PHYS_WIRY() -> String { return "Lean and wiry build. "; }
-    public static func PHYS_IMPOSING() -> String { return "Physically imposing presence. "; }
-    public static func PHYS_UNASSUMING() -> String { return "Unassuming appearance. "; }
+    public static func PHYS_SCARRED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_SCARRED"); }
+    public static func PHYS_CHROME_HEAVY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_CHROME_HEAVY"); }
+    public static func PHYS_CHROME_LIGHT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_CHROME_LIGHT"); }
+    public static func PHYS_TATTOOS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_TATTOOS"); }
+    public static func PHYS_GANG_TATS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_GANG_TATS"); }
+    public static func PHYS_ATHLETIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_ATHLETIC"); }
+    public static func PHYS_WIRY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_WIRY"); }
+    public static func PHYS_IMPOSING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_IMPOSING"); }
+    public static func PHYS_UNASSUMING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-PHYS_UNASSUMING"); }
     // ═══════════════════════════════════════════════════════════
     // CONNECTIONS / RELATIONSHIPS
     // ═══════════════════════════════════════════════════════════
-    public static func CONN_FIXER() -> String { return "Has connections to local fixers. "; }
-    public static func CONN_GANG() -> String { return "Has gang connections. "; }
-    public static func CONN_NCPD() -> String { return "Has contacts in the NCPD. "; }
-    public static func CONN_CORPO() -> String { return "Maintains corporate contacts. "; }
-    public static func CONN_RIPPER() -> String { return "Knows a good ripperdoc. "; }
-    public static func CONN_SMUGGLER() -> String { return "Connected to smuggler networks. "; }
-    public static func CONN_MEDIA() -> String { return "Has media contacts. "; }
-    public static func CONN_NETRUNNER() -> String { return "Knows netrunners who owe favors. "; }
-    public static func CONN_NONE() -> String { return "Keeps to %himself%. "; }
+    public static func CONN_FIXER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_FIXER"); }
+    public static func CONN_GANG() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_GANG"); }
+    public static func CONN_NCPD() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_NCPD"); }
+    public static func CONN_CORPO() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_CORPO"); }
+    public static func CONN_RIPPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_RIPPER"); }
+    public static func CONN_SMUGGLER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_SMUGGLER"); }
+    public static func CONN_MEDIA() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_MEDIA"); }
+    public static func CONN_NETRUNNER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_NETRUNNER"); }
+    public static func CONN_NONE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-CONN_NONE"); }
     // ═══════════════════════════════════════════════════════════
     // VICES / WEAKNESSES
     // ═══════════════════════════════════════════════════════════
-    public static func VICE_GAMBLING() -> String { return "Has a gambling problem. "; }
-    public static func VICE_ALCOHOL() -> String { return "Drinks too much. "; }
-    public static func VICE_CHEMS() -> String { return "Uses chems recreationally. "; }
-    public static func VICE_BD() -> String { return "Addicted to braindances. "; }
-    public static func VICE_SPENDING() -> String { return "Can't hold onto eddies. "; }
-    public static func VICE_THRILL() -> String { return "Addicted to thrills and danger. "; }
-    public static func VICE_CHROME() -> String { return "Obsessed with getting more chrome. "; }
-    public static func VICE_NONE() -> String { return "Keeps %his% vices in check. "; }
+    public static func VICE_GAMBLING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_GAMBLING"); }
+    public static func VICE_ALCOHOL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_ALCOHOL"); }
+    public static func VICE_CHEMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_CHEMS"); }
+    public static func VICE_BD() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_BD"); }
+    public static func VICE_SPENDING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_SPENDING"); }
+    public static func VICE_THRILL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_THRILL"); }
+    public static func VICE_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_CHROME"); }
+    public static func VICE_NONE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-VICE_NONE"); }
     // ═══════════════════════════════════════════════════════════
     // CURRENT STATUS
     // ═══════════════════════════════════════════════════════════
-    public static func STATUS_EMPLOYED() -> String { return "Currently employed. "; }
-    public static func STATUS_UNEMPLOYED() -> String { return "Currently between jobs. "; }
-    public static func STATUS_FREELANCE() -> String { return "Works freelance. "; }
-    public static func STATUS_WANTED() -> String { return "Has outstanding warrants. "; }
-    public static func STATUS_HIDING() -> String { return "Laying low for now. "; }
-    public static func STATUS_RETIRED() -> String { return "Supposedly retired. "; }
-    public static func STATUS_DEBT() -> String { return "Deep in debt. "; }
-    public static func STATUS_COMFORTABLE() -> String { return "Living comfortably for now. "; }
+    public static func STATUS_EMPLOYED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_EMPLOYED"); }
+    public static func STATUS_UNEMPLOYED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_UNEMPLOYED"); }
+    public static func STATUS_FREELANCE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_FREELANCE"); }
+    public static func STATUS_WANTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_WANTED"); }
+    public static func STATUS_HIDING() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_HIDING"); }
+    public static func STATUS_RETIRED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_RETIRED"); }
+    public static func STATUS_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_DEBT"); }
+    public static func STATUS_COMFORTABLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-STATUS_COMFORTABLE"); }
     // ═══════════════════════════════════════════════════════════
     // EXPANDED: MORE PERSONALITY TRAITS
     // ═══════════════════════════════════════════════════════════
-    public static func TRAIT_INTROVERTED() -> String { return "Prefers to keep to %himself%. "; }
-    public static func TRAIT_EXTROVERTED() -> String { return "Thrives on social interaction. "; }
-    public static func TRAIT_IMPULSIVE() -> String { return "Acts on impulse. "; }
-    public static func TRAIT_METHODICAL() -> String { return "Approaches everything methodically. "; }
-    public static func TRAIT_STUBBORN() -> String { return "Notoriously stubborn. "; }
-    public static func TRAIT_ADAPTABLE() -> String { return "Adapts quickly to any situation. "; }
-    public static func TRAIT_PESSIMIST() -> String { return "Always expects the worst. "; }
-    public static func TRAIT_OPTIMIST() -> String { return "Maintains optimism despite everything. "; }
-    public static func TRAIT_PATIENT() -> String { return "Known for %his% patience. "; }
-    public static func TRAIT_IMPATIENT() -> String { return "Has no patience for delays. "; }
-    public static func TRAIT_GENEROUS() -> String { return "Generous to a fault. "; }
-    public static func TRAIT_SELFISH() -> String { return "Looks out for number one. "; }
-    public static func TRAIT_HONEST() -> String { return "Brutally honest. "; }
-    public static func TRAIT_DECEITFUL() -> String { return "Lies as easily as breathing. "; }
-    public static func TRAIT_HUMBLE() -> String { return "Surprisingly humble. "; }
-    public static func TRAIT_ARROGANT() -> String { return "Arrogant and knows it. "; }
-    public static func TRAIT_PROTECTIVE() -> String { return "Fiercely protective of loved ones. "; }
-    public static func TRAIT_DISTANT() -> String { return "Keeps everyone at arm's length. "; }
-    public static func TRAIT_CURIOUS() -> String { return "Curiosity often gets %him% into trouble. "; }
-    public static func TRAIT_APATHETIC() -> String { return "Doesn't seem to care about anything. "; }
+    public static func TRAIT_INTROVERTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_INTROVERTED"); }
+    public static func TRAIT_EXTROVERTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_EXTROVERTED"); }
+    public static func TRAIT_IMPULSIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_IMPULSIVE"); }
+    public static func TRAIT_METHODICAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_METHODICAL"); }
+    public static func TRAIT_STUBBORN() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_STUBBORN"); }
+    public static func TRAIT_ADAPTABLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_ADAPTABLE"); }
+    public static func TRAIT_PESSIMIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_PESSIMIST"); }
+    public static func TRAIT_OPTIMIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_OPTIMIST"); }
+    public static func TRAIT_PATIENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_PATIENT"); }
+    public static func TRAIT_IMPATIENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_IMPATIENT"); }
+    public static func TRAIT_GENEROUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_GENEROUS"); }
+    public static func TRAIT_SELFISH() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_SELFISH"); }
+    public static func TRAIT_HONEST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_HONEST"); }
+    public static func TRAIT_DECEITFUL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_DECEITFUL"); }
+    public static func TRAIT_HUMBLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_HUMBLE"); }
+    public static func TRAIT_ARROGANT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_ARROGANT"); }
+    public static func TRAIT_PROTECTIVE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_PROTECTIVE"); }
+    public static func TRAIT_DISTANT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_DISTANT"); }
+    public static func TRAIT_CURIOUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_CURIOUS"); }
+    public static func TRAIT_APATHETIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-TRAIT_APATHETIC"); }
     // ═══════════════════════════════════════════════════════════
     // EXPANDED: MORE SKILLS
     // ═══════════════════════════════════════════════════════════
-    public static func SKILL_NETRUNNER() -> String { return "Experienced netrunner. "; }
-    public static func SKILL_SNIPER() -> String { return "Trained sniper. "; }
-    public static func SKILL_KNIFE() -> String { return "Skilled with blades. "; }
-    public static func SKILL_MARTIAL_ARTS() -> String { return "Trained in martial arts. "; }
-    public static func SKILL_LOCKPICK() -> String { return "Expert lockpick. "; }
-    public static func SKILL_SURVEILLANCE() -> String { return "Skilled in surveillance. "; }
-    public static func SKILL_FORGERY() -> String { return "Talented forger. "; }
-    public static func SKILL_INTERROGATION() -> String { return "Skilled interrogator. "; }
-    public static func SKILL_DISGUISE() -> String { return "Master of disguise. "; }
-    public static func SKILL_ELECTRONICS() -> String { return "Electronics expert. "; }
-    public static func SKILL_CHEMISTRY() -> String { return "Knows chemistry. "; }
-    public static func SKILL_FIRST_AID() -> String { return "Basic first aid training. "; }
-    public static func SKILL_SURVIVAL() -> String { return "Wilderness survival skills. "; }
-    public static func SKILL_STREETWISE() -> String { return "Streetwise and connected. "; }
-    public static func SKILL_PERSUASION() -> String { return "Persuasive speaker. "; }
-    public static func SKILL_INTIMIDATION() -> String { return "Knows how to intimidate. "; }
+    public static func SKILL_NETRUNNER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_NETRUNNER"); }
+    public static func SKILL_SNIPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_SNIPER"); }
+    public static func SKILL_KNIFE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_KNIFE"); }
+    public static func SKILL_MARTIAL_ARTS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_MARTIAL_ARTS"); }
+    public static func SKILL_LOCKPICK() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_LOCKPICK"); }
+    public static func SKILL_SURVEILLANCE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_SURVEILLANCE"); }
+    public static func SKILL_FORGERY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_FORGERY"); }
+    public static func SKILL_INTERROGATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_INTERROGATION"); }
+    public static func SKILL_DISGUISE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_DISGUISE"); }
+    public static func SKILL_ELECTRONICS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_ELECTRONICS"); }
+    public static func SKILL_CHEMISTRY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_CHEMISTRY"); }
+    public static func SKILL_FIRST_AID() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_FIRST_AID"); }
+    public static func SKILL_SURVIVAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_SURVIVAL"); }
+    public static func SKILL_STREETWISE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_STREETWISE"); }
+    public static func SKILL_PERSUASION() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_PERSUASION"); }
+    public static func SKILL_INTIMIDATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SKILL_INTIMIDATION"); }
     // ═══════════════════════════════════════════════════════════
     // EXPANDED: QUIRKS / HABITS
     // ═══════════════════════════════════════════════════════════
-    public static func QUIRK_SMOKER() -> String { return "Heavy smoker. "; }
-    public static func QUIRK_NIGHT_OWL() -> String { return "Only comes alive at night. "; }
-    public static func QUIRK_EARLY_BIRD() -> String { return "Always up before dawn. "; }
-    public static func QUIRK_COLLECTOR() -> String { return "Obsessive collector of old tech. "; }
-    public static func QUIRK_SUPERSTITIOUS() -> String { return "Highly superstitious. "; }
-    public static func QUIRK_GERMAPHOBE() -> String { return "Germaphobe. "; }
-    public static func QUIRK_INSOMNIAC() -> String { return "Chronic insomniac. "; }
-    public static func QUIRK_WORKAHOLIC() -> String { return "Workaholic tendencies. "; }
-    public static func QUIRK_LUCKY() -> String { return "Carries a lucky charm. "; }
-    public static func QUIRK_TATTOOS() -> String { return "Gets a new tattoo for every major event. "; }
-    public static func QUIRK_MUSIC() -> String { return "Always has music playing. "; }
-    public static func QUIRK_READER() -> String { return "Reads actual physical books. "; }
-    public static func QUIRK_FITNESS() -> String { return "Obsessed with fitness. "; }
-    public static func QUIRK_FOODIE() -> String { return "A foodie who seeks out real food. "; }
-    public static func QUIRK_ANIMALS() -> String { return "Has a soft spot for animals. "; }
+    public static func QUIRK_SMOKER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_SMOKER"); }
+    public static func QUIRK_NIGHT_OWL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_NIGHT_OWL"); }
+    public static func QUIRK_EARLY_BIRD() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_EARLY_BIRD"); }
+    public static func QUIRK_COLLECTOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_COLLECTOR"); }
+    public static func QUIRK_SUPERSTITIOUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_SUPERSTITIOUS"); }
+    public static func QUIRK_GERMAPHOBE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_GERMAPHOBE"); }
+    public static func QUIRK_INSOMNIAC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_INSOMNIAC"); }
+    public static func QUIRK_WORKAHOLIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_WORKAHOLIC"); }
+    public static func QUIRK_LUCKY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_LUCKY"); }
+    public static func QUIRK_TATTOOS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_TATTOOS"); }
+    public static func QUIRK_MUSIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_MUSIC"); }
+    public static func QUIRK_READER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_READER"); }
+    public static func QUIRK_FITNESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_FITNESS"); }
+    public static func QUIRK_FOODIE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_FOODIE"); }
+    public static func QUIRK_ANIMALS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-QUIRK_ANIMALS"); }
     // ═══════════════════════════════════════════════════════════
     // EXPANDED: FEARS / PHOBIAS
     // ═══════════════════════════════════════════════════════════
-    public static func FEAR_HEIGHTS() -> String { return "Afraid of heights. "; }
-    public static func FEAR_WATER() -> String { return "Terrified of deep water. "; }
-    public static func FEAR_ENCLOSED() -> String { return "Claustrophobic. "; }
-    public static func FEAR_CROWDS() -> String { return "Anxious in crowds. "; }
-    public static func FEAR_CYBERWARE() -> String { return "Afraid of cyberware. "; }
-    public static func FEAR_AI() -> String { return "Distrustful of AI. "; }
-    public static func FEAR_SCAVS() -> String { return "Terrified of Scavengers. "; }
-    public static func FEAR_MAXTAC() -> String { return "Deeply afraid of MaxTac. "; }
-    public static func FEAR_DEATH() -> String { return "Has an intense fear of death. "; }
-    public static func FEAR_ABANDONMENT() -> String { return "Fear of abandonment. "; }
+    public static func FEAR_HEIGHTS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_HEIGHTS"); }
+    public static func FEAR_WATER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_WATER"); }
+    public static func FEAR_ENCLOSED() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_ENCLOSED"); }
+    public static func FEAR_CROWDS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_CROWDS"); }
+    public static func FEAR_CYBERWARE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_CYBERWARE"); }
+    public static func FEAR_AI() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_AI"); }
+    public static func FEAR_SCAVS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_SCAVS"); }
+    public static func FEAR_MAXTAC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_MAXTAC"); }
+    public static func FEAR_DEATH() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_DEATH"); }
+    public static func FEAR_ABANDONMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-FEAR_ABANDONMENT"); }
     // ═══════════════════════════════════════════════════════════
     // EXPANDED: SECRETS
     // ═══════════════════════════════════════════════════════════
-    public static func SECRET_PAST() -> String { return "Hiding a dark past. "; }
-    public static func SECRET_IDENTITY() -> String { return "Living under a false identity. "; }
-    public static func SECRET_INFORMANT() -> String { return "Secret informant for the NCPD. "; }
-    public static func SECRET_CORPO_SPY() -> String { return "Actually a corporate spy. "; }
-    public static func SECRET_GANG() -> String { return "Has hidden gang affiliations. "; }
-    public static func SECRET_WITNESS() -> String { return "Witnessed something %he% wasn't supposed to. "; }
-    public static func SECRET_MURDER() -> String { return "Killed someone and covered it up. "; }
-    public static func SECRET_FAMILY() -> String { return "Has a secret family. "; }
-    public static func SECRET_DEBT() -> String { return "Owes dangerous people money. "; }
-    public static func SECRET_SICKNESS() -> String { return "Hiding a terminal illness. "; }
+    public static func SECRET_PAST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_PAST"); }
+    public static func SECRET_IDENTITY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_IDENTITY"); }
+    public static func SECRET_INFORMANT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_INFORMANT"); }
+    public static func SECRET_CORPO_SPY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_CORPO_SPY"); }
+    public static func SECRET_GANG() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_GANG"); }
+    public static func SECRET_WITNESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_WITNESS"); }
+    public static func SECRET_MURDER() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_MURDER"); }
+    public static func SECRET_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_FAMILY"); }
+    public static func SECRET_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_DEBT"); }
+    public static func SECRET_SICKNESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-SECRET_SICKNESS"); }
     // ═══════════════════════════════════════════════════════════
     // EXPANDED: LIFESTYLE
     // ═══════════════════════════════════════════════════════════
-    public static func LIFE_MINIMALIST() -> String { return "Lives a minimalist lifestyle. "; }
-    public static func LIFE_FLASHY() -> String { return "Lives flashy, spends big. "; }
-    public static func LIFE_FRUGAL() -> String { return "Extremely frugal. "; }
-    public static func LIFE_NOMADIC() -> String { return "Never stays in one place long. "; }
-    public static func LIFE_HOMEBODY() -> String { return "Rarely leaves home. "; }
-    public static func LIFE_PARTY() -> String { return "Lives for the nightlife. "; }
-    public static func LIFE_SOLITARY() -> String { return "Prefers solitude. "; }
-    public static func LIFE_SOCIAL() -> String { return "Always surrounded by people. "; }
+    public static func LIFE_MINIMALIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_MINIMALIST"); }
+    public static func LIFE_FLASHY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_FLASHY"); }
+    public static func LIFE_FRUGAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_FRUGAL"); }
+    public static func LIFE_NOMADIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_NOMADIC"); }
+    public static func LIFE_HOMEBODY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_HOMEBODY"); }
+    public static func LIFE_PARTY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_PARTY"); }
+    public static func LIFE_SOLITARY() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_SOLITARY"); }
+    public static func LIFE_SOCIAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-LIFE_SOCIAL"); }
     // ═══════════════════════════════════════════════════════════
     // EXPANDED: BELIEFS
     // ═══════════════════════════════════════════════════════════
-    public static func BELIEF_RELIGIOUS() -> String { return "Deeply religious. "; }
-    public static func BELIEF_ATHEIST() -> String { return "Staunch atheist. "; }
-    public static func BELIEF_SPIRITUAL() -> String { return "Spiritual but not religious. "; }
-    public static func BELIEF_TECH() -> String { return "Believes technology will save humanity. "; }
-    public static func BELIEF_NATURE() -> String { return "Believes in returning to nature. "; }
-    public static func BELIEF_NIHILIST() -> String { return "Nihilistic worldview. "; }
-    public static func BELIEF_KARMA() -> String { return "Believes in karma. "; }
-    public static func BELIEF_FATE() -> String { return "Believes everything is fated. "; }
+    public static func BELIEF_RELIGIOUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_RELIGIOUS"); }
+    public static func BELIEF_ATHEIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_ATHEIST"); }
+    public static func BELIEF_SPIRITUAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_SPIRITUAL"); }
+    public static func BELIEF_TECH() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_TECH"); }
+    public static func BELIEF_NATURE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_NATURE"); }
+    public static func BELIEF_NIHILIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_NIHILIST"); }
+    public static func BELIEF_KARMA() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_KARMA"); }
+    public static func BELIEF_FATE() -> String { return GetLocalizedTextByKey(n"Kdsp-Bg-BELIEF_FATE"); }
     // ═══════════════════════════════════════════════════════════
 }

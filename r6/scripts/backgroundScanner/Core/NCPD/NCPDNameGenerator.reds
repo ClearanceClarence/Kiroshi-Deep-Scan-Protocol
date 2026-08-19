@@ -88,7 +88,7 @@ public class KdspNCPDNameGenerator {
         
         ArrayPush(units, "Patrol Division");
         ArrayPush(units, "Street Enforcement");
-        ArrayPush(units, "Gang Task Force");
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-S0"));
         ArrayPush(units, "Traffic Division");
         ArrayPush(units, "Cybercrimes Unit");
         ArrayPush(units, "Homicide Division");
@@ -144,7 +144,7 @@ public class KdspNCPDNameGenerator {
         ArrayPush(districts, "Little China");
         ArrayPush(districts, "Japantown");
         ArrayPush(districts, "Charter Hill");
-        ArrayPush(districts, "Vista Del Rey");
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-S1"));
         ArrayPush(districts, "The Glen");
         ArrayPush(districts, "Wellsprings");
         

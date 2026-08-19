@@ -31,54 +31,54 @@ public abstract class KdspChildBackstoryGenerator {
         
         // === BACKGROUND (School/Living Situation) ===
         let backgrounds: array<String>;
-        ArrayPush(backgrounds, "Currently enrolled in public school. ");
-        ArrayPush(backgrounds, "Attends a corporate-sponsored academy. ");
-        ArrayPush(backgrounds, "Homeschooled via braindance tutorials. ");
-        ArrayPush(backgrounds, "Student at a megatower community school. ");
-        ArrayPush(backgrounds, "Enrolled in Night City Youth Program. ");
-        ArrayPush(backgrounds, "Attends school in Pacifica district. ");
-        ArrayPush(backgrounds, "Student at Watson Community School. ");
-        ArrayPush(backgrounds, "Enrolled in Heywood Public Education. ");
-        ArrayPush(backgrounds, "Attending Westbrook Junior Academy. ");
-        ArrayPush(backgrounds, "Home-tutored by family. ");
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S0"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S1"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S2"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S3"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S4"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S5"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S6"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S7"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S8"));
+        ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S9"));
         
         let bgIndex = RandRange(seed, 0, ArraySize(backgrounds) - 1);
         backstoryUI.background = backgrounds[bgIndex];
         
         // === EARLY LIFE (Family/Daily Life) ===
         let earlyLifeEvents: array<String>;
-        ArrayPush(earlyLifeEvents, "Lives with family in a megatower apartment. ");
-        ArrayPush(earlyLifeEvents, "Enjoys playing with neighborhood friends. ");
-        ArrayPush(earlyLifeEvents, "Spends free time on braindance games. ");
-        ArrayPush(earlyLifeEvents, "Has a pet cyber-cat. ");
-        ArrayPush(earlyLifeEvents, "Takes the NCART to school daily. ");
-        ArrayPush(earlyLifeEvents, "Collects vintage tech toys. ");
-        ArrayPush(earlyLifeEvents, "Member of a junior sports league. ");
-        ArrayPush(earlyLifeEvents, "Learning to code at school. ");
-        ArrayPush(earlyLifeEvents, "Helps at family's small business. ");
-        ArrayPush(earlyLifeEvents, "Lives with extended family. ");
-        ArrayPush(earlyLifeEvents, "Often seen at local food vendors. ");
-        ArrayPush(earlyLifeEvents, "Regularly visits the local arcade. ");
-        ArrayPush(earlyLifeEvents, "Member of school's tech club. ");
-        ArrayPush(earlyLifeEvents, "Takes care of younger siblings. ");
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S10"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S11"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S12"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S13"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S14"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S15"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S16"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S17"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S18"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S19"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S20"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S21"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S22"));
+        ArrayPush(earlyLifeEvents, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S23"));
         
         let elIndex = RandRange(seed + 100, 0, ArraySize(earlyLifeEvents) - 1);
         backstoryUI.earlyLife = earlyLifeEvents[elIndex];
         
         // === SIGNIFICANT EVENTS (Recent Activities) ===
         let events: array<String>;
-        ArrayPush(events, "Recently started a new school year. ");
-        ArrayPush(events, "Won a school science fair competition. ");
-        ArrayPush(events, "Made the junior hoopball team. ");
-        ArrayPush(events, "Got a new braindance gaming rig. ");
-        ArrayPush(events, "Family recently moved to a new district. ");
-        ArrayPush(events, "Started learning martial arts. ");
-        ArrayPush(events, "Joined the school robotics club. ");
-        ArrayPush(events, "Participated in Youth of Night City program. ");
-        ArrayPush(events, "Recently celebrated a birthday. ");
-        ArrayPush(events, "Started a new hobby. ");
-        ArrayPush(events, "Made a new best friend. ");
-        ArrayPush(events, "Adopted a stray animal. ");
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S24"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S25"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S26"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S27"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S28"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S29"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S30"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S31"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S32"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S33"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S34"));
+        ArrayPush(events, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S35"));
         
         let evIndex = RandRange(seed + 200, 0, ArraySize(events) - 1);
         backstoryUI.significantEvents = events[evIndex];
@@ -86,27 +86,27 @@ public abstract class KdspChildBackstoryGenerator {
         // === RESTRICTED DATA FOR MINORS ===
         // Children have limited/protected records in adult databases
         backstoryUI.criminalRecord = "";  // No criminal record for minors
-        backstoryUI.cyberwareStatus = "MINOR - Registry data restricted";
-        backstoryUI.financialStatus = "DEPENDENT - No independent credit history";
-        backstoryUI.medicalStatus = "Pediatric records sealed | Status: Protected";
-        backstoryUI.threatAssessment = "Level: NONE (0/100) | Classification: MINOR - Protected";
+        backstoryUI.cyberwareStatus = GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S36");
+        backstoryUI.financialStatus = GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S37");
+        backstoryUI.medicalStatus = GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S38");
+        backstoryUI.threatAssessment = GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S39");
         backstoryUI.gangAffiliation = "";  // No gang data for minors
         backstoryUI.rareFlag = "";
         backstoryUI.ncpdOfficer = "";
         
         // Family relationships for minors
         let familyTypes: array<String>;
-        ArrayPush(familyTypes, "Lives with parents");
-        ArrayPush(familyTypes, "Lives with mother");
-        ArrayPush(familyTypes, "Lives with father");
-        ArrayPush(familyTypes, "Lives with grandparents");
-        ArrayPush(familyTypes, "Lives with guardian");
-        ArrayPush(familyTypes, "Lives with extended family");
-        ArrayPush(familyTypes, "In foster care system");
-        ArrayPush(familyTypes, "Lives in group home");
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S40"));
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S41"));
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S42"));
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S43"));
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S44"));
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S45"));
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S46"));
+        ArrayPush(familyTypes, GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S47"));
         
         let famIndex = RandRange(seed + 300, 0, ArraySize(familyTypes) - 1);
-        backstoryUI.relationships = familyTypes[famIndex] + " | Status: MINOR - Data Protected";
+        backstoryUI.relationships = familyTypes[famIndex] + GetLocalizedTextByKey(n"Kdsp-ChildBackstory-S48");
         
         return backstoryUI;
     }

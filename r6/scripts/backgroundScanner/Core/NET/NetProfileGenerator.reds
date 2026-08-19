@@ -12,67 +12,67 @@ public abstract class KdspNetProfileGenerator {
         // Social media presence
         let socialRoll = RandRange(seed, 0, 7);
         if isCorpo {
-            if socialRoll == 0 { result = "Social: Active on CorpNet, LinkedIN2077"; }
-            else if socialRoll == 1 { result = "Social: Private profile, corp-verified accounts only"; }
-            else if socialRoll == 2 { result = "Social: High engagement on N54 News feeds"; }
-            else if socialRoll == 3 { result = "Social: Active on executive networking channels"; }
-            else if socialRoll == 4 { result = "Social: Corp-mandated account, minimal personal activity"; }
-            else if socialRoll == 5 { result = "Social: Premium DataTerm subscriber, verified identity"; }
-            else if socialRoll == 6 { result = "Social: Regular poster on corpo lifestyle boards"; }
-            else { result = "Social: Locked profile, corporate firewall protected"; }
+            if socialRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S0"); }
+            else if socialRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S1"); }
+            else if socialRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S2"); }
+            else if socialRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S3"); }
+            else if socialRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S4"); }
+            else if socialRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S5"); }
+            else if socialRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S6"); }
+            else { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S7"); }
         } else if isGanger {
-            if socialRoll == 0 { result = "Social: Encrypted channels only, no public presence"; }
-            else if socialRoll == 1 { result = "Social: Multiple burner accounts detected"; }
-            else if socialRoll == 2 { result = "Social: Active on underground forums (anonymized)"; }
-            else if socialRoll == 3 { result = "Social: Dark Net presence confirmed, identity masked"; }
-            else if socialRoll == 4 { result = "Social: Gang-affiliated chatrooms, restricted access"; }
-            else if socialRoll == 5 { result = "Social: Public accounts deleted 6 months ago"; }
-            else if socialRoll == 6 { result = "Social: Known handle on black market boards"; }
-            else { result = "Social: Signal routed through 14 proxy nodes"; }
+            if socialRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S8"); }
+            else if socialRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S9"); }
+            else if socialRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S10"); }
+            else if socialRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S11"); }
+            else if socialRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S12"); }
+            else if socialRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S13"); }
+            else if socialRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S14"); }
+            else { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S15"); }
         } else {
-            if socialRoll == 0 { result = "Social: Active on DataTerm, NightLife feeds"; }
-            else if socialRoll == 1 { result = "Social: Moderate engagement, braindance reviews"; }
-            else if socialRoll == 2 { result = "Social: Low presence, rarely posts"; }
-            else if socialRoll == 3 { result = "Social: Active on neighborhood community boards"; }
-            else if socialRoll == 4 { result = "Social: Regular on entertainment and food channels"; }
-            else if socialRoll == 5 { result = "Social: Mostly lurker, occasional comments"; }
-            else if socialRoll == 6 { result = "Social: Active marketplace seller on NetBay"; }
-            else { result = "Social: Standard citizen profile, no flags"; }
+            if socialRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S16"); }
+            else if socialRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S17"); }
+            else if socialRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S18"); }
+            else if socialRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S19"); }
+            else if socialRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S20"); }
+            else if socialRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S21"); }
+            else if socialRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S22"); }
+            else { result = GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S23"); }
         }
 
         // Known aliases (40% chance)
         let aliasRoll = RandRange(seed + 100, 1, 100);
         if aliasRoll <= 40 {
-            result = result + " | Alias: \"" + KdspNetAliases.GenerateAlias(seed + 101) + "\"";
+            result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S24") + KdspNetAliases.GenerateAlias(seed + 101) + "\"";
         }
 
         // Browsing flags / activity (50% chance)
         let browseRoll = RandRange(seed + 200, 1, 100);
         if browseRoll <= 50 {
             let browseType = RandRange(seed + 201, 0, 9);
-            if browseType == 0 { result = result + " | Flagged: Frequent braindance piracy sites"; }
-            else if browseType == 1 { result = result + " | Flagged: Unauthorized netrunner toolkit downloads"; }
-            else if browseType == 2 { result = result + " | Flagged: Black market cyberware browsing"; }
-            else if browseType == 3 { result = result + " | Activity: Job board searches, resume uploads"; }
-            else if browseType == 4 { result = result + " | Activity: Real estate listings, relocation queries"; }
-            else if browseType == 5 { result = result + " | Activity: Medical research, symptom checking"; }
-            else if browseType == 6 { result = result + " | Flagged: Extremist forum participation detected"; }
-            else if browseType == 7 { result = result + " | Activity: Investment platforms, crypto trading"; }
-            else if browseType == 8 { result = result + " | Flagged: Accessing restricted NUSA government databases"; }
-            else { result = result + " | Activity: Dating platforms, social matching services"; }
+            if browseType == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S25"); }
+            else if browseType == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S26"); }
+            else if browseType == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S27"); }
+            else if browseType == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S28"); }
+            else if browseType == 4 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S29"); }
+            else if browseType == 5 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S30"); }
+            else if browseType == 6 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S31"); }
+            else if browseType == 7 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S32"); }
+            else if browseType == 8 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S33"); }
+            else { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S34"); }
         }
 
         // Darknet activity level
         let darkRoll = RandRange(seed + 300, 0, 9);
         if isGanger || darkRoll <= 1 {
             let darkLevel = RandRange(seed + 301, 0, 4);
-            if darkLevel == 0 { result = result + " | Darknet: ACTIVE - multiple transactions logged"; }
-            else if darkLevel == 1 { result = result + " | Darknet: KNOWN BUYER - weapons, narcotics"; }
-            else if darkLevel == 2 { result = result + " | Darknet: SELLER - contraband, stolen data"; }
-            else if darkLevel == 3 { result = result + " | Darknet: MODERATE - occasional encrypted purchases"; }
-            else { result = result + " | Darknet: FLAGGED - attempting to hire fixers"; }
+            if darkLevel == 0 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S35"); }
+            else if darkLevel == 1 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S36"); }
+            else if darkLevel == 2 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S37"); }
+            else if darkLevel == 3 { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S38"); }
+            else { result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S39"); }
         } else if darkRoll <= 4 {
-            result = result + " | Darknet: CLEAN - no known activity";
+            result = result + GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S40");
         }
 
         return result;

@@ -38,7 +38,7 @@ public class KdspTygerClawsProfile {
         ArrayPush(specs, "Arasaka Liaison");
         ArrayPush(specs, "Money Laundering");
         ArrayPush(specs, "Netrunner Ops");
-        ArrayPush(specs, "Street Racing Circuit");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S0"));
         ArrayPush(specs, "Blackmail/Extortion");
         ArrayPush(specs, "Import/Export Coordination");
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
@@ -64,53 +64,53 @@ public class KdspTygerClawsProfile {
         // Tattoos - Tyger Claws have luminous tattoos
         let tattoos: array<String>;
         if RandRange(seed + 700, 1, 100) <= 85 {
-            ArrayPush(tattoos, "Luminous tiger stripes");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S1"));
         }
         if RandRange(seed + 710, 1, 100) <= 60 {
-            ArrayPush(tattoos, "Kanji loyalty marks");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S2"));
         }
         if RandRange(seed + 720, 1, 100) <= 40 {
-            ArrayPush(tattoos, "Full irezumi back piece");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S3"));
         }
         if RandRange(seed + 730, 1, 100) <= 50 {
-            ArrayPush(tattoos, "Neon dragon sleeve");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S4"));
         }
         if RandRange(seed + 740, 1, 100) <= 30 {
-            ArrayPush(tattoos, "Missing finger tip (yubitsume)");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S5"));
         }
         if RandRange(seed + 750, 1, 100) <= 35 {
-            ArrayPush(tattoos, "Subdermal luminous ink (face)");
+            ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S6"));
         }
         profile.distinguishingMarks = tattoos;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Born into Tyger family. The code is everything. Learned to kill before learning to read.");
-        ArrayPush(backstories, "Former Arasaka security who found the corporate life too restrictive. The Claws offered freedom and power.");
-        ArrayPush(backstories, "Immigrated from Tokyo with nothing. Tyger Claws gave purpose, family, and a future worth fighting for.");
-        ArrayPush(backstories, "Street kid from Kabuki. Joined young, rose fast. The neon runs through these veins now.");
-        ArrayPush(backstories, "Recruited from Japantown youth. Proved loyalty through blood. Never looked back.");
-        ArrayPush(backstories, "Debt to the Claws could only be paid one way - service. Now the debt is someone else's problem.");
-        ArrayPush(backstories, "Ran a pachinko parlor that was already Claw territory. Paying protection became joining the family.");
-        ArrayPush(backstories, "Father was Shatei, grandfather was Kyodai. Blood obligation. Refusing was never an option.");
-        ArrayPush(backstories, "Won a street race in Japantown. Claws noticed. Driving skills got a foot in the door - blade skills kept it open.");
-        ArrayPush(backstories, "Former joytoy at Clouds. Saw too much. The Claws offered a new role - one where nobody touches you uninvited.");
-        ArrayPush(backstories, "Dishonored a rival gang boss in a card game. Needed protection fast. Tyger Claws respect a good gambler.");
-        ArrayPush(backstories, "Served time in a NUSA federal prison. Met Claw brothers inside. Came out with a new family and new purpose.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S7"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S8"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S9"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S10"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S11"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S12"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S17"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S18"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Overseeing BD studio operations in Japantown.");
-        ArrayPush(activities, "Collection runs in Kabuki. Business as usual.");
-        ArrayPush(activities, "Enforcing Arasaka interests in Westbrook.");
-        ArrayPush(activities, "Running security at the clubs. Eyes everywhere.");
-        ArrayPush(activities, "Managing joytoy operations. Premium clientele only.");
-        ArrayPush(activities, "Laundering eddies through pachinko parlors. Clean money, dirty work.");
-        ArrayPush(activities, "Street racing circuit enforcement. House always wins.");
-        ArrayPush(activities, "Meeting with Arasaka contact. New shipment arrangements.");
-        ArrayPush(activities, "Disciplining a member who skimmed off collections. Yubitsume pending.");
-        ArrayPush(activities, "Expanding influence into Charter Hill. New restaurant fronts opening.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S19"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S20"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S21"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S22"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-S28"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         // Status

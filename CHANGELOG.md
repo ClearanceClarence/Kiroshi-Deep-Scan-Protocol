@@ -4,6 +4,19 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [3.0]
+
+- Codeware localization system integration — translations are now language packages that plug into the mod instead of standalone forks
+- All 7,914 display strings converted to key-based lookups — life events, BOLO notices, loading lines, connection contexts, all 230 unique NPC entries, scanner glitch output, UI section headers, and every generator-assembled fragment (criminal, medical, financial, psych, NCPD, gang, NET, rare classifications, field labels)
+- New Strings/ folder holds the entire localization system: Strings/LocalizationProvider.reds resolves the player's game language, Strings/English.reds is the source of truth for every display string
+- Translators ship a single .reds language file registering the same keys — one mod install serves every installed language, translations survive mod updates
+- Text/ files now define stable keys (Kdsp-Job-*, Kdsp-Bolo-*, Kdsp-LoadWatson-*, ...) — translation teams map keys, never touch mod logic
+- BOLO/warrant red highlight now driven by a hasHotRecord flag instead of matching English text prefixes — translated notices keep their urgency color
+- Name pools remain directly editable in Core/Names/ for transliteration; ALL-CAPS machine values (statuses, classification codes) intentionally stay identical across languages
+- Scanner footer: v3.0
+
+---
+
 ## [2.4]
 
 - Name pools expanded from 100 to 130-150 per category across all 13 ethnicities — ~1,700 new names, total combinations up from 260K to ~560K
@@ -28,6 +41,7 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 - Fixed latent crash in event selection — the index search had no bounds check and could overrun the weight table when the roll landed on the total weight
 - Fixed weight table off-by-one — the last event in every life event pool was silently excluded from selection since the pools were introduced
 - Seed version bumped to 5 — event distributions shift due to the weight table fix and new content, existing NPCs regenerate on next scan
+- String consolidation for translators — BOLO notices, all scanner loading lines, and connection context phrases moved into Text/ (TextBolo, TextLoading, TextConnections); behavior unchanged
 - Scanner footer: v2.4
 
 ---

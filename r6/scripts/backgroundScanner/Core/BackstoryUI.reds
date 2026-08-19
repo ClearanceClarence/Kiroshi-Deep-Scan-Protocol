@@ -25,6 +25,9 @@ public struct KdspBackstoryUI {
   // Network Analysis (Connection System)
   public let networkAnalysis: String;
 
+  // True when the criminal record carries a BOLO notice or active warrant
+  public let hasHotRecord: Bool;
+
   // Vehicle Registration
   public let vehicleRegistration: String;
 

@@ -242,14 +242,14 @@ public class KdspCriminalRecordManager {
             // Substance-related arrests
             if coherence.hasSubstanceIssues && RandRange(seed + 500, 1, 100) <= 50 {
                 let substanceCrimes: array<String>;
-                ArrayPush(substanceCrimes, "Illegal possession of controlled substance");
+                ArrayPush(substanceCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S0"));
                 ArrayPush(substanceCrimes, "Public intoxication");
-                ArrayPush(substanceCrimes, "Possession with intent to distribute");
-                ArrayPush(substanceCrimes, "DUI - cyberware impairment");
-                ArrayPush(substanceCrimes, "Possession of illegal stimulants");
+                ArrayPush(substanceCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S1"));
+                ArrayPush(substanceCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S2"));
+                ArrayPush(substanceCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S3"));
                 
                 if NotEquals(coherence.substanceType, "") {
-                    ArrayPush(substanceCrimes, "Possession of " + coherence.substanceType);
+                    ArrayPush(substanceCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S4") + coherence.substanceType);
                 }
                 
                 return substanceCrimes[RandRange(seed, 0, ArraySize(substanceCrimes) - 1)] + " (" + IntToString(year) + ")";
@@ -261,8 +261,8 @@ public class KdspCriminalRecordManager {
                 ArrayPush(violentCrimes, "Assault");
                 ArrayPush(violentCrimes, "Aggravated assault");
                 ArrayPush(violentCrimes, "Battery");
-                ArrayPush(violentCrimes, "Assault with cyberware");
-                ArrayPush(violentCrimes, "Assault with deadly weapon");
+                ArrayPush(violentCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S5"));
+                ArrayPush(violentCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S6"));
                 ArrayPush(violentCrimes, "Aggravated battery");
                 
                 if Equals(coherence.violenceType, "gang") {
@@ -275,7 +275,7 @@ public class KdspCriminalRecordManager {
                 }
                 if Equals(coherence.violenceType, "bar fight") {
                     ArrayPush(violentCrimes, "Brawling");
-                    ArrayPush(violentCrimes, "Disorderly conduct - fighting");
+                    ArrayPush(violentCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S7"));
                 }
                 
                 return violentCrimes[RandRange(seed, 0, ArraySize(violentCrimes) - 1)] + " (" + IntToString(year) + ")";
@@ -292,65 +292,65 @@ public class KdspCriminalRecordManager {
         // Gang-specific crimes (20% chance for gang members)
         if (!Equals(gangAffil, "NONE") && !Equals(gangAffil, "")) && RandRange(seed + 500, 1, 100) <= 40 {
             let i = RandRange(seed, 0, 19);
-            if i == 0 { return "Gang activity (" + IntToString(year) + ")"; }
-            if i == 1 { return "Conspiracy to commit murder (" + IntToString(year) + ")"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S8") + IntToString(year) + ")"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S9") + IntToString(year) + ")"; }
             if i == 2 { return "Racketeering (" + IntToString(year) + ")"; }
             if i == 3 { return "Extortion (" + IntToString(year) + ")"; }
-            if i == 4 { return "Drug trafficking (" + IntToString(year) + ")"; }
-            if i == 5 { return "Drive-by shooting (" + IntToString(year) + ")"; }
-            if i == 6 { return "Gang-related assault (" + IntToString(year) + ")"; }
-            if i == 7 { return "Turf war violence (" + IntToString(year) + ")"; }
-            if i == 8 { return "Gang initiation assault (" + IntToString(year) + ")"; }
-            if i == 9 { return "Protection racket (" + IntToString(year) + ")"; }
-            if i == 10 { return "Gang conspiracy (" + IntToString(year) + ")"; }
-            if i == 11 { return "Witness intimidation (" + IntToString(year) + ")"; }
-            if i == 12 { return "Gang-related weapons charge (" + IntToString(year) + ")"; }
-            if i == 13 { return "Street racing - gang affiliated (" + IntToString(year) + ")"; }
-            if i == 14 { return "Running illegal gambling (" + IntToString(year) + ")"; }
-            if i == 15 { return "Fencing stolen goods (" + IntToString(year) + ")"; }
-            if i == 16 { return "Human trafficking involvement (" + IntToString(year) + ")"; }
-            if i == 17 { return "Contract violence (" + IntToString(year) + ")"; }
-            if i == 18 { return "Gang recruitment of minors (" + IntToString(year) + ")"; }
-            return "Territory marking vandalism (" + IntToString(year) + ")";
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S10") + IntToString(year) + ")"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S11") + IntToString(year) + ")"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S12") + IntToString(year) + ")"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S13") + IntToString(year) + ")"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S14") + IntToString(year) + ")"; }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S15") + IntToString(year) + ")"; }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S16") + IntToString(year) + ")"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S17") + IntToString(year) + ")"; }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S18") + IntToString(year) + ")"; }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S19") + IntToString(year) + ")"; }
+            if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S20") + IntToString(year) + ")"; }
+            if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S21") + IntToString(year) + ")"; }
+            if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S22") + IntToString(year) + ")"; }
+            if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S23") + IntToString(year) + ")"; }
+            if i == 18 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S24") + IntToString(year) + ")"; }
+            return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S25") + IntToString(year) + ")";
         }
 
         // Corpo-specific crimes
         if (Equals(archetype, "CORPO_DRONE") || Equals(archetype, "CORPO_MANAGER")) && RandRange(seed + 501, 1, 100) <= 70 {
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Corporate policy violation (" + IntToString(year) + ")"; }
-            if i == 1 { return "Data theft (" + IntToString(year) + ")"; }
-            if i == 2 { return "Corporate espionage (" + IntToString(year) + ")"; }
-            if i == 3 { return "Insider trading (" + IntToString(year) + ")"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S26") + IntToString(year) + ")"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S27") + IntToString(year) + ")"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S28") + IntToString(year) + ")"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S29") + IntToString(year) + ")"; }
             if i == 4 { return "Embezzlement (" + IntToString(year) + ")"; }
-            if i == 5 { return "Securities fraud (" + IntToString(year) + ")"; }
-            if i == 6 { return "Breach of NDA (" + IntToString(year) + ")"; }
-            if i == 7 { return "Unauthorized data access (" + IntToString(year) + ")"; }
-            if i == 8 { return "Corporate sabotage (" + IntToString(year) + ")"; }
-            if i == 9 { return "Industrial espionage (" + IntToString(year) + ")"; }
-            if i == 10 { return "Trade secret theft (" + IntToString(year) + ")"; }
-            if i == 11 { return "Money laundering (" + IntToString(year) + ")"; }
-            if i == 12 { return "Bribery of officials (" + IntToString(year) + ")"; }
-            if i == 13 { return "Tax fraud (" + IntToString(year) + ")"; }
-            return "Antitrust violations (" + IntToString(year) + ")";
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S30") + IntToString(year) + ")"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S31") + IntToString(year) + ")"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S32") + IntToString(year) + ")"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S33") + IntToString(year) + ")"; }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S34") + IntToString(year) + ")"; }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S35") + IntToString(year) + ")"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S36") + IntToString(year) + ")"; }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S37") + IntToString(year) + ")"; }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S38") + IntToString(year) + ")"; }
+            return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S39") + IntToString(year) + ")";
         }
 
         // Junkie-specific crimes
         if Equals(archetype, "JUNKIE") && RandRange(seed + 502, 1, 100) <= 60 {
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Public intoxication (" + IntToString(year) + ")"; }
-            if i == 1 { return "Possession of controlled substance (" + IntToString(year) + ")"; }
-            if i == 2 { return "DUI - cyberware impairment (" + IntToString(year) + ")"; }
-            if i == 3 { return "Possession with intent to distribute (" + IntToString(year) + ")"; }
-            if i == 4 { return "Drug paraphernalia possession (" + IntToString(year) + ")"; }
-            if i == 5 { return "Theft to support habit (" + IntToString(year) + ")"; }
-            if i == 6 { return "Prescription fraud (" + IntToString(year) + ")"; }
-            if i == 7 { return "Possession of illegal stimulants (" + IntToString(year) + ")"; }
-            if i == 8 { return "Under influence in public (" + IntToString(year) + ")"; }
-            if i == 9 { return "Possession of synthetic drugs (" + IntToString(year) + ")"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S40") + IntToString(year) + ")"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S41") + IntToString(year) + ")"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S42") + IntToString(year) + ")"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S43") + IntToString(year) + ")"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S44") + IntToString(year) + ")"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S45") + IntToString(year) + ")"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S46") + IntToString(year) + ")"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S47") + IntToString(year) + ")"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S48") + IntToString(year) + ")"; }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S49") + IntToString(year) + ")"; }
             if i == 10 { return "Shoplifting (" + IntToString(year) + ")"; }
-            if i == 11 { return "Loitering in drug area (" + IntToString(year) + ")"; }
-            if i == 12 { return "Breaking into vehicle (" + IntToString(year) + ")"; }
-            if i == 13 { return "Panhandling aggressively (" + IntToString(year) + ")"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S50") + IntToString(year) + ")"; }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S51") + IntToString(year) + ")"; }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S52") + IntToString(year) + ")"; }
             return "Trespassing (" + IntToString(year) + ")";
         }
 
@@ -358,170 +358,170 @@ public class KdspCriminalRecordManager {
         let i = RandRange(seed, 0, 99);
         
         // Minor offenses (0-19)
-        if i == 0 { return "Public intoxication (" + IntToString(year) + ")"; }
-        if i == 1 { return "Disorderly conduct (" + IntToString(year) + ")"; }
-        if i == 2 { return "Petty theft (" + IntToString(year) + ")"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S40") + IntToString(year) + ")"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S53") + IntToString(year) + ")"; }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S54") + IntToString(year) + ")"; }
         if i == 3 { return "Trespassing (" + IntToString(year) + ")"; }
         if i == 4 { return "Vandalism (" + IntToString(year) + ")"; }
         if i == 5 { return "Loitering (" + IntToString(year) + ")"; }
-        if i == 6 { return "Public urination (" + IntToString(year) + ")"; }
-        if i == 7 { return "Noise violation (" + IntToString(year) + ")"; }
-        if i == 8 { return "Open container violation (" + IntToString(year) + ")"; }
-        if i == 9 { return "Jaywalking (repeat offense) (" + IntToString(year) + ")"; }
-        if i == 10 { return "Fare evasion (" + IntToString(year) + ")"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S55") + IntToString(year) + ")"; }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S56") + IntToString(year) + ")"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S57") + IntToString(year) + ")"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S58") + IntToString(year) + ")"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S59") + IntToString(year) + ")"; }
         if i == 11 { return "Littering (" + IntToString(year) + ")"; }
-        if i == 12 { return "Disturbing the peace (" + IntToString(year) + ")"; }
-        if i == 13 { return "Failure to disperse (" + IntToString(year) + ")"; }
-        if i == 14 { return "Curfew violation (" + IntToString(year) + ")"; }
-        if i == 15 { return "Illegal street vending (" + IntToString(year) + ")"; }
-        if i == 16 { return "Unlicensed busking (" + IntToString(year) + ")"; }
-        if i == 17 { return "Illegal posting of bills (" + IntToString(year) + ")"; }
-        if i == 18 { return "Minor in possession (" + IntToString(year) + ")"; }
-        if i == 19 { return "False identification (" + IntToString(year) + ")"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S60") + IntToString(year) + ")"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S61") + IntToString(year) + ")"; }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S62") + IntToString(year) + ")"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S63") + IntToString(year) + ")"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S64") + IntToString(year) + ")"; }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S65") + IntToString(year) + ")"; }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S66") + IntToString(year) + ")"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S67") + IntToString(year) + ")"; }
         
         // Drug/Substance (20-29)
-        if i == 20 { return "Possession of controlled substance (" + IntToString(year) + ")"; }
-        if i == 21 { return "DUI - cyberware impairment (" + IntToString(year) + ")"; }
-        if i == 22 { return "DUI - alcohol (" + IntToString(year) + ")"; }
-        if i == 23 { return "DUI - drugs (" + IntToString(year) + ")"; }
-        if i == 24 { return "Possession of illegal stimulants (" + IntToString(year) + ")"; }
-        if i == 25 { return "Possession with intent (" + IntToString(year) + ")"; }
-        if i == 26 { return "Drug manufacturing (" + IntToString(year) + ")"; }
-        if i == 27 { return "Prescription fraud (" + IntToString(year) + ")"; }
-        if i == 28 { return "Operating drug den (" + IntToString(year) + ")"; }
-        if i == 29 { return "Sale of controlled substance (" + IntToString(year) + ")"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S41") + IntToString(year) + ")"; }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S42") + IntToString(year) + ")"; }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S68") + IntToString(year) + ")"; }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S69") + IntToString(year) + ")"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S47") + IntToString(year) + ")"; }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S70") + IntToString(year) + ")"; }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S71") + IntToString(year) + ")"; }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S46") + IntToString(year) + ")"; }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S72") + IntToString(year) + ")"; }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S73") + IntToString(year) + ")"; }
         
         // Theft/Property (30-44)
-        if i == 30 { return "Grand theft auto (" + IntToString(year) + ")"; }
-        if i == 31 { return "Breaking and entering (" + IntToString(year) + ")"; }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S74") + IntToString(year) + ")"; }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S75") + IntToString(year) + ")"; }
         if i == 32 { return "Burglary (" + IntToString(year) + ")"; }
         if i == 33 { return "Shoplifting (" + IntToString(year) + ")"; }
-        if i == 34 { return "Receiving stolen property (" + IntToString(year) + ")"; }
-        if i == 35 { return "Vehicle theft (" + IntToString(year) + ")"; }
+        if i == 34 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S76") + IntToString(year) + ")"; }
+        if i == 35 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S77") + IntToString(year) + ")"; }
         if i == 36 { return "Carjacking (" + IntToString(year) + ")"; }
-        if i == 37 { return "Identity theft (" + IntToString(year) + ")"; }
-        if i == 38 { return "Credit fraud (" + IntToString(year) + ")"; }
+        if i == 37 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S78") + IntToString(year) + ")"; }
+        if i == 38 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S79") + IntToString(year) + ")"; }
         if i == 39 { return "Pickpocketing (" + IntToString(year) + ")"; }
         if i == 40 { return "Robbery (" + IntToString(year) + ")"; }
-        if i == 41 { return "Armed robbery (" + IntToString(year) + ")"; }
-        if i == 42 { return "Home invasion (" + IntToString(year) + ")"; }
-        if i == 43 { return "Catalytic converter theft (" + IntToString(year) + ")"; }
-        if i == 44 { return "Package theft (" + IntToString(year) + ")"; }
+        if i == 41 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S80") + IntToString(year) + ")"; }
+        if i == 42 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S81") + IntToString(year) + ")"; }
+        if i == 43 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S82") + IntToString(year) + ")"; }
+        if i == 44 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S83") + IntToString(year) + ")"; }
         
         // Violence (45-59)
         if i == 45 { return "Assault (" + IntToString(year) + ")"; }
         if i == 46 { return "Battery (" + IntToString(year) + ")"; }
-        if i == 47 { return "Aggravated assault (" + IntToString(year) + ")"; }
-        if i == 48 { return "Assault with deadly weapon (" + IntToString(year) + ")"; }
-        if i == 49 { return "Assault with cyberware (" + IntToString(year) + ")"; }
-        if i == 50 { return "Domestic violence (" + IntToString(year) + ")"; }
-        if i == 51 { return "Vehicular assault (" + IntToString(year) + ")"; }
-        if i == 52 { return "Reckless endangerment (" + IntToString(year) + ")"; }
+        if i == 47 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S84") + IntToString(year) + ")"; }
+        if i == 48 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S85") + IntToString(year) + ")"; }
+        if i == 49 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S86") + IntToString(year) + ")"; }
+        if i == 50 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S87") + IntToString(year) + ")"; }
+        if i == 51 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S88") + IntToString(year) + ")"; }
+        if i == 52 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S89") + IntToString(year) + ")"; }
         if i == 53 { return "Menacing (" + IntToString(year) + ")"; }
-        if i == 54 { return "Criminal threatening (" + IntToString(year) + ")"; }
+        if i == 54 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S90") + IntToString(year) + ")"; }
         if i == 55 { return "Stalking (" + IntToString(year) + ")"; }
         if i == 56 { return "Harassment (" + IntToString(year) + ")"; }
         if i == 57 { return "Intimidation (" + IntToString(year) + ")"; }
         if i == 58 { return "Manslaughter (" + IntToString(year) + ")"; }
-        if i == 59 { return "Attempted murder (" + IntToString(year) + ")"; }
+        if i == 59 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S91") + IntToString(year) + ")"; }
         
         // Weapons (60-69)
-        if i == 60 { return "Illegal weapons possession (" + IntToString(year) + ")"; }
-        if i == 61 { return "Concealed weapon violation (" + IntToString(year) + ")"; }
-        if i == 62 { return "Illegal discharge of firearm (" + IntToString(year) + ")"; }
-        if i == 63 { return "Possession of illegal ammunition (" + IntToString(year) + ")"; }
-        if i == 64 { return "Illegal weapons modification (" + IntToString(year) + ")"; }
-        if i == 65 { return "Brandishing a weapon (" + IntToString(year) + ")"; }
-        if i == 66 { return "Weapons trafficking (" + IntToString(year) + ")"; }
-        if i == 67 { return "Possession of explosive device (" + IntToString(year) + ")"; }
-        if i == 68 { return "Illegal military hardware (" + IntToString(year) + ")"; }
-        if i == 69 { return "Unlicensed firearm (" + IntToString(year) + ")"; }
+        if i == 60 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S92") + IntToString(year) + ")"; }
+        if i == 61 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S93") + IntToString(year) + ")"; }
+        if i == 62 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S94") + IntToString(year) + ")"; }
+        if i == 63 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S95") + IntToString(year) + ")"; }
+        if i == 64 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S96") + IntToString(year) + ")"; }
+        if i == 65 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S97") + IntToString(year) + ")"; }
+        if i == 66 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S98") + IntToString(year) + ")"; }
+        if i == 67 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S99") + IntToString(year) + ")"; }
+        if i == 68 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S100") + IntToString(year) + ")"; }
+        if i == 69 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S101") + IntToString(year) + ")"; }
         
         // Cybercrimes (70-79)
-        if i == 70 { return "Illegal cyberware modification (" + IntToString(year) + ")"; }
-        if i == 71 { return "Data theft (" + IntToString(year) + ")"; }
+        if i == 70 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S102") + IntToString(year) + ")"; }
+        if i == 71 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S27") + IntToString(year) + ")"; }
         if i == 72 { return "Hacking (" + IntToString(year) + ")"; }
-        if i == 73 { return "Unauthorized system access (" + IntToString(year) + ")"; }
-        if i == 74 { return "Illegal braindance distribution (" + IntToString(year) + ")"; }
-        if i == 75 { return "Cyberware tampering (" + IntToString(year) + ")"; }
-        if i == 76 { return "Net running violation (" + IntToString(year) + ")"; }
-        if i == 77 { return "Malware distribution (" + IntToString(year) + ")"; }
-        if i == 78 { return "ICE breach (" + IntToString(year) + ")"; }
-        if i == 79 { return "Illegal AI possession (" + IntToString(year) + ")"; }
+        if i == 73 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S103") + IntToString(year) + ")"; }
+        if i == 74 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S104") + IntToString(year) + ")"; }
+        if i == 75 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S105") + IntToString(year) + ")"; }
+        if i == 76 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S106") + IntToString(year) + ")"; }
+        if i == 77 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S107") + IntToString(year) + ")"; }
+        if i == 78 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S108") + IntToString(year) + ")"; }
+        if i == 79 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S109") + IntToString(year) + ")"; }
         
         // Traffic/Vehicle (80-84)
-        if i == 80 { return "Reckless driving (" + IntToString(year) + ")"; }
-        if i == 81 { return "Street racing (" + IntToString(year) + ")"; }
-        if i == 82 { return "Hit and run (" + IntToString(year) + ")"; }
-        if i == 83 { return "Driving on suspended license (" + IntToString(year) + ")"; }
-        if i == 84 { return "Evading police (" + IntToString(year) + ")"; }
+        if i == 80 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S110") + IntToString(year) + ")"; }
+        if i == 81 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S111") + IntToString(year) + ")"; }
+        if i == 82 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S112") + IntToString(year) + ")"; }
+        if i == 83 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S113") + IntToString(year) + ")"; }
+        if i == 84 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S114") + IntToString(year) + ")"; }
         
         // Fraud/White collar (85-89)
         if i == 85 { return "Fraud (" + IntToString(year) + ")"; }
         if i == 86 { return "Forgery (" + IntToString(year) + ")"; }
         if i == 87 { return "Counterfeiting (" + IntToString(year) + ")"; }
-        if i == 88 { return "Insurance fraud (" + IntToString(year) + ")"; }
-        if i == 89 { return "Wire fraud (" + IntToString(year) + ")"; }
+        if i == 88 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S115") + IntToString(year) + ")"; }
+        if i == 89 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S116") + IntToString(year) + ")"; }
         
         // Other (90-99)
-        if i == 90 { return "Resisting arrest (" + IntToString(year) + ")"; }
-        if i == 91 { return "Obstruction of justice (" + IntToString(year) + ")"; }
-        if i == 92 { return "False police report (" + IntToString(year) + ")"; }
-        if i == 93 { return "Contempt of court (" + IntToString(year) + ")"; }
-        if i == 94 { return "Bail jumping (" + IntToString(year) + ")"; }
+        if i == 90 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S117") + IntToString(year) + ")"; }
+        if i == 91 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S118") + IntToString(year) + ")"; }
+        if i == 92 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S119") + IntToString(year) + ")"; }
+        if i == 93 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S120") + IntToString(year) + ")"; }
+        if i == 94 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S121") + IntToString(year) + ")"; }
         if i == 95 { return "Perjury (" + IntToString(year) + ")"; }
         if i == 96 { return "Prostitution (" + IntToString(year) + ")"; }
         if i == 97 { return "Solicitation (" + IntToString(year) + ")"; }
-        if i == 98 { return "Illegal gambling (" + IntToString(year) + ")"; }
-        return "Unlawful assembly (" + IntToString(year) + ")";
+        if i == 98 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S122") + IntToString(year) + ")"; }
+        return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S123") + IntToString(year) + ")";
     }
 
     private static func GenerateConviction(seed: Int32, archetype: String) -> String {
         let i = RandRange(seed, 0, 29);
         
         // Fines (0-4)
-        if i == 0 { return "Fine: €$" + IntToString(RandRange(seed, 100, 500)); }
-        if i == 1 { return "Fine: €$" + IntToString(RandRange(seed, 500, 2000)); }
-        if i == 2 { return "Fine: €$" + IntToString(RandRange(seed, 2000, 10000)); }
-        if i == 3 { return "Fine: €$" + IntToString(RandRange(seed, 10000, 50000)); }
-        if i == 4 { return "Fine: €$" + IntToString(RandRange(seed, 50000, 250000)) + " (corporate)"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S124") + IntToString(RandRange(seed, 100, 500)); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S124") + IntToString(RandRange(seed, 500, 2000)); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S124") + IntToString(RandRange(seed, 2000, 10000)); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S124") + IntToString(RandRange(seed, 10000, 50000)); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S124") + IntToString(RandRange(seed, 50000, 250000)) + " (corporate)"; }
         
         // Community service (5-7)
-        if i == 5 { return "Community service: " + IntToString(RandRange(seed + 10, 20, 100)) + " hours"; }
-        if i == 6 { return "Community service: " + IntToString(RandRange(seed + 10, 100, 300)) + " hours"; }
-        if i == 7 { return "Community service: " + IntToString(RandRange(seed + 10, 300, 500)) + " hours"; }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S125") + IntToString(RandRange(seed + 10, 20, 100)) + " hours"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S125") + IntToString(RandRange(seed + 10, 100, 300)) + " hours"; }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S125") + IntToString(RandRange(seed + 10, 300, 500)) + " hours"; }
         
         // Probation (8-10)
-        if i == 8 { return "Probation: " + IntToString(RandRange(seed + 20, 6, 12)) + " months"; }
-        if i == 9 { return "Probation: " + IntToString(RandRange(seed + 20, 12, 36)) + " months"; }
-        if i == 10 { return "Probation: " + IntToString(RandRange(seed + 20, 36, 60)) + " months"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S126") + IntToString(RandRange(seed + 20, 6, 12)) + " months"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S126") + IntToString(RandRange(seed + 20, 12, 36)) + " months"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S126") + IntToString(RandRange(seed + 20, 36, 60)) + " months"; }
         
         // Detention/Prison (11-16)
-        if i == 11 { return "County detention: " + IntToString(RandRange(seed + 30, 1, 6)) + " months"; }
-        if i == 12 { return "County detention: " + IntToString(RandRange(seed + 30, 6, 12)) + " months"; }
-        if i == 13 { return "State prison: " + IntToString(RandRange(seed + 40, 1, 3)) + " years"; }
-        if i == 14 { return "State prison: " + IntToString(RandRange(seed + 40, 3, 10)) + " years"; }
-        if i == 15 { return "State prison: " + IntToString(RandRange(seed + 40, 10, 25)) + " years"; }
-        if i == 16 { return "Maximum security: " + IntToString(RandRange(seed + 40, 5, 15)) + " years"; }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S127") + IntToString(RandRange(seed + 30, 1, 6)) + " months"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S127") + IntToString(RandRange(seed + 30, 6, 12)) + " months"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S128") + IntToString(RandRange(seed + 40, 1, 3)) + " years"; }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S128") + IntToString(RandRange(seed + 40, 3, 10)) + " years"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S128") + IntToString(RandRange(seed + 40, 10, 25)) + " years"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S129") + IntToString(RandRange(seed + 40, 5, 15)) + " years"; }
         
         // Corporate sentences (17-19)
-        if i == 17 { return "Corporate labor assignment: " + IntToString(RandRange(seed + 50, 1, 5)) + " years"; }
-        if i == 18 { return "Corporate detention facility: " + IntToString(RandRange(seed + 50, 1, 3)) + " years"; }
-        if i == 19 { return "Corporate debt servitude: " + IntToString(RandRange(seed + 50, 2, 10)) + " years"; }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S130") + IntToString(RandRange(seed + 50, 1, 5)) + " years"; }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S131") + IntToString(RandRange(seed + 50, 1, 3)) + " years"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S132") + IntToString(RandRange(seed + 50, 2, 10)) + " years"; }
         
         // Alternative sentences (20-24)
-        if i == 20 { return "Mandatory rehabilitation program"; }
-        if i == 21 { return "Electronic monitoring: " + IntToString(RandRange(seed + 60, 6, 24)) + " months"; }
-        if i == 22 { return "House arrest: " + IntToString(RandRange(seed + 60, 3, 18)) + " months"; }
-        if i == 23 { return "Cyberware restriction order"; }
-        if i == 24 { return "Weapons prohibition - permanent"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S133"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S134") + IntToString(RandRange(seed + 60, 6, 24)) + " months"; }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S135") + IntToString(RandRange(seed + 60, 3, 18)) + " months"; }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S136"); }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S137"); }
         
         // Special conditions (25-29)
-        if i == 25 { return "Mandatory anger management"; }
-        if i == 26 { return "Substance abuse treatment"; }
-        if i == 27 { return "Restitution: €$" + IntToString(RandRange(seed, 5000, 100000)); }
-        if i == 28 { return "Driving privileges revoked: " + IntToString(RandRange(seed + 70, 1, 5)) + " years"; }
-        return "Deferred adjudication: " + IntToString(RandRange(seed + 70, 12, 36)) + " months";
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S138"); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S139"); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S140") + IntToString(RandRange(seed, 5000, 100000)); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S141") + IntToString(RandRange(seed + 70, 1, 5)) + " years"; }
+        return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S142") + IntToString(RandRange(seed + 70, 12, 36)) + " months";
     }
 
     private static func GenerateGangRank(seed: Int32, archetype: String) -> String {
@@ -546,7 +546,7 @@ public class KdspCriminalRecordManager {
         if roll <= 95 { return "Underboss"; }
         if roll <= 97 { return "Right Hand"; }
         if roll <= 99 { return "Inner Circle"; }
-        return "Unknown - Classified";
+        return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S143");
     }
 
     private static func GenerateGangStatus(seed: Int32) -> String {
@@ -554,31 +554,31 @@ public class KdspCriminalRecordManager {
         
         // Active statuses (0-7)
         if i == 0 { return "Active member"; }
-        if i == 1 { return "Active - enforcer duties"; }
-        if i == 2 { return "Active - drug operations"; }
-        if i == 3 { return "Active - recruitment"; }
-        if i == 4 { return "Active - territory patrol"; }
-        if i == 5 { return "Active - collections"; }
-        if i == 6 { return "Blood in - confirmed kills"; }
-        if i == 7 { return "Active - inner circle access"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S144"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S145"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S146"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S147"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S148"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S149"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S150"); }
         
         // Probationary/New (8-11)
         if i == 8 { return "Recently initiated"; }
         if i == 9 { return "Probationary period"; }
-        if i == 10 { return "On probation with gang"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S151"); }
         if i == 11 { return "Proving loyalty"; }
         
         // Inactive/Problem (12-15)
-        if i == 12 { return "Inactive - still affiliated"; }
-        if i == 13 { return "Inactive - incarcerated"; }
-        if i == 14 { return "Inactive - in hiding"; }
-        if i == 15 { return "Inactive - medical reasons"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S152"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S153"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S154"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S155"); }
         
         // High risk (16-19)
-        if i == 16 { return "Seeking to leave (HIGH RISK)"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S156"); }
         if i == 17 { return "Suspected snitch"; }
-        if i == 18 { return "In bad standing"; }
-        return "Informant status - CLASSIFIED";
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S157"); }
+        return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S158");
     }
 
     private static func GenerateNCPDClassification(seed: Int32, archetype: String, arrestCount: Int32) -> String {

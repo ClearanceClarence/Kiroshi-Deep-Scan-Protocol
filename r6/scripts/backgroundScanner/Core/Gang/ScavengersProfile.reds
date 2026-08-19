@@ -30,7 +30,7 @@ public class KdspScavengersProfile {
         ArrayPush(specs, "Organ Harvesting");
         ArrayPush(specs, "Cyberware Extraction");
         ArrayPush(specs, "Victim Acquisition");
-        ArrayPush(specs, "Black Market Sales");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S0"));
         ArrayPush(specs, "Body Disposal");
         ArrayPush(specs, "Ripperdoc Work");
         ArrayPush(specs, "Vehicle Operations");
@@ -38,7 +38,7 @@ public class KdspScavengersProfile {
         ArrayPush(specs, "Intimidation");
         ArrayPush(specs, "Clean-up Crew");
         ArrayPush(specs, "Sedation Specialist");
-        ArrayPush(specs, "Cold Storage Management");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S1"));
         ArrayPush(specs, "Buyer Liaison");
         ArrayPush(specs, "Transport Logistics");
         ArrayPush(specs, "Street Surveillance");
@@ -47,7 +47,7 @@ public class KdspScavengersProfile {
         // Territory - Scavs operate everywhere
         let territories: array<String>;
         ArrayPush(territories, "Watson Underground");
-        ArrayPush(territories, "Kabuki Back Alleys");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S2"));
         ArrayPush(territories, "Northside Warehouses");
         ArrayPush(territories, "Industrial Basements");
         ArrayPush(territories, "Abandoned Clinics");
@@ -74,47 +74,47 @@ public class KdspScavengersProfile {
             ArrayPush(marks, "Cheap cyberware");
         }
         if RandRange(seed + 720, 1, 100) <= 40 {
-            ArrayPush(marks, "Eastern European prison tattoos");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S3"));
         }
         if RandRange(seed + 730, 1, 100) <= 45 {
-            ArrayPush(marks, "Chemical staining on hands");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S4"));
         }
         if RandRange(seed + 740, 1, 100) <= 35 {
-            ArrayPush(marks, "Faint antiseptic smell");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S5"));
         }
         if RandRange(seed + 750, 1, 100) <= 30 {
-            ArrayPush(marks, "Mismatched salvaged optics");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S6"));
         }
         profile.distinguishingMarks = marks;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Came from the old country with nothing. Learned that in Night City, everything has a price - including people.");
-        ArrayPush(backstories, "Former medical student. Couldn't afford to finish. Found that organs pay better than degrees anyway.");
-        ArrayPush(backstories, "Survived by being useful to the cell. Morality is a luxury for people with options.");
-        ArrayPush(backstories, "Debt to the wrong people. Only way out was through. Now too deep to ever leave.");
-        ArrayPush(backstories, "Sociopath by diagnosis. Found the one job where that's an asset. Cutting comes naturally.");
-        ArrayPush(backstories, "Family back home needs money. Don't ask where it comes from. Just send it.");
-        ArrayPush(backstories, "Worked in a corpo organ farm. Laid off. Took the skills freelance. Market's always hungry.");
-        ArrayPush(backstories, "Human trafficking victim who turned the tables. Learned the business from the inside out.");
-        ArrayPush(backstories, "Ex-paramedic who realized saving lives paid nothing. Taking them apart pays everything.");
-        ArrayPush(backstories, "Grew up in the Watson sewers. Nobody notices what happens underground. Perfect for the trade.");
-        ArrayPush(backstories, "Former Maelstrom who wasn't crazy enough for the chrome cult. Scavs just want product. Simpler.");
-        ArrayPush(backstories, "Immigrated on a shipping container. The smugglers offered a job on arrival. Didn't have the luxury of saying no.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S7"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S8"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S9"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S10"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S11"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S12"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S17"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S18"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Acquisition run in Watson. Fresh inventory needed.");
-        ArrayPush(activities, "Processing at the chop shop. Quota to meet.");
-        ArrayPush(activities, "Black market delivery. Premium chrome, no questions.");
-        ArrayPush(activities, "Site relocation. NCPD got too close to the old spot.");
-        ArrayPush(activities, "Scouting new hunting grounds. Supply and demand.");
-        ArrayPush(activities, "Cleaning a crime scene. Bleach and patience. No traces left.");
-        ArrayPush(activities, "Negotiating with a ripperdoc buyer. Wants specific blood types.");
-        ArrayPush(activities, "Baiting a trap in Kabuki. Tourist district - easy pickings.");
-        ArrayPush(activities, "Cold storage maintenance. Product spoils if temp fluctuates.");
-        ArrayPush(activities, "Disposing of a problem. Someone talked. Someone won't anymore.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S19"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S20"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S21"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S22"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S28"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);

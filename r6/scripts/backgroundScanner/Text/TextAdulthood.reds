@@ -1,590 +1,590 @@
 // Adult life events
 public abstract class KdspTextAdulthood {
     // === FINANCIAL ===
-    public static func LOST_GAMBLE() -> String { return "Lost €$%eddies% Eurodollars gambling. "; }
-    public static func WON_LOTTERY() -> String { return "Won a scratch-off. "; }
-    public static func BOUGHT_CAR() -> String { return "Bought a car. "; }
-    public static func NEW_APT() -> String { return "Moved into a new apartment. "; }
-    public static func ASST_SZD_CRP() -> String { return "All assets were seized by the %corp% Corporation. "; }
-    public static func CHRG_BK_DBTR() -> String { return "Charged as a bankrupt debtor. "; }
-    public static func CHRG_MED_DBT() -> String { return "Charged as a medical debtor. "; }
-    public static func INDEBT_CRP_INDVL() -> String { return "Indebted to the %corp% Corporation. Individual reassigned as a corporate asset. "; }
-    public static func HAB_CRP_DBTR() -> String { return "Charged as a habitual corporate debtor. "; }
-    public static func INHERITANCE() -> String { return "Received a small inheritance. "; }
-    public static func LOST_SAVINGS() -> String { return "Lost all savings in a market crash. "; }
-    public static func CRYPTO() -> String { return "Got rich on cryptocurrency before losing it all. "; }
-    public static func EVICTED() -> String { return "Was evicted from home. "; }
-    public static func REPO_CAR() -> String { return "Had car repossessed. "; }
+    public static func LOST_GAMBLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_GAMBLE"); }
+    public static func WON_LOTTERY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WON_LOTTERY"); }
+    public static func BOUGHT_CAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOUGHT_CAR"); }
+    public static func NEW_APT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NEW_APT"); }
+    public static func ASST_SZD_CRP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ASST_SZD_CRP"); }
+    public static func CHRG_BK_DBTR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHRG_BK_DBTR"); }
+    public static func CHRG_MED_DBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHRG_MED_DBT"); }
+    public static func INDEBT_CRP_INDVL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INDEBT_CRP_INDVL"); }
+    public static func HAB_CRP_DBTR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HAB_CRP_DBTR"); }
+    public static func INHERITANCE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INHERITANCE"); }
+    public static func LOST_SAVINGS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_SAVINGS"); }
+    public static func CRYPTO() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CRYPTO"); }
+    public static func EVICTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EVICTED"); }
+    public static func REPO_CAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REPO_CAR"); }
     // === CAREER ===
-    public static func LOST_JOB() -> String { return "Lost %his% job. "; }
-    public static func COMPLETED_JOB() -> String { return "Completed a job for a fixer and received a €$%eddies% payout. "; }
-    public static func RADIO_JOCKEY() -> String { return "Moonlighted as a radio jockey. "; }
-    public static func PROMOTION() -> String { return "Received a promotion. "; }
-    public static func FIRED() -> String { return "Was fired for misconduct. "; }
-    public static func BLACKLISTED() -> String { return "Was blacklisted from an industry. "; }
-    public static func WHISTLEBLOWER() -> String { return "Became a corporate whistleblower. "; }
-    public static func STARTED_BIZ() -> String { return "Started a small business. "; }
-    public static func BIZ_FAILED() -> String { return "Business venture failed catastrophically. "; }
-    public static func UNION() -> String { return "Became a union organizer. "; }
-    public static func STRIKE() -> String { return "Participated in a workers' strike. "; }
+    public static func LOST_JOB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_JOB"); }
+    public static func COMPLETED_JOB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-COMPLETED_JOB"); }
+    public static func RADIO_JOCKEY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RADIO_JOCKEY"); }
+    public static func PROMOTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PROMOTION"); }
+    public static func FIRED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIRED"); }
+    public static func BLACKLISTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BLACKLISTED"); }
+    public static func WHISTLEBLOWER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WHISTLEBLOWER"); }
+    public static func STARTED_BIZ() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STARTED_BIZ"); }
+    public static func BIZ_FAILED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BIZ_FAILED"); }
+    public static func UNION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-UNION"); }
+    public static func STRIKE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STRIKE"); }
     // === CRIMINAL / LEGAL ===
-    public static func IMPRISONED() -> String { return "Was imprisoned for %years% years. "; }
-    public static func ROB_BODEGA() -> String { return "Was involved in a robbery at a bodega. "; }
-    public static func ROB_VENDOR() -> String { return "Was involved in a robbery at a street food vendor. "; }
-    public static func RUN_CHEMS() -> String { return "Began running chems for a local gang. "; }
-    public static func KILLED_CHOOM() -> String { return "Killed an unlucky choom. "; }
-    public static func JOINED_RIOT() -> String { return "Was involved in a riot. "; }
-    public static func CODED_BOTNETS() -> String { return "Coded synchronized botnets to attack the %corp% Corporation access points, stealing €$%eddies% Eurodollars. "; }
-    public static func STOLE_EQP() -> String { return "Stole some high-tech equipment from %corp%. "; }
-    public static func FILED_FRD_INS() -> String { return "Filed a fraudulent insurance claim. "; }
-    public static func CRP_LBLTY_DFDT() -> String { return "Charged as a corporate liability defendant. "; }
-    public static func CRP_POL_VIO() -> String { return "Charged as a corporate policies violator. "; }
-    public static func ARMED_DANGER() -> String { return "Notoriously armed and dangerous. "; }
-    public static func FLSLY_ACC_MRDR() -> String { return "Was falsely accused of murder and imprisoned for %years% horrifying years. "; }
-    public static func FREE_CRP_MRDR() -> String { return "Was accused of corporate-sanctioned murders with video evidence, but charges were dismissed on technicalities. "; }
-    public static func ROBOT_DEST() -> String { return "Was involved in the destruction of one Arasaka Robot R MK.2. "; }
-    public static func BUILD_BOMB() -> String { return "Meets with known terrorists, while building a dirty bomb with scavenged ordinance and electronics. "; }
-    public static func ARRESTED() -> String { return "Was arrested by NCPD. "; }
-    public static func PAROLE() -> String { return "Currently on parole. "; }
-    public static func BOUNTY() -> String { return "Has an active bounty. "; }
-    public static func WITNESS_PROT() -> String { return "Entered witness protection briefly. "; }
+    public static func IMPRISONED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-IMPRISONED"); }
+    public static func ROB_BODEGA() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROB_BODEGA"); }
+    public static func ROB_VENDOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROB_VENDOR"); }
+    public static func RUN_CHEMS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RUN_CHEMS"); }
+    public static func KILLED_CHOOM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KILLED_CHOOM"); }
+    public static func JOINED_RIOT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JOINED_RIOT"); }
+    public static func CODED_BOTNETS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CODED_BOTNETS"); }
+    public static func STOLE_EQP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STOLE_EQP"); }
+    public static func FILED_FRD_INS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FILED_FRD_INS"); }
+    public static func CRP_LBLTY_DFDT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CRP_LBLTY_DFDT"); }
+    public static func CRP_POL_VIO() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CRP_POL_VIO"); }
+    public static func ARMED_DANGER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ARMED_DANGER"); }
+    public static func FLSLY_ACC_MRDR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FLSLY_ACC_MRDR"); }
+    public static func FREE_CRP_MRDR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FREE_CRP_MRDR"); }
+    public static func ROBOT_DEST() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROBOT_DEST"); }
+    public static func BUILD_BOMB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BUILD_BOMB"); }
+    public static func ARRESTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ARRESTED"); }
+    public static func PAROLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PAROLE"); }
+    public static func BOUNTY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOUNTY"); }
+    public static func WITNESS_PROT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WITNESS_PROT"); }
     // === CYBERWARE / MEDICAL ===
-    public static func INST_NEW_AUG() -> String { return "Installed a new cybernetic augmentation. "; }
-    public static func BOUGHT_CYBER() -> String { return "Bought cybernetics. "; }
-    public static func CANCEL_TTI() -> String { return "Canceled %his% Trauma Team Insurance. "; }
-    public static func FREE_TTI() -> String { return "Signed up as a human guinea pig receiving injections in stem cell chimera trials. Earned a voucher for one free month of Trauma Team Premium. "; }
+    public static func INST_NEW_AUG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INST_NEW_AUG"); }
+    public static func BOUGHT_CYBER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOUGHT_CYBER"); }
+    public static func CANCEL_TTI() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CANCEL_TTI"); }
+    public static func FREE_TTI() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FREE_TTI"); }
     // Expanded Adulthood - Career/Work
-    public static func FREELANCE() -> String { return "Works as a freelancer, taking gigs where %he% can find them. "; }
-    public static func CORPO_FIRED() -> String { return "Was fired from a corpo job under suspicious circumstances. "; }
-    public static func CORPO_BURNOUT() -> String { return "Burned out from the corporate grind. "; }
-    public static func SECOND_JOB() -> String { return "Works a second job just to make ends meet. "; }
-    public static func THIRD_SHIFT() -> String { return "Works the third shift at a factory. "; }
-    public static func GIG_ECONOMY() -> String { return "Survives on gig economy work. "; }
-    public static func SCAB_WORKER() -> String { return "Worked as a scab during a labor strike. "; }
-    public static func CORPO_LADDER() -> String { return "Climbed the corporate ladder through ruthless ambition. "; }
-    public static func DEMOTED() -> String { return "Was demoted after a corporate restructuring. "; }
-    public static func FIXER_REP() -> String { return "Has built a reputation with local fixers. "; }
-    public static func SOLO_WORK() -> String { return "Does solo work for various clients. "; }
-    public static func NETRUNNER_GIG() -> String { return "Takes netrunning gigs on the side. "; }
-    public static func TECHIE_REP() -> String { return "Known for %his% technical expertise. "; }
-    public static func MERC_CONTRACT() -> String { return "Completed a lucrative merc contract. "; }
-    public static func BOTCHED_JOB() -> String { return "Botched a job and is still paying for it. "; }
+    public static func FREELANCE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FREELANCE"); }
+    public static func CORPO_FIRED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_FIRED"); }
+    public static func CORPO_BURNOUT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_BURNOUT"); }
+    public static func SECOND_JOB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SECOND_JOB"); }
+    public static func THIRD_SHIFT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-THIRD_SHIFT"); }
+    public static func GIG_ECONOMY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GIG_ECONOMY"); }
+    public static func SCAB_WORKER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SCAB_WORKER"); }
+    public static func CORPO_LADDER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_LADDER"); }
+    public static func DEMOTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEMOTED"); }
+    public static func FIXER_REP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIXER_REP"); }
+    public static func SOLO_WORK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SOLO_WORK"); }
+    public static func NETRUNNER_GIG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NETRUNNER_GIG"); }
+    public static func TECHIE_REP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TECHIE_REP"); }
+    public static func MERC_CONTRACT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MERC_CONTRACT"); }
+    public static func BOTCHED_JOB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOTCHED_JOB"); }
     // Expanded Adulthood - Financial
-    public static func LOAN_SHARK() -> String { return "Owes money to a dangerous loan shark. "; }
-    public static func PAID_DEBT() -> String { return "Finally paid off a crushing debt. "; }
-    public static func SCAMMED() -> String { return "Was scammed out of %his% life savings. "; }
-    public static func SCAMMER() -> String { return "Runs scams to make a living. "; }
-    public static func UNDERGROUND_CASINO() -> String { return "Lost big at an underground casino. "; }
-    public static func BIG_SCORE() -> String { return "Pulled off a big score that set %him% up for years. "; }
-    public static func LOST_SCORE() -> String { return "Lost a big score to betrayal. "; }
-    public static func STOCK_CRASH() -> String { return "Lost everything in a stock market crash. "; }
-    public static func INSURANCE_FRAUD() -> String { return "Committed insurance fraud to survive. "; }
-    public static func TAX_EVASION() -> String { return "Under investigation for tax evasion. "; }
-    public static func WIRE_TRANSFER() -> String { return "Received a mysterious wire transfer. "; }
-    public static func MONEY_LAUNDERING() -> String { return "Involved in a money laundering operation. "; }
+    public static func LOAN_SHARK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOAN_SHARK"); }
+    public static func PAID_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PAID_DEBT"); }
+    public static func SCAMMED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SCAMMED"); }
+    public static func SCAMMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SCAMMER"); }
+    public static func UNDERGROUND_CASINO() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-UNDERGROUND_CASINO"); }
+    public static func BIG_SCORE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BIG_SCORE"); }
+    public static func LOST_SCORE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_SCORE"); }
+    public static func STOCK_CRASH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STOCK_CRASH"); }
+    public static func INSURANCE_FRAUD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INSURANCE_FRAUD"); }
+    public static func TAX_EVASION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TAX_EVASION"); }
+    public static func WIRE_TRANSFER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WIRE_TRANSFER"); }
+    public static func MONEY_LAUNDERING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MONEY_LAUNDERING"); }
     // Expanded Adulthood - Criminal
-    public static func HEIST() -> String { return "Participated in a high-profile heist. "; }
-    public static func SMUGGLING() -> String { return "Does smuggling runs across borders. "; }
-    public static func BLACKMAIL() -> String { return "Blackmails people for a living. "; }
-    public static func BLACKMAILED() -> String { return "Is being blackmailed by an unknown party. "; }
-    public static func FENCE() -> String { return "Works as a fence for stolen goods. "; }
-    public static func CARJACKING() -> String { return "Has a history of carjacking. "; }
-    public static func KIDNAPPING() -> String { return "Was involved in a kidnapping operation. "; }
-    public static func KIDNAPPED() -> String { return "Was kidnapped and held for ransom. "; }
-    public static func ARSON() -> String { return "Committed arson for hire. "; }
-    public static func CONTRACT_KILL() -> String { return "Carried out a contract killing. "; }
-    public static func WITNESS_KILL() -> String { return "Eliminated a witness to a crime. "; }
-    public static func EVIDENCE_TAMPER() -> String { return "Tampered with evidence in a criminal case. "; }
-    public static func BRIBED_NCPD() -> String { return "Has NCPD officers on the payroll. "; }
-    public static func FRAMED() -> String { return "Was framed for a crime %he% didn't commit. "; }
-    public static func PRISON_BREAK() -> String { return "Escaped from prison. "; }
-    public static func PAROLE_VIOL() -> String { return "Violated parole and is on the run. "; }
+    public static func HEIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HEIST"); }
+    public static func SMUGGLING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SMUGGLING"); }
+    public static func BLACKMAIL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BLACKMAIL"); }
+    public static func BLACKMAILED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BLACKMAILED"); }
+    public static func FENCE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FENCE"); }
+    public static func CARJACKING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CARJACKING"); }
+    public static func KIDNAPPING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KIDNAPPING"); }
+    public static func KIDNAPPED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KIDNAPPED"); }
+    public static func ARSON() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ARSON"); }
+    public static func CONTRACT_KILL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CONTRACT_KILL"); }
+    public static func WITNESS_KILL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WITNESS_KILL"); }
+    public static func EVIDENCE_TAMPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EVIDENCE_TAMPER"); }
+    public static func BRIBED_NCPD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BRIBED_NCPD"); }
+    public static func FRAMED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FRAMED"); }
+    public static func PRISON_BREAK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PRISON_BREAK"); }
+    public static func PAROLE_VIOL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PAROLE_VIOL"); }
     // Expanded Adulthood - Relationships
-    public static func MARRIED() -> String { return "Is married. "; }
-    public static func DIVORCED() -> String { return "Recently divorced. "; }
-    public static func AFFAIR() -> String { return "Is having an affair. "; }
-    public static func AFFAIR_VICTIM() -> String { return "Partner had an affair. "; }
-    public static func HAD_CHILD() -> String { return "Has a child. "; }
-    public static func LOST_CHILD() -> String { return "Lost a child to violence. "; }
-    public static func CHILD_TAKEN() -> String { return "Child was taken by authorities. "; }
-    public static func ORPHANED() -> String { return "Became an orphan as an adult. "; }
-    public static func SIBLING_DEATH() -> String { return "Lost a sibling recently. "; }
-    public static func REUNITED_FAM() -> String { return "Reunited with long-lost family. "; }
-    public static func DISOWNED() -> String { return "Was disowned by %his% family. "; }
-    public static func BEST_FRIEND_DEAD() -> String { return "Best friend was killed. "; }
-    public static func BETRAYED_FRIEND() -> String { return "Was betrayed by a close friend. "; }
-    public static func BETRAYED_SOMEONE() -> String { return "Betrayed someone close for personal gain. "; }
-    public static func ROMANTIC() -> String { return "In a romantic relationship. "; }
-    public static func HEARTBROKEN() -> String { return "Recovering from heartbreak. "; }
+    public static func MARRIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MARRIED"); }
+    public static func DIVORCED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DIVORCED"); }
+    public static func AFFAIR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-AFFAIR"); }
+    public static func AFFAIR_VICTIM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-AFFAIR_VICTIM"); }
+    public static func HAD_CHILD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HAD_CHILD"); }
+    public static func LOST_CHILD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_CHILD"); }
+    public static func CHILD_TAKEN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHILD_TAKEN"); }
+    public static func ORPHANED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ORPHANED"); }
+    public static func SIBLING_DEATH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SIBLING_DEATH"); }
+    public static func REUNITED_FAM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REUNITED_FAM"); }
+    public static func DISOWNED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DISOWNED"); }
+    public static func BEST_FRIEND_DEAD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BEST_FRIEND_DEAD"); }
+    public static func BETRAYED_FRIEND() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BETRAYED_FRIEND"); }
+    public static func BETRAYED_SOMEONE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BETRAYED_SOMEONE"); }
+    public static func ROMANTIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROMANTIC"); }
+    public static func HEARTBROKEN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HEARTBROKEN"); }
     // Expanded Adulthood - Cyberware/Tech
-    public static func CHROME_ADDICTION() -> String { return "Addicted to getting new chrome. "; }
-    public static func CYBER_REJECTION() -> String { return "Body rejected cyberware implants. "; }
-    public static func BLACK_MARKET_CHROME() -> String { return "Running black market chrome. "; }
-    public static func CYBERWARE_HACK() -> String { return "Had cyberware hacked by a netrunner. "; }
-    public static func MALFUNC_CHROME() -> String { return "Suffering from malfunctioning chrome. "; }
-    public static func CHEAP_RIPPER() -> String { return "Got bad chrome from a cheap ripper. "; }
-    public static func PREMIUM_CHROME() -> String { return "Has premium military-grade chrome. "; }
-    public static func CYBERPSYCHO_SCARE() -> String { return "Had a cyberpsychosis scare. "; }
-    public static func LIMB_REPLACEMENT() -> String { return "Has a cybernetic limb replacement. "; }
-    public static func EYE_REPLACEMENT() -> String { return "Has cybernetic eye replacements. "; }
-    public static func NEURAL_DAMAGE() -> String { return "Suffering from neural interface damage. "; }
-    public static func BRAINDANCE_DAMAGE() -> String { return "Has brain damage from BD addiction. "; }
+    public static func CHROME_ADDICTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHROME_ADDICTION"); }
+    public static func CYBER_REJECTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CYBER_REJECTION"); }
+    public static func BLACK_MARKET_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BLACK_MARKET_CHROME"); }
+    public static func CYBERWARE_HACK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CYBERWARE_HACK"); }
+    public static func MALFUNC_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MALFUNC_CHROME"); }
+    public static func CHEAP_RIPPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHEAP_RIPPER"); }
+    public static func PREMIUM_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PREMIUM_CHROME"); }
+    public static func CYBERPSYCHO_SCARE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CYBERPSYCHO_SCARE"); }
+    public static func LIMB_REPLACEMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LIMB_REPLACEMENT"); }
+    public static func EYE_REPLACEMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EYE_REPLACEMENT"); }
+    public static func NEURAL_DAMAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NEURAL_DAMAGE"); }
+    public static func BRAINDANCE_DAMAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BRAINDANCE_DAMAGE"); }
     // Expanded Adulthood - Gang Related
-    public static func JOINED_GANG() -> String { return "Joined a gang as an adult. "; }
-    public static func LEFT_GANG() -> String { return "Left %his% gang and is marked for death. "; }
-    public static func GANG_INITIATION() -> String { return "Passed a brutal gang initiation. "; }
-    public static func GANG_PROMOTION() -> String { return "Was promoted within the gang hierarchy. "; }
-    public static func GANG_EXILE() -> String { return "Exiled from %his% gang. "; }
-    public static func TURF_WAR() -> String { return "Veteran of multiple turf wars. "; }
-    public static func GANG_TATTOO() -> String { return "Has visible gang tattoos. "; }
-    public static func GANG_DEBT() -> String { return "Owes a debt to a gang. "; }
-    public static func PROTECTED() -> String { return "Under gang protection. "; }
-    public static func PROTECTION_RACKET() -> String { return "Runs a protection racket. "; }
+    public static func JOINED_GANG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JOINED_GANG"); }
+    public static func LEFT_GANG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LEFT_GANG"); }
+    public static func GANG_INITIATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GANG_INITIATION"); }
+    public static func GANG_PROMOTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GANG_PROMOTION"); }
+    public static func GANG_EXILE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GANG_EXILE"); }
+    public static func TURF_WAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TURF_WAR"); }
+    public static func GANG_TATTOO() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GANG_TATTOO"); }
+    public static func GANG_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GANG_DEBT"); }
+    public static func PROTECTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PROTECTED"); }
+    public static func PROTECTION_RACKET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PROTECTION_RACKET"); }
     // Expanded Adulthood - Violence/Trauma
-    public static func TORTURE_VICTIM() -> String { return "Was tortured for information. "; }
-    public static func TORTURE_PERPETRATOR() -> String { return "Has tortured others for information. "; }
-    public static func AMBUSHED() -> String { return "Survived an ambush. "; }
-    public static func CAR_BOMB() -> String { return "Survived a car bomb attack. "; }
-    public static func HOSTAGE() -> String { return "Was held hostage. "; }
-    public static func HOSTAGE_TAKER() -> String { return "Has taken hostages. "; }
-    public static func COMBAT_VET() -> String { return "Combat veteran. "; }
-    public static func PTSD() -> String { return "Suffers from PTSD. "; }
-    public static func EXPLOSION() -> String { return "Survived an explosion. "; }
-    public static func CHEMICAL_EXP() -> String { return "Was exposed to toxic chemicals. "; }
-    public static func RADIATION_EXP() -> String { return "Was exposed to radiation. "; }
+    public static func TORTURE_VICTIM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TORTURE_VICTIM"); }
+    public static func TORTURE_PERPETRATOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TORTURE_PERPETRATOR"); }
+    public static func AMBUSHED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-AMBUSHED"); }
+    public static func CAR_BOMB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CAR_BOMB"); }
+    public static func HOSTAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HOSTAGE"); }
+    public static func HOSTAGE_TAKER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HOSTAGE_TAKER"); }
+    public static func COMBAT_VET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-COMBAT_VET"); }
+    public static func PTSD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PTSD"); }
+    public static func EXPLOSION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EXPLOSION"); }
+    public static func CHEMICAL_EXP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHEMICAL_EXP"); }
+    public static func RADIATION_EXP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RADIATION_EXP"); }
     // Expanded Adulthood - Misc Life Events
-    public static func NEAR_DEATH() -> String { return "Had a near-death experience. "; }
-    public static func FLATLINED() -> String { return "Flatlined and was resuscitated. "; }
-    public static func COMA() -> String { return "Was in a coma for months. "; }
-    public static func HOMELESS() -> String { return "Was homeless for a period. "; }
-    public static func REFUGEE() -> String { return "Was a refugee from another city. "; }
-    public static func ILLEGAL_IMMIGRANT() -> String { return "Illegal immigrant status. "; }
-    public static func DEPORTATION() -> String { return "Facing deportation. "; }
-    public static func CITIZENSHIP() -> String { return "Recently gained citizenship. "; }
-    public static func FAMOUS() -> String { return "Briefly famous in Night City. "; }
-    public static func VIRAL() -> String { return "Went viral on the net. "; }
-    public static func SCANDAL() -> String { return "Involved in a public scandal. "; }
-    public static func MEDIA_TARGET() -> String { return "Target of a media smear campaign. "; }
-    public static func EDUCATED() -> String { return "Has a college education. "; }
-    public static func DROPPED_OUT() -> String { return "Dropped out of college. "; }
-    public static func MENTOR() -> String { return "Mentors younger people. "; }
-    public static func MENTORED() -> String { return "Was mentored by a professional. "; }
-    public static func CLUB_REGULAR() -> String { return "Regular at Night City clubs. "; }
-    public static func LIZZIE_REGULAR() -> String { return "Regular at Lizzie's Bar. "; }
-    public static func TOTENTANZ() -> String { return "Frequents Totentanz. "; }
-    public static func EMBERS() -> String { return "VIP at Embers. "; }
-    public static func CYBERPSYCHO_WIT() -> String { return "Witnessed a cyberpsycho attack. "; }
-    public static func SURVIVED_MAXTAC() -> String { return "Survived a MaxTac encounter. "; }
-    public static func CAR_ACCIDENT() -> String { return "Was in a car accident. "; }
-    public static func INDUSTRIAL_ACC() -> String { return "Was in an industrial accident. "; }
-    public static func CHROME_REJECT() -> String { return "Suffered chrome rejection and had implants removed. "; }
-    public static func BOOTLEG_CHROME() -> String { return "Installed bootleg chrome that caused complications. "; }
-    public static func SURGERY() -> String { return "Underwent major surgery. "; }
-    public static func CHRONIC() -> String { return "Developed a chronic illness. "; }
+    public static func NEAR_DEATH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NEAR_DEATH"); }
+    public static func FLATLINED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FLATLINED"); }
+    public static func COMA() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-COMA"); }
+    public static func HOMELESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HOMELESS"); }
+    public static func REFUGEE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REFUGEE"); }
+    public static func ILLEGAL_IMMIGRANT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ILLEGAL_IMMIGRANT"); }
+    public static func DEPORTATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEPORTATION"); }
+    public static func CITIZENSHIP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CITIZENSHIP"); }
+    public static func FAMOUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FAMOUS"); }
+    public static func VIRAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-VIRAL"); }
+    public static func SCANDAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SCANDAL"); }
+    public static func MEDIA_TARGET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MEDIA_TARGET"); }
+    public static func EDUCATED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EDUCATED"); }
+    public static func DROPPED_OUT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DROPPED_OUT"); }
+    public static func MENTOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MENTOR"); }
+    public static func MENTORED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MENTORED"); }
+    public static func CLUB_REGULAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CLUB_REGULAR"); }
+    public static func LIZZIE_REGULAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LIZZIE_REGULAR"); }
+    public static func TOTENTANZ() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TOTENTANZ"); }
+    public static func EMBERS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EMBERS"); }
+    public static func CYBERPSYCHO_WIT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CYBERPSYCHO_WIT"); }
+    public static func SURVIVED_MAXTAC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SURVIVED_MAXTAC"); }
+    public static func CAR_ACCIDENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CAR_ACCIDENT"); }
+    public static func INDUSTRIAL_ACC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INDUSTRIAL_ACC"); }
+    public static func CHROME_REJECT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHROME_REJECT"); }
+    public static func BOOTLEG_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOOTLEG_CHROME"); }
+    public static func SURGERY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SURGERY"); }
+    public static func CHRONIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHRONIC"); }
     // === SUBSTANCES ===
-    public static func BCME_CHEMHEAD() -> String { return "Became a chemhead. "; }
-    public static func TOB_CONSUMER() -> String { return "Tobacco consumer. "; }
-    public static func AL_BEV_CONSUMER() -> String { return "Alcoholic beverage consumer. "; }
-    public static func BD_CONSUMER() -> String { return "Braindance customer. "; }
-    public static func BD_ADDICT() -> String { return "Braindance addict. "; }
-    public static func CLEAN() -> String { return "Got clean and sober. "; }
-    public static func OVERDOSED() -> String { return "Overdosed and nearly died. "; }
-    public static func REHAB() -> String { return "Went through rehabilitation. "; }
+    public static func BCME_CHEMHEAD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BCME_CHEMHEAD"); }
+    public static func TOB_CONSUMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TOB_CONSUMER"); }
+    public static func AL_BEV_CONSUMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-AL_BEV_CONSUMER"); }
+    public static func BD_CONSUMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BD_CONSUMER"); }
+    public static func BD_ADDICT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BD_ADDICT"); }
+    public static func CLEAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CLEAN"); }
+    public static func OVERDOSED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-OVERDOSED"); }
+    public static func REHAB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REHAB"); }
     // === CONSUMER / LIFESTYLE ===
-    public static func WATER_CONSUMER() -> String { return "Real Water subscriber. "; }
-    public static func JOYTOY_CONSUMER() -> String { return "Joytoy customer. "; }
-    public static func RELIC_ASPIRANT() -> String { return "Relic aspirant. "; }
-    public static func BOUGHT_SHARD() -> String { return "Bought a shard. "; }
-    public static func BOUGHT_GUN() -> String { return "Bought a firearm. "; }
-    public static func BOUGHT_SWORD() -> String { return "Bought a sword. "; }
-    public static func TWO_AM_CLUB() -> String { return "2nd Amendment club member. "; }
-    public static func VAC_AFRICA() -> String { return "Vacationed in sunny Africa. "; }
-    public static func JUMP_TRAFFIC() -> String { return "Jumps into traffic daily at heights and crosswalks. "; }
-    public static func EMAIL_GOV() -> String { return "Composes hopeless policy emails to government officials. Deletes %his% eloquent manifesto in despair without sending. InfoComp retains backup copies. "; }
-    public static func GYM() -> String { return "Joined a gym. "; }
-    public static func PILGRIMAGE() -> String { return "Went on a spiritual pilgrimage. "; }
+    public static func WATER_CONSUMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WATER_CONSUMER"); }
+    public static func JOYTOY_CONSUMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JOYTOY_CONSUMER"); }
+    public static func RELIC_ASPIRANT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RELIC_ASPIRANT"); }
+    public static func BOUGHT_SHARD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOUGHT_SHARD"); }
+    public static func BOUGHT_GUN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOUGHT_GUN"); }
+    public static func BOUGHT_SWORD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOUGHT_SWORD"); }
+    public static func TWO_AM_CLUB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TWO_AM_CLUB"); }
+    public static func VAC_AFRICA() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-VAC_AFRICA"); }
+    public static func JUMP_TRAFFIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JUMP_TRAFFIC"); }
+    public static func EMAIL_GOV() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EMAIL_GOV"); }
+    public static func GYM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GYM"); }
+    public static func PILGRIMAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PILGRIMAGE"); }
     // === RELATIONSHIPS ===
-    public static func PARTNER_DIED() -> String { return "Partner died tragically. "; }
-    public static func BETRAYED() -> String { return "Was betrayed by a close friend. "; }
-    public static func RECONNECT_FAM() -> String { return "Reconnected with estranged family. "; }
-    public static func CUT_FAM() -> String { return "Cut off contact with family. "; }
+    public static func PARTNER_DIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PARTNER_DIED"); }
+    public static func BETRAYED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BETRAYED"); }
+    public static func RECONNECT_FAM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RECONNECT_FAM"); }
+    public static func CUT_FAM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CUT_FAM"); }
     // === MUSIC / ENTERTAINMENT ===
-    public static func JOIN_NEW_BAND() -> String { return "Joined a new band. "; }
-    public static func BAND_BROKE() -> String { return "Band broke up. "; }
-    public static func ALBUM() -> String { return "Released an album. "; }
+    public static func JOIN_NEW_BAND() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JOIN_NEW_BAND"); }
+    public static func BAND_BROKE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BAND_BROKE"); }
+    public static func ALBUM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ALBUM"); }
     // === VIOLENCE / COMBAT ===
-    public static func SURVIVED_ATK() -> String { return "Survived a violent attack. "; }
-    public static func KILLED_DEFENSE() -> String { return "Killed someone in self-defense. "; }
-    public static func GANG_WAR() -> String { return "Survived a gang war. "; }
-    public static func SHOT() -> String { return "Was shot and survived. "; }
-    public static func STABBED() -> String { return "Was stabbed and survived. "; }
-    public static func LEFT_DEAD() -> String { return "Was left for dead but survived. "; }
+    public static func SURVIVED_ATK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SURVIVED_ATK"); }
+    public static func KILLED_DEFENSE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KILLED_DEFENSE"); }
+    public static func GANG_WAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GANG_WAR"); }
+    public static func SHOT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SHOT"); }
+    public static func STABBED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STABBED"); }
+    public static func LEFT_DEAD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LEFT_DEAD"); }
     // === MISC ===
-    public static func MOVED_NC() -> String { return "Moved to Night City. "; }
-    public static func LEFT_NC() -> String { return "Left Night City temporarily. "; }
-    public static func JOINED_CULT() -> String { return "Joined a cult. "; }
-    public static func LEFT_CULT() -> String { return "Left a cult. "; }
-    public static func BECAME_NOMAD() -> String { return "Left city life to become a nomad. "; }
-    public static func LEFT_NOMADS() -> String { return "Left nomad life for the city. "; }
-    public static func ID_CHANGE() -> String { return "Changed identity to escape past. "; }
-    public static func WENT_MISSING() -> String { return "Went missing for several months. "; }
-    public static func MEMORY_LOSS() -> String { return "Suffered partial memory loss. "; }
-    public static func FOUND_FAITH() -> String { return "Found faith in a higher power. "; }
-    public static func LOST_FAITH() -> String { return "Lost faith entirely. "; }
-    public static func POLITICAL() -> String { return "Had a political awakening. "; }
-    public static func ACTIVISM() -> String { return "Became involved in activism. "; }
+    public static func MOVED_NC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MOVED_NC"); }
+    public static func LEFT_NC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LEFT_NC"); }
+    public static func JOINED_CULT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JOINED_CULT"); }
+    public static func LEFT_CULT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LEFT_CULT"); }
+    public static func BECAME_NOMAD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BECAME_NOMAD"); }
+    public static func LEFT_NOMADS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LEFT_NOMADS"); }
+    public static func ID_CHANGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ID_CHANGE"); }
+    public static func WENT_MISSING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WENT_MISSING"); }
+    public static func MEMORY_LOSS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MEMORY_LOSS"); }
+    public static func FOUND_FAITH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FOUND_FAITH"); }
+    public static func LOST_FAITH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_FAITH"); }
+    public static func POLITICAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-POLITICAL"); }
+    public static func ACTIVISM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ACTIVISM"); }
     // === EXPANDED: RELATIONSHIPS ===
-    public static func HEARTBROKEN_ADULT() -> String { return "Had %his% heart broken in adulthood. "; }
+    public static func HEARTBROKEN_ADULT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HEARTBROKEN_ADULT"); }
     // === EXPANDED: GANG INVOLVEMENT ===
-    public static func JOINED_GANG_ADULT() -> String { return "Joined a gang later in life. "; }
+    public static func JOINED_GANG_ADULT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JOINED_GANG_ADULT"); }
     // === EXPANDED: MENTORSHIP ===
-    public static func MENTORED_ADULT() -> String { return "Found a mentor who changed %his% life. "; }
+    public static func MENTORED_ADULT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MENTORED_ADULT"); }
     // === EXPANDED: NEAR-DEATH ===
-    public static func NEAR_DEATH_ADULT() -> String { return "Nearly died as an adult. "; }
+    public static func NEAR_DEATH_ADULT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NEAR_DEATH_ADULT"); }
     // === EXPANDED: CAREER ===
-    public static func PROMOTED() -> String { return "Got promoted at work. "; }
-    public static func FIRED_UNFAIRLY() -> String { return "Was fired unfairly. "; }
-    public static func STARTED_BUSINESS() -> String { return "Started a small business. "; }
-    public static func BUSINESS_FAILED() -> String { return "Had a business venture fail. "; }
-    public static func CAREER_CHANGE() -> String { return "Made a major career change. "; }
+    public static func PROMOTED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PROMOTED"); }
+    public static func FIRED_UNFAIRLY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIRED_UNFAIRLY"); }
+    public static func STARTED_BUSINESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STARTED_BUSINESS"); }
+    public static func BUSINESS_FAILED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BUSINESS_FAILED"); }
+    public static func CAREER_CHANGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CAREER_CHANGE"); }
     // === EXPANDED: CRIME ===
-    public static func FIRST_KILL() -> String { return "Committed %his% first kill. "; }
-    public static func HITMAN_JOB() -> String { return "Took a job as a hitman. "; }
-    public static func HEIST_SUCCESS() -> String { return "Pulled off a successful heist. "; }
-    public static func HEIST_FAILED() -> String { return "Had a heist go wrong. "; }
-    public static func INFORMANT() -> String { return "Became a police informant. "; }
-    public static func WITNESS_PROTECTION() -> String { return "Entered witness protection. "; }
+    public static func FIRST_KILL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIRST_KILL"); }
+    public static func HITMAN_JOB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HITMAN_JOB"); }
+    public static func HEIST_SUCCESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HEIST_SUCCESS"); }
+    public static func HEIST_FAILED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HEIST_FAILED"); }
+    public static func INFORMANT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INFORMANT"); }
+    public static func WITNESS_PROTECTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WITNESS_PROTECTION"); }
     // === EXPANDED: TRAUMA ===
-    public static func MUGGED() -> String { return "Was violently mugged. "; }
-    public static func HOME_INVASION() -> String { return "Survived a home invasion. "; }
-    public static func TORTURED() -> String { return "Was tortured for information. "; }
-    public static func BUILDING_COLLAPSE() -> String { return "Survived a building collapse. "; }
+    public static func MUGGED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MUGGED"); }
+    public static func HOME_INVASION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HOME_INVASION"); }
+    public static func TORTURED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TORTURED"); }
+    public static func BUILDING_COLLAPSE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BUILDING_COLLAPSE"); }
     // === EXPANDED: RELATIONSHIPS ===
-    public static func GOT_MARRIED() -> String { return "Got married. "; }
-    public static func GOT_DIVORCED() -> String { return "Got divorced. "; }
-    public static func SPOUSE_DIED() -> String { return "Lost a spouse to violence. "; }
-    public static func CHILD_DIED() -> String { return "Lost a child. "; }
-    public static func CAUGHT_CHEATING() -> String { return "Was caught cheating. "; }
-    public static func RECONCILED() -> String { return "Reconciled with estranged family. "; }
+    public static func GOT_MARRIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GOT_MARRIED"); }
+    public static func GOT_DIVORCED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GOT_DIVORCED"); }
+    public static func SPOUSE_DIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SPOUSE_DIED"); }
+    public static func CHILD_DIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHILD_DIED"); }
+    public static func CAUGHT_CHEATING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CAUGHT_CHEATING"); }
+    public static func RECONCILED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RECONCILED"); }
     // === EXPANDED: HEALTH ===
-    public static func DIAGNOSED_ILLNESS() -> String { return "Was diagnosed with a serious illness. "; }
-    public static func BEAT_ILLNESS() -> String { return "Beat a serious illness. "; }
-    public static func CYBERWARE_REJECTION() -> String { return "Suffered cyberware rejection syndrome. "; }
-    public static func ORGAN_REPLACEMENT() -> String { return "Had an organ replaced with cyberware. "; }
-    public static func BRAIN_DAMAGE() -> String { return "Suffered brain damage from an accident. "; }
-    public static func LOST_LIMB() -> String { return "Lost a limb and got a cybernetic replacement. "; }
+    public static func DIAGNOSED_ILLNESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DIAGNOSED_ILLNESS"); }
+    public static func BEAT_ILLNESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BEAT_ILLNESS"); }
+    public static func CYBERWARE_REJECTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CYBERWARE_REJECTION"); }
+    public static func ORGAN_REPLACEMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ORGAN_REPLACEMENT"); }
+    public static func BRAIN_DAMAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BRAIN_DAMAGE"); }
+    public static func LOST_LIMB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_LIMB"); }
     // === EXPANDED: SUCCESS ===
-    public static func LOTTERY_WIN() -> String { return "Won a small lottery. "; }
-    public static func FAMOUS_BRIEFLY() -> String { return "Was briefly famous. "; }
-    public static func VIRAL_MOMENT() -> String { return "Had a viral moment on the net. "; }
-    public static func SAVED_SOMEONE() -> String { return "Saved someone's life. "; }
-    public static func AWARD() -> String { return "Won a professional award. "; }
+    public static func LOTTERY_WIN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOTTERY_WIN"); }
+    public static func FAMOUS_BRIEFLY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FAMOUS_BRIEFLY"); }
+    public static func VIRAL_MOMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-VIRAL_MOMENT"); }
+    public static func SAVED_SOMEONE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SAVED_SOMEONE"); }
+    public static func AWARD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-AWARD"); }
     // === EXPANDED: MISC ===
-    public static func WENT_CORPO() -> String { return "Went corporate after years on the street. "; }
-    public static func LEFT_CORPO() -> String { return "Left the corporate world behind. "; }
-    public static func MOVED_DISTRICT() -> String { return "Moved to a different district. "; }
-    public static func HOMELESS_PERIOD() -> String { return "Spent time homeless. "; }
-    public static func DEBT_CRISIS() -> String { return "Went through a severe debt crisis. "; }
-    public static func IDENTITY_STOLEN() -> String { return "Had identity stolen. "; }
+    public static func WENT_CORPO() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WENT_CORPO"); }
+    public static func LEFT_CORPO() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LEFT_CORPO"); }
+    public static func MOVED_DISTRICT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MOVED_DISTRICT"); }
+    public static func HOMELESS_PERIOD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HOMELESS_PERIOD"); }
+    public static func DEBT_CRISIS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEBT_CRISIS"); }
+    public static func IDENTITY_STOLEN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-IDENTITY_STOLEN"); }
     // === EXPANDED: VIOLENCE ===
-    public static func DRIVE_BY() -> String { return "Survived a drive-by shooting. "; }
-    public static func GANG_BEATING() -> String { return "Received a gang beating. "; }
-    public static func CARJACKED() -> String { return "Was carjacked at gunpoint. "; }
+    public static func DRIVE_BY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DRIVE_BY"); }
+    public static func GANG_BEATING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GANG_BEATING"); }
+    public static func CARJACKED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CARJACKED"); }
     // === EXPANDED: WORK DRAMA ===
-    public static func WORKPLACE_AFFAIR() -> String { return "Had an affair at work. "; }
-    public static func WORKPLACE_ENEMY() -> String { return "Made a bitter enemy at work. "; }
-    public static func QUIT_DRAMATICALLY() -> String { return "Quit a job dramatically. "; }
-    public static func CORPORATE_PURGE() -> String { return "Survived a corporate purge. "; }
-    public static func LAYOFF() -> String { return "Was laid off unexpectedly. "; }
-    public static func DEMOTION() -> String { return "Was demoted at work. "; }
-    public static func TRANSFERRED() -> String { return "Was transferred against %his% will. "; }
+    public static func WORKPLACE_AFFAIR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WORKPLACE_AFFAIR"); }
+    public static func WORKPLACE_ENEMY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WORKPLACE_ENEMY"); }
+    public static func QUIT_DRAMATICALLY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-QUIT_DRAMATICALLY"); }
+    public static func CORPORATE_PURGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPORATE_PURGE"); }
+    public static func LAYOFF() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LAYOFF"); }
+    public static func DEMOTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEMOTION"); }
+    public static func TRANSFERRED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TRANSFERRED"); }
     // === EXPANDED: PERSONAL GROWTH ===
-    public static func LEARNED_LANGUAGE() -> String { return "Learned a new language. "; }
-    public static func GOT_DEGREE() -> String { return "Earned a degree. "; }
-    public static func NEW_SKILL() -> String { return "Learned a valuable new skill. "; }
-    public static func SOBRIETY() -> String { return "Got sober after addiction. "; }
-    public static func THERAPY() -> String { return "Started therapy. "; }
-    public static func FITNESS() -> String { return "Got serious about fitness. "; }
+    public static func LEARNED_LANGUAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LEARNED_LANGUAGE"); }
+    public static func GOT_DEGREE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GOT_DEGREE"); }
+    public static func NEW_SKILL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NEW_SKILL"); }
+    public static func SOBRIETY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SOBRIETY"); }
+    public static func THERAPY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-THERAPY"); }
+    public static func FITNESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FITNESS"); }
     // === EXPANDED: FAMILY ===
-    public static func LOST_CUSTODY() -> String { return "Lost custody of a child. "; }
-    public static func MISCARRIAGE() -> String { return "Suffered a miscarriage. "; }
-    public static func ESTRANGED_FAMILY() -> String { return "Became estranged from family. "; }
-    public static func CARETAKER() -> String { return "Became a caretaker for a sick relative. "; }
-    public static func PARENT_DIED() -> String { return "Lost a parent. "; }
+    public static func LOST_CUSTODY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_CUSTODY"); }
+    public static func MISCARRIAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MISCARRIAGE"); }
+    public static func ESTRANGED_FAMILY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ESTRANGED_FAMILY"); }
+    public static func CARETAKER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CARETAKER"); }
+    public static func PARENT_DIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PARENT_DIED"); }
     // === EXPANDED: LEGAL ===
-    public static func SUED() -> String { return "Was sued in civil court. "; }
-    public static func WON_LAWSUIT() -> String { return "Won a lawsuit. "; }
-    public static func LOST_LAWSUIT() -> String { return "Lost a lawsuit badly. "; }
-    public static func PROBATION() -> String { return "Was put on probation. "; }
-    public static func CHARGES_DROPPED() -> String { return "Had charges dropped. "; }
-    public static func WRONGFUL_ARREST() -> String { return "Was wrongfully arrested. "; }
+    public static func SUED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SUED"); }
+    public static func WON_LAWSUIT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WON_LAWSUIT"); }
+    public static func LOST_LAWSUIT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LOST_LAWSUIT"); }
+    public static func PROBATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PROBATION"); }
+    public static func CHARGES_DROPPED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHARGES_DROPPED"); }
+    public static func WRONGFUL_ARREST() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WRONGFUL_ARREST"); }
     // === EXPANDED: UNDERWORLD ===
-    public static func FIRST_FIXER_JOB() -> String { return "Completed first job for a fixer. "; }
-    public static func DOUBLE_CROSSED() -> String { return "Was double-crossed on a job. "; }
-    public static func SCORED_BIG() -> String { return "Scored big on a job. "; }
-    public static func BURNED_FIXER() -> String { return "Burned a fixer and made enemies. "; }
-    public static func REP_BOOST() -> String { return "Reputation increased significantly. "; }
-    public static func REP_TANK() -> String { return "Reputation tanked after a failed job. "; }
+    public static func FIRST_FIXER_JOB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIRST_FIXER_JOB"); }
+    public static func DOUBLE_CROSSED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DOUBLE_CROSSED"); }
+    public static func SCORED_BIG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SCORED_BIG"); }
+    public static func BURNED_FIXER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BURNED_FIXER"); }
+    public static func REP_BOOST() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REP_BOOST"); }
+    public static func REP_TANK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REP_TANK"); }
     // === NET / TECH CULTURE ===
-    public static func HACKED_BY_VDBS() -> String { return "Was hacked by the Voodoo Boys. Lost three days of memory. "; }
-    public static func ICE_BREACH() -> String { return "Personal ICE was breached. Financial data compromised. "; }
-    public static func SOLD_DATA() -> String { return "Sold personal data to a corp for quick eddies. "; }
-    public static func DEEP_NET() -> String { return "Went deep into the Old Net. Came back different. "; }
-    public static func SHARD_MALWARE() -> String { return "Slotted a shard loaded with malware. "; }
-    public static func DATA_BROKER() -> String { return "Works as a data broker on the side. "; }
-    public static func DAEMON_ATTACK() -> String { return "Survived a daemon attack through a public terminal. "; }
-    public static func GHOST_PROFILE() -> String { return "Maintains a ghost profile — minimal net footprint. "; }
+    public static func HACKED_BY_VDBS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HACKED_BY_VDBS"); }
+    public static func ICE_BREACH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ICE_BREACH"); }
+    public static func SOLD_DATA() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SOLD_DATA"); }
+    public static func DEEP_NET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEEP_NET"); }
+    public static func SHARD_MALWARE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SHARD_MALWARE"); }
+    public static func DATA_BROKER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DATA_BROKER"); }
+    public static func DAEMON_ATTACK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DAEMON_ATTACK"); }
+    public static func GHOST_PROFILE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GHOST_PROFILE"); }
     // === CORPO INTRIGUE ===
-    public static func CORPO_SABOTAGE() -> String { return "Was the target of corporate sabotage. "; }
-    public static func CORPO_ESPIONAGE() -> String { return "Participated in corporate espionage. "; }
-    public static func CORPO_RELOCATION() -> String { return "Was forcibly relocated by %his% employer. "; }
-    public static func CORPO_BUYOUT() -> String { return "Survived a hostile corporate buyout. "; }
-    public static func NDA_VIOLATION() -> String { return "Broke an NDA. Legal consequences pending. "; }
-    public static func CORPO_EXPERIMENT() -> String { return "Was unknowingly part of a corporate experiment. "; }
-    public static func GOLDEN_PARACHUTE() -> String { return "Left a corp with a generous severance package. "; }
+    public static func CORPO_SABOTAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_SABOTAGE"); }
+    public static func CORPO_ESPIONAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_ESPIONAGE"); }
+    public static func CORPO_RELOCATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_RELOCATION"); }
+    public static func CORPO_BUYOUT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_BUYOUT"); }
+    public static func NDA_VIOLATION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NDA_VIOLATION"); }
+    public static func CORPO_EXPERIMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_EXPERIMENT"); }
+    public static func GOLDEN_PARACHUTE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GOLDEN_PARACHUTE"); }
     // === NIGHT CITY SURVIVAL ===
-    public static func ACID_RAIN() -> String { return "Suffered chemical burns from acid rain exposure. "; }
-    public static func BUILDING_FIRE() -> String { return "Lost everything in an apartment building fire. "; }
-    public static func MEGABUILDING_LOCKDOWN() -> String { return "Survived a megabuilding lockdown. "; }
-    public static func POWER_GRID() -> String { return "Went two weeks without power during a grid failure. "; }
-    public static func CONTAMINATED_WATER() -> String { return "Was poisoned by contaminated water supply. "; }
-    public static func SCAV_TARGET() -> String { return "Was targeted by Scavengers for organ harvesting. Escaped. "; }
-    public static func CYBERPSYCHO_ATTACK() -> String { return "Caught in the crossfire of a cyberpsycho rampage. "; }
-    public static func DELAMAIN_CRASH() -> String { return "Was in a Delamain cab during a system malfunction. "; }
-    public static func NCART_MUGGED() -> String { return "Was mugged on the NCART. "; }
-    public static func STRAY_BULLET() -> String { return "Was hit by a stray bullet during a street shootout. "; }
+    public static func ACID_RAIN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ACID_RAIN"); }
+    public static func BUILDING_FIRE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BUILDING_FIRE"); }
+    public static func MEGABUILDING_LOCKDOWN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MEGABUILDING_LOCKDOWN"); }
+    public static func POWER_GRID() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-POWER_GRID"); }
+    public static func CONTAMINATED_WATER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CONTAMINATED_WATER"); }
+    public static func SCAV_TARGET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SCAV_TARGET"); }
+    public static func CYBERPSYCHO_ATTACK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CYBERPSYCHO_ATTACK"); }
+    public static func DELAMAIN_CRASH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DELAMAIN_CRASH"); }
+    public static func NCART_MUGGED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NCART_MUGGED"); }
+    public static func STRAY_BULLET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STRAY_BULLET"); }
     // === MEDICAL / TRAUMA TEAM ===
-    public static func TT_SAVED() -> String { return "Was saved by Trauma Team. Still paying the bill. "; }
-    public static func TT_DENIED() -> String { return "Trauma Team refused service. Coverage had lapsed. "; }
-    public static func BAD_RIPPER() -> String { return "Went to a back-alley ripperdoc. Got an infection. "; }
-    public static func ORGAN_SOLD() -> String { return "Sold a kidney to pay off debts. "; }
-    public static func CLONED_ORGAN() -> String { return "Received a cloned organ transplant. "; }
-    public static func EXPERIMENTAL_DRUG() -> String { return "Volunteered for experimental drug trials. "; }
-    public static func MISDIAGNOSED() -> String { return "Was misdiagnosed and received wrong treatment. "; }
+    public static func TT_SAVED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TT_SAVED"); }
+    public static func TT_DENIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TT_DENIED"); }
+    public static func BAD_RIPPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BAD_RIPPER"); }
+    public static func ORGAN_SOLD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ORGAN_SOLD"); }
+    public static func CLONED_ORGAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CLONED_ORGAN"); }
+    public static func EXPERIMENTAL_DRUG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EXPERIMENTAL_DRUG"); }
+    public static func MISDIAGNOSED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MISDIAGNOSED"); }
     // === BRAINDANCE / MEDIA ===
-    public static func BD_RECORDED() -> String { return "Was unknowingly recorded for a braindance. "; }
-    public static func XBD_EXPOSURE() -> String { return "Was exposed to illegal XBDs. Still affected. "; }
-    public static func MEDIA_INTERVIEW() -> String { return "Was interviewed by a media crew. Story was twisted. "; }
-    public static func DEEPFAKE() -> String { return "Was the victim of a deepfake scandal. "; }
-    public static func PIRATE_RADIO() -> String { return "Ran a pirate radio station. "; }
+    public static func BD_RECORDED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BD_RECORDED"); }
+    public static func XBD_EXPOSURE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-XBD_EXPOSURE"); }
+    public static func MEDIA_INTERVIEW() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MEDIA_INTERVIEW"); }
+    public static func DEEPFAKE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEEPFAKE"); }
+    public static func PIRATE_RADIO() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PIRATE_RADIO"); }
     // === DISPLACEMENT / MIGRATION ===
-    public static func FLED_PACIFICA() -> String { return "Fled Pacifica after the collapse. "; }
-    public static func CLIMATE_REFUGEE() -> String { return "Climate refugee from the Southwest droughts. "; }
-    public static func CORPO_WAR_REFUGEE() -> String { return "Displaced by the Fourth Corporate War. "; }
-    public static func SQUATTER() -> String { return "Squatting in an abandoned building. "; }
-    public static func EVICTED_MEGA() -> String { return "Was evicted from a megabuilding for unpaid rent. "; }
+    public static func FLED_PACIFICA() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FLED_PACIFICA"); }
+    public static func CLIMATE_REFUGEE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CLIMATE_REFUGEE"); }
+    public static func CORPO_WAR_REFUGEE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_WAR_REFUGEE"); }
+    public static func SQUATTER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SQUATTER"); }
+    public static func EVICTED_MEGA() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EVICTED_MEGA"); }
     // === VIGILANTE / JUSTICE ===
-    public static func VIGILANTE() -> String { return "Took justice into %his% own hands once. "; }
-    public static func WRONGFUL_NCPD() -> String { return "Was beaten by NCPD during a false arrest. "; }
-    public static func BRIBE_NCPD() -> String { return "Bribed NCPD to avoid charges. "; }
-    public static func TURNED_IN_FRIEND() -> String { return "Turned in a friend for the bounty. "; }
+    public static func VIGILANTE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-VIGILANTE"); }
+    public static func WRONGFUL_NCPD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WRONGFUL_NCPD"); }
+    public static func BRIBE_NCPD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BRIBE_NCPD"); }
+    public static func TURNED_IN_FRIEND() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TURNED_IN_FRIEND"); }
     // === RIPPERDOC / CYBERWARE CULTURE ===
-    public static func CHROME_JUNKIE() -> String { return "Gets new chrome every month. Can't stop upgrading. "; }
-    public static func STRIPPED_CHROME() -> String { return "Had chrome forcibly stripped by Scavengers. "; }
-    public static func SECONDHAND_CHROME() -> String { return "Running secondhand chrome pulled from a corpse. "; }
-    public static func SANDEVISTAN_SIDE() -> String { return "Suffering side effects from Sandevistan overuse. "; }
-    public static func KIROSHI_GLITCH() -> String { return "Kiroshi optics keep glitching. Can't afford a fix. "; }
+    public static func CHROME_JUNKIE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHROME_JUNKIE"); }
+    public static func STRIPPED_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STRIPPED_CHROME"); }
+    public static func SECONDHAND_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SECONDHAND_CHROME"); }
+    public static func SANDEVISTAN_SIDE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SANDEVISTAN_SIDE"); }
+    public static func KIROSHI_GLITCH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KIROSHI_GLITCH"); }
     // === COMMUNITY / SOCIAL ===
-    public static func BLOCK_PARTY() -> String { return "Organized a block party that turned into a brawl. "; }
-    public static func NEIGHBORHOOD_WATCH() -> String { return "Started a neighborhood watch. "; }
-    public static func FOOD_BANK() -> String { return "Volunteers at a food bank. "; }
-    public static func STREET_PREACHER() -> String { return "Became a street preacher. "; }
-    public static func UNDERGROUND_FIGHT() -> String { return "Competed in underground fights. "; }
+    public static func BLOCK_PARTY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BLOCK_PARTY"); }
+    public static func NEIGHBORHOOD_WATCH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NEIGHBORHOOD_WATCH"); }
+    public static func FOOD_BANK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FOOD_BANK"); }
+    public static func STREET_PREACHER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STREET_PREACHER"); }
+    public static func UNDERGROUND_FIGHT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-UNDERGROUND_FIGHT"); }
     // === ROMANTIC / PERSONAL ===
-    public static func JOYTOY_RELATIONSHIP() -> String { return "Fell in love with a joytoy. "; }
-    public static func STALKED() -> String { return "Was stalked by an ex. "; }
-    public static func CATFISHED() -> String { return "Was catfished through a dating service. "; }
-    public static func PREGNANT_SCARE() -> String { return "Partner had a pregnancy scare that changed everything. "; }
-    public static func ELOPED() -> String { return "Eloped. Family doesn't know. "; }
+    public static func JOYTOY_RELATIONSHIP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JOYTOY_RELATIONSHIP"); }
+    public static func STALKED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STALKED"); }
+    public static func CATFISHED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CATFISHED"); }
+    public static func PREGNANT_SCARE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PREGNANT_SCARE"); }
+    public static func ELOPED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ELOPED"); }
     // === TRANSPORTATION / VEHICLES ===
-    public static func ROAD_RAGE() -> String { return "Was involved in a road rage incident on the highway. "; }
-    public static func STOLEN_CAR() -> String { return "Had car stolen. Never recovered. "; }
-    public static func ILLEGAL_RACING() -> String { return "Got into illegal street racing. "; }
-    public static func SMUGGLER_RUN() -> String { return "Did a smuggling run through the Badlands. "; }
+    public static func ROAD_RAGE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROAD_RAGE"); }
+    public static func STOLEN_CAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STOLEN_CAR"); }
+    public static func ILLEGAL_RACING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ILLEGAL_RACING"); }
+    public static func SMUGGLER_RUN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SMUGGLER_RUN"); }
     // === ECONOMIC DESPERATION ===
-    public static func SOLD_BLOOD() -> String { return "Sells blood regularly to make rent. "; }
-    public static func DUMPSTER_DIVING() -> String { return "Survives partly on dumpster diving. "; }
-    public static func PAYDAY_LOAN() -> String { return "Trapped in a cycle of payday loans. "; }
-    public static func SOLD_POSSESSIONS() -> String { return "Sold everything of value to stay afloat. "; }
-    public static func CORPO_INDENTURED() -> String { return "Signed an indentured labor contract with a corp. "; }
+    public static func SOLD_BLOOD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SOLD_BLOOD"); }
+    public static func DUMPSTER_DIVING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DUMPSTER_DIVING"); }
+    public static func PAYDAY_LOAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PAYDAY_LOAN"); }
+    public static func SOLD_POSSESSIONS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SOLD_POSSESSIONS"); }
+    public static func CORPO_INDENTURED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CORPO_INDENTURED"); }
     // === FIXERS / MERC LIFE ===
-    public static func FIXER_BLACKLIST() -> String { return "Was blacklisted by every fixer in Watson. "; }
-    public static func BOTCHED_DELIVERY() -> String { return "Botched a delivery run. Package never made it. "; }
-    public static func MERC_AMBUSH() -> String { return "Was set up on a gig. Barely walked away. "; }
-    public static func SOLD_OUT_CLIENT() -> String { return "Sold out a client for double the payout. "; }
-    public static func CLEAN_RECORD() -> String { return "Has a clean record with fixers. Always delivers. "; }
-    public static func FIXER_FAVOR() -> String { return "Did a favor for a fixer. Has a marker to call in. "; }
-    public static func CREW_WIPED() -> String { return "Entire crew was wiped on a job. Only survivor. "; }
-    public static func STOLEN_GOODS() -> String { return "Sitting on stolen goods no fence will touch. "; }
-    public static func DOUBLE_BOOKED() -> String { return "Took two gigs at once. Finished neither. "; }
-    public static func MERC_RETIREMENT() -> String { return "Tried to retire from merc work. Got pulled back in. "; }
+    public static func FIXER_BLACKLIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIXER_BLACKLIST"); }
+    public static func BOTCHED_DELIVERY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOTCHED_DELIVERY"); }
+    public static func MERC_AMBUSH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MERC_AMBUSH"); }
+    public static func SOLD_OUT_CLIENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SOLD_OUT_CLIENT"); }
+    public static func CLEAN_RECORD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CLEAN_RECORD"); }
+    public static func FIXER_FAVOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIXER_FAVOR"); }
+    public static func CREW_WIPED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CREW_WIPED"); }
+    public static func STOLEN_GOODS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STOLEN_GOODS"); }
+    public static func DOUBLE_BOOKED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DOUBLE_BOOKED"); }
+    public static func MERC_RETIREMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MERC_RETIREMENT"); }
     // === ARASAKA / MILITECH / CORP SPECIFIC ===
-    public static func ARASAKA_INTERVIEW() -> String { return "Was interviewed by Arasaka counterintelligence. "; }
-    public static func MILITECH_CONTRACT() -> String { return "Signed a Militech security contractor agreement. "; }
-    public static func BIOTECHNICA_TRIAL() -> String { return "Was a test subject in a Biotechnica pharmaceutical trial. "; }
-    public static func KANG_TAO_DEBT() -> String { return "Owes a significant debt to Kang Tao. "; }
-    public static func PETROCHEM_LAYOFF() -> String { return "Was laid off during Petrochem downsizing. "; }
-    public static func ZETATECH_RECALL() -> String { return "Had Zetatech implants recalled. Still waiting for replacements. "; }
-    public static func ORBITAL_AIR() -> String { return "Worked briefly for Orbital Air. Got altitude sickness. "; }
-    public static func NIGHT_CORP_DREAM() -> String { return "Participated in a Night Corp sleep study. Has strange dreams since. "; }
+    public static func ARASAKA_INTERVIEW() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ARASAKA_INTERVIEW"); }
+    public static func MILITECH_CONTRACT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MILITECH_CONTRACT"); }
+    public static func BIOTECHNICA_TRIAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BIOTECHNICA_TRIAL"); }
+    public static func KANG_TAO_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KANG_TAO_DEBT"); }
+    public static func PETROCHEM_LAYOFF() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PETROCHEM_LAYOFF"); }
+    public static func ZETATECH_RECALL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ZETATECH_RECALL"); }
+    public static func ORBITAL_AIR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ORBITAL_AIR"); }
+    public static func NIGHT_CORP_DREAM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NIGHT_CORP_DREAM"); }
     // === DISTRICT-SPECIFIC EVENTS ===
-    public static func HEYWOOD_SHOOTOUT() -> String { return "Caught in a shootout in Heywood. "; }
-    public static func WATSON_LOCKDOWN() -> String { return "Was trapped in Watson during a lockdown. "; }
-    public static func KABUKI_RIPPER() -> String { return "Got discount chrome in Kabuki. Regrets it. "; }
-    public static func JAPANTOWN_DEBT() -> String { return "Racked up a debt at a Japantown parlor. "; }
-    public static func PACIFICA_SCAV() -> String { return "Nearly harvested by Scavs in Pacifica. "; }
-    public static func RANCHO_FLOOD() -> String { return "Lost belongings to flooding in Rancho Coronado. "; }
-    public static func DOGTOWN_HUSTLE() -> String { return "Ran a hustle out of Dogtown for a few months. "; }
-    public static func CHARTER_HILL_MUGGED() -> String { return "Was mugged walking through Charter Hill at night. "; }
-    public static func BADLANDS_BREAKDOWN() -> String { return "Car broke down in the Badlands. Walked for hours. "; }
-    public static func CITY_CENTER_BOMBING() -> String { return "Was near a bombing in City Center. Still flinches at loud sounds. "; }
+    public static func HEYWOOD_SHOOTOUT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HEYWOOD_SHOOTOUT"); }
+    public static func WATSON_LOCKDOWN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WATSON_LOCKDOWN"); }
+    public static func KABUKI_RIPPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KABUKI_RIPPER"); }
+    public static func JAPANTOWN_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JAPANTOWN_DEBT"); }
+    public static func PACIFICA_SCAV() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PACIFICA_SCAV"); }
+    public static func RANCHO_FLOOD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RANCHO_FLOOD"); }
+    public static func DOGTOWN_HUSTLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DOGTOWN_HUSTLE"); }
+    public static func CHARTER_HILL_MUGGED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHARTER_HILL_MUGGED"); }
+    public static func BADLANDS_BREAKDOWN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BADLANDS_BREAKDOWN"); }
+    public static func CITY_CENTER_BOMBING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CITY_CENTER_BOMBING"); }
     // === SUBSTANCE ABUSE / ADDICTION ===
-    public static func GLITTER_ADDICTION() -> String { return "Hooked on Glitter. Can't afford to quit. "; }
-    public static func SYNTHCOKE() -> String { return "Has a synthcoke habit. "; }
-    public static func BLACK_LACE() -> String { return "Tried Black Lace. Blacked out for three days. "; }
-    public static func DEALER() -> String { return "Deals chems on the corner. "; }
-    public static func SOBER_SPONSOR() -> String { return "Acts as a sobriety sponsor for others. "; }
-    public static func RELAPSED() -> String { return "Relapsed after two years clean. "; }
-    public static func BOOZE_DEPENDENCE() -> String { return "Functional alcoholic. Drinks to cope. "; }
+    public static func GLITTER_ADDICTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-GLITTER_ADDICTION"); }
+    public static func SYNTHCOKE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SYNTHCOKE"); }
+    public static func BLACK_LACE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BLACK_LACE"); }
+    public static func DEALER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEALER"); }
+    public static func SOBER_SPONSOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SOBER_SPONSOR"); }
+    public static func RELAPSED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RELAPSED"); }
+    public static func BOOZE_DEPENDENCE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOOZE_DEPENDENCE"); }
     // === MILITARIZED / SECURITY ===
-    public static func NCPD_BRUTALITY() -> String { return "Was brutalized during an NCPD sweep. "; }
-    public static func MAXTAC_WITNESS() -> String { return "Witnessed MaxTac neutralize a cyberpsycho on %his% block. "; }
-    public static func MILITECH_DRONE() -> String { return "Was nearly killed by an errant Militech security drone. "; }
-    public static func PRIVATE_SECURITY() -> String { return "Worked private security for a corpo exec. "; }
-    public static func ARASAKA_DETAINED() -> String { return "Was detained by Arasaka security for 72 hours without charges. "; }
-    public static func EVENT_SECURITY() -> String { return "Worked event security at Afterlife. "; }
+    public static func NCPD_BRUTALITY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NCPD_BRUTALITY"); }
+    public static func MAXTAC_WITNESS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MAXTAC_WITNESS"); }
+    public static func MILITECH_DRONE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MILITECH_DRONE"); }
+    public static func PRIVATE_SECURITY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PRIVATE_SECURITY"); }
+    public static func ARASAKA_DETAINED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ARASAKA_DETAINED"); }
+    public static func EVENT_SECURITY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-EVENT_SECURITY"); }
     // === AFTERLIFE / BARS / NIGHTLIFE ===
-    public static func AFTERLIFE_REGULAR() -> String { return "Is a regular at the Afterlife. "; }
-    public static func BARFIGHT() -> String { return "Broke a jaw in a bar fight. "; }
-    public static func DRINK_NAMED() -> String { return "Had a drink named after %him% at a dive bar. "; }
-    public static func BANNED_BAR() -> String { return "Banned from three different bars. "; }
-    public static func UNDERGROUND_PARTY() -> String { return "Went to an underground party in an abandoned factory. Never talks about what happened. "; }
-    public static func NIGHTCLUB_OD() -> String { return "Overdosed at a nightclub. Was revived on site. "; }
+    public static func AFTERLIFE_REGULAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-AFTERLIFE_REGULAR"); }
+    public static func BARFIGHT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BARFIGHT"); }
+    public static func DRINK_NAMED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DRINK_NAMED"); }
+    public static func BANNED_BAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BANNED_BAR"); }
+    public static func UNDERGROUND_PARTY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-UNDERGROUND_PARTY"); }
+    public static func NIGHTCLUB_OD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NIGHTCLUB_OD"); }
     // === PETS / ANIMALS ===
-    public static func PET_CAT() -> String { return "Keeps a stray cat in %his% apartment. "; }
-    public static func PET_DOG() -> String { return "Owns a dog. Only living thing that trusts %him%. "; }
-    public static func PET_DIED() -> String { return "Lost a pet to a stray bullet. "; }
-    public static func FEEDS_STRAYS() -> String { return "Feeds stray animals in the neighborhood. "; }
+    public static func PET_CAT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PET_CAT"); }
+    public static func PET_DOG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PET_DOG"); }
+    public static func PET_DIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PET_DIED"); }
+    public static func FEEDS_STRAYS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FEEDS_STRAYS"); }
     // === GAMBLING / VICE ===
-    public static func PACHINKO_DEBT() -> String { return "Has a crippling pachinko addiction. "; }
-    public static func RIGGED_FIGHT() -> String { return "Bet on a rigged fight. Lost everything. "; }
-    public static func CASINO_BANNED() -> String { return "Banned from multiple casinos for cheating. "; }
-    public static func BOOKIE() -> String { return "Works as a bookie on the side. "; }
-    public static func POKER_SHARK() -> String { return "Cleans out poker games regularly. "; }
+    public static func PACHINKO_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PACHINKO_DEBT"); }
+    public static func RIGGED_FIGHT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RIGGED_FIGHT"); }
+    public static func CASINO_BANNED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CASINO_BANNED"); }
+    public static func BOOKIE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOOKIE"); }
+    public static func POKER_SHARK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-POKER_SHARK"); }
     // === HOUSING / LIVING CONDITIONS ===
-    public static func COFFIN_MOTEL() -> String { return "Lives in a coffin motel. "; }
-    public static func ROOFTOP_SQUAT() -> String { return "Squats on a rooftop. "; }
-    public static func ROOMMATE_HELL() -> String { return "Has a roommate from hell. "; }
-    public static func UPGRADED_APT() -> String { return "Moved up to a nicer apartment. "; }
-    public static func LIVES_IN_CAR() -> String { return "Lives out of a car. "; }
-    public static func NOISE_COMPLAINT() -> String { return "Filed 47 noise complaints. None were addressed. "; }
-    public static func APARTMENT_ROBBERY() -> String { return "Apartment was cleaned out while at work. "; }
+    public static func COFFIN_MOTEL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-COFFIN_MOTEL"); }
+    public static func ROOFTOP_SQUAT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROOFTOP_SQUAT"); }
+    public static func ROOMMATE_HELL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROOMMATE_HELL"); }
+    public static func UPGRADED_APT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-UPGRADED_APT"); }
+    public static func LIVES_IN_CAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LIVES_IN_CAR"); }
+    public static func NOISE_COMPLAINT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NOISE_COMPLAINT"); }
+    public static func APARTMENT_ROBBERY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-APARTMENT_ROBBERY"); }
     // === COMBAT ARENA / SPORTS ===
-    public static func BOXING_AMATEUR() -> String { return "Fought amateur boxing matches for cash. "; }
-    public static func FIGHT_CLUB() -> String { return "Member of an underground fight club. "; }
-    public static func RACING_CRASH() -> String { return "Crashed during an illegal street race. "; }
-    public static func COMBAT_TOURNAMENT() -> String { return "Entered a combat tournament. Lost in the second round. "; }
-    public static func RACING_WIN() -> String { return "Won a street race. Still has the car. "; }
+    public static func BOXING_AMATEUR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOXING_AMATEUR"); }
+    public static func FIGHT_CLUB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FIGHT_CLUB"); }
+    public static func RACING_CRASH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RACING_CRASH"); }
+    public static func COMBAT_TOURNAMENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-COMBAT_TOURNAMENT"); }
+    public static func RACING_WIN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RACING_WIN"); }
     // === DEATH / LOSS ===
-    public static func FRIEND_OVERDOSE() -> String { return "Found a friend dead from an overdose. "; }
-    public static func NEIGHBOR_KILLED() -> String { return "Neighbor was killed. Nobody investigated. "; }
-    public static func SAW_EXECUTION() -> String { return "Witnessed a public execution by a gang. "; }
-    public static func BODY_FOUND() -> String { return "Found a body in the alley behind %his% building. "; }
-    public static func FUNERAL_DEBT() -> String { return "Went into debt paying for a funeral. "; }
-    public static func CHOOM_FLATLINED() -> String { return "Best choom flatlined on a gig. "; }
+    public static func FRIEND_OVERDOSE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FRIEND_OVERDOSE"); }
+    public static func NEIGHBOR_KILLED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NEIGHBOR_KILLED"); }
+    public static func SAW_EXECUTION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SAW_EXECUTION"); }
+    public static func BODY_FOUND() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BODY_FOUND"); }
+    public static func FUNERAL_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FUNERAL_DEBT"); }
+    public static func CHOOM_FLATLINED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHOOM_FLATLINED"); }
     // === FOOD / SURVIVAL ===
-    public static func FOOD_POISONING() -> String { return "Got food poisoning from a street vendor. Nearly died. "; }
-    public static func KIBBLE_DIET() -> String { return "Has been eating nothing but kibble for months. "; }
-    public static func REAL_FOOD() -> String { return "Tasted real food for the first time. Cried. "; }
-    public static func FOOD_STALL() -> String { return "Runs a food stall on the side. "; }
+    public static func FOOD_POISONING() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FOOD_POISONING"); }
+    public static func KIBBLE_DIET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-KIBBLE_DIET"); }
+    public static func REAL_FOOD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REAL_FOOD"); }
+    public static func FOOD_STALL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FOOD_STALL"); }
     // === SCAMS / CON ARTISTRY ===
-    public static func FAKE_CHROME() -> String { return "Was sold fake chrome. Paid full price. "; }
-    public static func PYRAMID_SCHEME() -> String { return "Got roped into a pyramid scheme. Lost friends and money. "; }
-    public static func ROMANCE_SCAM() -> String { return "Was the target of a romance scam. "; }
-    public static func FAKE_FIXER() -> String { return "Was conned by someone posing as a fixer. "; }
-    public static func SHELL_COMPANY() -> String { return "Unknowingly works for a shell company. "; }
-    public static func IDENTITY_SOLD() -> String { return "Someone is using a copy of %his% identity. "; }
+    public static func FAKE_CHROME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FAKE_CHROME"); }
+    public static func PYRAMID_SCHEME() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PYRAMID_SCHEME"); }
+    public static func ROMANCE_SCAM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ROMANCE_SCAM"); }
+    public static func FAKE_FIXER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FAKE_FIXER"); }
+    public static func SHELL_COMPANY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SHELL_COMPANY"); }
+    public static func IDENTITY_SOLD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-IDENTITY_SOLD"); }
     // === CHILDHOOD ECHOES (Adult Consequences) ===
-    public static func ORPHANAGE_REUNION() -> String { return "Tracked down others from the same orphanage. "; }
-    public static func OLD_BULLY() -> String { return "Ran into a childhood bully. It didn't go well. "; }
-    public static func INHERITANCE_SCAM() -> String { return "Received notice of a fake inheritance. Classic scam. "; }
-    public static func FAMILY_SECRET() -> String { return "Discovered a dark family secret. "; }
-    public static func CHILDHOOD_HOME_DEMOLISHED() -> String { return "Childhood home was demolished for a corp development project. "; }
+    public static func ORPHANAGE_REUNION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ORPHANAGE_REUNION"); }
+    public static func OLD_BULLY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-OLD_BULLY"); }
+    public static func INHERITANCE_SCAM() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INHERITANCE_SCAM"); }
+    public static func FAMILY_SECRET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FAMILY_SECRET"); }
+    public static func CHILDHOOD_HOME_DEMOLISHED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CHILDHOOD_HOME_DEMOLISHED"); }
     // === UNEXPECTED WINDFALLS ===
-    public static func FOUND_STASH() -> String { return "Found a hidden stash of eddies in a wall during renovation. "; }
-    public static func WRONG_ACCOUNT() -> String { return "A corp accidentally deposited eddies into %his% account. Spent it before they noticed. "; }
-    public static func SALVAGE_SCORE() -> String { return "Found valuable salvage in a wreck in the Badlands. "; }
-    public static func RARE_SHARD() -> String { return "Found a rare data shard worth a fortune. "; }
+    public static func FOUND_STASH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FOUND_STASH"); }
+    public static func WRONG_ACCOUNT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WRONG_ACCOUNT"); }
+    public static func SALVAGE_SCORE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SALVAGE_SCORE"); }
+    public static func RARE_SHARD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-RARE_SHARD"); }
     // === BUREAUCRATIC / SYSTEMIC ===
-    public static func NC_ID_REVOKED() -> String { return "NC ID was revoked. Essentially a non-person. "; }
-    public static func INSURANCE_DENIED() -> String { return "Health insurance claim was denied for the third time. "; }
-    public static func PERMIT_REVOKED() -> String { return "Business permit was revoked without explanation. "; }
-    public static func TAX_AUDIT() -> String { return "Was audited. Owed more than expected. "; }
-    public static func JURY_DUTY() -> String { return "Served on a jury. The defendant disappeared before sentencing. "; }
-    public static func WRONG_ADDRESS_RAID() -> String { return "NCPD raided the wrong apartment. %Hers%. "; }
+    public static func NC_ID_REVOKED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-NC_ID_REVOKED"); }
+    public static func INSURANCE_DENIED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-INSURANCE_DENIED"); }
+    public static func PERMIT_REVOKED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-PERMIT_REVOKED"); }
+    public static func TAX_AUDIT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TAX_AUDIT"); }
+    public static func JURY_DUTY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-JURY_DUTY"); }
+    public static func WRONG_ADDRESS_RAID() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WRONG_ADDRESS_RAID"); }
     // === REVENGE / GRUDGES ===
-    public static func REVENGE_SERVED() -> String { return "Got revenge on someone who wronged %him% years ago. "; }
-    public static func HIT_LIST() -> String { return "Is on someone's hit list. Doesn't know whose. "; }
-    public static func VENDETTA() -> String { return "Carrying a vendetta that consumes every waking moment. "; }
-    public static func FORGAVE_ENEMY() -> String { return "Forgave an old enemy. Surprised everyone. "; }
+    public static func REVENGE_SERVED() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-REVENGE_SERVED"); }
+    public static func HIT_LIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-HIT_LIST"); }
+    public static func VENDETTA() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-VENDETTA"); }
+    public static func FORGAVE_ENEMY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-FORGAVE_ENEMY"); }
     // === CLOSE CALLS / LUCK ===
-    public static func WRONG_PLACE() -> String { return "Was at the wrong place at the wrong time. Survived by pure luck. "; }
-    public static func ELEVATOR_FALL() -> String { return "Survived an elevator malfunction in a megabuilding. "; }
-    public static func MISSED_FLIGHT() -> String { return "Missed a flight that crashed. "; }
-    public static func STOOD_UP() -> String { return "Was stood up for a meeting. The location was bombed an hour later. "; }
-    public static func LAST_SECOND() -> String { return "Left a building seconds before it collapsed. "; }
+    public static func WRONG_PLACE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WRONG_PLACE"); }
+    public static func ELEVATOR_FALL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ELEVATOR_FALL"); }
+    public static func MISSED_FLIGHT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-MISSED_FLIGHT"); }
+    public static func STOOD_UP() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-STOOD_UP"); }
+    public static func LAST_SECOND() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-LAST_SECOND"); }
     // === CRAFTSMANSHIP / ARTISAN ===
-    public static func WEAPON_SMITH() -> String { return "Builds custom weapons in a garage workshop. "; }
-    public static func TATTOO_ARTIST() -> String { return "Does tattoo work on the side. "; }
-    public static func CAR_MECHANIC() -> String { return "Restores old cars as a hobby. "; }
-    public static func SHARD_COLLECTOR() -> String { return "Collects rare data shards. "; }
-    public static func BOOTLEG_BD() -> String { return "Produces bootleg braindances. "; }
+    public static func WEAPON_SMITH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-WEAPON_SMITH"); }
+    public static func TATTOO_ARTIST() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-TATTOO_ARTIST"); }
+    public static func CAR_MECHANIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-CAR_MECHANIC"); }
+    public static func SHARD_COLLECTOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-SHARD_COLLECTOR"); }
+    public static func BOOTLEG_BD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BOOTLEG_BD"); }
     // === DEBTS / OBLIGATIONS ===
-    public static func OWES_GANG() -> String { return "Owes a dangerous favor to a gang lieutenant. "; }
-    public static func OWES_RIPPER() -> String { return "Owes a ripperdoc for emergency surgery. "; }
-    public static func BLOOD_OATH() -> String { return "Bound by a blood oath. Won't say to whom. "; }
-    public static func COLLATERAL() -> String { return "Was used as collateral for someone else's debt. "; }
-    public static func DEBT_COLLECTOR() -> String { return "Works as a debt collector. Nobody's favorite person. "; }
+    public static func OWES_GANG() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-OWES_GANG"); }
+    public static func OWES_RIPPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-OWES_RIPPER"); }
+    public static func BLOOD_OATH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-BLOOD_OATH"); }
+    public static func COLLATERAL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-COLLATERAL"); }
+    public static func DEBT_COLLECTOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-DEBT_COLLECTOR"); }
 
-    public static func ADULT_PAID_OFF_DEBT() -> String { return "Paid off the last of the medical debt in %year%. Kept the receipt framed. "; }
-    public static func ADULT_TEN_YEARS_SOBER() -> String { return "Ten years clean this spring. Still carries the chip. "; }
-    public static func ADULT_COMMUNITY_GARDEN() -> String { return "Runs a rooftop garden co-op. Real tomatoes, traded like contraband. "; }
-    public static func ADULT_CHESS_CLUB() -> String { return "Plays chess every Sunday at the same Watson cafe. Twelve-year rivalry with the owner. "; }
-    public static func ADULT_NIGHT_SCHOOL() -> String { return "Finished a night-school certification while working doubles. Took four years. "; }
-    public static func ADULT_COACHES_KIDS() -> String { return "Coaches a kids' soccer league in The Glen. Keeps the trophies at work. "; }
-    public static func ADULT_MARRIED_STABLE() -> String { return "Married %years% years. Still eats lunch together every Thursday. "; }
-    public static func ADULT_BAND_WEEKENDS() -> String { return "Plays bass in a bar band on weekends. They're not good. Nobody cares. "; }
-    public static func ADULT_FIXED_CREDIT() -> String { return "Rebuilt a credit rating from scratch after the bankruptcy. Seven years of discipline. "; }
-    public static func ADULT_MENTORS_APPRENTICE() -> String { return "Mentors an apprentice in the trade. Says teaching is the only thing that lasts. "; }
-    public static func ADULT_SMALL_SAVINGS() -> String { return "Has an actual savings account. In this city, that's a personality trait. "; }
-    public static func ADULT_VOLUNTEERS_CLINIC() -> String { return "Volunteers weekends at a free clinic in Santo Domingo. "; }
-    public static func ADULT_BOOK_CLUB() -> String { return "In a book club that actually reads the books. Meets in a laundromat back room. "; }
-    public static func ADULT_QUIT_CORPO_HAPPY() -> String { return "Walked out of a corpo job in %year% and never looked back. Makes less. Sleeps more. "; }
-    public static func ADULT_FOSTER_PARENT() -> String { return "Fosters kids through the city system. Three placements so far. Keeps every drawing. "; }
-    public static func ADULT_FISHING_CONTACT() -> String { return "Fishes the bay every month with the same three friends since 2065. Nobody catches anything. "; }
-    public static func ADULT_RESTORES_RADIOS() -> String { return "Restores pre-war radios as a hobby. The apartment smells like solder and patience. "; }
-    public static func ADULT_NEIGHBORHOOD_WATCH() -> String { return "Organizes the building's informal watch rotation. Crime on the floor dropped by half. "; }
-    public static func ADULT_LEARNED_COOK() -> String { return "Learned to cook from a neighbor. Now feeds half the floor on holidays. "; }
-    public static func ADULT_REGULAR_BLOOD_DONOR() -> String { return "Donates blood every eight weeks. Rare type. The clinic sends birthday messages. "; }
-    public static func ADULT_SAME_BARBER() -> String { return "Same barber for fifteen years. It's the closest thing to therapy either of them has. "; }
-    public static func ADULT_PIGEON_KEEPER() -> String { return "Keeps racing pigeons on the roof. Illegal in the building code. Beloved on the block. "; }
-    public static func ADULT_TRIVIA_CHAMPION() -> String { return "Three-time champion of a Kabuki bar's trivia night. The trophy is a spray-painted boot. "; }
-    public static func ADULT_STREET_HISTORIAN() -> String { return "Unofficial historian of the block. Remembers every business that ever held the corner lease. "; }
-    public static func ADULT_WALKS_DOGS() -> String { return "Walks dogs for shut-ins in the building. Doesn't charge the ones on fixed income. "; }
-    public static func ADULT_COLLECTS_MAPS() -> String { return "Collects paper maps of old Night City. Owns editions the city archive doesn't. "; }
-    public static func ADULT_MAHJONG_CIRCLE() -> String { return "Plays mahjong Tuesdays with the aunties on floor nine. Loses on purpose. Sometimes. "; }
-    public static func ADULT_BALCONY_ASTRONOMER() -> String { return "Stargazes from the balcony with a homemade scope. Light pollution wins most nights. "; }
-    public static func ADULT_LETTERS_ABROAD() -> String { return "Writes actual paper letters to a cousin in the EU. Takes months. Worth it. "; }
-    public static func ADULT_REPAIRS_FREE() -> String { return "Fixes neighbors' appliances for free. Payment arrives anyway: tamales, favors, respect. "; }
-    public static func ADULT_KARAOKE_REGULAR() -> String { return "Owns one karaoke song and performs it like a sworn duty every Friday. "; }
-    public static func ADULT_QUIET_LIFE() -> String { return "No record, no debts, no drama. In Night City, statistically remarkable. "; }
-    public static func ADULT_MEMORIZED_BUS() -> String { return "Has the entire NCART schedule memorized. People plan trips by asking. "; }
-    public static func ADULT_SUNDAY_MARKET() -> String { return "Hasn't missed the Sunday market in Heywood in six years. The vendors hold things aside. "; }
-    public static func ADULT_TEACHES_LITERACY() -> String { return "Teaches reading at the community center two nights a week. "; }
-    public static func ADULT_OLD_CAR_RESTORE() -> String { return "Restoring a 2040s sedan in a rented garage bay. Five years in. Almost runs. "; }
-    public static func ADULT_ROOFTOP_MOVIES() -> String { return "Runs a rooftop movie night in summer. Projector, bedsheet, whoever shows up. "; }
-    public static func ADULT_KEEPS_BEES() -> String { return "Keeps bees on the roof. The honey sells out in a day. City says it's illegal. City buys it anyway. "; }
-    public static func ADULT_ANNIVERSARY_DINER() -> String { return "Eats at the same diner every anniversary of getting to Night City. Orders the same thing. "; }
-    public static func ADULT_HOSPITAL_VISITS() -> String { return "Visits a hospitalized friend every week. Two years now. Never missed one. "; }
+    public static func ADULT_PAID_OFF_DEBT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_PAID_OFF_DEBT"); }
+    public static func ADULT_TEN_YEARS_SOBER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_TEN_YEARS_SOBER"); }
+    public static func ADULT_COMMUNITY_GARDEN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_COMMUNITY_GARDEN"); }
+    public static func ADULT_CHESS_CLUB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_CHESS_CLUB"); }
+    public static func ADULT_NIGHT_SCHOOL() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_NIGHT_SCHOOL"); }
+    public static func ADULT_COACHES_KIDS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_COACHES_KIDS"); }
+    public static func ADULT_MARRIED_STABLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_MARRIED_STABLE"); }
+    public static func ADULT_BAND_WEEKENDS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_BAND_WEEKENDS"); }
+    public static func ADULT_FIXED_CREDIT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_FIXED_CREDIT"); }
+    public static func ADULT_MENTORS_APPRENTICE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_MENTORS_APPRENTICE"); }
+    public static func ADULT_SMALL_SAVINGS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_SMALL_SAVINGS"); }
+    public static func ADULT_VOLUNTEERS_CLINIC() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_VOLUNTEERS_CLINIC"); }
+    public static func ADULT_BOOK_CLUB() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_BOOK_CLUB"); }
+    public static func ADULT_QUIT_CORPO_HAPPY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_QUIT_CORPO_HAPPY"); }
+    public static func ADULT_FOSTER_PARENT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_FOSTER_PARENT"); }
+    public static func ADULT_FISHING_CONTACT() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_FISHING_CONTACT"); }
+    public static func ADULT_RESTORES_RADIOS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_RESTORES_RADIOS"); }
+    public static func ADULT_NEIGHBORHOOD_WATCH() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_NEIGHBORHOOD_WATCH"); }
+    public static func ADULT_LEARNED_COOK() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_LEARNED_COOK"); }
+    public static func ADULT_REGULAR_BLOOD_DONOR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_REGULAR_BLOOD_DONOR"); }
+    public static func ADULT_SAME_BARBER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_SAME_BARBER"); }
+    public static func ADULT_PIGEON_KEEPER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_PIGEON_KEEPER"); }
+    public static func ADULT_TRIVIA_CHAMPION() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_TRIVIA_CHAMPION"); }
+    public static func ADULT_STREET_HISTORIAN() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_STREET_HISTORIAN"); }
+    public static func ADULT_WALKS_DOGS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_WALKS_DOGS"); }
+    public static func ADULT_COLLECTS_MAPS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_COLLECTS_MAPS"); }
+    public static func ADULT_MAHJONG_CIRCLE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_MAHJONG_CIRCLE"); }
+    public static func ADULT_BALCONY_ASTRONOMER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_BALCONY_ASTRONOMER"); }
+    public static func ADULT_LETTERS_ABROAD() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_LETTERS_ABROAD"); }
+    public static func ADULT_REPAIRS_FREE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_REPAIRS_FREE"); }
+    public static func ADULT_KARAOKE_REGULAR() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_KARAOKE_REGULAR"); }
+    public static func ADULT_QUIET_LIFE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_QUIET_LIFE"); }
+    public static func ADULT_MEMORIZED_BUS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_MEMORIZED_BUS"); }
+    public static func ADULT_SUNDAY_MARKET() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_SUNDAY_MARKET"); }
+    public static func ADULT_TEACHES_LITERACY() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_TEACHES_LITERACY"); }
+    public static func ADULT_OLD_CAR_RESTORE() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_OLD_CAR_RESTORE"); }
+    public static func ADULT_ROOFTOP_MOVIES() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_ROOFTOP_MOVIES"); }
+    public static func ADULT_KEEPS_BEES() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_KEEPS_BEES"); }
+    public static func ADULT_ANNIVERSARY_DINER() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_ANNIVERSARY_DINER"); }
+    public static func ADULT_HOSPITAL_VISITS() -> String { return GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_HOSPITAL_VISITS"); }
 }
 

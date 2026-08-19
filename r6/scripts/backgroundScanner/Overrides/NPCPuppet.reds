@@ -34,7 +34,7 @@ public const func CompileScannerChunks() -> Bool {
 
         // Add debug info if enabled
         if KdspSettings.DebugModeEnabled() {
-            backstoryUI.debugInfo = "TweakDBID: " + npcRecordId + "\nAppearance: " + npcAppearance;
+            backstoryUI.debugInfo = GetLocalizedTextByKey(n"Kdsp-NPCPuppet-S0") + npcRecordId + GetLocalizedTextByKey(n"Kdsp-NPCPuppet-S1") + npcAppearance;
         }
 
         backstoryChunk.Set(backstoryUI);
@@ -103,7 +103,7 @@ public const func CompileScannerChunks() -> Bool {
         
         // Add debug info if enabled
         if KdspSettings.DebugModeEnabled() {
-            backstoryUI.debugInfo = "TweakDBID: " + npcRecordId + "\nAppearance: " + npcAppearance;
+            backstoryUI.debugInfo = GetLocalizedTextByKey(n"Kdsp-NPCPuppet-S0") + npcRecordId + GetLocalizedTextByKey(n"Kdsp-NPCPuppet-S1") + npcAppearance;
         }
         
         backstoryChunk = new KdspScannerBackstory();
@@ -115,7 +115,7 @@ public const func CompileScannerChunks() -> Bool {
         // Still show debug info for skipped NPCs if debug mode enabled
         if KdspSettings.DebugModeEnabled() {
             let backstoryUI: KdspBackstoryUI;
-            backstoryUI.debugInfo = "TweakDBID: " + npcRecordId + "\nAppearance: " + npcAppearance + "\n[No backstory generated for this NPC type]";
+            backstoryUI.debugInfo = GetLocalizedTextByKey(n"Kdsp-NPCPuppet-S0") + npcRecordId + GetLocalizedTextByKey(n"Kdsp-NPCPuppet-S1") + npcAppearance + GetLocalizedTextByKey(n"Kdsp-NPCPuppet-S2");
             backstoryUI.background = " "; // Non-empty to trigger display
             backstoryChunk.Set(backstoryUI);
         } else {

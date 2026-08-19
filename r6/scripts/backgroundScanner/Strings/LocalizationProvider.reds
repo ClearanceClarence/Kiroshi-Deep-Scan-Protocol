@@ -1,0 +1,19 @@
+// Kiroshi Deep Scan Protocol - Localization Provider
+// Resolves the player's game language to a translation package.
+// Third-party translations plug in as separate mods with their own provider.
+
+module KiroshiDeepScan.Localization
+import Codeware.Localization.*
+
+public class LocalizationProvider extends ModLocalizationProvider {
+    public func GetPackage(language: CName) -> ref<ModLocalizationPackage> {
+        switch language {
+            case n"en-us": return new English();
+            default: return null;
+        }
+    }
+
+    public func GetFallback() -> CName {
+        return n"en-us";
+    }
+}

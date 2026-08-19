@@ -57,9 +57,9 @@ public abstract class KdspConnectionDetector {
                 // 1. Was this NPC mentioned as a contact by someone we already scanned?
                 let priorHit: String = tracker.FindInPriorRelationships(npcName);
                 if NotEquals(priorHit, "") {
-                    let alert: String = "⊕ CROSS-REFERENCE: Subject matches contact listed by previously scanned NPC";
-                    alert += "\n  Prior scan: " + priorHit;
-                    alert += "\n  Confidence: HIGH — exact name match";
+                    let alert: String = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S0");
+                    alert += GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S1") + priorHit;
+                    alert += GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S2");
                     ArrayPush(result.alerts, alert);
                     result.crossRefDetected = true;
                 };
@@ -67,10 +67,10 @@ public abstract class KdspConnectionDetector {
                 // 2. Do any of this NPC's relationships match a previously scanned NPC?
                 let shared: array<String> = tracker.FindSharedContacts(relNames);
                 if ArraySize(shared) > 0 {
-                    let alert: String = "⊕ SHARED CONTACTS — " + IntToString(ArraySize(shared)) + " overlap(s) with prior scans";
+                    let alert: String = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S3") + IntToString(ArraySize(shared)) + GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S4");
                     let k: Int32 = 0;
                     while k < ArraySize(shared) && k < 3 {
-                        alert += "\n  " + shared[k];
+                        alert += GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S5") + shared[k];
                         k += 1;
                     };
                     ArrayPush(result.alerts, alert);
@@ -82,7 +82,7 @@ public abstract class KdspConnectionDetector {
                     let injName: String = tracker.GetInjectableNPC(seed + 9001, district, gang);
                     if NotEquals(injName, "") && !Equals(injName, npcName) {
                         result.injectedRelName = injName;
-                        result.injectedRelContext = KdspConnectionDetector.GetInjectionContext(seed + 9002) + " ⊕ PREVIOUSLY SCANNED";
+                        result.injectedRelContext = KdspTextConnections.GetInjectionContext(seed + 9002) + GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S6");
                         result.hasInjectedRel = true;
                     };
                 };
@@ -99,13 +99,13 @@ public abstract class KdspConnectionDetector {
             if IsDefined(tracker) && !result.crossRefDetected {
                 let communityMatches: array<String> = tracker.FindSharedContacts(relNames);
                 if ArraySize(communityMatches) > 0 {
-                    let alert: String = "⊕ NETWORK OVERLAP: Subject shares social connections with previously scanned NPC(s)";
+                    let alert: String = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S7");
                     let m: Int32 = 0;
                     while m < ArraySize(communityMatches) && m < 2 {
-                        alert += "\n  " + communityMatches[m];
+                        alert += GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S5") + communityMatches[m];
                         m += 1;
                     };
-                    alert += "\n  Analysis: Likely same social circle — " + district;
+                    alert += GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S8") + district;
                     ArrayPush(result.alerts, alert);
                 };
             };
@@ -130,7 +130,7 @@ public abstract class KdspConnectionDetector {
             return "";
         };
 
-        let out: String = "───── NETWORK ANALYSIS ─────\n";
+        let out: String = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S9");
         let i: Int32 = 0;
         while i < ArraySize(result.alerts) {
             out += result.alerts[i];
@@ -140,7 +140,7 @@ public abstract class KdspConnectionDetector {
             i += 1;
         };
         if result.totalScansTracked > 0 {
-            out += "\n  [Scan database: " + IntToString(result.totalScansTracked) + " subjects indexed]";
+            out += GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S10") + IntToString(result.totalScansTracked) + GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S11");
         };
         return out;
     }
@@ -150,12 +150,12 @@ public abstract class KdspConnectionDetector {
     public static func FormatShort(result: ref<KdspConnectionResult>) -> String {
         if Equals(result.connectionStrength, "NONE") { return ""; };
         if result.crossRefDetected {
-            return "⊕ CROSS-REFERENCE: Known to previously scanned subject";
+            return GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S12");
         };
         if result.sharedContactCount > 0 {
-            return "⊕ SHARED CONTACTS: " + IntToString(result.sharedContactCount) + " overlap(s) with prior scans";
+            return GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S13") + IntToString(result.sharedContactCount) + GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S4");
         };
-        return "⊕ NETWORK: Peripheral connection detected";
+        return GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S14");
     }
 
     // ── Extract all names from KdspRelationshipsData ──────────────────────
@@ -190,7 +190,7 @@ public abstract class KdspConnectionDetector {
         i = 0;
         while i < ArraySize(relations.knownEnemies) {
             ArrayPush(relNames, relations.knownEnemies[i].name);
-            ArrayPush(relContexts, "Enemy — " + relations.knownEnemies[i].reason);
+            ArrayPush(relContexts, GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S15") + relations.knownEnemies[i].reason);
             i += 1;
         };
 
@@ -205,28 +205,4 @@ public abstract class KdspConnectionDetector {
 
     // ── Injection Contexts (20 entries) ───────────────────────────────────
 
-    private static func GetInjectionContext(seed: Int32) -> String {
-        let roll: Int32 = RandRange(seed, 0, 20);
-        if roll == 0  { return "Seen together recently"; };
-        if roll == 1  { return "Shared communication channel"; };
-        if roll == 2  { return "Met at same location"; };
-        if roll == 3  { return "Financial transaction detected"; };
-        if roll == 4  { return "Phone records show contact"; };
-        if roll == 5  { return "Listed as emergency contact"; };
-        if roll == 6  { return "Tagged in same NCPD report"; };
-        if roll == 7  { return "Co-signers on lease"; };
-        if roll == 8  { return "Same ripperdoc patient file"; };
-        if roll == 9  { return "Gym membership overlap"; };
-        if roll == 10 { return "Vehicle registered to same address"; };
-        if roll == 11 { return "Flagged in surveillance feed together"; };
-        if roll == 12 { return "Same employer — different shifts"; };
-        if roll == 13 { return "Mutual fixer connections"; };
-        if roll == 14 { return "Both attended same event"; };
-        if roll == 15 { return "DNA found at same crime scene"; };
-        if roll == 16 { return "Social media connections"; };
-        if roll == 17 { return "Shared storage unit"; };
-        if roll == 18 { return "Same braindance subscription"; };
-        if roll == 19 { return "Biometric proximity data"; };
-        return "Connection flagged";
-    }
 }

@@ -38,14 +38,14 @@ public class KdspMaelstromProfile {
         ArrayPush(specs, "Borg Conversion");
         ArrayPush(specs, "ICE Cracking");
         ArrayPush(specs, "Flathead Deployment");
-        ArrayPush(specs, "Sensory Override Tech");
-        ArrayPush(specs, "Pain Editor Tuning");
-        ArrayPush(specs, "Combat Stimulant Brewing");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S0"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S1"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S2"));
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
         let territories: array<String>;
-        ArrayPush(territories, "All Foods Plant");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-S17"));
         ArrayPush(territories, "Northside Industrial");
         ArrayPush(territories, "Totentanz");
         ArrayPush(territories, "Watson Docks");
@@ -65,55 +65,55 @@ public class KdspMaelstromProfile {
         
         // Marks - Maelstrom prefer chrome to ink
         let marks: array<String>;
-        ArrayPush(marks, IntToString(profile.chromePercentage) + "% cybernetic replacement");
+        ArrayPush(marks, IntToString(profile.chromePercentage) + GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S3"));
         if RandRange(seed + 700, 1, 100) <= 70 {
-            ArrayPush(marks, "Optical replacements (multiple)");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S4"));
         }
         if RandRange(seed + 710, 1, 100) <= 50 {
-            ArrayPush(marks, "Facial chrome plating");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S5"));
         }
         if RandRange(seed + 720, 1, 100) <= 30 {
-            ArrayPush(marks, "Full limb conversions");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S6"));
         }
         if RandRange(seed + 730, 1, 100) <= 45 {
-            ArrayPush(marks, "Exposed wiring along jawline");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S7"));
         }
         if RandRange(seed + 740, 1, 100) <= 35 {
-            ArrayPush(marks, "Vocal modulator distortion");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S8"));
         }
         if RandRange(seed + 750, 1, 100) <= 25 {
-            ArrayPush(marks, "Subdermal LED arrays");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S9"));
         }
         profile.distinguishingMarks = marks;
         
         // Backstory
         let backstories: array<String>;
-        ArrayPush(backstories, "Flesh is weakness. Found truth in chrome and circuitry. The collective showed the way to transcendence.");
-        ArrayPush(backstories, "Cyberpsychosis survivor. Others feared the edge - Maelstrom embraced it. Here, the madness is understood.");
-        ArrayPush(backstories, "Former corpo techie. Saw what chrome could really do when corps weren't limiting the potential.");
-        ArrayPush(backstories, "Born defective. Meat body was failing. Maelstrom offered replacement - piece by piece, becoming perfect.");
-        ArrayPush(backstories, "Street doc gone too far. Lost license, found family. Now installs chrome for those worthy of ascension.");
-        ArrayPush(backstories, "They took everything in a raid. Rebuilt from scrap and rage. More machine than meat now. Stronger.");
-        ArrayPush(backstories, "Flatlined on the operating table. Came back wrong - or came back right. Depends who's asking. Chrome remembers.");
-        ArrayPush(backstories, "Worked the All Foods Plant before Brick's time. Watched the collective evolve. Every upgrade brings clarity.");
-        ArrayPush(backstories, "Military cyberware went haywire after discharge. Every clinic turned away. Maelstrom said come as you are.");
-        ArrayPush(backstories, "Ran with Scavs first. Realized they waste what they take. Maelstrom uses every piece. Efficiency over butchery.");
-        ArrayPush(backstories, "Used to hear the machines whispering. Therapists called it psychosis. Maelstrom called it a gift.");
-        ArrayPush(backstories, "Totentanz regular turned true believer. The bass broke something open. Chrome filled the cracks.");
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S10"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S11"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S12"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S13"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S14"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S15"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S16"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S17"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S18"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S19"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S20"));
+        ArrayPush(backstories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S21"));
         profile.background = backstories[RandRange(seed + 800, 0, ArraySize(backstories) - 1)];
         
         // Recent activity
         let activities: array<String>;
-        ArrayPush(activities, "Chrome harvesting operations in Watson. Fresh meat needed.");
-        ArrayPush(activities, "Protecting Totentanz. The bass drops, the bodies drop.");
-        ArrayPush(activities, "Running cyberware through Northside. Military grade.");
-        ArrayPush(activities, "Recruitment drive. Finding those ready for conversion.");
-        ArrayPush(activities, "Territory dispute with Scavs. They take organs. We take everything.");
-        ArrayPush(activities, "Testing prototype optics ripped from an Arasaka shipment. Promising results.");
-        ArrayPush(activities, "Borg conversion ceremony at the plant. Another brother ascends tonight.");
-        ArrayPush(activities, "Raiding a ripperdoc clinic for surgical tools. Ours broke during last install.");
-        ArrayPush(activities, "Flathead recon sweep of Watson tunnels. Mapping new expansion routes.");
-        ArrayPush(activities, "Intercepting Militech chrome transport. Driver was persuaded to cooperate.");
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S22"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S23"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S24"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S25"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S26"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S27"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S28"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S29"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S30"));
+        ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S31"));
         profile.recentActivity = activities[RandRange(seed + 900, 0, ArraySize(activities) - 1)];
         
         profile.status = KdspGangProfileUtils.GetStatus(seed + 1000);

@@ -116,37 +116,37 @@ public class KdspCrowdDistrictManager {
 
     private static func GetDistrictDescription(district: String) -> String {
         if Equals(district, "WATSON") {
-            return "Former corporate zone, now a melting pot of immigrants and struggling businesses. Home to Kabuki, Little China, and Northside Industrial.";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S0");
         }
         if Equals(district, "WESTBROOK") {
-            return "Upscale district featuring Japantown's neon-lit streets, the luxurious North Oak, and Charter Hill's corporate elite.";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S1");
         }
         if Equals(district, "PACIFICA") {
-            return "Abandoned by corporations after the Unification War. Now a lawless zone controlled by Voodoo Boys and Animals.";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S2");
         }
         if Equals(district, "HEYWOOD") {
-            return "The largest district, ranging from Valentino-controlled Vista del Rey to the affluent Glen. Strong Latino cultural presence.";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S3");
         }
         if Equals(district, "SANTO_DOMINGO") {
-            return "Industrial heartland of Night City. Working-class neighborhoods surrounded by factories and power plants.";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S4");
         }
         if Equals(district, "CITY_CENTER") {
-            return "Corporate downtown. Gleaming towers house megacorp headquarters. Heavy security presence.";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S5");
         }
         if Equals(district, "BADLANDS") {
-            return "Desert wasteland outside city limits. Nomad territory dotted with abandoned towns and corporate facilities.";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S6");
         }
-        return "Night City metropolitan area.";
+        return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S7");
     }
 
     private static func GenerateResidencyLength(seed: Int32, district: String, archetype: String) -> String {
         let years = RandRange(seed, 1, 30);
 
         if Equals(archetype, "NOMAD") {
-            return "Transient - " + IntToString(RandRange(seed, 1, 12)) + " months";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S8") + IntToString(RandRange(seed, 1, 12)) + " months";
         }
         if Equals(archetype, "HOMELESS") {
-            return IntToString(RandRange(seed, 1, 5)) + " years (various locations)";
+            return IntToString(RandRange(seed, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S9");
         }
 
         // Pacifica has fewer long-term residents
@@ -154,18 +154,18 @@ public class KdspCrowdDistrictManager {
             years = RandRange(seed, 1, 10);
         }
 
-        if years >= 20 { return "Lifelong resident (" + IntToString(years) + "+ years)"; }
-        if years >= 10 { return "Long-term resident (" + IntToString(years) + " years)"; }
-        if years >= 5 { return "Established resident (" + IntToString(years) + " years)"; }
-        if years >= 2 { return "Recent arrival (" + IntToString(years) + " years)"; }
-        return "New to area (" + IntToString(RandRange(seed, 1, 18)) + " months)";
+        if years >= 20 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S10") + IntToString(years) + "+ years)"; }
+        if years >= 10 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S11") + IntToString(years) + " years)"; }
+        if years >= 5 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S12") + IntToString(years) + " years)"; }
+        if years >= 2 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S13") + IntToString(years) + " years)"; }
+        return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S14") + IntToString(RandRange(seed, 1, 18)) + " months)";
     }
 
     private static func GenerateLocalStanding(seed: Int32, district: String, archetype: String) -> String {
         let standings: array<String>;
 
         ArrayPush(standings, "Well-respected local");
-        ArrayPush(standings, "Known in community");
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S15"));
         ArrayPush(standings, "Average standing");
         ArrayPush(standings, "Newcomer");
         ArrayPush(standings, "Outsider");
@@ -196,42 +196,42 @@ public class KdspCrowdDistrictManager {
         let connections: array<String>;
 
         if Equals(district, "WATSON") {
-            if RandRange(seed, 1, 100) <= 40 { ArrayPush(connections, "Knows local fixers in Kabuki"); }
-            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, "Regular at Tom's Diner"); }
-            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, "Connection to Mox through Lizzie's"); }
-            if RandRange(seed + 30, 1, 100) <= 35 { ArrayPush(connections, "Knows someone at Misty's Esoterica"); }
+            if RandRange(seed, 1, 100) <= 40 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S16")); }
+            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S17")); }
+            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S18")); }
+            if RandRange(seed + 30, 1, 100) <= 35 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S19")); }
         }
         else if Equals(district, "WESTBROOK") {
-            if RandRange(seed, 1, 100) <= 30 { ArrayPush(connections, "Frequents Japantown clubs"); }
-            if RandRange(seed + 10, 1, 100) <= 20 { ArrayPush(connections, "Connection to Clouds"); }
-            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, "Knows Tyger Claw members"); }
+            if RandRange(seed, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S20")); }
+            if RandRange(seed + 10, 1, 100) <= 20 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S21")); }
+            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S22")); }
         }
         else if Equals(district, "PACIFICA") {
-            if RandRange(seed, 1, 100) <= 40 { ArrayPush(connections, "Survival network with other residents"); }
-            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, "Knows Voodoo Boys contacts"); }
-            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, "Connection to Haitian community"); }
+            if RandRange(seed, 1, 100) <= 40 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S23")); }
+            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S24")); }
+            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S25")); }
         }
         else if Equals(district, "HEYWOOD") {
-            if RandRange(seed, 1, 100) <= 40 { ArrayPush(connections, "Family ties in the neighborhood"); }
-            if RandRange(seed + 10, 1, 100) <= 35 { ArrayPush(connections, "Regular at El Coyote Cojo"); }
-            if RandRange(seed + 20, 1, 100) <= 30 { ArrayPush(connections, "Knows Valentino members"); }
+            if RandRange(seed, 1, 100) <= 40 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S26")); }
+            if RandRange(seed + 10, 1, 100) <= 35 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S27")); }
+            if RandRange(seed + 20, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S28")); }
         }
         else if Equals(district, "SANTO_DOMINGO") {
-            if RandRange(seed, 1, 100) <= 45 { ArrayPush(connections, "Factory worker connections"); }
-            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, "Knows 6th Street members"); }
+            if RandRange(seed, 1, 100) <= 45 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S29")); }
+            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S30")); }
             if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, "Union contacts"); }
         }
         else if Equals(district, "CITY_CENTER") {
-            if RandRange(seed, 1, 100) <= 30 { ArrayPush(connections, "Corporate networking contacts"); }
-            if RandRange(seed + 10, 1, 100) <= 20 { ArrayPush(connections, "Security personnel connections"); }
+            if RandRange(seed, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S31")); }
+            if RandRange(seed + 10, 1, 100) <= 20 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S32")); }
         }
         else if Equals(district, "BADLANDS") {
-            if RandRange(seed, 1, 100) <= 50 { ArrayPush(connections, "Nomad clan contacts"); }
-            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, "Knows smuggling routes"); }
+            if RandRange(seed, 1, 100) <= 50 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S33")); }
+            if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S34")); }
         }
 
         if ArraySize(connections) == 0 {
-            ArrayPush(connections, "Limited local connections");
+            ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S35"));
         }
 
         return connections;
@@ -241,53 +241,53 @@ public class KdspCrowdDistrictManager {
         let elements: array<String>;
 
         if Equals(district, "WATSON") {
-            ArrayPush(elements, "Arrived during the post-Arasaka exodus");
-            ArrayPush(elements, "Remembers when Watson was corporate territory");
-            ArrayPush(elements, "Survived multiple gang turf changes");
-            ArrayPush(elements, "Immigrant background, came through Watson docks");
-            ArrayPush(elements, "Lost family in the Arasaka bombing aftermath");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S36"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S37"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S38"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S39"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S40"));
         }
         else if Equals(district, "WESTBROOK") {
-            ArrayPush(elements, "Connected to Japantown's entertainment industry");
-            ArrayPush(elements, "Witnessed Tyger Claw expansion firsthand");
-            ArrayPush(elements, "Has history with the braindance underground");
-            ArrayPush(elements, "Former service worker in North Oak estates");
-            ArrayPush(elements, "Involved in Japantown's grey economy");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S41"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S42"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S43"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S44"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S45"));
         }
         else if Equals(district, "PACIFICA") {
-            ArrayPush(elements, "Haitian diaspora background");
-            ArrayPush(elements, "Survived corporate abandonment of the district");
-            ArrayPush(elements, "Witnessed the failed resort project collapse");
-            ArrayPush(elements, "Has adapted to lawless existence");
-            ArrayPush(elements, "Remembers when Pacifica had hope");
-            ArrayPush(elements, "Distrustful of outsiders");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S46"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S47"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S48"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S49"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S50"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S51"));
         }
         else if Equals(district, "HEYWOOD") {
-            ArrayPush(elements, "Multi-generational Heywood family");
-            ArrayPush(elements, "Strong Catholic/Santa Muerte faith");
-            ArrayPush(elements, "Witnessed Valentino rise to power");
-            ArrayPush(elements, "Lost someone to gang violence");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S52"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S53"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S54"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S55"));
             ArrayPush(elements, "Community-oriented upbringing");
         }
         else if Equals(district, "SANTO_DOMINGO") {
-            ArrayPush(elements, "Factory worker family background");
-            ArrayPush(elements, "Suffered from industrial accidents/pollution");
-            ArrayPush(elements, "Participated in labor disputes");
-            ArrayPush(elements, "Former Militech or Petrochem employee");
-            ArrayPush(elements, "Witnessed 6th Street's community takeover");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S56"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S57"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S58"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S59"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S60"));
         }
         else if Equals(district, "CITY_CENTER") {
-            ArrayPush(elements, "Corporate family background");
-            ArrayPush(elements, "Sanitized personal history");
-            ArrayPush(elements, "Lives in corporate bubble");
-            ArrayPush(elements, "Rarely ventures to other districts");
-            ArrayPush(elements, "Security clearance holder");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S61"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S62"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S63"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S64"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S65"));
         }
         else if Equals(district, "BADLANDS") {
-            ArrayPush(elements, "Nomad clan heritage");
-            ArrayPush(elements, "Survived Nomad wars");
-            ArrayPush(elements, "Witnessed Biotechnica experiments");
-            ArrayPush(elements, "Escaped Night City for the desert");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S66"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S67"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S68"));
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S69"));
             ArrayPush(elements, "Smuggler background");
         }
 
@@ -312,24 +312,24 @@ public class KdspCrowdDistrictManager {
         if Equals(district, "WATSON") {
             ArrayPush(threats, "Maelstrom activity");
             ArrayPush(threats, "Scavenger presence");
-            ArrayPush(threats, "Tyger Claws expansion");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S70"));
         }
         else if Equals(district, "WESTBROOK") {
-            ArrayPush(threats, "Tyger Claws dominance");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S71"));
             ArrayPush(threats, "Organized crime");
         }
         else if Equals(district, "PACIFICA") {
             ArrayPush(threats, "Complete lawlessness");
-            ArrayPush(threats, "Voodoo Boys territorial control");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S72"));
             ArrayPush(threats, "Animals aggression");
-            ArrayPush(threats, "No emergency services");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S73"));
         }
         else if Equals(district, "HEYWOOD") {
-            ArrayPush(threats, "Valentinos territory disputes");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S74"));
             ArrayPush(threats, "Gang violence");
         }
         else if Equals(district, "SANTO_DOMINGO") {
-            ArrayPush(threats, "6th Street vigilantism");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S75"));
             ArrayPush(threats, "Industrial hazards");
         }
         else if Equals(district, "CITY_CENTER") {

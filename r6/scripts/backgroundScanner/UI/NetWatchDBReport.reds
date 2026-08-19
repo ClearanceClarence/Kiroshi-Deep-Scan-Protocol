@@ -96,67 +96,67 @@ public class KdspNetWatchDBReport extends inkCustomController {
         // ═══════════════════════════════════════════════════════════
         // PROFILE - Split into 3 subsections
         // ═══════════════════════════════════════════════════════════
-        this.m_backgroundSection = this.CreateDataSection(root, "Background", n"background",
+        this.m_backgroundSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-Background"), n"background",
             new HDRColor(0.369, 0.965, 0.878, 1.0));
         this.m_backgroundValue = this.m_backgroundSection.GetWidget(n"background_value") as inkText;
 
-        this.m_earlyLifeSection = this.CreateDataSection(root, "Early Life", n"earlylife",
+        this.m_earlyLifeSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-EarlyLife"), n"earlylife",
             new HDRColor(0.369, 0.965, 0.878, 1.0));
         this.m_earlyLifeValue = this.m_earlyLifeSection.GetWidget(n"earlylife_value") as inkText;
 
-        this.m_recentSection = this.CreateDataSection(root, "Recent Activity", n"recent",
+        this.m_recentSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-RecentActivity"), n"recent",
             new HDRColor(0.369, 0.965, 0.878, 1.0));
         this.m_recentValue = this.m_recentSection.GetWidget(n"recent_value") as inkText;
 
         // ═══════════════════════════════════════════════════════════
         // DATA SECTIONS
         // ═══════════════════════════════════════════════════════════
-        this.m_threatSection = this.CreateDataSection(root, "Psych Profile", n"threat",
+        this.m_threatSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-PsychProfile"), n"threat",
             new HDRColor(0.369, 0.965, 0.878, 1.0));
         this.m_threatValue = this.m_threatSection.GetWidget(n"threat_value") as inkText;
 
-        this.m_criminalSection = this.CreateDataSection(root, "Criminal Record", n"criminal",
+        this.m_criminalSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-CriminalRecord"), n"criminal",
             new HDRColor(1.0, 0.4, 0.4, 1.0));
         this.m_criminalValue = this.m_criminalSection.GetWidget(n"criminal_value") as inkText;
 
-        this.m_gangSection = this.CreateDataSection(root, "Gang Affiliation", n"gang",
+        this.m_gangSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-GangAffiliation"), n"gang",
             new HDRColor(0.85, 0.5, 0.95, 1.0));
         this.m_gangValue = this.m_gangSection.GetWidget(n"gang_value") as inkText;
 
-        this.m_cyberSection = this.CreateDataSection(root, "Cyberware", n"cyber",
+        this.m_cyberSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-Cyberware"), n"cyber",
             new HDRColor(0.369, 0.965, 0.878, 1.0));
         this.m_cyberValue = this.m_cyberSection.GetWidget(n"cyber_value") as inkText;
 
-        this.m_financeSection = this.CreateDataSection(root, "Financial", n"finance",
+        this.m_financeSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-Financial"), n"finance",
             new HDRColor(1.0, 0.9, 0.35, 1.0));
         this.m_financeValue = this.m_financeSection.GetWidget(n"finance_value") as inkText;
 
-        this.m_medicalSection = this.CreateDataSection(root, "Medical", n"medical",
+        this.m_medicalSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-Medical"), n"medical",
             new HDRColor(0.4, 1.0, 0.55, 1.0));
         this.m_medicalValue = this.m_medicalSection.GetWidget(n"medical_value") as inkText;
 
-        this.m_relationshipsSection = this.CreateDataSection(root, "Relationships", n"relationships",
+        this.m_relationshipsSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-Relationships"), n"relationships",
             new HDRColor(1.0, 0.6, 0.7, 1.0));
         this.m_relationshipsValue = this.m_relationshipsSection.GetWidget(n"relationships_value") as inkText;
 
-        this.m_networkAnalysisSection = this.CreateDataSection(root, "Network Analysis", n"networkanalysis",
+        this.m_networkAnalysisSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-NetworkAnalysis"), n"networkanalysis",
             new HDRColor(0.37, 0.96, 0.88, 1.0));
         this.m_networkAnalysisValue = this.m_networkAnalysisSection.GetWidget(n"networkanalysis_value") as inkText;
 
-        this.m_vehicleSection = this.CreateDataSection(root, "Vehicle Registration", n"vehicle",
+        this.m_vehicleSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-VehicleRegistration"), n"vehicle",
             new HDRColor(0.6, 0.8, 1.0, 1.0));
         this.m_vehicleValue = this.m_vehicleSection.GetWidget(n"vehicle_value") as inkText;
 
-        this.m_netProfileSection = this.CreateDataSection(root, "NET Profile", n"netprofile",
+        this.m_netProfileSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-NETProfile"), n"netprofile",
             new HDRColor(0.5, 0.9, 1.0, 1.0));
         this.m_netProfileValue = this.m_netProfileSection.GetWidget(n"netprofile_value") as inkText;
 
-        this.m_pronounsSection = this.CreateDataSection(root, "Pronouns", n"pronouns",
+        this.m_pronounsSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-Pronouns"), n"pronouns",
             new HDRColor(0.8, 0.6, 1.0, 1.0));
         this.m_pronounsValue = this.m_pronounsSection.GetWidget(n"pronouns_value") as inkText;
 
         // Debug section - orange/amber color to stand out
-        this.m_debugSection = this.CreateDataSection(root, "Debug Info", n"debug",
+        this.m_debugSection = this.CreateDataSection(root, GetLocalizedTextByKey(n"Kdsp-UI-DebugInfo"), n"debug",
             new HDRColor(1.0, 0.6, 0.2, 1.0));
         this.m_debugValue = this.m_debugSection.GetWidget(n"debug_value") as inkText;
     }
@@ -304,8 +304,9 @@ public class KdspNetWatchDBReport extends inkCustomController {
         if StrLen(this.m_backstoryUI.criminalRecord) > 0 && KdspSettings.ShowCriminalRecord() {
             this.m_criminalValue.SetText(this.m_backstoryUI.criminalRecord);
             // BOLO notice or active warrant gets urgent red, routine records
-            // keep the section default
-            if StrContains(this.m_backstoryUI.criminalRecord, "BOLO:") || StrContains(this.m_backstoryUI.criminalRecord, "ALERT:") || StrContains(this.m_backstoryUI.criminalRecord, "NOTICE:") || StrContains(this.m_backstoryUI.criminalRecord, "WARRANT: ACTIVE") {
+            // keep the section default. Flag-based so translations don't
+            // break the highlight.
+            if this.m_backstoryUI.hasHotRecord {
                 this.m_criminalValue.SetTintColor(new HDRColor(1.0, 0.22, 0.28, 1.0));
             } else {
                 this.m_criminalValue.SetTintColor(new HDRColor(1.0, 0.4, 0.4, 1.0));

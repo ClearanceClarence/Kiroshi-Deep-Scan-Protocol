@@ -30,13 +30,13 @@ public class KdspScannerLoadingText {
         };
 
         // Always start with connection
-        ArrayPush(lines, KdspScannerLoadingText.GetConnectionLine(seed));
+        ArrayPush(lines, KdspTextLoading.GetConnectionLine(seed));
 
         // When the district is known, the second line routes through
         // local infrastructure before hitting citywide databases
         let usedDistrictLine: Bool = false;
         if lineCount >= 3 && NotEquals(district, "UNKNOWN") {
-            ArrayPush(lines, KdspScannerLoadingText.GetDistrictLine(seed + 31, district));
+            ArrayPush(lines, KdspTextLoading.GetDistrictLine(seed + 31, district));
             usedDistrictLine = true;
         };
 
@@ -48,25 +48,25 @@ public class KdspScannerLoadingText {
             
             // 15% chance of error/warning line (only on medium/high)
             if density >= 2 && lineType <= 15 {
-                ArrayPush(lines, KdspScannerLoadingText.GetErrorLine(seed + (i * 77)));
+                ArrayPush(lines, KdspTextLoading.GetErrorLine(seed + (i * 77)));
             }
             // 30% chance of database line
             else if lineType <= 45 {
-                ArrayPush(lines, KdspScannerLoadingText.GetDatabaseLine(seed + (i * 100)));
+                ArrayPush(lines, KdspTextLoading.GetDatabaseLine(seed + (i * 100)));
             }
             // 30% chance of processing line
             else if lineType <= 75 {
-                ArrayPush(lines, KdspScannerLoadingText.GetProcessingLine(seed + (i * 123)));
+                ArrayPush(lines, KdspTextLoading.GetProcessingLine(seed + (i * 123)));
             }
             // 25% chance of status line
             else {
-                ArrayPush(lines, KdspScannerLoadingText.GetStatusLine(seed + (i * 147)));
+                ArrayPush(lines, KdspTextLoading.GetStatusLine(seed + (i * 147)));
             }
             i += 1;
         }
         
         // Always end with success
-        ArrayPush(lines, KdspScannerLoadingText.GetSuccessLine(seed + 999));
+        ArrayPush(lines, KdspTextLoading.GetSuccessLine(seed + 999));
         
         return lines;
     }
@@ -74,237 +74,28 @@ public class KdspScannerLoadingText {
     // ══════════════════════════════════════════════════════════════════════
     // DISTRICT-FLAVORED LINES
     // ══════════════════════════════════════════════════════════════════════
-    private static func GetDistrictLine(seed: Int32, district: String) -> String {
-        let lines: array<String>;
-
-        if Equals(district, "WATSON") {
-            ArrayPush(lines, "Accessing Watson municipal records node...");
-            ArrayPush(lines, "Routing through Kabuki market mesh network...");
-            ArrayPush(lines, "Querying Little China district registry...");
-            ArrayPush(lines, "Pinging Northside industrial subnet...");
-            ArrayPush(lines, "Tapping Watson NCPD precinct feed...");
-            ArrayPush(lines, "Negotiating with Tyger Claw-patched local node...");
-        } else if Equals(district, "WESTBROOK") {
-            ArrayPush(lines, "Routing through Japantown commercial grid...");
-            ArrayPush(lines, "Accessing Charter Hill resident registry [ENCRYPTED]...");
-            ArrayPush(lines, "Querying North Oak private security logs...");
-            ArrayPush(lines, "Handshaking with Westbrook luxury retail net...");
-            ArrayPush(lines, "Bypassing Tyger Claw traffic monitors...");
-            ArrayPush(lines, "Piggybacking a Japantown BD lounge uplink...");
-        } else if Equals(district, "CITY_CENTER") {
-            ArrayPush(lines, "Negotiating corpo-grade encryption layer...");
-            ArrayPush(lines, "Routing around Arasaka Tower exclusion zone...");
-            ArrayPush(lines, "Accessing City Center financial district node...");
-            ArrayPush(lines, "Spoofing corporate plaza credentials...");
-            ArrayPush(lines, "Evading Militech perimeter sniffers...");
-            ArrayPush(lines, "Querying downtown surveillance backbone...");
-        } else if Equals(district, "HEYWOOD") {
-            ArrayPush(lines, "Routing through Heywood barrio mesh...");
-            ArrayPush(lines, "Querying Vista del Rey community node...");
-            ArrayPush(lines, "Accessing The Glen municipal substation...");
-            ArrayPush(lines, "Skirting Valentino-monitored channels...");
-            ArrayPush(lines, "Tapping Wellsprings transit data spine...");
-            ArrayPush(lines, "Handshaking with a Heywood bodega relay...");
-        } else if Equals(district, "SANTO_DOMINGO") {
-            ArrayPush(lines, "Routing through Arroyo industrial trunk line...");
-            ArrayPush(lines, "Accessing Santo Domingo factory worknet...");
-            ArrayPush(lines, "Querying Rancho Coronado housing registry...");
-            ArrayPush(lines, "Tapping a power plant maintenance channel...");
-            ArrayPush(lines, "Bypassing 6th Street checkpoint scanners...");
-            ArrayPush(lines, "Negotiating with an Arroyo union server...");
-        } else if Equals(district, "PACIFICA") {
-            ArrayPush(lines, "Routing through Pacifica darknet relay...");
-            ArrayPush(lines, "Scavenging bandwidth off dead resort infrastructure...");
-            ArrayPush(lines, "Avoiding Voodoo Boys netrunner territory...");
-            ArrayPush(lines, "Querying Coastview's last functioning node...");
-            ArrayPush(lines, "WARNING: No municipal coverage — using darknet...");
-            ArrayPush(lines, "Tunneling past NetWatch's Pacifica blacklist...");
-        } else if Equals(district, "DOGTOWN") {
-            ArrayPush(lines, "Tunneling under Barghest signal jamming...");
-            ArrayPush(lines, "Routing through smuggler frequency bands...");
-            ArrayPush(lines, "WARNING: Dogtown — no NCPD data available...");
-            ArrayPush(lines, "Negotiating with a black market data broker...");
-            ArrayPush(lines, "Piggybacking a Barghest patrol uplink [RISKY]...");
-            ArrayPush(lines, "Accessing pre-blockade municipal archives...");
-        } else if Equals(district, "BADLANDS") {
-            ArrayPush(lines, "Boosting signal — nearest relay 12 km out...");
-            ArrayPush(lines, "Routing through a nomad convoy repeater...");
-            ArrayPush(lines, "Querying sparse Badlands satellite coverage...");
-            ArrayPush(lines, "WARNING: Rural registry data may be years stale...");
-            ArrayPush(lines, "Tapping an abandoned Petrochem field station...");
-            ArrayPush(lines, "Handshaking with long-haul trucker mesh net...");
-        } else {
-            // Fallback for UNKNOWN — generic but local-sounding
-            ArrayPush(lines, "Triangulating local infrastructure nodes...");
-            ArrayPush(lines, "Routing through nearest municipal relay...");
-            ArrayPush(lines, "Querying district registry services...");
-        };
-
-        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
-    }
 
     // ══════════════════════════════════════════════════════════════════════
     // CONNECTION / INITIALIZATION LINES
     // ══════════════════════════════════════════════════════════════════════
-    private static func GetConnectionLine(seed: Int32) -> String {
-        let lines: array<String>;
-        ArrayPush(lines, "Initializing Kiroshi Deep Scan Protocol...");
-        ArrayPush(lines, "Establishing secure NetWatch bypass...");
-        ArrayPush(lines, "Spoofing authentication credentials...");
-        ArrayPush(lines, "Kiroshi Mk.IV neural link established...");
-        ArrayPush(lines, "Routing connection through proxy node...");
-        ArrayPush(lines, "Handshaking with NCPD central server...");
-        ArrayPush(lines, "Initiating multi-spectrum biometric scan...");
-        ArrayPush(lines, "Deep Scan subroutine loaded...");
-        ArrayPush(lines, "Engaging passive reconnaissance mode...");
-        ArrayPush(lines, "Calibrating optical recognition matrix...");
-        ArrayPush(lines, "Neural pattern lock acquired...");
-        ArrayPush(lines, "Pinging Night City datafortress nodes...");
-        ArrayPush(lines, "Quantum encryption handshake initiated...");
-        ArrayPush(lines, "Optical implant sync complete...");
-        ArrayPush(lines, "Kiroshi subsystems online...");
-        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
-    }
 
     // ══════════════════════════════════════════════════════════════════════
     // DATABASE ACCESS LINES
     // ══════════════════════════════════════════════════════════════════════
-    private static func GetDatabaseLine(seed: Int32) -> String {
-        let lines: array<String>;
-        ArrayPush(lines, "Accessing NCPD criminal database...");
-        ArrayPush(lines, "Querying Night City Medical Registry...");
-        ArrayPush(lines, "Pulling cyberware registration records...");
-        ArrayPush(lines, "Scanning Trauma Team coverage database...");
-        ArrayPush(lines, "Accessing Arasaka Banking Node [ENCRYPTED]...");
-        ArrayPush(lines, "Fetching immigration services records...");
-        ArrayPush(lines, "Decrypting Militech personnel files...");
-        ArrayPush(lines, "Connecting to Ripperdoc Network...");
-        ArrayPush(lines, "Accessing social credit score database...");
-        ArrayPush(lines, "Querying gang affiliation registry...");
-        ArrayPush(lines, "Pulling employment verification records...");
-        ArrayPush(lines, "Accessing sealed court records...");
-        ArrayPush(lines, "Fetching NCPD facial recognition data...");
-        ArrayPush(lines, "Querying Zetatech employee database...");
-        ArrayPush(lines, "Scanning Biotechnica medical trials registry...");
-        ArrayPush(lines, "Accessing Kang Tao import/export manifests...");
-        ArrayPush(lines, "Pulling NetWatch flagged communications...");
-        ArrayPush(lines, "Querying Petrochem contractor database...");
-        ArrayPush(lines, "Accessing Night City tax records...");
-        ArrayPush(lines, "Pulling Trauma Team incident reports...");
-        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
-    }
 
     // ══════════════════════════════════════════════════════════════════════
     // PROCESSING / ANALYSIS LINES
     // ══════════════════════════════════════════════════════════════════════
-    private static func GetProcessingLine(seed: Int32) -> String {
-        let lines: array<String>;
-        ArrayPush(lines, "Compiling threat assessment matrix...");
-        ArrayPush(lines, "Analyzing neural signature patterns...");
-        ArrayPush(lines, "Processing criminal record fragments...");
-        ArrayPush(lines, "Running background check algorithm...");
-        ArrayPush(lines, "Correlating known associates...");
-        ArrayPush(lines, "Mapping financial transaction history...");
-        ArrayPush(lines, "Reconstructing employment timeline...");
-        ArrayPush(lines, "Verifying cyberware serial numbers...");
-        ArrayPush(lines, "Calculating cyberpsychosis risk index...");
-        ArrayPush(lines, "Cross-matching gang tattoo database...");
-        ArrayPush(lines, "Analyzing behavioral prediction model...");
-        ArrayPush(lines, "Processing biometric data clusters...");
-        ArrayPush(lines, "Running facial recognition subroutine...");
-        ArrayPush(lines, "Decoding encrypted medical records...");
-        ArrayPush(lines, "Triangulating last known locations...");
-        ArrayPush(lines, "Parsing social network connections...");
-        ArrayPush(lines, "Evaluating psychological profile markers...");
-        ArrayPush(lines, "Cross-referencing witness statements...");
-        ArrayPush(lines, "Analyzing spending patterns...");
-        ArrayPush(lines, "Reconstructing travel history...");
-        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
-    }
 
     // ══════════════════════════════════════════════════════════════════════
     // STATUS LINES
     // ══════════════════════════════════════════════════════════════════════
-    private static func GetStatusLine(seed: Int32) -> String {
-        let lines: array<String>;
-        ArrayPush(lines, "Bypassing Militech firewall... SUCCESS");
-        ArrayPush(lines, "Evading Arasaka countermeasures...");
-        ArrayPush(lines, "Data broker fee: 0.02 eddies [AUTO-PAID]");
-        ArrayPush(lines, "Connection stable. No trace detected.");
-        ArrayPush(lines, "Scrubbing proxy logs...");
-        ArrayPush(lines, "NetWatch alert level: GREEN");
-        ArrayPush(lines, "Masking origin point... DONE");
-        ArrayPush(lines, "Verifying data integrity...");
-        ArrayPush(lines, "Secondary sources: 3 matches found");
-        ArrayPush(lines, "Archive search: 847 records scanned");
-        ArrayPush(lines, "Real-time threat assessment: MINIMAL");
-        ArrayPush(lines, "Firewall penetration: 100%");
-        ArrayPush(lines, "ICE countermeasures: NEUTRALIZED");
-        ArrayPush(lines, "Black ICE detection: NEGATIVE");
-        ArrayPush(lines, "Daemon injection: NOT REQUIRED");
-        ArrayPush(lines, "Trace route: OBSCURED");
-        ArrayPush(lines, "NCPD monitoring: EVADED");
-        ArrayPush(lines, "Corporate oversight: NONE DETECTED");
-        ArrayPush(lines, "Proxy chain: 7 nodes active");
-        ArrayPush(lines, "Signal strength: OPTIMAL");
-        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
-    }
 
     // ══════════════════════════════════════════════════════════════════════
     // ERROR / WARNING LINES (recovered from)
     // ══════════════════════════════════════════════════════════════════════
-    private static func GetErrorLine(seed: Int32) -> String {
-        let lines: array<String>;
-        ArrayPush(lines, "WARNING: Partial records detected");
-        ArrayPush(lines, "ERROR: Arasaka node timeout... retrying...");
-        ArrayPush(lines, "ALERT: NetWatch probe detected... evading...");
-        ArrayPush(lines, "Connection interrupted... reconnecting...");
-        ArrayPush(lines, "ERROR: Database query failed... rerouting...");
-        ArrayPush(lines, "WARNING: Incomplete financial data");
-        ArrayPush(lines, "ALERT: Corporate ICE detected... bypassing...");
-        ArrayPush(lines, "ERROR: Authentication rejected... spoofing...");
-        ArrayPush(lines, "WARNING: Medical records [PARTIALLY SEALED]");
-        ArrayPush(lines, "NOTICE: Subject flagged in 2 databases");
-        ArrayPush(lines, "ERROR: Militech firewall... breach in progress...");
-        ArrayPush(lines, "WARNING: Corrupted data block... reconstructing...");
-        ArrayPush(lines, "ALERT: Trace attempt detected... masking...");
-        ArrayPush(lines, "ERROR: Timeout on NCPD node... switching...");
-        ArrayPush(lines, "WARNING: Criminal records [EXPUNGED - RECOVERING]");
-        ArrayPush(lines, "NOTICE: Some records may be outdated");
-        ArrayPush(lines, "ERROR: Kang Tao server unreachable... skipping...");
-        ArrayPush(lines, "WARNING: Immigration data incomplete");
-        ArrayPush(lines, "ALERT: Black ICE signature... neutralizing...");
-        ArrayPush(lines, "ERROR: Zetatech connection lost... retrying...");
-        ArrayPush(lines, "WARNING: Subject has counter-surveillance implant");
-        ArrayPush(lines, "NOTICE: Archived records only - no live data");
-        ArrayPush(lines, "ERROR: Decryption failed... using backup key...");
-        ArrayPush(lines, "WARNING: Data integrity check failed... verifying...");
-        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
-    }
 
     // ══════════════════════════════════════════════════════════════════════
     // SUCCESS / COMPLETION LINES (always last)
     // ══════════════════════════════════════════════════════════════════════
-    private static func GetSuccessLine(seed: Int32) -> String {
-        let lines: array<String>;
-        ArrayPush(lines, "Scan complete. Displaying results.");
-        ArrayPush(lines, "Data compilation complete. Confidence: 94.7%");
-        ArrayPush(lines, "Profile assembled from 7 data sources.");
-        ArrayPush(lines, "All systems nominal. Rendering output.");
-        ArrayPush(lines, "Analysis complete. No anomalies detected.");
-        ArrayPush(lines, "Subject profile compiled successfully.");
-        ArrayPush(lines, "Database query complete. Rendering...");
-        ArrayPush(lines, "Records retrieved. Processing complete.");
-        ArrayPush(lines, "Deep scan finished. Confidence: HIGH");
-        ArrayPush(lines, "Intel package ready. Displaying profile.");
-        ArrayPush(lines, "Compilation successful. 12 records merged.");
-        ArrayPush(lines, "Query complete. Threat assessment ready.");
-        ArrayPush(lines, "Profile locked. Displaying subject data.");
-        ArrayPush(lines, "Scan finalized. Accuracy: 97.2%");
-        ArrayPush(lines, "All databases queried. Results compiled.");
-        ArrayPush(lines, "Data aggregation complete. Rendering...");
-        ArrayPush(lines, "Subject analysis complete. Displaying...");
-        ArrayPush(lines, "Profile generation successful.");
-        return lines[RandRange(seed, 0, ArraySize(lines) - 1)];
-    }
 }
