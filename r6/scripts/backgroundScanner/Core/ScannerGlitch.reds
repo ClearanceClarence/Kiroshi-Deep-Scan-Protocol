@@ -19,13 +19,13 @@ public abstract class KdspScannerGlitch {
         glitched.ncID = KdspScannerGlitch.CorruptID(seed * 3 + 7919);
 
         // Background
-        glitched.background = KdspScannerGlitch.CorruptField(seed * 7 + 15473, glitchType, "background");
+        glitched.background = KdspScannerGlitch.CorruptField(seed * 7 + 15473, glitchType, GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-T0"));
 
         // Early Life
-        glitched.earlyLife = KdspScannerGlitch.CorruptField(seed * 11 + 28661, glitchType, "earlyLife");
+        glitched.earlyLife = KdspScannerGlitch.CorruptField(seed * 11 + 28661, glitchType, GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-T1"));
 
         // Recent Activity
-        glitched.significantEvents = KdspScannerGlitch.CorruptField(seed * 13 + 42853, glitchType, "recent");
+        glitched.significantEvents = KdspScannerGlitch.CorruptField(seed * 13 + 42853, glitchType, GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-T2"));
 
         // Psych
         if NotEquals(backstoryUI.threatAssessment, "") {
@@ -86,7 +86,7 @@ public abstract class KdspScannerGlitch {
         glitched.pronouns = "";
 
         // Debug info - show glitch metadata
-        glitched.debugInfo = backstoryUI.debugInfo + " | GLITCH TYPE: " + IntToString(glitchType);
+        glitched.debugInfo = backstoryUI.debugInfo + GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-T3") + IntToString(glitchType);
 
         return glitched;
     }

@@ -113,11 +113,11 @@ public abstract class KdspConnectionDetector {
 
         // Set strength
         if result.crossRefDetected {
-            result.connectionStrength = "DIRECT";
+            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-T0");
         } else if result.sharedContactCount > 0 {
-            result.connectionStrength = "LINKED";
+            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-T1");
         } else if ArraySize(result.alerts) > 0 {
-            result.connectionStrength = "PERIPHERAL";
+            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-T2");
         };
 
         return result;

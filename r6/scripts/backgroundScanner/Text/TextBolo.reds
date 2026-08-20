@@ -28,8 +28,8 @@ public abstract class KdspTextBolo {
         // ── Missing persons ───────────────────────────────────────────
         if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-Bolo-14") + IntToString(RandRange(seed + 13, 40000, 99999)); };
         if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-Bolo-15"); };
-        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-Bolo-16") + IntToString(RandRange(seed + 17, 2073, 2077)) + " — case never closed"; };
-        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-Bolo-17") + IntToString(RandRange(seed + 19, 2070, 2075)) + " — biometrics say otherwise"; };
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-Bolo-16") + IntToString(RandRange(seed + 17, 2073, 2077)) + GetLocalizedTextByKey(n"Kdsp-Bolo-16b"); };
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-Bolo-17") + IntToString(RandRange(seed + 19, 2070, 2075)) + GetLocalizedTextByKey(n"Kdsp-Bolo-17b"); };
         if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-Bolo-18"); };
         if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-Bolo-19") + IntToString(RandRange(seed + 23, 2058, 2066)); };
         // ── Corp-related ──────────────────────────────────────────────
@@ -66,7 +66,7 @@ public abstract class KdspTextBolo {
         if roll == 47 { return GetLocalizedTextByKey(n"Kdsp-Bolo-47"); };
         if roll == 48 { return GetLocalizedTextByKey(n"Kdsp-Bolo-48"); };
         if roll == 49 { return GetLocalizedTextByKey(n"Kdsp-Bolo-49"); };
-        if roll == 50 { return GetLocalizedTextByKey(n"Kdsp-Bolo-50") + IntToString(RandRange(seed + 31, 10000, 39999)) + " — verification interview pending"; };
+        if roll == 50 { return GetLocalizedTextByKey(n"Kdsp-Bolo-50") + IntToString(RandRange(seed + 31, 10000, 39999)) + GetLocalizedTextByKey(n"Kdsp-Bolo-50b"); };
         // ── Gang / street ─────────────────────────────────────────────
         if roll == 51 { return GetLocalizedTextByKey(n"Kdsp-Bolo-51"); };
         if roll == 52 { return GetLocalizedTextByKey(n"Kdsp-Bolo-52"); };
@@ -86,7 +86,7 @@ public abstract class KdspTextBolo {
         if roll == 64 { return GetLocalizedTextByKey(n"Kdsp-Bolo-64"); };
         // ── Historical / cold case ────────────────────────────────────
         if roll == 65 { return GetLocalizedTextByKey(n"Kdsp-Bolo-65"); };
-        if roll == 66 { return GetLocalizedTextByKey(n"Kdsp-Bolo-66") + IntToString(RandRange(seed + 37, 2060, 2070)) + " incident report — case reopened"; };
+        if roll == 66 { return GetLocalizedTextByKey(n"Kdsp-Bolo-66") + IntToString(RandRange(seed + 37, 2060, 2070)) + GetLocalizedTextByKey(n"Kdsp-Bolo-66b"); };
         if roll == 67 { return GetLocalizedTextByKey(n"Kdsp-Bolo-67"); };
         // ── Odd ones ──────────────────────────────────────────────────
         if roll == 68 { return GetLocalizedTextByKey(n"Kdsp-Bolo-68"); };

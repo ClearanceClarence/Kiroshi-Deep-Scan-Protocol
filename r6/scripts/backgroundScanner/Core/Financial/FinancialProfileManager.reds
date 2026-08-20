@@ -136,11 +136,11 @@ public class KdspFinancialProfileManager {
         
         if IsDefined(coherence) && NotEquals(coherence.debtReason, "") {
             if Equals(coherence.debtReason, "medical bills") { base = RandRange(seed, 10000, 150000); }
-            if Equals(coherence.debtReason, "cyberware loans") { base = RandRange(seed, 5000, 80000); }
+            if Equals(coherence.debtReason, GetLocalizedTextByKey(n"Kdsp-Shared-C15")) { base = RandRange(seed, 5000, 80000); }
             if Equals(coherence.debtReason, "gambling") { base = RandRange(seed, 2000, 100000); }
-            if Equals(coherence.debtReason, "failed business") { base = RandRange(seed, 20000, 200000); }
-            if Equals(coherence.debtReason, "substance habit") { base = RandRange(seed, 3000, 50000); }
-            if Equals(coherence.debtReason, "education loans") { base = RandRange(seed, 15000, 100000); }
+            if Equals(coherence.debtReason, GetLocalizedTextByKey(n"Kdsp-Shared-C19")) { base = RandRange(seed, 20000, 200000); }
+            if Equals(coherence.debtReason, GetLocalizedTextByKey(n"Kdsp-Shared-C18")) { base = RandRange(seed, 3000, 50000); }
+            if Equals(coherence.debtReason, GetLocalizedTextByKey(n"Kdsp-Shared-C16")) { base = RandRange(seed, 15000, 100000); }
         }
         
         return base;
@@ -157,9 +157,9 @@ public class KdspFinancialProfileManager {
                 ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S3"));
                 return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
             }
-            if Equals(coherence.debtReason, "cyberware loans") {
+            if Equals(coherence.debtReason, GetLocalizedTextByKey(n"Kdsp-Shared-C15")) {
                 let holders: array<String>;
-                ArrayPush(holders, "Ripperdoc Financing");
+                ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T0"));
                 ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S4"));
                 ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S5"));
                 ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S6"));
@@ -173,12 +173,12 @@ public class KdspFinancialProfileManager {
                 ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S10"));
                 return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
             }
-            if Equals(coherence.debtReason, "substance habit") {
+            if Equals(coherence.debtReason, GetLocalizedTextByKey(n"Kdsp-Shared-C18")) {
                 let holders: array<String>;
                 ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S11"));
-                ArrayPush(holders, "Gang Collections");
-                ArrayPush(holders, "Rehabilitation Center");
-                ArrayPush(holders, "Unnamed Creditor");
+                ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T1"));
+                ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T2"));
+                ArrayPush(holders, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T3"));
                 return holders[RandRange(seed, 0, ArraySize(holders) - 1)];
             }
         }
@@ -204,7 +204,7 @@ public class KdspFinancialProfileManager {
                 return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
             }
             if IsDefined(coherence) && Equals(coherence.jobHistory, "corpo") { return "Corporate employee"; }
-            return "Corporate employee";
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T4");
         }
 
         // Yuppie archetype: FALLING means struggling professionally, not destitute
@@ -219,8 +219,8 @@ public class KdspFinancialProfileManager {
             }
             if IsDefined(coherence) && Equals(coherence.lifeTheme, "STRUGGLING") {
                 let statuses: array<String>;
-                ArrayPush(statuses, "Self-employed (Overextended)");
-                ArrayPush(statuses, "Full-time (Stagnant)");
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T5"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T6"));
                 ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S20"));
                 return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
             }
@@ -231,18 +231,18 @@ public class KdspFinancialProfileManager {
             if Equals(coherence.jobHistory, "none") { return "UNEMPLOYED"; }
             if Equals(coherence.jobHistory, "criminal") {
                 let statuses: array<String>;
-                ArrayPush(statuses, "Self-employed");
-                ArrayPush(statuses, "Freelance");
-                ArrayPush(statuses, "UNEMPLOYED");
-                ArrayPush(statuses, "Informal employment");
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T7"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T8"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T9"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T10"));
                 return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
             }
             if Equals(coherence.jobHistory, "unstable") {
                 let statuses: array<String>;
-                ArrayPush(statuses, "Part-time");
-                ArrayPush(statuses, "Contract worker");
-                ArrayPush(statuses, "Gig economy");
-                ArrayPush(statuses, "Recently terminated");
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T11"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T12"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T13"));
+                ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T14"));
                 return statuses[RandRange(seed, 0, ArraySize(statuses) - 1)];
             }
             if Equals(coherence.jobHistory, "corpo") { return "Corporate employee"; }
@@ -266,15 +266,15 @@ public class KdspFinancialProfileManager {
             if IsDefined(coherence) && Equals(coherence.lifeTheme, "FALLING") {
                 if Equals(archetype, "CORPO_MANAGER") {
                     let levels: array<String>;
-                    ArrayPush(levels, "€$80,000-120,000/year (Demoted)");
+                    ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T15"));
                     ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S21"));
                     ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S22"));
                     return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
                 } else {
                     let levels: array<String>;
-                    ArrayPush(levels, "€$25,000-40,000/year (Demoted)");
+                    ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T16"));
                     ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S23"));
-                    ArrayPush(levels, "€$20,000-35,000/year (Probation)");
+                    ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T17"));
                     return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
                 }
             }
@@ -286,14 +286,14 @@ public class KdspFinancialProfileManager {
             if IsDefined(coherence) {
                 if Equals(coherence.lifeTheme, "FALLING") {
                     let levels: array<String>;
-                    ArrayPush(levels, "€$50,000-80,000/year (Declining)");
+                    ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T18"));
                     ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S24"));
                     ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S25"));
                     return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
                 }
                 if Equals(coherence.lifeTheme, "STRUGGLING") {
                     let levels: array<String>;
-                    ArrayPush(levels, "€$70,000-100,000/year (Overextended)");
+                    ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T19"));
                     ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S26"));
                     ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S27"));
                     return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
@@ -305,23 +305,23 @@ public class KdspFinancialProfileManager {
         if IsDefined(coherence) {
             if Equals(coherence.lifeTheme, "FALLING") {
                 let levels: array<String>;
-                ArrayPush(levels, "€$0-500/month");
-                ArrayPush(levels, "€$500-1,500/month");
-                ArrayPush(levels, "€$1,500-3,000/month");
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T20"));
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T21"));
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T22"));
                 return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
             }
             if Equals(coherence.lifeTheme, "STRUGGLING") {
                 let levels: array<String>;
-                ArrayPush(levels, "€$1,000-2,000/month");
-                ArrayPush(levels, "€$2,000-4,000/month");
-                ArrayPush(levels, "€$500-1,500/month");
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T23"));
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T24"));
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T21"));
                 return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
             }
             if Equals(coherence.lifeTheme, "CORPORATE") {
                 let levels: array<String>;
-                ArrayPush(levels, "€$8,000-15,000/month");
-                ArrayPush(levels, "€$15,000-30,000/month");
-                ArrayPush(levels, "€$5,000-10,000/month");
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T25"));
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T26"));
+                ArrayPush(levels, GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T27"));
                 return levels[RandRange(seed, 0, ArraySize(levels) - 1)];
             }
         }
@@ -369,18 +369,18 @@ public class KdspFinancialProfileManager {
     }
 
     private static func GetCreditTier(score: Int32) -> String {
-        if score >= 800 { return "EXCEPTIONAL"; }
+        if score >= 800 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T28"); }
         if score >= 750 { return "EXCELLENT"; }
-        if score >= 700 { return "VERY GOOD"; }
+        if score >= 700 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T29"); }
         if score >= 650 { return "GOOD"; }
         if score >= 600 { return "FAIR"; }
-        if score >= 550 { return "BELOW AVERAGE"; }
-        if score >= 500 { return "POOR"; }
-        if score >= 400 { return "VERY POOR"; }
-        if score >= 300 { return "BAD"; }
-        if score >= 250 { return "SEVERELY DAMAGED"; }
-        if score >= 150 { return "CRITICAL"; }
-        return "NO CREDIT HISTORY";
+        if score >= 550 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T30"); }
+        if score >= 500 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0"); }
+        if score >= 400 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T31"); }
+        if score >= 300 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T32"); }
+        if score >= 250 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T33"); }
+        if score >= 150 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T34"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T35");
     }
 
     private static func GenerateWealth(seed: Int32, archetype: String) -> Int32 {
@@ -402,18 +402,18 @@ public class KdspFinancialProfileManager {
     }
 
     private static func GetWealthTier(wealth: Int32) -> String {
-        if wealth >= 5000000 { return "ULTRA WEALTHY"; }
+        if wealth >= 5000000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T36"); }
         if wealth >= 1000000 { return "WEALTHY"; }
-        if wealth >= 500000 { return "AFFLUENT"; }
-        if wealth >= 250000 { return "UPPER MIDDLE CLASS"; }
-        if wealth >= 100000 { return "COMFORTABLE"; }
-        if wealth >= 50000 { return "MIDDLE CLASS"; }
-        if wealth >= 25000 { return "LOWER MIDDLE CLASS"; }
-        if wealth >= 10000 { return "WORKING CLASS"; }
-        if wealth >= 5000 { return "LOW INCOME"; }
-        if wealth >= 1000 { return "NEAR POVERTY"; }
-        if wealth >= 100 { return "POVERTY"; }
-        return "DESTITUTE";
+        if wealth >= 500000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T37"); }
+        if wealth >= 250000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T38"); }
+        if wealth >= 100000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T39"); }
+        if wealth >= 50000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T40"); }
+        if wealth >= 25000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T41"); }
+        if wealth >= 10000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T42"); }
+        if wealth >= 5000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T43"); }
+        if wealth >= 1000 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T44"); }
+        if wealth >= 100 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T45"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T46");
     }
 
     private static func HasDebt(seed: Int32, archetype: String, creditScore: Int32) -> Bool {
@@ -450,7 +450,7 @@ public class KdspFinancialProfileManager {
             let i = RandRange(seed, 0, 24);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S28"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S29"); }
-            if i == 2 { return "EuroBank"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-Corpo-EUROBANK"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S30"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S31"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S32"); }
@@ -461,8 +461,8 @@ public class KdspFinancialProfileManager {
             if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S37"); }
             if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S38"); }
             if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S39"); }
-            if i == 13 { return "SovOil Credit"; }
-            if i == 14 { return "IEC Financial"; }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T47"); }
+            if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T48"); }
             if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S40"); }
             if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S41"); }
             if i == 17 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S42"); }
@@ -479,20 +479,20 @@ public class KdspFinancialProfileManager {
         if Equals(archetype, "GANGER") {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S50"); }
-            if i == 1 { return "Valentinos (informal)"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T49"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S51"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S52"); }
-            if i == 4 { return "Animals Collections"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T50"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S53"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S54"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S55"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S56"); }
             if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S57"); }
-            if i == 10 { return "Drug Supplier"; }
-            if i == 11 { return "Weapons Dealer"; }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T51"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T52"); }
             if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S58"); }
-            if i == 13 { return "Underground Casino"; }
-            return "Territory Boss";
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T53"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T54");
         }
         
         // General population debt holders (40 options)
@@ -501,20 +501,20 @@ public class KdspFinancialProfileManager {
         // Corporate/Legitimate (0-19)
         if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S28"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S29"); }
-        if i == 2 { return "EuroBank"; }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-Corpo-EUROBANK"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S59"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S30"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S31"); }
         if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S36"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-Corpo-NC_HOUSING"); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S60"); }
-        if i == 9 { return "Ripperdoc Financing"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T0"); }
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S61"); }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S62"); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S63"); }
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S64"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S65"); }
-        if i == 15 { return "Westbrook Lending"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T55"); }
         if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S66"); }
         if i == 17 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S67"); }
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S68"); }
@@ -527,7 +527,7 @@ public class KdspFinancialProfileManager {
         if i == 23 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S73"); }
         if i == 24 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S74"); }
         if i == 25 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S75"); }
-        if i == 26 { return "Rent-to-Own Collections"; }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T56"); }
         if i == 27 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S76"); }
         if i == 28 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S77"); }
         if i == 29 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S78"); }
@@ -535,7 +535,7 @@ public class KdspFinancialProfileManager {
         // Shady/Criminal (30-39)
         if i == 30 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S79"); }
         if i == 31 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S50"); }
-        if i == 32 { return "Valentinos (informal)"; }
+        if i == 32 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T49"); }
         if i == 33 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S51"); }
         if i == 34 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S56"); }
         if i == 35 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S52"); }
@@ -557,7 +557,7 @@ public class KdspFinancialProfileManager {
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S87"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S88"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S89"); }
-            if i == 7 { return "Under Review"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T57"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S90"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S91");
         }
@@ -571,12 +571,12 @@ public class KdspFinancialProfileManager {
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S93"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S94"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S95"); }
-            if i == 7 { return "Hardship Deferment"; }
-            if i == 8 { return "In Collections"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T58"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T59"); }
             if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S96"); }
             if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S97"); }
-            if i == 11 { return "Settlement Offered"; }
-            if i == 12 { return "Dispute Filed"; }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T60"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T61"); }
             if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S98"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S99");
         }
@@ -587,7 +587,7 @@ public class KdspFinancialProfileManager {
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S100"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S101"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S102"); }
-        if i == 4 { return "In Collections"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T59"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S103"); }
         if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S97"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S104"); }
@@ -596,9 +596,9 @@ public class KdspFinancialProfileManager {
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S107"); }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S108"); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S109"); }
-        if i == 13 { return "Liens Filed"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T62"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S110"); }
-        if i == 15 { return "Bankruptcy Recommended"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T63"); }
         if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S111"); }
         if i == 17 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S112"); }
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S113"); }
@@ -611,44 +611,44 @@ public class KdspFinancialProfileManager {
         let roll = RandRange(seed, 1, 100);
         
         if wealth >= 500000 {
-            if roll <= 70 { return "PROPERTY OWNER"; }
-            return "RENTER (Luxury)";
+            if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T64"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T65");
         }
         if wealth >= 100000 {
-            if roll <= 30 { return "PROPERTY OWNER"; }
-            if roll <= 80 { return "RENTER"; }
-            return "CORPORATE HOUSING";
+            if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T64"); }
+            if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T66"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T67");
         }
         if wealth >= 20000 {
-            if roll <= 10 { return "PROPERTY OWNER"; }
-            if roll <= 70 { return "RENTER"; }
-            if roll <= 85 { return "SUBLETTING"; }
-            return "CORPORATE HOUSING";
+            if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T64"); }
+            if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T66"); }
+            if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T68"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T67");
         }
         
-        if roll <= 40 { return "RENTER"; }
-        if roll <= 60 { return "SUBLETTING"; }
-        if roll <= 75 { return "COHABITING"; }
-        if roll <= 90 { return "SQUATTING"; }
-        return "TRANSIENT";
+        if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T66"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T68"); }
+        if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T69"); }
+        if roll <= 90 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T70"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T71");
     }
 
     private static func GenerateResidenceType(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "YUPPIE") {
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Penthouse Suite"; }
-            if i == 1 { return "Luxury Apartment"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T72"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T73"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S115"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S116"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S117"); }
-            if i == 5 { return "Skyrise Condo"; }
-            if i == 6 { return "Private Villa"; }
-            if i == 7 { return "Secured Compound"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T74"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T75"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T76"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S118"); }
-            if i == 9 { return "Waterfront Property"; }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T77"); }
             if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S119"); }
             if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S120"); }
-            if i == 12 { return "Designer Apartment"; }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T78"); }
             if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S121"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S122");
         }
@@ -656,80 +656,80 @@ public class KdspFinancialProfileManager {
         if Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S123"); }
-            if i == 1 { return "Mid-Rise Apartment"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T79"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S124"); }
-            if i == 3 { return "Company Dormitory"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T80"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S125"); }
-            if i == 5 { return "Efficiency Apartment"; }
-            if i == 6 { return "Corporate Barracks"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T81"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T82"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S126"); }
-            if i == 8 { return "Commuter Pod"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T83"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S127");
         }
         
         if Equals(archetype, "NOMAD") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Mobile Home/Vehicle"; }
-            if i == 1 { return "Camp Dwelling"; }
-            if i == 2 { return "Nomad Settlement"; }
-            if i == 3 { return "Badlands Compound"; }
-            if i == 4 { return "Converted RV"; }
-            if i == 5 { return "Tent/Temporary Shelter"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T84"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T85"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T86"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T87"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T88"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T89"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S128"); }
-            if i == 7 { return "Caravan Trailer"; }
-            if i == 8 { return "Desert Shack"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T90"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T91"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S129");
         }
         
         if Equals(archetype, "HOMELESS") {
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Street/Alley"; }
-            if i == 1 { return "Abandoned Building"; }
-            if i == 2 { return "Underpass/Bridge"; }
-            if i == 3 { return "Shelter (Temporary)"; }
-            if i == 4 { return "Tent City"; }
-            if i == 5 { return "Cardboard Dwelling"; }
-            if i == 6 { return "Storm Drain"; }
-            if i == 7 { return "Rooftop Encampment"; }
-            if i == 8 { return "Abandoned Vehicle"; }
-            if i == 9 { return "Construction Site"; }
-            if i == 10 { return "Dumpster Area"; }
-            if i == 11 { return "Subway Station"; }
-            if i == 12 { return "Park Bench"; }
-            if i == 13 { return "Loading Dock"; }
-            return "Wherever Available";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T92"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T93"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T94"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T95"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T96"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T97"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T98"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T99"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T100"); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T101"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T102"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T103"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T104"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T105"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T106");
         }
         
         if Equals(archetype, "GANGER") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Gang Safehouse"; }
-            if i == 1 { return "Shared Apartment"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T107"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T108"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S130"); }
-            if i == 3 { return "Warehouse Conversion"; }
-            if i == 4 { return "Clubhouse Quarters"; }
-            if i == 5 { return "Fortified Apartment"; }
-            if i == 6 { return "Territory Stronghold"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T109"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T110"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T111"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T112"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S131"); }
-            if i == 8 { return "Shipping Container"; }
-            return "Underground Bunker";
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T113"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T114");
         }
         
         // General population (15 options)
         let i = RandRange(seed, 0, 14);
-        if i == 0 { return "Megabuilding Unit"; }
-        if i == 1 { return "Low-Rise Apartment"; }
-        if i == 2 { return "Shared Housing"; }
-        if i == 3 { return "Studio Apartment"; }
-        if i == 4 { return "Basement Unit"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T115"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T116"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T117"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T118"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T119"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S132"); }
         if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S133"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S134"); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S135"); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S136"); }
-        if i == 10 { return "Modular Apartment"; }
-        if i == 11 { return "Row House"; }
-        if i == 12 { return "Tenement Building"; }
-        if i == 13 { return "Mixed-Use Building"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T120"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T121"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T122"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T123"); }
         return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S137");
     }
 
@@ -771,8 +771,8 @@ public class KdspFinancialProfileManager {
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S160"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S161"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S162"); }
-            if i == 7 { return "Jackson Plains"; }
-            if i == 8 { return "Aldecaldo Camp"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T124"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T125"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S163");
         }
         
@@ -788,11 +788,11 @@ public class KdspFinancialProfileManager {
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S168"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S151"); }
             if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S150"); }
-            if i == 10 { return "Dogtown"; }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T126"); }
             if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S169"); }
             if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S170"); }
             if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S171"); }
-            return "Valentino Territory";
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T127");
         }
         
         if Equals(archetype, "HOMELESS") {
@@ -827,7 +827,7 @@ public class KdspFinancialProfileManager {
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S180"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S181"); }
         if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S182"); }
-        if i == 16 { return "Dogtown"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T126"); }
         if i == 17 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S168"); }
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S183"); }
         return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S184");
@@ -852,15 +852,15 @@ public class KdspFinancialProfileManager {
         }
         if Equals(archetype, "HOMELESS") { 
             let i = RandRange(seed, 0, 4);
-            if i == 0 { return "UNEMPLOYED"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T9"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S195"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S196"); }
-            if i == 3 { return "PANHANDLING"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T128"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S197");
         }
         if Equals(archetype, "JUNKIE") {
             let i = RandRange(seed, 0, 6);
-            if i == 0 { return "UNEMPLOYED"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T9"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S198"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S199"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S200"); }
@@ -872,14 +872,14 @@ public class KdspFinancialProfileManager {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S199"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S204"); }
-            if i == 2 { return "GANG OPERATIONS"; }
-            if i == 3 { return "CRIMINAL ENTERPRISE"; }
-            if i == 4 { return "PROTECTION SERVICES"; }
-            if i == 5 { return "DISTRIBUTION NETWORK"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T129"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T130"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T131"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T132"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S205"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S206"); }
-            if i == 8 { return "TERRITORY MANAGEMENT"; }
-            return "COLLECTION SERVICES";
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T133"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T134");
         }
         if Equals(archetype, "NOMAD") {
             let i = RandRange(seed, 0, 9);
@@ -887,12 +887,12 @@ public class KdspFinancialProfileManager {
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S208"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S209"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S210"); }
-            if i == 4 { return "CLAN BUSINESS"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T135"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S211"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S212"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S213"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S214"); }
-            return "CLAN SUPPORT ROLE";
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T136");
         }
         
         // General population (25 options)
@@ -901,135 +901,135 @@ public class KdspFinancialProfileManager {
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S216"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S217"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S218"); }
-        if i == 4 { return "SELF-EMPLOYED"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T137"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S219"); }
-        if i == 6 { return "UNEMPLOYED"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T9"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S199"); }
-        if i == 8 { return "RETIRED"; }
-        if i == 9 { return "DISABLED"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T138"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T139"); }
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S220"); }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S221"); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S222"); }
-        if i == 13 { return "FREELANCE"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T140"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S223"); }
         if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S224"); }
-        if i == 16 { return "FURLOUGHED"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T141"); }
         if i == 17 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S225"); }
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S226"); }
-        if i == 19 { return "STUDENT"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T142"); }
         if i == 20 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S227"); }
         if i == 21 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S228"); }
-        if i == 22 { return "UNDEREMPLOYED"; }
-        if i == 23 { return "ZERO HOURS CONTRACT"; }
-        return "TEMP AGENCY";
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T143"); }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T144"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T145");
     }
 
     private static func GenerateEmployer(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 29);
-            if i == 0 { return "Arasaka Corporation"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-Shared-C6"); }
             if i == 1 { return "Militech"; }
-            if i == 2 { return "Kang Tao"; }
-            if i == 3 { return "Biotechnica"; }
-            if i == 4 { return "Petrochem"; }
-            if i == 5 { return "Zetatech"; }
-            if i == 6 { return "Kiroshi Opticals"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-Corpo-KANG_TAO"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-Corpo-BIOTECHNICA"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-Corpo-PETROCHEM"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-Corpo-ZETATECH"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-Corpo-KIROSHI"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-Corpo-TTI"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S229"); }
-            if i == 9 { return "NCART"; }
-            if i == 10 { return "SovOil"; }
-            if i == 11 { return "IEC"; }
-            if i == 12 { return "Continental Brands"; }
-            if i == 13 { return "All Foods"; }
-            if i == 14 { return "Orbital Air"; }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T146"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-Corpo-SOVOIL"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-Corpo-IEC"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T149"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-Corpo-ALL_FOODS"); }
+            if i == 14 { return GetLocalizedTextByKey(n"Kdsp-Corpo-ORBITAL_AIR"); }
             if i == 15 { return GetLocalizedTextByKey(n"Kdsp-Corpo-NN54"); }
             if i == 16 { return GetLocalizedTextByKey(n"Kdsp-Corpo-WORLD_NEWS"); }
-            if i == 17 { return "Dynalar Technologies"; }
-            if i == 18 { return "Raven Microcybernetics"; }
-            if i == 19 { return "EuroBank"; }
-            if i == 20 { return "Kendachi"; }
+            if i == 17 { return GetLocalizedTextByKey(n"Kdsp-Corpo-DYNALAR"); }
+            if i == 18 { return GetLocalizedTextByKey(n"Kdsp-Corpo-RAVEN_MICRO"); }
+            if i == 19 { return GetLocalizedTextByKey(n"Kdsp-Corpo-EUROBANK"); }
+            if i == 20 { return GetLocalizedTextByKey(n"Kdsp-Corpo-KENDACHI"); }
             if i == 21 { return GetLocalizedTextByKey(n"Kdsp-Corpo-TDS"); }
-            if i == 22 { return "Budget Arms"; }
+            if i == 22 { return GetLocalizedTextByKey(n"Kdsp-Corpo-BUDGET_ARMS"); }
             if i == 23 { return "NetWatch"; }
-            if i == 24 { return "MaxTac Division"; }
-            if i == 25 { return "NCPD Administration"; }
-            if i == 26 { return "Ziggurat"; }
-            if i == 27 { return "Segotari"; }
-            if i == 28 { return "Rocklin Augmentics"; }
-            return "Fuyutsuki Electronics";
+            if i == 24 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T147"); }
+            if i == 25 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T148"); }
+            if i == 26 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T149"); }
+            if i == 27 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T150"); }
+            if i == 28 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T151"); }
+            return GetLocalizedTextByKey(n"Kdsp-Corpo-FUYUTSUKI");
         }
         
         if Equals(archetype, "YUPPIE") {
             let i = RandRange(seed, 0, 14);
-            if i == 0 { return "Private Practice"; }
-            if i == 1 { return "Consulting Firm"; }
-            if i == 2 { return "Media Corporation"; }
-            if i == 3 { return "Law Firm"; }
-            if i == 4 { return "Financial Services"; }
-            if i == 5 { return "Medical Practice"; }
-            if i == 6 { return "Architecture Firm"; }
-            if i == 7 { return "Marketing Agency"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T152"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T153"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T154"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T155"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T156"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T157"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T158"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T159"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S230"); }
-            if i == 9 { return "Tech Startup"; }
-            if i == 10 { return "Entertainment Industry"; }
-            if i == 11 { return "Investment Banking"; }
-            if i == 12 { return "Cybersecurity Firm"; }
-            if i == 13 { return "Biotech Startup"; }
-            return "Venture Capital";
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T160"); }
+            if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T161"); }
+            if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T162"); }
+            if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T163"); }
+            if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T164"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T165");
         }
         
         // General population (40 options)
         let i = RandRange(seed, 0, 39);
         if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S231"); }
-        if i == 1 { return "Local Business"; }
-        if i == 2 { return "Self-Employed"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T166"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T167"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S232"); }
-        if i == 4 { return "Food Service"; }
-        if i == 5 { return "Retail"; }
-        if i == 6 { return "Construction"; }
-        if i == 7 { return "Sanitation"; }
-        if i == 8 { return "Security (Contract)"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T168"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T169"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T170"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T171"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T172"); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S233"); }
-        if i == 10 { return "Delivery Services"; }
-        if i == 11 { return "Rideshare Driver"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T173"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T174"); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S234"); }
-        if i == 13 { return "Manufacturing Plant"; }
-        if i == 14 { return "Bar/Club Staff"; }
-        if i == 15 { return "Street Vendor"; }
-        if i == 16 { return "Mechanic Shop"; }
-        if i == 17 { return "Cleaning Services"; }
-        if i == 18 { return "Healthcare Aide"; }
-        if i == 19 { return "Childcare"; }
-        if i == 20 { return "Taxi/Transport"; }
-        if i == 21 { return "Hospitality"; }
-        if i == 22 { return "Bouncer/Doorman"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T175"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T176"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T177"); }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T178"); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T179"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T180"); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T181"); }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T182"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T183"); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T184"); }
         if i == 23 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S235"); }
-        if i == 24 { return "Repair Technician"; }
-        if i == 25 { return "Dock Worker"; }
-        if i == 26 { return "Market Stall"; }
-        if i == 27 { return "Hair Salon"; }
-        if i == 28 { return "Laundromat"; }
-        if i == 29 { return "Pawn Shop"; }
-        if i == 30 { return "Gun Store"; }
-        if i == 31 { return "Pharmacy Assistant"; }
-        if i == 32 { return "Grocery Store"; }
-        if i == 33 { return "Electronics Repair"; }
-        if i == 34 { return "Tattoo Parlor"; }
-        if i == 35 { return "Clothing Store"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T185"); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T186"); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T187"); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T188"); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T189"); }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T190"); }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T191"); }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T192"); }
+        if i == 32 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T193"); }
+        if i == 33 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T194"); }
+        if i == 34 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T195"); }
+        if i == 35 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T196"); }
         if i == 36 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S236"); }
-        if i == 37 { return "Recycling Plant"; }
-        if i == 38 { return "Seasonal Work"; }
-        return "Day Labor";
+        if i == 37 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T197"); }
+        if i == 38 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T198"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T199");
     }
 
     private static func GenerateIncomeLevel(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") { 
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "€$250,000-500,000/year"; }
-            if i == 1 { return "€$500,000-1,000,000/year"; }
-            if i == 2 { return "€$1,000,000+/year"; }
-            if i == 3 { return "€$200,000-350,000/year"; }
-            if i == 4 { return "€$350,000-500,000/year"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T200"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T201"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T202"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T203"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T204"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S237"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S238"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S239"); }
@@ -1038,114 +1038,114 @@ public class KdspFinancialProfileManager {
         }
         if Equals(archetype, "CORPO_DRONE") { 
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "€$45,000-60,000/year"; }
-            if i == 1 { return "€$60,000-80,000/year"; }
-            if i == 2 { return "€$80,000-100,000/year"; }
-            if i == 3 { return "€$100,000-120,000/year"; }
-            if i == 4 { return "€$35,000-50,000/year"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T205"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T206"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T207"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T208"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T209"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S242"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S243"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S244"); }
-            if i == 8 { return "€$90,000/year (Senior)"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T210"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S245");
         }
         if Equals(archetype, "YUPPIE") { 
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "€$80,000-120,000/year"; }
-            if i == 1 { return "€$120,000-180,000/year"; }
-            if i == 2 { return "€$180,000-250,000/year"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T211"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T212"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T213"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S246"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S247"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S248"); }
-            if i == 6 { return "€$90,000/year (Associate)"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T214"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S249"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S250"); }
-            return "€$250,000+/year (Partner)";
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T215");
         }
         if Equals(archetype, "CIVVIE") { 
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "€$15,000-25,000/year"; }
-            if i == 1 { return "€$25,000-35,000/year"; }
-            if i == 2 { return "€$35,000-45,000/year"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T216"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T217"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T218"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S251"); }
-            if i == 4 { return "€$30,000/year (Hourly)"; }
-            if i == 5 { return "€$18,000/year (Part-time)"; }
-            if i == 6 { return "€$40,000/year (Skilled)"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T219"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T220"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T221"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S252"); }
-            if i == 8 { return "€$28,000/year (Union)"; }
-            return "€$32,000/year (Full-time)";
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T222"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T223");
         }
         if Equals(archetype, "LOWLIFE") { 
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "€$5,000-8,000/year"; }
-            if i == 1 { return "€$8,000-12,000/year"; }
-            if i == 2 { return "€$12,000-15,000/year"; }
-            if i == 3 { return "€$3,000-6,000/year (Sporadic)"; }
-            if i == 4 { return "€$10,000/year (Cash)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T224"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T225"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T226"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T227"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T228"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S253"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S254"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S255"); }
-            if i == 8 { return "€$6,000/year (Unreported)"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T229"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S256");
         }
         if Equals(archetype, "GANGER") { 
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "€$10,000-25,000/year (Est.)"; }
-            if i == 1 { return "€$25,000-50,000/year (Est.)"; }
-            if i == 2 { return "€$50,000-100,000/year (Est.)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T230"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T231"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T232"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S257"); }
-            if i == 4 { return "€$40,000/year (Enforcer)"; }
-            if i == 5 { return "€$75,000/year (Lieutenant)"; }
-            if i == 6 { return "€$20,000/year (Soldier)"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T233"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T234"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T235"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S258"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S259"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S260");
         }
         if Equals(archetype, "JUNKIE") { 
             let i = RandRange(seed, 0, 6);
-            if i == 0 { return "< €$5,000/year"; }
-            if i == 1 { return "€$0-2,000/year"; }
-            if i == 2 { return "€$2,000-5,000/year"; }
-            if i == 3 { return "NO STABLE INCOME"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T236"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T237"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T238"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T239"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S261"); }
-            if i == 5 { return "€$1,000/year (Panhandling)"; }
-            return "SURVIVAL INCOME ONLY";
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T240"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T241");
         }
         if Equals(archetype, "HOMELESS") { 
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "NO INCOME"; }
-            if i == 1 { return "€$0-500/year (Panhandling)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T242"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T243"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S262"); }
-            if i == 3 { return "€$0-1,000/year (Scavenging)"; }
-            if i == 4 { return "NO DOCUMENTED INCOME"; }
-            return "SUBSISTENCE ONLY";
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T244"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T245"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T246");
         }
         if Equals(archetype, "NOMAD") { 
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "€$8,000-15,000/year (Est.)"; }
-            if i == 1 { return "€$15,000-25,000/year (Est.)"; }
-            if i == 2 { return "€$25,000-40,000/year (Est.)"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T247"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T248"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T249"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S263"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S264"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S265"); }
-            if i == 6 { return "€$30,000/year (Smuggling)"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T250"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S266"); }
-            if i == 8 { return "€$18,000/year (Mechanic)"; }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T251"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S267");
         }
         
         // Default
         let i = RandRange(seed, 0, 9);
-        if i == 0 { return "€$20,000-30,000/year"; }
-        if i == 1 { return "€$30,000-40,000/year"; }
-        if i == 2 { return "€$15,000-25,000/year"; }
-        if i == 3 { return "€$25,000/year (Average)"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T252"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T253"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T216"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T254"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S268"); }
-        if i == 5 { return "€$22,000/year (Entry)"; }
-        if i == 6 { return "€$28,000/year (Experienced)"; }
-        if i == 7 { return "€$18,000/year (Part-time)"; }
-        if i == 8 { return "€$32,000/year (Skilled)"; }
-        return "€$24,000/year (Median)";
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T255"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T256"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T220"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T257"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T258");
     }
 
     private static func GeneratePurchase(seed: Int32, archetype: String, wealth: Int32) -> String {
@@ -1234,57 +1234,57 @@ public class KdspFinancialProfileManager {
     private static func GenerateTaxStatus(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "COMPLIANT"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T259"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S339"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S340"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S341"); }
-            if i == 4 { return "AUDIT PENDING"; }
-            if i == 5 { return "UNDER INVESTIGATION"; }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T260"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T261"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S342"); }
-            if i == 7 { return "EXTENSION FILED"; }
-            if i == 8 { return "AMENDED RETURN"; }
-            return "CORPORATE HANDLING";
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T262"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T263"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T264");
         }
         
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "NO TAX OBLIGATION"; }
-            if i == 1 { return "NON-FILER"; }
-            if i == 2 { return "DELINQUENT"; }
-            if i == 3 { return "BELOW THRESHOLD"; }
-            if i == 4 { return "NO INCOME TO REPORT"; }
-            return "STATUS UNKNOWN";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T265"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T266"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T267"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T268"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T269"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T270");
         }
         
         if Equals(archetype, "GANGER") {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "COMPLIANT"; }
-            if i == 1 { return "NON-FILER"; }
-            if i == 2 { return "DELINQUENT"; }
-            if i == 3 { return "UNREPORTED INCOME"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T259"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T266"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T267"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T271"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S343"); }
-            if i == 5 { return "FALSE RETURN FILED"; }
-            if i == 6 { return "UNDER INVESTIGATION"; }
-            return "STATUS UNKNOWN";
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T272"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T261"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T270");
         }
 
         // General population (15 options)
         let i = RandRange(seed, 0, 14);
-        if i == 0 { return "COMPLIANT"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T259"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S344"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S345"); }
-        if i == 3 { return "MINOR DISCREPANCY"; }
-        if i == 4 { return "DELINQUENT"; }
-        if i == 5 { return "AUDIT PENDING"; }
-        if i == 6 { return "PAYMENT PLAN ACTIVE"; }
-        if i == 7 { return "LATE FILING PENALTY"; }
-        if i == 8 { return "NON-FILER"; }
-        if i == 9 { return "EXTENSION FILED"; }
-        if i == 10 { return "REFUND PENDING"; }
-        if i == 11 { return "AMENDED RETURN FILED"; }
-        if i == 12 { return "DISPUTE IN PROGRESS"; }
-        if i == 13 { return "COLLECTIONS ACTIVE"; }
-        return "WAGE LEVY ACTIVE";
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T273"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T267"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T260"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T274"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T275"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T266"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T262"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T276"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T277"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T278"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T279"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T280");
     }
 
     private static func HasBankruptcy(seed: Int32, archetype: String) -> Bool {
@@ -1425,92 +1425,92 @@ public class KdspFinancialProfileManager {
     private static func GenerateHealthInsurance(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "ARASAKA PREMIUM HEALTH"; }
-            if i == 1 { return "MILITECH EXECUTIVE CARE"; }
-            if i == 2 { return "CORPORATE PLATINUM PLAN"; }
-            if i == 3 { return "ZETATECH COMPREHENSIVE"; }
-            if i == 4 { return "KANG TAO ELITE CARE"; }
-            if i == 5 { return "BIOTECHNICA WELLNESS PLUS"; }
-            if i == 6 { return "EXECUTIVE CONCIERGE MEDICAL"; }
-            return "UNLIMITED CORPORATE CARE";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T281"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T282"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T283"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T284"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T285"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T286"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T287"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T288");
         }
         
         if Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "CORPORATE BASIC PLAN"; }
-            if i == 1 { return "EMPLOYEE STANDARD CARE"; }
-            if i == 2 { return "CORPORATE GROUP HEALTH"; }
-            if i == 3 { return "COMPANY HMO"; }
-            if i == 4 { return "CORPORATE PPO"; }
-            if i == 5 { return "EMPLOYEE BRONZE TIER"; }
-            if i == 6 { return "SUBSIDIZED EMPLOYER PLAN"; }
-            return "BASIC CORPORATE COVERAGE";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T289"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T290"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T291"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T292"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T293"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T294"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T295"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T296");
         }
         
         if Equals(archetype, "YUPPIE") {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "PRIVATE HEALTH PLAN"; }
-            if i == 1 { return "PREMIUM INDIVIDUAL"; }
-            if i == 2 { return "COMPREHENSIVE PRIVATE"; }
-            if i == 3 { return "HIGH-END PPO"; }
-            if i == 4 { return "BOUTIQUE MEDICAL"; }
-            if i == 5 { return "EXECUTIVE HEALTH PLAN"; }
-            if i == 6 { return "PRIVATE PRACTICE NETWORK"; }
-            return "PREMIUM FAMILY CARE";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T297"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T298"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T299"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T300"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T301"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T302"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T303"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T304");
         }
         
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
             let i = RandRange(seed, 0, 4);
-            if i == 0 { return "UNINSURED"; }
-            if i == 1 { return "EMERGENCY ROOM ONLY"; }
-            if i == 2 { return "CHARITY CARE"; }
-            if i == 3 { return "FREE CLINIC ONLY"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T305"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T306"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T307"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T308"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S372");
         }
         
         // General population (20 options)
         let i = RandRange(seed, 0, 19);
-        if i == 0 { return "NC PUBLIC HEALTH"; }
-        if i == 1 { return "BASIC COVERAGE"; }
-        if i == 2 { return "MINIMAL COVERAGE"; }
-        if i == 3 { return "UNINSURED"; }
-        if i == 4 { return "NC MEDICAID"; }
-        if i == 5 { return "LOW-COST COMMUNITY PLAN"; }
-        if i == 6 { return "CATASTROPHIC ONLY"; }
-        if i == 7 { return "HIGH-DEDUCTIBLE PLAN"; }
-        if i == 8 { return "MARKETPLACE BRONZE"; }
-        if i == 9 { return "MARKETPLACE SILVER"; }
-        if i == 10 { return "EMPLOYER BASIC"; }
-        if i == 11 { return "UNION HEALTH PLAN"; }
-        if i == 12 { return "GIG WORKER COLLECTIVE"; }
-        if i == 13 { return "RIPPERDOC MEMBERSHIP"; }
-        if i == 14 { return "CLINIC SUBSCRIPTION"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T309"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T310"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T311"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T305"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T312"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T313"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T314"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T315"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T316"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T317"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T318"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T319"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T320"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T321"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T322"); }
         if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S373"); }
-        if i == 16 { return "COBRA CONTINUATION"; }
-        if i == 17 { return "SPOUSE'S PLAN"; }
-        if i == 18 { return "PARENT'S PLAN"; }
-        return "PENDING ENROLLMENT";
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T323"); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T324"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T325"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T326");
     }
 
     private static func GenerateBankAffiliation(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Arasaka Financial"; }
-            if i == 1 { return "Militech Banking"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T327"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T328"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S33"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S374"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S375"); }
-            if i == 5 { return "Biotechnica Banking"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T329"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S376"); }
-            if i == 7 { return "EuroBank (Corporate)"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T330"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S377"); }
-            return "SovOil Financial";
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T331");
         }
         
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
             let i = RandRange(seed, 0, 4);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S378"); }
-            if i == 1 { return "UNBANKED"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T332"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S379"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S380"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S381");
@@ -1523,27 +1523,27 @@ public class KdspFinancialProfileManager {
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S63"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S382"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S383"); }
-            if i == 5 { return "Multiple Aliases"; }
-            if i == 6 { return "Offshore Account"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T333"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T334"); }
             return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S384");
         }
         
         // General population (25 options)
         let i = RandRange(seed, 0, 24);
-        if i == 0 { return "EuroBank"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-Corpo-EUROBANK"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S382"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S62"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S63"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S385"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S386"); }
         if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S387"); }
-        if i == 7 { return "Westbrook Financial"; }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T335"); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S388"); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S389"); }
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S390"); }
-        if i == 11 { return "Neo-Banking Platform"; }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T336"); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S391"); }
-        if i == 13 { return "Badlands Federal"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T337"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S392"); }
         if i == 15 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S393"); }
         if i == 16 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S394"); }
@@ -1551,73 +1551,73 @@ public class KdspFinancialProfileManager {
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S395"); }
         if i == 19 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S396"); }
         if i == 20 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S397"); }
-        if i == 21 { return "Joint Account"; }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T338"); }
         if i == 22 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S398"); }
         if i == 23 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-S399"); }
-        return "Multiple Accounts";
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T339");
     }
 
     private static func GenerateAccountStatus(seed: Int32, creditScore: Int32) -> String {
         if creditScore >= 750 {
             let i = RandRange(seed, 0, 4);
-            if i == 0 { return "ACTIVE - EXCELLENT STANDING"; }
-            if i == 1 { return "ACTIVE - PREMIUM MEMBER"; }
-            if i == 2 { return "ACTIVE - PREFERRED CLIENT"; }
-            if i == 3 { return "ACTIVE - VIP STATUS"; }
-            return "ACTIVE - LONG-STANDING MEMBER";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T340"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T341"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T342"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T343"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T344");
         }
         
         if creditScore >= 650 {
             let i = RandRange(seed, 0, 4);
-            if i == 0 { return "ACTIVE - GOOD STANDING"; }
-            if i == 1 { return "ACTIVE - STANDARD MEMBER"; }
-            if i == 2 { return "ACTIVE - REGULAR STATUS"; }
-            if i == 3 { return "ACTIVE - SATISFACTORY"; }
-            return "ACTIVE - NORMAL";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T345"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T346"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T347"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T348"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T349");
         }
         
         if creditScore >= 500 {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "ACTIVE - FAIR STANDING"; }
-            if i == 1 { return "ACTIVE - UNDER REVIEW"; }
-            if i == 2 { return "ACTIVE - LIMITED SERVICES"; }
-            if i == 3 { return "ACTIVE - OVERDRAFT WARNING"; }
-            if i == 4 { return "ACTIVE - MONITORING"; }
-            return "PROBATIONARY";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T350"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T351"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T352"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T353"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T354"); }
+            return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T47");
         }
         
         if creditScore >= 350 {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "RESTRICTED"; }
-            if i == 1 { return "RESTRICTED - DEPOSITS ONLY"; }
-            if i == 2 { return "RESTRICTED - NO OVERDRAFT"; }
-            if i == 3 { return "SUSPENDED - PENDING REVIEW"; }
-            if i == 4 { return "LIMITED ACCESS"; }
-            return "PROBATION - FINAL WARNING";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T355"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T356"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T357"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T358"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T359"); }
+            return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T360");
         }
         
         // Very poor credit (10 options)
         let i = RandRange(seed, 0, 9);
-        if i == 0 { return "FROZEN"; }
-        if i == 1 { return "CLOSED - COLLECTIONS"; }
-        if i == 2 { return "CLOSED - NEGATIVE BALANCE"; }
-        if i == 3 { return "CLOSED - FRAUD SUSPECTED"; }
-        if i == 4 { return "ACCOUNT SEIZED"; }
-        if i == 5 { return "LEVIED BY CREDITOR"; }
-        if i == 6 { return "BLACKLISTED"; }
-        if i == 7 { return "NO ACCOUNT"; }
-        if i == 8 { return "PENDING CLOSURE"; }
-        return "TERMINATED";
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T361"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T362"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T363"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T364"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T365"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T366"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T367"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T368"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T369"); }
+        return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T370");
     }
 
     private static func GenerateNCID(seed: Int32, archetype: String) -> String {
         // Homeless / Junkie - often lost, expired, or never had ID
         if Equals(archetype, "HOMELESS") {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "UNREGISTERED"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T371"); }
             if i == 1 { return "EXPIRED"; }
-            if i == 2 { return "REVOKED"; }
-            if i == 3 { return "LOST/MISSING"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T372"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T373"); }
             // Some still have one
             return "NC" + IntToString(RandRange(seed + 1, 100000, 999999));
         }
@@ -1633,9 +1633,9 @@ public class KdspFinancialProfileManager {
         // Nomads - different system or no NC registration
         if Equals(archetype, "NOMAD") {
             let i = RandRange(seed, 0, 5);
-            if i == 0 { return "NO NC REGISTRATION"; }
-            if i == 1 { return "CLAN ID ONLY"; }
-            if i == 2 { return "TEMPORARY PASS"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T374"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T375"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T376"); }
             // Some registered in the city
             return "NC" + IntToString(RandRange(seed + 1, 100000, 999999));
         }

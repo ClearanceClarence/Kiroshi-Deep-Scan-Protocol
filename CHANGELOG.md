@@ -4,6 +4,21 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [3.0.1]
+
+- Completed the localization conversion — 3,415 additional display strings keyed that the 3.0 pass missed: callsigns, military and gang ranks, MOS specializations, combat roles, loyalty ratings, assigned sectors, and every other short-form display value flagged by the community
+- Conversion now uses produce/consume analysis instead of length heuristics — only literals genuinely used in comparison logic stay hardcoded
+- Produce-and-compare collision strings (rank names checked for squad-size logic, etc.) now use one shared key on both sides, so comparisons stay consistent in every language
+- Total localized strings: 11,329 (up from 7,914)
+- Internal code values that map to display text elsewhere (DESERTER, CRIMINAL_PAST, single-token status enums, district identifiers) intentionally remain literal — they are logic, not display
+- Fixed role labels leaking into name generation — "Street Vendor" and similar crowd job titles no longer become family surnames ("Vendor") or get stored as person names in the Connection tracker; a role-label detector covers 60+ crowd professions
+- Fixed six comparisons against game-provided display names that the localization pass had key-wrapped — vanilla-name detection (gang names, etc.) is back to literals and no longer depends on translation choices
+- Shipped a partial French translation (259 keys: UI section headers, all scanner loading lines, all BOLO notices) as a built-in test of the localization pipeline and a live example for translators — French players get a mixed-language scanner with English fallback for the rest
+- Fixed four BOLO notices with untranslatable hardcoded English tails after their dynamic values — the tails are now keyed (Kdsp-Bolo-16b/17b/50b/66b)
+- Thanks to MrFlashMode for the localization report and rpierrecollado for the vendor-name report
+
+---
+
 ## [3.0]
 
 - Codeware localization system integration — translations are now language packages that plug into the mod instead of standalone forks

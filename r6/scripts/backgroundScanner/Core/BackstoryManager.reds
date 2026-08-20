@@ -95,9 +95,9 @@ public class KdspBackstoryManager {
             }
             // Downgrade health rating - rejected implants are serious
             if Equals(medical.healthRating, "EXCELLENT") || Equals(medical.healthRating, "GOOD") {
-                medical.healthRating = "POOR";
+                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0");
             } else if Equals(medical.healthRating, "FAIR") {
-                medical.healthRating = "POOR";
+                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0");
             }
             // POOR stays POOR, CRITICAL/TERMINAL stay as-is
 
@@ -105,9 +105,9 @@ public class KdspBackstoryManager {
             cyberware.cyberpsychosisRisk += RandRange(seed + 9310, 15, 30);
             if cyberware.cyberpsychosisRisk > 100 { cyberware.cyberpsychosisRisk = 100; }
             // Refresh status string from updated risk
-            if cyberware.cyberpsychosisRisk >= 80 { cyberware.cyberpsychosisStatus = "CRITICAL - REJECTION COMPLICATIONS"; }
-            else if cyberware.cyberpsychosisRisk >= 60 { cyberware.cyberpsychosisStatus = "HIGH - REJECTION INDUCED INSTABILITY"; }
-            else if cyberware.cyberpsychosisRisk >= 40 { cyberware.cyberpsychosisStatus = "ELEVATED - IMPLANT REJECTION STRESS"; }
+            if cyberware.cyberpsychosisRisk >= 80 { cyberware.cyberpsychosisStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T1"); }
+            else if cyberware.cyberpsychosisRisk >= 60 { cyberware.cyberpsychosisStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T2"); }
+            else if cyberware.cyberpsychosisRisk >= 40 { cyberware.cyberpsychosisStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T3"); }
             // Below 40 keeps original status (rejection bump wasn't enough to change tier)
         }
 
@@ -123,7 +123,7 @@ public class KdspBackstoryManager {
             // Ensure they have a criminal record
             criminal.hasRecord = true;
             if Equals(criminal.status, "CLEAN") || Equals(criminal.status, "") {
-                criminal.status = "MINOR OFFENSES";
+                criminal.status = GetLocalizedTextByKey(n"Kdsp-Shared-C3");
             }
 
             // Clear existing arrests and replace with sex work related charges
@@ -133,7 +133,7 @@ public class KdspBackstoryManager {
 
             // First arrest
             let swRoll1 = RandRange(seed + 9410, 0, 4);
-            if swRoll1 == 0 { ArrayPush(criminal.arrests, "Solicitation (" + IntToString(swYear1) + ")"); }
+            if swRoll1 == 0 { ArrayPush(criminal.arrests, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T4") + IntToString(swYear1) + ")"); }
             else if swRoll1 == 1 { ArrayPush(criminal.arrests, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S5") + IntToString(swYear1) + ")"); }
             else if swRoll1 == 2 { ArrayPush(criminal.arrests, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S6") + IntToString(swYear1) + ")"); }
             else if swRoll1 == 3 { ArrayPush(criminal.arrests, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S7") + IntToString(swYear1) + ")"); }
@@ -150,10 +150,10 @@ public class KdspBackstoryManager {
 
             // NCPD classification fitting for sex work
             let swClassRoll = RandRange(seed + 9440, 0, 3);
-            if swClassRoll == 0 { criminal.ncpdClassification = "VICE - REPEAT OFFENDER"; }
-            else if swClassRoll == 1 { criminal.ncpdClassification = "VICE - MONITORED"; }
-            else if swClassRoll == 2 { criminal.ncpdClassification = "LOW PRIORITY - VICE"; }
-            else { criminal.ncpdClassification = "VICE - KNOWN ASSOCIATE"; }
+            if swClassRoll == 0 { criminal.ncpdClassification = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T5"); }
+            else if swClassRoll == 1 { criminal.ncpdClassification = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T6"); }
+            else if swClassRoll == 2 { criminal.ncpdClassification = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T7"); }
+            else { criminal.ncpdClassification = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T8"); }
         }
 
         if isPoorSexWorker {
@@ -176,12 +176,12 @@ public class KdspBackstoryManager {
 
             // Health downgrade for STIs
             if Equals(medical.healthRating, "EXCELLENT") || Equals(medical.healthRating, "GOOD") || Equals(medical.healthRating, "FAIR") {
-                medical.healthRating = "POOR";
+                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0");
             }
 
             // Also upgrade criminal status for poor sex workers
-            if Equals(criminal.status, "MINOR OFFENSES") {
-                criminal.status = "REPEAT OFFENDER";
+            if Equals(criminal.status, GetLocalizedTextByKey(n"Kdsp-Shared-C3")) {
+                criminal.status = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T9");
             }
         }
 
@@ -267,19 +267,19 @@ public class KdspBackstoryManager {
             let freakPsychRoll = RandRange(seed + 9730, 0, 7);
             if freakPsychRoll == 0 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S63")); }
             else if freakPsychRoll == 1 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S64")); }
-            else if freakPsychRoll == 2 { ArrayPush(psych.personalityTraits, "Extreme self-expression"); }
+            else if freakPsychRoll == 2 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T10")); }
             else if freakPsychRoll == 3 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S65")); }
-            else if freakPsychRoll == 4 { ArrayPush(psych.personalityTraits, "Transhumanist ideology"); }
+            else if freakPsychRoll == 4 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T11")); }
             else if freakPsychRoll == 5 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S66")); }
-            else if freakPsychRoll == 6 { ArrayPush(psych.personalityTraits, "Sensation-seeking behavior"); }
+            else if freakPsychRoll == 6 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T12")); }
             else { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S67")); }
 
             // Elevated cyberpsychosis risk from extreme modding
             cyberware.cyberpsychosisRisk += RandRange(seed + 9740, 10, 25);
             if cyberware.cyberpsychosisRisk > 100 { cyberware.cyberpsychosisRisk = 100; }
-            if cyberware.cyberpsychosisRisk >= 80 { cyberware.cyberpsychosisStatus = "CRITICAL - EXTREME MODIFICATION"; }
-            else if cyberware.cyberpsychosisRisk >= 60 { cyberware.cyberpsychosisStatus = "HIGH - BODY MOD INSTABILITY"; }
-            else if cyberware.cyberpsychosisRisk >= 40 { cyberware.cyberpsychosisStatus = "ELEVATED - EXCESSIVE MODIFICATION"; }
+            if cyberware.cyberpsychosisRisk >= 80 { cyberware.cyberpsychosisStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T13"); }
+            else if cyberware.cyberpsychosisRisk >= 60 { cyberware.cyberpsychosisStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T14"); }
+            else if cyberware.cyberpsychosisRisk >= 40 { cyberware.cyberpsychosisStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T15"); }
 
             // Increase illegal mod count - freaks often have unlicensed work
             if cyberware.illegalCount == 0 && RandRange(seed + 9750, 1, 100) <= 60 {
@@ -313,13 +313,13 @@ public class KdspBackstoryManager {
             // Psych: identity-related context (not pathologized - just noted)
             let nbPsychRoll = RandRange(seed + 9810, 0, 7);
             if nbPsychRoll == 0 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S78")); }
-            else if nbPsychRoll == 1 { ArrayPush(psych.personalityTraits, "Self-defined identity"); }
+            else if nbPsychRoll == 1 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T16")); }
             else if nbPsychRoll == 2 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S79")); }
             else if nbPsychRoll == 3 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S80")); }
-            else if nbPsychRoll == 4 { ArrayPush(psych.personalityTraits, "Post-binary identity"); }
-            else if nbPsychRoll == 5 { ArrayPush(psych.personalityTraits, "Fluid self-expression"); }
-            else if nbPsychRoll == 6 { ArrayPush(psych.personalityTraits, "Transhumanist leanings"); }
-            else { ArrayPush(psych.personalityTraits, "Identity-secure"); }
+            else if nbPsychRoll == 4 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T17")); }
+            else if nbPsychRoll == 5 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T18")); }
+            else if nbPsychRoll == 6 { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T19")); }
+            else { ArrayPush(psych.personalityTraits, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T20")); }
         }
 
         // ══════════════════════════════════════════════════════════════
@@ -424,14 +424,14 @@ public class KdspBackstoryManager {
                 };
             };
             if !Equals(criminal.warrantStatus, "NONE") && !Equals(criminal.warrantStatus, "CLEARED") {
-                backstoryUI.criminalRecord = backstoryUI.criminalRecord + " | WARRANT: " + criminal.warrantStatus;
+                backstoryUI.criminalRecord = backstoryUI.criminalRecord + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T21") + criminal.warrantStatus;
                 if Equals(criminal.warrantStatus, "ACTIVE") {
                     backstoryUI.hasHotRecord = true;
                 };
             };
             // NCPD classification on medium/high
             if density >= 2 {
-                backstoryUI.criminalRecord = backstoryUI.criminalRecord + " | NCPD: " + criminal.ncpdClassification;
+                backstoryUI.criminalRecord = backstoryUI.criminalRecord + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T22") + criminal.ncpdClassification;
             };
             // BOLO / alert notices — lookout flags independent of warrant status
             let boloLine: String = KdspBoloGenerator.Generate(seed + 4700, archetype);
@@ -459,20 +459,20 @@ public class KdspBackstoryManager {
         } else if density >= 2 && Equals(gangAffiliation, "NONE") && cyberware.totalImplants > 0 {
             backstoryUI.cyberwareStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S90") + IntToString(cyberware.totalImplants) + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S91") + cyberware.cyberpsychosisStatus;
             if cyberware.cyberpsychosisRisk >= 60 {
-                backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | PSYCHOSIS RISK: " + IntToString(cyberware.cyberpsychosisRisk) + "%";
+                backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T23") + IntToString(cyberware.cyberpsychosisRisk) + "%";
             };
             // Extra details on high density only
             if density >= 3 {
                 if cyberware.hasIllegalCyberware {
-                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | ILLEGAL MODS: " + IntToString(cyberware.illegalCount);
+                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T24") + IntToString(cyberware.illegalCount);
                 };
                 if cyberware.hasRejectedImplants {
-                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | REJECTED IMPLANTS DETECTED";
+                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T25");
                 };
                 // Check for body modification implants and display them
                 let bodyModFound: String = KdspBackstoryManager.FindBodyModImplant(cyberware);
                 if NotEquals(bodyModFound, "") {
-                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + " | BODY MOD: " + bodyModFound;
+                    backstoryUI.cyberwareStatus = backstoryUI.cyberwareStatus + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T26") + bodyModFound;
                 };
             };
         } else {
@@ -483,9 +483,9 @@ public class KdspBackstoryManager {
         if isTraumaTeam {
             backstoryUI.financialStatus = KdspTraumaTeamGenerator.GenerateTTFinancial(seed + 4200);
         } else if density >= 2 && Equals(gangAffiliation, "NONE") && !isNCPD {
-            backstoryUI.financialStatus = "ID: " + financial.ncID + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S92") + financial.creditTier + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S93") + financial.incomeLevel;
+            backstoryUI.financialStatus = GetLocalizedTextByKey(n"Kdsp-Shared-C0") + financial.ncID + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S92") + financial.creditTier + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S93") + financial.incomeLevel;
             if financial.hasDebt {
-                backstoryUI.financialStatus = backstoryUI.financialStatus + " | DEBT: " + financial.debtStatus;
+                backstoryUI.financialStatus = backstoryUI.financialStatus + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T27") + financial.debtStatus;
             };
             // Always show Corp for corpo archetypes, otherwise high density + corporateAsset
             let isCorpoArchetype = Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE");
@@ -528,7 +528,7 @@ public class KdspBackstoryManager {
             } else {
                 ttTier = ttCoverage;
             };
-            backstoryUI.medicalStatus = backstoryUI.medicalStatus + " | TT: " + ttTier;
+            backstoryUI.medicalStatus = backstoryUI.medicalStatus + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T28") + ttTier;
         } else {
             backstoryUI.medicalStatus = "";
         };
@@ -549,9 +549,9 @@ public class KdspBackstoryManager {
             let gangData = KdspGangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
             
             // Threat level based on gang type
-            let threatPrefix: String = "HOSTILE";
+            let threatPrefix: String = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T29");
             if Equals(gangAffiliation, "MOXES") || Equals(gangAffiliation, "ALDECALDOS") {
-                threatPrefix = "CAUTION";
+                threatPrefix = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T30");
             };
             
             backstoryUI.threatAssessment = threatPrefix + " | " + gangData.gangName;
@@ -744,7 +744,7 @@ public class KdspBackstoryManager {
                 displayName = barghestData.barghestRank + " " + barghestData.fullName;
             };
             
-            backstoryUI.gangAffiliation = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S125") + displayName + " | MOS: " + barghestData.mos;
+            backstoryUI.gangAffiliation = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S125") + displayName + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T31") + barghestData.mos;
             // Extra Barghest details on medium/high density
             if density >= 2 {
                 backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S117") + barghestData.formerAffiliation;
@@ -792,12 +792,12 @@ public class KdspBackstoryManager {
             // must say "Married" and a spouse must exist in family list.
             // ══════════════════════════════════════════════════════════════
             if StrContains(significantEvents, "married") {
-                relations.currentRelationshipStatus = "Married";
+                relations.currentRelationshipStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T32");
                 // Check if a spouse already exists
                 let hasSpouse = false;
                 let msi = 0;
                 while msi < ArraySize(relations.familyMembers) {
-                    if Equals(relations.familyMembers[msi].relation, "Spouse") || Equals(relations.familyMembers[msi].relation, "Same-sex Spouse") {
+                    if Equals(relations.familyMembers[msi].relation, "Spouse") || Equals(relations.familyMembers[msi].relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) {
                         hasSpouse = true;
                     }
                     msi += 1;
@@ -817,7 +817,7 @@ public class KdspBackstoryManager {
                     spouse.name = spouseFirst + " " + spouseLast;
                     spouse.relation = "Spouse";
                     spouse.status = "Alive";
-                    spouse.location = "Night City";
+                    spouse.location = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T33");
                     ArrayPush(relations.familyMembers, spouse);
                 }
             }
@@ -836,13 +836,13 @@ public class KdspBackstoryManager {
                 if NotEquals(psych.vendettaTarget, "") {
                     grudgeEnemy.reason = "Vendetta (" + psych.vendettaTarget + ")";
                 } else {
-                    grudgeEnemy.reason = "Personal vendetta";
+                    grudgeEnemy.reason = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T34");
                 }
                 // Grudge holders tend toward higher threat enemies
                 let grudgeThreatRoll = RandRange(seed + 9230, 1, 100);
-                if grudgeThreatRoll <= 30 { grudgeEnemy.threatLevel = "Moderate"; }
-                else if grudgeThreatRoll <= 70 { grudgeEnemy.threatLevel = "High"; }
-                else { grudgeEnemy.threatLevel = "Extreme"; }
+                if grudgeThreatRoll <= 30 { grudgeEnemy.threatLevel = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T35"); }
+                else if grudgeThreatRoll <= 70 { grudgeEnemy.threatLevel = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T36"); }
+                else { grudgeEnemy.threatLevel = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T37"); }
                 ArrayPush(relations.knownEnemies, grudgeEnemy);
             }
 
@@ -864,7 +864,7 @@ public class KdspBackstoryManager {
                     let client = new KdspAssociateInfo();
                     let clientGender = RandRange(seed + 9560 + (cli * 31), 1, 100);
                     let cGender: String;
-                    if clientGender <= 85 { cGender = "Male"; } else { cGender = "Female"; }
+                    if clientGender <= 85 { cGender = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T38"); } else { cGender = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T39"); }
                     let clientFirst = KdspNameGenerator.GetFirstNameByEthnicity(seed + 9570 + (cli * 41), cGender, KdspEthnicityDetector.GetRandomEthnicity(seed + 9575 + (cli * 23)));
                     let clientLast = KdspNameGenerator.GetLastNameByEthnicity(seed + 9580 + (cli * 51), KdspEthnicityDetector.GetRandomEthnicity(seed + 9585 + (cli * 37)));
                     client.name = clientFirst + " " + clientLast;
@@ -872,7 +872,7 @@ public class KdspBackstoryManager {
 
                     // Short client descriptors
                     let clientTypeRoll = RandRange(seed + 9590 + (cli * 61), 0, 9);
-                    if clientTypeRoll == 0 { client.relationship = "Repeat client"; }
+                    if clientTypeRoll == 0 { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T40"); }
                     else if clientTypeRoll == 1 { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S129"); }
                     else if clientTypeRoll == 2 { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S130"); }
                     else if clientTypeRoll == 3 { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S131"); }
@@ -881,9 +881,9 @@ public class KdspBackstoryManager {
                     else if clientTypeRoll == 6 { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S134"); }
                     else if clientTypeRoll == 7 { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S135"); }
                     else if clientTypeRoll == 8 { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S136"); }
-                    else { client.relationship = "Occasional client"; }
+                    else { client.relationship = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T41"); }
 
-                    client.status = "Active";
+                    client.status = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T42");
                     client.affiliation = "";
                     ArrayPush(relations.knownAssociates, client);
                     cli += 1;
@@ -891,9 +891,9 @@ public class KdspBackstoryManager {
 
                 // Override relationship status
                 let swRelRoll = RandRange(seed + 9650, 0, 3);
-                if swRelRoll == 0 { relations.currentRelationshipStatus = "Single"; }
-                else if swRelRoll == 1 { relations.currentRelationshipStatus = "It's Complicated"; }
-                else if swRelRoll == 2 { relations.currentRelationshipStatus = "Single"; }
+                if swRelRoll == 0 { relations.currentRelationshipStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T43"); }
+                else if swRelRoll == 1 { relations.currentRelationshipStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T44"); }
+                else if swRelRoll == 2 { relations.currentRelationshipStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T43"); }
                 else { relations.currentRelationshipStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S137"); }
             }
 
@@ -907,7 +907,7 @@ public class KdspBackstoryManager {
             };
             
             // Emergency contact - full mode, high density only
-            if !compactRel && density >= 3 && !Equals(relations.emergencyContact, "NONE ON FILE") {
+            if !compactRel && density >= 3 && !Equals(relations.emergencyContact, GetLocalizedTextByKey(n"Kdsp-Shared-C2")) {
                 backstoryUI.relationships = backstoryUI.relationships + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S139") + relations.emergencyContact;
             };
             
@@ -935,7 +935,7 @@ public class KdspBackstoryManager {
                     i += 1;
                 };
                 if ArraySize(relations.familyMembers) > maxFamily {
-                    backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.familyMembers) - maxFamily) + " more";
+                    backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.familyMembers) - maxFamily) + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T45");
                 };
             };
             
@@ -959,7 +959,7 @@ public class KdspBackstoryManager {
                     i += 1;
                 };
                 if ArraySize(relations.knownAssociates) > maxShow {
-                    backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.knownAssociates) - maxShow) + " more";
+                    backstoryUI.relationships = backstoryUI.relationships + " +" + IntToString(ArraySize(relations.knownAssociates) - maxShow) + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T45");
                 };
             };
             
@@ -979,7 +979,7 @@ public class KdspBackstoryManager {
             
             // Known enemies - high density only
             if density >= 3 && ArraySize(relations.knownEnemies) > 0 {
-                backstoryUI.relationships = backstoryUI.relationships + " | ENEMIES: ";
+                backstoryUI.relationships = backstoryUI.relationships + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T46");
                 let i = 0;
                 while i < ArraySize(relations.knownEnemies) {
                     let enemy = relations.knownEnemies[i];
@@ -1011,9 +1011,12 @@ public class KdspBackstoryManager {
             // with previously scanned NPCs and produces alert text.
             // ══════════════════════════════════════════════════════════════
             if connectionMode > 0 {
-                // Get NPC's generated display name for cross-referencing
+                // Get NPC's generated display name for cross-referencing.
+                // Role labels ("Street Vendor") are job titles, not names —
+                // generate a real name so the tracker never cross-references
+                // a profession as a person.
                 let npcFullName: String = target.GetTweakDBFullDisplayName(true);
-                if Equals(npcFullName, "") || StrLen(npcFullName) < 3 {
+                if Equals(npcFullName, "") || StrLen(npcFullName) < 3 || KdspBackstoryManager.IsRoleLabel(npcFullName) {
                     npcFullName = KdspNameGenerator.GenerateFullNameByEthnicity(seed + 8600, lifePath.gender, ethnicity);
                 };
 
@@ -1344,7 +1347,7 @@ public class KdspBackstoryManager {
     // Detect NPC's corporate affiliation from appearance name
     private static func DetectCorpoAffiliation(appearanceName: String) -> String {
         let lower = StrLower(appearanceName);
-        if StrContains(lower, "arasaka") { return "Arasaka Corporation"; }
+        if StrContains(lower, "arasaka") { return GetLocalizedTextByKey(n"Kdsp-Shared-C6"); }
         if StrContains(lower, "militech") { return "Militech"; }
         if StrContains(lower, "kang_tao") || StrContains(lower, "kangtao") { return "Kang Tao"; }
         if StrContains(lower, "biotechnica") { return "Biotechnica"; }
@@ -1444,7 +1447,7 @@ public class KdspBackstoryManager {
         let i: Int32 = 0;
         while i < ArraySize(cyberware.implants) {
             let implant = cyberware.implants[i];
-            if Equals(implant.slot, "Body Modification") {
+            if Equals(implant.slot, GetLocalizedTextByKey(n"Kdsp-Shared-C5")) {
                 return implant.name;
             };
             i += 1;
@@ -1460,28 +1463,28 @@ public class KdspBackstoryManager {
         if roll <= 85 {
             // Standard pronouns based on gender presentation
             if Equals(gender, "female") {
-                return "she/her";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T47");
             } else {
-                return "he/him";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T48");
             };
         } else if roll <= 95 {
             // They/them
-            return "they/them";
+            return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T49");
         } else {
             // Neopronouns and variations (rare)
             let neoRoll: Int32 = RandRange(seed + 10, 1, 100);
             if neoRoll <= 20 {
-                return "xe/xem";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T50");
             } else if neoRoll <= 40 {
-                return "ze/zir";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T51");
             } else if neoRoll <= 60 {
-                return "it/its";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T52");
             } else if neoRoll <= 75 {
-                return "she/they";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T53");
             } else if neoRoll <= 90 {
-                return "he/they";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T54");
             } else {
-                return "any pronouns";
+                return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T55");
             };
         };
     }
@@ -1503,13 +1506,8 @@ public class KdspBackstoryManager {
         
         // Check if it's a generic name we should ignore
         if Equals(fullName, "") || StrLen(fullName) < 3 ||
-           Equals(fullName, "None") || 
-           Equals(fullName, "Enemy") ||
-           Equals(fullName, "Citizen") ||
-           Equals(fullName, "Civilian") ||
-           Equals(fullName, "Gang Member") ||
-           Equals(fullName, "Thug") ||
-           StrContains(fullName, "LocKey") {
+           StrContains(fullName, "LocKey") ||
+           KdspBackstoryManager.IsRoleLabel(fullName) {
             return "";
         }
         
@@ -1530,5 +1528,47 @@ public class KdspBackstoryManager {
         
         // No space found or edge case - return empty (will use random)
         return "";
+    }
+
+    // Detects crowd role labels the game uses as display names ("Street
+    // Vendor", "Customer", "Merc"). These are job titles, not names —
+    // reusing them produces surnames like "Vendor" for whole families.
+    // A name counts as a role label when EVERY word is a known role word.
+    public static func IsRoleLabel(name: String) -> Bool {
+        let lower = StrLower(name);
+        let words: array<String> = StrSplit(lower, " ");
+        if ArraySize(words) == 0 {
+            return false;
+        };
+        let i = 0;
+        while i < ArraySize(words) {
+            let w = words[i];
+            if !(Equals(w, "street") || Equals(w, "food") || Equals(w, "vendor") ||
+                 Equals(w, "customer") || Equals(w, "merc") || Equals(w, "mercenary") ||
+                 Equals(w, "ganger") || Equals(w, "gang") || Equals(w, "member") ||
+                 Equals(w, "thug") || Equals(w, "citizen") || Equals(w, "civilian") ||
+                 Equals(w, "enemy") || Equals(w, "none") || Equals(w, "bouncer") ||
+                 Equals(w, "dealer") || Equals(w, "guard") || Equals(w, "security") ||
+                 Equals(w, "bartender") || Equals(w, "barman") || Equals(w, "waiter") ||
+                 Equals(w, "waitress") || Equals(w, "cook") || Equals(w, "chef") ||
+                 Equals(w, "clerk") || Equals(w, "receptionist") || Equals(w, "janitor") ||
+                 Equals(w, "beggar") || Equals(w, "homeless") || Equals(w, "junkie") ||
+                 Equals(w, "pedestrian") || Equals(w, "passerby") || Equals(w, "prostitute") ||
+                 Equals(w, "doll") || Equals(w, "dancer") || Equals(w, "patron") ||
+                 Equals(w, "regular") || Equals(w, "worker") || Equals(w, "employee") ||
+                 Equals(w, "officer") || Equals(w, "soldier") || Equals(w, "netrunner") ||
+                 Equals(w, "techie") || Equals(w, "tech") || Equals(w, "corpo") ||
+                 Equals(w, "nomad") || Equals(w, "cop") || Equals(w, "police") ||
+                 Equals(w, "medic") || Equals(w, "doctor") || Equals(w, "nurse") ||
+                 Equals(w, "driver") || Equals(w, "shopkeeper") || Equals(w, "seller") ||
+                 Equals(w, "trader") || Equals(w, "hustler") || Equals(w, "scav") ||
+                 Equals(w, "scavenger") || Equals(w, "bodyguard") || Equals(w, "staff") ||
+                 Equals(w, "attendant") || Equals(w, "cashier") || Equals(w, "stripper") ||
+                 Equals(w, "sex") || Equals(w, "joytoy")) {
+                return false;
+            };
+            i += 1;
+        };
+        return true;
     }
 }

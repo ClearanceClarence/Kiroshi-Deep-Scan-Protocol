@@ -45,16 +45,16 @@ public class KdspGangProfileGenerator {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = gangAffiliation;
         profile.gangName = gangAffiliation;
-        profile.headerLabel = "GANG MEMBER FILE";
+        profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T0");
         
         let roll = RandRange(seed, 1, 100);
-        if roll <= 50 { profile.rank = "Member"; }
-        else if roll <= 80 { profile.rank = "Veteran"; }
-        else { profile.rank = "Senior"; }
+        if roll <= 50 { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T1"); }
+        else if roll <= 80 { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T2"); }
+        else { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T3"); }
         profile.rankMeaning = "";
         
-        profile.role = "Street Operations";
-        profile.territory = "Unknown";
+        profile.role = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T4");
+        profile.territory = GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
         profile.yearsActive = RandRange(seed + 300, 1, 10);
         profile.bodyCount = RandRange(seed + 400, 0, 20);
         profile.arrestCount = RandRange(seed + 500, 0, 5);

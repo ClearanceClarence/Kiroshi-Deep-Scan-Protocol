@@ -7,51 +7,51 @@ public class KdspWraithsProfile {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "WRAITHS";
         profile.gangName = "Wraiths";
-        profile.headerLabel = "WRAITHS RAFFEN SHIV FILE";
+        profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T0");
         
         // Raider hierarchy
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "War Chief"; profile.rankMeaning = "Leader"; }
-            else if roll <= 70 { profile.rank = "Road Captain"; profile.rankMeaning = "Lieutenant"; }
-            else if roll <= 90 { profile.rank = "Raider Lord"; profile.rankMeaning = "Senior"; }
-            else { profile.rank = "Blood Speaker"; profile.rankMeaning = "Advisor"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T2"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T3"); profile.rankMeaning = "Lieutenant"; }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T3"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T5"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T1"); }
         } else {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Prospect"; profile.rankMeaning = "New Blood"; }
-            else if roll <= 70 { profile.rank = "Raider"; profile.rankMeaning = "Full Member"; }
-            else if roll <= 90 { profile.rank = "Outrider"; profile.rankMeaning = "Scout"; }
-            else { profile.rank = "Wrecker"; profile.rankMeaning = "Specialist"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T105"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T9"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T6"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T268"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T12"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T7"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T5"); }
         }
         
         // Specializations
         let specs: array<String>;
-        ArrayPush(specs, "Highway Robbery");
-        ArrayPush(specs, "Vehicle Combat");
-        ArrayPush(specs, "Convoy Raiding");
-        ArrayPush(specs, "Kidnapping");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-Shared-C51"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T8"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T9"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T6"));
         ArrayPush(specs, "Smuggling");
-        ArrayPush(specs, "Chop Shop");
-        ArrayPush(specs, "Camp Defense");
-        ArrayPush(specs, "Torture/Interrogation");
-        ArrayPush(specs, "Scout/Recon");
-        ArrayPush(specs, "Slaving Operations");
-        ArrayPush(specs, "Ambush Coordination");
-        ArrayPush(specs, "Vehicle Modification");
-        ArrayPush(specs, "Wasteland Navigation");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T10"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T11"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T12"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T13"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T14"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T15"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T24"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T16"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-S0"));
-        ArrayPush(specs, "Trap/IED Placement");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T17"));
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
         let territories: array<String>;
-        ArrayPush(territories, "Highway I-9");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T18"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-S1"));
-        ArrayPush(territories, "Badlands East");
-        ArrayPush(territories, "Border Crossings");
-        ArrayPush(territories, "Abandoned Towns");
-        ArrayPush(territories, "Raider Camps");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T19"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T34"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T20"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T21"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
         // Stats
@@ -68,16 +68,16 @@ public class KdspWraithsProfile {
         // Marks
         let marks: array<String>;
         if RandRange(seed + 700, 1, 100) <= 80 {
-            ArrayPush(marks, "Ritual scarification");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T22"));
         }
         if RandRange(seed + 710, 1, 100) <= 60 {
-            ArrayPush(marks, "Trophy trophies");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T23"));
         }
         if RandRange(seed + 720, 1, 100) <= 50 {
             ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-S2"));
         }
         if RandRange(seed + 730, 1, 100) <= 55 {
-            ArrayPush(marks, "Sun-weathered skin");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T24"));
         }
         if RandRange(seed + 740, 1, 100) <= 40 {
             ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-S3"));
@@ -124,10 +124,10 @@ public class KdspWraithsProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return "FRESH MEAT"; }
-        if roll <= 30 { return "RAIDER"; }
-        if roll <= 60 { return "BLOODED"; }
-        if roll <= 85 { return "WAR-PROVEN"; }
-        return "DEATH RIDER";
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T25"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T26"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T27"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T28"); }
+        return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T29");
     }
 }

@@ -87,13 +87,13 @@ public abstract class KdspTraumaTeamGenerator {
         let rankRoll = RandRange(seed, 0, 9);
         let rank: String;
         let salary: String;
-        if rankRoll <= 2 { rank = "Operative"; salary = "65,000-85,000"; }
-        else if rankRoll <= 5 { rank = "Senior Operative"; salary = "90,000-120,000"; }
-        else if rankRoll <= 7 { rank = "Team Leader"; salary = "130,000-180,000"; }
-        else if rankRoll == 8 { rank = "Flight Medic"; salary = "95,000-140,000"; }
-        else { rank = "Tactical Specialist"; salary = "110,000-160,000"; }
+        if rankRoll <= 2 { rank = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T4"); salary = "65,000-85,000"; }
+        else if rankRoll <= 5 { rank = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T5"); salary = "90,000-120,000"; }
+        else if rankRoll <= 7 { rank = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T0"); salary = "130,000-180,000"; }
+        else if rankRoll == 8 { rank = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T1"); salary = "95,000-140,000"; }
+        else { rank = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T2"); salary = "110,000-160,000"; }
 
-        let result = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S47") + rank + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S48") + salary + "/yr";
+        let result = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S47") + rank + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S48") + salary + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T3");
 
         // Benefits
         let benefitRoll = RandRange(seed + 70, 0, 4);
@@ -110,23 +110,23 @@ public abstract class KdspTraumaTeamGenerator {
     public static func GenerateTTMedical(seed: Int32) -> String {
         let bloodRoll = RandRange(seed, 0, 7);
         let blood: String;
-        if bloodRoll == 0 { blood = "O RhD+"; }
-        else if bloodRoll == 1 { blood = "O RhD-"; }
-        else if bloodRoll == 2 { blood = "A RhD+"; }
-        else if bloodRoll == 3 { blood = "A RhD-"; }
-        else if bloodRoll == 4 { blood = "B RhD+"; }
-        else if bloodRoll == 5 { blood = "B RhD-"; }
-        else if bloodRoll == 6 { blood = "AB RhD+"; }
-        else { blood = "AB RhD-"; }
+        if bloodRoll == 0 { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T33"); }
+        else if bloodRoll == 1 { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T37"); }
+        else if bloodRoll == 2 { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T34"); }
+        else if bloodRoll == 3 { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T38"); }
+        else if bloodRoll == 4 { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T35"); }
+        else if bloodRoll == 5 { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T39"); }
+        else if bloodRoll == 6 { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T36"); }
+        else { blood = GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T40"); }
 
         let fitnessRoll = RandRange(seed + 10, 0, 9);
         let fitness: String;
-        if fitnessRoll <= 5 { fitness = "COMBAT READY"; }
-        else if fitnessRoll <= 7 { fitness = "FIT FOR DUTY"; }
+        if fitnessRoll <= 5 { fitness = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T4"); }
+        else if fitnessRoll <= 7 { fitness = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T5"); }
         else if fitnessRoll == 8 { fitness = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S54"); }
         else { fitness = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S55"); }
 
-        let result = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S95") + blood + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S56") + fitness + " | TT: EMPLOYEE COVERAGE";
+        let result = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S95") + blood + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S56") + fitness + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T6");
 
         // Combat injuries
         let injuryRoll = RandRange(seed + 20, 0, 9);
@@ -151,12 +151,12 @@ public abstract class KdspTraumaTeamGenerator {
     public static func GenerateTTThreatAssessment(seed: Int32) -> String {
         let roleRoll = RandRange(seed, 0, 7);
         let role: String;
-        if roleRoll <= 1 { role = "Pointman"; }
-        else if roleRoll <= 3 { role = "Combat Medic"; }
-        else if roleRoll == 4 { role = "Marksman"; }
-        else if roleRoll == 5 { role = "Breacher"; }
-        else if roleRoll == 6 { role = "AV Gunner"; }
-        else { role = "Team Leader"; }
+        if roleRoll <= 1 { role = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T7"); }
+        else if roleRoll <= 3 { role = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T38"); }
+        else if roleRoll == 4 { role = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T8"); }
+        else if roleRoll == 5 { role = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T9"); }
+        else if roleRoll == 6 { role = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T10"); }
+        else { role = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-T0"); }
 
         let result = GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S64") + role + GetLocalizedTextByKey(n"Kdsp-TraumaTeamGene-S65");
 

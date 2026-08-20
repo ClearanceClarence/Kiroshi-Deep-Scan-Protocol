@@ -123,7 +123,7 @@ public abstract class KdspCommunityPool {
         let ethnicity: KdspNPCEthnicity = KdspCommunityPool.GetDistrictEthnicity(poolSeed, ethRoll);
 
         let gender: String;
-        if isFemale { gender = "Female"; } else { gender = "Male"; };
+        if isFemale { gender = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T39"); } else { gender = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T38"); };
 
         let first: String = KdspNameGenerator.GetFirstNameByEthnicity(nameSeed + 1, gender, ethnicity);
         let last: String = KdspNameGenerator.GetLastNameByEthnicity(nameSeed + 2, ethnicity);

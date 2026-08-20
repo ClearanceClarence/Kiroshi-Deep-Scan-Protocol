@@ -7,50 +7,50 @@ public class KdspAldecaldosProfile {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "ALDECALDOS";
         profile.gangName = "Aldecaldos";
-        profile.headerLabel = "ALDECALDOS CLAN RECORD";
+        profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T0");
         
         // Clan/family structure
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Elder"; profile.rankMeaning = "Council Member"; }
-            else if roll <= 70 { profile.rank = "Road Boss"; profile.rankMeaning = "Convoy Leader"; }
-            else if roll <= 90 { profile.rank = "Camp Chief"; profile.rankMeaning = "Site Leader"; }
-            else { profile.rank = "Clan Voice"; profile.rankMeaning = "Spokesperson"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T2"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T4"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T5"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T6"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T7"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T8"); }
         } else {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 30 { profile.rank = "New Blood"; profile.rankMeaning = "Recent Join"; }
-            else if roll <= 60 { profile.rank = "Familia"; profile.rankMeaning = "Full Member"; }
-            else if roll <= 80 { profile.rank = "Born Aldecaldo"; profile.rankMeaning = "Birthright"; }
-            else { profile.rank = "Trusted"; profile.rankMeaning = "Proven"; }
+            if roll <= 30 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T9"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T10"); }
+            else if roll <= 60 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T11"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
+            else if roll <= 80 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T13"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T14"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T15"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T16"); }
         }
         
         // Specializations - working roles, not criminal
         let specs: array<String>;
-        ArrayPush(specs, "Mechanic");
-        ArrayPush(specs, "Driver/Pilot");
-        ArrayPush(specs, "Scout/Pathfinder");
-        ArrayPush(specs, "Camp Security");
-        ArrayPush(specs, "Trade Negotiator");
-        ArrayPush(specs, "Smuggling Runs");
-        ArrayPush(specs, "Medical Support");
-        ArrayPush(specs, "Tech Specialist");
-        ArrayPush(specs, "Convoy Defense");
-        ArrayPush(specs, "Supply Management");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T17"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T18"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T19"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T20"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T21"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T22"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T23"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T24"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T25"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T26"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S0"));
-        ArrayPush(specs, "Animal Husbandry");
-        ArrayPush(specs, "Water Purification");
-        ArrayPush(specs, "Communications/Radio");
-        ArrayPush(specs, "Youth Training");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T27"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T28"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T29"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T30"));
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
         let territories: array<String>;
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S1"));
-        ArrayPush(territories, "Trade Routes");
-        ArrayPush(territories, "Solar Farm");
-        ArrayPush(territories, "Badlands Highways");
-        ArrayPush(territories, "Border Crossings");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T31"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T32"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T33"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T34"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
         // Stats
@@ -70,7 +70,7 @@ public class KdspAldecaldosProfile {
             ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S2"));
         }
         if RandRange(seed + 710, 1, 100) <= 50 {
-            ArrayPush(marks, "Road-worn appearance");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T35"));
         }
         if RandRange(seed + 720, 1, 100) <= 40 {
             ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-S3"));
@@ -123,10 +123,10 @@ public class KdspAldecaldosProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return "NEWCOMER"; }
-        if roll <= 30 { return "ACCEPTED"; }
-        if roll <= 60 { return "FAMILIA"; }
-        if roll <= 85 { return "TRUSTED KIN"; }
-        return "BLOOD OF ALDECALDO";
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T36"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T37"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T38"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T39"); }
+        return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T40");
     }
 }

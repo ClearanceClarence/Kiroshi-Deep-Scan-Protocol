@@ -7,51 +7,51 @@ public class KdspScavengersProfile {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "SCAVENGERS";
         profile.gangName = "Scavengers";
-        profile.headerLabel = "SCAVENGER CELL RECORD";
+        profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T0");
         
         // Cell structure
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Cell Leader"; profile.rankMeaning = "Boss"; }
-            else if roll <= 70 { profile.rank = "Surgeon"; profile.rankMeaning = "Ripper"; }
-            else if roll <= 90 { profile.rank = "Butcher"; profile.rankMeaning = "Senior"; }
-            else { profile.rank = "Broker"; profile.rankMeaning = "Fence"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T2"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T4"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T193"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T3"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T5"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T6"); }
         } else {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Grabber"; profile.rankMeaning = "Kidnapper"; }
-            else if roll <= 70 { profile.rank = "Cutter"; profile.rankMeaning = "Harvester"; }
-            else if roll <= 90 { profile.rank = "Runner"; profile.rankMeaning = "Courier"; }
-            else { profile.rank = "Lookout"; profile.rankMeaning = "Scout"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T7"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T8"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T9"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T10"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T106"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T11"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangManager-T34"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T12"); }
         }
         
         // Specializations
         let specs: array<String>;
-        ArrayPush(specs, "Organ Harvesting");
-        ArrayPush(specs, "Cyberware Extraction");
-        ArrayPush(specs, "Victim Acquisition");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-Shared-C46"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T13"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T14"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S0"));
-        ArrayPush(specs, "Body Disposal");
-        ArrayPush(specs, "Ripperdoc Work");
-        ArrayPush(specs, "Vehicle Operations");
-        ArrayPush(specs, "Site Security");
-        ArrayPush(specs, "Intimidation");
-        ArrayPush(specs, "Clean-up Crew");
-        ArrayPush(specs, "Sedation Specialist");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T18"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T15"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T16"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T17"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T14"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T18"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T19"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S1"));
-        ArrayPush(specs, "Buyer Liaison");
-        ArrayPush(specs, "Transport Logistics");
-        ArrayPush(specs, "Street Surveillance");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T20"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T21"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T22"));
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory - Scavs operate everywhere
         let territories: array<String>;
-        ArrayPush(territories, "Watson Underground");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T23"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S2"));
-        ArrayPush(territories, "Northside Warehouses");
-        ArrayPush(territories, "Industrial Basements");
-        ArrayPush(territories, "Abandoned Clinics");
-        ArrayPush(territories, "Pacifica Ruins");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-T42"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T24"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T25"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T26"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
         // Stats - Scavs are prolific
@@ -68,10 +68,10 @@ public class KdspScavengersProfile {
         // Marks
         let marks: array<String>;
         if RandRange(seed + 700, 1, 100) <= 50 {
-            ArrayPush(marks, "Surgical scars");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T27"));
         }
         if RandRange(seed + 710, 1, 100) <= 60 {
-            ArrayPush(marks, "Cheap cyberware");
+            ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T28"));
         }
         if RandRange(seed + 720, 1, 100) <= 40 {
             ArrayPush(marks, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-S3"));
@@ -124,9 +124,9 @@ public class KdspScavengersProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 20 { return "EXPENDABLE"; }
-        if roll <= 50 { return "USEFUL"; }
-        if roll <= 80 { return "TRUSTED"; }
-        return "ESSENTIAL";
+        if roll <= 20 { return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T29"); }
+        if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T30"); }
+        if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T49"); }
+        return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T31");
     }
 }

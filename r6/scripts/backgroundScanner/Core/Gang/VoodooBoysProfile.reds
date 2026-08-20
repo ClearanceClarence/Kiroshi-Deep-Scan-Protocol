@@ -6,39 +6,39 @@ public class KdspVoodooBoysProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "VOODOO_BOYS";
-        profile.gangName = "Voodoo Boys";
-        profile.headerLabel = "VOODOO BOYS NET RECORD";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-Shared-C48");
+        profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T0");
         
         // Netrunner hierarchy
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss") || StrContains(appearanceName, "netrunner");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Houngan"; profile.rankMeaning = "Priest/Senior Runner"; }
-            else if roll <= 70 { profile.rank = "Mambo"; profile.rankMeaning = "Priestess/Leader"; }
-            else if roll <= 90 { profile.rank = "Bokor"; profile.rankMeaning = "Sorcerer/Elite"; }
-            else { profile.rank = "Gede"; profile.rankMeaning = "Death Aspect/Assassin"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T2"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T138"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T3"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T5"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T6"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T7"); }
         } else {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Serviteur"; profile.rankMeaning = "Servant/Initiate"; }
-            else if roll <= 70 { profile.rank = "Chwal"; profile.rankMeaning = "Horse/Runner"; }
-            else if roll <= 90 { profile.rank = "Ti Moun"; profile.rankMeaning = "Child/Prospect"; }
-            else { profile.rank = "Solda"; profile.rankMeaning = "Soldier/Guard"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T8"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T9"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T10"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T11"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T12"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T13"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T14"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T15"); }
         }
         
         // Specializations
         let specs: array<String>;
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S0"));
-        ArrayPush(specs, "ICE Breaking");
-        ArrayPush(specs, "Data Mining");
-        ArrayPush(specs, "Blackwall Research");
-        ArrayPush(specs, "AI Contact");
-        ArrayPush(specs, "Information Brokering");
-        ArrayPush(specs, "System Infiltration");
-        ArrayPush(specs, "Territory Defense");
-        ArrayPush(specs, "Surveillance");
-        ArrayPush(specs, "Wetwork Support");
-        ArrayPush(specs, "Daemon Crafting");
-        ArrayPush(specs, "Signal Jamming");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T16"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T17"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T18"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T17"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T18"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T19"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T9"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T30"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T20"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T21"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T22"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S1"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S2"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S3"));
@@ -46,10 +46,10 @@ public class KdspVoodooBoysProfile {
         
         // Territory
         let territories: array<String>;
-        ArrayPush(territories, "Coastview");
-        ArrayPush(territories, "Pacifica Chapel");
-        ArrayPush(territories, "Batty's Hotel");
-        ArrayPush(territories, "GIM Underground");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T23"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-T43"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-Shared-C47"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T24"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-S4"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
@@ -124,10 +124,10 @@ public class KdspVoodooBoysProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return "OUTSIDER"; }
-        if roll <= 30 { return "ACCEPTED"; }
-        if roll <= 60 { return "TRUSTED"; }
-        if roll <= 85 { return "INNER CIRCLE"; }
-        return "BLOOD OF PACIFICA";
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T25"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T37"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T49"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T27"); }
+        return GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T26");
     }
 }

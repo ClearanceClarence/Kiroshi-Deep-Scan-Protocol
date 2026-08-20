@@ -6,24 +6,24 @@ public class KdspGangProfileUtils {
     public static func GetStatus(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         if roll <= 75 { return "ACTIVE"; }
-        if roll <= 85 { return "PROBATION"; }
-        if roll <= 92 { return "INJURED"; }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-GangProfileUti-T0"); }
+        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-GangProfileUti-T1"); }
         if roll <= 96 { return "SUSPENDED"; }
         return "FLAGGED";
     }
 
     public static func GetGangName(affiliation: String) -> String {
-        if Equals(affiliation, "TYGER_CLAWS") { return "Tyger Claws"; }
+        if Equals(affiliation, "TYGER_CLAWS") { return GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"); }
         if Equals(affiliation, "MAELSTROM") { return "Maelstrom"; }
         if Equals(affiliation, "VALENTINOS") { return "Valentinos"; }
-        if Equals(affiliation, "6TH_STREET") { return "6th Street"; }
+        if Equals(affiliation, "6TH_STREET") { return GetLocalizedTextByKey(n"Kdsp-Shared-C33"); }
         if Equals(affiliation, "ANIMALS") { return "Animals"; }
-        if Equals(affiliation, "VOODOO_BOYS") { return "Voodoo Boys"; }
-        if Equals(affiliation, "MOXES") { return "The Moxes"; }
+        if Equals(affiliation, "VOODOO_BOYS") { return GetLocalizedTextByKey(n"Kdsp-Shared-C48"); }
+        if Equals(affiliation, "MOXES") { return GetLocalizedTextByKey(n"Kdsp-Shared-C40"); }
         if Equals(affiliation, "SCAVENGERS") { return "Scavengers"; }
         if Equals(affiliation, "WRAITHS") { return "Wraiths"; }
         if Equals(affiliation, "ALDECALDOS") { return "Aldecaldos"; }
-        return "Unknown";
+        return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
     }
 }
 

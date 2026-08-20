@@ -107,7 +107,7 @@ public class KdspRelationshipsManager {
             let ecName = pool.GetFullName(seed + 410, ecGender);
             relations.emergencyContact = ecName + " (" + KdspRelationshipsManager.GetContactRelationType(seed + 420) + ")";
         } else {
-            relations.emergencyContact = "NONE ON FILE";
+            relations.emergencyContact = GetLocalizedTextByKey(n"Kdsp-Shared-C2");
         }
 
         // Known associates - full count restored
@@ -199,76 +199,76 @@ public class KdspRelationshipsManager {
         if isGang {
             let i = RandRange(seed, 0, 11);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S0"); }
-            if i == 1 { return "Gang superior"; }
-            if i == 2 { return "Gang subordinate"; }
-            if i == 3 { return "Trusted lieutenant"; }
-            if i == 4 { return "Drug supplier"; }
-            if i == 5 { return "Weapons contact"; }
-            if i == 6 { return "Enforcer buddy"; }
-            if i == 7 { return "Initiation sponsor"; }
-            if i == 8 { return "Territory partner"; }
-            if i == 9 { return "Getaway driver"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T0"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T1"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T2"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T3"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T4"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T5"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T6"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T7"); }
+            if i == 9 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T8"); }
             if i == 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S1"); }
-            return "Money handler";
+            return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T9");
         }
 
         // Universal relationships (20)
         let i = RandRange(seed, 0, 19);
-        if i == 0 { return "Childhood friend"; }
-        if i == 1 { return "Coworker"; }
-        if i == 2 { return "Former partner"; }
-        if i == 3 { return "Drinking buddy"; }
-        if i == 4 { return "Business associate"; }
-        if i == 5 { return "Neighbor"; }
-        if i == 6 { return "Fixer contact"; }
-        if i == 7 { return "Ripperdoc"; }
-        if i == 8 { return "Dealer"; }
-        if i == 9 { return "Informant"; }
-        if i == 10 { return "Gym partner"; }
-        if i == 11 { return "Former roommate"; }
-        if i == 12 { return "Gambling buddy"; }
-        if i == 13 { return "Online friend"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T10"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T11"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T12"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-ConnCtx-16"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T13"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T292"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T14"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T2"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-GangManager-T35"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T15"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T16"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T17"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T18"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T19"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-ConnCtx-4"); }
-        if i == 15 { return "Church/temple contact"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T20"); }
         if i == 16 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S2"); }
-        if i == 17 { return "Ex-coworker"; }
-        if i == 18 { return "Mechanic"; }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T21"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T17"); }
         return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S3");
     }
 
     private static func GetAssociateStatus(seed: Int32) -> String {
         let i = RandRange(seed, 0, 14);
-        if i == 0 { return "Active"; }
-        if i == 1 { return "Active"; }
-        if i == 2 { return "Active"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T42"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T42"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T42"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S4"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S5"); }
-        if i == 5 { return "Deceased (" + IntToString(RandRange(seed + 5, 2070, 2077)) + ")"; }
-        if i == 6 { return "Incarcerated"; }
-        if i == 7 { return "Missing"; }
-        if i == 8 { return "Relocated"; }
-        if i == 9 { return "Under Surveillance"; }
-        if i == 10 { return "Wanted"; }
-        if i == 11 { return "In hiding"; }
-        if i == 12 { return "Hospitalized"; }
-        if i == 13 { return "Off-grid"; }
-        return "Unknown";
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T22") + IntToString(RandRange(seed + 5, 2070, 2077)) + ")"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T23"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T24"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T25"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T26"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T27"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T28"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T29"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T30"); }
+        return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
     }
 
     private static func GetRandomAffiliation(seed: Int32, archetype: String) -> String {
         let i = RandRange(seed, 0, 11);
         if i == 0 { return "None"; }
         if i == 1 { return "None"; }
-        if i == 2 { return "Unknown"; }
-        if i == 3 { return "Arasaka (Suspected)"; }
-        if i == 4 { return "Militech (Suspected)"; }
-        if i == 5 { return "Criminal (Unaffiliated)"; }
-        if i == 6 { return "Fixer Network"; }
-        if i == 7 { return "Street Merc"; }
-        if i == 8 { return "Netrunner collective"; }
-        if i == 9 { return "Black market"; }
-        if i == 10 { return "Scav connections"; }
-        return "Corporate security";
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T31"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T32"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T33"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T34"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T19"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T35"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T290"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T36"); }
+        return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T37");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -290,13 +290,13 @@ public class KdspRelationshipsManager {
         // Determine gender based on relation
         let gender = "male";
         if Equals(family.relation, "Mother") || Equals(family.relation, "Sister") || 
-           Equals(family.relation, "Grandmother") || Equals(family.relation, "Second Mother") {
+           Equals(family.relation, "Grandmother") || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C65")) {
             gender = "female";
         } else if Equals(family.relation, "Father") || Equals(family.relation, "Brother") || 
-                  Equals(family.relation, "Grandfather") || Equals(family.relation, "Second Father") {
+                  Equals(family.relation, "Grandfather") || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C68")) {
             gender = "male";
-        } else if Equals(family.relation, "Non-binary Sibling") || Equals(family.relation, "Chosen Family") ||
-                  Equals(family.relation, "Same-sex Spouse") || Equals(family.relation, "Partner (polyam)") {
+        } else if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C66")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C67")) ||
+                  Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C64")) {
             gender = KdspNameGenerator.GetRandomGender(seed + 5);
         } else if Equals(family.relation, "Aunt") {
             gender = "female";
@@ -312,8 +312,8 @@ public class KdspRelationshipsManager {
         // Blood relatives share the family last name
         if KdspRelationshipsManager.IsBloodRelative(family.relation) {
             family.name = firstName + " " + familyLastName;
-        } else if Equals(family.relation, "Spouse") || Equals(family.relation, "Same-sex Spouse") || 
-                  Equals(family.relation, "Partner (polyam)") {
+        } else if Equals(family.relation, "Spouse") || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) || 
+                  Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C64")) {
             // Spouses usually take family name (80%), some keep maiden name (20%)
             if RandRange(seed + 15, 1, 100) <= 80 {
                 family.name = firstName + " " + familyLastName;
@@ -328,10 +328,10 @@ public class KdspRelationshipsManager {
         // Status
         let roll = RandRange(seed + 20, 1, 100);
         if roll <= 50 { family.status = "Alive"; }
-        else if roll <= 70 { family.status = "Deceased"; }
-        else if roll <= 80 { family.status = "Estranged"; }
-        else if roll <= 90 { family.status = "Unknown"; }
-        else { family.status = "Missing"; }
+        else if roll <= 70 { family.status = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T38"); }
+        else if roll <= 80 { family.status = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T39"); }
+        else if roll <= 90 { family.status = GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14"); }
+        else { family.status = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T24"); }
 
         // Location (only for living family)
         family.location = "";
@@ -360,13 +360,13 @@ public class KdspRelationshipsManager {
         if roll == 10 { return "Uncle"; }
         if roll == 11 { return "Cousin"; }
         // Diverse options
-        if roll == 12 { return "Second Mother"; }
-        if roll == 13 { return "Second Father"; }
-        if roll == 14 { return "Same-sex Spouse"; }
-        if roll == 15 { return "Non-binary Sibling"; }
-        if roll == 16 { return "Partner (polyam)"; }
-        if roll == 17 { return "Chosen Family"; }
-        return "Adoptive Parent";
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-Shared-C65"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-Shared-C68"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-Shared-C1"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-Shared-C66"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-Shared-C64"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-Shared-C67"); }
+        return GetLocalizedTextByKey(n"Kdsp-Shared-C63");
     }
 
     private static func IsBloodRelative(relation: String) -> Bool {
@@ -377,27 +377,27 @@ public class KdspRelationshipsManager {
         if Equals(relation, "Grandmother") { return true; }
         if Equals(relation, "Grandfather") { return true; }
         if Equals(relation, "Child") { return true; }
-        if Equals(relation, "Non-binary Sibling") { return true; }
-        if Equals(relation, "Second Mother") { return true; }
-        if Equals(relation, "Second Father") { return true; }
-        if Equals(relation, "Adoptive Parent") { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-Shared-C66")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-Shared-C65")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-Shared-C68")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-Shared-C63")) { return true; }
         return false;
     }
 
     private static func GetFamilyLocation(seed: Int32) -> String {
         let i = RandRange(seed, 0, 11);
-        if i == 0 { return "Night City"; }
-        if i == 1 { return "Night City"; }
-        if i == 2 { return "Night City"; }
-        if i == 3 { return "Badlands"; }
-        if i == 4 { return "NUSA (Relocated)"; }
-        if i == 5 { return "Europe"; }
-        if i == 6 { return "Asia"; }
-        if i == 7 { return "South America"; }
-        if i == 8 { return "Orbital station"; }
-        if i == 9 { return "Crystal Palace"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T33"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T33"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T33"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T40"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T41"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T42"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T43"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T44"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T45"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T524"); }
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S6"); }
-        return "Unknown";
+        return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -440,31 +440,31 @@ public class KdspRelationshipsManager {
 
         // Threat level
         let roll = RandRange(seed + 30, 1, 100);
-        if roll <= 30 { enemy.threatLevel = "Low"; }
-        else if roll <= 70 { enemy.threatLevel = "Moderate"; }
-        else if roll <= 90 { enemy.threatLevel = "High"; }
-        else { enemy.threatLevel = "Extreme"; }
+        if roll <= 30 { enemy.threatLevel = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T46"); }
+        else if roll <= 70 { enemy.threatLevel = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T35"); }
+        else if roll <= 90 { enemy.threatLevel = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T36"); }
+        else { enemy.threatLevel = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T37"); }
 
         return enemy;
     }
 
     private static func GetEnemyReason(seed: Int32) -> String {
         let i = RandRange(seed, 0, 14);
-        if i == 0 { return "Business dispute"; }
-        if i == 1 { return "Personal betrayal"; }
-        if i == 2 { return "Romantic rivalry"; }
-        if i == 3 { return "Gang conflict"; }
-        if i == 4 { return "Debt dispute"; }
-        if i == 5 { return "Family feud"; }
-        if i == 6 { return "Territorial dispute"; }
-        if i == 7 { return "Past violence"; }
-        if i == 8 { return "Theft accusation"; }
-        if i == 9 { return "Snitch suspicion"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T47"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T48"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T49"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T50"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T51"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T52"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T53"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T54"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T55"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T56"); }
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S7"); }
-        if i == 11 { return "Professional rivalry"; }
-        if i == 12 { return "Blackmail situation"; }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T57"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T58"); }
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S8"); }
-        return "Unknown origin";
+        return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T59");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -489,9 +489,9 @@ public class KdspRelationshipsManager {
         contact.type = KdspRelationshipsManager.GetProfessionalContactType(seed + 10, archetype);
         
         if RandRange(seed + 20, 1, 100) <= 50 {
-            contact.frequency = "Regular contact";
+            contact.frequency = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T60");
         } else {
-            contact.frequency = "Occasional contact";
+            contact.frequency = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T61");
         }
 
         return contact;
@@ -500,39 +500,39 @@ public class KdspRelationshipsManager {
     private static func GetProfessionalContactType(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Colleague"; }
-            if i == 1 { return "Supervisor"; }
-            if i == 2 { return "Client"; }
-            if i == 3 { return "Business Partner"; }
-            if i == 4 { return "Corporate Contact"; }
-            if i == 5 { return "Legal counsel"; }
-            if i == 6 { return "Accountant"; }
-            if i == 7 { return "HR contact"; }
-            if i == 8 { return "Industry contact"; }
-            return "Networking connection";
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T62"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T63"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T64"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T65"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T66"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T67"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T68"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T69"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T70"); }
+            return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T71");
         }
         
         if Equals(archetype, "GANGER") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Fixer"; }
-            if i == 1 { return "Arms Dealer"; }
-            if i == 2 { return "Ripperdoc"; }
-            if i == 3 { return "Drug Supplier"; }
-            if i == 4 { return "Information Broker"; }
-            if i == 5 { return "Fence"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T72"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T73"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T2"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T51"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T74"); }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T6"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S9"); }
-            if i == 7 { return "Bookie"; }
-            if i == 8 { return "Smuggler"; }
-            return "Street doc";
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T75"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T76"); }
+            return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T77");
         }
         
         let i = RandRange(seed, 0, 5);
-        if i == 0 { return "Business Contact"; }
-        if i == 1 { return "Service Provider"; }
-        if i == 2 { return "Mentor"; }
-        if i == 3 { return "Former teacher"; }
-        if i == 4 { return "Trade contact"; }
-        return "Professional acquaintance";
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T78"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T79"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T80"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T81"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T82"); }
+        return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T83");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -550,8 +550,8 @@ public class KdspRelationshipsManager {
         if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S12"); }
         if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S13"); }
         if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S14"); }
-        if roll == 6 { return "Widowed"; }
-        if roll == 7 { return "Serial dater"; }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T84"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T85"); }
         if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S15"); }
         if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S16"); }
         // Diverse options
@@ -569,21 +569,21 @@ public class KdspRelationshipsManager {
         if diverse { maxRoll = 15; }
         
         let roll = RandRange(seed, 1, maxRoll);
-        if roll == 1 { return "Single"; }
-        if roll == 2 { return "Single"; }
-        if roll == 3 { return "In relationship"; }
-        if roll == 4 { return "Married"; }
-        if roll == 5 { return "Domestic partnership"; }
-        if roll == 6 { return "Separated"; }
-        if roll == 7 { return "Divorced"; }
-        if roll == 8 { return "Widowed"; }
-        if roll == 9 { return "It's complicated"; }
-        if roll == 10 { return "Unknown"; }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T43"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T43"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T86"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T32"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T87"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T88"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T89"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T84"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T90"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14"); }
         // Diverse options
-        if roll == 11 { return "Polyamorous arrangement"; }
-        if roll == 12 { return "Open relationship"; }
-        if roll == 13 { return "Same-sex partnership"; }
-        if roll == 14 { return "Same-sex marriage"; }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T91"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T92"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T93"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T94"); }
         return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S23");
     }
 
@@ -604,24 +604,24 @@ public class KdspRelationshipsManager {
     private static func GetContactRelationType(seed: Int32) -> String {
         let i = RandRange(seed, 0, 9);
         if i == 0 { return "Spouse"; }
-        if i == 1 { return "Partner"; }
-        if i == 2 { return "Parent"; }
-        if i == 3 { return "Sibling"; }
-        if i == 4 { return "Friend"; }
-        if i == 5 { return "Ex-Partner"; }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T95"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T529"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T96"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T97"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T98"); }
         if i == 6 { return "Child"; }
-        if i == 7 { return "Coworker"; }
-        if i == 8 { return "Roommate"; }
-        return "Neighbor";
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T11"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T99"); }
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T292");
     }
 
     private static func CalculateSocialNetworkSize(relations: ref<KdspRelationshipsData>, archetype: String) -> String {
         let total = ArraySize(relations.knownAssociates) + ArraySize(relations.familyMembers) + 
                    ArraySize(relations.professionalContacts) + relations.dependents;
 
-        if total >= 10 { return "Large (" + IntToString(total) + "+ connections)"; }
-        if total >= 5 { return "Moderate (" + IntToString(total) + " connections)"; }
-        if total >= 2 { return "Small (" + IntToString(total) + " connections)"; }
+        if total >= 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T100") + IntToString(total) + GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T101"); }
+        if total >= 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T102") + IntToString(total) + GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T103"); }
+        if total >= 2 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T104") + IntToString(total) + GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T103"); }
         return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-S24");
     }
 }

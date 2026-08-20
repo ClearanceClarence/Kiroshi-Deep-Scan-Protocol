@@ -7,37 +7,37 @@ public class KdspMaelstromProfile {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "MAELSTROM";
         profile.gangName = "Maelstrom";
-        profile.headerLabel = "MAELSTROM COLLECTIVE RECORD";
+        profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T0");
         
         // Chrome cult ranks
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss") || StrContains(appearanceName, "heavy");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Chrome Priest"; profile.rankMeaning = "Senior Member"; }
-            else if roll <= 70 { profile.rank = "Borg Lieutenant"; profile.rankMeaning = "Squad Leader"; }
-            else if roll <= 90 { profile.rank = "Iron Father"; profile.rankMeaning = "Veteran"; }
-            else { profile.rank = "Tech Shaman"; profile.rankMeaning = "Ripperdoc"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C53"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T1"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C56"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-Shared-C12"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C55"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T2"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C54"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T2"); }
         } else {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 50 { profile.rank = "Chrome Initiate"; profile.rankMeaning = "New Member"; }
-            else if roll <= 80 { profile.rank = "Iron Brother"; profile.rankMeaning = "Full Member"; }
-            else { profile.rank = "Circuit Runner"; profile.rankMeaning = "Tech Specialist"; }
+            if roll <= 50 { profile.rank = GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T5"); }
+            else if roll <= 80 { profile.rank = GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T5"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T24"); }
         }
         
         // Specializations
         let specs: array<String>;
-        ArrayPush(specs, "Cyberware Installation");
-        ArrayPush(specs, "Heavy Weapons");
-        ArrayPush(specs, "Organ Acquisition");
-        ArrayPush(specs, "Chrome Maintenance");
-        ArrayPush(specs, "Kidnapping Ops");
-        ArrayPush(specs, "Territory Defense");
-        ArrayPush(specs, "Scrap Salvage");
-        ArrayPush(specs, "Arms Dealing");
-        ArrayPush(specs, "Intimidation");
-        ArrayPush(specs, "Borg Conversion");
-        ArrayPush(specs, "ICE Cracking");
-        ArrayPush(specs, "Flathead Deployment");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-Shared-C42"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T27"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T6"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T7"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T8"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T9"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T10"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-Shared-C52"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T14"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T11"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T12"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T13"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S0"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S1"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-S2"));
@@ -46,10 +46,10 @@ public class KdspMaelstromProfile {
         // Territory
         let territories: array<String>;
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-S17"));
-        ArrayPush(territories, "Northside Industrial");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T14"));
         ArrayPush(territories, "Totentanz");
-        ArrayPush(territories, "Watson Docks");
-        ArrayPush(territories, "Underground Labs");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T15"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T16"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
         // Stats
@@ -122,17 +122,17 @@ public class KdspMaelstromProfile {
     }
 
     private static func GetBodyCount(seed: Int32, rank: String) -> Int32 {
-        if Equals(rank, "Tech Shaman") || Equals(rank, "Iron Father") { return RandRange(seed, 15, 40); }
-        if Equals(rank, "Borg Lieutenant") || Equals(rank, "Chrome Priest") { return RandRange(seed, 10, 30); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C54")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C55")) { return RandRange(seed, 15, 40); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C56")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C53")) { return RandRange(seed, 10, 30); }
         return RandRange(seed, 0, 15);
     }
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return "FLESH-BOUND"; }
-        if roll <= 30 { return "CONVERTING"; }
-        if roll <= 60 { return "CHROME-BLESSED"; }
-        if roll <= 85 { return "TRANSCENDING"; }
-        return "FULLY INTEGRATED";
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T17"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T18"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T19"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T20"); }
+        return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T21");
     }
 }

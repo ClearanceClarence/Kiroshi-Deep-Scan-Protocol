@@ -155,17 +155,17 @@ public class KdspMedicalHistoryManager {
 
     // Substance-specific medical conditions
     private static func GenerateSubstanceCondition(seed: Int32, substanceType: String) -> String {
-        if Equals(substanceType, "alcohol") || Equals(substanceType, "synthetic alcohol") {
+        if Equals(substanceType, "alcohol") || Equals(substanceType, GetLocalizedTextByKey(n"Kdsp-Shared-C14")) {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S0"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S1"); }
-            if i == 2 { return "Alcohol-induced neuropathy"; }
-            if i == 3 { return "Chronic gastritis"; }
-            if i == 4 { return "Alcoholic cardiomyopathy"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T0"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T1"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T2"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S2"); }
-            if i == 6 { return "Pancreatitis (alcohol-induced)"; }
-            if i == 7 { return "Esophageal varices"; }
-            if i == 8 { return "Alcohol-induced dementia"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T3"); }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T4"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T5"); }
             return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S3");
         }
         
@@ -173,11 +173,11 @@ public class KdspMedicalHistoryManager {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S4"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S5"); }
-            if i == 2 { return "Chronic hypertension"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T6"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S6"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S7"); }
-            if i == 5 { return "Cardiovascular strain"; }
-            if i == 6 { return "Chronic insomnia"; }
+            if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T7"); }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T8"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S8"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S9"); }
             return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S10");
@@ -185,45 +185,45 @@ public class KdspMedicalHistoryManager {
         
         if StrContains(StrLower(substanceType), "black lace") {
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return "Neurotransmitter imbalance"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T9"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S11"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S12"); }
-            if i == 3 { return "Adrenal fatigue"; }
-            if i == 4 { return "Combat addiction"; }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T10"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T11"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S13"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S14"); }
-            if i == 7 { return "Aggression syndrome"; }
+            if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T12"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S15"); }
-            return "Violence-induced PTSD";
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T13");
         }
         
         if StrContains(StrLower(substanceType), "glitter") {
             let i = RandRange(seed, 0, 5);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S16"); }
-            if i == 1 { return "Memory fragmentation"; }
-            if i == 2 { return "Emotional dysregulation"; }
-            if i == 3 { return "Hyperthermia episodes"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T14"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T15"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T16"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S17"); }
-            return "Dehydration damage";
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T17");
         }
         
         if StrContains(StrLower(substanceType), "smash") {
             let i = RandRange(seed, 0, 5);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S18"); }
-            if i == 1 { return "Testosterone imbalance"; }
-            if i == 2 { return "Heart enlargement"; }
-            if i == 3 { return "Liver stress"; }
-            if i == 4 { return "Aggression disorder"; }
-            return "Joint deterioration";
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T18"); }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T19"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T20"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T21"); }
+            return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T22");
         }
         
         if StrContains(StrLower(substanceType), "spike") || StrContains(StrLower(substanceType), "dorph") {
             let i = RandRange(seed, 0, 7);
-            if i == 0 { return "Opioid dependency"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T23"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S19"); }
-            if i == 2 { return "Chronic constipation"; }
-            if i == 3 { return "Hormonal imbalance"; }
-            if i == 4 { return "Immune suppression"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T24"); }
+            if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T25"); }
+            if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T26"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S20"); }
             if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S21"); }
             return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S22");
@@ -235,14 +235,14 @@ public class KdspMedicalHistoryManager {
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S24"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S25"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S26"); }
-        if i == 4 { return "Nutritional deficiencies"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T27"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S27"); }
-        if i == 6 { return "Cognitive impairment"; }
-        if i == 7 { return "Mood instability"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T28"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T29"); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S28"); }
-        if i == 9 { return "Polydrug complications"; }
-        if i == 10 { return "Vascular damage"; }
-        return "Neurological deterioration";
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T30"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T31"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T32");
     }
 
     // Emergency visits affected by violence/trauma
@@ -303,7 +303,7 @@ public class KdspMedicalHistoryManager {
                 if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S48") + IntToString(year); }
                 return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S49") + IntToString(year);
             }
-            if Equals(coherence.violenceType, "bar fight") {
+            if Equals(coherence.violenceType, GetLocalizedTextByKey(n"Kdsp-Shared-C17")) {
                 let i = RandRange(seed, 0, 9);
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S50") + IntToString(year); }
                 if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S51") + IntToString(year); }
@@ -376,23 +376,23 @@ public class KdspMedicalHistoryManager {
         
         // Common types - weighted by real distribution
         // O+ (37%)
-        if i >= 0 && i <= 8 { return "O RhD+"; }
+        if i >= 0 && i <= 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T33"); }
         // A+ (36%)
-        if i >= 9 && i <= 16 { return "A RhD+"; }
+        if i >= 9 && i <= 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T34"); }
         // B+ (9%)
-        if i == 17 || i == 18 { return "B RhD+"; }
+        if i == 17 || i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T35"); }
         // AB+ (3%)
-        if i == 19 { return "AB RhD+"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T36"); }
         // O- (7%)
-        if i == 20 { return "O RhD-"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T37"); }
         // A- (6%)
-        if i == 21 { return "A RhD-"; }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T38"); }
         // B- (1%)
-        if i == 22 { return "B RhD-"; }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T39"); }
         // AB- (1%)
-        if i == 23 { return "AB RhD-"; }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T40"); }
         // Night City additions
-        return "SYNTHETIC";
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T41");
     }
 
     private static func CalculateBiologicalAge(seed: Int32, chronoAge: Int32, archetype: String) -> Int32 {
@@ -449,7 +449,7 @@ public class KdspMedicalHistoryManager {
         }
 
         let lbs = Cast<Int32>(Cast<Float>(weightKg) * 2.2);
-        return IntToString(weightKg) + GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S81") + IntToString(lbs) + " lbs)";
+        return IntToString(weightKg) + GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S81") + IntToString(lbs) + GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T42");
     }
 
     private static func GetConditionCount(seed: Int32, archetype: String, age: Int32) -> Int32 {
@@ -480,11 +480,11 @@ public class KdspMedicalHistoryManager {
             if Equals(archetype, "JUNKIE") {
                 let i = RandRange(seed, 0, 7);
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S82"); }
-                if i == 1 { return "Hepatic Damage"; }
-                if i == 2 { return "Neurochemical Imbalance"; }
-                if i == 3 { return "Malnutrition"; }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T43"); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T44"); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T45"); }
                 if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S83"); }
-                if i == 5 { return "Overdose History"; }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T46"); }
                 if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S84"); }
                 return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S85");
             }
@@ -493,7 +493,7 @@ public class KdspMedicalHistoryManager {
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S86"); }
                 if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S87"); }
                 if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S88"); }
-                if i == 3 { return "Cauliflower Ear"; }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T47"); }
                 if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S89"); }
                 if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S90"); }
                 if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S91"); }
@@ -502,31 +502,31 @@ public class KdspMedicalHistoryManager {
             if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
                 let i = RandRange(seed, 0, 7);
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S93"); }
-                if i == 1 { return "Stress-Related Hypertension"; }
-                if i == 2 { return "Burnout Syndrome"; }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T48"); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T49"); }
                 if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S94"); }
-                if i == 4 { return "Tension Headaches"; }
-                if i == 5 { return "Insomnia (Work-Related)"; }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T50"); }
+                if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T51"); }
                 if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S95"); }
                 return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S96");
             }
             if Equals(archetype, "HOMELESS") {
                 let i = RandRange(seed, 0, 7);
-                if i == 0 { return "Exposure Injuries"; }
-                if i == 1 { return "Malnutrition"; }
-                if i == 2 { return "Untreated Infections"; }
-                if i == 3 { return "Parasitic Infection"; }
-                if i == 4 { return "Frostbite Scarring"; }
+                if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T52"); }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T45"); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T53"); }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T54"); }
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T55"); }
                 if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S97"); }
                 if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S98"); }
-                return "Chronic Dehydration";
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T56");
             }
             if Equals(archetype, "NOMAD") {
                 let i = RandRange(seed, 0, 5);
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S99"); }
-                if i == 1 { return "Dust Lung"; }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T57"); }
                 if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S100"); }
-                if i == 3 { return "Dehydration History"; }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T58"); }
                 if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S101"); }
                 return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S102");
             }
@@ -536,144 +536,144 @@ public class KdspMedicalHistoryManager {
         let i = RandRange(seed, 0, 79);
         
         // Common conditions (0-19)
-        if i == 0 { return "Hypertension"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T59"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S103"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S104"); }
-        if i == 3 { return "Asthma"; }
-        if i == 4 { return "Arthritis"; }
-        if i == 5 { return "Anxiety Disorder"; }
-        if i == 6 { return "Depression"; }
-        if i == 7 { return "Migraines"; }
-        if i == 8 { return "Sleep Disorder"; }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T60"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T61"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T62"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T63"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T64"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T65"); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S105"); }
-        if i == 10 { return "High Cholesterol"; }
-        if i == 11 { return "Acid Reflux"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T66"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T67"); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S106"); }
-        if i == 13 { return "Chronic Fatigue"; }
-        if i == 14 { return "Allergic Rhinitis"; }
-        if i == 15 { return "Eczema"; }
-        if i == 16 { return "Psoriasis"; }
-        if i == 17 { return "Hypothyroidism"; }
-        if i == 18 { return "Hyperthyroidism"; }
-        if i == 19 { return "Anemia"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T68"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T69"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T70"); }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T71"); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T72"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T73"); }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T74"); }
         
         // Night City specific (20-39)
         if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S107"); }
         if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S108"); }
         if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S109"); }
         if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S110"); }
-        if i == 24 { return "Combat-Related PTSD"; }
-        if i == 25 { return "Braindance Dependency"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T75"); }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T76"); }
         if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S111"); }
-        if i == 27 { return "Toxin Accumulation"; }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T77"); }
         if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S112"); }
-        if i == 29 { return "Chrome Allergy"; }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T78"); }
         if i == 30 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S113"); }
         if i == 31 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S114"); }
         if i == 32 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S115"); }
-        if i == 33 { return "Memory Fragmentation"; }
-        if i == 34 { return "Interface Headaches"; }
-        if i == 35 { return "Biomon Dependency"; }
+        if i == 33 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T79"); }
+        if i == 34 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T80"); }
+        if i == 35 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T81"); }
         if i == 36 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S116"); }
-        if i == 37 { return "Kerenzikov Tremors"; }
-        if i == 38 { return "Sandevistan Strain"; }
+        if i == 37 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T82"); }
+        if i == 38 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T83"); }
         if i == 39 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S117"); }
         
         // Mental health (40-49)
         if i == 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S118"); }
         if i == 41 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S119"); }
-        if i == 42 { return "Bipolar Disorder"; }
-        if i == 43 { return "PTSD"; }
-        if i == 44 { return "Panic Disorder"; }
-        if i == 45 { return "Social Anxiety"; }
-        if i == 46 { return "OCD"; }
-        if i == 47 { return "ADHD"; }
-        if i == 48 { return "Insomnia (Chronic)"; }
-        if i == 49 { return "Dissociative Episodes"; }
+        if i == 42 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T84"); }
+        if i == 43 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T85"); }
+        if i == 44 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T86"); }
+        if i == 45 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T87"); }
+        if i == 46 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T88"); }
+        if i == 47 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T89"); }
+        if i == 48 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T90"); }
+        if i == 49 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T91"); }
         
         // Cardiovascular (50-54)
         if i == 50 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S120"); }
-        if i == 51 { return "Heart Arrhythmia"; }
-        if i == 52 { return "Heart Murmur"; }
-        if i == 53 { return "Varicose Veins"; }
+        if i == 51 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T92"); }
+        if i == 52 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T93"); }
+        if i == 53 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T94"); }
         if i == 54 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S121"); }
         
         // Respiratory (55-59)
-        if i == 55 { return "COPD"; }
-        if i == 56 { return "Chronic Bronchitis"; }
-        if i == 57 { return "Emphysema"; }
-        if i == 58 { return "Pneumonia (Recurring)"; }
+        if i == 55 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T95"); }
+        if i == 56 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T96"); }
+        if i == 57 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T97"); }
+        if i == 58 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T98"); }
         if i == 59 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S122"); }
         
         // Digestive (60-64)
-        if i == 60 { return "Crohn's Disease"; }
-        if i == 61 { return "Ulcerative Colitis"; }
-        if i == 62 { return "Gastric Ulcers"; }
+        if i == 60 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T99"); }
+        if i == 61 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T100"); }
+        if i == 62 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T101"); }
         if i == 63 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S123"); }
         if i == 64 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S124"); }
         
         // Neurological (65-69)
-        if i == 65 { return "Epilepsy"; }
-        if i == 66 { return "Peripheral Neuropathy"; }
-        if i == 67 { return "Carpal Tunnel"; }
-        if i == 68 { return "Sciatica"; }
-        if i == 69 { return "Vertigo (Chronic)"; }
+        if i == 65 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T102"); }
+        if i == 66 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T103"); }
+        if i == 67 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T104"); }
+        if i == 68 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T105"); }
+        if i == 69 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T106"); }
         
         // Autoimmune/Other (70-79)
-        if i == 70 { return "Lupus"; }
-        if i == 71 { return "Rheumatoid Arthritis"; }
-        if i == 72 { return "Fibromyalgia"; }
+        if i == 70 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T107"); }
+        if i == 71 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T108"); }
+        if i == 72 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T109"); }
         if i == 73 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S125"); }
-        if i == 74 { return "Gout"; }
-        if i == 75 { return "Osteoporosis"; }
-        if i == 76 { return "Tinnitus"; }
-        if i == 77 { return "Glaucoma"; }
-        if i == 78 { return "Cataracts (Early)"; }
-        return "Chronic Sinusitis";
+        if i == 74 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T110"); }
+        if i == 75 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T111"); }
+        if i == 76 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T112"); }
+        if i == 77 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T113"); }
+        if i == 78 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T114"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T115");
     }
 
     private static func GenerateAllergy(seed: Int32) -> String {
         let i = RandRange(seed, 0, 34);
         
         // Common allergies (0-9)
-        if i == 0 { return "Penicillin"; }
-        if i == 1 { return "Shellfish"; }
-        if i == 2 { return "Peanuts"; }
-        if i == 3 { return "Latex"; }
-        if i == 4 { return "Sulfa Drugs"; }
-        if i == 5 { return "Aspirin"; }
-        if i == 6 { return "Ibuprofen"; }
-        if i == 7 { return "Eggs"; }
-        if i == 8 { return "Milk Products"; }
-        if i == 9 { return "Wheat/Gluten"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T116"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T117"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T118"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T119"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T120"); }
+        if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T121"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T122"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T123"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T124"); }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T125"); }
         
         // Night City specific (10-24)
-        if i == 10 { return "Synthetic Proteins"; }
-        if i == 11 { return "Titanium Compounds"; }
-        if i == 12 { return "Biofoam"; }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T126"); }
+        if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T127"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T128"); }
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S126"); }
-        if i == 14 { return "Specific Nanobots"; }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T129"); }
         if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S127"); }
-        if i == 16 { return "Kibble Additives"; }
-        if i == 17 { return "Soy Derivatives"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T130"); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T131"); }
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S128"); }
-        if i == 19 { return "Cyberware Coolant"; }
+        if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T132"); }
         if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S129"); }
-        if i == 21 { return "Neural Suppressants"; }
-        if i == 22 { return "Biotech Adhesives"; }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T133"); }
+        if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T134"); }
         if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S130"); }
         if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S131"); }
         
         // Medical/Drug allergies (25-34)
-        if i == 25 { return "Morphine Derivatives"; }
-        if i == 26 { return "Contrast Dye"; }
-        if i == 27 { return "Anesthesia (General)"; }
-        if i == 28 { return "Immunosuppressants"; }
-        if i == 29 { return "Antivirals (Common)"; }
-        if i == 30 { return "Synthetic Hormones"; }
-        if i == 31 { return "Stimulant Medications"; }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T135"); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T136"); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T137"); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T138"); }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T139"); }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T140"); }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T141"); }
         if i == 32 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S132"); }
-        if i == 33 { return "Anti-Rejection Meds"; }
+        if i == 33 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T142"); }
         return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S133");
     }
 
@@ -700,23 +700,23 @@ public class KdspMedicalHistoryManager {
         if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S134"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S135"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S136"); }
-        if i == 3 { return "Synthetic Heart"; }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T143"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S137"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S138"); }
-        if i == 6 { return "Cloned Liver"; }
-        if i == 7 { return "Cloned Kidney"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T144"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T145"); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S139"); }
-        if i == 9 { return "Synthetic Pancreas"; }
-        if i == 10 { return "Bioengineered Stomach"; }
+        if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T146"); }
+        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T147"); }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S140"); }
         
         // Additional organs (12-19)
-        if i == 12 { return "Synthetic Spleen"; }
-        if i == 13 { return "Artificial Bladder"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T148"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T149"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S141"); }
-        if i == 15 { return "Synthetic Thyroid"; }
-        if i == 16 { return "Cloned Corneas"; }
-        if i == 17 { return "Artificial Larynx"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T150"); }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T151"); }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T152"); }
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S142"); }
         if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S143"); }
         
@@ -724,9 +724,9 @@ public class KdspMedicalHistoryManager {
         if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S144"); }
         if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S145"); }
         if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S146"); }
-        if i == 23 { return "3D-Printed Trachea"; }
+        if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T153"); }
         if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S147"); }
-        if i == 25 { return "Synthetic Esophagus"; }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T154"); }
         if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S148"); }
         if i == 27 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S149"); }
         if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S150"); }
@@ -762,9 +762,9 @@ public class KdspMedicalHistoryManager {
     private static func GenerateDonorStatus(seed: Int32, archetype: String) -> String {
         let statuses: array<String>;
         
-        ArrayPush(statuses, "Universal Donor");
-        ArrayPush(statuses, "Compatible Donor");
-        ArrayPush(statuses, "Limited Compatibility");
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T155"));
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T156"));
+        ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T157"));
         ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S153"));
         ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S154"));
         ArrayPush(statuses, GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S155"));
@@ -796,26 +796,26 @@ public class KdspMedicalHistoryManager {
             if Equals(archetype, "JUNKIE") {
                 let i = RandRange(seed, 0, 5);
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S158"); }
-                if i == 1 { return "Naloxone (Self-Administered)"; }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T158"); }
                 if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S159"); }
-                if i == 3 { return "Methadone (Prescription)"; }
+                if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T159"); }
                 if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S160"); }
                 return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S161");
             }
             if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
                 let i = RandRange(seed, 0, 5);
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S162"); }
-                if i == 1 { return "CorpoCalm (Anti-Anxiety)"; }
-                if i == 2 { return "SleepCycle Regulator"; }
+                if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T160"); }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T161"); }
                 if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S163"); }
-                if i == 4 { return "NeuroSharp (Cognitive)"; }
-                return "UlcerGuard (Preventive)";
+                if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T162"); }
+                return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T163");
             }
             if Equals(archetype, "GANGER") {
                 let i = RandRange(seed, 0, 3);
                 if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S164"); }
                 if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S165"); }
-                if i == 2 { return "Scarring Treatment"; }
+                if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T164"); }
                 return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S166");
             }
         }
@@ -824,62 +824,62 @@ public class KdspMedicalHistoryManager {
         let i = RandRange(seed, 0, 49);
         
         // Cyberware/NC specific (0-14)
-        if i == 0 { return "SynthBlood Stabilizers"; }
-        if i == 1 { return "NeuroBalance (Generic)"; }
-        if i == 2 { return "Immunosuppressants (Cyberware)"; }
-        if i == 3 { return "Anti-Rejection Meds"; }
-        if i == 4 { return "Cognitive Enhancers"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T165"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T166"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T167"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T142"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T168"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S167"); }
-        if i == 6 { return "Neural Stabilizers"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T169"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S168"); }
-        if i == 8 { return "Implant Anti-Inflammatory"; }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T170"); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S169"); }
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S170"); }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S171"); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S172"); }
-        if i == 13 { return "Nanobot Replenishment"; }
-        if i == 14 { return "Cyberpsychosis Preventive"; }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T171"); }
+        if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T172"); }
         
         // Cardiovascular (15-19)
-        if i == 15 { return "HeartGuard"; }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T173"); }
         if i == 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S173"); }
-        if i == 17 { return "Cholesterol Blockers"; }
-        if i == 18 { return "Blood Thinners"; }
+        if i == 17 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T174"); }
+        if i == 18 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T175"); }
         if i == 19 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S174"); }
         
         // Pain/Inflammation (20-24)
-        if i == 20 { return "PainAway"; }
-        if i == 21 { return "Anti-Inflammatory (Chronic)"; }
+        if i == 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T176"); }
+        if i == 21 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T177"); }
         if i == 22 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S175"); }
         if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S176"); }
-        if i == 24 { return "Muscle Relaxants"; }
+        if i == 24 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T178"); }
         
         // Mental health (25-34)
-        if i == 25 { return "Mood Stabilizers"; }
-        if i == 26 { return "Antidepressants (SSRI)"; }
-        if i == 27 { return "Anti-Anxiety (Daily)"; }
-        if i == 28 { return "PTSD Management"; }
-        if i == 29 { return "Bipolar Medication"; }
-        if i == 30 { return "ADHD Medication"; }
-        if i == 31 { return "SleepEZ"; }
-        if i == 32 { return "Nightmare Suppressants"; }
+        if i == 25 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T179"); }
+        if i == 26 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T180"); }
+        if i == 27 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T181"); }
+        if i == 28 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T182"); }
+        if i == 29 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T183"); }
+        if i == 30 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T184"); }
+        if i == 31 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T185"); }
+        if i == 32 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T186"); }
         if i == 33 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S177"); }
         if i == 34 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S178"); }
         
         // Metabolic/Endocrine (35-39)
-        if i == 35 { return "Metabolic Boosters"; }
+        if i == 35 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T187"); }
         if i == 36 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S179"); }
-        if i == 37 { return "Thyroid Regulators"; }
-        if i == 38 { return "Hormone Replacement"; }
-        if i == 39 { return "Appetite Suppressants"; }
+        if i == 37 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T188"); }
+        if i == 38 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T189"); }
+        if i == 39 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T190"); }
         
         // Respiratory/Other (40-49)
         if i == 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S180"); }
-        if i == 41 { return "Asthma Controller"; }
-        if i == 42 { return "Allergy Blockers"; }
+        if i == 41 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T191"); }
+        if i == 42 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T192"); }
         if i == 43 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S181"); }
         if i == 44 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S182"); }
-        if i == 45 { return "Digestive Enzymes"; }
+        if i == 45 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T193"); }
         if i == 46 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S183"); }
         if i == 47 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S184"); }
         if i == 48 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S185"); }
@@ -955,14 +955,14 @@ public class KdspMedicalHistoryManager {
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
             let roll = RandRange(seed, 1, 100);
             if roll <= 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S224"); }
-            if roll <= 50 { return "OUTDATED"; }
+            if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T194"); }
             return "UNKNOWN";
         }
 
         let roll = RandRange(seed, 1, 100);
-        if roll <= 40 { return "CURRENT"; }
-        if roll <= 70 { return "OUTDATED"; }
-        return "PARTIAL";
+        if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T195"); }
+        if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T194"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T196");
     }
 
     private static func HasMentalHealthFlag(seed: Int32, archetype: String) -> Bool {
@@ -987,7 +987,7 @@ public class KdspMedicalHistoryManager {
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S226"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S227"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S228"); }
-        if i == 4 { return "Huntington's carrier"; }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T197"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S229"); }
         if i == 6 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S230"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S231"); }
@@ -1001,7 +1001,7 @@ public class KdspMedicalHistoryManager {
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S237"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S238"); }
         if i == 15 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S239"); }
-        if i == 16 { return "Cyberpsychosis susceptibility"; }
+        if i == 16 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T198"); }
         if i == 17 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S240"); }
         
         // Aging/Longevity (18-21)
@@ -1043,9 +1043,9 @@ public class KdspMedicalHistoryManager {
         if score >= 90 { return "EXCELLENT"; }
         if score >= 75 { return "GOOD"; }
         if score >= 60 { return "FAIR"; }
-        if score >= 40 { return "POOR"; }
-        if score >= 20 { return "CRITICAL"; }
-        return "TERMINAL";
+        if score >= 40 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0"); }
+        if score >= 20 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T34"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T199");
     }
 }
 

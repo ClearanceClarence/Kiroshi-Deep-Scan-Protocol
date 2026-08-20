@@ -21,7 +21,7 @@ What this means for you:
 
 ### 1. Get the key list
 
-Every translatable string lives in `Strings/English.reds` inside the mod — **7,914 keys**. The whole localization system lives in the `Strings/` folder: the English package and the language provider. This file is your master document. Each line looks like:
+Every translatable string lives in `Strings/English.reds` inside the mod — **11,333 keys**. The whole localization system lives in the `Strings/` folder: the English package and the language provider. This file is your master document. Each line looks like:
 
 ```swift
 this.Text("Kdsp-Job-JOB_LOCAL_FIXER", "Started doing jobs for a local fixer. ");
@@ -65,6 +65,19 @@ Set the game language to yours, load a save, scan an NPC. Untranslated keys show
 
 ---
 
+## A working example ships with the mod
+
+`Strings/French.reds` is a partial French translation — 259 keys covering the UI section headers, every scanner loading line, and every BOLO notice. It exists to prove the pipeline and to give you a real file to copy structure from rather than working only from the snippet above.
+
+Two things it demonstrates that matter:
+
+- **Partial is fine.** It covers 259 of 11,333 keys. The rest fall back to English, and the mod runs normally. You can publish at any coverage and grow it.
+- **Word order around dynamic values.** `Kdsp-Bolo-16` ends mid-sentence because the mod appends a year, then a tail string (`Kdsp-Bolo-16b`) after it. The French version restructures both halves so the year lands where French grammar wants it. Check how it handles those before writing your own.
+
+Note it is registered in `Strings/LocalizationProvider.reds` because it ships inside the mod. **Your translation does not go there** — it's a separate mod with its own provider, as shown above.
+
+---
+
 ## Translation rules (unchanged from v2.x)
 
 The rules about WHAT to translate carry over — they now apply to the values in your package:
@@ -94,7 +107,7 @@ The rules about WHAT to translate carry over — they now apply to the values in
 | Kdsp-Job-* | Job events | 237 |
 | Kdsp-Lp-* | Lifepath strings | 94 |
 | Kdsp-Upb-* | Upbringing events | 255 |
-| Kdsp-Bolo-* | BOLO notices (index = roll number) | 72 |
+| Kdsp-Bolo-* | BOLO notices (index = roll number; `-16b`/`-17b`/`-50b`/`-66b` are sentence tails that follow an appended number) | 76 |
 | Kdsp-ConnCtx-* / Kdsp-ConnInj-* | Connection contexts | 62 |
 | Kdsp-Load\<Pool\>-* | Scanner loading lines by pool | 168 |
 | Kdsp-Npc-\<Name\>-\<Field\>[-n] | Unique NPC entries (suffix -1, -2 = quest-state variants) | 1,786 |

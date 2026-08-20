@@ -2,7 +2,7 @@
 // Hand-crafted backstories for named story characters
 
 public class KdspUniqueNPCBackstory {
-    public let characterId: String;          // TweakDB character ID (e.g., "Character.intim_takemura")
+    public let characterId: String;          // TweakDB character ID (e.g., GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-T0"))
     public let displayName: String;          // Override display name if needed
     public let background: String;           // Origin/background story
     public let earlyLife: String;            // Early career/life events
@@ -15,7 +15,7 @@ public class KdspUniqueNPCBackstory {
     public let threatAssessment: String;     // Threat level
     public let relationships: String;        // Known associates
     public let notes: String;                // Additional intel/notes
-    public let classification: String;       // Database classification (e.g., "ARASAKA PERSONNEL", "FIXER")
+    public let classification: String;       // Database classification (e.g., GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-T1"), GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Classification"))
 
     public static func Create(id: String) -> ref<KdspUniqueNPCBackstory> {
         let self = new KdspUniqueNPCBackstory();
@@ -32,7 +32,7 @@ public class KdspUniqueNPCBackstory {
         self.threatAssessment = "";
         self.relationships = "";
         self.notes = "";
-        self.classification = "CLASSIFIED";
+        self.classification = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T92");
         return self;
     }
 

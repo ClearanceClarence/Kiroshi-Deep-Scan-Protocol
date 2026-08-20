@@ -235,35 +235,35 @@ public class KdspEthnicityDetector {
     public static func EthnicityToString(ethnicity: KdspNPCEthnicity) -> String {
         switch ethnicity {
             case KdspNPCEthnicity.American:
-                return "American";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T0");
             case KdspNPCEthnicity.AfricanAmerican:
-                return "African-American";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T1");
             case KdspNPCEthnicity.Hispanic:
-                return "Hispanic";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T2");
             case KdspNPCEthnicity.Japanese:
-                return "Japanese";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T3");
             case KdspNPCEthnicity.Chinese:
-                return "Chinese";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T4");
             case KdspNPCEthnicity.Korean:
-                return "Korean";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T5");
             case KdspNPCEthnicity.Slavic:
-                return "Slavic";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T6");
             case KdspNPCEthnicity.Indian:
-                return "Indian";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T7");
             case KdspNPCEthnicity.MiddleEastern:
-                return "Middle Eastern";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T8");
             case KdspNPCEthnicity.African:
-                return "African";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T9");
             case KdspNPCEthnicity.SoutheastAsian:
-                return "Southeast Asian";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T10");
             case KdspNPCEthnicity.European:
-                return "European";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T11");
             case KdspNPCEthnicity.Haitian:
-                return "Haitian";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T12");
             case KdspNPCEthnicity.Mixed:
-                return "Mixed";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T13");
             default:
-                return "Unknown";
+                return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
         }
     }
 }

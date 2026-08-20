@@ -14,17 +14,17 @@ public class KdspCoherenceProfile {
     // Specific flags that multiple systems should reference
     public let substanceType: String;       // "alcohol", "synth-coke", "black lace", etc.
     public let traumaType: String;          // "accident", "violence", "loss", "war"
-    public let debtReason: String;          // "medical", "gambling", "failed business", "cyberware"
-    public let violenceType: String;        // "gang", "domestic", "random", "self-defense"
+    public let debtReason: String;          // "medical", "gambling", GetLocalizedTextByKey(n"Kdsp-Shared-C19"), "cyberware"
+    public let violenceType: String;        // "gang", "domestic", "random", GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T0")
     
     // Career coherence
     public let jobHistory: String;          // "steady", "unstable", "criminal", "corpo", "none"
-    public let educationLevel: String;      // "none", "basic", "technical", "university", "corpo-academy"
+    public let educationLevel: String;      // "none", GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T1"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T2"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T3"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T4")
     
     // Social coherence
-    public let familyStatus: String;        // "intact", "estranged", "deceased", "unknown"
+    public let familyStatus: String;        // GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T5"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T6"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T7"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T8")
     public let hasChildren: Bool;
-    public let relationshipPattern: String; // "stable", "chaotic", "loner", "serial"
+    public let relationshipPattern: String; // GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T9"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T10"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T11"), GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T12")
 }
 
 public class KdspCoherenceManager {
@@ -210,21 +210,21 @@ public class KdspCoherenceManager {
         
         // Wealthy/corpo get different drugs
         if Equals(archetype, "WEALTHY") || Equals(archetype, "CORPO_MANAGER") {
-            if roll <= 30 { return "synthetic alcohol"; }
-            if roll <= 50 { return "designer stims"; }
-            if roll <= 70 { return "prescription abuse"; }
+            if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-Shared-C14"); }
+            if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T13"); }
+            if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T14"); }
             if roll <= 85 { return "synth-coke"; }
-            return "exotic imports";
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T15");
         }
         
         // Street level
         if roll <= 25 { return "alcohol"; }
         if roll <= 45 { return "synth-coke"; }
-        if roll <= 60 { return "Black Lace"; }
-        if roll <= 75 { return "Glitter"; }
-        if roll <= 85 { return "cheap stims"; }
-        if roll <= 95 { return "inhaler drugs"; }
-        return "unknown compound";
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T16"); }
+        if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T17"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T18"); }
+        if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T19"); }
+        return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T20");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -256,16 +256,16 @@ public class KdspCoherenceManager {
         
         if !Equals(gangAffiliation, "NONE") && !Equals(gangAffiliation, "") {
             if roll <= 50 { return "gang"; }
-            if roll <= 70 { return "territorial"; }
-            if roll <= 85 { return "enforcement"; }
-            return "initiation";
+            if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T21"); }
+            if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T22"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T23");
         }
         
-        if roll <= 30 { return "self-defense"; }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T0"); }
         if roll <= 50 { return "random"; }
         if roll <= 65 { return "domestic"; }
-        if roll <= 80 { return "bar fight"; }
-        return "road rage";
+        if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-Shared-C17"); }
+        return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T24");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -336,19 +336,19 @@ public class KdspCoherenceManager {
         
         // Coherent with other issues
         if hasSubstanceIssues && roll <= 40 {
-            return "substance habit";
+            return GetLocalizedTextByKey(n"Kdsp-Shared-C18");
         }
         if hasChronicHealth && roll <= 50 {
             return "medical bills";
         }
         
         if roll <= 20 { return "medical bills"; }
-        if roll <= 35 { return "cyberware loans"; }
+        if roll <= 35 { return GetLocalizedTextByKey(n"Kdsp-Shared-C15"); }
         if roll <= 50 { return "gambling"; }
-        if roll <= 65 { return "failed business"; }
-        if roll <= 75 { return "education loans"; }
-        if roll <= 85 { return "family support"; }
-        return "living expenses";
+        if roll <= 65 { return GetLocalizedTextByKey(n"Kdsp-Shared-C19"); }
+        if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-Shared-C16"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T25"); }
+        return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T26");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -425,38 +425,38 @@ public class KdspCoherenceManager {
     private static func GetEducationLevel(seed: Int32, archetype: String) -> String {
         if Equals(archetype, "CORPO_MANAGER") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 60 { return "corpo-academy"; }
-            return "university";
+            if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T4"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T3");
         }
         
         if Equals(archetype, "CORPO_EMPLOYEE") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 30 { return "corpo-academy"; }
-            if roll <= 70 { return "university"; }
-            return "technical";
+            if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T4"); }
+            if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T3"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T2");
         }
         
         if Equals(archetype, "HOMELESS") {
             let roll = RandRange(seed, 1, 100);
             if roll <= 40 { return "none"; }
-            if roll <= 80 { return "basic"; }
-            return "technical";
+            if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T1"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T2");
         }
         
         if Equals(archetype, "WEALTHY") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 50 { return "university"; }
-            if roll <= 80 { return "corpo-academy"; }
-            return "technical";
+            if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T3"); }
+            if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T4"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T2");
         }
         
         // Default Night City education
         let roll = RandRange(seed, 1, 100);
         if roll <= 20 { return "none"; }
-        if roll <= 55 { return "basic"; }
-        if roll <= 80 { return "technical"; }
-        if roll <= 95 { return "university"; }
-        return "corpo-academy";
+        if roll <= 55 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T1"); }
+        if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T2"); }
+        if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T3"); }
+        return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T4");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -467,33 +467,33 @@ public class KdspCoherenceManager {
         // Trauma often involves family loss
         if hasTrauma {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 30 { return "deceased"; }
-            if roll <= 60 { return "estranged"; }
-            if roll <= 80 { return "intact"; }
-            return "unknown";
+            if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T7"); }
+            if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T6"); }
+            if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T5"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T8");
         }
         
         if Equals(lifeTheme, "STABLE") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 60 { return "intact"; }
-            if roll <= 85 { return "estranged"; }
-            return "deceased";
+            if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T5"); }
+            if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T6"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T7");
         }
         
         if Equals(lifeTheme, "FALLING") || Equals(lifeTheme, "CRIMINAL") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 25 { return "intact"; }
-            if roll <= 55 { return "estranged"; }
-            if roll <= 80 { return "deceased"; }
-            return "unknown";
+            if roll <= 25 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T5"); }
+            if roll <= 55 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T6"); }
+            if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T7"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T8");
         }
         
         // Default
         let roll = RandRange(seed, 1, 100);
-        if roll <= 35 { return "intact"; }
-        if roll <= 60 { return "estranged"; }
-        if roll <= 85 { return "deceased"; }
-        return "unknown";
+        if roll <= 35 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T5"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T6"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T7"); }
+        return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T8");
     }
 
     // ══════════════════════════════════════════════════════════════════════
@@ -527,31 +527,31 @@ public class KdspCoherenceManager {
         // Substance issues affect relationships
         if hasSubstanceIssues {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 50 { return "chaotic"; }
-            if roll <= 75 { return "loner"; }
-            return "serial";
+            if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T10"); }
+            if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T11"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T12");
         }
         
         if Equals(lifeTheme, "STABLE") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 60 { return "stable"; }
-            if roll <= 85 { return "serial"; }
-            return "loner";
+            if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T9"); }
+            if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T12"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T11");
         }
         
         if Equals(lifeTheme, "CRIMINAL") || Equals(lifeTheme, "FALLING") {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 35 { return "chaotic"; }
-            if roll <= 60 { return "loner"; }
-            if roll <= 85 { return "serial"; }
-            return "stable";
+            if roll <= 35 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T10"); }
+            if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T11"); }
+            if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T12"); }
+            return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T9");
         }
         
         // Default
         let roll = RandRange(seed, 1, 100);
-        if roll <= 30 { return "stable"; }
-        if roll <= 55 { return "serial"; }
-        if roll <= 75 { return "loner"; }
-        return "chaotic";
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T9"); }
+        if roll <= 55 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T12"); }
+        if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T11"); }
+        return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T10");
     }
 }

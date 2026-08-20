@@ -33,9 +33,9 @@ public class KdspNCPDNameGenerator {
         
         // Determine unit type
         if KdspNCPDNameGenerator.IsMaxTac(appearanceName) {
-            data.unit = "MAX-TAC";
+            data.unit = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T0");
             data.rank = KdspNCPDNameGenerator.GetMaxTacRank(seed + 200);
-            data.badge = "MT-" + IntToString(RandRange(seed + 300, 1000, 9999));
+            data.badge = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T1") + IntToString(RandRange(seed + 300, 1000, 9999));
             data.specialization = KdspNCPDNameGenerator.GetMaxTacSpecialization(seed + 400);
             data.yearsOfService = RandRange(seed + 500, 5, 20);
             data.confirmedNeutralizations = RandRange(seed + 600, 10, 150);
@@ -66,38 +66,38 @@ public class KdspNCPDNameGenerator {
         let roll = RandRange(seed, 1, 100);
         
         if roll <= 50 { return "Officer"; }
-        if roll <= 75 { return "Senior Officer"; }
+        if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T2"); }
         if roll <= 88 { return "Sergeant"; }
         if roll <= 95 { return "Lieutenant"; }
         if roll <= 98 { return "Captain"; }
-        return "Inspector";
+        return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T3");
     }
 
     private static func GetMaxTacRank(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         
-        if roll <= 40 { return "Operative"; }
-        if roll <= 70 { return "Senior Operative"; }
-        if roll <= 85 { return "Team Lead"; }
+        if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T4"); }
+        if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T5"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T6"); }
         if roll <= 95 { return "Commander"; }
-        return "Division Chief";
+        return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T7");
     }
 
     private static func GetUnit(seed: Int32) -> String {
         let units: array<String>;
         
-        ArrayPush(units, "Patrol Division");
-        ArrayPush(units, "Street Enforcement");
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T8"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T9"));
         ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-S0"));
-        ArrayPush(units, "Traffic Division");
-        ArrayPush(units, "Cybercrimes Unit");
-        ArrayPush(units, "Homicide Division");
-        ArrayPush(units, "Vice Squad");
-        ArrayPush(units, "Organized Crime");
-        ArrayPush(units, "Riot Control");
-        ArrayPush(units, "Harbor Patrol");
-        ArrayPush(units, "Air Support");
-        ArrayPush(units, "K-9 Unit");
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T9"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T10"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T11"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T12"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T13"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T14"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T15"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T16"));
+        ArrayPush(units, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T17"));
         
         return units[RandRange(seed, 0, ArraySize(units) - 1)];
     }
@@ -105,14 +105,14 @@ public class KdspNCPDNameGenerator {
     private static func GetMaxTacSpecialization(seed: Int32) -> String {
         let specs: array<String>;
         
-        ArrayPush(specs, "Cyberpsycho Containment");
-        ArrayPush(specs, "Heavy Assault");
-        ArrayPush(specs, "Tactical Sniper");
-        ArrayPush(specs, "Breach Specialist");
-        ArrayPush(specs, "Combat Netrunner");
-        ArrayPush(specs, "Demolitions");
-        ArrayPush(specs, "Close Quarters");
-        ArrayPush(specs, "Recon/Intel");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T18"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T19"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T20"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T21"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T25"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T8"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T22"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T23"));
         
         return specs[RandRange(seed, 0, ArraySize(specs) - 1)];
     }
@@ -122,8 +122,8 @@ public class KdspNCPDNameGenerator {
         let roll = RandRange(seed, 1, 100);
         
         if roll <= 30 { prefix = "NC-"; }
-        else { if roll <= 60 { prefix = "P-"; }
-        else { if roll <= 80 { prefix = "NCP-"; }
+        else { if roll <= 60 { prefix = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T24"); }
+        else { if roll <= 80 { prefix = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T25"); }
         else { prefix = ""; }}}
         
         return prefix + IntToString(RandRange(seed + 50, 10000, 99999));
@@ -132,21 +132,21 @@ public class KdspNCPDNameGenerator {
     private static func GetDistrict(seed: Int32) -> String {
         let districts: array<String>;
         
-        ArrayPush(districts, "Watson");
-        ArrayPush(districts, "Westbrook");
-        ArrayPush(districts, "City Center");
-        ArrayPush(districts, "Heywood");
-        ArrayPush(districts, "Pacifica");
-        ArrayPush(districts, "Santo Domingo");
-        ArrayPush(districts, "Arroyo");
-        ArrayPush(districts, "Rancho Coronado");
-        ArrayPush(districts, "Kabuki");
-        ArrayPush(districts, "Little China");
-        ArrayPush(districts, "Japantown");
-        ArrayPush(districts, "Charter Hill");
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T26"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T27"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T28"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T29"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T30"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T31"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T15"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T16"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T18"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T32"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T17"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T19"));
         ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-S1"));
-        ArrayPush(districts, "The Glen");
-        ArrayPush(districts, "Wellsprings");
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T13"));
+        ArrayPush(districts, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T14"));
         
         return districts[RandRange(seed, 0, ArraySize(districts) - 1)];
     }
@@ -154,19 +154,19 @@ public class KdspNCPDNameGenerator {
     private static func GetPartnerStatus(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         
-        if roll <= 60 { return "Partnered"; }
-        if roll <= 80 { return "Solo Patrol"; }
-        if roll <= 90 { return "Partner KIA"; }
-        return "Awaiting Assignment";
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T33"); }
+        if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T34"); }
+        if roll <= 90 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T35"); }
+        return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T36");
     }
 
     private static func GetDutyStatus(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         
         if roll <= 85 { return "ACTIVE"; }
-        if roll <= 92 { return "ADMINISTRATIVE"; }
-        if roll <= 96 { return "MEDICAL LEAVE"; }
-        return "DISCIPLINARY REVIEW";
+        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T37"); }
+        if roll <= 96 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T38"); }
+        return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T39");
     }
 }
 

@@ -6,51 +6,51 @@ public class KdspSixthStreetProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "6TH_STREET";
-        profile.gangName = "6th Street";
-        profile.headerLabel = "6TH STREET VETERAN FILE";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-Shared-C33");
+        profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T0");
         
         // Military-style ranks
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss") || StrContains(appearanceName, "veteran");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "First Sergeant"; profile.rankMeaning = "Senior NCO"; }
-            else if roll <= 70 { profile.rank = "Staff Sergeant"; profile.rankMeaning = "Squad Leader"; }
-            else if roll <= 90 { profile.rank = "Captain"; profile.rankMeaning = "Company Leader"; }
-            else { profile.rank = "Commander"; profile.rankMeaning = "Regional Boss"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C57"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T1"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C9"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-Shared-C12"); }
+            else if roll <= 90 { profile.rank = "Captain"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T2"); }
+            else { profile.rank = "Commander"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T3"); }
         } else {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Private"; profile.rankMeaning = "New Blood"; }
-            else if roll <= 70 { profile.rank = "Corporal"; profile.rankMeaning = "Fireteam Lead"; }
-            else if roll <= 90 { profile.rank = "Sergeant"; profile.rankMeaning = "Full Member"; }
-            else { profile.rank = "Specialist"; profile.rankMeaning = "Tech Expert"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T22"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T9"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T23"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T4"); }
+            else if roll <= 90 { profile.rank = "Sergeant"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T5"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T6"); }
         }
         
         // Specializations - military focus
         let specs: array<String>;
-        ArrayPush(specs, "Weapons Specialist");
-        ArrayPush(specs, "Demolitions");
-        ArrayPush(specs, "Vehicle Operations");
-        ArrayPush(specs, "Territory Defense");
-        ArrayPush(specs, "Community Watch");
-        ArrayPush(specs, "Arms Dealing");
-        ArrayPush(specs, "Training Cadre");
-        ArrayPush(specs, "Intelligence");
-        ArrayPush(specs, "Supply/Logistics");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T7"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T8"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T16"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T9"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T9"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-Shared-C52"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T10"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T11"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T11"));
         ArrayPush(specs, "Sniper");
-        ArrayPush(specs, "Combat Medic");
-        ArrayPush(specs, "Communications/Comms");
-        ArrayPush(specs, "Drone Operations");
-        ArrayPush(specs, "Perimeter Security");
-        ArrayPush(specs, "Recruitment Sergeant");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T38"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T12"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T35"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T13"));
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T14"));
         profile.role = specs[RandRange(seed + 100, 0, ArraySize(specs) - 1)];
         
         // Territory
         let territories: array<String>;
-        ArrayPush(territories, "Arroyo");
-        ArrayPush(territories, "Rancho Coronado");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T15"));
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T16"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S0"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-S18"));
-        ArrayPush(territories, "Veterans Hall");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T17"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-S1"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
         
@@ -134,16 +134,16 @@ public class KdspSixthStreetProfile {
 
     private static func GetBodyCount(seed: Int32, rank: String) -> Int32 {
         if Equals(rank, "Commander") || Equals(rank, "Captain") { return RandRange(seed, 15, 50); }
-        if Equals(rank, "First Sergeant") || Equals(rank, "Staff Sergeant") { return RandRange(seed, 8, 30); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C57")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C9")) { return RandRange(seed, 8, 30); }
         return RandRange(seed, 0, 15);
     }
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return "RECRUIT"; }
-        if roll <= 30 { return "ENLISTED"; }
-        if roll <= 60 { return "COMMITTED"; }
-        if roll <= 85 { return "DEDICATED"; }
-        return "TRUE PATRIOT";
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T18"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T19"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T20"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T20"); }
+        return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T21");
     }
 }

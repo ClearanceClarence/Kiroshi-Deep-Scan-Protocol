@@ -111,7 +111,7 @@ public class KdspCrowdDistrictManager {
         if Equals(district, "SANTO_DOMINGO") { return "Santo Domingo"; }
         if Equals(district, "CITY_CENTER") { return "City Center"; }
         if Equals(district, "BADLANDS") { return "Badlands"; }
-        return "Night City";
+        return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T33");
     }
 
     private static func GetDistrictDescription(district: String) -> String {
@@ -143,7 +143,7 @@ public class KdspCrowdDistrictManager {
         let years = RandRange(seed, 1, 30);
 
         if Equals(archetype, "NOMAD") {
-            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S8") + IntToString(RandRange(seed, 1, 12)) + " months";
+            return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S8") + IntToString(RandRange(seed, 1, 12)) + GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T101");
         }
         if Equals(archetype, "HOMELESS") {
             return IntToString(RandRange(seed, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S9");
@@ -154,24 +154,24 @@ public class KdspCrowdDistrictManager {
             years = RandRange(seed, 1, 10);
         }
 
-        if years >= 20 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S10") + IntToString(years) + "+ years)"; }
-        if years >= 10 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S11") + IntToString(years) + " years)"; }
-        if years >= 5 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S12") + IntToString(years) + " years)"; }
-        if years >= 2 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S13") + IntToString(years) + " years)"; }
-        return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S14") + IntToString(RandRange(seed, 1, 18)) + " months)";
+        if years >= 20 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S10") + IntToString(years) + GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T0"); }
+        if years >= 10 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S11") + IntToString(years) + GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T1"); }
+        if years >= 5 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S12") + IntToString(years) + GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T1"); }
+        if years >= 2 { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S13") + IntToString(years) + GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T1"); }
+        return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S14") + IntToString(RandRange(seed, 1, 18)) + GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T2");
     }
 
     private static func GenerateLocalStanding(seed: Int32, district: String, archetype: String) -> String {
         let standings: array<String>;
 
-        ArrayPush(standings, "Well-respected local");
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T3"));
         ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S15"));
-        ArrayPush(standings, "Average standing");
-        ArrayPush(standings, "Newcomer");
-        ArrayPush(standings, "Outsider");
-        ArrayPush(standings, "Troublemaker");
-        ArrayPush(standings, "Feared");
-        ArrayPush(standings, "Avoided");
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T4"));
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T5"));
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T6"));
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T7"));
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T8"));
+        ArrayPush(standings, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T9"));
 
         // Weight based on archetype
         if Equals(archetype, "CORPO_MANAGER") {
@@ -219,7 +219,7 @@ public class KdspCrowdDistrictManager {
         else if Equals(district, "SANTO_DOMINGO") {
             if RandRange(seed, 1, 100) <= 45 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S29")); }
             if RandRange(seed + 10, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S30")); }
-            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, "Union contacts"); }
+            if RandRange(seed + 20, 1, 100) <= 25 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T10")); }
         }
         else if Equals(district, "CITY_CENTER") {
             if RandRange(seed, 1, 100) <= 30 { ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S31")); }
@@ -267,7 +267,7 @@ public class KdspCrowdDistrictManager {
             ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S53"));
             ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S54"));
             ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S55"));
-            ArrayPush(elements, "Community-oriented upbringing");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T11"));
         }
         else if Equals(district, "SANTO_DOMINGO") {
             ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S56"));
@@ -288,7 +288,7 @@ public class KdspCrowdDistrictManager {
             ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S67"));
             ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S68"));
             ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S69"));
-            ArrayPush(elements, "Smuggler background");
+            ArrayPush(elements, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T12"));
         }
 
         // Select 1-2 relevant elements
@@ -310,36 +310,36 @@ public class KdspCrowdDistrictManager {
         let threats: array<String>;
 
         if Equals(district, "WATSON") {
-            ArrayPush(threats, "Maelstrom activity");
-            ArrayPush(threats, "Scavenger presence");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-Shared-C36"));
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T13"));
             ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S70"));
         }
         else if Equals(district, "WESTBROOK") {
             ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S71"));
-            ArrayPush(threats, "Organized crime");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T14"));
         }
         else if Equals(district, "PACIFICA") {
-            ArrayPush(threats, "Complete lawlessness");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-Shared-C32"));
             ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S72"));
-            ArrayPush(threats, "Animals aggression");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T15"));
             ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S73"));
         }
         else if Equals(district, "HEYWOOD") {
             ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S74"));
-            ArrayPush(threats, "Gang violence");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T16"));
         }
         else if Equals(district, "SANTO_DOMINGO") {
             ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-S75"));
-            ArrayPush(threats, "Industrial hazards");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T17"));
         }
         else if Equals(district, "CITY_CENTER") {
-            ArrayPush(threats, "Corporate surveillance");
-            ArrayPush(threats, "Heavy security");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-Shared-C34"));
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T18"));
         }
         else if Equals(district, "BADLANDS") {
-            ArrayPush(threats, "Wraith attacks");
-            ArrayPush(threats, "Raffen Shiv");
-            ArrayPush(threats, "Environmental hazards");
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-Shared-C35"));
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T19"));
+            ArrayPush(threats, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T20"));
         }
 
         return threats;
@@ -347,13 +347,13 @@ public class KdspCrowdDistrictManager {
 
     private static func GetDominantFaction(district: String) -> String {
         if Equals(district, "WATSON") { return "Contested (Maelstrom/Tyger Claws/Moxes)"; }
-        if Equals(district, "WESTBROOK") { return "Tyger Claws"; }
+        if Equals(district, "WESTBROOK") { return GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"); }
         if Equals(district, "PACIFICA") { return "Voodoo Boys / Animals"; }
         if Equals(district, "HEYWOOD") { return "Valentinos"; }
-        if Equals(district, "SANTO_DOMINGO") { return "6th Street"; }
+        if Equals(district, "SANTO_DOMINGO") { return GetLocalizedTextByKey(n"Kdsp-Shared-C33"); }
         if Equals(district, "CITY_CENTER") { return "Corporate Security"; }
         if Equals(district, "BADLANDS") { return "Nomad Clans / Wraiths"; }
-        return "Contested";
+        return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T21");
     }
 
     // District-based archetype weight modifiers

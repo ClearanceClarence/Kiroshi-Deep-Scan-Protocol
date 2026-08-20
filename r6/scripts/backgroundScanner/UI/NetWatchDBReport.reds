@@ -81,15 +81,15 @@ public class KdspNetWatchDBReport extends inkCustomController {
         // ═══════════════════════════════════════════════════════════
         // ALERT SECTIONS (Classification, Rare NPC, NCPD)
         // ═══════════════════════════════════════════════════════════
-        this.m_classificationSection = this.CreateAlertSection(root, "CLASSIFIED INDIVIDUAL", n"classification", 
+        this.m_classificationSection = this.CreateAlertSection(root, GetLocalizedTextByKey(n"Kdsp-NetWatchDBRepo-T0"), n"classification", 
             new HDRColor(1.0, 0.35, 0.35, 1.0));
         this.m_classificationValue = this.m_classificationSection.GetWidget(n"classification_value") as inkText;
 
-        this.m_specialSection = this.CreateAlertSection(root, "FLAGGED INDIVIDUAL", n"special", 
+        this.m_specialSection = this.CreateAlertSection(root, GetLocalizedTextByKey(n"Kdsp-NetWatchDBRepo-T1"), n"special", 
             new HDRColor(1.0, 0.85, 0.2, 1.0));
         this.m_specialValue = this.m_specialSection.GetWidget(n"special_value") as inkText;
 
-        this.m_ncpdSection = this.CreateAlertSection(root, "NCPD PERSONNEL FILE", n"ncpd",
+        this.m_ncpdSection = this.CreateAlertSection(root, GetLocalizedTextByKey(n"Kdsp-NetWatchDBRepo-T2"), n"ncpd",
             new HDRColor(0.4, 0.75, 1.0, 1.0));
         this.m_ncpdValue = this.m_ncpdSection.GetWidget(n"ncpd_value") as inkText;
 
@@ -246,7 +246,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
             // Update header to show it's a known individual
             let header = this.m_classificationSection.GetWidget(n"classification_header") as inkText;
             if IsDefined(header) {
-                header.SetText("KNOWN INDIVIDUAL");
+                header.SetText(GetLocalizedTextByKey(n"Kdsp-NetWatchDBRepo-T3"));
             }
         } else {
             this.m_classificationSection.SetVisible(false);

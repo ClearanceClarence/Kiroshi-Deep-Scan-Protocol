@@ -68,18 +68,18 @@ public class KdspGangManager {
     }
 
     private static func GetFullGangName(affiliation: String) -> String {
-        if Equals(affiliation, "TYGER_CLAWS") { return "Tyger Claws"; }
+        if Equals(affiliation, "TYGER_CLAWS") { return GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"); }
         if Equals(affiliation, "MAELSTROM") { return "Maelstrom"; }
         if Equals(affiliation, "VALENTINOS") { return "Valentinos"; }
-        if Equals(affiliation, "6TH_STREET") { return "6th Street"; }
+        if Equals(affiliation, "6TH_STREET") { return GetLocalizedTextByKey(n"Kdsp-Shared-C33"); }
         if Equals(affiliation, "ANIMALS") { return "Animals"; }
-        if Equals(affiliation, "VOODOO_BOYS") { return "Voodoo Boys"; }
-        if Equals(affiliation, "MOXES") { return "The Moxes"; }
+        if Equals(affiliation, "VOODOO_BOYS") { return GetLocalizedTextByKey(n"Kdsp-Shared-C48"); }
+        if Equals(affiliation, "MOXES") { return GetLocalizedTextByKey(n"Kdsp-Shared-C40"); }
         if Equals(affiliation, "SCAVENGERS") { return "Scavengers"; }
         if Equals(affiliation, "WRAITHS") { return "Wraiths"; }
         if Equals(affiliation, "ALDECALDOS") { return "Aldecaldos"; }
         if Equals(affiliation, "BARGHEST") { return "Barghest Militia"; }
-        return "Unknown Gang";
+        return GetLocalizedTextByKey(n"Kdsp-GangManager-T0");
     }
 
     private static func GetGangTerritory(affiliation: String) -> String {
@@ -93,7 +93,7 @@ public class KdspGangManager {
         if Equals(affiliation, "SCAVENGERS") { return "Various (Underground operations)"; }
         if Equals(affiliation, "WRAITHS") { return "Badlands (Highways, Fuel Stations)"; }
         if Equals(affiliation, "ALDECALDOS") { return "Badlands (Rocky Ridge Camp)"; }
-        return "Unknown";
+        return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
     }
 
     private static func GetGangLeadership(affiliation: String) -> String {
@@ -107,7 +107,7 @@ public class KdspGangManager {
         if Equals(affiliation, "SCAVENGERS") { return "Cell-based, no central leadership"; }
         if Equals(affiliation, "WRAITHS") { return "Unknown warlord structure"; }
         if Equals(affiliation, "ALDECALDOS") { return "Saul Bright (Clan leader)"; }
-        return "Unknown";
+        return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
     }
 
     private static func GetGangActivities(affiliation: String) -> array<String> {
@@ -115,60 +115,60 @@ public class KdspGangManager {
 
         if Equals(affiliation, "TYGER_CLAWS") {
             ArrayPush(activities, "Prostitution/Braindance");
-            ArrayPush(activities, "Protection Rackets");
-            ArrayPush(activities, "Gambling Operations");
-            ArrayPush(activities, "Drug Distribution");
-            ArrayPush(activities, "Human Trafficking");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T1"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T2"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T3"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T4"));
         } else if Equals(affiliation, "MAELSTROM") {
-            ArrayPush(activities, "Cyberware Theft");
-            ArrayPush(activities, "Illegal Modifications");
-            ArrayPush(activities, "Arms Dealing");
-            ArrayPush(activities, "Kidnapping");
-            ArrayPush(activities, "Organ Harvesting");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C43"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T5"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C52"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T6"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C46"));
         } else if Equals(affiliation, "VALENTINOS") {
-            ArrayPush(activities, "Drug Trade");
-            ArrayPush(activities, "Car Theft");
-            ArrayPush(activities, "Protection Rackets");
-            ArrayPush(activities, "Contract Killing");
-            ArrayPush(activities, "Honor-based Operations");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C49"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T7"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T1"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T8"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T9"));
         } else if Equals(affiliation, "6TH_STREET") {
-            ArrayPush(activities, "Arms Dealing");
-            ArrayPush(activities, "Vigilante Justice");
-            ArrayPush(activities, "Protection Services");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C52"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T10"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T11"));
             ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-S0"));
-            ArrayPush(activities, "Community Defense");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T12"));
         } else if Equals(affiliation, "ANIMALS") {
             ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-S0"));
-            ArrayPush(activities, "Underground Fighting");
-            ArrayPush(activities, "Security Services");
-            ArrayPush(activities, "Steroid Distribution");
-            ArrayPush(activities, "Intimidation");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T11"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T13"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T13"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T14"));
         } else if Equals(affiliation, "VOODOO_BOYS") {
             ArrayPush(activities, "Netrunning");
-            ArrayPush(activities, "Data Theft");
-            ArrayPush(activities, "Blackmail");
-            ArrayPush(activities, "AI Contact");
-            ArrayPush(activities, "Information Brokering");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T15"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T16"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T17"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T18"));
         } else if Equals(affiliation, "MOXES") {
             ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-S1"));
-            ArrayPush(activities, "Braindance Production");
-            ArrayPush(activities, "Community Defense");
-            ArrayPush(activities, "Anti-Trafficking");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T19"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T12"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T20"));
         } else if Equals(affiliation, "SCAVENGERS") {
-            ArrayPush(activities, "Organ Harvesting");
-            ArrayPush(activities, "Cyberware Theft");
-            ArrayPush(activities, "Kidnapping");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C46"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C43"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T6"));
             ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-S2"));
         } else if Equals(affiliation, "WRAITHS") {
-            ArrayPush(activities, "Highway Robbery");
-            ArrayPush(activities, "Vehicle Theft");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-Shared-C51"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T21"));
             ArrayPush(activities, "Smuggling");
-            ArrayPush(activities, "Kidnapping");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T6"));
         } else if Equals(affiliation, "ALDECALDOS") {
             ArrayPush(activities, "Smuggling");
-            ArrayPush(activities, "Transport Services");
-            ArrayPush(activities, "Mercenary Work");
-            ArrayPush(activities, "Vehicle Modification");
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T22"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T23"));
+            ArrayPush(activities, GetLocalizedTextByKey(n"Kdsp-GangManager-T24"));
         }
 
         return activities;
@@ -178,10 +178,10 @@ public class KdspGangManager {
         let allies: array<String>;
 
         if Equals(affiliation, "TYGER_CLAWS") {
-            ArrayPush(allies, "Arasaka Corporation");
+            ArrayPush(allies, GetLocalizedTextByKey(n"Kdsp-Shared-C6"));
         } else if Equals(affiliation, "6TH_STREET") {
-            ArrayPush(allies, "Militech (Informal)");
-            ArrayPush(allies, "NUSA Veterans");
+            ArrayPush(allies, GetLocalizedTextByKey(n"Kdsp-Shared-C39"));
+            ArrayPush(allies, GetLocalizedTextByKey(n"Kdsp-GangManager-T25"));
         } else if Equals(affiliation, "VALENTINOS") {
             ArrayPush(allies, GetLocalizedTextByKey(n"Kdsp-GangManager-S3"));
         } else if Equals(affiliation, "MOXES") {
@@ -189,7 +189,7 @@ public class KdspGangManager {
         }
 
         if ArraySize(allies) == 0 {
-            ArrayPush(allies, "None Documented");
+            ArrayPush(allies, GetLocalizedTextByKey(n"Kdsp-GangManager-T26"));
         }
 
         return allies;
@@ -202,22 +202,22 @@ public class KdspGangManager {
             ArrayPush(enemies, "Maelstrom");
             ArrayPush(enemies, "Moxes");
         } else if Equals(affiliation, "MAELSTROM") {
-            ArrayPush(enemies, "Tyger Claws");
+            ArrayPush(enemies, GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"));
             ArrayPush(enemies, "NCPD");
             ArrayPush(enemies, "Militech");
         } else if Equals(affiliation, "VALENTINOS") {
-            ArrayPush(enemies, "6th Street");
+            ArrayPush(enemies, GetLocalizedTextByKey(n"Kdsp-Shared-C33"));
             ArrayPush(enemies, "Animals");
         } else if Equals(affiliation, "6TH_STREET") {
             ArrayPush(enemies, "Valentinos");
         } else if Equals(affiliation, "ANIMALS") {
-            ArrayPush(enemies, "Voodoo Boys");
+            ArrayPush(enemies, GetLocalizedTextByKey(n"Kdsp-Shared-C48"));
             ArrayPush(enemies, "Valentinos");
         } else if Equals(affiliation, "VOODOO_BOYS") {
             ArrayPush(enemies, "NetWatch");
             ArrayPush(enemies, "Animals");
         } else if Equals(affiliation, "MOXES") {
-            ArrayPush(enemies, "Tyger Claws");
+            ArrayPush(enemies, GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"));
         } else if Equals(affiliation, "SCAVENGERS") {
             ArrayPush(enemies, "Everyone");
         } else if Equals(affiliation, "WRAITHS") {
@@ -235,8 +235,8 @@ public class KdspGangManager {
         let ranks: array<String>;
 
         // Standard hierarchy
-        ArrayPush(ranks, "Street-level Member");
-        ArrayPush(ranks, "Trusted Soldier");
+        ArrayPush(ranks, GetLocalizedTextByKey(n"Kdsp-Shared-C50"));
+        ArrayPush(ranks, GetLocalizedTextByKey(n"Kdsp-Shared-C44"));
         ArrayPush(ranks, "Enforcer");
         ArrayPush(ranks, "Lieutenant");
         ArrayPush(ranks, "Captain");
@@ -251,8 +251,8 @@ public class KdspGangManager {
     }
 
     private static func GenerateConfirmedKills(seed: Int32, rank: String) -> Int32 {
-        if Equals(rank, "Street-level Member") { return RandRange(seed, 0, 2); }
-        if Equals(rank, "Trusted Soldier") { return RandRange(seed, 0, 5); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C50")) { return RandRange(seed, 0, 2); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C44")) { return RandRange(seed, 0, 5); }
         if Equals(rank, "Enforcer") { return RandRange(seed, 2, 12); }
         if Equals(rank, "Lieutenant") { return RandRange(seed, 5, 20); }
         if Equals(rank, "Captain") { return RandRange(seed, 10, 35); }
@@ -263,27 +263,27 @@ public class KdspGangManager {
         let specs: array<String>;
 
         if Equals(affiliation, "MAELSTROM") {
-            ArrayPush(specs, "Cyberware Installation");
-            ArrayPush(specs, "Heavy Weapons");
-            ArrayPush(specs, "Intimidation");
-            ArrayPush(specs, "Tech Specialist");
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-Shared-C42"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T27"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T14"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T24"));
         } else if Equals(affiliation, "VOODOO_BOYS") {
             ArrayPush(specs, "Netrunner");
-            ArrayPush(specs, "Data Analysis");
-            ArrayPush(specs, "Social Engineering");
-            ArrayPush(specs, "Surveillance");
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T28"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T29"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T30"));
         } else if Equals(affiliation, "ANIMALS") {
-            ArrayPush(specs, "Close Combat");
-            ArrayPush(specs, "Security");
-            ArrayPush(specs, "Intimidation");
-            ArrayPush(specs, "Training");
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-Shared-C37"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T31"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T14"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T32"));
         } else {
-            ArrayPush(specs, "Street Soldier");
-            ArrayPush(specs, "Driver");
-            ArrayPush(specs, "Lookout");
-            ArrayPush(specs, "Dealer");
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T107"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T33"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T34"));
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T35"));
             ArrayPush(specs, "Enforcer");
-            ArrayPush(specs, "Recruiter");
+            ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T36"));
         }
 
         return specs[RandRange(seed, 0, ArraySize(specs) - 1)];
@@ -291,11 +291,11 @@ public class KdspGangManager {
 
     private static func GenerateLoyaltyRating(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 20 { return "UNVERIFIED"; }
-        if roll <= 50 { return "MODERATE"; }
+        if roll <= 20 { return GetLocalizedTextByKey(n"Kdsp-GangManager-T37"); }
+        if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T44"); }
         if roll <= 80 { return "HIGH"; }
-        if roll <= 95 { return "BLOOD OATH"; }
-        return "FANATIC";
+        if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-GangManager-T38"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangManager-T39");
     }
 
     private static func GenerateGangTattoos(seed: Int32, affiliation: String) -> array<String> {
@@ -317,7 +317,7 @@ public class KdspGangManager {
             }
         } else if Equals(affiliation, "MAELSTROM") {
             if RandRange(seed, 1, 100) <= 60 {
-                ArrayPush(tattoos, "Circuitry patterns");
+                ArrayPush(tattoos, GetLocalizedTextByKey(n"Kdsp-Shared-C41"));
             }
             // Maelstrom prefers chrome to ink
         } else if Equals(affiliation, "6TH_STREET") {
@@ -342,24 +342,24 @@ public class KdspGangManager {
         if Equals(affiliation, "TYGER_CLAWS") {
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S13"));
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S14"));
-            ArrayPush(hangouts, "Clouds");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-T40"));
         } else if Equals(affiliation, "VALENTINOS") {
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S15"));
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S16"));
-            ArrayPush(hangouts, "Local Churches");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-T41"));
         } else if Equals(affiliation, "MAELSTROM") {
             ArrayPush(hangouts, "Totentanz");
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S17"));
-            ArrayPush(hangouts, "Northside Warehouses");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-T42"));
         } else if Equals(affiliation, "6TH_STREET") {
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S18"));
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S19"));
             ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-S20"));
         } else if Equals(affiliation, "MOXES") {
-            ArrayPush(hangouts, "Lizzie's Bar");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-Shared-C45"));
         } else if Equals(affiliation, "VOODOO_BOYS") {
-            ArrayPush(hangouts, "Batty's Hotel");
-            ArrayPush(hangouts, "Pacifica Chapel");
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-Shared-C47"));
+            ArrayPush(hangouts, GetLocalizedTextByKey(n"Kdsp-GangManager-T43"));
         }
 
         return hangouts;

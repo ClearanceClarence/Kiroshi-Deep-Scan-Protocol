@@ -112,376 +112,376 @@ public class KdspGangNameGenerator {
     // === TYGER CLAWS — Japanese underworld style ===
     private static func GetTygerClawAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Razor"; }
-        if roll == 1 { return "Oni"; }
-        if roll == 2 { return "Kitsune"; }
-        if roll == 3 { return "Ronin"; }
-        if roll == 4 { return "Neon"; }
-        if roll == 5 { return "Katana"; }
-        if roll == 6 { return "Silent"; }
-        if roll == 7 { return "Viper"; }
-        if roll == 8 { return "Tengu"; }
-        if roll == 9 { return "Shiv"; }
-        if roll == 10 { return "Zero"; }
-        if roll == 11 { return "Fang"; }
-        if roll == 12 { return "Neko"; }
-        if roll == 13 { return "Washi"; }
-        if roll == 14 { return "Tanto"; }
-        if roll == 15 { return "Kage"; }
-        if roll == 16 { return "Smoke"; }
-        if roll == 17 { return "Jade"; }
-        if roll == 18 { return "Inari"; }
-        if roll == 19 { return "Sting"; }
-        if roll == 20 { return "Raijin"; }
-        if roll == 21 { return "Hebi"; }
-        if roll == 22 { return "Flash"; }
-        if roll == 23 { return "Kumo"; }
-        if roll == 24 { return "Sickle"; }
-        if roll == 25 { return "Red Eye"; }
-        if roll == 26 { return "Hannya"; }
-        if roll == 27 { return "Yasha"; }
-        if roll == 28 { return "Shinobi"; }
-        return "Gin";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T15"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T0"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T1"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T12"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T2"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T3"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T4"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T2"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T5"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T6"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T7"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T8"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T9"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T10"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T11"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T12"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T13"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T14"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T15"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T16"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T17"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T18"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T19"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T20"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T21"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T22"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T23"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T24"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T25"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T26");
     }
 
     // === VALENTINOS — Spanish street names ===
     private static func GetValentinoAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "El Santo"; }
-        if roll == 1 { return "Lobo"; }
-        if roll == 2 { return "Diablo"; }
-        if roll == 3 { return "Fuego"; }
-        if roll == 4 { return "Muerte"; }
-        if roll == 5 { return "Corazón"; }
-        if roll == 6 { return "Sombra"; }
-        if roll == 7 { return "Cruz"; }
-        if roll == 8 { return "Toro"; }
-        if roll == 9 { return "Escorpión"; }
-        if roll == 10 { return "Veneno"; }
-        if roll == 11 { return "Relámpago"; }
-        if roll == 12 { return "Fantasma"; }
-        if roll == 13 { return "Oro"; }
-        if roll == 14 { return "Cuchillo"; }
-        if roll == 15 { return "Hueso"; }
-        if roll == 16 { return "Rey"; }
-        if roll == 17 { return "Sangre"; }
-        if roll == 18 { return "Víbora"; }
-        if roll == 19 { return "Bravo"; }
-        if roll == 20 { return "Serpiente"; }
-        if roll == 21 { return "Demonio"; }
-        if roll == 22 { return "Flaco"; }
-        if roll == 23 { return "Trueno"; }
-        if roll == 24 { return "Calavera"; }
-        if roll == 25 { return "Pistola"; }
-        if roll == 26 { return "Halcón"; }
-        if roll == 27 { return "Hermano"; }
-        if roll == 28 { return "Chingón"; }
-        return "La Sombra";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T27"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T28"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T29"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T30"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T31"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T32"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T33"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T34"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T35"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T36"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T37"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T38"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T39"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T40"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T41"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T42"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T43"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T44"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T45"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T46"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T47"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T48"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T49"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T50"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T51"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T52"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T53"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T54"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T55"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T56");
     }
 
     // === MAELSTROM — Tech/chrome handles ===
     private static func GetMaelstromAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Glitch"; }
-        if roll == 1 { return "Voltex"; }
-        if roll == 2 { return "Flatline"; }
-        if roll == 3 { return "Chrome"; }
-        if roll == 4 { return "Splinter"; }
-        if roll == 5 { return "Bypass"; }
-        if roll == 6 { return "Wrench"; }
-        if roll == 7 { return "Optic"; }
-        if roll == 8 { return "Corrode"; }
-        if roll == 9 { return "Daemon"; }
-        if roll == 10 { return "Null"; }
-        if roll == 11 { return "Rivet"; }
-        if roll == 12 { return "Torque"; }
-        if roll == 13 { return "Wire"; }
-        if roll == 14 { return "Solder"; }
-        if roll == 15 { return "Scalpel"; }
-        if roll == 16 { return "Arc"; }
-        if roll == 17 { return "Drill"; }
-        if roll == 18 { return "Hex"; }
-        if roll == 19 { return "Spark"; }
-        if roll == 20 { return "Meltdown"; }
-        if roll == 21 { return "Strobe"; }
-        if roll == 22 { return "Fuse"; }
-        if roll == 23 { return "Grinder"; }
-        if roll == 24 { return "Piston"; }
-        if roll == 25 { return "Slag"; }
-        if roll == 26 { return "Hollow"; }
-        if roll == 27 { return "Blitz"; }
-        if roll == 28 { return "Clamp"; }
-        return "Rust";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T57"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T58"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T59"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T60"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T61"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T62"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T63"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T64"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T65"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T66"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T67"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T68"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T69"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T70"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T71"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T72"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T73"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T74"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T75"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T76"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T77"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T78"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T79"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T80"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T81"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T82"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T83"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T84"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T85"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T86");
     }
 
     // === ANIMALS — Strength/beast handles ===
     private static func GetAnimalsAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Bull"; }
-        if roll == 1 { return "Rhino"; }
-        if roll == 2 { return "Hammer"; }
-        if roll == 3 { return "Brick"; }
-        if roll == 4 { return "Tank"; }
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T87"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T88"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T89"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T90"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T91"); }
         if roll == 5 { return "Gorilla"; }
-        if roll == 6 { return "Rampage"; }
-        if roll == 7 { return "Crush"; }
-        if roll == 8 { return "Iron"; }
-        if roll == 9 { return "Grizzly"; }
-        if roll == 10 { return "Boulder"; }
-        if roll == 11 { return "Spine"; }
-        if roll == 12 { return "Mauler"; }
-        if roll == 13 { return "Mammoth"; }
-        if roll == 14 { return "Savage"; }
-        if roll == 15 { return "Pit"; }
-        if roll == 16 { return "Jackal"; }
-        if roll == 17 { return "Kong"; }
-        if roll == 18 { return "Bruiser"; }
-        if roll == 19 { return "Slab"; }
-        if roll == 20 { return "Feral"; }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T92"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T93"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T94"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T95"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T96"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T97"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T98"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T99"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T100"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T101"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T7"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T102"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T103"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T104"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T105"); }
         if roll == 21 { return "Apex"; }
-        if roll == 22 { return "Boar"; }
-        if roll == 23 { return "Flex"; }
-        if roll == 24 { return "Hyena"; }
-        if roll == 25 { return "Stampede"; }
-        if roll == 26 { return "Brute"; }
-        if roll == 27 { return "Titan"; }
-        if roll == 28 { return "Bison"; }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T106"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T107"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T108"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T109"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T110"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T11"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T111"); }
         return "Beast";
     }
 
     // === 6TH STREET — Military callsigns ===
     private static func GetSixthStreetAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Gunner"; }
-        if roll == 1 { return "Sarge"; }
-        if roll == 2 { return "Hawk"; }
-        if roll == 3 { return "Duke"; }
-        if roll == 4 { return "Maverick"; }
-        if roll == 5 { return "Patriot"; }
-        if roll == 6 { return "Eagle"; }
-        if roll == 7 { return "Brass"; }
-        if roll == 8 { return "Vanguard"; }
-        if roll == 9 { return "Bulldog"; }
-        if roll == 10 { return "Valor"; }
-        if roll == 11 { return "Top"; }
-        if roll == 12 { return "Reaper"; }
-        if roll == 13 { return "Blaze"; }
-        if roll == 14 { return "Steel"; }
-        if roll == 15 { return "Ranger"; }
-        if roll == 16 { return "Wolf"; }
-        if roll == 17 { return "Scope"; }
-        if roll == 18 { return "Trigger"; }
-        if roll == 19 { return "Mustang"; }
-        if roll == 20 { return "Chief"; }
-        if roll == 21 { return "Nomad"; }
-        if roll == 22 { return "Hound"; }
-        if roll == 23 { return "Buckshot"; }
-        if roll == 24 { return "Ramrod"; }
-        if roll == 25 { return "Yankee"; }
-        if roll == 26 { return "Liberty"; }
-        if roll == 27 { return "Caliber"; }
-        if roll == 28 { return "Foxhound"; }
-        return "Flag";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T112"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T113"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T6"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T114"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T115"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T116"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T117"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T118"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T119"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T120"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T121"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T122"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T0"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T123"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T124"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T125"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T5"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T126"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T127"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T128"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T129"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T10"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T3"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T130"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T131"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T132"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T133"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T134"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T135"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T136");
     }
 
     // === VOODOO BOYS — Vodou/Creole handles ===
     private static func GetVoodooBoysAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Baron"; }
-        if roll == 1 { return "Mambo"; }
-        if roll == 2 { return "Gris-Gris"; }
-        if roll == 3 { return "Loa"; }
-        if roll == 4 { return "Shadow"; }
-        if roll == 5 { return "Ogun"; }
-        if roll == 6 { return "Root"; }
-        if roll == 7 { return "Duppy"; }
-        if roll == 8 { return "Hex"; }
-        if roll == 9 { return "Legba"; }
-        if roll == 10 { return "Bone"; }
-        if roll == 11 { return "Mojo"; }
-        if roll == 12 { return "Marasa"; }
-        if roll == 13 { return "Ti Chwal"; }
-        if roll == 14 { return "Damballa"; }
-        if roll == 15 { return "Deep"; }
-        if roll == 16 { return "Crossroads"; }
-        if roll == 17 { return "Papa"; }
-        if roll == 18 { return "Spirit"; }
-        if roll == 19 { return "Tide"; }
-        if roll == 20 { return "Agwe"; }
-        if roll == 21 { return "Erzulie"; }
-        if roll == 22 { return "Sousson"; }
-        if roll == 23 { return "Ghede"; }
-        if roll == 24 { return "Wanga"; }
-        if roll == 25 { return "Serpent"; }
-        if roll == 26 { return "Petro"; }
-        if roll == 27 { return "Ogoun"; }
-        if roll == 28 { return "Ti Malice"; }
-        return "Baka";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T137"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T138"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T139"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T140"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T13"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T141"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T142"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T143"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T75"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T144"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T145"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T146"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T147"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T148"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T149"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T150"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T151"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T152"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T153"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T154"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T155"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T156"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T157"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T158"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T159"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T160"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T161"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T162"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T163"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T164");
     }
 
     // === MOXES — Stage/persona names ===
     private static func GetMoxesAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Glitter"; }
-        if roll == 1 { return "Nails"; }
-        if roll == 2 { return "Cherry"; }
-        if roll == 3 { return "Riot"; }
-        if roll == 4 { return "Velvet"; }
-        if roll == 5 { return "Stiletto"; }
-        if roll == 6 { return "Pixie"; }
-        if roll == 7 { return "Vixen"; }
-        if roll == 8 { return "Siren"; }
-        if roll == 9 { return "Bliss"; }
-        if roll == 10 { return "Scarlet"; }
-        if roll == 11 { return "Thorn"; }
-        if roll == 12 { return "Diva"; }
-        if roll == 13 { return "Razor Kiss"; }
-        if roll == 14 { return "Neon"; }
-        if roll == 15 { return "Muse"; }
-        if roll == 16 { return "Venom"; }
-        if roll == 17 { return "Sugar"; }
-        if roll == 18 { return "Pepper"; }
-        if roll == 19 { return "Storm"; }
-        if roll == 20 { return "Jinx"; }
-        if roll == 21 { return "Fury"; }
-        if roll == 22 { return "Lacquer"; }
-        if roll == 23 { return "Dollface"; }
-        if roll == 24 { return "Switchblade"; }
-        if roll == 25 { return "Karma"; }
-        if roll == 26 { return "Toxic"; }
-        if roll == 27 { return "Venus"; }
-        if roll == 28 { return "Malice"; }
-        return "Candy";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-CoherenceManag-T17"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T165"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T166"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T167"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T168"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T169"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T170"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T171"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T172"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T173"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T174"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T175"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T176"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T177"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T2"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T178"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T179"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T180"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T181"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T182"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T183"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T184"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T185"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T186"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T187"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T188"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T189"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T190"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T191"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T192");
     }
 
     // === SCAVENGERS — Dark/organ trade handles ===
     private static func GetScavengersAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Butcher"; }
-        if roll == 1 { return "Reaper"; }
-        if roll == 2 { return "Scalpel"; }
-        if roll == 3 { return "Maggot"; }
-        if roll == 4 { return "Carrion"; }
-        if roll == 5 { return "Harvest"; }
-        if roll == 6 { return "Cleaver"; }
-        if roll == 7 { return "Marrow"; }
-        if roll == 8 { return "Rot"; }
-        if roll == 9 { return "Vulture"; }
-        if roll == 10 { return "Stitch"; }
-        if roll == 11 { return "Gutter"; }
-        if roll == 12 { return "Parasite"; }
-        if roll == 13 { return "Carcass"; }
-        if roll == 14 { return "Bile"; }
-        if roll == 15 { return "Husk"; }
-        if roll == 16 { return "Sawbone"; }
-        if roll == 17 { return "Liver"; }
-        if roll == 18 { return "Needle"; }
-        if roll == 19 { return "Filth"; }
-        if roll == 20 { return "Crow"; }
-        if roll == 21 { return "Gash"; }
-        if roll == 22 { return "Blight"; }
-        if roll == 23 { return "Gut"; }
-        if roll == 24 { return "Flenser"; }
-        if roll == 25 { return "Offal"; }
-        if roll == 26 { return "Bones"; }
-        if roll == 27 { return "Sepsis"; }
-        if roll == 28 { return "Sinew"; }
-        return "Leech";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T193"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T0"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T72"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T194"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T195"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T196"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T197"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T198"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T199"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T200"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T201"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T202"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T203"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T204"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T205"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T206"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T207"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T208"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T209"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T210"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T211"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T212"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T213"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T214"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T215"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T216"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T217"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T218"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T219"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T220");
     }
 
     // === WRAITHS — Road warrior handles ===
     private static func GetWraithsAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Dust"; }
-        if roll == 1 { return "Roadkill"; }
-        if roll == 2 { return "Phantom"; }
-        if roll == 3 { return "Gasoline"; }
-        if roll == 4 { return "Mirage"; }
-        if roll == 5 { return "Sandstorm"; }
-        if roll == 6 { return "Axle"; }
-        if roll == 7 { return "Burnout"; }
-        if roll == 8 { return "Jackal"; }
-        if roll == 9 { return "Scorcher"; }
-        if roll == 10 { return "Haunt"; }
-        if roll == 11 { return "Nitro"; }
-        if roll == 12 { return "Rattlesnake"; }
-        if roll == 13 { return "Vulture"; }
-        if roll == 14 { return "Skid"; }
-        if roll == 15 { return "Deadpan"; }
-        if roll == 16 { return "Coyote"; }
-        if roll == 17 { return "Diesel"; }
-        if roll == 18 { return "Shade"; }
-        if roll == 19 { return "Flatbed"; }
-        if roll == 20 { return "Prowler"; }
-        if roll == 21 { return "Smoke"; }
-        if roll == 22 { return "Scorch"; }
-        if roll == 23 { return "Rustbelt"; }
-        if roll == 24 { return "Howler"; }
-        if roll == 25 { return "Wasteland"; }
-        if roll == 26 { return "Raven"; }
-        if roll == 27 { return "Tumbleweed"; }
-        if roll == 28 { return "Haze"; }
-        return "Sidewinder";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T221"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T222"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T223"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T224"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T225"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T226"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T227"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T228"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T7"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T229"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T230"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T231"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T232"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T200"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T233"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T234"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T235"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T236"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T237"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T238"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T239"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T13"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T240"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T241"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T242"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T243"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T4"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T244"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T245"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T246");
     }
 
     // === ALDECALDOS — Road/family names ===
     private static func GetAldecaldosAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 29);
-        if roll == 0 { return "Dusty"; }
-        if roll == 1 { return "Wheels"; }
-        if roll == 2 { return "Compass"; }
-        if roll == 3 { return "Cactus"; }
-        if roll == 4 { return "Blacktop"; }
-        if roll == 5 { return "Mesa"; }
-        if roll == 6 { return "Sundown"; }
-        if roll == 7 { return "Jackrabbit"; }
-        if roll == 8 { return "Ridge"; }
-        if roll == 9 { return "Trailhead"; }
-        if roll == 10 { return "Breeze"; }
-        if roll == 11 { return "Longhaul"; }
-        if roll == 12 { return "Roadrunner"; }
-        if roll == 13 { return "Horizon"; }
-        if roll == 14 { return "Gearshift"; }
-        if roll == 15 { return "Skyline"; }
-        if roll == 16 { return "Ember"; }
-        if roll == 17 { return "Prairie"; }
-        if roll == 18 { return "Rattler"; }
-        if roll == 19 { return "Convoy"; }
-        if roll == 20 { return "Gravel"; }
-        if roll == 21 { return "Outrider"; }
-        if roll == 22 { return "Drifter"; }
-        if roll == 23 { return "Buckaroo"; }
-        if roll == 24 { return "Tread"; }
-        if roll == 25 { return "Windbreak"; }
-        if roll == 26 { return "Overpass"; }
-        if roll == 27 { return "Hardpan"; }
-        if roll == 28 { return "Freeway"; }
-        return "Mile";
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T247"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T248"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T249"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T250"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T251"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T252"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T253"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T254"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T255"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T256"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T257"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T258"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T259"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T260"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T261"); }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T262"); }
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T263"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T264"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T265"); }
+        if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T266"); }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T267"); }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T268"); }
+        if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T269"); }
+        if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T270"); }
+        if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T271"); }
+        if roll == 25 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T272"); }
+        if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T273"); }
+        if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T274"); }
+        if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T275"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T276");
     }
 
     // === GENERIC FALLBACK ===
     private static func GetGenericAlias(seed: Int32) -> String {
         let roll = RandRange(seed, 0, 19);
-        if roll == 0 { return "Ghost"; }
-        if roll == 1 { return "Snake"; }
-        if roll == 2 { return "Chrome"; }
-        if roll == 3 { return "Razor"; }
-        if roll == 4 { return "Venom"; }
-        if roll == 5 { return "Spike"; }
-        if roll == 6 { return "Switch"; }
-        if roll == 7 { return "Shade"; }
-        if roll == 8 { return "Bullet"; }
-        if roll == 9 { return "Prowl"; }
-        if roll == 10 { return "Ash"; }
-        if roll == 11 { return "Flicker"; }
-        if roll == 12 { return "Torch"; }
-        if roll == 13 { return "Scratch"; }
-        if roll == 14 { return "Fuse"; }
+        if roll == 0 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T1"); }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T277"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T60"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T15"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T179"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T278"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T279"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T237"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T280"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T281"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T282"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T283"); }
+        if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T284"); }
+        if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T285"); }
+        if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T79"); }
         if roll == 15 { return "Wraith"; }
-        if roll == 16 { return "Jackhammer"; }
-        if roll == 17 { return "Tack"; }
-        if roll == 18 { return "Splint"; }
-        return "Nail";
+        if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T286"); }
+        if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T287"); }
+        if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T288"); }
+        return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T289");
     }
 
     // Check if an NPC's display name is a generic gang label

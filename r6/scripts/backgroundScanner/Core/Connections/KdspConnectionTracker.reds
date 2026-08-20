@@ -63,7 +63,7 @@ public class KdspConnectionTracker extends ScriptableSystem {
             if i < ArraySize(relationshipContexts) {
                 ArrayPush(this.m_relContexts, relationshipContexts[i]);
             } else {
-                ArrayPush(this.m_relContexts, "Known contact");
+                ArrayPush(this.m_relContexts, GetLocalizedTextByKey(n"Kdsp-ConnectionTrac-T0"));
             };
             ArrayPush(this.m_relOwnerIdx, scanIdx);
             i += 1;

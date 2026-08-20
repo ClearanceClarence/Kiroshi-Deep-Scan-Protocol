@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kiroshi Deep Scan — Translation Guide v2.4</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --cyan: #5ef6e1;
+    --cyan-dim: #2a7a70;
+    --gold: #ffd700;
+    --red: #ff4757;
+    --green: #2ed573;
+    --bg: #0a0e14;
+    --bg-card: #0f1923;
+    --bg-code: #0c1219;
+    --border: #1a2a3a;
+    --text: #c8d6e5;
+    --text-dim: #6b7d8e;
+    --text-bright: #f0f4f8;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Exo 2', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+    padding: 0;
+}
+
+.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 50px 80px;
+}
+
+/* Header */
+.hero {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 30px;
+    margin-bottom: 40px;
+}
+.hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--cyan);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 1.1;
+}
+.hero .version {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--gold);
+    font-size: 14px;
+    margin-top: 6px;
+}
+.hero .subtitle {
+    margin-top: 14px;
+    font-size: 16px;
+    color: var(--text-dim);
+    border-left: 3px solid var(--cyan-dim);
+    padding-left: 14px;
+}
+
+/* Section headings */
+h2 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--cyan);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 50px;
+    margin-bottom: 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+h3 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: var(--text-bright);
+    margin-top: 32px;
+    margin-bottom: 12px;
+}
+h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 17px;
+    color: var(--gold);
+    margin-top: 24px;
+    margin-bottom: 8px;
+}
+
+p { margin-bottom: 12px; }
+
+/* Inline code */
+code {
+    font-family: 'Share Tech Mono', monospace;
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    padding: 1px 6px;
+    border-radius: 3px;
+    font-size: 13px;
+    color: var(--cyan);
+}
+
+/* Code blocks */
+pre {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--cyan-dim);
+    padding: 16px 20px;
+    margin: 14px 0 18px;
+    border-radius: 4px;
+    overflow-x: auto;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text);
+}
+pre code {
+    background: none;
+    border: none;
+    padding: 0;
+    color: inherit;
+}
+
+/* Comments in code */
+.cm { color: #4a6a5a; }
+/* Strings */
+.str { color: #ffc048; }
+/* Keywords */
+.kw { color: var(--cyan); }
+/* Translate markers */
+.yes { color: var(--green); font-weight: 700; }
+.no { color: var(--red); font-weight: 700; }
+/* Annotation arrows */
+.arrow { color: var(--text-dim); }
+.label-t { color: var(--green); }
+.label-n { color: var(--red); }
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 14px 0 20px;
+    font-size: 14px;
+}
+th {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+    color: var(--cyan);
+    background: var(--bg-code);
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 2px solid var(--cyan-dim);
+}
+td {
+    padding: 8px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+}
+tr:hover td { background: rgba(94,246,225,0.03); }
+
+/* Callout boxes */
+.callout {
+    border-left: 3px solid var(--gold);
+    background: rgba(255,215,0,0.04);
+    padding: 12px 18px;
+    margin: 16px 0;
+    border-radius: 0 4px 4px 0;
+}
+.callout.danger {
+    border-left-color: var(--red);
+    background: rgba(255,71,87,0.04);
+}
+.callout.info {
+    border-left-color: var(--cyan);
+    background: rgba(94,246,225,0.04);
+}
+.callout strong { color: var(--text-bright); }
+.callout .tag {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+.callout.danger .tag { color: var(--red); }
+.callout .tag { color: var(--gold); }
+.callout.info .tag { color: var(--cyan); }
+
+/* Badge/tag */
+.badge {
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 3px;
+    vertical-align: middle;
+    margin-left: 6px;
+}
+.badge.easy { background: rgba(46,213,115,0.15); color: var(--green); border: 1px solid rgba(46,213,115,0.3); }
+.badge.medium { background: rgba(255,215,0,0.12); color: var(--gold); border: 1px solid rgba(255,215,0,0.3); }
+.badge.hard { background: rgba(255,71,87,0.12); color: var(--red); border: 1px solid rgba(255,71,87,0.3); }
+
+/* Flowchart */
+.flowchart {
+    background: var(--bg-code);
+    border: 1px solid var(--border);
+    padding: 20px 24px;
+    margin: 16px 0;
+    border-radius: 4px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+}
+.flowchart .q { color: var(--text-bright); }
+.flowchart .a-yes { color: var(--red); }
+.flowchart .a-no { color: var(--green); }
+.flowchart .arrow-d { color: var(--text-dim); }
+
+/* Checklist */
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 14px 0;
+}
+.checklist li {
+    padding: 6px 0 6px 28px;
+    position: relative;
+    border-bottom: 1px solid rgba(26,42,58,0.5);
+}
+.checklist li::before {
+    content: '☐';
+    position: absolute;
+    left: 0;
+    color: var(--cyan-dim);
+    font-size: 16px;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 40px 0;
+}
+
+/* Links */
+a { color: var(--cyan); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Strong */
+strong { color: var(--text-bright); }
+
+/* The ONE RULE highlight */
+.one-rule {
+    background: var(--bg-card);
+    border: 1px solid var(--cyan-dim);
+    padding: 24px 28px;
+    margin: 20px 0;
+    border-radius: 6px;
+}
+.one-rule .example-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 16px;
+}
+.one-rule .example-block > div {
+    padding: 14px 16px;
+    border-radius: 4px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px;
+    line-height: 1.8;
+}
+.one-rule .ex-translate {
+    background: rgba(46,213,115,0.06);
+    border: 1px solid rgba(46,213,115,0.2);
+}
+.one-rule .ex-translate .heading { color: var(--green); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+.one-rule .ex-no {
+    background: rgba(255,71,87,0.06);
+    border: 1px solid rgba(255,71,87,0.2);
+}
+.one-rule .ex-no .heading { color: var(--red); font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+
+/* Section file badge */
+.section-badge {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-bottom: 6px;
+}
+
+/* Print styles */
+@media print {
+    body { background: #fff; color: #111; font-size: 12px; }
+    .page { padding: 20px; }
+    .hero h1 { color: #111; }
+    h2 { color: #333; border-bottom-color: #ccc; }
+    pre { background: #f5f5f5; border-color: #ddd; }
+    code { background: #f0f0f0; color: #333; }
+    .callout { background: #fafafa; }
+    th { background: #eee; color: #333; }
+    td { border-bottom-color: #ddd; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="hero">
+    <h1>Kiroshi Deep Scan Protocol<br>Translation Guide</h1>
+    <div class="version">v3.0 // DOCUMENT CLASSIFICATION: PUBLIC</div>
+    <p class="subtitle">Since v3.0 you are no longer forking the mod. You translate <b>one file of keys</b>, ship it as a tiny companion mod, and the game's language setting does the rest.</p>
+</div>
+
+<!-- WHAT CHANGED -->
+<h2>The Model Changed in v3.0</h2>
+
+<table>
+<tr><th></th><th>v2.x (old)</th><th>v3.0 (now)</th></tr>
+<tr><td>What you edit</td><td>90+ source files across the whole mod</td><td>One file: <code>Strings/English.reds</code> → your package</td></tr>
+<tr><td>What you publish</td><td>A full standalone fork of KDSP</td><td>A single .reds language file (~500 KB)</td></tr>
+<tr><td>When KDSP updates</td><td>Re-fork, re-translate, re-release</td><td>Nothing breaks — new keys fall back to English until you add them</td></tr>
+<tr><td>Multiple languages</td><td>One fork per language, each a full mod</td><td>All language files coexist; the game picks by language setting</td></tr>
+</table>
+
+<div class="callout info">
+<div class="tag">How it works</div>
+KDSP v3.0 looks up every display string by a stable key through <a href="https://github.com/psiberx/cp2077-codeware/wiki#localization" style="color:var(--cyan)">Codeware's localization system</a> (Codeware is already a KDSP requirement). <code>Strings/English.reds</code> defines all <b>11,333 keys</b> with their English text. Your translation is a package that defines the same keys in your language.
+</div>
+
+<!-- WORKFLOW -->
+<h2>Creating a Translation</h2>
+
+<h3>Step 1 — Get the key list</h3>
+<p>Open <code>r6/scripts/backgroundScanner/Strings/English.reds</code> from the mod. Every line looks like:</p>
+<pre><code>this.Text(<span class="str">"Kdsp-Job-JOB_LOCAL_FIXER"</span>, <span class="str">"Started doing jobs for a local fixer. "</span>);</code></pre>
+<p>First argument: the key — <b>never change it</b>. Second argument: the English text — <b>this is what you translate</b>.</p>
+
+<h3>Step 2 — Build your language file</h3>
+<p>One .reds file containing a provider and your package. Complete working example for French:</p>
+<pre><code><span class="cm">// KDSP_fr-fr.reds</span>
+<span class="kw">module</span> KiroshiDeepScan_French
+<span class="kw">import</span> Codeware.Localization.*
+
+<span class="kw">public class</span> LocalizationProvider <span class="kw">extends</span> ModLocalizationProvider {
+    <span class="kw">public func</span> GetPackage(language: CName) -> <span class="kw">ref</span>&lt;ModLocalizationPackage&gt; {
+        <span class="kw">return</span> Equals(language, n<span class="str">"fr-fr"</span>) ? <span class="kw">new</span> LocalizationPackage() : <span class="kw">null</span>;
+    }
+    <span class="kw">public func</span> GetFallback() -> CName { <span class="kw">return</span> n<span class="str">""</span>; }
+}
+
+<span class="kw">public class</span> LocalizationPackage <span class="kw">extends</span> ModLocalizationPackage {
+    <span class="kw">protected func</span> DefineTexts() -> Void {
+        <span class="kw">this</span>.Text(<span class="str">"Kdsp-Job-JOB_LOCAL_FIXER"</span>, <span class="str">"A commencé à bosser pour un fixer du coin. "</span>);
+        <span class="kw">this</span>.Text(<span class="str">"Kdsp-Bolo-0"</span>, <span class="str">"BOLO : Personne d'intérêt — enquête pour homicide à Watson"</span>);
+        <span class="cm">// ... every key you translate</span>
+    }
+}</code></pre>
+
+<div class="callout info">
+<div class="tag">Large files</div>
+With thousands of entries, split <code>DefineTexts</code> into sub-functions of ~400 entries each (<code>this.DefineTexts0(); this.DefineTexts1(); ...</code> calling private functions) — copy the structure of <code>English.reds</code> exactly and replace the strings.
+</div>
+
+<p><b>Language codes:</b> <code>pl-pl</code>, <code>fr-fr</code>, <code>de-de</code>, <code>es-es</code>, <code>es-mx</code>, <code>it-it</code>, <code>pt-br</code>, <code>ru-ru</code>, <code>zh-cn</code>, <code>zh-tw</code>, <code>ja-jp</code>, <code>kr-kr</code>, <code>ar-ar</code>, <code>cz-cz</code>, <code>hu-hu</code>, <code>tr-tr</code>, <code>th-th</code></p>
+
+<h3>Step 3 — Ship it</h3>
+<p>Publish the file as its own Nexus mod: <code>r6/scripts/KDSP_fr-fr/KDSP_fr-fr.reds</code>. Users install KDSP + your file. Done. Partial translations are fine — untranslated keys show English.</p>
+
+<h3>Step 4 — Test</h3>
+<p>Set the game language to yours, scan a civilian, a gang member, and a unique NPC (Takemura, Regina). If you see a raw key like <code>Kdsp-Job-S14</code> on screen, that key has a typo in your package.</p>
+
+<h3>A working example ships with the mod</h3>
+<p><code>Strings/French.reds</code> is a partial French translation — 259 keys covering the UI section headers, every scanner loading line, and every BOLO notice. Copy its structure rather than working only from the snippet above.</p>
+
+<div class="callout info">
+<div class="tag">What the French file demonstrates</div>
+<b>Partial coverage works.</b> It translates 259 of 11,333 keys; the rest fall back to English and the mod runs normally — publish at any coverage and grow it.<br><br>
+<b>Word order around dynamic values.</b> <code>Kdsp-Bolo-16</code> ends mid-sentence because the mod appends a year, then a tail string (<code>Kdsp-Bolo-16b</code>). The French version restructures both halves so the year lands where French grammar wants it.<br><br>
+It is registered in <code>Strings/LocalizationProvider.reds</code> because it ships inside the mod. <b>Your translation does not go there</b> — it is a separate mod with its own provider, as shown above.
+</div>
+
+<!-- KEY MAP -->
+<h2>Key Map</h2>
+
+<table>
+<tr><th>Key prefix</th><th>Content</th><th>Count</th></tr>
+<tr><td><code>Kdsp-Adult-*</code></td><td>Adulthood life events</td><td>518</td></tr>
+<tr><td><code>Kdsp-Bg-*</code></td><td>Background descriptions</td><td>166</td></tr>
+<tr><td><code>Kdsp-Child-*</code></td><td>Childhood events</td><td>280</td></tr>
+<tr><td><code>Kdsp-Corpo-*</code></td><td>Corporate events</td><td>99</td></tr>
+<tr><td><code>Kdsp-Home-*</code></td><td>Housing events</td><td>197</td></tr>
+<tr><td><code>Kdsp-Job-*</code></td><td>Job events</td><td>237</td></tr>
+<tr><td><code>Kdsp-Lp-*</code> / <code>Kdsp-Core-*</code></td><td>Lifepath + core strings</td><td>98</td></tr>
+<tr><td><code>Kdsp-Upb-*</code></td><td>Upbringing events</td><td>255</td></tr>
+<tr><td><code>Kdsp-Bolo-*</code></td><td>BOLO notices (index = roll number; <code>-16b</code>/<code>-17b</code>/<code>-50b</code>/<code>-66b</code> are sentence tails following an appended number)</td><td>76</td></tr>
+<tr><td><code>Kdsp-ConnCtx-*</code> / <code>Kdsp-ConnInj-*</code></td><td>Connection contexts</td><td>62</td></tr>
+<tr><td><code>Kdsp-Load&lt;Pool&gt;-*</code></td><td>Scanner loading lines by pool</td><td>168</td></tr>
+<tr><td><code>Kdsp-Npc-&lt;Name&gt;-&lt;Field&gt;[-n]</code></td><td>Unique NPC entries (<code>-1</code>, <code>-2</code> = quest-state variants)</td><td>1,786</td></tr>
+<tr><td><code>Kdsp-Glitch-&lt;Func&gt;-*</code></td><td>Scanner glitch output</td><td>114</td></tr>
+<tr><td><code>Kdsp-UI-*</code></td><td>Scanner section headers</td><td>15</td></tr>
+<tr><td><code>Kdsp-&lt;FileTag&gt;-S*</code></td><td>Generator fragments — criminal, medical, financial, psych, NCPD, gang, NET, rare classifications, labels &amp; separators</td><td>~3,850</td></tr>
+</table>
+
+<!-- RULES -->
+<h2>Translation Rules</h2>
+
+<h3>⚠️ Preserve inside your strings</h3>
+<ul>
+<li><b>Tokens</b> — <code>%he%</code>, <code>%his%</code>, <code>%him%</code>, <code>%year%</code>, <code>%young_age%</code>, <code>%corp%</code>. The engine substitutes these after your string is retrieved. Position them wherever your grammar needs.</li>
+<li><b>Trailing spaces</b> — events chain into sentences. <code>"...local fixer. "</code> ends with a space; yours must too.</li>
+<li><b>Dynamic-value halves</b> — strings ending mid-phrase (e.g. <code>"...missing person report #NC-"</code>) get a number appended in code. Keep your structure compatible, or rearrange your sentence so the value lands correctly.</li>
+<li><b>Glitch codes &amp; glyphs</b> — <code>ERR_NULL_REF</code>, <code>██████</code>, <code>[CORRUPTED]</code>, <code>⊕</code>. Translate the human-readable fragments around them; the codes themselves stay.</li>
+<li><b>Label glue</b> — fragments like <code>"Status: "</code> and <code>" | Arrests: "</code> are keyed. Translate the words, keep the <code>": "</code> and <code>" | "</code> punctuation pattern.</li>
+</ul>
+
+<div class="callout info">
+<div class="tag">BOLO prefixes are now translatable</div>
+In v2.4 the <code>BOLO:</code> / <code>ALERT:</code> / <code>NOTICE:</code> prefixes had to stay English because the red highlight matched them as text. v3.0 replaced that with an internal flag — translate the prefixes freely, the urgency color works in every language.
+</div>
+
+<h3>❌ Not in the key list — by design</h3>
+<ul>
+<li><b>ALL-CAPS machine values</b> — <code>ACTIVE</code>, <code>FLAGGED</code>, <code>CASH ON DELIVERY</code>, classification codes like <code>SLEEPER AGENT</code>. These are diegetic database output and are used internally by generation logic. They stay identical across languages, like error codes.</li>
+<li><b>Name pools</b> — <code>Core/Names/</code> still works the v2 way: edit those files directly if your language needs transliteration. Most teams leave names as-is.</li>
+<li><b>The version footer</b>.</li>
+</ul>
+
+<h3>❌ Never</h3>
+<ul>
+<li>Don't change key spelling or case — a mismatched key silently falls back to English.</li>
+<li>Don't invent new keys — the mod only looks up the keys it ships with.</li>
+<li>Don't add unescaped quotes inside strings — use <code>\"</code>.</li>
+</ul>
+
+<!-- MIGRATION -->
+<h2>Migrating a v2.x Translation</h2>
+<p>Your strings map 1:1 — content didn't change, only the delivery. Open your translated fork's files next to <code>Strings/English.reds</code>, match each English original to its key, paste your translation into your package. Function names became key suffixes (<code>JOB_LOCAL_FIXER</code> → <code>Kdsp-Job-JOB_LOCAL_FIXER</code>), so most mapping is mechanical.</p>
+
+<!-- CHECKLIST -->
+<h2>Release Checklist</h2>
+<ul class="checklist">
+    <li>Every key copied verbatim from English.reds (no typos, no case changes)</li>
+    <li>All %tokens% present where the English had them</li>
+    <li>Trailing spaces preserved on sentence-chaining strings</li>
+    <li>Dynamic-value strings end where the appended number belongs in your grammar</li>
+    <li>Glitch codes, NC- formats, and glyphs preserved</li>
+    <li>File compiles without errors (check redscript_rCURRENT.log)</li>
+    <li>Tested in-game: civilian, gang member, unique NPC, with your language selected</li>
+    <li>No raw Kdsp-* keys visible in any scan</li>
+    <li>Mod page lists Codeware and KDSP as requirements</li>
+</ul>
+
+<div style="margin-top:50px; padding-top:20px; border-top:1px solid var(--border); font-family:'Share Tech Mono',monospace; font-size:12px; color:var(--text-dim); text-align:center;">
+    KIROSHI DEEP SCAN PROTOCOL v3.0 // TRANSLATION GUIDE // DOCUMENT END
+</div>
+
+</div>
+</body>
+</html>

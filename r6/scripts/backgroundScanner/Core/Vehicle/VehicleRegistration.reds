@@ -13,23 +13,23 @@ public abstract class KdspVehicleRegistration {
         let isNomad = Equals(archetype, "NOMAD");
 
         if isRich {
-            if makeRoll == 0 { result = "Rayfield Aerondight"; }
-            else if makeRoll == 1 { result = "Rayfield Caliburn"; }
+            if makeRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T0"); }
+            else if makeRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T1"); }
             else if makeRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S0"); }
-            else if makeRoll == 3 { result = "Rayfield Guinevere"; }
+            else if makeRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T2"); }
             else if makeRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S1"); }
             else if makeRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S2"); }
-            else if makeRoll == 6 { result = "Herrera Riptide"; }
-            else { result = "Rayfield Excalibur"; }
+            else if makeRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T3"); }
+            else { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T4"); }
         } else if isCorpo {
             if makeRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S3"); }
-            else if makeRoll == 1 { result = "Villefort Alvarado"; }
+            else if makeRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T5"); }
             else if makeRoll == 2 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S4"); }
             else if makeRoll == 3 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S5"); }
             else if makeRoll == 4 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S6"); }
-            else if makeRoll == 5 { result = "Herrera Outlaw"; }
+            else if makeRoll == 5 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T6"); }
             else if makeRoll == 6 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S7"); }
-            else { result = "Villefort Cortes"; }
+            else { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T7"); }
         } else if isNomad {
             if makeRoll == 0 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S8"); }
             else if makeRoll == 1 { result = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S9"); }
@@ -54,7 +54,7 @@ public abstract class KdspVehicleRegistration {
         let plateA = RandRange(seed + 101, 0, 25);
         let plateB = RandRange(seed + 102, 0, 25);
         let plateNum = RandRange(seed + 103, 1000, 9999);
-        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let letters = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T8");
         let plate = StrMid(letters, plateA, 1) + StrMid(letters, plateB, 1) + "-" + IntToString(plateNum);
         result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S21") + plate;
 
