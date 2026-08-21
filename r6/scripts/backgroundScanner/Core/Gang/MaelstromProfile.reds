@@ -6,7 +6,7 @@ public class KdspMaelstromProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "MAELSTROM";
-        profile.gangName = "Maelstrom";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-GangManager-U0");
         profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T0");
         
         // Chrome cult ranks
@@ -47,7 +47,7 @@ public class KdspMaelstromProfile {
         let territories: array<String>;
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-S17"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T14"));
-        ArrayPush(territories, "Totentanz");
+        ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-GangManager-U29"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T15"));
         ArrayPush(territories, GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T16"));
         profile.territory = territories[RandRange(seed + 200, 0, ArraySize(territories) - 1)];
@@ -130,9 +130,9 @@ public class KdspMaelstromProfile {
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T17"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T18"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-V0"); }
         if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T19"); }
-        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T20"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-V1"); }
         return GetLocalizedTextByKey(n"Kdsp-MaelstromProfi-T21");
     }
 }

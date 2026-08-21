@@ -54,7 +54,7 @@ public abstract class KdspVehicleRegistration {
         let plateA = RandRange(seed + 101, 0, 25);
         let plateB = RandRange(seed + 102, 0, 25);
         let plateNum = RandRange(seed + 103, 1000, 9999);
-        let letters = GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-T8");
+        let letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         let plate = StrMid(letters, plateA, 1) + StrMid(letters, plateB, 1) + "-" + IntToString(plateNum);
         result = result + GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S21") + plate;
 

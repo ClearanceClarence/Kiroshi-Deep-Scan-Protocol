@@ -65,11 +65,11 @@ public class KdspNCPDNameGenerator {
     private static func GetRank(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         
-        if roll <= 50 { return "Officer"; }
+        if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-U0"); }
         if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T2"); }
-        if roll <= 88 { return "Sergeant"; }
-        if roll <= 95 { return "Lieutenant"; }
-        if roll <= 98 { return "Captain"; }
+        if roll <= 88 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U4"); }
+        if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
+        if roll <= 98 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U2"); }
         return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T3");
     }
 
@@ -79,7 +79,7 @@ public class KdspNCPDNameGenerator {
         if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T4"); }
         if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T5"); }
         if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T6"); }
-        if roll <= 95 { return "Commander"; }
+        if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-U0"); }
         return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T7");
     }
 
@@ -121,7 +121,7 @@ public class KdspNCPDNameGenerator {
         let prefix = "";
         let roll = RandRange(seed, 1, 100);
         
-        if roll <= 30 { prefix = "NC-"; }
+        if roll <= 30 { prefix = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-U1"); }
         else { if roll <= 60 { prefix = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T24"); }
         else { if roll <= 80 { prefix = GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T25"); }
         else { prefix = ""; }}}
@@ -164,7 +164,7 @@ public class KdspNCPDNameGenerator {
         let roll = RandRange(seed, 1, 100);
         
         if roll <= 85 { return "ACTIVE"; }
-        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T37"); }
+        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-V0"); }
         if roll <= 96 { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T38"); }
         return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T39");
     }

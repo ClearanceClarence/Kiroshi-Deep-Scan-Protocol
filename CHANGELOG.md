@@ -4,6 +4,32 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 
 ---
 
+## [3.0.3]
+
+- NEW TRANSLATION ARCHITECTURE: drop-in language stubs — Strings/ ships an empty, pre-registered package file for all 16 remaining game languages (German.reds, Polish.reds, Russian.reds, ...); a translation is that file filled in, installed by replacing the stub
+- The companion-provider pattern from the 3.0 guide is retired — community testing showed the base mod's English fallback wins the key conflict against external providers (thanks to our German translator for the report and the first working German file)
+- Translators never edit the provider — every game language is pre-registered in Strings/LocalizationProvider.reds
+- French test translation expanded to 414 keys covering every subsystem: all UI headers, loading lines and BOLO notices, Takemura's full entry in both quest states, connection contexts, shared comparison keys, pronoun values, caps display statuses, and 100 generic scan fragments (criminal, medical, psych, financial, cyberware, NET, relationships, gang, database labels)
+- French file demonstrates two translator patterns in practice: dropping a %token% the target grammar doesn't need (French possessives agree with the noun) and preserving reserved terms verbatim inside translated sentences (Black Lace, corp names, dynamic-value endings)
+- Both translation guides rewritten for the stub workflow with a German walkthrough example
+- Scanner footer: v3.0.3
+
+---
+
+## [3.0.2]
+
+- Second localization completion pass — per-literal context classification replaces the line-level heuristics: 553 additional keys covering NCPD role titles, remaining ranks, ternary-assigned display values, and display strings that shared a line with comparison logic
+- Fixed 5 internal comparisons testing localized values against English literals — rank thresholds and status checks now resolve through the same keys as their producers
+- Fixed 8 UI and logic checks matching English fragments inside localized content (NET profile tint, enemies highlight, cross-reference tint, stolen-vehicle highlight, severe-debt detection, marriage coherence) — all now compare against localized key values
+- Total localized strings: 11,427 (net of the completion pass and the identifier cleanup)
+- Remaining literals verified as external game-data comparisons, internal machine codes, or name pools — each documented in the translation guide
+- Fixed 4 case-sensitivity bugs where lowercased content was compared against mixed-case key values (substance coherence checks) — key lookups in lowered comparisons are now case-normalized
+- Keyed the fight-record "L" suffix that paired with the already-keyed "W-" 
+- New "Reserved terms" section in both translation guides — the verbatim-preserve list (machine values, street drug names, detection-matched proper nouns) is now explicit
+- Removed 640 identifier keys from the translation surface — ALL_CAPS classification codes, status enums, internal constants, TweakDB record-id fragments (logan_garcia, brick, taki_kenmochi...), and internal state tokens are back to literals; identifiers are not text. The gendered pronoun replacement values remain translatable, and 180 standalone caps display statuses (CLASSIFIED, KNOWN, DISPUTED, BLACKLISTED, ...) were re-keyed — display words in caps are text, only enums and codes are identifiers
+
+---
+
 ## [3.0.1]
 
 - Completed the localization conversion — 3,415 additional display strings keyed that the 3.0 pass missed: callsigns, military and gang ranks, MOS specializations, combat roles, loyalty ratings, assigned sectors, and every other short-form display value flagged by the community
@@ -13,7 +39,7 @@ All notable changes to **Kiroshi Deep Scan Protocol** are documented here.
 - Internal code values that map to display text elsewhere (DESERTER, CRIMINAL_PAST, single-token status enums, district identifiers) intentionally remain literal — they are logic, not display
 - Fixed role labels leaking into name generation — "Street Vendor" and similar crowd job titles no longer become family surnames ("Vendor") or get stored as person names in the Connection tracker; a role-label detector covers 60+ crowd professions
 - Fixed six comparisons against game-provided display names that the localization pass had key-wrapped — vanilla-name detection (gang names, etc.) is back to literals and no longer depends on translation choices
-- Shipped a partial French translation (259 keys: UI section headers, all scanner loading lines, all BOLO notices) as a built-in test of the localization pipeline and a live example for translators — French players get a mixed-language scanner with English fallback for the rest
+- Shipped a partial French translation as a built-in test of the localization pipeline and a live example for translators — French players get a mixed-language scanner with English fallback for the rest
 - Fixed four BOLO notices with untranslatable hardcoded English tails after their dynamic values — the tails are now keyed (Kdsp-Bolo-16b/17b/50b/66b)
 - Thanks to MrFlashMode for the localization report and rpierrecollado for the vendor-name report
 

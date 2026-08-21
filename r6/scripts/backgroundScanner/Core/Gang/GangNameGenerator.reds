@@ -222,7 +222,7 @@ public class KdspGangNameGenerator {
         if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T89"); }
         if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T90"); }
         if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T91"); }
-        if roll == 5 { return "Gorilla"; }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U13"); }
         if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T92"); }
         if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T93"); }
         if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T94"); }
@@ -238,7 +238,7 @@ public class KdspGangNameGenerator {
         if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T103"); }
         if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T104"); }
         if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T105"); }
-        if roll == 21 { return "Apex"; }
+        if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U1"); }
         if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T106"); }
         if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T107"); }
         if roll == 24 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T108"); }
@@ -246,7 +246,7 @@ public class KdspGangNameGenerator {
         if roll == 26 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T110"); }
         if roll == 27 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T11"); }
         if roll == 28 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T111"); }
-        return "Beast";
+        return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-U1");
     }
 
     // === 6TH STREET — Military callsigns ===
@@ -477,7 +477,7 @@ public class KdspGangNameGenerator {
         if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T284"); }
         if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T285"); }
         if roll == 14 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T79"); }
-        if roll == 15 { return "Wraith"; }
+        if roll == 15 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U0"); }
         if roll == 16 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T286"); }
         if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T287"); }
         if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T288"); }

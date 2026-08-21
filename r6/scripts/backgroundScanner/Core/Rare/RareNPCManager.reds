@@ -405,7 +405,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateSleeperAgent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S0");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         
         let agencies: array<String>;
         ArrayPush(agencies, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T0"));
@@ -418,7 +418,7 @@ public class KdspRareNPCManager {
         data.secretAffiliation = agencies[RandRange(seed, 0, ArraySize(agencies) - 1)];
         
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S2") + (RandRange(seed + 10, 1, 100) <= 30 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T5")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S2") + (RandRange(seed + 10, 1, 100) <= 30 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V0")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S3");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S4");
 
@@ -445,7 +445,7 @@ public class KdspRareNPCManager {
 
     private static func GeneratePreCyberpsycho(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S8");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
 
         let stage = RandRange(seed, 1, 5);
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T14");
@@ -488,19 +488,19 @@ public class KdspRareNPCManager {
         let connections: array<String>;
         let details: array<String>;
 
-        ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T20"));
+        ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V1"));
         ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S23"));
         
         ArrayPush(connections, "ARASAKA");
         ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S24"));
         
-        ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T21"));
+        ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V2"));
         ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S25"));
         
-        ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T22"));
+        ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V3"));
         ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S26"));
         
-        ArrayPush(connections, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T23"));
+        ArrayPush(connections, "ALT_CUNNINGHAM");
         ArrayPush(details, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S27"));
 
         let index = RandRange(seed, 0, ArraySize(connections) - 1);
@@ -508,7 +508,7 @@ public class KdspRareNPCManager {
         data.description = details[index];
         
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S28");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S29") + (RandRange(seed + 10, 1, 100) <= 50 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T25")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S29") + (RandRange(seed + 10, 1, 100) <= 50 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V4")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S30") + (RandRange(seed + 20, 1, 100) <= 30 ? "LIKELY" : "UNKNOWN");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T26");
@@ -519,7 +519,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateTimeAnomaly(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S31");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
 
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T29");
 
@@ -553,7 +553,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateGhost(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S45");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T35");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V6");
 
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T36");
 
@@ -576,14 +576,14 @@ public class KdspRareNPCManager {
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S59");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T37");
-        data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T38");
+        data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V7");
 
         return data;
     }
 
     private static func GenerateWitness(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S60");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T1");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V0");
 
         let cases: array<String>;
         ArrayPush(cases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S61"));
@@ -612,7 +612,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateHunted(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S75");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
 
         let hunters: array<String>;
         ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S76"));
@@ -622,7 +622,7 @@ public class KdspRareNPCManager {
         ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S79"));
         ArrayPush(hunters, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S80"));
 
-        data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T43");
+        data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V8");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S81");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S82") + hunters[RandRange(seed, 0, ArraySize(hunters) - 1)] + ". ";
@@ -638,7 +638,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S89") + reasons[RandRange(seed + 30, 0, ArraySize(reasons) - 1)] + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S90") + IntToString(RandRange(seed + 40, 2, 8)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S91") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T45") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T44"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S91") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V11") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V10"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T45");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T46");
@@ -648,19 +648,19 @@ public class KdspRareNPCManager {
 
     private static func GenerateAIContact(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S92");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
 
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T47");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S93");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S94") + (RandRange(seed, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T48") : "UNKNOWN") + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S95") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T12") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T40")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S94") + (RandRange(seed, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V9") : "UNKNOWN") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S95") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V3") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V9")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S96");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S97");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S98");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S99");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S100") + (RandRange(seed + 20, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T49") : GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T55"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S100") + (RandRange(seed + 20, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V10") : GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T55"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T50");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T51");
@@ -670,11 +670,11 @@ public class KdspRareNPCManager {
 
     private static func GenerateWhistleblower(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S101");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
 
         let corps: array<String>;
-        ArrayPush(corps, "Arasaka");
-        ArrayPush(corps, "Militech");
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-Corpo-ARASAKA"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-Corpo-MILITECH"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-Corpo-BIOTECHNICA"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-Corpo-KANG_TAO"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-Corpo-ZETATECH"));
@@ -684,7 +684,7 @@ public class KdspRareNPCManager {
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T53") + corp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T54");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S102") + corp + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S103") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T34") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T55")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S103") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-FinancialProfi-V3") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V11")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S104") + KdspRareNPCManager.GetLeakedData(seed + 20) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S105");
 
@@ -724,29 +724,29 @@ public class KdspRareNPCManager {
 
     private static func GenerateHiddenNetrunner(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S116");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
 
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T65");
 
         let aliases: array<String>;
-        ArrayPush(aliases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T66"));
-        ArrayPush(aliases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T67"));
+        ArrayPush(aliases, "zer0c00l");
+        ArrayPush(aliases, "gh0st_in_machine");
         ArrayPush(aliases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T68"));
-        ArrayPush(aliases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T69"));
-        ArrayPush(aliases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T70"));
-        ArrayPush(aliases, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T71"));
+        ArrayPush(aliases, "datakrash");
+        ArrayPush(aliases, "neural_nomad");
+        ArrayPush(aliases, "cipher_punk");
 
         let alias = aliases[RandRange(seed, 0, ArraySize(aliases) - 1)];
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S117") + alias + "'. ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S118") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T72") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T73")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S118") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V12") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V13")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S119");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S120") + IntToString(RandRange(seed + 20, 50000, 500000)) + ".";
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S121") + IntToString(RandRange(seed + 30, 1, 30)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S122");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S123") + IntToString(RandRange(seed + 40, 1, 100)) + "%. ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S124");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S125") + (RandRange(seed + 50, 1, 100) <= 40 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T74"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S125") + (RandRange(seed + 50, 1, 100) <= 40 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V14"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T75");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T76");
@@ -760,7 +760,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateUndercoverCop(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S126");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T1");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V0");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T77");
 
         let units: array<String>;
@@ -775,7 +775,7 @@ public class KdspRareNPCManager {
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S129") + unit + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S130") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S131");
-        data.description += "WARNING: Blowing cover could result in officer death and case collapse.";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-U90");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S132");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S133") + KdspRareNPCManager.GetUndercoverTarget(seed + 20);
@@ -843,20 +843,20 @@ public class KdspRareNPCManager {
 
     private static func GenerateCloneSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S150");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T90");
 
         let generation = RandRange(seed, 2, 7);
-        let original = RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T91") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T92");
+        let original = RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V15") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V16");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S151") + IntToString(generation) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S152");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S153") + original + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S154");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S155") + (RandRange(seed + 20, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T93") : GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T196")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S155") + (RandRange(seed + 20, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V17") : GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V7")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S156");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S157") + IntToString(RandRange(seed + 30, 1, 50)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S158") + IntToString(RandRange(seed + 40, 0, 5)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S159") + IntToString(RandRange(seed + 50, 0, 30)) + "%. ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S160") + (RandRange(seed + 60, 1, 100) <= 50 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T94"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S160") + (RandRange(seed + 60, 1, 100) <= 50 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V18"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T95");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T96");
@@ -866,7 +866,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateMaxtacTarget(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S161");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T97");
 
         let priority = RandRange(seed, 1, 5);
@@ -875,7 +875,7 @@ public class KdspRareNPCManager {
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S162") + IntToString(priority) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S163");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S164") + reason + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S165") + (priority <= 2 ? GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T117") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T98")) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S166") + (priority <= 2 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T99") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T100")) + ".";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S166") + (priority <= 2 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V19") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V20")) + ".";
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S167") + IntToString(RandRange(seed + 20, 0, 3)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S168") + IntToString(RandRange(seed + 30, 0, 5)) + ". ";
@@ -899,7 +899,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateWitnessProtection(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S173");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T1");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V0");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T106");
 
         let witnessed = KdspRareNPCManager.GetWitnessedEvent(seed);
@@ -932,11 +932,11 @@ public class KdspRareNPCManager {
 
     private static func GenerateEngramCandidate(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S185");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T111");
 
         let compatibility = IntToString(RandRange(seed, 85, 99));
-        let status = RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T112") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T113");
+        let status = RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V21") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V22");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S186");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S187") + compatibility + "%. ";
@@ -945,7 +945,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S190") + IntToString(RandRange(seed + 20, 1000000, 10000000)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S191");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S192") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T114") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T40"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S192") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V23") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V9"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T115");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T116");
@@ -955,15 +955,15 @@ public class KdspRareNPCManager {
 
     private static func GenerateCorpoDefector(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S193");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
 
         let corps: array<String>;
         ArrayPush(corps, "ARASAKA");
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T273"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V6"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T281"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T282"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T285"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T283"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V7"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V9"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V8"));
 
         let fromCorp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
         let toCorp = corps[RandRange(seed + 10, 0, ArraySize(corps) - 1)];
@@ -971,9 +971,9 @@ public class KdspRareNPCManager {
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T117") + fromCorp;
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S194") + fromCorp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S195") + toCorp + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S196") + (RandRange(seed + 20, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T114") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T40")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S196") + (RandRange(seed + 20, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V23") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V9")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S197") + fromCorp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T118");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S198") + toCorp + ": " + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T114") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T119"));
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S198") + toCorp + ": " + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V23") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V24"));
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S199") + KdspRareNPCManager.GetCorpoPosition(seed + 40) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S200") + IntToString(RandRange(seed + 50, 10000000, 100000000)) + ". ";
@@ -987,7 +987,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateGangInfiltrator(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S202");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
 
         let gangs: array<String>;
         ArrayPush(gangs, "MAELSTROM");
@@ -1019,8 +1019,8 @@ public class KdspRareNPCManager {
 
     private static func GetGangPosition(seed: Int32) -> String {
         let i = RandRange(seed, 0, 4);
-        if i == 0 { return "Lieutenant"; }
-        if i == 1 { return "Enforcer"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-U2"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T127"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T128"); }
         return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T129");
@@ -1028,7 +1028,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateTraumaTeamMarked(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S212");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T130");
 
         let reason = KdspRareNPCManager.GetTraumaReason(seed);
@@ -1059,7 +1059,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateFixerAsset(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S224");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T70");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V16");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T133");
 
         let role = KdspRareNPCManager.GetFixerRole(seed);
@@ -1104,7 +1104,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateBlackmailVictim(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S233");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T149");
 
         let secret = KdspRareNPCManager.GetBlackmailSecret(seed);
@@ -1117,10 +1117,10 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S238") + IntToString(RandRange(seed + 20, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S239") + IntToString(RandRange(seed + 30, 50000, 500000)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S240") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T34") : "HIGH");
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S240") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-FinancialProfi-V3") : "HIGH");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T150");
-        data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T26");
+        data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V1");
 
         return data;
     }
@@ -1140,13 +1140,13 @@ public class KdspRareNPCManager {
         if i == 0 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T153"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T154"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T155"); }
-        if i == 3 { return "Netrunner"; }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-GangManager-U28"); }
         return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T156");
     }
 
     private static func GenerateMilitaryAwol(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S245");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
 
         let branches: array<String>;
         ArrayPush(branches, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T157"));
@@ -1163,7 +1163,7 @@ public class KdspRareNPCManager {
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S246") + branch + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S247") + rank + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S248") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S250") + (RandRange(seed + 30, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T99") : GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T48")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S250") + (RandRange(seed + 30, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V19") : GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V1")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S251");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S252");
@@ -1180,15 +1180,15 @@ public class KdspRareNPCManager {
         let i = RandRange(seed, 0, 5);
         if i == 0 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T22"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T23"); }
-        if i == 2 { return "Sergeant"; }
-        if i == 3 { return "Lieutenant"; }
-        if i == 4 { return "Captain"; }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U4"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U2"); }
         return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S254");
     }
 
     private static func GenerateExperimentalSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S255");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
 
         let experiments: array<String>;
         ArrayPush(experiments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T167"));
@@ -1199,17 +1199,17 @@ public class KdspRareNPCManager {
         ArrayPush(experiments, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T171"));
 
         let experiment = experiments[RandRange(seed, 0, ArraySize(experiments) - 1)];
-        let corp = RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T282") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T172");
+        let corp = RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V7") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T172");
         data.secretAffiliation = corp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T173");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S257") + experiment + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S258");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S259") + IntToString(RandRange(seed + 20, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S260");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S261") + (RandRange(seed + 30, 1, 100) <= 50 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T44"));
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S261") + (RandRange(seed + 30, 1, 100) <= 50 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V10"));
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S262") + IntToString(RandRange(seed + 40, 100, 999)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S263") + IntToString(RandRange(seed + 50, 1, 5)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S264") + IntToString(RandRange(seed + 60, 1, 8)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S265") + (RandRange(seed + 70, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T174") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T175"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S265") + (RandRange(seed + 70, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V25") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V26"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T176");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T177");
@@ -1219,7 +1219,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDebtCollection(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S266");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T178");
 
         let creditor = KdspRareNPCManager.GetCreditor(seed);
@@ -1227,8 +1227,8 @@ public class KdspRareNPCManager {
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S267") + amount + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S268") + creditor + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S269");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S270") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T179") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T180")) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S271") + (RandRange(seed + 30, 1, 100) <= 30 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T25"));
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S270") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T179") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V27")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S271") + (RandRange(seed + 30, 1, 100) <= 30 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V4"));
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S272") + IntToString(RandRange(seed + 40, 10000, 500000)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S273");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S274") + IntToString(RandRange(seed + 50, 1, 10)) + ". ";
@@ -1252,7 +1252,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateOrganMarked(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S278");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T186");
 
         let organs: array<String>;
@@ -1267,7 +1267,7 @@ public class KdspRareNPCManager {
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S282") + organ + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S283") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T189") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T190")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S284") + IntToString(RandRange(seed + 20, 50000, 500000)) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T112") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T113"));
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V21") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V22"));
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S285") + IntToString(RandRange(seed + 40, 0, 3)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S286") + IntToString(RandRange(seed + 50, 1, 3)) + ". ";
@@ -1290,7 +1290,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateCultEscapee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S289");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
 
         let cults: array<String>;
         ArrayPush(cults, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S290"));
@@ -1305,12 +1305,12 @@ public class KdspRareNPCManager {
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S294") + cult + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S295") + IntToString(RandRange(seed + 10, 2, 15)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S296") + (RandRange(seed + 20, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T27") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T200")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S296") + (RandRange(seed + 20, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T27") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V28")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S297");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S298");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S299") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T196") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T93")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S300") + (RandRange(seed + 40, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T114") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T40"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S299") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V7") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V17")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S300") + (RandRange(seed + 40, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V23") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V9"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T201");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T202");
@@ -1320,19 +1320,19 @@ public class KdspRareNPCManager {
 
     private static func GenerateRelicCompatible(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S301");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T203");
 
         let compatibility = IntToString(RandRange(seed, 90, 99));
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S302") + compatibility + "%). ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S303");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 10, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T112") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T113")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 10, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V21") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V22")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S304");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S305");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S306") + IntToString(RandRange(seed + 20, 50000000, 200000000)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S307") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T89") : GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T90"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S307") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V3") : GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V4"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T204");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T205");
@@ -1342,7 +1342,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDataCourier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S308");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T70");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V16");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T206");
 
         let dataType = KdspRareNPCManager.GetCourierData(seed);
@@ -1384,7 +1384,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDoubleAgent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S317");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
 
         let org1 = KdspRareNPCManager.GetAgentOrg(seed);
         let org2 = KdspRareNPCManager.GetAgentOrg(seed + 10);
@@ -1408,7 +1408,7 @@ public class KdspRareNPCManager {
     private static func GetAgentOrg(seed: Int32) -> String {
         let i = RandRange(seed, 0, 7);
         if i == 0 { return "ARASAKA"; }
-        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T273"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V6"); }
         if i == 2 { return "NETWATCH"; }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T222"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T223"); }
@@ -1419,14 +1419,14 @@ public class KdspRareNPCManager {
 
     private static func GenerateNomadExile(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S326");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
 
         let clans: array<String>;
         ArrayPush(clans, "ALDECALDOS");
         ArrayPush(clans, "WRAITHS");
-        ArrayPush(clans, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T226"));
+        ArrayPush(clans, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V29"));
         ArrayPush(clans, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T227"));
-        ArrayPush(clans, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T228"));
+        ArrayPush(clans, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V30"));
 
         let clan = clans[RandRange(seed, 0, ArraySize(clans) - 1)];
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T229") + clan;
@@ -1464,7 +1464,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateBraindanceAddict(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S339");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T14");
 
         let hours = IntToString(RandRange(seed, 14, 22));
@@ -1484,7 +1484,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S349");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S350") + IntToString(RandRange(seed + 30, 3, 12)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S351");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S352") + (RandRange(seed + 40, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T55") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T44")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S352") + (RandRange(seed + 40, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V11") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V10")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S353");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T236");
@@ -1495,13 +1495,13 @@ public class KdspRareNPCManager {
 
     private static func GenerateNightCorpSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S354");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T238");
 
         let phase = RandRange(seed, 1, 4);
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S355");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S356") + IntToString(phase) + "/4. ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S357") + (phase >= 3 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T73") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T239")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S357") + (phase >= 3 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V13") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V31")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S358");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S359") + IntToString(RandRange(seed + 10, 2070, 2076)) + ". ";
@@ -1516,11 +1516,11 @@ public class KdspRareNPCManager {
 
     private static func GenerateDollChipSleeper(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S362");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T242");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S363");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S364") + (RandRange(seed, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T243") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T5")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S364") + (RandRange(seed, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T243") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V0")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S365") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T244") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T245")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S366");
 
@@ -1536,7 +1536,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateSoulkillerSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S370");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T111");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S371");
@@ -1556,7 +1556,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateBlackwallTouched(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S378");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T252");
 
         let effects: array<String>;
@@ -1586,12 +1586,12 @@ public class KdspRareNPCManager {
 
     private static func GenerateSignalCarrier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S394");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T70");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V16");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T254");
 
         let freq = IntToString(RandRange(seed, 100, 999));
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S395") + freq + "." + IntToString(RandRange(seed + 5, 10, 99)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S396");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S397") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T255") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T256")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S397") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V32") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T256")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S398");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S399");
 
@@ -1607,7 +1607,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateMemoryWiped(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S404");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T259");
 
         let years = IntToString(RandRange(seed, 2, 20));
@@ -1637,7 +1637,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateIdentityStolen(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S419");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T265");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S420");
@@ -1667,12 +1667,12 @@ public class KdspRareNPCManager {
 
     private static func GenerateMissingPerson(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S435");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T271");
 
         let years = IntToString(RandRange(seed, 1, 20));
-        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S436") + (RandRange(seed + 5, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Classification") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T272")) + " " + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
-        data.description += "Official case status: CLOSED. ";
+        data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S436") + (RandRange(seed + 5, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V33") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V34")) + " " + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-U91");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S437") + IntToString(RandRange(seed + 10, 92, 99)) + "%. ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S438");
 
@@ -1698,7 +1698,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateActiveBounty(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S445");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
 
         let amount = IntToString(RandRange(seed, 50000, 5000000));
         let posters: array<String>;
@@ -1718,7 +1718,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S451") + IntToString(RandRange(seed + 40, 1, 36)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S452");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S453") + IntToString(RandRange(seed + 50, 0, 4)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 60, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S454") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T113"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 60, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S454") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V22"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T284");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T285");
@@ -1728,16 +1728,16 @@ public class KdspRareNPCManager {
 
     private static func GenerateUnregisteredChrome(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S455");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T286");
 
         let loadPct = IntToString(RandRange(seed, 65, 95));
         let milGrade = RandRange(seed + 10, 1, 100) <= 40;
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S456") + loadPct + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S457");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S458") + (milGrade ? GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T12") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T287")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S458") + (milGrade ? GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V3") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T287")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S459");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S460") + (milGrade ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T288") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T289")) + ".";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S460") + (milGrade ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V35") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V36")) + ".";
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S461") + IntToString(RandRange(seed + 20, 500000, 5000000)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S462") + (RandRange(seed + 30, 1, 100) <= 50 ? "ELEVATED" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S463")) + ". ";
@@ -1751,7 +1751,7 @@ public class KdspRareNPCManager {
 
     private static func GeneratePoliticalDissident(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S466");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
 
         let causes: array<String>;
         ArrayPush(causes, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T293"));
@@ -1765,13 +1765,13 @@ public class KdspRareNPCManager {
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T295");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S471") + cause + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S472") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T296") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T297")) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S473") + (RandRange(seed + 20, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T298") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T299")) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S474") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T114") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T40"));
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S472") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V37") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V38")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S473") + (RandRange(seed + 20, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T298") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V39")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S474") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V23") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V9"));
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S475") + IntToString(RandRange(seed + 40, 2068, 2076)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S476") + IntToString(RandRange(seed + 50, 5, 50)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S477") + (RandRange(seed + 60, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T300") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T301"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S477") + (RandRange(seed + 60, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V40") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T301"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T302");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T303");
@@ -1781,19 +1781,19 @@ public class KdspRareNPCManager {
 
     private static func GenerateNeuralDivergent(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S478");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T304");
 
         let resistance = IntToString(RandRange(seed, 85, 99));
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S479");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S480") + resistance + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S481");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S482") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T305") : "UNKNOWN") + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S482") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V41") : "UNKNOWN") + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S483");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S484");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S485");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S486") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T112") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T113"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S486") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V21") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V22"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T306");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T307");
@@ -1803,18 +1803,18 @@ public class KdspRareNPCManager {
 
     private static func GenerateSyntheticSleeper(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S487");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T90");
 
         let synthPct = IntToString(RandRange(seed, 30, 80));
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S488") + synthPct + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S489");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S490");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 10, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T112") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T113")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 10, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V21") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V22")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S491") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S492") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T308")) + ".";
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S493") + IntToString(RandRange(seed + 30, 5, 25)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S494") + (RandRange(seed + 40, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T309") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T310")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S494") + (RandRange(seed + 40, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V42") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V43")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S495") + IntToString(RandRange(seed + 50, 1, 15)) + "%";
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T311");
@@ -1825,7 +1825,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateBuriedPast(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S496");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T313");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S497") + IntToString(RandRange(seed, 2065, 2075)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S498");
@@ -1834,7 +1834,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S503") + IntToString(RandRange(seed + 20, 1000000, 10000000)) + ".";
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S504") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S505") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S506")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S507") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S508") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T314")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S507") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S508") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V44")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S509");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T315");
@@ -1862,7 +1862,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S518") + IntToString(RandRange(seed + 20, 50, 500)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S519");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S520");
 
-        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S521") + (RandRange(seed + 30, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T318") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T319")) + ". ";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S521") + (RandRange(seed + 30, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T318") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V45")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S522") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S523") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S524")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S525");
 
@@ -1874,7 +1874,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateArasakaBloodline(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S526");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T322");
 
         let relation = RandRange(seed, 1, 100);
@@ -1886,12 +1886,12 @@ public class KdspRareNPCManager {
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S531") + relationType + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S532");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S533") + (RandRange(seed + 10, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T323") : "UNKNOWN") + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S534") + (RandRange(seed + 20, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T324") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T325")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S534") + (RandRange(seed + 20, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V46") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V47")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S535");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S536") + IntToString(RandRange(seed + 30, 94, 99)) + "%. ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S537");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S538") + (RandRange(seed + 40, 1, 100) <= 60 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T44"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S538") + (RandRange(seed + 40, 1, 100) <= 60 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V10"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T326");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T327");
@@ -1901,7 +1901,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateBioplagueCarrier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S539");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T328");
 
         let agents: array<String>;
@@ -1916,10 +1916,10 @@ public class KdspRareNPCManager {
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S544") + agent + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S545") + (RandRange(seed + 10, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T330") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S546")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S491") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S547") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S548")) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S549") + (RandRange(seed + 30, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T331") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T332")) + ".";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S549") + (RandRange(seed + 30, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V48") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T332")) + ".";
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S550") + IntToString(RandRange(seed + 40, 1, 10)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S551") + (RandRange(seed + 50, 1, 100) <= 30 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T45")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S551") + (RandRange(seed + 50, 1, 100) <= 30 ? "HIGH" : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V11")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S552");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T333");
@@ -1930,7 +1930,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateReaperContract(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S553");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T335");
 
         let timeframe = RandRange(seed, 1, 30);
@@ -1949,7 +1949,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S562");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S563") + IntToString(RandRange(seed + 20, 100000, 2000000)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S564") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T336") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T337") + IntToString(RandRange(seed + 35, 2, 4))) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S564") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V49") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T337") + IntToString(RandRange(seed + 35, 2, 4))) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S565") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T338") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T339"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T340") + IntToString(timeframe) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T341");
@@ -1960,7 +1960,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDelaminGlitch(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S566");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T343");
 
         let fragments: array<String>;
@@ -1990,7 +1990,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateImplantBomb(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S581");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T347");
 
         let yield = RandRange(seed, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S582") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T348") + IntToString(RandRange(seed + 5, 5, 20)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S583");
@@ -2018,14 +2018,14 @@ public class KdspRareNPCManager {
 
     private static func GenerateNCPDInformant(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S595");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T1");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V0");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T353");
 
         let gangs: array<String>;
-        ArrayPush(gangs, "Maelstrom");
+        ArrayPush(gangs, GetLocalizedTextByKey(n"Kdsp-GangManager-U0"));
         ArrayPush(gangs, GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"));
         ArrayPush(gangs, GetLocalizedTextByKey(n"Kdsp-Shared-C33"));
-        ArrayPush(gangs, "Valentinos");
+        ArrayPush(gangs, GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U11"));
         ArrayPush(gangs, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T354"));
         ArrayPush(gangs, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T355"));
 
@@ -2038,7 +2038,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S600") + IntToString(RandRange(seed + 30, 2069, 2076)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S601") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S602") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T359")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S603") + (RandRange(seed + 50, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S604") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T360"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S603") + (RandRange(seed + 50, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S604") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V50"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T361");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T362");
@@ -2048,7 +2048,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateTechnoNecro(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S605");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T363");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S606");
@@ -2078,7 +2078,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateRadiationExposure(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S622");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T366");
 
         let exposure = RandRange(seed, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S623") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S624");
@@ -2095,8 +2095,8 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S632") + IntToString(RandRange(seed + 20, 1, 8)) + ".";
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S633") + IntToString(RandRange(seed + 30, 2, 20)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S249");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S634") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T367") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T368")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S635") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S636") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T45"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S634") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T367") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V51")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S635") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S636") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V11"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T369");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T370");
@@ -2106,12 +2106,12 @@ public class KdspRareNPCManager {
 
     private static func GenerateAIPuppet(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S637");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T371");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S638");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S639") + (RandRange(seed, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S640") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S641")) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S642") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T372") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T373")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S642") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T372") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V52")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S643") + IntToString(RandRange(seed + 20, 60, 95)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S644");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S645") + IntToString(RandRange(seed + 30, 1, 5)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S646");
@@ -2126,7 +2126,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateBlackIceSurvivor(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S650");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T376");
 
         let iceTypes: array<String>;
@@ -2155,7 +2155,7 @@ public class KdspRareNPCManager {
 
     private static func GeneratePersonalityFragment(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S665");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T380");
 
         let sources: array<String>;
@@ -2184,7 +2184,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateCorpoAssetFrozen(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S684");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
 
         let corps: array<String>;
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T382"));
@@ -2213,7 +2213,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDreamtechVictim(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S694");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T391");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S695");
@@ -2233,7 +2233,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateContaminatedScop(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S707");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T394");
 
         let contaminants: array<String>;
@@ -2252,7 +2252,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S717") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T396") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T397")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S718") + (RandRange(seed + 40, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S719") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S720")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S721") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S722") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T398"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S721") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S722") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V53"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T399");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T400");
@@ -2269,11 +2269,11 @@ public class KdspRareNPCManager {
         data.flagColor = "GOLD";
 
         let corps: array<String>;
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T285"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V9"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T281"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T283"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V8"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T401"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T282"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V7"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T402"));
 
         let corp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
@@ -2306,7 +2306,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateFlatlineRevived(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S740");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T404");
 
         let duration = IntToString(RandRange(seed, 2, 45));
@@ -2318,7 +2318,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S750") + IntToString(RandRange(seed + 30, 2068, 2076)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S751");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S752") + (RandRange(seed + 40, 1, 100) <= 50 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T405"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S752") + (RandRange(seed + 40, 1, 100) <= 50 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V54"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T406");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T407");
@@ -2328,7 +2328,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateIllegalBDProducer(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S753");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T408");
 
         let genres: array<String>;
@@ -2342,12 +2342,12 @@ public class KdspRareNPCManager {
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S756") + genre + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S757") + IntToString(RandRange(seed + 10, 10, 200)) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S758") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T412") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T413")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S758") + (RandRange(seed + 20, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V55") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T413")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S759") + IntToString(RandRange(seed + 30, 500000, 10000000)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T414");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S760") + (RandRange(seed + 40, 1, 100) <= 40 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S761")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S762") + IntToString(RandRange(seed + 50, 5, 50)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S763") + (RandRange(seed + 60, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T99") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T300"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S763") + (RandRange(seed + 60, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V19") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V40"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T415");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T416");
@@ -2357,7 +2357,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDeepFakeIdentity(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S764");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T417");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S765");
@@ -2389,7 +2389,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S784") + IntToString(RandRange(seed + 30, 5, 35)) + "%. ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S785") + (RandRange(seed + 40, 1, 100) <= 80 ? "ACTIVE" : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S786")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S787") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T99") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S788"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S787") + (RandRange(seed + 50, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V19") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S788"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T422");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T423");
@@ -2399,7 +2399,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDragonCourier(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S789");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T70");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V16");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T424");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S790");
@@ -2429,11 +2429,11 @@ public class KdspRareNPCManager {
 
     private static func GeneratePeralezProtocol(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S804");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T430");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S805");
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S806") + (RandRange(seed, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T114") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T40")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S806") + (RandRange(seed, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V23") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V9")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S807");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S808");
 
@@ -2449,7 +2449,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateImmuneAnomaly(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S813");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T433");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S814");
@@ -2459,7 +2459,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S819") + IntToString(RandRange(seed + 20, 10000000, 50000000)) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S820");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 30, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S821") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T113"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S188") + (RandRange(seed + 30, 1, 100) <= 20 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S821") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V22"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T435");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T436");
@@ -2469,7 +2469,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateGhostInMachine(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S822");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T437");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S823") + IntToString(RandRange(seed, 2072, 2076)) + ". ";
@@ -2489,14 +2489,14 @@ public class KdspRareNPCManager {
 
     private static func GenerateIndenturedCorpo(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S833");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
 
         let corps: array<String>;
         ArrayPush(corps, "ARASAKA");
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T273"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T282"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V6"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V7"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T281"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T285"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V9"));
 
         let corp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
         data.secretAffiliation = corp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T440");
@@ -2510,7 +2510,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S837");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S838") + IntToString(RandRange(seed + 30, 0, 3)) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S839") + (RandRange(seed + 40, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T175") : GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T259"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S839") + (RandRange(seed + 40, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V26") : GetLocalizedTextByKey(n"Kdsp-FinancialProfi-V22"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T441");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T442");
@@ -2520,7 +2520,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateScorpFarmerRefugee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S840");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T443");
 
         let regions: array<String>;
@@ -2537,7 +2537,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S848") + (RandRange(seed + 10, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S849") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T444")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S850") + IntToString(RandRange(seed + 20, 1, 8)) + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S851");
 
-        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S852") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T445") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T446")) + ". ";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S852") + (RandRange(seed + 30, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V56") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V57")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S853");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S854");
 
@@ -2549,7 +2549,7 @@ public class KdspRareNPCManager {
 
     private static func GeneratePrecogSubject(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S855");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T449");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S856");
@@ -2569,7 +2569,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateSmugglerTunnel(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S867");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T70");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V16");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T452");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S868");
@@ -2599,7 +2599,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateArasakaEngramEcho(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S881");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T455");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S882");
@@ -2608,7 +2608,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S884");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S885");
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S886") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T456") : "STABLE") + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S886") + (RandRange(seed + 10, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V58") : "STABLE") + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S887");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T457");
@@ -2648,13 +2648,13 @@ public class KdspRareNPCManager {
 
     private static func GenerateCorpoInternTrapped(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S904");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
 
         let corps: array<String>;
         ArrayPush(corps, "ARASAKA");
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T273"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V6"));
         ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T463"));
-        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T282"));
+        ArrayPush(corps, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V7"));
 
         let corp = corps[RandRange(seed, 0, ArraySize(corps) - 1)];
         data.secretAffiliation = corp + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T464");
@@ -2676,7 +2676,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateMaxtacWashout(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S919");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T467");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S920") + KdspRareNPCManager.GetMaxtacDischarge(seed) + ". ";
@@ -2706,7 +2706,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateProxyVoter(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S933");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T472");
 
         let votes = IntToString(RandRange(seed, 5, 50));
@@ -2728,7 +2728,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateGeneticChimera(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S945");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T475");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S946");
@@ -2748,7 +2748,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateDarkNetLegend(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S958");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T70");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V16");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T478");
 
         let handles: array<String>;
@@ -2778,7 +2778,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateCargoStowaway(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S968");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T487");
 
         let origins: array<String>;
@@ -2807,7 +2807,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateChronoDisplaced(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S983");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T493");
 
         let frozenYear = IntToString(RandRange(seed, 2020, 2050));
@@ -2830,7 +2830,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateSoulSplit(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S998");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T28");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V5");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T497");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S999");
@@ -2850,7 +2850,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateInfectedFirmware(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1010");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T501");
 
         let implants = IntToString(RandRange(seed, 1, 5));
@@ -2872,7 +2872,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateWetworkRetired(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1023");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T506");
 
         let kills = IntToString(RandRange(seed, 20, 200));
@@ -2884,7 +2884,7 @@ public class KdspRareNPCManager {
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1031");
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T509") + (RandRange(seed + 40, 1, 100) <= 60 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T510") : "UNKNOWN") + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1032") + (RandRange(seed + 50, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T511") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1033"));
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1032") + (RandRange(seed + 50, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V59") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1033"));
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T512");
         data.dangerLevel = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T513");
@@ -2913,7 +2913,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1044");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1045") + (RandRange(seed + 40, 1, 100) <= 70 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1046") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1047")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1048") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1049") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T517")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1048") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1049") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V60")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1050");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T518");
@@ -2924,7 +2924,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateIllegalProcreation(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1051");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T520");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1052");
@@ -2944,7 +2944,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateOrbitalReturnee(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1061");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T34");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V7");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T523");
 
         let years = IntToString(RandRange(seed, 2, 20));
@@ -2959,10 +2959,10 @@ public class KdspRareNPCManager {
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1066") + station + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1067") + years + GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S6");
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1068") + (RandRange(seed + 20, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T525") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1069")) + ". ";
-        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1070") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1071") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T93")) + ". ";
+        data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1070") + (RandRange(seed + 30, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1071") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V17")) + ". ";
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1072");
 
-        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1073") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T372") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1074")) + ". ";
+        data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1073") + (RandRange(seed + 40, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-FinancialProfi-V31") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1074")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1075") + (RandRange(seed + 50, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1076") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T13")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1077");
 
@@ -2974,7 +2974,7 @@ public class KdspRareNPCManager {
 
     private static func GenerateCorpoDebtSlave(seed: Int32, data: ref<KdspRareNPCData>) -> ref<KdspRareNPCData> {
         data.displayFlag = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1078");
-        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47");
+        data.flagColor = GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2");
         data.secretAffiliation = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T528");
 
         data.description = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1079") + (RandRange(seed, 1, 100) <= 50 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T529") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T530")) + ". ";
@@ -3012,7 +3012,7 @@ public class KdspRareNPCManager {
         data.description += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1097");
 
         data.hiddenInfo = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1098") + (RandRange(seed + 30, 1, 100) <= 40 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T534") : GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1099")) + ". ";
-        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1100") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1101") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T44")) + ". ";
+        data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1100") + (RandRange(seed + 40, 1, 100) <= 30 ? GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1101") : GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V10")) + ". ";
         data.hiddenInfo += GetLocalizedTextByKey(n"Kdsp-RareNPCManager-S1102");
 
         data.scannerWarning = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T535");

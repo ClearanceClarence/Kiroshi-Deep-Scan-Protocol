@@ -6,7 +6,7 @@ public class KdspWraithsProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "WRAITHS";
-        profile.gangName = "Wraiths";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-GangManager-U1");
         profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T0");
         
         // Raider hierarchy
@@ -14,7 +14,7 @@ public class KdspWraithsProfile {
         if isElite {
             let roll = RandRange(seed, 1, 100);
             if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T2"); }
-            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T3"); profile.rankMeaning = "Lieutenant"; }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
             else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T3"); }
             else { profile.rank = GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T5"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T1"); }
         } else {
@@ -31,7 +31,7 @@ public class KdspWraithsProfile {
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T8"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T9"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-T6"));
-        ArrayPush(specs, "Smuggling");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-GangManager-U25"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T10"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T11"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T12"));
@@ -125,8 +125,8 @@ public class KdspWraithsProfile {
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T25"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T26"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T27"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-V0"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-V1"); }
         if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T28"); }
         return GetLocalizedTextByKey(n"Kdsp-WraithsProfile-T29");
     }

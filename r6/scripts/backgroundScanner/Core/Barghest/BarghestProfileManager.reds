@@ -54,7 +54,7 @@ public class KdspBarghestProfileManager {
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T6"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T7"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T8"));
-        ArrayPush(callsigns, "Wraith");
+        ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U0"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T9"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T10"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T11"));
@@ -63,7 +63,7 @@ public class KdspBarghestProfileManager {
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T14"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T15"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T16"));
-        ArrayPush(callsigns, "Apex");
+        ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U1"));
         ArrayPush(callsigns, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T17"));
         
         let roll = RandRange(seed, 1, 100);
@@ -95,15 +95,15 @@ public class KdspBarghestProfileManager {
         
         if isOfficer {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { return "Captain"; }
-            if roll <= 70 { return "Lieutenant"; }
+            if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U2"); }
+            if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
             if roll <= 90 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T20"); }
             return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T21");
         } else {
             let roll = RandRange(seed, 1, 100);
             if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T22"); }
             if roll <= 65 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T23"); }
-            if roll <= 85 { return "Sergeant"; }
+            if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U4"); }
             if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-Shared-C9"); }
             return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T24");
         }
@@ -175,12 +175,12 @@ public class KdspBarghestProfileManager {
     }
 
     private static func GetCombatRole(seed: Int32, appearanceName: String) -> String {
-        if StrContains(appearanceName, "heavy") { return "Fire Support"; }
-        if StrContains(appearanceName, "sniper") { return "Overwatch"; }
-        if StrContains(appearanceName, "recon") { return "Reconnaissance"; }
-        if StrContains(appearanceName, "netrunner") { return "Electronic Warfare"; }
-        if StrContains(appearanceName, "officer") { return "Command"; }
-        if StrContains(appearanceName, "mech") { return "Heavy Assault"; }
+        if StrContains(appearanceName, "heavy") { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U5"); }
+        if StrContains(appearanceName, "sniper") { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U6"); }
+        if StrContains(appearanceName, "recon") { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T30"); }
+        if StrContains(appearanceName, "netrunner") { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T33"); }
+        if StrContains(appearanceName, "officer") { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U7"); }
+        if StrContains(appearanceName, "mech") { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T19"); }
         
         let roles: array<String>;
         ArrayPush(roles, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T42"));
@@ -193,32 +193,32 @@ public class KdspBarghestProfileManager {
     }
 
     private static func GetConfirmedKills(seed: Int32, rank: String) -> Int32 {
-        if Equals(rank, "Hansen's Inner Circle") { return RandRange(seed, 50, 200); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S8")) { return RandRange(seed, 50, 200); }
         if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C10")) { return RandRange(seed, 30, 80); }
         if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C7")) { return RandRange(seed, 20, 50); }
         if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C12")) { return RandRange(seed, 15, 40); }
         if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C13")) { return RandRange(seed, 10, 30); }
-        if Equals(rank, "Fire Team Leader") { return RandRange(seed, 8, 25); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S10")) { return RandRange(seed, 8, 25); }
         if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C8")) { return RandRange(seed, 5, 20); }
-        if Equals(rank, "Heavy Weapons Specialist") { return RandRange(seed, 10, 40); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S9")) { return RandRange(seed, 10, 40); }
         if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C11")) { return RandRange(seed, 8, 35); }
         return RandRange(seed, 0, 15);
     }
 
     private static func GetLoyaltyRating(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T47"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T48"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T49"); }
-        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T50"); }
-        if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T51"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V0"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V1"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V2"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V3"); }
+        if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V4"); }
         return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T52");
     }
 
     private static func GetDutyStatus(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         if roll <= 80 { return "ACTIVE"; }
-        if roll <= 90 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T53"); }
+        if roll <= 90 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V5"); }
         if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T54"); }
         return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T55");
     }
@@ -250,7 +250,7 @@ public class KdspBarghestProfileManager {
         if roll <= 70 { return "REFUGEE"; }
         if roll <= 80 { return "CRIMINAL_PAST"; }
         if roll <= 90 { return "ECONOMIC"; }
-        return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T59");
+        return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V6");
     }
 
     private static func GenerateBackground(seed: Int32, formerAffiliation: String, reason: String) -> String {
@@ -294,10 +294,10 @@ public class KdspBarghestProfileManager {
         if StrContains(formerAffiliation, "NUSA") {
             ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S49"));
         }
-        if StrContains(formerAffiliation, "Militech") {
+        if StrContains(formerAffiliation, GetLocalizedTextByKey(n"Kdsp-Corpo-MILITECH")) {
             ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S50"));
         }
-        if StrContains(formerAffiliation, "Arasaka") {
+        if StrContains(formerAffiliation, GetLocalizedTextByKey(n"Kdsp-Corpo-ARASAKA")) {
             ArrayPush(backgrounds, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-S51"));
         }
         

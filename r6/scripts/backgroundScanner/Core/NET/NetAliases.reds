@@ -52,7 +52,7 @@ public abstract class KdspNetAliases {
         if i == 26 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T26"); }
         if i == 27 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T27"); }
         if i == 28 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T28"); }
-        return GetLocalizedTextByKey(n"Kdsp-NetAliases-T29") + IntToString(RandRange(seed + 1, 100, 999));
+        return "3xpl01t_" + IntToString(RandRange(seed + 1, 100, 999));
     }
 
     // ── GAMER TAGS ── xX format, competitive gaming culture
@@ -348,7 +348,7 @@ public abstract class KdspNetAliases {
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T277") + IntToString(RandRange(seed + 1, 10000, 99999)); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T278") + IntToString(RandRange(seed + 1, 1, 999)); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T279") + IntToString(RandRange(seed + 1, 1000, 9999)); }
-        if i == 10 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T280") + IntToString(RandRange(seed + 1, 100000, 999999)); }
+        if i == 10 { return "ID_" + IntToString(RandRange(seed + 1, 100000, 999999)); }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T281") + IntToString(RandRange(seed + 1, 10000, 99999)); }
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T282") + IntToString(RandRange(seed + 1, 1000, 9999)); }
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-NetAliases-T283") + IntToString(RandRange(seed + 1, 100, 999)); }

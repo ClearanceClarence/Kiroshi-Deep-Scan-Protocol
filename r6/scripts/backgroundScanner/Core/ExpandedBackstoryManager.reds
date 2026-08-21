@@ -129,9 +129,9 @@ public class KdspExpandedBackstoryManager {
     private static func DetermineGender(npc: wref<NPCPuppet>) -> String {
         let resolvedBodyType = NameToString(npc.GetBodyType());
         if Equals(resolvedBodyType, "ManBig") || Equals(resolvedBodyType, "ManAverage") || Equals(resolvedBodyType, "ManFat") {
-            return GetLocalizedTextByKey(n"Kdsp-ExpandedBackst-T0");
+            return GetLocalizedTextByKey(n"Kdsp-ExpandedBackst-V0");
         }
-        return GetLocalizedTextByKey(n"Kdsp-ExpandedBackst-T1");
+        return GetLocalizedTextByKey(n"Kdsp-ExpandedBackst-V1");
     }
 
     private static func DetermineArchetype(appearanceName: String) -> String {

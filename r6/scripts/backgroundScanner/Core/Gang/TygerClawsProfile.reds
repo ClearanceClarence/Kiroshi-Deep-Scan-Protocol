@@ -13,15 +13,15 @@ public class KdspTygerClawsProfile {
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Shateigashira"; profile.rankMeaning = "Lieutenant"; }
-            else if roll <= 70 { profile.rank = "Kyodai"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T1"); }
-            else if roll <= 90 { profile.rank = "Wakagashira"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T2"); }
-            else { profile.rank = "Saiko-komon"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T3"); }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U0"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T1"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U2"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T2"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T3"); }
         } else {
             let roll = RandRange(seed, 1, 100);
             if roll <= 50 { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T5"); }
-            else if roll <= 80 { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T6"); profile.rankMeaning = "Soldier"; }
-            else { profile.rank = "Kyodai"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T1"); }
+            else if roll <= 80 { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T6"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-CriminalRecord-U1"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T1"); }
         }
         
         // Specializations
@@ -120,17 +120,17 @@ public class KdspTygerClawsProfile {
     }
 
     private static func GetBodyCount(seed: Int32, rank: String) -> Int32 {
-        if Equals(rank, "Saiko-komon") || Equals(rank, "Wakagashira") { return RandRange(seed, 15, 50); }
-        if Equals(rank, "Shateigashira") { return RandRange(seed, 10, 35); }
-        if Equals(rank, "Kyodai") { return RandRange(seed, 5, 20); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U3")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U2")) { return RandRange(seed, 15, 50); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U0")) { return RandRange(seed, 10, 35); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-U1")) { return RandRange(seed, 5, 20); }
         return RandRange(seed, 0, 12);
     }
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T22"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T23"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T24"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-V0"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-V1"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-V2"); }
         if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-GangManager-T38"); }
         return GetLocalizedTextByKey(n"Kdsp-TygerClawsProf-T25");
     }

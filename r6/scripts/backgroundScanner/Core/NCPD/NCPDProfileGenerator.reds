@@ -138,7 +138,7 @@ public abstract class KdspNCPDProfileGenerator {
         if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S106"); }
         if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S107"); }
         if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S108"); }
-        if roll == 4 { return "Maintains a personal case file at home. Against regulation."; }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-U0"); }
         if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S109"); }
         if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S110"); }
         if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S111"); }
@@ -178,7 +178,7 @@ public abstract class KdspNCPDProfileGenerator {
         if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S135"); }
         if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S136"); }
         if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S137"); }
-        if roll == 9 { return "Working a cold case on personal time. Homicide won't reopen it officially."; }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-U1"); }
         if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S138"); }
         if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S139"); }
         if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S140"); }
@@ -233,7 +233,7 @@ public abstract class KdspNCPDProfileGenerator {
         if roll == 17 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S185"); }
         if roll == 18 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S186"); }
         if roll == 19 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S187"); }
-        if roll == 20 { return "A cold case match came back from the lab. Might change everything. Might be nothing."; }
+        if roll == 20 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-U2"); }
         if roll == 21 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S188"); }
         if roll == 22 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S189"); }
         if roll == 23 { return GetLocalizedTextByKey(n"Kdsp-NCPDProfileGen-S190"); }

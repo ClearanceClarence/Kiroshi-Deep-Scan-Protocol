@@ -4,7 +4,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/CYBERPUNK_2077-v2.31-FFD700?style=for-the-badge&labelColor=0a0e14" alt="Cyberpunk 2077">
-  <img src="https://img.shields.io/badge/BUILD-3.0.1-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
+  <img src="https://img.shields.io/badge/BUILD-3.0.3-5ef6e1?style=for-the-badge&labelColor=0a0e14" alt="Version">
   <img src="https://img.shields.io/badge/REDSCRIPT-MOD-ed1d53?style=for-the-badge&labelColor=0a0e14" alt="RedScript">
   <img src="https://img.shields.io/badge/LICENSE-MIT-3da4e0?style=for-the-badge&labelColor=0a0e14" alt="License">
 </p>
@@ -62,7 +62,7 @@ Deep Scan Protocol hooks your Kiroshi optics into every major database in Night 
 
 All data is **deterministically generated** from each NPC's entity ID — the same NPC always produces identical results across sessions. No two citizens share a profile.
 
-> **`230 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`99 SOURCE FILES`**
+> **`230 UNIQUE NPCs`** · **`TOTAL COVERAGE: BASE GAME + PHANTOM LIBERTY`** · **`115 SOURCE FILES`**
 
 <br>
 
@@ -579,13 +579,13 @@ The scan loading sequence now routes through whatever local infrastructure your 
 
 ### ░ Localization &nbsp; <img src="https://img.shields.io/badge/v3.0-5ef6e1?style=flat-square&labelColor=0a0e14" alt="v3.0">
 
-Every display string in the mod — all **11,333** of them, from life events to unique NPC backstories to BOLO notices to glitch output — runs through [Codeware's localization system](https://github.com/psiberx/cp2077-codeware/wiki#localization).
+Every display string in the mod — all **11,427** of them, from life events to unique NPC backstories to BOLO notices to glitch output — runs through [Codeware's localization system](https://github.com/psiberx/cp2077-codeware/wiki#localization).
 
 Translations are no longer forks of the mod. A translator ships one small language file that installs alongside KDSP, and the game's language setting picks it automatically. Mod updates don't break translations — new strings fall back to English until the translator adds them. Multiple languages coexist in a single install.
 
 Playing in English? Nothing changes.
 
-A partial French translation ships with the mod (`Strings/French.reds`) — UI headers, all scanner loading lines, and all BOLO notices. It proves the pipeline end to end and gives translators a real file to copy structure from. Set the game to French and the scanner comes up in French where translated, English everywhere else.
+A partial French translation ships with the mod (`Strings/French.reds`, 414 keys), and every other game language has a pre-registered stub file — installing a community translation means replacing one file in `Strings/`. It proves the pipeline end to end and gives translators a real file to copy structure from. Set the game to French and the scanner comes up in French where translated, English everywhere else.
 
 > Master key file: `Strings/English.reds`. Language resolver: `Strings/LocalizationProvider.reds`.
 
@@ -897,16 +897,17 @@ if StrContains(recordId, "takemura") { return KdspUniqueNPCEntries.Takemura(); }
 </details>
 
 <details>
-<summary><b>▸ PROJECT STRUCTURE</b> — 99 source files</summary>
+<summary><b>▸ PROJECT STRUCTURE</b> — 115 source files</summary>
 <br>
 
 ```
 r6/scripts/backgroundScanner/
 │
 ├── Strings/                               Localization system (v3.0)
-│   ├── English.reds                       All 11,333 display strings
-│   ├── French.reds                        Partial French sample (259 keys)
-│   └── LocalizationProvider.reds          Game language resolver
+│   ├── English.reds                       All 11,427 display strings
+│   ├── French.reds                        Partial French sample (414 keys)
+│   ├── German.reds ... Thai.reds          Drop-in stubs for all 16 other languages
+│   └── LocalizationProvider.reds          Game language resolver (all languages pre-registered)
 │
 ├── Core/
 │   ├── BackstoryManager.reds              Main generation orchestrator

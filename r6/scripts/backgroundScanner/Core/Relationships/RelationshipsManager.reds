@@ -257,8 +257,8 @@ public class KdspRelationshipsManager {
 
     private static func GetRandomAffiliation(seed: Int32, archetype: String) -> String {
         let i = RandRange(seed, 0, 11);
-        if i == 0 { return "None"; }
-        if i == 1 { return "None"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-Affiliation"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-Npc-TracyPhillips-Affiliation"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T31"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T32"); }
@@ -289,20 +289,20 @@ public class KdspRelationshipsManager {
         
         // Determine gender based on relation
         let gender = "male";
-        if Equals(family.relation, "Mother") || Equals(family.relation, "Sister") || 
-           Equals(family.relation, "Grandmother") || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C65")) {
+        if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U0")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U0")) || 
+           Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U1")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C65")) {
             gender = "female";
-        } else if Equals(family.relation, "Father") || Equals(family.relation, "Brother") || 
-                  Equals(family.relation, "Grandfather") || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C68")) {
+        } else if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U2")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U1")) || 
+                  Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U3")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C68")) {
             gender = "male";
         } else if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C66")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C67")) ||
                   Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C64")) {
             gender = KdspNameGenerator.GetRandomGender(seed + 5);
-        } else if Equals(family.relation, "Aunt") {
+        } else if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U4")) {
             gender = "female";
-        } else if Equals(family.relation, "Uncle") {
+        } else if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U5")) {
             gender = "male";
-        } else if Equals(family.relation, "Spouse") || Equals(family.relation, "Child") || Equals(family.relation, "Cousin") {
+        } else if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U17")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U6")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U7")) {
             gender = KdspNameGenerator.GetRandomGender(seed + 5);
         }
         
@@ -312,7 +312,7 @@ public class KdspRelationshipsManager {
         // Blood relatives share the family last name
         if KdspRelationshipsManager.IsBloodRelative(family.relation) {
             family.name = firstName + " " + familyLastName;
-        } else if Equals(family.relation, "Spouse") || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) || 
+        } else if Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U17")) || Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) || 
                   Equals(family.relation, GetLocalizedTextByKey(n"Kdsp-Shared-C64")) {
             // Spouses usually take family name (80%), some keep maiden name (20%)
             if RandRange(seed + 15, 1, 100) <= 80 {
@@ -327,7 +327,7 @@ public class KdspRelationshipsManager {
 
         // Status
         let roll = RandRange(seed + 20, 1, 100);
-        if roll <= 50 { family.status = "Alive"; }
+        if roll <= 50 { family.status = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U18"); }
         else if roll <= 70 { family.status = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T38"); }
         else if roll <= 80 { family.status = GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T39"); }
         else if roll <= 90 { family.status = GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14"); }
@@ -335,7 +335,7 @@ public class KdspRelationshipsManager {
 
         // Location (only for living family)
         family.location = "";
-        if Equals(family.status, "Alive") {
+        if Equals(family.status, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U18")) {
             family.location = KdspRelationshipsManager.GetFamilyLocation(seed + 30);
         }
 
@@ -348,17 +348,17 @@ public class KdspRelationshipsManager {
         if diverse { maxRoll = 18; }
         
         let roll = RandRange(seed, 1, maxRoll);
-        if roll == 1 { return "Mother"; }
-        if roll == 2 { return "Father"; }
-        if roll == 3 { return "Sister"; }
-        if roll == 4 { return "Brother"; }
-        if roll == 5 { return "Spouse"; }
-        if roll == 6 { return "Child"; }
-        if roll == 7 { return "Grandmother"; }
-        if roll == 8 { return "Grandfather"; }
-        if roll == 9 { return "Aunt"; }
-        if roll == 10 { return "Uncle"; }
-        if roll == 11 { return "Cousin"; }
+        if roll == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U0"); }
+        if roll == 2 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U2"); }
+        if roll == 3 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U0"); }
+        if roll == 4 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U1"); }
+        if roll == 5 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U17"); }
+        if roll == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U6"); }
+        if roll == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U1"); }
+        if roll == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U3"); }
+        if roll == 9 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U4"); }
+        if roll == 10 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U5"); }
+        if roll == 11 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U7"); }
         // Diverse options
         if roll == 12 { return GetLocalizedTextByKey(n"Kdsp-Shared-C65"); }
         if roll == 13 { return GetLocalizedTextByKey(n"Kdsp-Shared-C68"); }
@@ -370,13 +370,13 @@ public class KdspRelationshipsManager {
     }
 
     private static func IsBloodRelative(relation: String) -> Bool {
-        if Equals(relation, "Mother") { return true; }
-        if Equals(relation, "Father") { return true; }
-        if Equals(relation, "Sister") { return true; }
-        if Equals(relation, "Brother") { return true; }
-        if Equals(relation, "Grandmother") { return true; }
-        if Equals(relation, "Grandfather") { return true; }
-        if Equals(relation, "Child") { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U0")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U2")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U0")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U1")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U1")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U3")) { return true; }
+        if Equals(relation, GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U6")) { return true; }
         if Equals(relation, GetLocalizedTextByKey(n"Kdsp-Shared-C66")) { return true; }
         if Equals(relation, GetLocalizedTextByKey(n"Kdsp-Shared-C65")) { return true; }
         if Equals(relation, GetLocalizedTextByKey(n"Kdsp-Shared-C68")) { return true; }
@@ -603,13 +603,13 @@ public class KdspRelationshipsManager {
 
     private static func GetContactRelationType(seed: Int32) -> String {
         let i = RandRange(seed, 0, 9);
-        if i == 0 { return "Spouse"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U17"); }
         if i == 1 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T95"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T529"); }
         if i == 3 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T96"); }
         if i == 4 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T97"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T98"); }
-        if i == 6 { return "Child"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-U6"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T11"); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T99"); }
         return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T292");

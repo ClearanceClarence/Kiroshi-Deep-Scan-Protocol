@@ -251,25 +251,25 @@ public class KdspCyberwareRegistryManager {
     private static func GetRandomSlot(seed: Int32) -> String {
         let i = RandRange(seed, 0, 14);
         
-        if i == 0 { return "Optics"; }
-        if i == 1 { return "Neural"; }
-        if i == 2 { return "Circulatory"; }
-        if i == 3 { return "Skeletal"; }
-        if i == 4 { return "Integumentary"; }
+        if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U1"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U2"); }
+        if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U3"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U4"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U5"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-Shared-C25"); }
-        if i == 6 { return "Arms"; }
-        if i == 7 { return "Legs"; }
-        if i == 8 { return "Hands"; }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U6"); }
+        if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U7"); }
+        if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U8"); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-Shared-C24"); }
         if i == 10 { return GetLocalizedTextByKey(n"Kdsp-Shared-C26"); }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-Shared-C23"); }
-        if i == 12 { return "Cardiovascular"; }
-        if i == 13 { return "Musculature"; }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U9"); }
+        if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U10"); }
         return GetLocalizedTextByKey(n"Kdsp-Shared-C22");
     }
 
     private static func GetImplantForSlot(seed: Int32, slot: String, archetype: String) -> String {
-        if Equals(slot, "Optics") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U1")) {
             let i = RandRange(seed, 0, 19);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S28"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S29"); }
@@ -293,10 +293,10 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S36");
         }
         
-        if Equals(slot, "Neural") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U2")) {
             let i = RandRange(seed, 0, 19);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T20"); }
-            if i == 1 { return "Kerenzikov"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U11"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T21"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T22"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T23"); }
@@ -317,7 +317,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S39");
         }
         
-        if Equals(slot, "Circulatory") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U3")) {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T36"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T37"); }
@@ -336,7 +336,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S43");
         }
         
-        if Equals(slot, "Skeletal") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U4")) {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T47"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T48"); }
@@ -355,7 +355,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S47");
         }
         
-        if Equals(slot, "Integumentary") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U5")) {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T58"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T59"); }
@@ -398,7 +398,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S58");
         }
         
-        if Equals(slot, "Arms") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U6")) {
             let i = RandRange(seed, 0, 14);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T81"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S59"); }
@@ -406,7 +406,7 @@ public class KdspCyberwareRegistryManager {
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T82"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S61"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S62"); }
-            if i == 6 { return "Monowire"; }
+            if i == 6 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U12"); }
             if i == 7 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T83"); }
             if i == 8 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S63"); }
             if i == 9 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S64"); }
@@ -417,7 +417,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T84");
         }
         
-        if Equals(slot, "Legs") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U7")) {
             let i = RandRange(seed, 0, 11);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T85"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T86"); }
@@ -433,7 +433,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T90");
         }
         
-        if Equals(slot, "Hands") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U8")) {
             let i = RandRange(seed, 0, 11);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T91"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T92"); }
@@ -471,7 +471,7 @@ public class KdspCyberwareRegistryManager {
         if Equals(slot, GetLocalizedTextByKey(n"Kdsp-Shared-C26")) {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T24"); }
-            if i == 1 { return "Kerenzikov"; }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U11"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T27"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T33"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T107"); }
@@ -496,7 +496,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S89");
         }
         
-        if Equals(slot, "Cardiovascular") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U9")) {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T39"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T37"); }
@@ -510,7 +510,7 @@ public class KdspCyberwareRegistryManager {
             return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T122");
         }
         
-        if Equals(slot, "Musculature") {
+        if Equals(slot, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U10")) {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S90"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S91"); }
@@ -546,9 +546,9 @@ public class KdspCyberwareRegistryManager {
         if wealth >= 70 || Equals(archetype, "CORPO_MANAGER") {
             // Premium manufacturers (20)
             let i = RandRange(seed, 0, 19);
-            if i == 0 { return "Arasaka"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-Corpo-ARASAKA"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T4"); }
-            if i == 2 { return "Militech"; }
+            if i == 2 { return GetLocalizedTextByKey(n"Kdsp-Corpo-MILITECH"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S98"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T136"); }
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T137"); }
@@ -571,8 +571,8 @@ public class KdspCyberwareRegistryManager {
         if wealth >= 40 {
             // Mid-range manufacturers (20)
             let i = RandRange(seed, 0, 19);
-            if i == 0 { return "Arasaka"; }
-            if i == 1 { return "Militech"; }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-Corpo-ARASAKA"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-Corpo-MILITECH"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T136"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-Corpo-ZETATECH"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-Corpo-RAVEN_MICRO"); }
@@ -639,8 +639,8 @@ public class KdspCyberwareRegistryManager {
 
     private static func DetermineIfLegal(seed: Int32, archetype: String, implantName: String) -> Bool {
         // Some implants are always questionable
-        if StrContains(implantName, "Mantis") || StrContains(implantName, "Gorilla") || 
-           StrContains(implantName, "Projectile") || StrContains(implantName, "Monowire") {
+        if StrContains(implantName, "Mantis") || StrContains(implantName, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U13")) || 
+           StrContains(implantName, "Projectile") || StrContains(implantName, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U12")) {
             if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
                 return RandRange(seed, 1, 100) <= 90; // Usually licensed
             }
@@ -677,7 +677,7 @@ public class KdspCyberwareRegistryManager {
         if roll >= 30 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T179"); }
         if roll >= 25 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T180"); }
         if roll >= 20 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S113"); }
-        if roll >= 15 { return "Poor"; }
+        if roll >= 15 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U14"); }
         if roll >= 10 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-T181"); }
         if roll >= 5 { return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S114"); }
         return GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S115");
@@ -710,8 +710,8 @@ public class KdspCyberwareRegistryManager {
         let i = 0;
         while i < ArraySize(implants) {
             if !implants[i].isLegal { baseRisk += 8; }
-            if Equals(implants[i].condition, "Critical - Needs Replacement") { baseRisk += 10; }
-            if Equals(implants[i].condition, "Poor") { baseRisk += 5; }
+            if Equals(implants[i].condition, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S114")) { baseRisk += 10; }
+            if Equals(implants[i].condition, GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-U14")) { baseRisk += 5; }
             
             // Weapon implants increase risk more
             if StrContains(implants[i].name, "Mantis") || StrContains(implants[i].name, "Gorilla") ||

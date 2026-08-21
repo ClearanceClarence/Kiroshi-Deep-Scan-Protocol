@@ -1,7 +1,10 @@
 // Kiroshi Deep Scan Protocol - French Language Package (PARTIAL / TEST)
 // Covers UI section headers, all scanner loading lines, and all BOLO
-// notices — 255 of 11,329 keys. Untranslated keys fall back to English.
+// notices, plus samples from every key family — 314 keys. Untranslated keys fall back to English.
 // Serves as the live example of the v3 translation workflow.
+// Note: Kdsp-Home-LIVED_FIRST_APT intentionally drops %his% — French
+// possessives agree with the noun, so the token is unnecessary there.
+// Dropping tokens your grammar does not need is safe and supported.
 
 module KiroshiDeepScan.Localization
 import Codeware.Localization.*
@@ -10,6 +13,8 @@ public class French extends ModLocalizationPackage {
     protected func DefineTexts() -> Void {
         this.DefineTexts0();
         this.DefineTexts1();
+        this.DefineTexts2();
+        this.DefineTexts3();
     }
 
     private func DefineTexts0() -> Void {
@@ -277,4 +282,163 @@ public class French extends ModLocalizationPackage {
         this.Text("Kdsp-UI-VehicleRegistration", "Immatriculation");
     }
 
+    private func DefineTexts2() -> Void {
+        this.Text("Kdsp-Adult-LOST_GAMBLE", "A perdu €$%eddies% eurodollars au jeu. ");
+        this.Text("Kdsp-Adult-ASST_SZD_CRP", "Tous ses biens ont été saisis par la corporation %corp%. ");
+        this.Text("Kdsp-Adult-INDEBT_CRP_INDVL", "Endetté auprès de la corporation %corp%. Individu requalifié en actif corporatif. ");
+        this.Text("Kdsp-Job-JOB_SECURITY", "A commencé à travailler comme agent de sécurité pour %corp%. ");
+        this.Text("Kdsp-Home-LIVED_GTD_CRP", "A vécu dans un complexe sécurisé de la corporation %corp%. ");
+        this.Text("Kdsp-Home-LIVED_FIRST_APT", "A obtenu son premier appartement. Une pièce, sans fenêtres. ");
+        this.Text("Kdsp-Npc-Takemura-Classification", "ARASAKA - DÉSAVOUÉ");
+        this.Text("Kdsp-Npc-Takemura-Background", "Né à Chiba-11, Tokyo. Père employé de cuisine. Sélectionné enfant par l'armée Arasaka.");
+        this.Text("Kdsp-Npc-Takemura-EarlyLife", "Promu dans les forces spéciales. Major de l'Académie Arasaka. Garde du corps de Saburo Arasaka.");
+        this.Text("Kdsp-Npc-Takemura-SignificantEvents", "DÉSAVOUÉ après la mort de Saburo au Konpeki Plaza. Opère en fugitif. Cherche à révéler la vérité.");
+        this.Text("Kdsp-Npc-Takemura-Affiliation", "Arasaka (ancien) | Statut : À ABATTRE À VUE");
+        this.Text("Kdsp-Npc-Takemura-CriminalRecord", "Arasaka Corporate : RECHERCHÉ EN PRIORITÉ");
+        this.Text("Kdsp-Npc-Takemura-CyberwareStatus", "Cyberoptiques (sur mesure) | Armure sous-cutanée | Kerenzikov | Endosquelette");
+        this.Text("Kdsp-Npc-Takemura-FinancialStatus", "Comptes GELÉS | Opère avec des ressources minimales");
+        this.Text("Kdsp-Npc-Takemura-MedicalStatus", "Aucun soutien corporatif | Statut terrain : ACTIF");
+        this.Text("Kdsp-Npc-Takemura-ThreatAssessment", "EXTRÊME (95/100) | SOLO DE RANG 1");
+        this.Text("Kdsp-Npc-Takemura-Relationships", "Saburo (décédé) | Hanako (contact) | Oda (en froid)");
+        this.Text("Kdsp-Npc-Takemura-Notes", "Cible hautement prioritaire. Détient des renseignements classifiés. Ne se rendra pas.");
+        this.Text("Kdsp-Npc-Takemura-Classification-1", "ARASAKA - SÉCURITÉ PERSONNELLE");
+        this.Text("Kdsp-Npc-Takemura-Background-1", "Né à Chiba-11, Tokyo. Père employé de cuisine. Sélectionné enfant par l'armée Arasaka.");
+        this.Text("Kdsp-Npc-Takemura-EarlyLife-1", "Promu dans les forces spéciales. Major de l'Académie Arasaka. Choisi comme garde du corps de Saburo.");
+        this.Text("Kdsp-Npc-Takemura-SignificantEvents-1", "Chef de la sécurité de Saburo Arasaka. Des décennies de service irréprochable. Accompagne son principal à Night City.");
+        this.Text("Kdsp-Npc-Takemura-Affiliation-1", "Arasaka | Chef de la sécurité - Saburo Arasaka");
+        this.Text("Kdsp-Npc-Takemura-CriminalRecord-1", "NCPD : Néant | Autorité juridique Arasaka");
+        this.Text("Kdsp-Npc-Takemura-CyberwareStatus-1", "Cyberoptiques (sur mesure) | Armure sous-cutanée | Kerenzikov | Endosquelette | Stimulants de combat");
+        this.Text("Kdsp-Npc-Takemura-FinancialStatus-1", "Rémunération de cadre dirigeant | Statut : SÉCURISÉ");
+        this.Text("Kdsp-ConnCtx-0", "Voisin — même étage");
+        this.Text("Kdsp-ConnCtx-1", "Voisin — même immeuble");
+        this.Text("Kdsp-ConnCtx-2", "Habite en face");
+        this.Text("Kdsp-ConnCtx-3", "Partage un couloir de mégabâtiment");
+        this.Text("Kdsp-ConnCtx-4", "Habitué du même bar");
+        this.Text("Kdsp-ConnInj-0", "Vus ensemble récemment");
+        this.Text("Kdsp-ConnInj-1", "Canal de communication partagé");
+        this.Text("Kdsp-ConnInj-2", "Rencontrés au même endroit");
+        this.Text("Kdsp-ConnInj-3", "Transaction financière détectée");
+        this.Text("Kdsp-Shared-C1", "Conjoint de même sexe");
+        this.Text("Kdsp-Shared-C2", "AUCUN AU DOSSIER");
+        this.Text("Kdsp-Shared-C3", "DÉLITS MINEURS");
+        this.Text("Kdsp-Shared-C6", "Corporation Arasaka");
+        this.Text("Kdsp-BackstoryManag-T40", "Client régulier");
+        this.Text("Kdsp-BackstoryManag-T41", "Client occasionnel");
+        this.Text("Kdsp-BackstoryManag-T42", "Actif");
+        this.Text("Kdsp-CriminalRecord-T0", "AUCUN CASIER JUDICIAIRE");
+        this.Text("Kdsp-BackstoryManag-T9", "RÉCIDIVISTE");
+        this.Text("Kdsp-BarghestProfil-T52", "LOYALISTE DE HANSEN");
+        this.Text("Kdsp-BarghestProfil-T54", "SERVICE ALLÉGÉ");
+        this.Text("Kdsp-BarghestProfil-T55", "EN ATTENTE D'ÉVALUATION");
+        this.Text("Kdsp-BackstoryManag-U30", "elle");
+        this.Text("Kdsp-BackstoryManag-U33", "sa");
+        this.Text("Kdsp-BackstoryManag-U35", "la sienne");
+        this.Text("Kdsp-BackstoryManag-U38", "elle-même");
+        this.Text("Kdsp-BackstoryManag-U43", "il");
+        this.Text("Kdsp-BackstoryManag-U45", "son");
+        this.Text("Kdsp-BackstoryManag-U46", "lui");
+        this.Text("Kdsp-BackstoryManag-U48", "lui-même");
+    }
+    private func DefineTexts3() -> Void {
+        this.Text("Kdsp-BackstoryManag-S0", "Syndrome de rejet d'implant - traitement immunosuppresseur en cours");
+        this.Text("Kdsp-BackstoryManag-S1", "Rejet d'implant chronique - risque de nécrose des tissus");
+        this.Text("Kdsp-BackstoryManag-S2", "Rejet d'organe synthétique - immunosuppresseurs quotidiens requis");
+        this.Text("Kdsp-BackstoryManag-S3", "Rejet de cyberware - réaction inflammatoire en cours");
+        this.Text("Kdsp-BackstoryManag-S4", "Incompatibilité d'implant - retrait programmé");
+        this.Text("Kdsp-BackstoryManag-S15", "Gonorrhée - souche résistante");
+        this.Text("Kdsp-BackstoryManag-S16", "Chlamydia - récurrente");
+        this.Text("Kdsp-BackstoryManag-S17", "HPV - souche à haut risque");
+        this.Text("Kdsp-BackstoryManag-S5", "Travail du sexe non licencié (");
+        this.Text("Kdsp-BackstoryManag-S6", "Racolage - rafle des mœurs (");
+        this.Text("Kdsp-BackstoryManag-S7", "Prostitution - sans licence (");
+        this.Text("Kdsp-BackstoryManag-S8", "Racolage - opération des mœurs NCPD (");
+        this.Text("Kdsp-BackstoryManag-S10", "Outrage public à la pudeur (");
+        this.Text("Kdsp-BackstoryManag-S11", "Absence de licence de joytoy (");
+        this.Text("Kdsp-BackstoryManag-T4", "Racolage (");
+        this.Text("Kdsp-BackstoryManag-T1", "CRITIQUE - COMPLICATIONS DE REJET");
+        this.Text("Kdsp-BackstoryManag-T2", "ÉLEVÉ - INSTABILITÉ LIÉE AU REJET");
+        this.Text("Kdsp-BackstoryManag-T3", "SIGNALÉ - STRESS DE REJET D'IMPLANT");
+        this.Text("Kdsp-BackstoryManag-T5", "MŒURS - RÉCIDIVISTE");
+        this.Text("Kdsp-BackstoryManag-T6", "MŒURS - SOUS SURVEILLANCE");
+        this.Text("Kdsp-BackstoryManag-T7", "PRIORITÉ BASSE - MŒURS");
+        this.Text("Kdsp-BackstoryManag-T10", "Expression de soi extrême");
+        this.Text("Kdsp-BackstoryManag-T11", "Idéologie transhumaniste");
+        this.Text("Kdsp-BackstoryManag-T12", "Comportement de recherche de sensations");
+        this.Text("Kdsp-CriminalRecord-S0", "Possession illégale de substance contrôlée");
+        this.Text("Kdsp-CriminalRecord-S1", "Possession avec intention de distribuer");
+        this.Text("Kdsp-CriminalRecord-S2", "Conduite sous influence - altération par cyberware");
+        this.Text("Kdsp-CriminalRecord-S3", "Possession de stimulants illégaux");
+        this.Text("Kdsp-CriminalRecord-S4", "Possession de ");
+        this.Text("Kdsp-CriminalRecord-S5", "Agression avec cyberware");
+        this.Text("Kdsp-CriminalRecord-S6", "Agression avec arme mortelle");
+        this.Text("Kdsp-CriminalRecord-S7", "Trouble à l'ordre public - rixe");
+        this.Text("Kdsp-CriminalRecord-S8", "Activité de gang (");
+        this.Text("Kdsp-CriminalRecord-S9", "Complot en vue de meurtre (");
+        this.Text("Kdsp-CriminalRecord-S10", "Trafic de stupéfiants (");
+        this.Text("Kdsp-CriminalRecord-S11", "Fusillade en voiture (");
+        this.Text("Kdsp-CriminalRecord-S12", "Agression liée aux gangs (");
+        this.Text("Kdsp-CriminalRecord-S13", "Violence de guerre de territoire (");
+        this.Text("Kdsp-MedicalHistory-S0", "Atteinte hépatique (liée à l'alcool)");
+        this.Text("Kdsp-MedicalHistory-S1", "Cirrhose - stade précoce");
+        this.Text("Kdsp-MedicalHistory-S3", "Stéatose hépatique");
+        this.Text("Kdsp-MedicalHistory-S4", "Arythmie cardiaque (abus de stimulants)");
+        this.Text("Kdsp-MedicalHistory-S5", "Lésion de la cloison nasale");
+        this.Text("Kdsp-MedicalHistory-S6", "Trouble anxieux induit par stimulants");
+        this.Text("Kdsp-MedicalHistory-S8", "Bruxisme (grincement des dents)");
+        this.Text("Kdsp-MedicalHistory-S9", "Malnutrition (suppression de l'appétit)");
+        this.Text("Kdsp-MedicalHistory-S11", "Syndrome de douleur chronique");
+        this.Text("Kdsp-FinancialProfi-S0", "Recouvrement Trauma Team");
+        this.Text("Kdsp-FinancialProfi-S1", "Centre médical de Night City");
+        this.Text("Kdsp-FinancialProfi-S2", "Services médicaux Biotechnica");
+        this.Text("Kdsp-FinancialProfi-S3", "Dette de santé privée");
+        this.Text("Kdsp-FinancialProfi-S4", "Crédit à la consommation Zetatech");
+        this.Text("Kdsp-FinancialProfi-S7", "Groupe Casino de Pacifica");
+        this.Text("Kdsp-FinancialProfi-S8", "Usurier privé");
+        this.Text("Kdsp-FinancialProfi-S9", "Réseau de paris clandestins");
+        this.Text("Kdsp-FinancialProfi-S10", "Recouvrement Tyger Claws");
+        this.Text("Kdsp-FinancialProfi-S11", "Dette privée (rue)");
+        this.Text("Kdsp-PsychProfileMa-S0", "Expérimenté en combat de rue");
+        this.Text("Kdsp-PsychProfileMa-S1", "Vétéran de guerre des gangs");
+        this.Text("Kdsp-PsychProfileMa-S2", "Dépendance aux stimulants (synth-coke)");
+        this.Text("Kdsp-PsychProfileMa-S3", "Dépendance aux drogues de combat (Black Lace)");
+        this.Text("Kdsp-PsychProfileMa-S5", "Survivant d'agression violente");
+        this.Text("Kdsp-PsychProfileMa-S6", "Traumatisme de violence de gang");
+        this.Text("Kdsp-PsychProfileMa-S7", "Survivant d'invasion de domicile");
+        this.Text("Kdsp-PsychProfileMa-S8", "Accident de la route majeur");
+        this.Text("Kdsp-PsychProfileMa-S11", "Traumatisme de dysfonctionnement de cyberware");
+        this.Text("Kdsp-CyberwareRegis-S0", "Clinique non licenciée (Kabuki)");
+        this.Text("Kdsp-CyberwareRegis-S1", "Charcudoc de ruelle (Watson)");
+        this.Text("Kdsp-CyberwareRegis-S2", "Chirurgien du marché noir");
+        this.Text("Kdsp-CyberwareRegis-S3", "Survivant d'un atelier de charognards");
+        this.Text("Kdsp-CyberwareRegis-S4", "ANNULÉ - Défaut de paiement");
+        this.Text("Kdsp-CyberwareRegis-S5", "ANNULÉ - Modifications non autorisées");
+        this.Text("Kdsp-CyberwareRegis-S6", "Implant de régulation hormonale");
+        this.Text("Kdsp-CyberwareRegis-S7", "Modulateur vocal (féminin)");
+        this.Text("Kdsp-CyberwareRegis-S8", "Modulateur vocal (masculin)");
+        this.Text("Kdsp-NetProfileGene-S0", "Social : actif sur CorpNet, LinkedIN2077");
+        this.Text("Kdsp-NetProfileGene-S1", "Social : profil privé, comptes vérifiés corpo uniquement");
+        this.Text("Kdsp-NetProfileGene-S2", "Social : fort engagement sur les flux N54 News");
+        this.Text("Kdsp-NetProfileGene-S4", "Social : compte imposé par la corpo, activité personnelle minimale");
+        this.Text("Kdsp-NetProfileGene-S7", "Social : profil verrouillé, protégé par pare-feu corporatif");
+        this.Text("Kdsp-RelationshipsM-S0", "Membre du même gang");
+        this.Text("Kdsp-RelationshipsM-S1", "Contact de planque");
+        this.Text("Kdsp-RelationshipsM-S2", "Ami de groupe de loisirs");
+        this.Text("Kdsp-RelationshipsM-S3", "Contact vendeur de rue");
+        this.Text("Kdsp-RelationshipsM-S4", "Actif - contact fréquent");
+        this.Text("Kdsp-RelationshipsM-S5", "Actif - contact occasionnel");
+        this.Text("Kdsp-RelationshipsM-S7", "A tué son ami");
+        this.Text("Kdsp-DatabaseSource-S0", "Département de police de Night City - Division des archives");
+        this.Text("Kdsp-DatabaseSource-S1", "Statut de mandat : ");
+        this.Text("Kdsp-DatabaseSource-S2", "Statut criminel : ");
+        this.Text("Kdsp-DatabaseSource-S3", "Organisation : ");
+        this.Text("Kdsp-DatabaseSource-S4", "Rang : ");
+        this.Text("Kdsp-DatabaseSource-S6", "Probabilité d'être armé : ");
+        this.Text("Kdsp-DatabaseSource-S7", "Approche : ");
+        this.Text("Kdsp-GangProfileGen-S0", "Membre de gang au parcours criminel classique.");
+        this.Text("Kdsp-GangProfileGen-S1", "Actif dans les opérations locales.");
+        this.Text("Kdsp-GangProfileGen-T0", "DOSSIER DE MEMBRE DE GANG");
+        this.Text("Kdsp-GangProfileGen-T1", "Membre");
+        this.Text("Kdsp-GangProfileGen-T2", "Vétéran");
+        this.Text("Kdsp-GangProfileGen-T3", "Cadre");
+    }
 }

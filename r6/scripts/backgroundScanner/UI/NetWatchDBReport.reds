@@ -353,7 +353,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
             this.m_relationshipsValue.SetText(this.m_backstoryUI.relationships);
             this.m_relationshipsSection.SetVisible(true);
             
-            if StrContains(this.m_backstoryUI.relationships, "ENEMIES:") {
+            if StrContains(this.m_backstoryUI.relationships, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T46")) {
                 this.m_relationshipsValue.SetTintColor(new HDRColor(1.0, 0.5, 0.5, 1.0));
             } else {
                 this.m_relationshipsValue.SetTintColor(new HDRColor(1.0, 0.6, 0.7, 1.0));
@@ -367,7 +367,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
             this.m_networkAnalysisValue.SetText(this.m_backstoryUI.networkAnalysis);
             this.m_networkAnalysisSection.SetVisible(true);
             // Cyan tint for connection alerts, brighter for direct cross-references
-            if StrContains(this.m_backstoryUI.networkAnalysis, "CROSS-REFERENCE") {
+            if (StrContains(this.m_backstoryUI.networkAnalysis, GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S0")) || StrContains(this.m_backstoryUI.networkAnalysis, GetLocalizedTextByKey(n"Kdsp-ConnectionDete-S12"))) {
                 this.m_networkAnalysisValue.SetTintColor(new HDRColor(0.37, 0.96, 0.88, 1.0));
             } else {
                 this.m_networkAnalysisValue.SetTintColor(new HDRColor(0.25, 0.70, 0.65, 1.0));
@@ -381,7 +381,7 @@ public class KdspNetWatchDBReport extends inkCustomController {
             this.m_vehicleValue.SetText(this.m_backstoryUI.vehicleRegistration);
             this.m_vehicleSection.SetVisible(true);
             // Highlight stolen vehicles
-            if StrContains(this.m_backstoryUI.vehicleRegistration, "STOLEN") {
+            if StrContains(this.m_backstoryUI.vehicleRegistration, GetLocalizedTextByKey(n"Kdsp-VehicleRegistr-S25")) {
                 this.m_vehicleValue.SetTintColor(new HDRColor(1.0, 0.4, 0.4, 1.0));
             } else if StrContains(this.m_backstoryUI.vehicleRegistration, "SUSPENDED") || StrContains(this.m_backstoryUI.vehicleRegistration, "EXPIRED") {
                 this.m_vehicleValue.SetTintColor(new HDRColor(1.0, 0.85, 0.2, 1.0));
@@ -397,9 +397,9 @@ public class KdspNetWatchDBReport extends inkCustomController {
             this.m_netProfileValue.SetText(this.m_backstoryUI.netProfile);
             this.m_netProfileSection.SetVisible(true);
             // Highlight flagged activity
-            if StrContains(this.m_backstoryUI.netProfile, "Flagged") || StrContains(this.m_backstoryUI.netProfile, "FLAGGED") {
+            if StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S25")) || StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S26")) || StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S27")) || StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S31")) || StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S33")) || StrContains(this.m_backstoryUI.netProfile, "FLAGGED") {
                 this.m_netProfileValue.SetTintColor(new HDRColor(1.0, 0.7, 0.2, 1.0));
-            } else if StrContains(this.m_backstoryUI.netProfile, "Darknet: ACTIVE") || StrContains(this.m_backstoryUI.netProfile, "Darknet: KNOWN") || StrContains(this.m_backstoryUI.netProfile, "Darknet: SELLER") {
+            } else if StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S35")) || StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S36")) || StrContains(this.m_backstoryUI.netProfile, GetLocalizedTextByKey(n"Kdsp-NetProfileGene-S37")) {
                 this.m_netProfileValue.SetTintColor(new HDRColor(1.0, 0.4, 0.4, 1.0));
             } else {
                 this.m_netProfileValue.SetTintColor(new HDRColor(0.5, 0.9, 1.0, 1.0));

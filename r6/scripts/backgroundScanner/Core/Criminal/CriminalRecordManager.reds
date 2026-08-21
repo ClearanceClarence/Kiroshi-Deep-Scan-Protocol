@@ -153,7 +153,7 @@ public class KdspCriminalRecordManager {
         if i == 12 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T26"); }
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T27"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T28"); }
-        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T29"); }
+        if i == 15 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-V0"); }
         if i == 16 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T30"); }
         if i == 17 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T31"); }
         if i == 18 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T32"); }
@@ -274,7 +274,7 @@ public class KdspCriminalRecordManager {
                     ArrayPush(violentCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T73"));
                 }
                 if Equals(coherence.violenceType, GetLocalizedTextByKey(n"Kdsp-Shared-C17")) {
-                    ArrayPush(violentCrimes, "Brawling");
+                    ArrayPush(violentCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-U0"));
                     ArrayPush(violentCrimes, GetLocalizedTextByKey(n"Kdsp-CriminalRecord-S7"));
                 }
                 
@@ -536,11 +536,11 @@ public class KdspCriminalRecordManager {
         if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T107"); }
         
         // Mid ranks (30%)
-        if roll <= 68 { return "Soldier"; }
-        if roll <= 75 { return "Enforcer"; }
+        if roll <= 68 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-U1"); }
+        if roll <= 75 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-U2"); }
         if roll <= 82 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T108"); }
-        if roll <= 88 { return "Lieutenant"; }
-        if roll <= 92 { return "Captain"; }
+        if roll <= 88 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
+        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U2"); }
         
         // High ranks (10%)
         if roll <= 95 { return GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T109"); }

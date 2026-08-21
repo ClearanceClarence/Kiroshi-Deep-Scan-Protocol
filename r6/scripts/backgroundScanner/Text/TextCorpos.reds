@@ -44,7 +44,7 @@ public abstract class KdspTextCorpos {
     public static func SEG_ATARI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-SEG_ATARI"); }
     public static func AHI() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-AHI"); }
     public static func EBM() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-EBM"); }
-    public static func IEC() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-IEC"); }
+    public static func IEC() -> String { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-V21"); }
     public static func MICROTECH() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-MICROTECH"); }
     public static func ZETATECH() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ZETATECH"); }
     public static func ADREK_ROBO() -> String { return GetLocalizedTextByKey(n"Kdsp-Corpo-ADREK_ROBO"); }

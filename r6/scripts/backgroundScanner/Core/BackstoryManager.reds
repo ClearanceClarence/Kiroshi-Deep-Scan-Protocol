@@ -95,9 +95,9 @@ public class KdspBackstoryManager {
             }
             // Downgrade health rating - rejected implants are serious
             if Equals(medical.healthRating, "EXCELLENT") || Equals(medical.healthRating, "GOOD") {
-                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0");
+                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-V0");
             } else if Equals(medical.healthRating, "FAIR") {
-                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0");
+                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-V0");
             }
             // POOR stays POOR, CRITICAL/TERMINAL stay as-is
 
@@ -176,7 +176,7 @@ public class KdspBackstoryManager {
 
             // Health downgrade for STIs
             if Equals(medical.healthRating, "EXCELLENT") || Equals(medical.healthRating, "GOOD") || Equals(medical.healthRating, "FAIR") {
-                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0");
+                medical.healthRating = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-V0");
             }
 
             // Also upgrade criminal status for poor sex workers
@@ -436,7 +436,7 @@ public class KdspBackstoryManager {
             // BOLO / alert notices — lookout flags independent of warrant status
             let boloLine: String = KdspBoloGenerator.Generate(seed + 4700, archetype);
             if NotEquals(boloLine, "") {
-                backstoryUI.criminalRecord = boloLine + "\n" + backstoryUI.criminalRecord;
+                backstoryUI.criminalRecord = boloLine + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U5") + backstoryUI.criminalRecord;
                 backstoryUI.hasHotRecord = true;
             };
         } else if !isNCPD && !isBarghest && !isGangMember && !isTraumaTeam {
@@ -549,9 +549,9 @@ public class KdspBackstoryManager {
             let gangData = KdspGangProfileGenerator.Generate(seed + 6000, gangAffiliation, appearanceName, lifePath.gender);
             
             // Threat level based on gang type
-            let threatPrefix: String = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T29");
+            let threatPrefix: String = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-V1");
             if Equals(gangAffiliation, "MOXES") || Equals(gangAffiliation, "ALDECALDOS") {
-                threatPrefix = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T30");
+                threatPrefix = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-V2");
             };
             
             backstoryUI.threatAssessment = threatPrefix + " | " + gangData.gangName;
@@ -638,7 +638,7 @@ public class KdspBackstoryManager {
                     backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S110") + IntToString(gangData.chromePercentage) + "%";
                 };
                 if Equals(gangAffiliation, "ANIMALS") && gangData.fightWins > 0 {
-                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S111") + IntToString(gangData.fightWins) + "W-" + IntToString(gangData.fightLosses) + "L";
+                    backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S111") + IntToString(gangData.fightWins) + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U12") + IntToString(gangData.fightLosses) + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U12L");
                 };
                 if Equals(gangAffiliation, "VOODOO_BOYS") && gangData.systemsCompromised > 0 {
                     backstoryUI.gangAffiliation = backstoryUI.gangAffiliation + GetLocalizedTextByKey(n"Kdsp-BackstoryManag-S112") + IntToString(gangData.systemsCompromised);
@@ -791,13 +791,13 @@ public class KdspBackstoryManager {
             // If significant events mention marriage, relationship status
             // must say "Married" and a spouse must exist in family list.
             // ══════════════════════════════════════════════════════════════
-            if StrContains(significantEvents, "married") {
+            if StrContains(significantEvents, GetLocalizedTextByKey(n"Kdsp-Adult-MARRIED")) || StrContains(significantEvents, GetLocalizedTextByKey(n"Kdsp-Adult-GOT_MARRIED")) || StrContains(significantEvents, GetLocalizedTextByKey(n"Kdsp-Adult-ADULT_MARRIED_STABLE")) {
                 relations.currentRelationshipStatus = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T32");
                 // Check if a spouse already exists
                 let hasSpouse = false;
                 let msi = 0;
                 while msi < ArraySize(relations.familyMembers) {
-                    if Equals(relations.familyMembers[msi].relation, "Spouse") || Equals(relations.familyMembers[msi].relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) {
+                    if Equals(relations.familyMembers[msi].relation, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U17")) || Equals(relations.familyMembers[msi].relation, GetLocalizedTextByKey(n"Kdsp-Shared-C1")) {
                         hasSpouse = true;
                     }
                     msi += 1;
@@ -815,8 +815,8 @@ public class KdspBackstoryManager {
                         spouseLast = KdspNameGenerator.GetLastNameByEthnicity(seed + 9120, ethnicity);
                     }
                     spouse.name = spouseFirst + " " + spouseLast;
-                    spouse.relation = "Spouse";
-                    spouse.status = "Alive";
+                    spouse.relation = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U17");
+                    spouse.status = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U18");
                     spouse.location = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T33");
                     ArrayPush(relations.familyMembers, spouse);
                 }
@@ -834,7 +834,7 @@ public class KdspBackstoryManager {
                 grudgeEnemy.name = KdspNameGenerator.GetFirstNameByEthnicity(seed + 9210, enemyGender, ethnicity) + " " + KdspNameGenerator.GetLastNameByEthnicity(seed + 9220, ethnicity);
                 // Use vendetta target as context if available
                 if NotEquals(psych.vendettaTarget, "") {
-                    grudgeEnemy.reason = "Vendetta (" + psych.vendettaTarget + ")";
+                    grudgeEnemy.reason = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U19") + psych.vendettaTarget + ")";
                 } else {
                     grudgeEnemy.reason = GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T34");
                 }
@@ -928,7 +928,7 @@ public class KdspBackstoryManager {
                         backstoryUI.relationships = backstoryUI.relationships + ", ";
                     };
                     backstoryUI.relationships = backstoryUI.relationships + fam.name + " (" + fam.relation;
-                    if !Equals(fam.status, "Alive") && !Equals(fam.status, "") {
+                    if !Equals(fam.status, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U18")) && !Equals(fam.status, "") {
                         backstoryUI.relationships = backstoryUI.relationships + " - " + fam.status;
                     };
                     backstoryUI.relationships = backstoryUI.relationships + ")";
@@ -1299,28 +1299,28 @@ public class KdspBackstoryManager {
         };
         // Gender pronoun replacements
         if Equals(gender, "female") {
-            if(StrContains(ret, "%He%")) { ret = ReplaceFirst(ret, "%He%", "She"); };
-            if(StrContains(ret, "%he%")) { ret = ReplaceFirst(ret, "%he%", "she"); };
-            if(StrContains(ret, "%His%")) { ret = ReplaceFirst(ret, "%His%", "Her"); };
-            if(StrContains(ret, "%his%")) { ret = ReplaceFirst(ret, "%his%", "her"); };
-            if(StrContains(ret, "%him%")) { ret = ReplaceFirst(ret, "%him%", "her"); };
-            if(StrContains(ret, "%Him%")) { ret = ReplaceFirst(ret, "%Him%", "Her"); };
-            if(StrContains(ret, "%hers%")) { ret = ReplaceFirst(ret, "%hers%", "hers"); };
-            if(StrContains(ret, "%Hers%")) { ret = ReplaceFirst(ret, "%Hers%", "Hers"); };
-            if(StrContains(ret, "%himself%")) { ret = ReplaceFirst(ret, "%himself%", "herself"); };
-            if(StrContains(ret, "%Himself%")) { ret = ReplaceFirst(ret, "%Himself%", "Herself"); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U28"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U28"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U29")); };
+            if(StrContains(ret, "%he%")) { ret = ReplaceFirst(ret, "%he%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U30")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U31"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U31"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U32")); };
+            if(StrContains(ret, "%his%")) { ret = ReplaceFirst(ret, "%his%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U33")); };
+            if(StrContains(ret, "%him%")) { ret = ReplaceFirst(ret, "%him%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U33")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U34"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U34"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U32")); };
+            if(StrContains(ret, "%hers%")) { ret = ReplaceFirst(ret, "%hers%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U35")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U36"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U36"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U37")); };
+            if(StrContains(ret, "%himself%")) { ret = ReplaceFirst(ret, "%himself%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U38")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U39"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U39"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U40")); };
             if(StrContains(ret, "%waiter%")) { ret = ReplaceFirst(ret, "%waiter%", "waitress"); };
         } else {
-            if(StrContains(ret, "%He%")) { ret = ReplaceFirst(ret, "%He%", "He"); };
-            if(StrContains(ret, "%he%")) { ret = ReplaceFirst(ret, "%he%", "he"); };
-            if(StrContains(ret, "%His%")) { ret = ReplaceFirst(ret, "%His%", "His"); };
-            if(StrContains(ret, "%his%")) { ret = ReplaceFirst(ret, "%his%", "his"); };
-            if(StrContains(ret, "%him%")) { ret = ReplaceFirst(ret, "%him%", "him"); };
-            if(StrContains(ret, "%Him%")) { ret = ReplaceFirst(ret, "%Him%", "Him"); };
-            if(StrContains(ret, "%hers%")) { ret = ReplaceFirst(ret, "%hers%", "his"); };
-            if(StrContains(ret, "%Hers%")) { ret = ReplaceFirst(ret, "%Hers%", "His"); };
-            if(StrContains(ret, "%himself%")) { ret = ReplaceFirst(ret, "%himself%", "himself"); };
-            if(StrContains(ret, "%Himself%")) { ret = ReplaceFirst(ret, "%Himself%", "Himself"); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U28"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U28"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U42")); };
+            if(StrContains(ret, "%he%")) { ret = ReplaceFirst(ret, "%he%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U43")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U31"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U31"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U44")); };
+            if(StrContains(ret, "%his%")) { ret = ReplaceFirst(ret, "%his%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U45")); };
+            if(StrContains(ret, "%him%")) { ret = ReplaceFirst(ret, "%him%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U46")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U34"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U34"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U47")); };
+            if(StrContains(ret, "%hers%")) { ret = ReplaceFirst(ret, "%hers%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U45")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U36"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U36"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U44")); };
+            if(StrContains(ret, "%himself%")) { ret = ReplaceFirst(ret, "%himself%", GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U48")); };
+            if(StrContains(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U39"))) { ret = ReplaceFirst(ret, GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U39"), GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U49")); };
             if(StrContains(ret, "%waiter%")) { ret = ReplaceFirst(ret, "%waiter%", "waiter"); };
         };
         return ret;
@@ -1348,17 +1348,17 @@ public class KdspBackstoryManager {
     private static func DetectCorpoAffiliation(appearanceName: String) -> String {
         let lower = StrLower(appearanceName);
         if StrContains(lower, "arasaka") { return GetLocalizedTextByKey(n"Kdsp-Shared-C6"); }
-        if StrContains(lower, "militech") { return "Militech"; }
-        if StrContains(lower, "kang_tao") || StrContains(lower, "kangtao") { return "Kang Tao"; }
-        if StrContains(lower, "biotechnica") { return "Biotechnica"; }
-        if StrContains(lower, "zetatech") { return "Zetatech"; }
-        if StrContains(lower, "petrochem") { return "Petrochem"; }
-        if StrContains(lower, "kiroshi") { return "Kiroshi Opticals"; }
-        if StrContains(lower, "trauma_team") || StrContains(lower, "traumateam") { return "Trauma Team International"; }
-        if StrContains(lower, "netwatch") { return "NetWatch"; }
-        if StrContains(lower, "orbital") { return "Orbital Air"; }
-        if StrContains(lower, "sovoil") { return "SovOil"; }
-        if StrContains(lower, "dynalar") { return "Dynalar Technologies"; }
+        if StrContains(lower, "militech") { return GetLocalizedTextByKey(n"Kdsp-Corpo-MILITECH"); }
+        if StrContains(lower, "kang_tao") || StrContains(lower, "kangtao") { return GetLocalizedTextByKey(n"Kdsp-Npc-AloisDaquin-Affiliation"); }
+        if StrContains(lower, "biotechnica") { return GetLocalizedTextByKey(n"Kdsp-Corpo-BIOTECHNICA"); }
+        if StrContains(lower, "zetatech") { return GetLocalizedTextByKey(n"Kdsp-Corpo-ZETATECH"); }
+        if StrContains(lower, "petrochem") { return GetLocalizedTextByKey(n"Kdsp-Corpo-PETROCHEM"); }
+        if StrContains(lower, "kiroshi") { return GetLocalizedTextByKey(n"Kdsp-Corpo-KIROSHI"); }
+        if StrContains(lower, "trauma_team") || StrContains(lower, "traumateam") { return GetLocalizedTextByKey(n"Kdsp-Corpo-TTI"); }
+        if StrContains(lower, "netwatch") { return GetLocalizedTextByKey(n"Kdsp-Corpo-NETWATCH"); }
+        if StrContains(lower, "orbital") { return GetLocalizedTextByKey(n"Kdsp-Corpo-ORBITAL_AIR"); }
+        if StrContains(lower, "sovoil") { return GetLocalizedTextByKey(n"Kdsp-Npc-BorisRibakov-Affiliation"); }
+        if StrContains(lower, "dynalar") { return GetLocalizedTextByKey(n"Kdsp-Corpo-DYNALAR"); }
         return "";
     }
 

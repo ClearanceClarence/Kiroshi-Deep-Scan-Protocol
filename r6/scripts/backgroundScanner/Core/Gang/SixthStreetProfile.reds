@@ -15,13 +15,13 @@ public class KdspSixthStreetProfile {
             let roll = RandRange(seed, 1, 100);
             if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C57"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T1"); }
             else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C9"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-Shared-C12"); }
-            else if roll <= 90 { profile.rank = "Captain"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T2"); }
-            else { profile.rank = "Commander"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T3"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U2"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T2"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-U0"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T3"); }
         } else {
             let roll = RandRange(seed, 1, 100);
             if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T22"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T9"); }
             else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T23"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T4"); }
-            else if roll <= 90 { profile.rank = "Sergeant"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
             else { profile.rank = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T5"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T6"); }
         }
         
@@ -36,7 +36,7 @@ public class KdspSixthStreetProfile {
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T10"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T11"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T11"));
-        ArrayPush(specs, "Sniper");
+        ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-U1"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T38"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T12"));
         ArrayPush(specs, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T35"));
@@ -133,17 +133,17 @@ public class KdspSixthStreetProfile {
     }
 
     private static func GetBodyCount(seed: Int32, rank: String) -> Int32 {
-        if Equals(rank, "Commander") || Equals(rank, "Captain") { return RandRange(seed, 15, 50); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-U0")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U2")) { return RandRange(seed, 15, 50); }
         if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C57")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C9")) { return RandRange(seed, 8, 30); }
         return RandRange(seed, 0, 15);
     }
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T18"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T19"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T20"); }
-        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T20"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-V0"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-V1"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-V2"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-V1"); }
         return GetLocalizedTextByKey(n"Kdsp-SixthStreetPro-T21");
     }
 }

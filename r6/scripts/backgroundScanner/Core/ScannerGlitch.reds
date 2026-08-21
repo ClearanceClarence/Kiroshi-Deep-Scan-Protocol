@@ -19,13 +19,13 @@ public abstract class KdspScannerGlitch {
         glitched.ncID = KdspScannerGlitch.CorruptID(seed * 3 + 7919);
 
         // Background
-        glitched.background = KdspScannerGlitch.CorruptField(seed * 7 + 15473, glitchType, GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-T0"));
+        glitched.background = KdspScannerGlitch.CorruptField(seed * 7 + 15473, glitchType, "background");
 
         // Early Life
         glitched.earlyLife = KdspScannerGlitch.CorruptField(seed * 11 + 28661, glitchType, GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-T1"));
 
         // Recent Activity
-        glitched.significantEvents = KdspScannerGlitch.CorruptField(seed * 13 + 42853, glitchType, GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-T2"));
+        glitched.significantEvents = KdspScannerGlitch.CorruptField(seed * 13 + 42853, glitchType, "recent");
 
         // Psych
         if NotEquals(backstoryUI.threatAssessment, "") {
@@ -95,12 +95,12 @@ public abstract class KdspScannerGlitch {
     private static func CorruptID(seed: Int32) -> String {
         let r = RandRange(seed, 0, 9);
         if r == 0 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-0"); }
-        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-1"); }
-        if r == 2 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-2"); }
+        if r == 1 { return GetLocalizedTextByKey(n"Kdsp-ScannerGlitch-V0"); }
+        if r == 2 { return "ERR_NULL_REF"; }
         if r == 3 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-3"); }
-        if r == 4 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-4"); }
+        if r == 4 { return "ID_NOT_FOUND"; }
         if r == 5 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-5"); }
-        if r == 6 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-6"); }
+        if r == 6 { return "RECORD_EXPUNGED"; }
         if r == 7 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-7"); }
         if r == 8 { return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-8"); }
         return GetLocalizedTextByKey(n"Kdsp-Glitch-CorruptID-9");

@@ -124,9 +124,9 @@ public class KdspVoodooBoysProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T25"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T37"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T49"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-V0"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-V1"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V2"); }
         if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T27"); }
         return GetLocalizedTextByKey(n"Kdsp-VoodooBoysProf-T26");
     }

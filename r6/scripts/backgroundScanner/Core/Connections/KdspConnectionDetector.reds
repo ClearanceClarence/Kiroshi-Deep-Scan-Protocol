@@ -113,11 +113,11 @@ public abstract class KdspConnectionDetector {
 
         // Set strength
         if result.crossRefDetected {
-            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-T0");
+            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-V0");
         } else if result.sharedContactCount > 0 {
-            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-T1");
+            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-V1");
         } else if ArraySize(result.alerts) > 0 {
-            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-T2");
+            result.connectionStrength = GetLocalizedTextByKey(n"Kdsp-ConnectionDete-V2");
         };
 
         return result;
@@ -135,7 +135,7 @@ public abstract class KdspConnectionDetector {
         while i < ArraySize(result.alerts) {
             out += result.alerts[i];
             if i < ArraySize(result.alerts) - 1 {
-                out += "\n";
+                out += GetLocalizedTextByKey(n"Kdsp-BackstoryManag-U5");
             };
             i += 1;
         };

@@ -6,17 +6,17 @@ public class KdspAnimalsProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "ANIMALS";
-        profile.gangName = "Animals";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-Affiliation");
         profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T0");
         
         // Pack hierarchy
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss") || StrContains(appearanceName, "heavy");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Alpha"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T1"); }
-            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C38"); profile.rankMeaning = "Lieutenant"; }
-            else if roll <= 90 { profile.rank = "Beast"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T2"); }
-            else { profile.rank = "Apex"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T3"); }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-U0"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T1"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-Shared-C38"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-U1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T2"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T3"); }
         } else {
             let roll = RandRange(seed, 1, 100);
             if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T5"); }
@@ -124,16 +124,16 @@ public class KdspAnimalsProfile {
     }
 
     private static func GetBodyCount(seed: Int32, rank: String) -> Int32 {
-        if Equals(rank, "Alpha") || Equals(rank, "Apex") { return RandRange(seed, 20, 60); }
-        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C38")) || Equals(rank, "Beast") { return RandRange(seed, 10, 35); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-U0")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U1")) { return RandRange(seed, 20, 60); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-Shared-C38")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-U1")) { return RandRange(seed, 10, 35); }
         return RandRange(seed, 0, 15);
     }
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T25"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-V0"); }
         if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T26"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T49"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V2"); }
         if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T27"); }
         return GetLocalizedTextByKey(n"Kdsp-AnimalsProfile-T28");
     }

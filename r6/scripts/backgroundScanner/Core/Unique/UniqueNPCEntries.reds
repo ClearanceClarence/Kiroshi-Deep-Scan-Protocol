@@ -365,7 +365,7 @@ public abstract class KdspUniqueNPCEntries {
     // === SABURO (DYNAMIC) ===
     public static func SaburoArasaka() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsHeistCompleted() {
-            return KdspUniqueNPCBackstory.Create("saburo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Classification"))
+            return KdspUniqueNPCBackstory.Create("saburo").SetClassification(GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V33"))
                 .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Background"))
                 .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-SignificantEvents"))
                 .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Affiliation")).SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-SaburoArasaka-Notes"));
@@ -431,7 +431,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func AndersHellman() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hellman").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-Classification"))
+        return KdspUniqueNPCBackstory.Create("hellman").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-Background"))
             .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-SignificantEvents"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AndersHellman-ThreatAssessment"))
@@ -525,7 +525,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func WakakoOkada() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("wakako").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Classification"))
+        return KdspUniqueNPCBackstory.Create("wakako").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-ThreatAssessment"))
@@ -533,7 +533,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func ReginaJones() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("regina").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-Classification"))
+        return KdspUniqueNPCBackstory.Create("regina").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ReginaJones-ThreatAssessment"))
@@ -541,7 +541,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func Padre() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("padre").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-Classification"))
+        return KdspUniqueNPCBackstory.Create("padre").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Padre-ThreatAssessment"))
@@ -549,7 +549,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func DakotaSmith() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("dakota").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-Classification"))
+        return KdspUniqueNPCBackstory.Create("dakota").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DakotaSmith-ThreatAssessment"))
@@ -557,7 +557,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func DinoDinovic() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("dino").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-Classification"))
+        return KdspUniqueNPCBackstory.Create("dino").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-DinoDinovic-ThreatAssessment"))
@@ -565,7 +565,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func MrHands() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("hands").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-Classification"))
+        return KdspUniqueNPCBackstory.Create("hands").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MrHands-ThreatAssessment"))
@@ -573,7 +573,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func ElCapitan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("capitan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-Classification"))
+        return KdspUniqueNPCBackstory.Create("capitan").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ElCapitan-ThreatAssessment"))
@@ -601,7 +601,7 @@ public abstract class KdspUniqueNPCEntries {
                 .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-SignificantEvents"))
                 .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("jackie").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Classification-1"))
+        return KdspUniqueNPCBackstory.Create("jackie").SetClassification("MERCENARY")
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-Background-1"))
             .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-SignificantEvents-1"))
             .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JackieWelles-CyberwareStatus"))
@@ -631,7 +631,7 @@ public abstract class KdspUniqueNPCEntries {
                 .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-SignificantEvents"))
                 .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Notes"));
         }
-        return KdspUniqueNPCBackstory.Create("tbug").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Classification-1"))
+        return KdspUniqueNPCBackstory.Create("tbug").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V1"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-Background"))
             .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-CyberwareStatus"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-TBug-ThreatAssessment"))
@@ -714,7 +714,7 @@ public abstract class KdspUniqueNPCEntries {
 
     // === RIPPERDOCS ===
     public static func ViktorVektor() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("viktor").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-Classification"))
+        return KdspUniqueNPCBackstory.Create("viktor").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V2"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-Background"))
             .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-SignificantEvents"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ViktorVektor-ThreatAssessment"))
@@ -723,7 +723,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func Fingers() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("fingers").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-Classification"))
+        return KdspUniqueNPCBackstory.Create("fingers").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V2"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-Background"))
             .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-CriminalRecord"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-Fingers-ThreatAssessment"))
@@ -753,7 +753,7 @@ public abstract class KdspUniqueNPCEntries {
 
     public static func EvelynParker() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsEvelynDead() {
-            return KdspUniqueNPCBackstory.Create("evelyn").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Classification"))
+            return KdspUniqueNPCBackstory.Create("evelyn").SetClassification(GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V33"))
                 .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-SignificantEvents"))
                 .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-EvelynParker-Notes"));
         }
@@ -900,7 +900,7 @@ public abstract class KdspUniqueNPCEntries {
                 .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Relationships-1"))
                 .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Notes-1"));
         }
-        return KdspUniqueNPCBackstory.Create("peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Classification-2"))
+        return KdspUniqueNPCBackstory.Create("peralez").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V3"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-Background-2"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-EarlyLife-2"))
             .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JeffersonPeralez-SignificantEvents-2"))
@@ -959,7 +959,7 @@ public abstract class KdspUniqueNPCEntries {
 
     public static func LuciusRhyne() -> ref<KdspUniqueNPCBackstory> {
         if KdspQuestProgressHelper.IsRhyneDead() {
-            return KdspUniqueNPCBackstory.Create("rhyne").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-Classification"))
+            return KdspUniqueNPCBackstory.Create("rhyne").SetClassification(GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V33"))
                 .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-SignificantEvents"))
                 .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-LuciusRhyne-Notes"));
         }
@@ -980,7 +980,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func MamaWelles() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("mama_welles").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Classification"))
+        return KdspUniqueNPCBackstory.Create("mama_welles").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V4"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Background"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-Affiliation"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-MamaWelles-ThreatAssessment"))
@@ -1222,7 +1222,7 @@ public abstract class KdspUniqueNPCEntries {
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-EarlyLife"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-Affiliation"))
-            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-CriminalRecord"))
+            .SetCriminalRecord("CLEAN")
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-GilleanJordan-ThreatAssessment"));
     }
 
@@ -1283,7 +1283,7 @@ public abstract class KdspUniqueNPCEntries {
             .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-SignificantEvents"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-Affiliation"))
             .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-CyberwareStatus"))
-            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-CriminalRecord"))
+            .SetCriminalRecord("CLEAN")
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-ThreatAssessment"))
             .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-LizzyWizzy-Relationships"));
     }
@@ -1459,7 +1459,7 @@ public abstract class KdspUniqueNPCEntries {
     public static func KyleAraujo() -> ref<KdspUniqueNPCBackstory> {
         return KdspUniqueNPCBackstory.Create("kyle_araujo").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Classification"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Background"))
-            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Affiliation"))
+            .SetAffiliation("BARGHEST")
             .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-CriminalRecord"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-ThreatAssessment"))
             .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-KyleAraujo-Notes"));
@@ -1572,7 +1572,7 @@ public abstract class KdspUniqueNPCEntries {
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-EarlyLife"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-Affiliation"))
-            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-CriminalRecord"))
+            .SetCriminalRecord("CLEAN")
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-CoachFred-ThreatAssessment"));
     }
 
@@ -1706,7 +1706,7 @@ public abstract class KdspUniqueNPCEntries {
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-EarlyLife"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-Affiliation"))
-            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-CriminalRecord"))
+            .SetCriminalRecord("CLEAN")
             .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-FinancialStatus"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-LindaSpencer-ThreatAssessment"));
     }
@@ -1728,7 +1728,7 @@ public abstract class KdspUniqueNPCEntries {
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-EarlyLife"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Affiliation"))
-            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-CriminalRecord"))
+            .SetCriminalRecord("CLEAN")
             .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-FinancialStatus"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-ThreatAssessment"))
             .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-ZaneJagger-Relationships"))
@@ -2209,7 +2209,7 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func AnthonyAnderson() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("anthony_anderson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-Classification"))
+        return KdspUniqueNPCBackstory.Create("anthony_anderson").SetClassification("CRIMINAL")
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-Background"))
             .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-CriminalRecord"))
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-AnthonyAnderson-ThreatAssessment"));
@@ -2237,14 +2237,14 @@ public abstract class KdspUniqueNPCEntries {
     }
 
     public static func JasmineDixon() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("jasmine_dixon").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-Classification"))
+        return KdspUniqueNPCBackstory.Create("jasmine_dixon").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V4"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-Background"))
-            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-CriminalRecord"))
+            .SetCriminalRecord("CLEAN")
             .SetThreatAssessment(GetLocalizedTextByKey(n"Kdsp-Npc-JasmineDixon-ThreatAssessment"));
     }
 
     public static func JulietHorrigan() -> ref<KdspUniqueNPCBackstory> {
-        return KdspUniqueNPCBackstory.Create("juliet_horrigan").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-Classification"))
+        return KdspUniqueNPCBackstory.Create("juliet_horrigan").SetClassification(GetLocalizedTextByKey(n"Kdsp-UniqueNPCEntri-V1"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-EarlyLife"))
             .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JulietHorrigan-CriminalRecord"))
@@ -2557,7 +2557,7 @@ public abstract class KdspUniqueNPCEntries {
         return KdspUniqueNPCBackstory.Create("bill_mitchel").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Classification"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-EarlyLife"))
-            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Affiliation"))
+            .SetAffiliation("NCPD")
             .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-CriminalRecord"))
             .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Relationships"))
             .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-BillMitchel-Notes"))
@@ -2568,7 +2568,7 @@ public abstract class KdspUniqueNPCEntries {
         return KdspUniqueNPCBackstory.Create("charles_wilson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Classification"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-EarlyLife"))
-            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Affiliation"))
+            .SetAffiliation("NCPD")
             .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-CriminalRecord"))
             .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Relationships"))
             .SetNotes(GetLocalizedTextByKey(n"Kdsp-Npc-CharlesWilson-Notes"))
@@ -2579,7 +2579,7 @@ public abstract class KdspUniqueNPCEntries {
         return KdspUniqueNPCBackstory.Create("carl_robinson").SetClassification(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Classification"))
             .SetBackground(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Background"))
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-EarlyLife"))
-            .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Affiliation"))
+            .SetAffiliation("BARGHEST")
             .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-CriminalRecord"))
             .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-Relationships"))
             .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-CarlRobinson-CyberwareStatus"))
@@ -2828,7 +2828,7 @@ public abstract class KdspUniqueNPCEntries {
             .SetEarlyLife(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-EarlyLife"))
             .SetSignificantEvents(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-SignificantEvents"))
             .SetAffiliation(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-Affiliation"))
-            .SetCriminalRecord(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-CriminalRecord"))
+            .SetCriminalRecord("CLEAN")
             .SetCyberwareStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-CyberwareStatus"))
             .SetFinancialStatus(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-FinancialStatus"))
             .SetRelationships(GetLocalizedTextByKey(n"Kdsp-Npc-JoshKavorkin-Relationships"))

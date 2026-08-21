@@ -169,7 +169,7 @@ public class KdspMedicalHistoryManager {
             return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S3");
         }
         
-        if StrContains(StrLower(substanceType), "synth-coke") || StrContains(StrLower(substanceType), "stim") {
+        if StrContains(StrLower(substanceType), StrLower(GetLocalizedTextByKey(n"Kdsp-CoherenceManag-U1"))) || StrContains(StrLower(substanceType), "stim") {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S4"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S5"); }
@@ -183,7 +183,7 @@ public class KdspMedicalHistoryManager {
             return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S10");
         }
         
-        if StrContains(StrLower(substanceType), "black lace") {
+        if StrContains(StrLower(substanceType), StrLower(GetLocalizedTextByKey(n"Kdsp-CoherenceManag-U2"))) {
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T9"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S11"); }
@@ -392,7 +392,7 @@ public class KdspMedicalHistoryManager {
         // AB- (1%)
         if i == 23 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T40"); }
         // Night City additions
-        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T41");
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V0");
     }
 
     private static func CalculateBiologicalAge(seed: Int32, chronoAge: Int32, archetype: String) -> Int32 {
@@ -583,11 +583,11 @@ public class KdspMedicalHistoryManager {
         if i == 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S118"); }
         if i == 41 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S119"); }
         if i == 42 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T84"); }
-        if i == 43 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T85"); }
+        if i == 43 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V1"); }
         if i == 44 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T86"); }
         if i == 45 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T87"); }
-        if i == 46 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T88"); }
-        if i == 47 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T89"); }
+        if i == 46 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V2"); }
+        if i == 47 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V3"); }
         if i == 48 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T90"); }
         if i == 49 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T91"); }
         
@@ -599,7 +599,7 @@ public class KdspMedicalHistoryManager {
         if i == 54 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S121"); }
         
         // Respiratory (55-59)
-        if i == 55 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T95"); }
+        if i == 55 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V4"); }
         if i == 56 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T96"); }
         if i == 57 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T97"); }
         if i == 58 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T98"); }
@@ -734,10 +734,10 @@ public class KdspMedicalHistoryManager {
     }
 
     private static func GenerateLastCheckup(seed: Int32, archetype: String) -> String {
-        if Equals(archetype, "CORPO_MANAGER") { return "< 3 months ago (Corporate Mandatory)"; }
-        if Equals(archetype, "CORPO_DRONE") { return "< 6 months ago (Corporate Mandatory)"; }
-        if Equals(archetype, "YUPPIE") { return IntToString(RandRange(seed, 2, 8)) + " months ago"; }
-        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") { return "Unknown / Never"; }
+        if Equals(archetype, "CORPO_MANAGER") { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-U0"); }
+        if Equals(archetype, "CORPO_DRONE") { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-U1"); }
+        if Equals(archetype, "YUPPIE") { return IntToString(RandRange(seed, 2, 8)) + GetLocalizedTextByKey(n"Kdsp-CyberwareRegis-S155"); }
+        if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-U2"); }
 
         let months = RandRange(seed, 6, 48);
         if months >= 24 { return IntToString(months / 12) + GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S152"); }
@@ -951,18 +951,18 @@ public class KdspMedicalHistoryManager {
         if Equals(archetype, "CORPO_MANAGER") || Equals(archetype, "CORPO_DRONE") {
             return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S223");
         }
-        if Equals(archetype, "YUPPIE") { return "CURRENT"; }
+        if Equals(archetype, "YUPPIE") { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V5"); }
         if Equals(archetype, "HOMELESS") || Equals(archetype, "JUNKIE") {
             let roll = RandRange(seed, 1, 100);
             if roll <= 20 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-S224"); }
-            if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T194"); }
+            if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V6"); }
             return "UNKNOWN";
         }
 
         let roll = RandRange(seed, 1, 100);
-        if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T195"); }
-        if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T194"); }
-        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T196");
+        if roll <= 40 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V5"); }
+        if roll <= 70 { return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V6"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V7");
     }
 
     private static func HasMentalHealthFlag(seed: Int32, archetype: String) -> Bool {
@@ -1043,9 +1043,9 @@ public class KdspMedicalHistoryManager {
         if score >= 90 { return "EXCELLENT"; }
         if score >= 75 { return "GOOD"; }
         if score >= 60 { return "FAIR"; }
-        if score >= 40 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T0"); }
-        if score >= 20 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-T34"); }
-        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-T199");
+        if score >= 40 { return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-V0"); }
+        if score >= 20 { return GetLocalizedTextByKey(n"Kdsp-FinancialProfi-V3"); }
+        return GetLocalizedTextByKey(n"Kdsp-MedicalHistory-V8");
     }
 }
 

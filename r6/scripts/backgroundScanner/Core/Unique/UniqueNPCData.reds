@@ -15,7 +15,7 @@ public class KdspUniqueNPCBackstory {
     public let threatAssessment: String;     // Threat level
     public let relationships: String;        // Known associates
     public let notes: String;                // Additional intel/notes
-    public let classification: String;       // Database classification (e.g., GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-T1"), GetLocalizedTextByKey(n"Kdsp-Npc-WakakoOkada-Classification"))
+    public let classification: String;       // Database classification (e.g., GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-T1"), GetLocalizedTextByKey(n"Kdsp-UniqueNPCData-V0"))
 
     public static func Create(id: String) -> ref<KdspUniqueNPCBackstory> {
         let self = new KdspUniqueNPCBackstory();
@@ -32,7 +32,7 @@ public class KdspUniqueNPCBackstory {
         self.threatAssessment = "";
         self.relationships = "";
         self.notes = "";
-        self.classification = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-T92");
+        self.classification = GetLocalizedTextByKey(n"Kdsp-RareNPCManager-V16");
         return self;
     }
 

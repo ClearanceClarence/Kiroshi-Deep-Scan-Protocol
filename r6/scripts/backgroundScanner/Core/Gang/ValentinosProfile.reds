@@ -6,23 +6,23 @@ public class KdspValentinosProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "VALENTINOS";
-        profile.gangName = "Valentinos";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U11");
         profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T0");
         
         // Family-style ranks
         let isElite = StrContains(appearanceName, "elite") || StrContains(appearanceName, "boss");
         if isElite {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = "Capitan"; profile.rankMeaning = "Captain"; }
-            else if roll <= 70 { profile.rank = "Teniente"; profile.rankMeaning = "Lieutenant"; }
-            else if roll <= 90 { profile.rank = "Veterano"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T2"); }
-            else { profile.rank = "Consejero"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T1"); }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U0"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U2"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-BarghestProfil-U3"); }
+            else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U2"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T2"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T1"); }
         } else {
             let roll = RandRange(seed, 1, 100);
-            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T2"); profile.rankMeaning = "Soldier"; }
-            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T54"); profile.rankMeaning = "Brother"; }
+            if roll <= 40 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T2"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-CriminalRecord-U1"); }
+            else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-GangNameGenera-T54"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U1"); }
             else if roll <= 90 { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-CriminalRecord-T105"); }
-            else { profile.rank = "Sicario"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T4"); }
+            else { profile.rank = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U4"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T4"); }
         }
         
         // Specializations
@@ -123,17 +123,17 @@ public class KdspValentinosProfile {
     }
 
     private static func GetBodyCount(seed: Int32, rank: String) -> Int32 {
-        if Equals(rank, "Consejero") || Equals(rank, "Capitan") { return RandRange(seed, 15, 45); }
-        if Equals(rank, "Teniente") || Equals(rank, "Veterano") { return RandRange(seed, 8, 25); }
-        if Equals(rank, "Sicario") { return RandRange(seed, 10, 40); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U3")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U0")) { return RandRange(seed, 15, 45); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U1")) || Equals(rank, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U2")) { return RandRange(seed, 8, 25); }
+        if Equals(rank, GetLocalizedTextByKey(n"Kdsp-ValentinosProf-U4")) { return RandRange(seed, 10, 40); }
         return RandRange(seed, 0, 12);
     }
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T18"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T37"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T38"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-ValentinosProf-V0"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-V1"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-V2"); }
         if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T19"); }
         return GetLocalizedTextByKey(n"Kdsp-ValentinosProf-T20");
     }

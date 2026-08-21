@@ -11,8 +11,8 @@ public class KdspMoxesProfile {
         
         // Collective structure - less hierarchical
         let roll = RandRange(seed, 1, 100);
-        if roll <= 30 { profile.rank = "Sister"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
-        else if roll <= 50 { profile.rank = "Brother"; profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
+        if roll <= 30 { profile.rank = GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U0"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
+        else if roll <= 50 { profile.rank = GetLocalizedTextByKey(n"Kdsp-MoxesProfile-U1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T12"); }
         else if roll <= 70 { profile.rank = GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T2"); }
         else if roll <= 85 { profile.rank = GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T3"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T8"); }
         else if roll <= 95 { profile.rank = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T1"); profile.rankMeaning = GetLocalizedTextByKey(n"Kdsp-GangProfileGen-T2"); }
@@ -116,10 +116,10 @@ public class KdspMoxesProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T19"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T49"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T20"); }
-        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T51"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-V0"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V2"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-V1"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V4"); }
         return GetLocalizedTextByKey(n"Kdsp-MoxesProfile-T21");
     }
 }

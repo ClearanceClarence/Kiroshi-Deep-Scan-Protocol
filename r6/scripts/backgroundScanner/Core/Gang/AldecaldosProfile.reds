@@ -6,7 +6,7 @@ public class KdspAldecaldosProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "ALDECALDOS";
-        profile.gangName = "Aldecaldos";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-U0");
         profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T0");
         
         // Clan/family structure
@@ -123,9 +123,9 @@ public class KdspAldecaldosProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T36"); }
-        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T37"); }
-        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T38"); }
+        if roll <= 10 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-V0"); }
+        if roll <= 30 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-V1"); }
+        if roll <= 60 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-V2"); }
         if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T39"); }
         return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-T40");
     }

@@ -304,6 +304,60 @@ strong { color: var(--text-bright); }
 }
 
 /* Print styles */
+/* ── Mobile ── */
+@media (max-width: 700px) {
+    body { font-size: 14px; line-height: 1.65; -webkit-text-size-adjust: 100%; }
+    .page { padding: 20px 14px 50px; }
+
+    .hero h1 { font-size: 24px; letter-spacing: 1px; }
+    .hero .version { font-size: 12px; }
+    .hero .subtitle { font-size: 14px; padding-left: 10px; }
+
+    h2 { font-size: 20px; margin-top: 36px; letter-spacing: 1px; }
+    h3 { font-size: 17px; margin-top: 26px; }
+    h4 { font-size: 15px; }
+
+    /* Code blocks: horizontal scroll instead of overflow, smaller type,
+       momentum scrolling on iOS */
+    pre {
+        padding: 12px 12px;
+        font-size: 11px;
+        line-height: 1.55;
+        -webkit-overflow-scrolling: touch;
+        max-width: 100%;
+    }
+    code { font-size: 12px; padding: 1px 4px; word-break: break-word; }
+    pre code { word-break: normal; }
+
+    /* Tables: card-less horizontal scroll wrapper behavior via block layout */
+    table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+    /* Key-map and rule tables read better wrapped when narrow cells allow */
+    table.wrap { white-space: normal; }
+    th, td { padding: 7px 10px; }
+    /* First column (keys) shouldn't crush */
+    td:first-child, th:first-child { min-width: 130px; }
+
+    .callout { padding: 12px 14px; }
+    .callout .tag { font-size: 11px; }
+
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+
+    .badge { font-size: 10px; padding: 2px 6px; }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    .hero h1 { font-size: 20px; }
+    pre { font-size: 10px; }
+}
+
 @media print {
     body { background: #fff; color: #111; font-size: 12px; }
     .page { padding: 20px; }
@@ -330,7 +384,7 @@ strong { color: var(--text-bright); }
 <!-- WHAT CHANGED -->
 <h2>The Model Changed in v3.0</h2>
 
-<table>
+<table class="wrap">
 <tr><th></th><th>v2.x (old)</th><th>v3.0 (now)</th></tr>
 <tr><td>What you edit</td><td>90+ source files across the whole mod</td><td>One file: <code>Strings/English.reds</code> → your package</td></tr>
 <tr><td>What you publish</td><td>A full standalone fork of KDSP</td><td>A single .reds language file (~500 KB)</td></tr>
@@ -340,7 +394,7 @@ strong { color: var(--text-bright); }
 
 <div class="callout info">
 <div class="tag">How it works</div>
-KDSP v3.0 looks up every display string by a stable key through <a href="https://github.com/psiberx/cp2077-codeware/wiki#localization" style="color:var(--cyan)">Codeware's localization system</a> (Codeware is already a KDSP requirement). <code>Strings/English.reds</code> defines all <b>11,333 keys</b> with their English text. Your translation is a package that defines the same keys in your language.
+KDSP v3.0 looks up every display string by a stable key through <a href="https://github.com/psiberx/cp2077-codeware/wiki#localization" style="color:var(--cyan)">Codeware's localization system</a> (Codeware is already a KDSP requirement). <code>Strings/English.reds</code> defines all <b>11,427 keys</b> with their English text. Your translation is a package that defines the same keys in your language.
 </div>
 
 <!-- WORKFLOW -->
@@ -351,36 +405,29 @@ KDSP v3.0 looks up every display string by a stable key through <a href="https:/
 <pre><code>this.Text(<span class="str">"Kdsp-Job-JOB_LOCAL_FIXER"</span>, <span class="str">"Started doing jobs for a local fixer. "</span>);</code></pre>
 <p>First argument: the key — <b>never change it</b>. Second argument: the English text — <b>this is what you translate</b>.</p>
 
-<h3>Step 2 — Build your language file</h3>
-<p>One .reds file containing a provider and your package. Complete working example for French:</p>
-<pre><code><span class="cm">// KDSP_fr-fr.reds</span>
-<span class="kw">module</span> KiroshiDeepScan_French
+<h3>Step 2 — Fill in your language's stub file</h3>
+<p><b>The mod ships a stub file for every game language</b> in <code>Strings/</code> — <code>German.reds</code>, <code>Polish.reds</code>, <code>Russian.reds</code>, all empty and already registered in the provider. A translation is that stub, filled in:</p>
+<ol>
+<li>Copy <code>Strings/English.reds</code> over your language's stub (e.g. onto <code>Strings/German.reds</code>)</li>
+<li>Rename the class from <code>English</code> to the stub's class name (<code>German</code>)</li>
+<li>Translate the values — keys stay exactly as they are</li>
+</ol>
+<p>That single file IS the translation. Publish it on Nexus as a file users drop into <code>r6/scripts/backgroundScanner/Strings/</code>, replacing the stub.</p>
+<pre><code><span class="cm">// Strings/German.reds — replacing the shipped stub</span>
+<span class="kw">module</span> KiroshiDeepScan.Localization
 <span class="kw">import</span> Codeware.Localization.*
 
-<span class="kw">public class</span> LocalizationProvider <span class="kw">extends</span> ModLocalizationProvider {
-    <span class="kw">public func</span> GetPackage(language: CName) -> <span class="kw">ref</span>&lt;ModLocalizationPackage&gt; {
-        <span class="kw">return</span> Equals(language, n<span class="str">"fr-fr"</span>) ? <span class="kw">new</span> LocalizationPackage() : <span class="kw">null</span>;
-    }
-    <span class="kw">public func</span> GetFallback() -> CName { <span class="kw">return</span> n<span class="str">""</span>; }
-}
-
-<span class="kw">public class</span> LocalizationPackage <span class="kw">extends</span> ModLocalizationPackage {
+<span class="kw">public class</span> German <span class="kw">extends</span> ModLocalizationPackage {
     <span class="kw">protected func</span> DefineTexts() -> Void {
-        <span class="kw">this</span>.Text(<span class="str">"Kdsp-Job-JOB_LOCAL_FIXER"</span>, <span class="str">"A commencé à bosser pour un fixer du coin. "</span>);
-        <span class="kw">this</span>.Text(<span class="str">"Kdsp-Bolo-0"</span>, <span class="str">"BOLO : Personne d'intérêt — enquête pour homicide à Watson"</span>);
-        <span class="cm">// ... every key you translate</span>
+        <span class="kw">this</span>.Text(<span class="str">"Kdsp-Job-JOB_LOCAL_FIXER"</span>, <span class="str">"Fing an, Aufträge für einen lokalen Fixer zu erledigen. "</span>);
     }
 }</code></pre>
-
-<div class="callout info">
-<div class="tag">Large files</div>
-With thousands of entries, split <code>DefineTexts</code> into sub-functions of ~400 entries each (<code>this.DefineTexts0(); this.DefineTexts1(); ...</code> calling private functions) — copy the structure of <code>English.reds</code> exactly and replace the strings.
+<div class="callout warn">
+<div class="tag">Why not a separate companion mod?</div>
+Earlier versions of this guide described a standalone mod with its own <code>ModLocalizationProvider</code>. Community testing (thanks to our German translator) showed that pattern doesn't reliably override the base mod's English fallback — the fallback registration wins the key conflict. The drop-in stub method routes everything through one provider and is confirmed working. Stub class names are stable across updates, so your file keeps working.
 </div>
-
-<p><b>Language codes:</b> <code>pl-pl</code>, <code>fr-fr</code>, <code>de-de</code>, <code>es-es</code>, <code>es-mx</code>, <code>it-it</code>, <code>pt-br</code>, <code>ru-ru</code>, <code>zh-cn</code>, <code>zh-tw</code>, <code>ja-jp</code>, <code>kr-kr</code>, <code>ar-ar</code>, <code>cz-cz</code>, <code>hu-hu</code>, <code>tr-tr</code>, <code>th-th</code></p>
-
 <h3>Step 3 — Ship it</h3>
-<p>Publish the file as its own Nexus mod: <code>r6/scripts/KDSP_fr-fr/KDSP_fr-fr.reds</code>. Users install KDSP + your file. Done. Partial translations are fine — untranslated keys show English.</p>
+<p>Publish your filled-in stub file on Nexus. Users install it by dropping it into <code>r6/scripts/backgroundScanner/Strings/</code>, replacing the empty stub. Partial translations are fine — untranslated keys show English.</p>
 
 <h3>Step 4 — Test</h3>
 <p>Set the game language to yours, scan a civilian, a gang member, and a unique NPC (Takemura, Regina). If you see a raw key like <code>Kdsp-Job-S14</code> on screen, that key has a typo in your package.</p>
@@ -390,9 +437,9 @@ With thousands of entries, split <code>DefineTexts</code> into sub-functions of 
 
 <div class="callout info">
 <div class="tag">What the French file demonstrates</div>
-<b>Partial coverage works.</b> It translates 259 of 11,333 keys; the rest fall back to English and the mod runs normally — publish at any coverage and grow it.<br><br>
+<b>Partial coverage works.</b> It translates 259 of 11,427 keys; the rest fall back to English and the mod runs normally — publish at any coverage and grow it.<br><br>
 <b>Word order around dynamic values.</b> <code>Kdsp-Bolo-16</code> ends mid-sentence because the mod appends a year, then a tail string (<code>Kdsp-Bolo-16b</code>). The French version restructures both halves so the year lands where French grammar wants it.<br><br>
-It is registered in <code>Strings/LocalizationProvider.reds</code> because it ships inside the mod. <b>Your translation does not go there</b> — it is a separate mod with its own provider, as shown above.
+Every language is pre-registered in <code>Strings/LocalizationProvider.reds</code> — you never edit the provider. Your file replaces the stub for your language.
 </div>
 
 <!-- KEY MAP -->
@@ -433,6 +480,15 @@ It is registered in <code>Strings/LocalizationProvider.reds</code> because it sh
 <div class="tag">BOLO prefixes are now translatable</div>
 In v2.4 the <code>BOLO:</code> / <code>ALERT:</code> / <code>NOTICE:</code> prefixes had to stay English because the red highlight matched them as text. v3.0 replaced that with an internal flag — translate the prefixes freely, the urgency color works in every language.
 </div>
+
+<h3>⚠️ Reserved terms — keep verbatim inside your strings</h3>
+<p>Some words inside translatable strings are matched by game logic and must survive translation unchanged, exactly like the <code>%tokens%</code>:</p>
+<ul>
+<li><b>ALL-CAPS words that survive inside longer translated strings</b> — a handful of caps tokens (<code>ACTIVE</code>, <code>VIOLENT</code>, <code>CERTAIN</code>, <code>PLATINUM</code>, <code>SILVER</code>, <code>LAPSED</code>, <code>STOLEN FLAG</code>, <code>NUSA</code>) double as internal state and must stay verbatim where they appear inside a longer translated string. Standalone caps display statuses (<code>CLASSIFIED</code>, <code>KNOWN</code>, <code>DISPUTED</code>, <code>BLACKLISTED</code>, ...) ARE in the key list and fully translatable. <code>ALL_CAPS_CODES</code> and <code>lowercase_snake_case</code> identifiers don't appear in the key list at all — they are internal identifiers, not text.</li>
+<li><b>Street drug names</b> — <code>glitter</code>, <code>smash</code>, <code>dorph</code>, <code>spike</code>, <code>stim</code>, <code>synth-coke</code>, <code>Black Lace</code>. These are Night City brand names; the coherence system cross-references them between the medical, psych, and criminal sections.</li>
+<li><b>Proper nouns matched by detection logic</b> — corp names (Arasaka, Militech, Kiroshi, NetWatch), gang names, implant lines (<code>Mantis</code>, <code>Projectile</code>), <code>Darknet</code></li>
+</ul>
+<p>Translate the sentence around them; leave these words as-is. If your language must transliterate, transliterate <i>identically everywhere</i> — cross-referencing works by exact substring match.</p>
 
 <h3>❌ Not in the key list — by design</h3>
 <ul>

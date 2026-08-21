@@ -104,13 +104,13 @@ public class KdspCrowdDistrictManager {
     }
 
     private static func GetDistrictFullName(district: String) -> String {
-        if Equals(district, "WATSON") { return "Watson"; }
-        if Equals(district, "WESTBROOK") { return "Westbrook"; }
-        if Equals(district, "PACIFICA") { return "Pacifica"; }
-        if Equals(district, "HEYWOOD") { return "Heywood"; }
-        if Equals(district, "SANTO_DOMINGO") { return "Santo Domingo"; }
-        if Equals(district, "CITY_CENTER") { return "City Center"; }
-        if Equals(district, "BADLANDS") { return "Badlands"; }
+        if Equals(district, "WATSON") { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T26"); }
+        if Equals(district, "WESTBROOK") { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T27"); }
+        if Equals(district, "PACIFICA") { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T30"); }
+        if Equals(district, "HEYWOOD") { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T29"); }
+        if Equals(district, "SANTO_DOMINGO") { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T31"); }
+        if Equals(district, "CITY_CENTER") { return GetLocalizedTextByKey(n"Kdsp-NCPDNameGenera-T28"); }
+        if Equals(district, "BADLANDS") { return GetLocalizedTextByKey(n"Kdsp-RelationshipsM-T40"); }
         return GetLocalizedTextByKey(n"Kdsp-BackstoryManag-T33");
     }
 
@@ -346,13 +346,13 @@ public class KdspCrowdDistrictManager {
     }
 
     private static func GetDominantFaction(district: String) -> String {
-        if Equals(district, "WATSON") { return "Contested (Maelstrom/Tyger Claws/Moxes)"; }
+        if Equals(district, "WATSON") { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U9"); }
         if Equals(district, "WESTBROOK") { return GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"); }
-        if Equals(district, "PACIFICA") { return "Voodoo Boys / Animals"; }
-        if Equals(district, "HEYWOOD") { return "Valentinos"; }
+        if Equals(district, "PACIFICA") { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U10"); }
+        if Equals(district, "HEYWOOD") { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U11"); }
         if Equals(district, "SANTO_DOMINGO") { return GetLocalizedTextByKey(n"Kdsp-Shared-C33"); }
-        if Equals(district, "CITY_CENTER") { return "Corporate Security"; }
-        if Equals(district, "BADLANDS") { return "Nomad Clans / Wraiths"; }
+        if Equals(district, "CITY_CENTER") { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U12"); }
+        if Equals(district, "BADLANDS") { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U13"); }
         return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-T21");
     }
 

@@ -148,8 +148,8 @@ public class KdspPsychProfileManager {
         if IsDefined(coherence) && coherence.hasViolentPast {
             let roll = RandRange(seed, 1, 100);
             if roll <= 50 { return "HIGH"; }
-            if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T44"); }
-            return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T45");
+            if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V10"); }
+            return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V11");
         }
         return KdspPsychProfileManager.AssessArmedLikelihood(seed, archetype, null);
     }
@@ -204,14 +204,14 @@ public class KdspPsychProfileManager {
                 ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T20"));
                 ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T21"));
                 ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T22"));
-                ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T23"));
+                ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V0"));
                 return flags[RandRange(seed, 0, ArraySize(flags) - 1)];
             }
             if coherence.hasSubstanceIssues {
                 let flags: array<String>;
                 ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T24"));
                 ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T25"));
-                ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T26"));
+                ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V1"));
                 ArrayPush(flags, GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T27"));
                 return flags[RandRange(seed, 0, ArraySize(flags) - 1)];
             }
@@ -232,10 +232,10 @@ public class KdspPsychProfileManager {
         if Equals(substanceType, "alcohol") || Equals(substanceType, GetLocalizedTextByKey(n"Kdsp-Shared-C14")) {
             return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T32");
         }
-        if StrContains(StrLower(substanceType), "synth-coke") {
+        if StrContains(StrLower(substanceType), StrLower(GetLocalizedTextByKey(n"Kdsp-CoherenceManag-U1"))) {
             return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S2");
         }
-        if StrContains(StrLower(substanceType), "black lace") {
+        if StrContains(StrLower(substanceType), StrLower(GetLocalizedTextByKey(n"Kdsp-CoherenceManag-U2"))) {
             return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S3");
         }
         if StrContains(StrLower(substanceType), "glitter") {
@@ -467,11 +467,11 @@ public class KdspPsychProfileManager {
     }
 
     private static func GetThreatColor(threatLevel: Int32) -> String {
-        if threatLevel >= 80 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T8"); }
-        if threatLevel >= 60 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T49"); }
-        if threatLevel >= 40 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T47"); }
-        if threatLevel >= 20 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T1"); }
-        return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-T70");
+        if threatLevel >= 80 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V2"); }
+        if threatLevel >= 60 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V14"); }
+        if threatLevel >= 40 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V2"); }
+        if threatLevel >= 20 { return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V0"); }
+        return GetLocalizedTextByKey(n"Kdsp-DatabaseSource-V16");
     }
 
     private static func GetThreatDescription(threatLevel: Int32, archetype: String) -> String {
@@ -634,8 +634,8 @@ public class KdspPsychProfileManager {
         if likelihood >= 90 { return GetLocalizedTextByKey(n"Kdsp-Shared-C59"); }
         if likelihood >= 70 { return GetLocalizedTextByKey(n"Kdsp-Shared-C60"); }
         if likelihood >= 50 { return "LIKELY"; }
-        if likelihood >= 30 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T89"); }
-        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T90");
+        if likelihood >= 30 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V3"); }
+        return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V4");
     }
 
     private static func GetApproachRecommendation(threatLevel: Int32, armedLikelihood: String) -> String {
@@ -1224,7 +1224,7 @@ public class KdspPsychProfileManager {
             if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T270"); }
             if i == 6 { return "SCAVENGERS"; }
             if i == 7 { return "WRAITHS"; }
-            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T271"); }
+            if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V5"); }
             if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S230"); }
             if i == 10 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S231"); }
             if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S232"); }
@@ -1237,7 +1237,7 @@ public class KdspPsychProfileManager {
             // Corporate targets (10)
             let i = RandRange(seed, 0, 9);
             if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T272"); }
-            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T273"); }
+            if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V6"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T274"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T275"); }
             if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S236"); }
@@ -1251,7 +1251,7 @@ public class KdspPsychProfileManager {
         if Equals(archetype, "NOMAD") {
             // Nomad targets (10)
             let i = RandRange(seed, 0, 9);
-            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T273"); }
+            if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V6"); }
             if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T272"); }
             if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T280"); }
             if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S238"); }
@@ -1268,12 +1268,12 @@ public class KdspPsychProfileManager {
         
         // Corporations (0-9)
         if i == 0 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T272"); }
-        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T273"); }
+        if i == 1 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V6"); }
         if i == 2 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T281"); }
-        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T282"); }
-        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T283"); }
+        if i == 3 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V7"); }
+        if i == 4 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V8"); }
         if i == 5 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T284"); }
-        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T285"); }
+        if i == 6 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V9"); }
         if i == 7 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T274"); }
         if i == 8 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T286"); }
         if i == 9 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S244"); }
@@ -1281,7 +1281,7 @@ public class KdspPsychProfileManager {
         // Law Enforcement (10-14)
         if i == 10 { return "NCPD"; }
         if i == 11 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S245"); }
-        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T287"); }
+        if i == 12 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-V10"); }
         if i == 13 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-S246"); }
         if i == 14 { return GetLocalizedTextByKey(n"Kdsp-PsychProfileMa-T288"); }
         

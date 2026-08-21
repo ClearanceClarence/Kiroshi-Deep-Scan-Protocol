@@ -6,7 +6,7 @@ public class KdspScavengersProfile {
     public static func Generate(seed: Int32, appearanceName: String, gender: String) -> ref<KdspDetailedGangProfile> {
         let profile: ref<KdspDetailedGangProfile> = new KdspDetailedGangProfile();
         profile.gangAffiliation = "SCAVENGERS";
-        profile.gangName = "Scavengers";
+        profile.gangName = GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-Affiliation");
         profile.headerLabel = GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T0");
         
         // Cell structure
@@ -124,9 +124,9 @@ public class KdspScavengersProfile {
 
     private static func GetLoyalty(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
-        if roll <= 20 { return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T29"); }
-        if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T30"); }
-        if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-T49"); }
-        return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-T31");
+        if roll <= 20 { return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-V0"); }
+        if roll <= 50 { return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-V1"); }
+        if roll <= 80 { return GetLocalizedTextByKey(n"Kdsp-BarghestProfil-V2"); }
+        return GetLocalizedTextByKey(n"Kdsp-ScavengersProf-V2");
     }
 }

@@ -6,23 +6,23 @@ public class KdspGangProfileUtils {
     public static func GetStatus(seed: Int32) -> String {
         let roll = RandRange(seed, 1, 100);
         if roll <= 75 { return "ACTIVE"; }
-        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-GangProfileUti-T0"); }
-        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-GangProfileUti-T1"); }
+        if roll <= 85 { return GetLocalizedTextByKey(n"Kdsp-GangProfileUti-V0"); }
+        if roll <= 92 { return GetLocalizedTextByKey(n"Kdsp-GangProfileUti-V1"); }
         if roll <= 96 { return "SUSPENDED"; }
         return "FLAGGED";
     }
 
     public static func GetGangName(affiliation: String) -> String {
         if Equals(affiliation, "TYGER_CLAWS") { return GetLocalizedTextByKey(n"Kdsp-Npc-TakiKenmochi-Affiliation"); }
-        if Equals(affiliation, "MAELSTROM") { return "Maelstrom"; }
-        if Equals(affiliation, "VALENTINOS") { return "Valentinos"; }
+        if Equals(affiliation, "MAELSTROM") { return GetLocalizedTextByKey(n"Kdsp-GangManager-U0"); }
+        if Equals(affiliation, "VALENTINOS") { return GetLocalizedTextByKey(n"Kdsp-CrowdDistrictM-U11"); }
         if Equals(affiliation, "6TH_STREET") { return GetLocalizedTextByKey(n"Kdsp-Shared-C33"); }
-        if Equals(affiliation, "ANIMALS") { return "Animals"; }
+        if Equals(affiliation, "ANIMALS") { return GetLocalizedTextByKey(n"Kdsp-Npc-LoganGarcia-Affiliation"); }
         if Equals(affiliation, "VOODOO_BOYS") { return GetLocalizedTextByKey(n"Kdsp-Shared-C48"); }
         if Equals(affiliation, "MOXES") { return GetLocalizedTextByKey(n"Kdsp-Shared-C40"); }
-        if Equals(affiliation, "SCAVENGERS") { return "Scavengers"; }
-        if Equals(affiliation, "WRAITHS") { return "Wraiths"; }
-        if Equals(affiliation, "ALDECALDOS") { return "Aldecaldos"; }
+        if Equals(affiliation, "SCAVENGERS") { return GetLocalizedTextByKey(n"Kdsp-Npc-AntonKolos-Affiliation"); }
+        if Equals(affiliation, "WRAITHS") { return GetLocalizedTextByKey(n"Kdsp-GangManager-U1"); }
+        if Equals(affiliation, "ALDECALDOS") { return GetLocalizedTextByKey(n"Kdsp-AldecaldosProf-U0"); }
         return GetLocalizedTextByKey(n"Kdsp-EthnicityDetec-T14");
     }
 }
