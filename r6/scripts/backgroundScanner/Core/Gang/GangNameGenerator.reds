@@ -492,6 +492,8 @@ public class KdspGangNameGenerator {
         if StrContains(displayName, "LocKey") { return true; }
         // Common generic gang display names from the game
         if Equals(displayName, "None") || Equals(displayName, "Enemy") { return true; }
+        // Job titles ("Customer", "Food Vendor"...) are not names, even on gang NPCs
+        if KdspBackstoryManager.IsRoleLabel(displayName) { return true; }
         // Tyger Claws
         if Equals(displayName, "Tyger Claws") || Equals(displayName, "Tyger Claw") { return true; }
         if StrContains(displayName, "Tyger Claws") && StrLen(displayName) <= 25 { return true; }
