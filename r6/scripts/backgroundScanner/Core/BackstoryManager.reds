@@ -394,6 +394,14 @@ public class KdspBackstoryManager {
             backstoryUI.significantEvents = gangData.recentActivity;
         } else {
             backstoryUI.background = background;
+            // Vendors/customers show only a job title on the scanner, so
+            // lead the background with a generated name. Same seed as the
+            // connection tracker so both always agree on the name.
+            let civilianGameName: String = target.GetTweakDBFullDisplayName(true);
+            if Equals(civilianGameName, "") || StrLen(civilianGameName) < 3 || KdspBackstoryManager.IsRoleLabel(civilianGameName) {
+                let generatedName: String = KdspNameGenerator.GenerateFullNameByEthnicity(seed + 8600, lifePath.gender, ethnicity);
+                backstoryUI.background = "Name: " + generatedName + " | " + background;
+            };
             // Early life only on medium/high density
             if density >= 2 {
                 backstoryUI.earlyLife = earlyLife;
@@ -764,6 +772,11 @@ public class KdspBackstoryManager {
         if density >= 2 && !isNCPD && !isBarghest && !isGangMember && !isTraumaTeam {
             // Get NPC's last name so family members share it
             let npcLastName = KdspBackstoryManager.ExtractLastName(target);
+            if Equals(npcLastName, "") {
+                // Role-label NPCs (vendors, customers) show a generated name in
+                // Background — reuse its surname (same seed as GenerateFullName).
+                npcLastName = KdspNameGenerator.GetLastNameByEthnicity(seed + 8600 + 100, ethnicity);
+            };
             let relations = KdspRelationshipsManager.GenerateWithName(seed + 8000, archetype, gangAffiliation, ethnicity, npcLastName);
 
             // ══════════════════════════════════════════════════════════════
@@ -1539,6 +1552,14 @@ public class KdspBackstoryManager {
         let words: array<String> = StrSplit(lower, " ");
         if ArraySize(words) == 0 {
             return false;
+        };
+        // "<Anything> Vendor" / "<Anything> Customer" ("Food Vendor",
+        // "Drink Vendor", "Clothes Vendor", "Junk Vendor"...) is always a
+        // job title, whatever the leading word is.
+        let lastWord = words[ArraySize(words) - 1];
+        if Equals(lastWord, "vendor") || Equals(lastWord, "customer") ||
+           Equals(lastWord, "merchant") || Equals(lastWord, "shopkeeper") {
+            return true;
         };
         let i = 0;
         while i < ArraySize(words) {
